@@ -29,10 +29,10 @@ difference(){
 		translate([0,-(11+27),0]) mirror([0,1,0]) lateral();
 		translate([8,-38,0]) cube([4,38,25]);
 	}
-	translate([5,-6,5]) rotate([0,90,0]) cylinder(r=3,h=20);
-	translate([5,-6,13]) rotate([0,90,0]) cylinder(r=3,h=20);
-	translate([5,-6,21]) rotate([0,90,0]) cylinder(r=3,h=20);
-	translate([5,-32,5]) rotate([0,90,0]) cylinder(r=3,h=20);
-	translate([5,-32,13]) rotate([0,90,0]) cylinder(r=3,h=20);
-	translate([5,-32,21]) rotate([0,90,0]) cylinder(r=3,h=20);
+	translate([5,-6,5]) rotate([0,90,0]) cylinder(r=2,h=20);
+	translate([5,-6,13]) rotate([0,90,0]) cylinder(r=2,h=20);
+	translate([5,-6,21]) rotate([0,90,0]) cylinder(r=2,h=20);
+	translate([5,-32,5]) rotate([0,90,0]) cylinder(r=2,h=20);
+	translate([5,-32,13]) rotate([0,90,0]) cylinder(r=2,h=20);
+	translate([5,-32,21]) rotate([0,90,0]) cylinder(r=2,h=20);
 }
