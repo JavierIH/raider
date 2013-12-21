@@ -16,12 +16,10 @@ module agujereado(x,y,H){
 module brazo (){
 	rotate([90,0,0])difference(){
 		translate([0,0,105])rotate([0,90,0])difference(){
-			translate([0,0,-3])cube([105,45,52]);
+			translate([0,0,-2])cube([61,70,50]);
 			//Otro angulo
 			translate([9,-20,-5])rotate([0,0,30])cube([25,65,60]);
-			//translate([0,2,1.5])rotate([0,0,0])cube([60,65,43]);
-			translate([0,-2,1.5])rotate([0,0,0])cube([57,65,43]);
-			//translate([63,3,3])rotate([0,0,0])cube([39,65,42]);
+			translate([0,-2,2])cube([57,65,42]);
 			//Eje
 			translate([34,13,-4]) cylinder(r=4,h=60);
 			//Tornillos del eje
@@ -40,6 +38,5 @@ translate([0,50,0]){
 	difference (){
 		brazo();
 		translate([-70+23,-120,42])rotate([-8,0,0])cube([140,140,140]);
-		translate([-50,-44,-20])cube([100,100,100]);
 	}
 }
