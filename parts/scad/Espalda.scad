@@ -26,10 +26,10 @@ union(){
 		translate([-30-1.5,8+6.5/2,0])beagleboneHoles(6);
 	}
 	translate([26,64,0])cube([25,2,6]);
-	translate([26,58,0])cube([25,2,6]);
+	translate([26,58,0])cube([20,2,6]);
 	mirror([1,0,0]){
 	translate([26,64,0])cube([25,2,6]);
-	translate([36,58,0])cube([15,2,6]);}
+	translate([36,58,0])cube([10,2,6]);}
 
 
 }
