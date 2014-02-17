@@ -14,7 +14,7 @@ raider::raider(){
 
     int error;
     error=openSerial(SERIAL_PORT);
-    if(error==-1) cout<<"FALLO en openSerial";
+    if(error==-1) cout<<"("<<error<<")"<<"FALLO en openSerial";
 
 }
 

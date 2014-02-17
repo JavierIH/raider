@@ -33,9 +33,9 @@ int openSerial(int port){
     string path="dev/ttyO";
     path+=(char)port+'0';
 
-    int error=0;
-    error=SC.Open("dev/ttyO2",115200);
-
+    int error=1;
+    error=SC.Open("dev/ttyO2",9600);
+	cout<<"\n\nTras SC.Open error es"<<error<<endl;
     if (error!=1) return -1;
     return 1;
 }
