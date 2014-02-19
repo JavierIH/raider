@@ -87,6 +87,7 @@ void Robot::move(int pan, int tilt, int uno, int dos, int tres, int cuatro, int 
     if(getPos(i)!=goal[i]){
       if(i==0){
         Dxl.setPosition(25,goal[i]+TRIM[i],(abs(getPos(i)-goal[i])/tiempo)*0.7); //Esta nueva funcion hace lo mismo que las dos antiguas
+        SerialUSB.print("dsvjfv");
       }
       if(i==1)
       {
