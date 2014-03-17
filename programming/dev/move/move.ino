@@ -76,10 +76,14 @@ void setup()
 void loop()
 {
         
-        Raider.move(612,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,0.1);
-        Raider.move(412,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,512,0.1);
-        i++;
-        SerialUSB.println(i);   
+        Raider.move(512,512,412,612,262,762,612,412,512,512,512,512,492,532,512,512,512,512,512,512,0.5);
+        Raider.move(512,512,412,612,512,512,612,412,512,512,512,512,492,532,512,512,512,512,512,512,0.5);
+        
+        //i++;
+        //SerialUSB.println(i);   
+        //Raider.movLateral(40,1);
+        //Raider.movLateral(-80,2);
+
 }
 
 
@@ -88,33 +92,33 @@ void Robot::move(int pan, int tilt, int uno, int dos, int tres, int cuatro, int 
 
   int goal[]={pan,tilt,uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis,diecisiete,dieciocho};
   int TRIM[]={TRIMP,TRIMT,TRIM1,TRIM2,TRIM3,TRIM4,TRIM5,TRIM6,TRIM7,TRIM8,TRIM9,TRIM10,TRIM11,TRIM12,TRIM13,TRIM14,TRIM15,TRIM16,TRIM17,TRIM18};
-  float temp=millis();
+  //float temp=millis();
 
   for(int i=0; i<20; i++){      
       if(i==0){
         Dxl.setPosition(25,goal[i]+TRIM[i],(abs(getPos(i)-goal[i])/tiempo)*0.7); //Esta nueva funcion hace lo mismo que las dos antiguas
-        SerialUSB.print("P:25 en ");
-        SerialUSB.println(goal[i]+TRIM[i]);
+        //SerialUSB.print("P:25 en ");
+        //SerialUSB.println(goal[i]+TRIM[i]);
       }
       else if(i==1)
       {
         //head.writeMicroseconds(goal[i]+1000); //Valor entre 1000 y 2024
-        SerialUSB.print("T:S en ");
-        SerialUSB.println(goal[i]);
+        //SerialUSB.print("T:S en ");
+        //SerialUSB.println(goal[i]);
       }
       else{
         Dxl.setPosition(i-1,goal[i]+TRIM[i],(abs(getPos(i)-goal[i])/tiempo)*0.7); //Esta nueva funcion hace lo mismo que las dos antiguas
-        SerialUSB.print("ID:");
-        SerialUSB.print(i-1);
-        SerialUSB.print(" en ");
-        SerialUSB.println(goal[i]+TRIM[i]);
+        //SerialUSB.print("ID:");
+        //SerialUSB.print(i-1);
+        //SerialUSB.print(" en ");
+        //SerialUSB.println(goal[i]+TRIM[i]);
       }
       setPos(i,goal[i]); //guardamos la posicion como posicion actual.     
   }  
-  temp=millis()-temp;
-  SerialUSB.print("Tiempo de ejecucion: ");
-  SerialUSB.print(temp);
-  SerialUSB.println(" ms");
+  //temp=millis()-temp;
+  //SerialUSB.print("Tiempo de ejecucion: ");
+  //SerialUSB.print(temp);
+  //SerialUSB.println(" ms");
   delay(tiempo*1000);
 }
 
@@ -128,14 +132,14 @@ void Robot::init(){
   for(int i=0; i<20; i++){      
       if(i==0){
         Dxl.setPosition(25,goal[i]+TRIM[i],100); //Esta nueva funcion hace lo mismo que las dos antiguas
-        SerialUSB.print("P:25 en ");
-        SerialUSB.println(goal[i]+TRIM[i]);
+        //SerialUSB.print("P:25 en ");
+        //SerialUSB.println(goal[i]+TRIM[i]);
       }
       else if(i==1)
       {
         //head.writeMicroseconds(goal[i]+1000); //Valor entre 1000 y 2024
-        SerialUSB.print("T:S en ");
-        SerialUSB.println(goal[i]);
+        //SerialUSB.print("T:S en ");
+        //SerialUSB.println(goal[i]);
       }
       else{
         Dxl.setPosition(i-1,goal[i]+TRIM[i],100); //Esta nueva funcion hace lo mismo que las dos antiguas
@@ -153,8 +157,9 @@ void Robot::init(){
   delay(10000); 
 }
 
-void movLateral(int amp){
-  
+void Robot::movLateral(int amp, float t){
+  move(pos[0],pos[1],pos[2],pos[3],pos[4],pos[5],pos[6],pos[7],pos[8],pos[9],pos[10]+amp,pos[11]+amp,pos[12],pos[13],pos[14],pos[15],pos[16],pos[17],pos[18]-amp,pos[19]-amp,t);
+
 }
 
 
