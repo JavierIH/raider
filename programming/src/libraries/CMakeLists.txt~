@@ -1,2 +1,6 @@
+add_subdirectory(eMPL)
+add_subdirectory(glue)
+add_subdirectory(mpu9150)
 add_subdirectory(serialib)
+target_link_libraries(mpu9150_node linux_glue mpu9150 inv_mpu quaternion inv_mpu_dmp_motion_driver vector3d)
 
