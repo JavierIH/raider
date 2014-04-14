@@ -1,13 +1,17 @@
 #ifndef RAIDER_H
 #define RAIDER_H
 
+#define RIGHT_INFRARRED 0
+#define LEFT_INFRARRED 1
 
 class raider
 {
-
+private:
+    int rightIR;
+    int leftIR;
 public:
     raider();
-    int getAnalog(int);
+    int getIR(bool);
     void walk();
     void turnLeft();
     void turnRigt();

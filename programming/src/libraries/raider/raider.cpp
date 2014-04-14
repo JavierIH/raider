@@ -1,10 +1,9 @@
 #include "raider.h"
-//#include "serialib.h"
-
 
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include <bones.h>
 
 
 using namespace std;
@@ -17,23 +16,18 @@ raider::raider(){
 
 }
 
-int raider::getAnalog(int pin){
+int raider::getIR(bool side){
+    if(side){
+        rightIR=getAnalog(RIGHT_INFRARRED);
+        return rightIR;
 
-    if(pin<0||pin>7) return -1;
-
-    string path="/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN";
-    path+=(char)pin+'0';
-    ifstream AIN ("../fichero.txt"); //path
-    if(!AIN) return -1;
-
-    int value;
-    char a1 [5];
-    AIN.read(a1,5);
-    value = atoi(a1);
-    AIN.close();
-
-    return value;
+    }
+    else{
+        leftIR=getAnalog(LEFT_INFRARRED);
+        return leftIR;
+    }
 }
+
 
 void raider::walk(){}
 void raider::turnLeft(){}
