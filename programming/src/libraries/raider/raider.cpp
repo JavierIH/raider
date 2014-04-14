@@ -1,8 +1,11 @@
 #include "raider.h"
+//#include "serialib.h"
+
 
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+
 
 using namespace std;
 
@@ -10,6 +13,8 @@ raider::raider(){
 
 //ofstream Serial ("/sys/devices/bone_capemgr.9/slots");
 //ofstream ADC("/sys/devices/bone_capemgr.9/slots");
+
+
 }
 
 int raider::getAnalog(int pin){
@@ -29,3 +34,12 @@ int raider::getAnalog(int pin){
 
     return value;
 }
+
+void raider::walk(){}
+void raider::turnLeft(){}
+void raider::turnRigt(){}
+void raider::stepLeft(){}
+void raider::stepRight(){}
+void raider::standUp(){}
+
+
