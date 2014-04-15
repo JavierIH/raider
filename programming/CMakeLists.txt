@@ -6,7 +6,7 @@
 #
                                       
 
-project(raider)
+project(raider2)
 
 cmake_minimum_required(VERSION 2.6)
 
@@ -21,6 +21,5 @@ set(EXECUTABLE_OUTPUT_PATH ${RAIDER_BIN_DIR})
 set(TEST_OUTPUT_PATH ${RAIDER_TESTS_DIR})
 
 add_subdirectory(src)
-
 
 
