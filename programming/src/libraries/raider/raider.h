@@ -3,6 +3,7 @@
 
 #define RIGHT_INFRARRED 0
 #define LEFT_INFRARRED 1
+#define SERIAL_PORT 2
 
 class raider
 {

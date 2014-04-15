@@ -15,7 +15,7 @@ int getAnalog(int pin){
 
     string path="/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN";
     path+=(char)pin+'0';
-    ifstream AIN ("../fichero.txt"); //path
+    ifstream AIN ("/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN1");
     if(!AIN) return -1;
 
     int value;
@@ -29,16 +29,25 @@ int getAnalog(int pin){
 
 int openSerial(int port){
 
-    int error=0;
-    char Buffer[128];
+    if(port<0||port>5) return -1;
 
-    cout<<DEVICE_PORT;
-    SC.Open(DEVICE_PORT,115200);
+    string path="dev/ttyO";
+    path+=(char)port+'0';
 
-    if (error!=1) {
-        printf ("Error while opening port. Permission problem ?\n");
-        return error;
-    }
-    return error;
+    int error=1;
+    error=SC.Open("dev/ttyO2",115200);
+    cout<<path;
+    if (error!=1) return -1;
+    return 1;
 }
+
+int sendSerial(char command){
+
+    int error=0;
+    error=SC.WriteChar(command);
+    if (error!=1) return -1;
+    return 1;
+}
+
+
 

@@ -3,11 +3,10 @@
 
 #include<serialib.h>
 
-#define DEVICE_PORT "wawawa"
-
 
 int getAnalog(int);
 int openSerial(int);
+int sendSerial(char);
 //int getSerial(int);
 
 

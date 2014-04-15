@@ -13,6 +13,9 @@ raider::raider(){
 //ofstream Serial ("/sys/devices/bone_capemgr.9/slots");
 //ofstream ADC("/sys/devices/bone_capemgr.9/slots");
 
+    int error;
+    error=openSerial(SERIAL_PORT);
+    if(error==-1) cout<<"FALLO en openSerial";
 
 }
 
@@ -28,6 +31,7 @@ int raider::getIR(bool side){
     }
 }
 
+//int raider::
 
 void raider::walk(){}
 void raider::turnLeft(){}
