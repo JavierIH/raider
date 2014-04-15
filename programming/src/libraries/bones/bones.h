@@ -1,7 +1,7 @@
 #ifndef BONES_H
 #define BONES_H
 
-#include<serialib.h>
+#include "../serialib/serialib.h"
 
 
 int getAnalog(int);

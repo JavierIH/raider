@@ -3,7 +3,6 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-#include <serialib.h>
 
 using namespace std;
 
@@ -34,9 +33,9 @@ int openSerial(int port){
     string path="dev/ttyO";
     path+=(char)port+'0';
 
-    int error=1;
+    int error=0;
     error=SC.Open("dev/ttyO2",115200);
-    cout<<path;
+
     if (error!=1) return -1;
     return 1;
 }
@@ -45,6 +44,7 @@ int sendSerial(char command){
 
     int error=0;
     error=SC.WriteChar(command);
+
     if (error!=1) return -1;
     return 1;
 }

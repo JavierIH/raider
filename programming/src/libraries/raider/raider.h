@@ -1,9 +1,11 @@
 #ifndef RAIDER_H
 #define RAIDER_H
 
+#include "../bones/bones.h"
+
+#define SERIAL_PORT 2
 #define RIGHT_INFRARRED 0
 #define LEFT_INFRARRED 1
-#define SERIAL_PORT 2
 
 class raider
 {
@@ -13,6 +15,7 @@ private:
 public:
     raider();
     int getIR(bool);
+    int sendCommand(char);
     void walk();
     void turnLeft();
     void turnRigt();

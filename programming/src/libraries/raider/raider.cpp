@@ -3,7 +3,6 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-#include <bones.h>
 
 
 using namespace std;
@@ -31,7 +30,12 @@ int raider::getIR(bool side){
     }
 }
 
-//int raider::
+int raider::sendCommand(char command){
+
+    int error=sendSerial(command);
+    return error;
+
+}
 
 void raider::walk(){}
 void raider::turnLeft(){}
