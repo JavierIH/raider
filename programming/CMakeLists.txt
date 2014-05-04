@@ -9,6 +9,7 @@
 project(raider2)
 
 cmake_minimum_required(VERSION 2.6)
+find_package( OpenCV REQUIRED )
 
 set(TRUNK_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
