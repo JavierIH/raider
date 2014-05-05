@@ -1,0 +1,6 @@
+add_executable(test_communication test_communication.cpp)
+target_link_libraries(test_communication serialib raider bones ${OpenCV_LIBS})
+
+add_executable(test_opencv test_opencv.cpp)
+target_link_libraries(test_opencv serialib raider bones ${OpenCV_LIBS})
+
