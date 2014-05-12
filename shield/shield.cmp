@@ -1,0 +1,185 @@
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = lun 12 may 2014 20:58:32 CEST
+
+BeginCmp
+TimeStamp = /5370F471;
+Reference = BATTERY1;
+ValeurCmp = Vin;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370F3C0;
+Reference = BBB1;
+ValeurCmp = CONN_20;
+IdModule  = PIN_ARRAY_20X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E4DB;
+Reference = C1;
+ValeurCmp = Cin;
+IdModule  = C1V7;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E4D7;
+Reference = C2;
+ValeurCmp = Cout;
+IdModule  = C1V7;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E5E3;
+Reference = DYNAMIXEL1;
+ValeurCmp = TTL;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E5EA;
+Reference = HEAD1;
+ValeurCmp = servo;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E5D3;
+Reference = IMU1;
+ValeurCmp = I2C;
+IdModule  = PIN_ARRAY_4x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E5C6;
+Reference = IR1;
+ValeurCmp = CONN_4;
+IdModule  = PIN_ARRAY_4x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E5D4;
+Reference = IR2;
+ValeurCmp = CONN_4;
+IdModule  = PIN_ARRAY_4x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370F3D7;
+Reference = K1;
+ValeurCmp = CONN_3;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370EDB6;
+Reference = OpenCM1;
+ValeurCmp = CONN_20;
+IdModule  = PIN_ARRAY_20x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E2CF;
+Reference = OpenCM2;
+ValeurCmp = CONN_20;
+IdModule  = PIN_ARRAY_20x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E2C4;
+Reference = OpenCM3;
+ValeurCmp = CONN_20;
+IdModule  = PIN_ARRAY_20x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E3E8;
+Reference = Pnueve1;
+ValeurCmp = CONN_20X2;
+IdModule  = PIN_ARRAY_20X2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E3EF;
+Reference = Pnueve2;
+ValeurCmp = CONN_3X2;
+IdModule  = pin_array_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E3D9;
+Reference = Pocho1;
+ValeurCmp = CONN_20X2;
+IdModule  = PIN_ARRAY_20X2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E3FA;
+Reference = Pocho2;
+ValeurCmp = CONN_3X2;
+IdModule  = pin_array_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5371004D;
+Reference = proto1;
+ValeurCmp = CONN_3X2;
+IdModule  = pin_array_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /53710055;
+Reference = proto2;
+ValeurCmp = CONN_3X2;
+IdModule  = pin_array_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E24F;
+Reference = R1;
+ValeurCmp = Ra;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E24C;
+Reference = R2;
+ValeurCmp = Rb;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E252;
+Reference = R3;
+ValeurCmp = Ra;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E250;
+Reference = R4;
+ValeurCmp = Rb;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370F5C1;
+Reference = SERVO1;
+ValeurCmp = servo;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370F5B8;
+Reference = SERVO2;
+ValeurCmp = servo;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5370E538;
+Reference = U1;
+ValeurCmp = 7805;
+IdModule  = LM78XXV;
+EndCmp
+
+EndListe
