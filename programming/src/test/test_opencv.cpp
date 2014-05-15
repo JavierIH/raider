@@ -37,13 +37,13 @@ void test1(){
 }
 
 void test2(){
-    VideoCapture cap(-1); // open the default camera
+    VideoCapture cap(0); // open the default camera
     if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
     for(int i=0; i<100;i++){
         Mat frame;
         cap >> frame; // get a new frame from camera
         Mat out;
-        threshold(frame, out, 50 , 255, THRESH_BINARY);
+        //threshold(frame, out, 150 , 255, THRESH_BINARY);
 
         if (!frame.empty())imshow("out", out);
         waitKey(10);

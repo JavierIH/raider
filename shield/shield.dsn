@@ -21,85 +21,96 @@
       )
     )
     (boundary
-      (path pcb 0  7300 -4600  7300 -3900  8000 -3900  8000 -3250  7950 -3250
-            7300 -3250  7300 -2800  7303 -2765.3  7312.1 -2731.6  7326.8 -2700
-            7346.8 -2671.4  7371.4 -2646.8  7400 -2626.8  7431.6 -2612.1
-            7465.3 -2603  7500 -2600  10300 -2600  10369.5 -2606.1  10436.8 -2624.1
-            10500 -2653.6  10557.1 -2693.6  10606.4 -2742.9  10646.4 -2800
-            10675.9 -2863.2  10693.9 -2930.5  10700 -3000  10700 -3050  10700 -4400
-            10693.9 -4469.5  10675.9 -4536.8  10646.4 -4600  10606.4 -4657.1
-            10557.1 -4706.4  10500 -4746.4  10436.8 -4775.9  10369.5 -4793.9
-            10300 -4800  7500 -4800  7465.3 -4797  7431.6 -4787.9  7400 -4773.2
-            7371.4 -4753.2  7346.8 -4728.6  7326.8 -4700  7312.1 -4668.4
-            7303 -4634.7  7300 -4600)
+      (path pcb 0  8000 -3900  7850 -3900  7850 -4400  7950 -4500  7950 -4750
+            7950.8 -4758.7  7953 -4767.1  7956.7 -4775  7961.7 -4782.1  7967.9 -4788.3
+            7975 -4793.3  7982.9 -4797  7991.3 -4799.2  8000 -4800  10300 -4800
+            10308.7 -4799.2  10317.1 -4797  10325 -4793.3  10332.1 -4788.3
+            10338.3 -4782.1  10343.3 -4775  10347 -4767.1  10349.2 -4758.7
+            10350 -4750  10350 -4500  10450 -4400  10450 -3000  10350 -2900
+            10350 -2650  10349.2 -2641.3  10347 -2632.9  10343.3 -2625  10338.3 -2617.9
+            10332.1 -2611.7  10325 -2606.7  10317.1 -2603  10308.7 -2600.8
+            10300 -2600  8000 -2600  7991.3 -2600.8  7982.9 -2603  7975 -2606.7
+            7967.9 -2611.7  7961.7 -2617.9  7956.7 -2625  7953 -2632.9  7950.8 -2641.3
+            7950 -2650  7950 -2900  7850 -3000  7850 -3250  8000 -3250  8000 -3900)
     )
     (via "Via[0-1]_35:25_mil" "Via[0-1]_35:0_mil")
     (rule
-      (width 8)
+      (width 23.6)
       (clearance 10.1)
       (clearance 10.1 (type default_smd))
       (clearance 2.5 (type smd_smd))
     )
   )
   (placement
+    (component PIN_ARRAY_3X1
+      (place DYNAMIXEL1 9700 -3100 front 270)
+    )
     (component PIN_ARRAY_20X2
-      (place con1 9000 -4650 front 0 (PN P9))
-      (place con10 9000 -2750 front 0 (PN dghdrth))
+      (place con1 9000 -4650 back 180 (PN P9))
+      (place con10 9000 -2750 back 180 (PN dghdrth))
     )
     (component pin_array_3x2
-      (place con6 10150 -4650 front 0 (PN P9))
+      (place con6 10150 -4650 back 180 (PN P9))
     )
     (component pin_array_3x2::1
-      (place con7 10150 -2750 front 0 (PN P8))
+      (place con7 10150 -2750 back 180 (PN P8))
     )
     (component pin_array_3x2::2
-      (place con8 8500 -3100 front 90 (PN PROTO))
+      (place con8 8400 -3100 front 90 (PN PROTO))
     )
     (component pin_array_3x2::3
-      (place con9 8700 -3100 front 90 (PN PROTO))
-    )
-    (component PIN_ARRAY_3X1
-      (place SERVO1 9050 -3100 front 90)
-      (place SERVO2 9250 -3100 front 90)
-    )
-    (component R3
-      (place R4 9800 -3950 front 90 (PN Rb))
-      (place R1 9500 -3950 front 90 (PN Ra))
-      (place R3 9950 -3950 front 90 (PN Ra))
-      (place R2 9650 -3950 front 90 (PN Rb))
-    )
-    (component PIN_ARRAY_4x1
-      (place IMU1 10050 -3100 front 90)
-    )
-    (component PIN_ARRAY_4x1::1
-      (place IR1 8050 -3100 front 90 (PN dfghdfgh))
-      (place IR2 10250 -3100 front 90 (PN sdfaaa))
+      (place con9 8600 -3100 front 90 (PN PROTO))
     )
     (component PIN_ARRAY_3X1::1
-      (place HEAD1 9450 -3100 front 90)
+      (place SERVO1 9000 -3100 front 90)
+      (place SERVO2 9150 -3100 front 90)
+    )
+    (component R3
+      (place R4 9850 -3950 front 90 (PN Rb))
+      (place R1 9550 -3950 front 90 (PN Ra))
+      (place R3 10000 -3950 front 90 (PN Ra))
+      (place R2 9700 -3950 front 90 (PN Rb))
+    )
+    (component PIN_ARRAY_4x1
+      (place IMU1 10300 -3200 front 90)
+    )
+    (component PIN_ARRAY_4x1::1
+      (place IR1 8100 -3100 front 90 (PN dfghdfgh))
+      (place IR2 10050 -3100 front 90 (PN sdfaaa))
     )
     (component PIN_ARRAY_3X1::2
-      (place DYNAMIXEL1 9700 -3100 front 90)
+      (place HEAD1 8850 -3100 front 90)
     )
     (component PIN_ARRAY_2X1
-      (place BATTERY1 9800 -4300 front 180 (PN Vin))
+      (place BATTERY1 9850 -4300 front 180 (PN Vin))
     )
     (component PIN_ARRAY_20X1
-      (place con2 9000 -4350 front 0 (PN OpenCM))
-      (place con4 9000 -3350 front 0 (PN "OpenCM proto"))
-      (place con3 9000 -3550 front 180 (PN OpenCM))
+      (place con2 9050 -4350 front 0 (PN OpenCM))
+      (place con4 9050 -3350 front 0 (PN "OpenCM proto"))
+      (place con3 9050 -3550 front 180 (PN OpenCM))
     )
     (component LM78XXV
-      (place U1 8450 -3800 front 0 (PN 7805))
+      (place U1 8600 -3900 front 0 (PN 7805))
     )
     (component C1V7
-      (place C2 8150 -4100 front 90 (PN Cout))
+      (place C2 8250 -4050 front 90 (PN Cout))
     )
     (component C1V7::1
-      (place C1 8150 -3750 front 90 (PN Cin))
+      (place C1 8250 -3750 front 90 (PN Cin))
     )
   )
   (library
+    (image PIN_ARRAY_3X1
+      (outline (path signal 15  150 -50  -150 -50))
+      (outline (path signal 15  -150 -50  -150 50))
+      (outline (path signal 15  -150 50  -100 100))
+      (outline (path signal 15  -100 100  100 100))
+      (outline (path signal 15  100 100  150 50))
+      (outline (path signal 15  150 50  150 -50))
+      (pin Rect[A]Pad_60x60_mil 1 -100 0)
+      (pin Round[A]Pad_60_mil 2 0 0)
+      (pin Round[A]Pad_60_mil 3 100 0)
+    )
     (image PIN_ARRAY_20X2
       (outline (path signal 15  1000 100  -1000 100))
       (outline (path signal 15  -1000 100  -1000 -100))
@@ -190,7 +201,7 @@
       (pin Round[A]Pad_60_mil 5 100 -50)
       (pin Round[A]Pad_60_mil 6 100 50)
     )
-    (image PIN_ARRAY_3X1
+    (image PIN_ARRAY_3X1::1
       (outline (path signal 6  -150 -50  -150 50))
       (outline (path signal 6  -150 50  150 50))
       (outline (path signal 6  150 50  150 -50))
@@ -231,7 +242,7 @@
       (pin Rect[A]Pad_60x60_mil 3 50 0)
       (pin Round[A]Pad_60_mil 4 150 0)
     )
-    (image PIN_ARRAY_3X1::1
+    (image PIN_ARRAY_3X1::2
       (outline (path signal 6  -150 -50  -150 50))
       (outline (path signal 6  -150 50  150 50))
       (outline (path signal 6  150 50  150 -50))
@@ -240,16 +251,6 @@
       (pin Round[A]Pad_60_mil 1 -100 0)
       (pin Round[A]Pad_60_mil 2 0 0)
       (pin Rect[A]Pad_60x60_mil 3 100 0)
-    )
-    (image PIN_ARRAY_3X1::2
-      (outline (path signal 6  -150 -50  -150 50))
-      (outline (path signal 6  -150 50  150 50))
-      (outline (path signal 6  150 50  150 -50))
-      (outline (path signal 6  150 -50  -150 -50))
-      (outline (path signal 6  -50 50  -50 -50))
-      (pin Rect[A]Pad_60x60_mil 1 -100 0)
-      (pin Round[A]Pad_60_mil 2 0 0)
-      (pin Round[A]Pad_60_mil 3 100 0)
     )
     (image PIN_ARRAY_2X1
       (outline (path signal 6  -100 -50  -100 50))
@@ -366,8 +367,8 @@
       (pins con1-20 IMU1-2)
     )
     (net GND
-      (pins con1-1 con1-2 con6-3 con6-4 con6-5 con6-6 con10-1 con10-2 SERVO1-3 SERVO2-3
-        IMU1-4 HEAD1-3 DYNAMIXEL1-1 BATTERY1-2 con2-17 con2-18 U1-GND C2-2 C1-1)
+      (pins DYNAMIXEL1-1 con1-1 con1-2 con6-3 con6-4 con6-5 con6-6 con10-1 con10-2
+        SERVO1-3 SERVO2-3 IMU1-4 HEAD1-3 BATTERY1-2 con2-17 con2-18 U1-GND C2-2 C1-1)
     )
     (net "N-000005"
       (pins con7-3)
@@ -528,16 +529,16 @@
         (use_via Via[0-1]_35:25_mil)
       )
       (rule
-        (width 8)
+        (width 23.6)
         (clearance 10.1)
       )
     )
-    (class feed +12V +5V GND
+    (class Alimentación +12V +5V GND
       (circuit
         (use_via Via[0-1]_35:25_mil)
       )
       (rule
-        (width 39.4)
+        (width 59.1)
         (clearance 10.1)
       )
     )
