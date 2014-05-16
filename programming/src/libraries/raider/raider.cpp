@@ -9,12 +9,22 @@ using namespace std;
 
 raider::raider(){
 
+//Javi del futuro, echa un ojo a esto
 //ofstream Serial ("/sys/devices/bone_capemgr.9/slots");
 //ofstream ADC("/sys/devices/bone_capemgr.9/slots");
 
-    int error;
+    bool error;
+
     error=openSerial(SERIAL_PORT);
-    if(error==-1) cout<<"("<<error<<")"<<"FALLO en openSerial";
+    if(error==0){
+        cout<<"("<<error<<")"<<"FALLO en openSerial";
+    }
+
+    error=openCamera(CAMERA_ID);
+    if(error==0){
+        cout<<"("<<error<<")"<<"FALLO en openCamera";
+    }
+
 
 }
 

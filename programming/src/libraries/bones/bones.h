@@ -5,8 +5,8 @@
 
 
 int getAnalog(int);
-int openSerial(int);
-int sendSerial(char);
+bool openSerial(int);
+bool sendSerial(char);
 //int getSerial(int);
 
 

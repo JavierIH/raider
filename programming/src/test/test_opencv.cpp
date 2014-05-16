@@ -1,7 +1,7 @@
 #include<iostream>
 #include "../libraries/raider/raider.h"
+#include "../libraries/eye/eye.h"
 #include <opencv2/opencv.hpp>
-#include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
@@ -37,26 +37,74 @@ void test1(){
 }
 
 void test2(){
-    VideoCapture cap(0); // open the default camera
+    VideoCapture cap(1); // open the default camera
     if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
     for(int i=0; i<100;i++){
         Mat frame;
         cap >> frame; // get a new frame from camera
         Mat out;
-        //threshold(frame, out, 150 , 255, THRESH_BINARY);
+        threshold(frame, out, 150 , 255, THRESH_BINARY);
 
-        if (!frame.empty())imshow("out", out);
+        imshow("out", out);
         waitKey(10);
     }
 
 }
 
+void test3(){
+    VideoCapture cap(1); // open the default camera
+    if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
+    for(int i=0; i<100;i++){
+        Mat frame;
+        cap >> frame; // get a new frame from camera
+        waitKey(5);
+
+        Mat out;
+        cap >> out; // get a new frame from camera
 
 
+        imshow("out", out);
+        imshow("frame", frame);
+        imshow("resta",out-frame);
+        waitKey(10);
+    }
+}
+
+
+
+void test4(){
+    VideoCapture cap(1);
+    if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
+    for(int i=0; i<4;i++){
+        Mat frame;
+        //cap >> frame; // get a new frame from camera
+        cap.grab();
+        cap.grab();
+        cap.grab();
+        cap.grab();
+        cap.read(frame);
+
+        imshow("frame", frame);
+        waitKey(0);
+    }
+
+}
+
+
+void test5(){
+    openCamera(1);
+    for(int i=0; i<2;i++){
+        Mat image=getFrame();
+        imshow("frame", image);
+        waitKey(0);
+    }
+
+}
 
 int main(int, char**)
 {
-    test2();
+    test5();
+
 
     return 0;
 }

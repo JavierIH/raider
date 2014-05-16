@@ -2,7 +2,9 @@
 #define RAIDER_H
 
 #include "../bones/bones.h"
+#include "../eye/eye.h"
 
+#define CAMERA_ID 1
 #define SERIAL_PORT 2
 #define RIGHT_INFRARRED 0
 #define LEFT_INFRARRED 1

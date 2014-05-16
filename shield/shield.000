@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date jue 15 may 2014 15:49:43 CEST
+PCBNEW-BOARD Version 1 date jue 15 may 2014 16:29:02 CEST
 
 # Created by Pcbnew(2012-apr-16-27)-stable
 
@@ -350,10 +350,10 @@ AddNet "N-000121"
 AddNet "N-000122"
 $EndNCLASS
 $NCLASS
-Name "feed"
+Name "Alimentación"
 Desc ""
 Clearance 100
-TrackWidth 394
+TrackWidth 591
 ViaDia 350
 ViaDrill 250
 uViaDia 200
