@@ -93,7 +93,7 @@ void test4(){
 
 void test5(){
     openCamera(1);
-    for(int i=0; i<2;i++){
+    for(int i=0; i<10;i++){
         Mat image=getFrame();
         imshow("frame", image);
         waitKey(0);

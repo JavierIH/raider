@@ -1,13 +1,17 @@
-OPTION(TEST1 "Communication test" 1)
-IF (TEST1)
+OPTION(TEST_SERIAL "Communication test" 1)
+IF (TEST_SERIAL)
 add_executable(test_communication test_communication.cpp)
 target_link_libraries(test_communication serialib raider bones ${OpenCV_LIBS})
 ENDIF ()
 
-
-
-OPTION(TEST2 "Opencv test" 1)
-IF (TEST2)
+OPTION(TEST_OPENCV "Opencv test" 1)
+IF (TEST_OPENCV)
 add_executable(test_opencv test_opencv.cpp)
 target_link_libraries(test_opencv serialib raider bones eye ${OpenCV_LIBS})
+ENDIF ()
+
+OPTION(TEST_INTEGRATION "Integration test" 1)
+IF (TEST_INTEGRATION)
+add_executable(test_integration test_integration.cpp)
+target_link_libraries(test_integration serialib raider bones eye ${OpenCV_LIBS})
 ENDIF ()
