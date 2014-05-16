@@ -32,5 +32,13 @@ Mat getFrame(){
     return frame;
 }
 
+cv::Mat extractChannel(Mat image, int channel){
+    Mat out(image.size(),image.depth());
+    int ch[] = { channel, 0 };
+    mixChannels( &image, 1, &out, 1, ch, 1 );
+    return out;
+}
+
+
 
 

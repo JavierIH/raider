@@ -8,6 +8,7 @@
 bool openCamera(int);
 void cleanBuffer();
 cv::Mat getFrame();
+cv::Mat extractChannel(cv::Mat,int);
 
 
 #endif // EYE_H

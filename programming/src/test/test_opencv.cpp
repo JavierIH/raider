@@ -12,7 +12,7 @@ using namespace cv;
 
 void test1(){
     Mat image;
-    image=cv::imread("../../../../Imagenes/ceabot1.jpg");
+    image=cv::imread("../../../../../Imagenes/ceabot1.jpg");
     if(image.empty()) cout<<"ERRPR";
     imshow("AUX",image);
 
@@ -21,9 +21,11 @@ void test1(){
     split(image, rgb);
 
 
-    //imshow("b", rgb[0]);
-    //imshow("g", rgb[1]);
+    imshow("b", rgb[0]);
+    imshow("g", rgb[1]);
     imshow("r", rgb[2]);
+
+    waitKey();
 
     Mat out;
     Mat out2;
@@ -39,7 +41,7 @@ void test1(){
 void test2(){
     VideoCapture cap(1); // open the default camera
     if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
-    for(int i=0; i<100;i++){
+    for(int i=0; i<500;i++){
         Mat frame;
         cap >> frame; // get a new frame from camera
         Mat out;
@@ -101,9 +103,49 @@ void test5(){
 
 }
 
+void test6(){
+    Mat image;
+    image=cv::imread("../../../../../Imagenes/ceabot1.jpg");
+    if(image.empty()) cout<<"ERRPR";
+    imshow("Imagen original",image);
+
+    Mat red= extractChannel(image, 2);
+    imshow("Canal rojo",red);
+    waitKey();
+
+}
+
+void test7(){
+    Mat image;
+    image=cv::imread("../../../../../Imagenes/ceabot1.jpg");
+
+    imshow("Imagen original",image);
+    Mat red= extractChannel(image, 2);
+    imshow("Canal rojo",red);
+    Mat1b result;
+    threshold(red, result, 120 , 255, THRESH_BINARY);
+    imshow("Threshold",result);
+
+    Mat1b aux=result.clone();
+    //erode(result, result, Mat(),Point(-1,-1),10);
+    //dilate(result, result, Mat(),Point(-1,-1),10);
+
+    erode(result, result, Mat(),Point(-1,-1),3);
+    dilate(result, result, Mat(),Point(-1,-1),3);
+
+
+    imshow("cerro",result);
+
+    imshow("resta",aux-result);
+
+
+
+    waitKey();
+}
+
 int main(int, char**)
 {
-    test5();
+    test7();
 
 
     return 0;
