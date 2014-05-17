@@ -100,7 +100,6 @@ void test5(){
         imshow("frame", image);
         waitKey(0);
     }
-
 }
 
 void test6(){
@@ -117,7 +116,7 @@ void test6(){
 
 void test7(){
     Mat image;
-    image=cv::imread("../../../../../Imagenes/ceabot1.jpg");
+    image=cv::imread("../../../../../Imagenes/ceabot3.jpg");
 
     imshow("Imagen original",image);
     Mat red= extractChannel(image, 2);
@@ -143,14 +142,64 @@ void test7(){
     waitKey();
 }
 
-int main(int, char**)
+
+
+
+int main()
 {
-    test7();
 
 
-    return 0;
+ Mat src;
+ src=cv::imread("../../../../../Imagenes/ceabot3.jpg");
+
+ Mat red= extractChannel(src, 2);
+ Mat1b result;
+ threshold(red, result, 120 , 255, THRESH_BINARY);
+
+ //erode(result, result, Mat(),Point(-1,-1),10);
+ //dilate(result, result, Mat(),Point(-1,-1),10);
+
+ erode(result, result, Mat(),Point(-1,-1),3);
+ dilate(result, result, Mat(),Point(-1,-1),3);
+
+
+
+
+ Mat dst;
+ Canny(result, dst, 50, 200, 3);
+
+
+
+ dilate(dst, dst, Mat(),Point(-1,-1),1);
+
+
+ imshow("canny",dst);
+ imshow("restachnga",dst+result);
+ waitKey();
+
+
+ vector<Vec4i> lines;
+ HoughLinesP(dst, lines, 1, CV_PI/180, 50, 50,10);
+ for( size_t i = 0; i < lines.size(); i++ )
+ {
+     Vec4i l = lines[i];
+     line( dst, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(125), 5, CV_AA);
+ }
+
+ imshow("lineas", dst);
+
+
+ //dilate(dst, dst, Mat(),Point(-1,-1),11);
+ //erode(dst, dst, Mat(),Point(-1,-1),25);
+
+
+ //imshow("source", src);
+ //imshow("detected lines", dst);
+
+ waitKey();
+
+ return 0;
 }
-
 
 
 
