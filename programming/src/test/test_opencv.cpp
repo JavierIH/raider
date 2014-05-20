@@ -72,8 +72,6 @@ void test3(){
     }
 }
 
-
-
 void test4(){
     VideoCapture cap(1);
     if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
@@ -197,14 +195,63 @@ void test8(){
     waitKey();
 }
 
+void test9(){
+    openCamera(1);
+
+    while(waitKey(10)!='\n'){
+        Mat image=getFrame();
+        imshow("frame", image);
+
+
+        //EXTRACCION DE COLOR VERDE (funciona guay)
+        Mat op1= extractChannel(image, 1); //1 GREEN
+        op1-= extractChannel(image, 0); //0 BLUE
+        //imshow("zona verde-azul",op1);
+
+        Mat op2= extractChannel(image, 1); //1 GREEN
+        op2-= extractChannel(image, 2); //2 RED
+        //imshow("zona verde-rojo",op2);
+
+        Mat operation=op2+op1;
+
+        //zona (verde-rojo)+(verde-azul)
+        operation=operation*3;
+        imshow("extraccion verde",operation);
+
+        //imshow("Canal rojo",red);
+        Mat1b result;
+        threshold(operation, result, 200 , 255, THRESH_BINARY);
+        imshow("Threshold",result);
+
+        //Mat1b aux=result.clone();
+
+        //imshow("cerro",result);
+
+        erode(result, result, Mat(),Point(-1,-1),3);
+
+
+        dilate(result, result, Mat(),Point(-1,-1),3);
+
+
+
+        imshow("limpia",result);
+
+        //imshow("resta",aux-result);
+
+
+        //waitKey(10);
+    }
+
+}
+
+
 
 int main()
 {
-
-    test8();
-
-
- return 0;
+    cout<<"INICIO";
+    test9();
+    cout<<"FIN";
+    return 0;
 }
 
 
