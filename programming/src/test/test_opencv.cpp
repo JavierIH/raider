@@ -198,7 +198,7 @@ void test8(){
 void test9(){
     openCamera(1);
 
-    //while(waitKey(10)!='\n'){
+    while(waitKey(10)!='\n'){
         Mat image=getFrame();
         imshow("frame", image);
 
@@ -216,21 +216,20 @@ void test9(){
 
         //zona (verde-rojo)+(verde-azul)
         operation=operation*3;
-        //imshow("extraccion verde",operation);
+        imshow("extraccion verde",operation);
 
         //imshow("Canal rojo",red);
         Mat1b result;
-        threshold(operation, result, 200 , 255, THRESH_BINARY);
-        //imshow("Threshold",result);
+        threshold(operation, result, 150 , 255, THRESH_BINARY);
+        imshow("Threshold",result);
 
         //Mat1b aux=result.clone();
 
         //imshow("cerro",result);
 
-        erode(result, result, Mat(),Point(-1,-1),3);
+        erode(result, result, Mat(),Point(-1,-1),2);
+        dilate(result, result, Mat(),Point(-1,-1),2);
 
-
-        dilate(result, result, Mat(),Point(-1,-1),3);
 
 
 
@@ -240,7 +239,7 @@ void test9(){
 
 
         //waitKey(10);
-    //}
+    }
 
 }
 
