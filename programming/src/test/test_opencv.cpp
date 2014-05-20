@@ -198,7 +198,7 @@ void test8(){
 void test9(){
     openCamera(1);
 
-    while(waitKey(10)!='\n'){
+    //while(waitKey(10)!='\n'){
         Mat image=getFrame();
         imshow("frame", image);
 
@@ -216,12 +216,12 @@ void test9(){
 
         //zona (verde-rojo)+(verde-azul)
         operation=operation*3;
-        imshow("extraccion verde",operation);
+        //imshow("extraccion verde",operation);
 
         //imshow("Canal rojo",red);
         Mat1b result;
         threshold(operation, result, 200 , 255, THRESH_BINARY);
-        imshow("Threshold",result);
+        //imshow("Threshold",result);
 
         //Mat1b aux=result.clone();
 
@@ -234,13 +234,13 @@ void test9(){
 
 
 
-        imshow("limpia",result);
+        //imshow("limpia",result);
 
         //imshow("resta",aux-result);
 
 
         //waitKey(10);
-    }
+    //}
 
 }
 
@@ -248,9 +248,10 @@ void test9(){
 
 int main()
 {
-    cout<<"INICIO";
+    cout<<"INICIO\n";
     test9();
-    cout<<"FIN";
+    cout<<"\nFIN";
+    //waitKey(0);
     return 0;
 }
 
