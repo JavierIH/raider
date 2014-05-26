@@ -215,25 +215,27 @@ void test9(){
         Mat operation=op2+op1;
 
         //zona (verde-rojo)+(verde-azul)
-        operation=operation*3;
-        imshow("extraccion verde",operation);
+        operation=operation;
+        imshow("extraccion verde",operation*2.5);
 
         //imshow("Canal rojo",red);
         Mat1b result;
-        threshold(operation, result, 150 , 255, THRESH_BINARY);
+        threshold(operation, result, 50 , 255, THRESH_BINARY);
         imshow("Threshold",result);
 
         //Mat1b aux=result.clone();
 
         //imshow("cerro",result);
 
-        erode(result, result, Mat(),Point(-1,-1),2);
         dilate(result, result, Mat(),Point(-1,-1),2);
+        erode(result, result, Mat(),Point(-1,-1),2);
 
 
 
 
-        //imshow("limpia",result);
+
+
+        imshow("limpia",result);
 
         //imshow("resta",aux-result);
 
@@ -251,6 +253,7 @@ int main()
     test9();
     cout<<"\nFIN";
     //waitKey(0);
+
     return 0;
 }
 

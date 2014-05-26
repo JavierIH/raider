@@ -1,0 +1,91 @@
+% Plantilla realizada por Santiago Morante Cendrero
+
+%parametros de tipo libro
+\documentclass[10pt,a4paper]{book}
+
+%idioma español y acentos
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+
+%algunos símbolos matemáticos y paquete para usar subimágenes
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage{appendix}
+
+%para generar índice con hipervínculos
+\usepackage{hyperref}
+
+%parametros del documento (sus propiedades)
+\hypersetup{
+    pdftitle={Nombre del alumno - TFG - año},
+    pdfsubject={TFG - año},
+    pdfauthor={Nombre del alumno},
+    pdfkeywords={palabraclave1} {palabraclave2} {palabraclave3},
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+}
+
+%empieza el documento
+\begin{document}  
+
+%elementos antes del trabajo en sí se meten dentro de frontmatter
+\frontmatter
+
+%cada incluye referencia a un archivo de tipo .tex
+\include{portada}
+
+\include{licencia}
+
+\include{evaluacion}
+
+\include{agradecimientos}
+
+\include{resumen}
+
+%genera índice
+\tableofcontents
+
+%índice de figuras. También se podría hacer uno de tablas (listoftables)
+\listoffigures
+ 
+%empieza la parte descriptiva del trabajo
+\mainmatter
+ 
+\include{introduccion}
+
+\include{objetivos}
+
+\include{linea} %Descripcion de la linea de investigacion
+
+\include{arte} %Estado del arte
+
+\include{herramientas} %Descripcion de las herramientas a utilizar
+  
+\include{desarrollo}
+  
+  %partes finales del trabajo: conclusiones, bibliografia y anexos
+\backmatter
+
+\include{conclusion}
+
+%estilo de bibliografía: plana, alfa...
+\bibliographystyle{plain}
+
+%genera doble hoja en blanco
+\cleardoublepage
+
+%apartado de bibliografía
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+%se incluye la bibliografía. Archivo de tipo .bib (bibtex)
+\bibliography{bibliografia}
+
+%fin del documento
+\end{document}

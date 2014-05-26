@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: TFG.aux
+A level-1 auxiliary file: portada.aux
+A level-1 auxiliary file: licencia.aux
+A level-1 auxiliary file: evaluacion.aux
+A level-1 auxiliary file: agradecimientos.aux
+A level-1 auxiliary file: resumen.aux
+A level-1 auxiliary file: introduccion.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: plain.bst
+Database file #1: bibliografia.bib
+Warning--empty journal in gonzalezeducational
+Warning--empty year in gonzalezeducational
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            507 strings with 4294 characters,
+and the built_in function-call counts, 379 in all, are:
+= -- 28
+> -- 33
+< -- 0
++ -- 13
+- -- 12
+* -- 34
+:= -- 75
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 9
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 10
+empty$ -- 18
+format.name$ -- 12
+if$ -- 66
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 7
+num.names$ -- 2
+pop$ -- 13
+preamble$ -- 1
+purify$ -- 8
+quote$ -- 0
+skip$ -- 6
+stack$ -- 0
+substring$ -- 5
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 2
+while$ -- 2
+width$ -- 2
+write$ -- 9
+(There were 2 warnings)
