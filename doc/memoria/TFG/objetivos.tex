@@ -1,0 +1,116 @@
+%chapter introduce un nuevo capítulo
+
+\chapter{Objetivos}
+
+%gmmgfngfngfngfngfngfnhgf
+%\begin{itemize}
+%\item \textbf{ejemplo de lista de puntos}.
+
+%Cocoloco loco loco loco tacacacaca
+%\item \textbf{ejemplo de lista de puntos}.\\Cocoloco loco loco loco %tacacacaca
+%\item \textbf{ejemplo2 de lista}.
+%\end{itemize}
+
+\section{Implantación de un controlador basado en visión por computador}
+
+El objetivo principal de este proyecto consiste en la implantación de un controlador para un robot humanoide que proporcione las capacidades necesarias para el desarrollo de algoritmos de interacción con el entorno basados en ténicas de visión por computador.
+
+De este modo, se pretende dotar al robot de un comportamiento autónomo en ejercicios de interacción con el entorno tales como la navegación y la manipulación de objetos físicos ( TODO : Pegarle un guantazo a otro robot). %Más especificamente, el desarrollo se divide en dos tareas:
+
+\begin{itemize}
+\item \textbf{Sistema de visión}.
+
+Se realizará un estudio de las posibilidades existentes para incluir un sistema de visión, tanto a nivel de software tanto de hardware. Para ello se evaluarán las opciones actuales para elegir componentes, teniendo en cuenta el rendimiento que pueden proporcionar respecto a otros factores como su coste y su facilidad de adquisición. 
+
+\item \textbf{Implementación de OpenCV}.
+
+El control de los algoritmos se basará de las librerías de código abierto OpenCV. Sin embargo, el robot a parte de la cámara posee otro tipo de sensores, por lo que se requerirá realizar una programación que permita la coexistencia de los datos extraídos de la cámara con otros métodos de reconocimiento del entorno. 
+\end{itemize}
+
+\section{Estudio de sensores y actuadores}
+
+Durante la construcción del robot he utilizado diversos tipos de sensores y actuadores. En este proyecto, se han seleccionado algunos de ellos teniendo en cuenta su funcionamiento, consumo energético, conexión con el controlador... etc. 
+
+\begin{itemize}
+\item \textbf{Estudio y elección de sensores}.
+
+Actualmente, existe una amplia variedad de sensores de bajo coste aptos para su uso en este tipo de robots. El principal objetivo es seleccionar los sensores que pueden proporcionar una funcionalidad óptima aplicada a la programación y a las características físicas (tales como sus dimensiones y peso) del robot.
+
+\item \textbf{Estudio y elección de actuadores}.
+
+De forma paralela, existen diversos actuadores adecuados en el mercado para su montaje en robots micro-humanoides. Aunque en este caso el factor mas determinante pueda ser el aspecto económico, existen varias alternativas a considerar, siendo crítico mantener unas proporciones de rendimiento y tamaño acordes al tipo de robot que se propone en el proyecto.
+\end{itemize}
+
+\section{Diseño electrónico}
+
+\begin{itemize}
+\item \textbf{Configuración de un controlador partido}.
+
+Para favorecer la escalabiidad del sistema y su división en bloques funcionales, se ha decidido utilizar dos placas controladoras diferentes en una configuración de maestro y esclavo. El sistema se compone de un SBC y una placa de prototipado basada en un microcontrolador mas sencillo. De esta forma, el microcontrolador (esclavo) se encargará de almacenar y activar los actuadores del robot con una programación a bajo nivel, mientras que el SBC (maestro) será quien procese la información de la cámara y los sensores para...
+\item \textbf{Diseño y fabricación de una placa de expansión}.
+
+El montaje propuesto requiere de múltiples conexiones eléctricas entre las placas de control, la alimentación, los sensores y los actuadores. Con la necesidad de realizar un montaje limpio y seguro, se ha diseñado y fabricado un placa de expasión que reune los conectores de cada elemento del sistema en un mismo punto. 
+
+\item \textbf{Elección de batería y alimentación}.
+
+Uno de los aspectos mas críticos en el diseño electrónico de un sistema como el propuesto, es la autonomía de funcionamiento. El apmlio número de actuadores de un robot humanoide se traduce en un requerimientos de energia............................. TODO ................................   
+
+
+\end{itemize}
+
+\section{Diseño mecánico}
+
+Durante la construcción del robot se han diseñado diversas partes para posibilitar la integración de las diferentes partes del robot. Si bien es cierto que la plataforma parte de un robot comercial, la mayor parte de las piezas han sido rediseñadas e impresas para conseguir un conjunto mecánico optimizado a los componentes que se han montado.
+
+\begin{itemize}
+\item \textbf{Impresión 3D}.
+
+La fabricación de las piezas se realizará mediante la utilización de una impresora 3D open-source. Esto significa que los diseños deberán cumplir una serie de características que los haga válidos para ser impresos, de forma que no solo se evaluarán las piezas por su modelo virtual, sino también por su estructura de impresión.
+ 
+\item \textbf{Plataforma móvil para rotar una cámara en varias direcciones}.
+
+Una forma de potenciar la implantación de la cámara es dotando a ésta de un sistema de movilidad que le permita rotar en dos direcciones.
+ 
+\item \textbf{Modificaciónes estructurales}.
+
+Como decía al principio de este apartado, todas las piezas del robot han sido diseñadas con el objetivo de permitir el montaje de los actuadores, sensores, y placas de control seleccionados. A parte, las piezas se han optimizado para variar ru rigidez y peso en función de las necesidades de cada zona del cuerpo. 
+
+\end{itemize}
+
+\section{Programación}
+
+Una vez montado todo el sistema se comenzará con la programación de los diferentes niveles de control del sistema.
+
+\begin{itemize}
+\item \textbf{Elección de un sistema operativo}.
+
+Son varias las opciones disponibles que se pueden encontrar en internet a la hora de seleccionar el sistema operativo mas adecuado para un robot. En este proyecto se ha realiza una comparativa de diferentes distribuciones de Linux, con el objetivo de seleccionar la opción mas adecuada para el caso que se presenta.
+
+\item \textbf{Biblioteca de interfaz de las entradas y salidas del SBC}.
+
+El SBC supone el elemento maestro que controla el resto de dispositivos. Es por ello que establecer las conexiones necesita implementar diferentes protocolos de comunicación entre componentes. Se propone la creación de una librería que simplifique el problema mediante el desarrollo de una interfaz sencilla que abstraiga el funcionamiento de cada dispositivo a un formato común.
+
+
+
+\item \textbf{Control de servos Dynamixel}.
+
+Los servomotores de la familia Dynamixel son unos potentes actuadores que permiten al usuario controlar una amplia gama de variables mas allá de la posición inicial y final, como son la velocidad, el torque o incluso la temperaura de funcionamiento. Para llevar a cabo el movimiento sincronizado de los 19 servos es necesario el desarrollo de una biblioteca de funciones que se encarguen de parametrizar las variables de cada actuador y configurar automáticamente su valor para adaptarse a las condiciones y exigencias solicitadas en tiempo real.
+
+\item \textbf{Funciones de desplazamiento}.
+
+Dado que se trata de un robot micro-humanoide con locomoción bípeda, otorgarle la capacidad de desplazarse omnidireccionalmente no es un asunto trivial. En este apartado se presenta el estudio de diferentes técnicas de marcha bípeda para buscar una aplicación factible que posibilite el desplazamiento del robot de una forma estable y controlda. ( TODO cuando sepa qué haré exáctamente tengo que reescribir esto)
+
+\item \textbf{Algoritmos de visión}.
+
+Apoyándome en las librerías de OpenCV, la propuesta de este trabajo consiste en sacar datos del entorno del robot de una forma eficiente. Siendo un factor limitante la capacidad de procesamiento del robot, se buscarán funciones simples y optimizadas al problema propuesto.
+ 
+\item \textbf{Estrategias para la competición en CEABOT}.
+
+La participación en el campeonato nacional CEABOT supone un gran reto para --- además de ser un marco fantástico para la evaluación de los resultados obtenidos. Para finalizar el proyecto, se propone la presentación de algoritmos que permitan realizar las pruebas del campeonato utilizando las herramientas que se han desarrollado.
+
+\end{itemize}
+
+
+
+
+\paragraph{Palabras clave:} TODO palabraclave1, palabraclave2, palabraclave3.
