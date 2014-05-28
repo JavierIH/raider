@@ -10,109 +10,8 @@
 using namespace std;
 using namespace cv;
 
-void test1(){
-    Mat image;
-    image=cv::imread("../../../../../Imagenes/ceabot1.jpg");
-    if(image.empty()) cout<<"ERRPR";
-    imshow("AUX",image);
 
-    vector<Mat> rgb;
-
-    split(image, rgb);
-
-
-    imshow("b", rgb[0]);
-    imshow("g", rgb[1]);
-    imshow("r", rgb[2]);
-
-    waitKey();
-
-    Mat out;
-    Mat out2;
-    threshold(rgb[2], out, 150 , 255, THRESH_BINARY);
-    threshold(rgb[2], out2, 200 , 255, THRESH_BINARY);
-
-    imshow("out",out);
-
-
-    waitKey();
-}
-
-void test2(){
-    VideoCapture cap(1); // open the default camera
-    if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
-    for(int i=0; i<500;i++){
-        Mat frame;
-        cap >> frame; // get a new frame from camera
-        Mat out;
-        threshold(frame, out, 150 , 255, THRESH_BINARY);
-
-        imshow("out", out);
-        waitKey(10);
-    }
-
-}
-
-void test3(){
-    VideoCapture cap(1); // open the default camera
-    if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
-    for(int i=0; i<100;i++){
-        Mat frame;
-        cap >> frame; // get a new frame from camera
-        waitKey(5);
-
-        Mat out;
-        cap >> out; // get a new frame from camera
-
-
-        imshow("out", out);
-        imshow("frame", frame);
-        imshow("resta",out-frame);
-        waitKey(10);
-    }
-}
-
-void test4(){
-    VideoCapture cap(1);
-    if(!cap.isOpened()) cout<<"\n\n\n\nERROR\n\n\n\n";
-    for(int i=0; i<4;i++){
-        Mat frame;
-        //cap >> frame; // get a new frame from camera
-        cap.grab();
-        cap.grab();
-        cap.grab();
-        cap.grab();
-        cap.read(frame);
-
-        imshow("frame", frame);
-        waitKey(0);
-    }
-
-}
-
-
-void test5(){
-    openCamera(1);
-    for(int i=0; i<10;i++){
-        Mat image=getFrame();
-        imshow("frame", image);
-        waitKey(0);
-    }
-}
-
-void test6(){
-    Mat image;
-    image=cv::imread("../../../../../Imagenes/ceabot1.jpg");
-    if(image.empty()) cout<<"ERRPR";
-    imshow("Imagen original",image);
-
-    Mat red= extractChannel(image, 2);
-    imshow("Canal rojo",red);
-    waitKey();
-
-}
-
-void test7(){
+void test_resta(){
     Mat image;
     image=cv::imread("../../../../../Imagenes/ceabot3.jpg");
 
@@ -140,117 +39,178 @@ void test7(){
     waitKey();
 }
 
-void test8(){
-    Mat src;
-    src=cv::imread("../../../../../Imagenes/ceabot3.jpg");
-
-    Mat red= extractChannel(src, 2);
-    Mat1b result;
-    threshold(red, result, 120 , 255, THRESH_BINARY);
-
-    raider Raider;
-
-    getFrame();
-
-    imshow("Canal rojo threshold", result);
-    waitKey();
-
-    erode(result, result, Mat(),Point(-1,-1),3);
-    dilate(result, result, Mat(),Point(-1,-1),3);
-
-
-
-
-    Mat dst;
-    Canny(result, dst, 50, 200, 3);
-
-
-
-    dilate(dst, dst, Mat(),Point(-1,-1),1);
-
-
-    imshow("canny",dst);
-    imshow("restachnga",dst+result);
-    waitKey();
-
-
-    vector<Vec4i> lines;
-    HoughLinesP(dst, lines, 1, CV_PI/180, 50, 50,10);
-    for( size_t i = 0; i < lines.size(); i++ )
-    {
-        Vec4i l = lines[i];
-        line( dst, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(125), 5, CV_AA);
-    }
-
-    imshow("lineas", dst);
-
-
-    //dilate(dst, dst, Mat(),Point(-1,-1),11);
-    //erode(dst, dst, Mat(),Point(-1,-1),25);
-
-
-    //imshow("source", src);
-    //imshow("detected lines", dst);
-
-    waitKey();
-}
-
-void test9(){
-    openCamera(1);
+void test_lineas(){
+    openCamera(-1);
 
     while(waitKey(10)!='\n'){
         Mat image=getFrame();
         imshow("frame", image);
 
+        Mat red=extractChannel(image,2);
+        Mat blue=extractChannel(image,0);
+        Mat green=extractChannel(image,1);
 
-        //EXTRACCION DE COLOR VERDE (funciona guay)
-        Mat op1= extractChannel(image, 1); //1 GREEN
-        op1-= extractChannel(image, 0); //0 BLUE
-        //imshow("zona verde-azul",op1);
+        //Extraccion de verde
+        Mat result=(green-red)+(green-blue);
+        //imshow("(green-red)+(green-blue)", result);
 
-        Mat op2= extractChannel(image, 1); //1 GREEN
-        op2-= extractChannel(image, 2); //2 RED
-        //imshow("zona verde-rojo",op2);
+        GaussianBlur(result,result,Size(11,11),0,0);
+        //imshow("blur", result);
 
-        Mat operation=op2+op1;
+        Mat1b thresh;
+        threshold(result, thresh, 70 , 255, THRESH_BINARY_INV);
+        imshow("Thresholdbinary",thresh);
+    Mat dst;
+    Canny(thresh, dst, 50, 150, 5);
+    dilate(dst, dst, Mat(),Point(-1,-1),1);
 
-        //zona (verde-rojo)+(verde-azul)
-        operation=operation;
-        imshow("extraccion verde",operation*2.5);
+    imshow("CANNY",dst);
 
-        //imshow("Canal rojo",red);
-        Mat1b result;
-        threshold(operation, result, 50 , 255, THRESH_BINARY);
-        imshow("Threshold",result);
-
-        //Mat1b aux=result.clone();
-
-        //imshow("cerro",result);
-
-        dilate(result, result, Mat(),Point(-1,-1),2);
-        erode(result, result, Mat(),Point(-1,-1),2);
+    Mat lineas=imread("../../../../../Imagenes/cielo.JPG");
 
 
+    image.copyTo(lineas, thresh);
 
+    //lineas=lineas*0;
+    imshow("lineasss",lineas);
+    Scalar calor(0,0,255);
+    vector<Vec4i> lines;
+    HoughLinesP(dst, lines, 1, CV_PI/180, 50, 5,5);
+    for( size_t i = 0; i < lines.size(); i++ )
+    {
+        Vec4i l = lines[i];
+        line( lineas, Point(l[0], l[1]), Point(l[2], l[3]), calor, 5, CV_AA);
+    }
 
+    imshow("lineas", lineas);
+}
+}
 
+void test_verde(){
+    openCamera(-1);
 
-        imshow("limpia",result);
+    while(waitKey(10)!='\n'){
+        Mat image=getFrame();
+        imshow("frame", image);
 
-        //imshow("resta",aux-result);
+        Mat red=extractChannel(image,2);
+        Mat blue=extractChannel(image,0);
+        Mat green=extractChannel(image,1);
 
+        //Extraccion de verde
+        Mat result=(green-red)+(green-blue);
+        imshow("(green-red)+(green-blue)", result);
 
-        //waitKey(10);
+        GaussianBlur(result,result,Size(11,11),0,0);
+        imshow("blur", result);
+
+        Mat1b thresh;
+        threshold(result, thresh, 50 , 255, THRESH_BINARY_INV);
+        imshow("Thresholdbinary",thresh);
+
     }
 
 }
 
 
+void test_rango_hsv(){
+
+    openCamera(-1);
+
+    int i=0;
+    int increment=30;
+    while(1){
+        char c=waitKey(0);
+        if(c=='\n') break;
+        if(c=='a') i+=2;
+        if(c=='s') i-=2;
+
+        cout<<"From "<<i<<" To "<<i+increment<<endl;
+        //Mat image=imread("../../../../../Imagenes/hsv.jpg");
+        Mat image=getFrame();
+
+        imshow("frame", image);
+
+
+
+
+        //HSV
+        Mat hsv;
+        cvtColor(image,hsv,CV_RGB2HSV);
+        //imshow("HSV",hsv);
+        Mat im=image.clone();
+        im=hsv;
+        //imshow("im",im);
+
+        Mat v=extractChannel(im,2);
+        Mat h=extractChannel(im,0);
+        Mat s=extractChannel(im,1);
+        //imshow("h",h);
+        //imshow("s",s);
+        //imshow("v",v);/**/
+
+        Mat1b thresh1;
+        threshold(h, thresh1, i , 255, THRESH_BINARY);
+        //imshow("Thresholdbinary1",thresh1);
+        Mat1b thresh2;
+        threshold(h, thresh2,i+increment , 255, THRESH_BINARY);
+        //imshow("Thresholdbinary2",thresh2);
+        Mat1b thresh=thresh1-thresh2;
+        imshow("Thresholdbinary+",thresh);
+    }
+
+}
+
+void test_hsv(){
+    openCamera(-1);
+    int i=0;
+    int increment=20;
+
+    while(1){
+        char c=waitKey(0);
+        if(c=='\n') break;
+        if(c=='a') i+=2;
+        if(c=='s') i-=2;
+
+        cout<<"From "<<i<<" To "<<i+increment<<endl;
+        Mat image=getFrame();
+        imshow("frame", image);
+
+
+
+
+        //HSV
+        Mat hsv;
+        cvtColor(image,hsv,CV_RGB2HSV);
+        //imshow("HSV",hsv);
+        Mat im=image.clone();
+        im=hsv;
+        //imshow("im",im);
+
+        Mat v=extractChannel(im,2);
+        Mat s=extractChannel(im,0);
+        Mat h=extractChannel(im,1);
+        imshow("h",h);
+        //imshow("s",s);
+        //imshow("v",v);/**/
+
+        Mat1b thresh1;
+        threshold(h, thresh1, i , 255, THRESH_BINARY);
+        imshow("Thresholdbinary1",thresh1);
+        Mat1b thresh2;
+        threshold(h, thresh2,i+increment , 255, THRESH_BINARY);
+        imshow("Thresholdbinary2",thresh2);
+        Mat1b thresh=thresh2+thresh1;
+        imshow("Thresholdbinary+",thresh);
+    }
+
+}
+
 
 int main()
 {
     cout<<"INICIO\n";
-    test9();
+    test_lineas();
     cout<<"\nFIN";
     //waitKey(0);
 
