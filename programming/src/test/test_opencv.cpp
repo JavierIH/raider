@@ -19,7 +19,7 @@ void test_resta(){
     Mat red= extractChannel(image, 2);
     imshow("Canal rojo",red);
     Mat1b result;
-    threshold(red, result, 120 , 255, THRESH_BINARY);
+    threshold(red, result, 40 , 255, THRESH_BINARY);
     imshow("Threshold",result);
 
     Mat1b aux=result.clone();
@@ -40,9 +40,14 @@ void test_resta(){
 }
 
 void test_lineas(){
-    openCamera(-1);
+    openCamera(1);
 
+    int i=0;
     while(waitKey(10)!='\n'){
+
+
+        cout<<i<<endl;
+
         Mat image=getFrame();
         imshow("frame", image);
 
@@ -55,10 +60,10 @@ void test_lineas(){
         //imshow("(green-red)+(green-blue)", result);
 
         GaussianBlur(result,result,Size(11,11),0,0);
-        //imshow("blur", result);
+        imshow("blur", result);
 
         Mat1b thresh;
-        threshold(result, thresh, 70 , 255, THRESH_BINARY_INV);
+        threshold(result, thresh, 50 , 255, THRESH_BINARY_INV);
         imshow("Thresholdbinary",thresh);
     Mat dst;
     Canny(thresh, dst, 50, 150, 5);
@@ -72,7 +77,7 @@ void test_lineas(){
     image.copyTo(lineas, thresh);
 
     //lineas=lineas*0;
-    imshow("lineasss",lineas);
+    //imshow("lineasss",lineas);
     Scalar calor(0,0,255);
     vector<Vec4i> lines;
     HoughLinesP(dst, lines, 1, CV_PI/180, 50, 5,5);
@@ -82,7 +87,7 @@ void test_lineas(){
         line( lineas, Point(l[0], l[1]), Point(l[2], l[3]), calor, 5, CV_AA);
     }
 
-    imshow("lineas", lineas);
+    //imshow("lineas", lineas);
 }
 }
 
