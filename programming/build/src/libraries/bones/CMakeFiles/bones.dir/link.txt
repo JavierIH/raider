@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC    -shared -Wl,-soname,libbones.so -o ../../../lib/libbones.so CMakeFiles/bones.dir/bones.cpp.o ../../../lib/libserialib.so -Wl,-rpath,/home/javierih/raider/Raider/programming/build/lib 

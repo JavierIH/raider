@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="raider2" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\usr\local\share\OpenCV\;CMake Files\src\;CMake Files\src\libraries\;CMake Files\src\libraries\serialib\;CMake Files\src\libraries\bones\;CMake Files\src\libraries\eye\;CMake Files\src\libraries\raider\;CMake Files\src\test\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/javierih/raider/Raider/programming/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/javierih/raider/Raider/programming/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="serialib">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libserialib.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/serialib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 serialib" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="serialib/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libserialib.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/serialib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 serialib/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/serialib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bones">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libbones.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/bones" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 bones" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bones/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libbones.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/bones" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 bones/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/bones/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="eye">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libeye.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/eye" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 eye" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="eye/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libeye.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/eye" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 eye/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/eye/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="raider">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libraider.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/raider" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 raider" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="raider/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/lib/libraider.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/src/libraries/raider" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 raider/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/libraries/raider/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_auxiliar">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_auxiliar" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_auxiliar" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_auxiliar/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_auxiliar" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_auxiliar/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_communication">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_communication" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_communication" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_communication/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_communication" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_communication/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_integration">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_integration" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_integration" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_integration/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_integration" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_integration/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_opencv">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_opencv" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_opencv" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_opencv/fast">
+         <Option output="/home/javierih/raider/Raider/programming/build/bin/test_opencv" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/javierih/raider/Raider/programming/build/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/include/opencv" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 test_opencv/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/javierih/raider/Raider/programming/build/src/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/bones/bones.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/eye/eye.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/raider/raider.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/serialib/serialib.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/test/test_auxiliar.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/test/test_communication.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/test/test_integration.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/test/test_opencv.cpp">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/bones/bones.h">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/eye/eye.h">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/raider/raider.h">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/serialib/serialib.h">
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/../../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/../../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/../../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/../../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\libraries\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/serialib/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\libraries\serialib\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/bones/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\libraries\bones\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/eye/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\libraries\eye\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/libraries/raider/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\libraries\raider\" />
+      </Unit>
+      <Unit filename="/home/javierih/raider/Raider/programming/src/test/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\test\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

@@ -41,12 +41,7 @@ void test_resta(){
 
 void test_lineas(){
     openCamera(1);
-
-    int i=0;
     while(waitKey(10)!='\n'){
-
-
-        cout<<i<<endl;
 
         Mat image=getFrame();
         imshow("frame", image);
@@ -92,9 +87,9 @@ void test_lineas(){
 }
 
 void test_verde(){
-    openCamera(-1);
+    openCamera(0);
 
-    while(waitKey(10)!='\n'){
+    while(waitKey(1000)!='\n'){
         Mat image=getFrame();
         imshow("frame", image);
 
@@ -102,9 +97,12 @@ void test_verde(){
         Mat blue=extractChannel(image,0);
         Mat green=extractChannel(image,1);
 
+
+        imshow("azul", green-red);
+
         //Extraccion de verde
         Mat result=(green-red)+(green-blue);
-        imshow("(green-red)+(green-blue)", result);
+        imshow("(green-red)+(green-blue)", result*2);
 
         GaussianBlur(result,result,Size(11,11),0,0);
         imshow("blur", result);
@@ -120,7 +118,7 @@ void test_verde(){
 
 void test_rango_hsv(){
 
-    openCamera(-1);
+    openCamera(1);
 
     int i=0;
     int increment=30;
@@ -142,10 +140,10 @@ void test_rango_hsv(){
         //HSV
         Mat hsv;
         cvtColor(image,hsv,CV_RGB2HSV);
-        //imshow("HSV",hsv);
+        imshow("HSV",hsv);
         Mat im=image.clone();
         im=hsv;
-        //imshow("im",im);
+        imshow("im",im);
 
         Mat v=extractChannel(im,2);
         Mat h=extractChannel(im,0);
@@ -156,10 +154,10 @@ void test_rango_hsv(){
 
         Mat1b thresh1;
         threshold(h, thresh1, i , 255, THRESH_BINARY);
-        //imshow("Thresholdbinary1",thresh1);
+        imshow("Thresholdbinary1",thresh1);
         Mat1b thresh2;
         threshold(h, thresh2,i+increment , 255, THRESH_BINARY);
-        //imshow("Thresholdbinary2",thresh2);
+        imshow("Thresholdbinary2",thresh2);
         Mat1b thresh=thresh1-thresh2;
         imshow("Thresholdbinary+",thresh);
     }
@@ -215,12 +213,17 @@ void test_hsv(){
 int main()
 {
     cout<<"INICIO\n";
-    test_lineas();
+    test_verde();
     cout<<"\nFIN";
     //waitKey(0);
 
     return 0;
 }
+
+
+
+
+
 
 
 
