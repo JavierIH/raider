@@ -49,19 +49,15 @@ opencv2/opencv.hpp
 /home/javierih/raider/Raider/programming/src/test/../libraries/raider/../eye/eye.h
 
 /home/javierih/raider/Raider/programming/src/test/test_auxiliar.cpp
-iostream
+opencv2/imgproc/imgproc.hpp
+-
+opencv2/highgui/highgui.hpp
 -
 ../libraries/raider/raider.h
 /home/javierih/raider/Raider/programming/src/test/../libraries/raider/raider.h
 ../libraries/eye/eye.h
 /home/javierih/raider/Raider/programming/src/test/../libraries/eye/eye.h
-opencv2/highgui/highgui.hpp
-/home/javierih/raider/Raider/programming/src/test/opencv2/highgui/highgui.hpp
-opencv2/imgproc/imgproc.hpp
-/home/javierih/raider/Raider/programming/src/test/opencv2/imgproc/imgproc.hpp
 iostream
--
-stdio.h
 -
 
 /usr/local/include/opencv2/calib3d/calib3d.hpp

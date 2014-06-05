@@ -172,7 +172,7 @@ OpenCV_LIB_DIR_DBG:PATH=
 //Path where release OpenCV libraries are located
 OpenCV_LIB_DIR_OPT:PATH=
 
-//Auxiliar
+//Auxiliar, not for beaglebone
 TEST_AUXILIAR:BOOL=ON
 
 //Integration test

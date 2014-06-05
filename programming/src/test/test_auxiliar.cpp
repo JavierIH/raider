@@ -1,84 +1,140 @@
-#include<iostream>
-#include "../libraries/raider/raider.h"
-#include "../libraries/eye/eye.h"
 
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
-#include <iostream>
-#include <stdio.h>
-
-using namespace std;
-using namespace cv;
 
 /**
- * @function main
+ * Code for thinning a binary image using Zhang-Suen algorithm.
  */
-int main( int argc, char** argv )
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include "../libraries/raider/raider.h"
+#include "../libraries/eye/eye.h"
+#include <iostream>
+
+
+/**
+ * Perform one thinning iteration.
+ * Normally you wouldn't call this function directly from your code.
+ *
+ * @param  im    Binary image with range = 0-1
+ * @param  iter  0=even, 1=odd
+ */
+
+using namespace cv;
+
+void thinningIteration(cv::Mat& im, int iter)
 {
-    openCamera(1);
+    cv::Mat marker = cv::Mat::zeros(im.size(), CV_8UC1);
 
-    while(waitKey(5)!='\n'){
+    for (int i = 1; i < im.rows-1; i++)
+    {
+        for (int j = 1; j < im.cols-1; j++)
+        {
+            uchar p2 = im.at<uchar>(i-1, j);
+            uchar p3 = im.at<uchar>(i-1, j+1);
+            uchar p4 = im.at<uchar>(i, j+1);
+            uchar p5 = im.at<uchar>(i+1, j+1);
+            uchar p6 = im.at<uchar>(i+1, j);
+            uchar p7 = im.at<uchar>(i+1, j-1);
+            uchar p8 = im.at<uchar>(i, j-1);
+            uchar p9 = im.at<uchar>(i-1, j-1);
 
-  Mat src, dst;
+            int A  = (p2 == 0 && p3 == 1) + (p3 == 0 && p4 == 1) +
+                     (p4 == 0 && p5 == 1) + (p5 == 0 && p6 == 1) +
+                     (p6 == 0 && p7 == 1) + (p7 == 0 && p8 == 1) +
+                     (p8 == 0 && p9 == 1) + (p9 == 0 && p2 == 1);
+            int B  = p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9;
+            int m1 = iter == 0 ? (p2 * p4 * p6) : (p2 * p4 * p8);
+            int m2 = iter == 0 ? (p4 * p6 * p8) : (p2 * p6 * p8);
 
-  /// Load image
-  src=getFrame();
+            if (A == 1 && (B >= 2 && B <= 6) && m1 == 0 && m2 == 0)
+                marker.at<uchar>(i,j) = 1;
+        }
+    }
 
-  imshow("Frame",src);
-
-  if( !src.data )
-    { return -1; }
-
-  /// Separate the image in 3 places ( B, G and R )
-  vector<Mat> bgr_planes;
-  split( src, bgr_planes );
-
-  /// Establish the number of bins
-  int histSize = 256;
-
-  /// Set the ranges ( for B,G,R) )
-  float range[] = { 0, 256 } ;
-  const float* histRange = { range };
-
-  bool uniform = true; bool accumulate = false;
-
-  Mat b_hist, g_hist, r_hist;
-
-  /// Compute the histograms:
-  calcHist( &bgr_planes[0], 1, 0, Mat(), b_hist, 1, &histSize, &histRange, uniform, accumulate );
-  calcHist( &bgr_planes[1], 1, 0, Mat(), g_hist, 1, &histSize, &histRange, uniform, accumulate );
-  calcHist( &bgr_planes[2], 1, 0, Mat(), r_hist, 1, &histSize, &histRange, uniform, accumulate );
-
-  // Draw the histograms for B, G and R
-  int hist_w = 512; int hist_h = 400;
-  int bin_w = cvRound( (double) hist_w/histSize );
-
-  Mat histImage( hist_h, hist_w, CV_8UC3, Scalar( 0,0,0) );
-
-  /// Normalize the result to [ 0, histImage.rows ]
-  normalize(b_hist, b_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
-  normalize(g_hist, g_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
-  normalize(r_hist, r_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
-
-  /// Draw for each channel
-  for( int i = 1; i < histSize; i++ )
-  {
-      line( histImage, Point( bin_w*(i-1), hist_h - cvRound(b_hist.at<float>(i-1)) ) ,
-                       Point( bin_w*(i), hist_h - cvRound(b_hist.at<float>(i)) ),
-                       Scalar( 255, 0, 0), 2, 8, 0  );
-      line( histImage, Point( bin_w*(i-1), hist_h - cvRound(g_hist.at<float>(i-1)) ) ,
-                       Point( bin_w*(i), hist_h - cvRound(g_hist.at<float>(i)) ),
-                       Scalar( 0, 255, 0), 2, 8, 0  );
-      line( histImage, Point( bin_w*(i-1), hist_h - cvRound(r_hist.at<float>(i-1)) ) ,
-                       Point( bin_w*(i), hist_h - cvRound(r_hist.at<float>(i)) ),
-                       Scalar( 0, 0, 255), 2, 8, 0  );
-  }
-
-  /// Display
-  namedWindow("calcHist Demo", CV_WINDOW_AUTOSIZE );
-  imshow("calcHist Demo", histImage );
-
+    im &= ~marker;
 }
 
-  return 0;
+/**
+ * Function for thinning the given binary image
+ *
+ * @param  im  Binary image with range = 0-255
+ */
+void thinning(cv::Mat& im)
+{
+    im /= 255;
+
+    cv::Mat prev = cv::Mat::zeros(im.size(), CV_8UC1);
+    cv::Mat diff;
+
+    do {
+        thinningIteration(im, 0);
+        thinningIteration(im, 1);
+        cv::absdiff(im, prev, diff);
+        im.copyTo(prev);
+    }
+    while (cv::countNonZero(diff) > 0);
+
+    im *= 255;
+}
+
+/**
+ * This is an example on how to call the thinning function above.
+ */
+int main()
+{
+    cv::Mat image_cruda = cv::imread("../../../../../Imagenes/ceabot3sinrobot.jpg");
+
+
+
+    imshow("frame", image_cruda);
+    Mat image=image_cruda(Rect(0,image_cruda.rows/2,image_cruda.cols,image_cruda.rows/2));
+
+
+    Mat red=extractChannel(image,2);
+    Mat blue=extractChannel(image,0);
+    Mat green=extractChannel(image,1);
+
+
+    //imshow("azul", green-red);
+
+    //Extraccion de verde
+    Mat result=(green-red)+(green-blue);
+    //imshow("(green-red)+(green-blue)", result*2);
+
+    GaussianBlur(result,result,Size(11,11),0,0);
+    //imshow("blur", result);
+
+    Mat1b src;
+    threshold(result, src, 50 , 255, THRESH_BINARY_INV);
+    //imshow("Thresholdbinary",src);
+    waitKey(0);
+    destroyAllWindows();
+
+    if (src.empty())
+        return -1;
+
+    src=255-src;
+
+    //dilate(src, src, Mat(),Point(-1,-1),19);
+
+    //erode(src, src, Mat(),Point(-1,-1),99);
+
+
+    imshow("dilate",src);
+
+
+
+    cv::Mat bw=src.clone();
+
+
+    std::cout<<"TODO OK";
+
+    std::cout<<"HI\n";
+    thinning(bw);
+    std::cout<<"BYE";
+
+    cv::imshow("image cruda", image_cruda);
+    cv::imshow("dst", bw);
+    cv::waitKey(0);
+
+    return 0;
 }
