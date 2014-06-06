@@ -81,12 +81,16 @@ void thinning(cv::Mat& im)
  */
 int main()
 {
-    cv::Mat image_cruda = cv::imread("../../../../../Imagenes/ceabot3sinrobot.jpg");
+    openCamera(1);
+
+    //while(0){
+
+    cv::Mat image_cruda = getFrame();
 
 
 
     imshow("frame", image_cruda);
-    Mat image=image_cruda(Rect(0,image_cruda.rows/2,image_cruda.cols,image_cruda.rows/2));
+    Mat image=image_cruda;//(Rect(0,image_cruda.rows/2,image_cruda.cols,image_cruda.rows/2));
 
 
     Mat red=extractChannel(image,2);
@@ -105,7 +109,7 @@ int main()
 
     Mat1b src;
     threshold(result, src, 50 , 255, THRESH_BINARY_INV);
-    //imshow("Thresholdbinary",src);
+    imshow("Thresholdbinary",src);
     waitKey(0);
     destroyAllWindows();
 
@@ -114,7 +118,7 @@ int main()
 
     src=255-src;
 
-    //dilate(src, src, Mat(),Point(-1,-1),19);
+    dilate(src, src, Mat(),Point(-1,-1),3);
 
     //erode(src, src, Mat(),Point(-1,-1),99);
 
@@ -135,6 +139,7 @@ int main()
     cv::imshow("image cruda", image_cruda);
     cv::imshow("dst", bw);
     cv::waitKey(0);
-
+//}
     return 0;
+
 }

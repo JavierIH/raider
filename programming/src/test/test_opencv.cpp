@@ -40,8 +40,8 @@ void test_resta(){
 }
 
 void test_lineas(){
-    openCamera(1);
-    while(waitKey(10)!='\n'){
+    openCamera(0);
+    while(waitKey(0)!=('\n'||'a')){
 
         Mat image=getFrame();
         imshow("frame", image);
@@ -213,7 +213,7 @@ void test_hsv(){
 int main()
 {
     cout<<"INICIO\n";
-    test_verde();
+    test_lineas();
     cout<<"\nFIN";
     //waitKey(0);
 
