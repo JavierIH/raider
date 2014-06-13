@@ -1,43 +1,64 @@
 use <raid3r/raid3r.scad>
 
-module beagleboneHoles(z){
-union(){
-translate([0,0,-1])cylinder(r=2,h=z, $fn=8);
-translate([0,46.5,-1])cylinder(r=2,h=z, $fn=8);
-translate([64.5+1.5,2.5,-1])cylinder(r=2,h=z, $fn=8);
-translate([64.5+1.5,44,-1])cylinder(r=2,h=z, $fn=8);
-translate([0,0,-1])cylinder(r=3,h=3, $fn=8);
-translate([0,46.5,-1])cylinder(r=3,h=3, $fn=8);
-translate([64.5+1.5,2.5,-1])cylinder(r=3,h=3, $fn=8);
-translate([64.5+1.5,44,-1])cylinder(r=3,h=3, $fn=8);
+
+module screw(d){
+translate([0,0,8])rotate([0,180,0])union(){
+cylinder(r=5.3/2, h=6, $fn=10);
+cylinder(r=2.9/2, h=6+d, $fn=10);
 }
+}
+
+
+
+module bbbholes(z){
+union(){
+translate([0,0,0])screw(6);
+translate([0,41.85,0])screw(6);
+
+translate([0,-3.1,0]){
+translate([65.8,0,0])screw(6);
+translate([65.8,48.2,0])screw(6);
+}
+
 
 }
 
-union(){
+}
+
 	difference(){
+union(){
+
 		translate([-51,0,0])cube([102,64,4]);
+	translate([26,64,0])cube([25,2,6]);
+	translate([26,58,0])cube([20,2,6]);
+	mirror([1,0,0]){
+	translate([26,64,0])cube([25,2,6]);
+	translate([26,58,0])cube([20,2,6]);}
+
+
+}
 
 		translate([-10-51,-12,-5])rotate([0,0,-20])cube([20,20,80]);
 		mirror([1,0,0])translate([-10-51,-12,-5])rotate([0,0,-20])cube([20,20,80]);
 		translate([78/2,26,0])agujereado(3,1,6);
 		mirror([1,0,0])translate([78/2,26,0])agujereado(3,1,6);
-		translate([-11,50,-1])cube([24,6,25]);
-		translate([-30-1.5,8+6.5/2,0])beagleboneHoles(6);
-	}
-	translate([26,64,0])cube([25,2,6]);
-	translate([26,58,0])cube([20,2,6]);
-	mirror([1,0,0]){
-	translate([26,64,0])cube([25,2,6]);
-	translate([36,58,0])cube([10,2,6]);}
-
+		translate([-15-19,12,0])bbbholes(6);
+		translate([-4,28,-1]){
+		translate([0,0,0])cylinder(r=1.2,h=6);
+		translate([8,0,0])cylinder(r=1.2,h=6);
+		translate([8,24,0])cylinder(r=1.2,h=6);
+		translate([0,24,0])cylinder(r=1.2,h=6);
 
 }
+hull(){
+		translate([0,20,-1])cylinder(r=3,h=6);
+		translate([10,10,-1])cylinder(r=3,h=6);
+		translate([-10,10,-1])cylinder(r=3,h=6);
+}
 
-translate([-44,20,0])difference(){
-translate([33,27,0])cube([24,3,25]);
-translate([37,20,20])rotate([-90,0,0])union(){
-cylinder(r=1.5, h=100,$fn=10);
-translate([16,0,0])cylinder(r=1.5, h=100,$fn=10);
-}}
+	}
+
+
+
+
 

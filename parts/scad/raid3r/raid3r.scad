@@ -47,3 +47,16 @@ module miniservo(H){
 		}
 	}
 }
+
+module beagleboneHoles(z){
+union(){
+	translate([0,0,-1])cylinder(r=2,h=z, $fn=8);
+	translate([0,46.5,-1])cylinder(r=2,h=z, $fn=8);
+	translate([64.5+1.5,2.5,-1])cylinder(r=2,h=z, $fn=8);
+	translate([64.5+1.5,44,-1])cylinder(r=2,h=z, $fn=8);
+	translate([0,0,-1])cylinder(r=3,h=3, $fn=8);
+	translate([0,46.5,-1])cylinder(r=3,h=3, $fn=8);
+	translate([64.5+1.5,2.5,-1])cylinder(r=3,h=3, $fn=8);
+	translate([64.5+1.5,44,-1])cylinder(r=3,h=3, $fn=8);
+	}
+}
