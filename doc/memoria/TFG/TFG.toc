@@ -1,33 +1,41 @@
 \select@language {spanish}
-\contentsline {chapter}{Agradecimientos}{\es@scroman {v}}{chapter*.1}
-\contentsline {chapter}{Resumen}{\es@scroman {vii}}{chapter*.2}
-\contentsline {paragraph}{Palabras clave:}{\es@scroman {vii}}{section*.3}
-\contentsline {chapter}{Abstract}{\es@scroman {ix}}{chapter*.4}
-\contentsline {paragraph}{Keywords:}{\es@scroman {ix}}{section*.5}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {vii}}{chapter*.1}
+\contentsline {chapter}{Resumen}{\es@scroman {ix}}{chapter*.2}
+\contentsline {paragraph}{Palabras clave:}{\es@scroman {ix}}{section*.3}
+\contentsline {chapter}{Abstract}{\es@scroman {xi}}{chapter*.4}
+\contentsline {paragraph}{Keywords:}{\es@scroman {xi}}{section*.5}
 \contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}XXXXXXXXXX}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}XXXXXXXXXXXX}{1}{section.1.2}
+\contentsline {section}{\numberline {1.2} TODO Introduccion a la rob\'otica Open-Source}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Asociaci\'on de Rob\'otica de la Universidad Carlos III}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}Descripci\'on del proyecto}{2}{section.1.4}
-\contentsline {section}{\numberline {1.5}Estructura del documento}{2}{section.1.5}
-\contentsline {chapter}{\numberline {2}Objetivos}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Implantaci\'on de un controlador basado en visi\'on por computador}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Estudio de sensores y actuadores}{4}{section.2.2}
-\contentsline {section}{\numberline {2.3}Dise\~no electr\'onico}{4}{section.2.3}
-\contentsline {section}{\numberline {2.4}Dise\~no mec\'anico}{5}{section.2.4}
-\contentsline {section}{\numberline {2.5}Programaci\'on}{5}{section.2.5}
-\contentsline {paragraph}{Palabras clave:}{7}{section*.8}
-\contentsline {chapter}{\numberline {3}Descripci\'on de la linea de investigaci\'on}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Linea de investigaci\'on de robots mini-humanoides}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Campeonato CEABOT}{10}{section.3.2}
-\contentsline {paragraph}{Palabras clave:}{12}{section*.9}
+\contentsline {section}{\numberline {1.4}Descripci\'on del proyecto}{3}{section.1.4}
+\contentsline {section}{\numberline {1.5}Estructura del documento}{3}{section.1.5}
+\contentsline {chapter}{\numberline {2}Objetivos}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Implantaci\'on de un controlador basado en visi\'on por computador}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Estudio de sensores y actuadores}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Dise\~no electr\'onico}{6}{section.2.3}
+\contentsline {section}{\numberline {2.4}Dise\~no mec\'anico}{7}{section.2.4}
+\contentsline {section}{\numberline {2.5}Programaci\'on}{7}{section.2.5}
+\contentsline {paragraph}{Palabras clave:}{9}{section*.8}
+\contentsline {chapter}{\numberline {3}Descripci\'on de la linea de investigaci\'on}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Linea de investigaci\'on de robots mini-humanoides}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Campeonato CEABOT}{11}{section.3.2}
+\contentsline {paragraph}{Palabras clave:}{13}{section*.9}
 \contentsline {chapter}{\numberline {4}Estado del arte}{15}{chapter.4}
 \contentsline {paragraph}{Palabras clave:}{15}{section*.10}
 \contentsline {chapter}{\numberline {5}Descripci\'on de las herramientas a utilizar}{17}{chapter.5}
 \contentsline {paragraph}{Palabras clave:}{17}{section*.11}
 \contentsline {chapter}{\numberline {6}Desarrollo}{19}{chapter.6}
-\contentsline {paragraph}{Palabras clave:}{19}{section*.12}
-\contentsline {chapter}{Conclusiones}{21}{chapter*.13}
-\contentsline {section}{\numberline {6.1}Conclusi\'on}{21}{section.6.1}
-\contentsline {section}{\numberline {6.2}Desarrollos futuros}{21}{section.6.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{23}{section.6.2}
+\contentsline {section}{\numberline {6.1}Plataforma rob\'otica}{19}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Selecci\'on de una plataforma rob\'otica}{19}{subsection.6.1.1}
+\contentsline {subsubsection}{Robonova, de Hitec}{19}{section*.12}
+\contentsline {subsubsection}{KHR-3HV, de Kondo}{20}{section*.13}
+\contentsline {subsubsection}{5710k, de RoboBuilder}{21}{section*.14}
+\contentsline {subsubsection}{Robovie-X, de Vstone}{21}{section*.15}
+\contentsline {subsubsection}{Bioloid, de Robotis}{21}{section*.16}
+\contentsline {section}{\numberline {6.2}Modificaciones sobre el robot Bioloid}{21}{section.6.2}
+\contentsline {paragraph}{Palabras clave:}{21}{section*.17}
+\contentsline {chapter}{Conclusiones}{23}{chapter*.18}
+\contentsline {section}{\numberline {6.3}Conclusi\'on}{23}{section.6.3}
+\contentsline {section}{\numberline {6.4}Desarrollos futuros}{23}{section.6.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{25}{section.6.4}

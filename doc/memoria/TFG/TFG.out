@@ -3,7 +3,7 @@
 \BOOKMARK [0][-]{chapter*.4}{Abstract}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 4
 \BOOKMARK [1][-]{section.1.1}{XXXXXXXXXX}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.2}{XXXXXXXXXXXX}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{ TODO Introduccion a la rob\363tica Open-Source}{chapter.1}% 6
 \BOOKMARK [1][-]{section.1.3}{Asociaci\363n de Rob\363tica de la Universidad Carlos III}{chapter.1}% 7
 \BOOKMARK [1][-]{section.1.4}{Descripci\363n del proyecto}{chapter.1}% 8
 \BOOKMARK [1][-]{section.1.5}{Estructura del documento}{chapter.1}% 9
@@ -19,7 +19,10 @@
 \BOOKMARK [0][-]{chapter.4}{Estado del arte}{}% 19
 \BOOKMARK [0][-]{chapter.5}{Descripci\363n de las herramientas a utilizar}{}% 20
 \BOOKMARK [0][-]{chapter.6}{Desarrollo}{}% 21
-\BOOKMARK [0][-]{chapter*.13}{Conclusiones}{}% 22
-\BOOKMARK [1][-]{section.6.1}{Conclusi\363n}{chapter*.13}% 23
-\BOOKMARK [1][-]{section.6.2}{Desarrollos futuros}{chapter*.13}% 24
-\BOOKMARK [0][-]{section.6.2}{Bibliograf\355a}{}% 25
+\BOOKMARK [1][-]{section.6.1}{Plataforma rob\363tica}{chapter.6}% 22
+\BOOKMARK [2][-]{subsection.6.1.1}{Selecci\363n de una plataforma rob\363tica}{section.6.1}% 23
+\BOOKMARK [1][-]{section.6.2}{Modificaciones sobre el robot Bioloid}{chapter.6}% 24
+\BOOKMARK [0][-]{chapter*.18}{Conclusiones}{}% 25
+\BOOKMARK [1][-]{section.6.3}{Conclusi\363n}{chapter*.18}% 26
+\BOOKMARK [1][-]{section.6.4}{Desarrollos futuros}{chapter*.18}% 27
+\BOOKMARK [0][-]{section.6.4}{Bibliograf\355a}{}% 28
