@@ -1,13 +1,13 @@
 \select@language {spanish}
-\contentsline {chapter}{Agradecimientos}{\es@scroman {vii}}{chapter*.1}
-\contentsline {chapter}{Resumen}{\es@scroman {ix}}{chapter*.2}
-\contentsline {paragraph}{Palabras clave:}{\es@scroman {ix}}{section*.3}
-\contentsline {chapter}{Abstract}{\es@scroman {xi}}{chapter*.4}
-\contentsline {paragraph}{Keywords:}{\es@scroman {xi}}{section*.5}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {v}}{chapter*.1}
+\contentsline {chapter}{Resumen}{\es@scroman {vii}}{chapter*.2}
+\contentsline {paragraph}{Palabras clave:}{\es@scroman {vii}}{section*.3}
+\contentsline {chapter}{Abstract}{\es@scroman {ix}}{chapter*.4}
+\contentsline {paragraph}{Keywords:}{\es@scroman {ix}}{section*.5}
 \contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}XXXXXXXXXX}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2} TODO Introduccion a la rob\'otica Open-Source}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Asociaci\'on de Rob\'otica de la Universidad Carlos III}{2}{section.1.3}
+\contentsline {section}{\numberline {1.2} TODO Introduccion a la rob\'otica Open-Source}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Asociaci\'on de Rob\'otica de la Universidad Carlos III}{3}{section.1.3}
 \contentsline {section}{\numberline {1.4}Descripci\'on del proyecto}{3}{section.1.4}
 \contentsline {section}{\numberline {1.5}Estructura del documento}{3}{section.1.5}
 \contentsline {chapter}{\numberline {2}Objetivos}{5}{chapter.2}
@@ -19,23 +19,63 @@
 \contentsline {paragraph}{Palabras clave:}{9}{section*.8}
 \contentsline {chapter}{\numberline {3}Descripci\'on de la linea de investigaci\'on}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}Linea de investigaci\'on de robots mini-humanoides}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Campeonato CEABOT}{11}{section.3.2}
-\contentsline {paragraph}{Palabras clave:}{13}{section*.9}
-\contentsline {chapter}{\numberline {4}Estado del arte}{15}{chapter.4}
-\contentsline {paragraph}{Palabras clave:}{15}{section*.10}
-\contentsline {chapter}{\numberline {5}Descripci\'on de las herramientas a utilizar}{17}{chapter.5}
-\contentsline {paragraph}{Palabras clave:}{17}{section*.11}
-\contentsline {chapter}{\numberline {6}Desarrollo}{19}{chapter.6}
-\contentsline {section}{\numberline {6.1}Plataforma rob\'otica}{19}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Selecci\'on de una plataforma rob\'otica}{19}{subsection.6.1.1}
-\contentsline {subsubsection}{Robonova, de Hitec}{19}{section*.12}
-\contentsline {subsubsection}{KHR-3HV, de Kondo}{20}{section*.13}
-\contentsline {subsubsection}{5710k, de RoboBuilder}{21}{section*.14}
-\contentsline {subsubsection}{Robovie-X, de Vstone}{21}{section*.15}
-\contentsline {subsubsection}{Bioloid, de Robotis}{21}{section*.16}
-\contentsline {section}{\numberline {6.2}Modificaciones sobre el robot Bioloid}{21}{section.6.2}
-\contentsline {paragraph}{Palabras clave:}{21}{section*.17}
-\contentsline {chapter}{Conclusiones}{23}{chapter*.18}
-\contentsline {section}{\numberline {6.3}Conclusi\'on}{23}{section.6.3}
-\contentsline {section}{\numberline {6.4}Desarrollos futuros}{23}{section.6.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{25}{section.6.4}
+\contentsline {section}{\numberline {3.2}Campeonato CEABOT}{12}{section.3.2}
+\contentsline {paragraph}{Palabras clave:}{14}{section*.9}
+\contentsline {chapter}{\numberline {4}Estado del arte}{17}{chapter.4}
+\contentsline {paragraph}{Palabras clave:}{17}{section*.10}
+\contentsline {chapter}{\numberline {5}Elecci\'on de componentes}{19}{chapter.5}
+\contentsline {paragraph}{Palabras clave:}{19}{section*.11}
+\contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{21}{chapter.6}
+\contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{21}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{21}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{21}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{21}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}KiCad}{21}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{21}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Qt Creator}{21}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}CM9 IDE}{21}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}OpenCV}{22}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}}{22}{section.6.4}
+\contentsline {section}{\numberline {6.5}}{22}{section.6.5}
+\contentsline {section}{\numberline {6.6}}{22}{section.6.6}
+\contentsline {section}{\numberline {6.7}}{22}{section.6.7}
+\contentsline {paragraph}{Palabras clave:}{22}{section*.12}
+\contentsline {chapter}{\numberline {7}Desarrollo}{23}{chapter.7}
+\contentsline {section}{\numberline {7.1}Plataforma rob\'otica}{23}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Selecci\'on de una plataforma rob\'otica}{23}{subsection.7.1.1}
+\contentsline {subsubsection}{Hitec Robonova}{23}{section*.13}
+\contentsline {subsubsection}{Kondo KHR-3HV}{24}{section*.14}
+\contentsline {subsubsection}{RoboBuilder 5710k}{25}{section*.15}
+\contentsline {subsubsection}{Vstone Robovie-X}{26}{section*.16}
+\contentsline {subsubsection}{Robotis Bioloid}{26}{section*.17}
+\contentsline {subsubsection}{comparativa y elecci\'on final}{28}{section*.18}
+\contentsline {section}{\numberline {7.2}Modificaciones b\'asicas sobre el robot Bioloid}{28}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Alimentaci\'on}{28}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Piernas}{28}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Brazos}{28}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Cabeza}{28}{subsection.7.2.4}
+\contentsline {section}{\numberline {7.3}Elecci\'on del controlador}{28}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Controlador de locomoci\'on}{28}{subsection.7.3.1}
+\contentsline {subsubsection}{Arbotix}{28}{section*.19}
+\contentsline {subsubsection}{Serie OpenCM}{28}{section*.20}
+\contentsline {subsection}{\numberline {7.3.2}Controlador de visi\'on}{28}{subsection.7.3.2}
+\contentsline {subsubsection}{BeagleBone Black}{28}{section*.21}
+\contentsline {subsubsection}{Raspberry Pi}{28}{section*.22}
+\contentsline {subsubsection}{Comparativa y selecci\'on}{28}{section*.23}
+\contentsline {section}{\numberline {7.4}Sensorizaci\'on}{28}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Sensores de distancia}{28}{subsection.7.4.1}
+\contentsline {subsubsection}{Infrarrojos}{28}{section*.24}
+\contentsline {subsubsection}{Sensor inercial}{28}{section*.25}
+\contentsline {subsubsection}{C\'amara}{28}{section*.26}
+\contentsline {subsubsection}{Configuraci\'on final}{28}{section*.27}
+\contentsline {section}{\numberline {7.5}Montaje del controlador}{28}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Esquema de montaje}{28}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Sistema de alimentaci\'on}{28}{subsection.7.5.2}
+\contentsline {subsection}{\numberline {7.5.3}Adecuaci\'on de sensores}{28}{subsection.7.5.3}
+\contentsline {subsection}{\numberline {7.5.4}Desarrollo de una placa de expansi\'on}{28}{subsection.7.5.4}
+\contentsline {subsection}{\numberline {7.5.5}Puesta en marcha del controlador}{28}{subsection.7.5.5}
+\contentsline {paragraph}{Palabras clave:}{28}{section*.28}
+\contentsline {chapter}{Conclusiones}{29}{chapter*.29}
+\contentsline {section}{\numberline {7.6}Conclusi\'on}{29}{section.7.6}
+\contentsline {section}{\numberline {7.7}Desarrollos futuros}{29}{section.7.7}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{31}{section.7.7}

@@ -17,12 +17,41 @@
 \BOOKMARK [1][-]{section.3.1}{Linea de investigaci\363n de robots mini-humanoides}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.2}{Campeonato CEABOT}{chapter.3}% 18
 \BOOKMARK [0][-]{chapter.4}{Estado del arte}{}% 19
-\BOOKMARK [0][-]{chapter.5}{Descripci\363n de las herramientas a utilizar}{}% 20
-\BOOKMARK [0][-]{chapter.6}{Desarrollo}{}% 21
-\BOOKMARK [1][-]{section.6.1}{Plataforma rob\363tica}{chapter.6}% 22
-\BOOKMARK [2][-]{subsection.6.1.1}{Selecci\363n de una plataforma rob\363tica}{section.6.1}% 23
-\BOOKMARK [1][-]{section.6.2}{Modificaciones sobre el robot Bioloid}{chapter.6}% 24
-\BOOKMARK [0][-]{chapter*.18}{Conclusiones}{}% 25
-\BOOKMARK [1][-]{section.6.3}{Conclusi\363n}{chapter*.18}% 26
-\BOOKMARK [1][-]{section.6.4}{Desarrollos futuros}{chapter*.18}% 27
-\BOOKMARK [0][-]{section.6.4}{Bibliograf\355a}{}% 28
+\BOOKMARK [0][-]{chapter.5}{Elecci\363n de componentes}{}% 20
+\BOOKMARK [0][-]{chapter.6}{Descripci\363n de las herramientas a utilizar}{}% 21
+\BOOKMARK [1][-]{section.6.1}{Herramientas de dise\361o y fabricaci\363n de piezas}{chapter.6}% 22
+\BOOKMARK [2][-]{subsection.6.1.1}{OpenSCAD}{section.6.1}% 23
+\BOOKMARK [2][-]{subsection.6.1.2}{Impresi\363n 3d}{section.6.1}% 24
+\BOOKMARK [1][-]{section.6.2}{Herramientas de dise\361o de circuitos}{chapter.6}% 25
+\BOOKMARK [2][-]{subsection.6.2.1}{KiCad}{section.6.2}% 26
+\BOOKMARK [1][-]{section.6.3}{Herramientas de programaci\363n}{chapter.6}% 27
+\BOOKMARK [2][-]{subsection.6.3.1}{Qt Creator}{section.6.3}% 28
+\BOOKMARK [2][-]{subsection.6.3.2}{CM9 IDE}{section.6.3}% 29
+\BOOKMARK [2][-]{subsection.6.3.3}{OpenCV}{section.6.3}% 30
+\BOOKMARK [1][-]{section.6.4}{}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.5}{}{chapter.6}% 32
+\BOOKMARK [1][-]{section.6.6}{}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.7}{}{chapter.6}% 34
+\BOOKMARK [0][-]{chapter.7}{Desarrollo}{}% 35
+\BOOKMARK [1][-]{section.7.1}{Plataforma rob\363tica}{chapter.7}% 36
+\BOOKMARK [2][-]{subsection.7.1.1}{Selecci\363n de una plataforma rob\363tica}{section.7.1}% 37
+\BOOKMARK [1][-]{section.7.2}{Modificaciones b\341sicas sobre el robot Bioloid}{chapter.7}% 38
+\BOOKMARK [2][-]{subsection.7.2.1}{Alimentaci\363n}{section.7.2}% 39
+\BOOKMARK [2][-]{subsection.7.2.2}{Piernas}{section.7.2}% 40
+\BOOKMARK [2][-]{subsection.7.2.3}{Brazos}{section.7.2}% 41
+\BOOKMARK [2][-]{subsection.7.2.4}{Cabeza}{section.7.2}% 42
+\BOOKMARK [1][-]{section.7.3}{Elecci\363n del controlador}{chapter.7}% 43
+\BOOKMARK [2][-]{subsection.7.3.1}{Controlador de locomoci\363n}{section.7.3}% 44
+\BOOKMARK [2][-]{subsection.7.3.2}{Controlador de visi\363n}{section.7.3}% 45
+\BOOKMARK [1][-]{section.7.4}{Sensorizaci\363n}{chapter.7}% 46
+\BOOKMARK [2][-]{subsection.7.4.1}{Sensores de distancia}{section.7.4}% 47
+\BOOKMARK [1][-]{section.7.5}{Montaje del controlador}{chapter.7}% 48
+\BOOKMARK [2][-]{subsection.7.5.1}{Esquema de montaje}{section.7.5}% 49
+\BOOKMARK [2][-]{subsection.7.5.2}{Sistema de alimentaci\363n}{section.7.5}% 50
+\BOOKMARK [2][-]{subsection.7.5.3}{Adecuaci\363n de sensores}{section.7.5}% 51
+\BOOKMARK [2][-]{subsection.7.5.4}{Desarrollo de una placa de expansi\363n}{section.7.5}% 52
+\BOOKMARK [2][-]{subsection.7.5.5}{Puesta en marcha del controlador}{section.7.5}% 53
+\BOOKMARK [0][-]{chapter*.29}{Conclusiones}{}% 54
+\BOOKMARK [1][-]{section.7.6}{Conclusi\363n}{chapter*.29}% 55
+\BOOKMARK [1][-]{section.7.7}{Desarrollos futuros}{chapter*.29}% 56
+\BOOKMARK [0][-]{section.7.7}{Bibliograf\355a}{}% 57

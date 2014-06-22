@@ -13,41 +13,90 @@ A continuación se presenta un estudio las principales principales opciones.
 
 En el mercado existe una gran variedad de robots educativos que cumplen las características antropomórficas necesarias para ser considerados robots mini-humanoides. Los robots que se muestran a continuación son una recopilación de algunos de los modelos mas accesibles y extendidos.
 
-\subsubsection{Robonova, de Hitec}
+\subsubsection{Hitec Robonova}
 
 El Robonova (figura \ref{robonova}) es uno de los mini-humanoides mas extendidos a nivel mundial. Fue uno de los primeros robots de este tipo que se fabricó comercialmente y marcó un antes y un despues en su categoría. Es por esto que es muy común encontrar Robonovas en competiciones como Ceabot, ya que durante muchos años fue el robot mini-humanoide mejor equipado y mas vendido. En la Asociación de Robótica de la Universidad Carlos III, se han utilizado Robonovas en competiciones y proyectos desde su fundación.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{figuras/robonova}   
-\caption{Robonova, de Hitec}
+\caption{Hitec Robonova}
 \label{robonova}
 \end{figure}
 
 El kit de fábrica cuenta con 16 grados de libertad. Sus actuadores son servos digitales HSR 8498HB, que desarrollan un torque de 7.4kg/cm. Cabe destacar de estor servos su función "Motion Feedback", es decir, su capacidad para leer posiciones y comunicarselas al controlador.
 La placa de control del Robonova está basada en un microcontrolador ATMega 128 y cuenta con hasta 40 pines GPIO (puertos binarios de entrada y salida), 8 entradas analógicas, 3 salidas PWM, puerto serie y conexión I2C. Gracias a esto, el Robonova es fácilmente ampliable con sensores y actuadores, no necesariamente de la misma marca. En cuanto al software, Hitec da soporte a la programación con RoboBasic, un entorno de desarrollo completo con un lenguaje basado en Basic. 
 
-\subsubsection{KHR-3HV, de Kondo}
+\subsubsection{Kondo KHR-3HV}
 
 El KHR-3HV (figura \ref{kondo}), del fabricante japonés Kondo, es uno de los mini-humanoides mas avanzados actualmente. Puede presumir de ser el modelo de serie mas utilizado en el campeonato Robo-One, siendo seleccionado por los equipos por su gran agilidad y tamaño compacto.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/kondo}   
-\caption{KHR3-HV, de Kondo}
+\caption{Kondo KHR3-HV}
 \label{kondo}
 \end{figure}
 
 En su configuración standard, el KHR-3HV cuenta con 17 servomotores KRS-2552HV de 14kg/cm de torque. Dichos actuadores, además, incluyen un pequeño microcontrolador, lo que les permite conectarse en daisy chain. El robot incluye una controladora RCB-4, expandible con 10 entradas analogicas y 10 GPIOs, y con capacidad para controlar hasta 35 servos. El software de programación ofrecido por Kondo es el Heart to Heart V4, que puede ser descargado gratuitamente desde su web oficial. Es importante recalcar que gracias a su inmensa comunidad de usuarios, existen varios proyectos de código abierto con librerías que permiten programar el KHR-3HV en lenguajes mas convencionales, como C y Python.
 
-\subsubsection{5710k, de RoboBuilder}
+\subsubsection{RoboBuilder 5710k}
 
-Uno de los robots mas interesantes por su atípica configuración de servomotores es el RoboBuilder 5710k. Se presenta como un kit modular con el que se pueden construir diferentes configuraciones de robots, sido la mas "avanzada" la antropomórfica.
+Uno de los robots mas interesantes por su atípica configuración de servomotores es el RoboBuilder 5710k (figura \ref{robobuilder}). Se presenta como un kit modular con el que se pueden construir diferentes configuraciones de robots, siendo la mas "avanzada" la antropomórfica.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/robobuilder}   
+\caption{RoboBuilder 5710k}
+\label{robobuilder}
+\end{figure}
 
 
-\subsubsection{Robovie-X, de Vstone}
+
+
+\subsubsection{Vstone Robovie-X}
 The Robovie-X is the standard model and comes with 17 degrees of freedom and features VS-S092J servos which have 9.2kg/cm of torque. The VS-RC003HV onboard controller features a built-in audio system.
-\subsubsection{Bioloid, de Robotis}
+\subsubsection{Robotis Bioloid}
+
+La empresa koreana Robotis, comercializa un kit robótico conocido como Bioloid. Este kit proporciona una amplia gama de piezas diferentes para montar distintos modelos de robots. La modularidad de los componentes le convierten en una base excelente sobre la que realizar modificaciones, pudiendo diseñar configuraciones alternativas con gran facilidad.
+
+El robot Bioloid incluye 18 servos Dynamixel, modelo AX-12A o AX-18A, dependiendo de la versión del kit. Los actuadores Dynamixel están controlados internamente por un microcontrolador ATMega8. Gracias a él, estos servos permiten realizar funciones avanzadas tales como el control de velocidad, torque, temperatura de ejecución... etc, posibilitando procesar información de bajo nivel directamente dentro del actuador y pudiendo abstraer el control de la controladora del robot a un nivel superior. 
+
+
+
+\subsubsection{comparativa y elección final}
+
+\section{Modificaciones básicas sobre el robot Bioloid}
+
+\subsection{Alimentación}
+\subsection{Piernas}
+\subsection{Brazos}
+\subsection{Cabeza}
+
+
+\section{Elección del controlador}
+%mixto
+\subsection{Controlador de locomoción}
+\subsubsection{Arbotix}
+\subsubsection{Serie OpenCM}
+\subsection{Controlador de visión}
+\subsubsection{BeagleBone Black}
+\subsubsection{Raspberry Pi}
+\subsubsection{Comparativa y selección}
+\section{Sensorización}
+%Estudio de diferentes sensores
+\subsection{Sensores de distancia}
+\subsubsection{Infrarrojos}
+\subsubsection{Sensor inercial}
+\subsubsection{Cámara}
+\subsubsection{Configuración final}
+
+\section{Montaje del controlador}
+\subsection{Esquema de montaje} %Muy Alto nivel
+\subsection{Sistema de alimentación}
+\subsection{Adecuación de sensores}
+\subsection{Desarrollo de una placa de expansión}
+\subsection{Puesta en marcha del controlador}
 
 
 
@@ -57,7 +106,15 @@ The Robovie-X is the standard model and comes with 17 degrees of freedom and fea
 
 
 
-\section{Modificaciones sobre el robot Bioloid}
+
+
+
+
+
+
+
+
+
 
 
 \paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.
