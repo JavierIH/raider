@@ -1,11 +1,55 @@
 %chapter introduce un nuevo capítulo
 \chapter{Descripción de las herramientas a utilizar}
 
+A continuación se presentan las herramientas básicas que serán necesarias durante el desarrollo del proyecto.
+
 \section{Herramientas de diseño y fabricación de piezas}
+
+Dado que la plataforma robótica seleccionada requiere modificaciones mecánicas para permitir el montaje de los componentes necesarios, se requiere construir una serie de piezas que sustituyan a las originales y que aporten al robot algunas características de las que carece. Todas las piezas del robot serán diseñadas con OpenSCAD e impresas posteriormente con una impresora 3D open-source.
+
 \subsection{OpenSCAD}
+
+OpenSCAD es un programa destinado a la creación de objetos sólidos tridimensionales. Se trata de software libre y es compatible con Linux/UNIX, Windows y Mac OS X. A diferencia de otros programas de diseño 3D, OpenSCAD no se centra en los aspectos artísticos del diseño, sino en el aspecto técnico. Por ello, es una aplicación muy interesante cuando nuestro objetivo es crear piezas mecánicas,y en este caso particular, para un robot.
+
+La propiedad mas característica de OpenSCAD y que le hace diferente de otros programas de diseño como SolidWorks o FreeCAD, es su interfaz (figura \ref{openscad}). Este programa funciona como un compilador de objetos 3D, leyendo un script qu describe el objeto y renderizando el objeto a partir de ese archivo. Gracias a esto, el usuario tiene total control sobre el proceso de modelado, permitiendo la realización de modelos variables a partir de parámetros configurables.
+
+OpenCad también permite el diseño de modelos planos, siendo compatible con formatos como DXF. Sin embargo, para el caso de este proyecto, los archivos que nos interesa producir son los STL.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/openscad}   
+\caption{Pantalla del editor de OpenSCAD}
+\label{openscad}
+\end{figure}
+
 \subsection{Impresión 3d}
+
+Para la fabricación de las piezas que integran el robot, se ha utilizado una impresora 3D replicable open-source modelo Prusa i2 Air (figura \ref{}). A través del programa Repetier-Host, que se ocupa de gestionar el funcionamiento de la impresora desde el ordenador, y partiendo de los archivos STL que han sido generados anteriormente desde OpenSCAD, la impresora nos permite desarrollar prototipos y piezas finales para el proyecto.
+
+Esta impresora, dado su funcionamiento, pertenece a la familia del modelado por deposición fundida. La materia prima que utilizan este tipo de impresoras es un rollo de filamento de plástico termofusible de entre 1.5 y 3mm de diámetro. En este caso, se utilizará ABS de 3mm. El filamento de plástico es dirigido a un extrusor que empuja el material a través de un conducto caliente conocido como hotend. Al llegar a este punto, el filamento se funde y se hace pasar por un agujero de salida de tamaño muy inferior al de entrada, produciendo hilos de material fundido. Durante la impresión, el extrusor deposita plástico fundido a lo largo de diferentes trayectorias con el objetivo de formar capas horizontales sólidas. Mediante la apilación de estas capas se consigue dotar de altura al modelo y crear la pieza requerida.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/impresora}   
+\caption{Impresora 3D Prusa i2 Air}
+\label{impresora}
+\end{figure}
+
 \section{Herramientas de diseño de circuitos}
+
+Dado que se va a necesitar expandir las conexiones físicas del controlador, se requiere diseñar una placa de expansión que permita realizar un montaje adecuado del sistema.
+
 \subsection{KiCad}
+
+KiCad es un software EDA (diseño automático electrónico) open-source que contiene todas las utilidades necesarias para diseñar circuitos impresos. El entorno cuenta con cuatro aplicaciones independientes:
+
+\begin{itemize}
+\item \textbf{Eeschema}. Editor del esquemático.
+\item \textbf{Pcbnew}. Editor de la placa de circuito impreso.
+\item \textbf{Gerbview}. Visor de archivos GERBER
+\item \textbf{Cvpcb}. Editor de huellas para componentes.
+\end{itemize} 
+
 
 \section{Herramientas de programación}
 \subsection{Qt Creator}
@@ -13,7 +57,7 @@
 \subsection{CMake}
 
 
-CM9 IDE es un entorno de programación basado en Arduino IDE, preparada para programar placas electrónicas de la serie OpenCM.
+CM9 IDE es un entorno de programación basado en Arduino IDE, preparado para programar placas electrónicas de la serie OpenCM.
 
 
 
