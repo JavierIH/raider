@@ -1,8 +1,0 @@
-/home/javierih/raider/Raider/programming/build/src/libraries/bones/CMakeFiles/bones.dir
-/home/javierih/raider/Raider/programming/build/src/libraries/eye/CMakeFiles/eye.dir
-/home/javierih/raider/Raider/programming/build/src/libraries/raider/CMakeFiles/raider.dir
-/home/javierih/raider/Raider/programming/build/src/libraries/serialib/CMakeFiles/serialib.dir
-/home/javierih/raider/Raider/programming/build/src/test/CMakeFiles/test_auxiliar.dir
-/home/javierih/raider/Raider/programming/build/src/test/CMakeFiles/test_communication.dir
-/home/javierih/raider/Raider/programming/build/src/test/CMakeFiles/test_integration.dir
-/home/javierih/raider/Raider/programming/build/src/test/CMakeFiles/test_opencv.dir

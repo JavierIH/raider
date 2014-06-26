@@ -5,7 +5,7 @@
 \contentsline {chapter}{Abstract}{\es@scroman {ix}}{chapter*.4}
 \contentsline {paragraph}{Keywords:}{\es@scroman {ix}}{section*.5}
 \contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introduccion a la rob\'otica Open-Source}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Introduccion a la rob\'otica Open-Source TODO TODO TODO TODO }{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Asociaci\'on de Rob\'otica de la Universidad Carlos III}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Descripci\'on del proyecto}{3}{section.1.3}
 \contentsline {section}{\numberline {1.4}Estructura del documento}{3}{section.1.4}
@@ -15,7 +15,7 @@
 \contentsline {paragraph}{Palabras clave:}{8}{section*.8}
 \contentsline {chapter}{\numberline {3}Estado del arte}{11}{chapter.3}
 \contentsline {paragraph}{Palabras clave:}{11}{section*.9}
-\contentsline {chapter}{\numberline {4}Objetivos}{13}{chapter.4}
+\contentsline {chapter}{\numberline {4}Objetivos TODO}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Implantaci\'on de un controlador basado en visi\'on por computador}{13}{section.4.1}
 \contentsline {section}{\numberline {4.2}Estudio de sensores y actuadores}{14}{section.4.2}
 \contentsline {section}{\numberline {4.3}Dise\~no electr\'onico}{14}{section.4.3}
@@ -45,41 +45,41 @@
 \contentsline {section}{\numberline {5.4}Sensorizaci\'on}{23}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Sensores de distancia}{23}{subsection.5.4.1}
 \contentsline {subsubsection}{Infrarrojos}{23}{section*.22}
-\contentsline {subsubsection}{Sensor inercial}{23}{section*.23}
-\contentsline {subsubsection}{C\'amara}{23}{section*.24}
-\contentsline {subsubsection}{Configuraci\'on final}{23}{section*.25}
-\contentsline {paragraph}{Palabras clave:}{23}{section*.26}
+\contentsline {subsection}{\numberline {5.4.2}Sensor inercial}{23}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}C\'amara}{23}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Configuraci\'on final}{23}{subsection.5.4.4}
+\contentsline {paragraph}{Palabras clave:}{23}{section*.23}
 \contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{25}{chapter.6}
 \contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{25}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{25}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{25}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{25}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}KiCad}{25}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{25}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Qt Creator}{25}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}CM9 IDE}{25}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}CMake}{25}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}OpenCV}{25}{subsection.6.3.4}
-\contentsline {paragraph}{Palabras clave:}{25}{section*.27}
-\contentsline {chapter}{\numberline {7}Desarrollo}{27}{chapter.7}
-\contentsline {section}{\numberline {7.1}Dise\~no de las partes mec\'anicas}{27}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Cabeza}{27}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Tronco}{27}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Brazos}{27}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Piernas}{27}{subsection.7.1.4}
-\contentsline {section}{\numberline {7.2}Montaje del controlador}{27}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Esquema de montaje}{27}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Sistema de alimentaci\'on}{27}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Adecuaci\'on de sensores}{27}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Desarrollo de una placa de expansi\'on}{27}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Puesta en marcha del controlador}{27}{subsection.7.2.5}
-\contentsline {section}{\numberline {7.3}Programaci\'on}{27}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Sistema de locomoci\'on}{27}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Algoritmos de visi\'on}{27}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Pruebas de CEABOT}{27}{subsection.7.3.3}
-\contentsline {paragraph}{Palabras clave:}{27}{section*.28}
-\contentsline {chapter}{\numberline {8}Evaluaci\'on de resultados}{29}{chapter.8}
-\contentsline {section}{\numberline {8.1}Pruebas de funcionamiento}{29}{section.8.1}
-\contentsline {section}{\numberline {8.2}Conclusi\'on}{29}{section.8.2}
-\contentsline {section}{\numberline {8.3}Situaci\'on y desarrollos futuros}{29}{section.8.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{31}{section.8.3}
+\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{26}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{27}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}KiCad}{27}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{28}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Qt Creator}{28}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}CM9 IDE}{28}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}CMake}{28}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}OpenCV}{28}{subsection.6.3.4}
+\contentsline {paragraph}{Palabras clave:}{28}{section*.24}
+\contentsline {chapter}{\numberline {7}Desarrollo}{29}{chapter.7}
+\contentsline {section}{\numberline {7.1}Dise\~no de las partes mec\'anicas}{29}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Cabeza}{29}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Tronco}{29}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Brazos}{29}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Piernas}{29}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}Montaje del controlador}{29}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Esquema de montaje}{29}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Sistema de alimentaci\'on}{29}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Adecuaci\'on de sensores}{29}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Desarrollo de una placa de expansi\'on}{29}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}Puesta en marcha del controlador}{29}{subsection.7.2.5}
+\contentsline {section}{\numberline {7.3}Programaci\'on}{29}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Sistema de locomoci\'on}{29}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Algoritmos de visi\'on}{29}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Pruebas de CEABOT}{29}{subsection.7.3.3}
+\contentsline {paragraph}{Palabras clave:}{29}{section*.25}
+\contentsline {chapter}{\numberline {8}Evaluaci\'on de resultados}{31}{chapter.8}
+\contentsline {section}{\numberline {8.1}Pruebas de funcionamiento}{31}{section.8.1}
+\contentsline {section}{\numberline {8.2}Conclusi\'on}{31}{section.8.2}
+\contentsline {section}{\numberline {8.3}Situaci\'on y desarrollos futuros}{31}{section.8.3}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{33}{section.8.3}

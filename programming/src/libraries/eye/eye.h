@@ -3,12 +3,13 @@
 
 #include <opencv2/opencv.hpp>
 
-//Vide
-
 bool openCamera(int);
 void cleanBuffer();
 cv::Mat getFrame();
 cv::Mat extractChannel(cv::Mat,int);
+cv::Mat1b detectGreen(cv::Mat);
+void thinningIteration(cv::Mat&,int);
+void voronoi(cv::Mat&);
 
 
 #endif // EYE_H

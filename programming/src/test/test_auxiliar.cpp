@@ -1,5 +1,3 @@
-
-
 /**
  * Code for thinning a binary image using Zhang-Suen algorithm.
  */
@@ -9,14 +7,6 @@
 #include "../libraries/eye/eye.h"
 #include <iostream>
 
-
-/**
- * Perform one thinning iteration.
- * Normally you wouldn't call this function directly from your code.
- *
- * @param  im    Binary image with range = 0-1
- * @param  iter  0=even, 1=odd
- */
 
 using namespace cv;
 
@@ -61,6 +51,7 @@ void thinningIteration(cv::Mat& im, int iter)
 void thinning(cv::Mat& im)
 {
     im /= 255;
+    std::cout<<"TODO OK";
 
     cv::Mat prev = cv::Mat::zeros(im.size(), CV_8UC1);
     cv::Mat diff;
@@ -76,70 +67,32 @@ void thinning(cv::Mat& im)
     im *= 255;
 }
 
-/**
- * This is an example on how to call the thinning function above.
- */
+
+
 int main()
 {
-    openCamera(1);
+    //openCamera(1);
+    //Mat image=getFrame();
 
-    //while(0){
+    Mat image=imread("../../../../../Imagenes/bloques2.png");
 
-    cv::Mat image_cruda = getFrame();
-
-
-
-    imshow("frame", image_cruda);
-    Mat image=image_cruda;//(Rect(0,image_cruda.rows/2,image_cruda.cols,image_cruda.rows/2));
+    Mat1b bw=image.clone();
+    threshold(bw, bw, 50 , 255, THRESH_BINARY);
 
 
-    Mat red=extractChannel(image,2);
-    Mat blue=extractChannel(image,0);
-    Mat green=extractChannel(image,1);
+    imshow("original",bw);
+    waitKey();
 
-
-    //imshow("azul", green-red);
-
-    //Extraccion de verde
-    Mat result=(green-red)+(green-blue);
-    //imshow("(green-red)+(green-blue)", result*2);
-
-    GaussianBlur(result,result,Size(11,11),0,0);
-    //imshow("blur", result);
-
-    Mat1b src;
-    threshold(result, src, 50 , 255, THRESH_BINARY_INV);
-    imshow("Thresholdbinary",src);
-    waitKey(0);
-    destroyAllWindows();
-
-    if (src.empty())
-        return -1;
-
-    src=255-src;
-
-    dilate(src, src, Mat(),Point(-1,-1),3);
-
-    //erode(src, src, Mat(),Point(-1,-1),99);
-
-
-    imshow("dilate",src);
-
-
-
-    cv::Mat bw=src.clone();
-
-
-    std::cout<<"TODO OK";
 
     std::cout<<"HI\n";
     thinning(bw);
     std::cout<<"BYE";
 
-    cv::imshow("image cruda", image_cruda);
     cv::imshow("dst", bw);
     cv::waitKey(0);
 //}
     return 0;
 
 }
+
+

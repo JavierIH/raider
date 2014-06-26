@@ -40,9 +40,10 @@ void test_resta(){
 }
 
 void test_lineas(){
-    openCamera(0);
-    while(waitKey(0)!=('\n'||'a')){
-
+    openCamera(1);
+    while(1){
+        char c=waitKey(0);
+        if(c=='\n') break;
         Mat image=getFrame();
         imshow("frame", image);
 
@@ -86,31 +87,39 @@ void test_lineas(){
 }
 }
 
-void test_verde(){
-    openCamera(0);
+int test_verde(){
+    openCamera(1);
 
-    while(waitKey(1000)!='\n'){
-        Mat image=getFrame();
-        imshow("frame", image);
+    while(1){
+        char c=waitKey(0);
+        if (c=='\n'||c=='a') return 0;
+
+        cv::Mat image_cruda = getFrame();
+
+
+
+        imshow("frame", image_cruda);
+        Mat image=image_cruda;//(Rect(0,image_cruda.rows/2,image_cruda.cols,image_cruda.rows/2));
+
 
         Mat red=extractChannel(image,2);
         Mat blue=extractChannel(image,0);
         Mat green=extractChannel(image,1);
 
 
-        imshow("azul", green-red);
+        //imshow("azul", green-red);
 
         //Extraccion de verde
         Mat result=(green-red)+(green-blue);
-        imshow("(green-red)+(green-blue)", result*2);
+        //imshow("(green-red)+(green-blue)", result*2);
 
         GaussianBlur(result,result,Size(11,11),0,0);
-        imshow("blur", result);
+        //imshow("blur", result);
 
-        Mat1b thresh;
-        threshold(result, thresh, 50 , 255, THRESH_BINARY_INV);
-        imshow("Thresholdbinary",thresh);
-
+        Mat1b src;
+        threshold(result, src, 50 , 255, THRESH_BINARY_INV);
+        imshow("Thresholdbinary",src);
+        waitKey(0);
     }
 
 }
@@ -213,7 +222,7 @@ void test_hsv(){
 int main()
 {
     cout<<"INICIO\n";
-    test_lineas();
+    test_verde();
     cout<<"\nFIN";
     //waitKey(0);
 
