@@ -146,10 +146,10 @@ void voronoi(cv::Mat& im)
         thinningIteration(im, 1);
         cv::absdiff(im, prev, diff);
         im.copyTo(prev);
-        /*Mat aux=im.clone();
+        Mat aux=im.clone();
         aux*=255;
         imshow("im",aux);
-        waitKey(5);*/
+        waitKey(100);
     }
     while (cv::countNonZero(diff) > 0);
 

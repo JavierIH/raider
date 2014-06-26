@@ -1,14 +1,13 @@
 %chapter introduce un nuevo capítulo
 \chapter{Elección de componentes}
 
-Este proyecto de resume en.................
-
+Como punto de partida, se han seleccionado una serie de componentes adecuados para dotar al robot con las capacidades necesarias para cumplir los objetivos.
 
 \section{Plataforma robótica}
 
 El primer paso para la realización de este proyecto fue el estudio y selección de las plataformas robóticas que pueden conseguirse actualmente. Dado que el objetivo es encontrar un robot humanoide sobre el que se pueda implantar un sistema de visión, es necesario analizar diversos aspectos; algunos mecánicos como el numero y fuerza de los actuadores, y otros electrónicos como la capacidad de procesamiento y velocidad del controlador. Sin embargo, dado que este proyecto es autofinanciado en su mayor medida, el factor económico también es un limitante destacable. 
 
-A continuación se presenta un estudio las principales principales opciones.
+En el siguiente apartado se presenta un estudio las principales principales opciones.
 
 \subsection{Selección de una plataforma robótica}
 
@@ -35,15 +34,15 @@ El KHR-3HV (figura \ref{kondo}), del fabricante japonés Kondo, es uno de los min
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/kondo}   
-\caption{Kondo KHR3-HV}
+\caption{Kondo KHR-3HV}
 \label{kondo}
 \end{figure}
 
 En su configuración standard, el KHR-3HV cuenta con 17 servomotores KRS-2552HV de 14kg/cm de torque. Dichos actuadores, además, incluyen un pequeño microcontrolador, lo que les permite conectarse en daisy chain. El robot incluye una controladora RCB-4, expandible con 10 entradas analogicas y 10 GPIOs, y con capacidad para controlar hasta 35 servos. El software de programación ofrecido por Kondo es el Heart to Heart V4, que puede ser descargado gratuitamente desde su web oficial. Es importante recalcar que gracias a su inmensa comunidad de usuarios, existen varios proyectos de código abierto con librerías que permiten programar el KHR-3HV en lenguajes mas convencionales, como C y Python.
 
-\subsubsection{RoboBuilder 5710k}
+\subsubsection{RoboBuilder 5710k TODO}
 
-Uno de los robots mas interesantes por su atípica configuración de servomotores es el RoboBuilder 5710k (figura \ref{robobuilder}). Se presenta como un kit modular con el que se pueden construir diferentes configuraciones de robots, siendo la mas "avanzada" la antropomórfica.
+Uno de los robots mas interesantes por su atípica configuración de servomotores es el RoboBuilder 5710k (figura \ref{robobuilder}). Se presenta como un kit modular con el que se pueden construir diferentes configuraciones de robots, siendo la mas avanzada la antropomórfica.
 
 \begin{figure}[h]
 \centering
@@ -55,13 +54,41 @@ Uno de los robots mas interesantes por su atípica configuración de servomotores 
 
 
 
-\subsubsection{Vstone Robovie-X}
+\subsubsection{Vstone Robovie-X TODO}
 The Robovie-X is the standard model and comes with 17 degrees of freedom and features VS-S092J servos which have 9.2kg/cm of torque. The VS-RC003HV onboard controller features a built-in audio system.
 \subsubsection{Robotis Bioloid}
 
 La empresa koreana Robotis, comercializa un kit robótico conocido como Bioloid. Este kit proporciona una amplia gama de piezas diferentes para montar distintos modelos de robots. La modularidad de los componentes le convierten en una base excelente sobre la que realizar modificaciones, pudiendo diseñar configuraciones alternativas con gran facilidad.
 
-El robot Bioloid incluye 18 servos Dynamixel, modelo AX-12A o AX-18A, dependiendo de la versión del kit. Los actuadores Dynamixel están controlados internamente por un microcontrolador ATMega8. Gracias a él, estos servos permiten realizar funciones avanzadas tales como el control de velocidad, torque, temperatura de ejecución... etc, posibilitando procesar información de bajo nivel directamente dentro del actuador y pudiendo abstraer el control de la controladora del robot a un nivel superior. 
+El robot Bioloid (figura \ref{bioloid}) incluye 18 servos Dynamixel, modelo AX-12A o AX-18A, dependiendo de la versión del kit. Los actuadores Dynamixel están controlados internamente por un microcontrolador ATMega8. Gracias a él, estos servos permiten realizar funciones avanzadas tales como el control de velocidad, torque, temperatura de ejecución... etc, posibilitando procesar información de bajo nivel directamente dentro del actuador y pudiendo abstraer el control de la controladora del robot a un nivel superior.
+
+En cuanto a su controladora, los kits proporcionan controladoras de Robotis de la serie CM, mas específicamente, la CM-5 en el caso del Bioloid Comprehensive y la CM-510 o CM-530 (según qué versión) en el Bioloid Premium y GP.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{figuras/bioloid.JPG}   
+\caption{Bioloid Premium}
+\label{bioloid}
+\end{figure}
+
+
+\begin{itemize}
+\item \textbf{Robotis CM-5}.
+
+Cuenta con un microcontrolador ATMega128. Permite la conexión de sensores específicos de la marca en el bus TTL, como el Dynamixel AX-S1.
+\item \textbf{Robotis CM-510}.
+
+Basada en un microcontrolador  ATMega2561. Además de los sensores de la propia marca (Dynamixel AX-S1, giróscopo...), que pueden montarse conectados al bus TTL, tiene cinco puertos para la conexión de sensores de salida analógica. Adicionalmente, posee un puerto para conectar un receptor ZigBee y teleoperar el robot.
+\item \textbf{Robotis CM-530}.
+ 
+Presentado como la evolución de la CM-510, en este caso el microcontrolador de la placa es un ARM Cortex STM32F103RE, de 32 bits. El resto de características son similares a las de la CM-510, tiene cinco puertos de expasión para sensores analógicos y un puerto para conectar un receptor ZigBee o Bluetooth.
+\end{itemize} 
+
+Estas controladoras han sido diseñadas para controlar los servos Dynamixel, programándolos a través Roboplus. sin embargo, su capacidad para montar sensores es muy limitada. La controladora CM-5 solo admite un módulo con sensores integrados, el Dynamixel AX-S1. La CM-510 y CM-530 poseen puertos para colocar hasta cinco sensores infrarrojos Sharp y un giróscopo 
+  Roboplus es una suite de programas distribuida gratuitamente por Robotis para la programación de sus robots educativos. Destaca por ser un entorno con un lenguaje de programación (R+) muy visual e intuitivo, preparado para su uso por niños o gente sin conocimientos muy avanzados de programación. Sin embargo, esto lo convierte en un lenguaje de programación muy limitado, hasta el punto que no permite exprimir todo el potencial de los actuadores Dynamixel.
+
+
 
 
 

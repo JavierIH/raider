@@ -31,8 +31,6 @@ int main()
     //Mat image=getFrame();
     Mat image=imread("../../../../../Imagenes/bloques2.png");
 
-
-
     Mat1b input=image.clone();
     threshold(input, input, 50 , 255, THRESH_BINARY);
 
@@ -44,11 +42,6 @@ int main()
     dilate(output, output, Mat(),Point(-1,-1),3);
 
     showMap(input,output);
-    image.type();
-
-
-
-
     waitKey();
 
     return 0;

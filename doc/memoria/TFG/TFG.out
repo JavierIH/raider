@@ -2,10 +2,10 @@
 \BOOKMARK [0][-]{chapter*.2}{Resumen}{}% 2
 \BOOKMARK [0][-]{chapter*.4}{Abstract}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 4
-\BOOKMARK [1][-]{section.1.1}{Introduccion a la rob\363tica Open-Source TODO TODO TODO TODO }{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.1}{Introduccion a la rob\363tica Open-Source TODO}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.2}{Asociaci\363n de Rob\363tica de la Universidad Carlos III}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.3}{Descripci\363n del proyecto}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.4}{Estructura del documento}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.3}{Descripci\363n del proyecto TODO}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.4}{Estructura del documento TODO}{chapter.1}% 8
 \BOOKMARK [0][-]{chapter.2}{Descripci\363n de la linea de investigaci\363n}{}% 9
 \BOOKMARK [1][-]{section.2.1}{Linea de investigaci\363n de robots mini-humanoides}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.2}{Campeonato CEABOT}{chapter.2}% 11
@@ -37,28 +37,29 @@
 \BOOKMARK [1][-]{section.6.2}{Herramientas de dise\361o de circuitos}{chapter.6}% 37
 \BOOKMARK [2][-]{subsection.6.2.1}{KiCad}{section.6.2}% 38
 \BOOKMARK [1][-]{section.6.3}{Herramientas de programaci\363n}{chapter.6}% 39
-\BOOKMARK [2][-]{subsection.6.3.1}{Qt Creator}{section.6.3}% 40
-\BOOKMARK [2][-]{subsection.6.3.2}{CM9 IDE}{section.6.3}% 41
+\BOOKMARK [2][-]{subsection.6.3.1}{OpenCV}{section.6.3}% 40
+\BOOKMARK [2][-]{subsection.6.3.2}{Qt Creator}{section.6.3}% 41
 \BOOKMARK [2][-]{subsection.6.3.3}{CMake}{section.6.3}% 42
-\BOOKMARK [2][-]{subsection.6.3.4}{OpenCV}{section.6.3}% 43
-\BOOKMARK [0][-]{chapter.7}{Desarrollo}{}% 44
-\BOOKMARK [1][-]{section.7.1}{Dise\361o de las partes mec\341nicas}{chapter.7}% 45
-\BOOKMARK [2][-]{subsection.7.1.1}{Cabeza}{section.7.1}% 46
-\BOOKMARK [2][-]{subsection.7.1.2}{Tronco}{section.7.1}% 47
-\BOOKMARK [2][-]{subsection.7.1.3}{Brazos}{section.7.1}% 48
-\BOOKMARK [2][-]{subsection.7.1.4}{Piernas}{section.7.1}% 49
-\BOOKMARK [1][-]{section.7.2}{Montaje del controlador}{chapter.7}% 50
-\BOOKMARK [2][-]{subsection.7.2.1}{Esquema de montaje}{section.7.2}% 51
-\BOOKMARK [2][-]{subsection.7.2.2}{Sistema de alimentaci\363n}{section.7.2}% 52
-\BOOKMARK [2][-]{subsection.7.2.3}{Adecuaci\363n de sensores}{section.7.2}% 53
-\BOOKMARK [2][-]{subsection.7.2.4}{Desarrollo de una placa de expansi\363n}{section.7.2}% 54
-\BOOKMARK [2][-]{subsection.7.2.5}{Puesta en marcha del controlador}{section.7.2}% 55
-\BOOKMARK [1][-]{section.7.3}{Programaci\363n}{chapter.7}% 56
-\BOOKMARK [2][-]{subsection.7.3.1}{Sistema de locomoci\363n}{section.7.3}% 57
-\BOOKMARK [2][-]{subsection.7.3.2}{Algoritmos de visi\363n}{section.7.3}% 58
-\BOOKMARK [2][-]{subsection.7.3.3}{Pruebas de CEABOT}{section.7.3}% 59
-\BOOKMARK [0][-]{chapter.8}{Evaluaci\363n de resultados}{}% 60
-\BOOKMARK [1][-]{section.8.1}{Pruebas de funcionamiento}{chapter.8}% 61
-\BOOKMARK [1][-]{section.8.2}{Conclusi\363n}{chapter.8}% 62
-\BOOKMARK [1][-]{section.8.3}{Situaci\363n y desarrollos futuros}{chapter.8}% 63
-\BOOKMARK [0][-]{section.8.3}{Bibliograf\355a}{}% 64
+\BOOKMARK [2][-]{subsection.6.3.4}{CM9 IDE}{section.6.3}% 43
+\BOOKMARK [2][-]{subsection.6.3.5}{Git}{section.6.3}% 44
+\BOOKMARK [0][-]{chapter.7}{Desarrollo}{}% 45
+\BOOKMARK [1][-]{section.7.1}{Dise\361o de las partes mec\341nicas}{chapter.7}% 46
+\BOOKMARK [2][-]{subsection.7.1.1}{Cabeza}{section.7.1}% 47
+\BOOKMARK [2][-]{subsection.7.1.2}{Tronco}{section.7.1}% 48
+\BOOKMARK [2][-]{subsection.7.1.3}{Brazos}{section.7.1}% 49
+\BOOKMARK [2][-]{subsection.7.1.4}{Piernas}{section.7.1}% 50
+\BOOKMARK [1][-]{section.7.2}{Montaje del controlador}{chapter.7}% 51
+\BOOKMARK [2][-]{subsection.7.2.1}{Esquema de montaje}{section.7.2}% 52
+\BOOKMARK [2][-]{subsection.7.2.2}{Sistema de alimentaci\363n}{section.7.2}% 53
+\BOOKMARK [2][-]{subsection.7.2.3}{Adecuaci\363n de sensores}{section.7.2}% 54
+\BOOKMARK [2][-]{subsection.7.2.4}{Desarrollo de una placa de expansi\363n}{section.7.2}% 55
+\BOOKMARK [2][-]{subsection.7.2.5}{Puesta en marcha del controlador}{section.7.2}% 56
+\BOOKMARK [1][-]{section.7.3}{Programaci\363n}{chapter.7}% 57
+\BOOKMARK [2][-]{subsection.7.3.1}{Sistema de locomoci\363n}{section.7.3}% 58
+\BOOKMARK [2][-]{subsection.7.3.2}{Algoritmos de visi\363n}{section.7.3}% 59
+\BOOKMARK [2][-]{subsection.7.3.3}{Pruebas de CEABOT}{section.7.3}% 60
+\BOOKMARK [0][-]{chapter.8}{Evaluaci\363n de resultados}{}% 61
+\BOOKMARK [1][-]{section.8.1}{Pruebas de funcionamiento}{chapter.8}% 62
+\BOOKMARK [1][-]{section.8.2}{Conclusi\363n}{chapter.8}% 63
+\BOOKMARK [1][-]{section.8.3}{Situaci\363n y desarrollos futuros}{chapter.8}% 64
+\BOOKMARK [0][-]{section.8.3}{Bibliograf\355a}{}% 65

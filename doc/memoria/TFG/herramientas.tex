@@ -1,11 +1,14 @@
-%chapter introduce un nuevo capítulo
 \chapter{Descripción de las herramientas a utilizar}
 
 A continuación se presentan las herramientas básicas que serán necesarias durante el desarrollo del proyecto.
 
+
+
 \section{Herramientas de diseño y fabricación de piezas}
 
 Dado que la plataforma robótica seleccionada requiere modificaciones mecánicas para permitir el montaje de los componentes necesarios, se requiere construir una serie de piezas que sustituyan a las originales y que aporten al robot algunas características de las que carece. Todas las piezas del robot serán diseñadas con OpenSCAD e impresas posteriormente con una impresora 3D open-source.
+
+
 
 \subsection{OpenSCAD}
 
@@ -22,11 +25,14 @@ OpenCad también permite el diseño de modelos planos, siendo compatible con forma
 \label{openscad}
 \end{figure}
 
+
+
 \subsection{Impresión 3d}
 
-Para la fabricación de las piezas que integran el robot, se ha utilizado una impresora 3D replicable open-source modelo Prusa i2 Air (figura \ref{}). A través del programa Repetier-Host, que se ocupa de gestionar el funcionamiento de la impresora desde el ordenador, y partiendo de los archivos STL que han sido generados anteriormente desde OpenSCAD, la impresora nos permite desarrollar prototipos y piezas finales para el proyecto.
+Para la fabricación de las piezas que integran el robot, se ha utilizado una impresora 3D replicable open-source modelo Prusa i2 Air, de construcción casera. La configuración habitual de esta impresora ha sido mejorada con un extrusor Budaschnozzle 1.3 y una electrónica Sanguinololu 1.3b (figura \ref{impresora}).
 
 Esta impresora, dado su funcionamiento, pertenece a la familia del modelado por deposición fundida. La materia prima que utilizan este tipo de impresoras es un rollo de filamento de plástico termofusible de entre 1.5 y 3mm de diámetro. En este caso, se utilizará ABS de 3mm. El filamento de plástico es dirigido a un extrusor que empuja el material a través de un conducto caliente conocido como hotend. Al llegar a este punto, el filamento se funde y se hace pasar por un agujero de salida de tamaño muy inferior al de entrada, produciendo hilos de material fundido. Durante la impresión, el extrusor deposita plástico fundido a lo largo de diferentes trayectorias con el objetivo de formar capas horizontales sólidas. Mediante la apilación de estas capas se consigue dotar de altura al modelo y crear la pieza requerida.
+A través del programa Repetier-Host, que se ocupa de gestionar el funcionamiento de la impresora desde el ordenador, y partiendo de los archivos STL que han sido generados anteriormente desde OpenSCAD, la impresora nos permite desarrollar prototipos y piezas finales para el proyecto.
 
 \begin{figure}[h]
 \centering
@@ -35,13 +41,17 @@ Esta impresora, dado su funcionamiento, pertenece a la familia del modelado por 
 \label{impresora}
 \end{figure}
 
+
+
 \section{Herramientas de diseño de circuitos}
 
 Dado que se va a necesitar expandir las conexiones físicas del controlador, se requiere diseñar una placa de expansión que permita realizar un montaje adecuado del sistema.
 
 \subsection{KiCad}
 
-KiCad es un software EDA (diseño automático electrónico) open-source que contiene todas las utilidades necesarias para diseñar circuitos impresos. El entorno cuenta con cuatro aplicaciones independientes:
+KiCad es una de las herramientas libres más avanzadas para el diseño electrónico asistido (EDA) que pueden encontrarse a dia de hoy. Cuenta con un grupo de más de 150 desarrolladores y una extensa comunidad de usuarios entre quienes se pueden destacar laboratorios como el CERN.
+
+KiCad permite crear diseños electrónicos pasando por todas las fases del proceso, desde la idea a los ficheros de fabricación y la simulación 3D de la placa. El entorno (figura \ref{kicad}) cuenta con cuatro aplicaciones independientes:
 
 \begin{itemize}
 \item \textbf{Eeschema}. Editor del esquemático.
@@ -50,17 +60,66 @@ KiCad es un software EDA (diseño automático electrónico) open-source que contien
 \item \textbf{Cvpcb}. Editor de huellas para componentes.
 \end{itemize} 
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/kicad}   
+\caption{KiCad}
+\label{kicad}
+\end{figure}
+
+KiCad es un programa multiplataforma, escrito con wxWidgets para ser ejecutado en FreeBSD, Linux, Microsoft Windows y Mac OS X. Existe una amplia colección de librerías de componentes, a las cuales se suma la posibilidad para el usuario de crear componentes personalizados. Además, existen herramientas para importar los componentes de otros EDA, como por ejemplo desde EAGLE. 
+
+
 
 \section{Herramientas de programación}
-\subsection{Qt Creator}
-\subsection{CM9 IDE}
-\subsection{CMake}
 
-
-CM9 IDE es un entorno de programación basado en Arduino IDE, preparado para programar placas electrónicas de la serie OpenCM.
+Este proyecto conlleva una programación a diferentes niveles, desde el control de movimientos de los actuadores desde un microcontrolador hasta el diseño de algortimos de navegación a alto nivel.
 
 
 
 \subsection{OpenCV}
+
+OpenCV es una biblioteca libre de visión artificial. Fue creada en 1999 por Intel y liberada un año mas tarde en la conferencia anual  IEEE Conference on Computer Vision and Pattern Recognition. Existen infinidad de aplicaciones, como la programación de detección de movimiento para cámaras de seguridad o la detección visual de características importantes en diferentes etapas del proceso de fabricación de un producto. La gran popularidad de OpenCV se debe a que su publicación se da bajo licencia BSD, que permite que sea usada libremente para propósitos comerciales y de investigación.
+
+OpenCV también es multiplataforma y existen versiones para GNU/Linux, Windows y Mac OS X. Entre sus funcionalidad, se abarcan campos de la visión por computador como el reconocimiento de objetos, calibración de cámaras, visión 3D y visión robótica.
+Además, OpenCV está programado de forma muy optimizada en C y C++, lo que le otorga una alata eficiencia y aptitud para aplicaciones en tiempo real.
+
+
+\subsection{Qt Creator}
+
+Qt Creator (figura \ref{qt}) es un entorno de desarrollo multiplataforma y open-source desarrollado por la compañía noruega Trolltech. Soporta C++, JavaScript y QML. El editor incluye resalto de sintaxis y funciones de autocompletado, muy útiles cuando se trabaja con proyectos de una extensión media o alta. Qt Creator utiliza el compilador de C++ de GNU Compiler Collection (o lo que es lo mismo, GCC). Qt Creator intepreta por defecto archivos de CMake.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/qt}   
+\caption{Qt Creator}
+\label{qt}
+\end{figure}
+
+
+\subsection{CMake}
+
+CMake es una herramienta open-source para la administración de la generación de código. El nombre CMake es una abreviatura de cross platform make (make multiplataforma).
+
+CMake es un conjunto de herramientas creado para construir, probar y empaquetar software. Se utiliza para controlar el proceso de compilación del software usando ficheros de configuración sencillos e independientes de la plataforma. CMake genera makefiles nativos y espacios de trabajo que pueden usarse en el entorno de desarrollo deseado. CMake soporta la generación de ficheros para varios sistemas operativos, lo que facilita el mantenimiento y elimina la necesidad de tener varios conjuntos de ficheros para cada plataforma.
+
+El proceso de construcción se controla creando uno o más ficheros CMakeLists.txt en cada directorio del proyecto.
+
+ 
+\subsection{CM9 IDE}
+
+CM9 IDE es un entorno de programación basado en Arduino IDE, preparado para programar placas electrónicas de la serie OpenCM. Soporta programación en C/C++ y es compatible con la mayoría de las librerías de Arduino. CM9 (figura \ref{cm9}) constituye un entorno centralizado desde el cual se puede escribir código, compilarlo y cargarlo en la placa OpenCM sin necesidad de ninguna otra aplicación adicional.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/cm9}   
+\caption{CM9 IDE}
+\label{cm9}
+\end{figure}
+
+\subsection{Git}
+
+Git es un software de control de versiones diseñado para controlar el código de un proyecto es su distintas iteraciones. Este proyecto se ha desarrollado en un repositorio online de Github, que será liberado cuando TODO (cuando?) 
+
 
 \paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.

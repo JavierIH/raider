@@ -5,10 +5,10 @@
 \contentsline {chapter}{Abstract}{\es@scroman {ix}}{chapter*.4}
 \contentsline {paragraph}{Keywords:}{\es@scroman {ix}}{section*.5}
 \contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introduccion a la rob\'otica Open-Source TODO TODO TODO TODO }{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Introduccion a la rob\'otica Open-Source TODO}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Asociaci\'on de Rob\'otica de la Universidad Carlos III}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Descripci\'on del proyecto}{3}{section.1.3}
-\contentsline {section}{\numberline {1.4}Estructura del documento}{3}{section.1.4}
+\contentsline {section}{\numberline {1.3}Descripci\'on del proyecto TODO}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Estructura del documento TODO}{3}{section.1.4}
 \contentsline {chapter}{\numberline {2}Descripci\'on de la linea de investigaci\'on}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Linea de investigaci\'on de robots mini-humanoides}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Campeonato CEABOT}{6}{section.2.2}
@@ -27,59 +27,60 @@
 \contentsline {subsection}{\numberline {5.1.1}Selecci\'on de una plataforma rob\'otica}{19}{subsection.5.1.1}
 \contentsline {subsubsection}{Hitec Robonova}{19}{section*.11}
 \contentsline {subsubsection}{Kondo KHR-3HV}{20}{section*.12}
-\contentsline {subsubsection}{RoboBuilder 5710k}{21}{section*.13}
-\contentsline {subsubsection}{Vstone Robovie-X}{22}{section*.14}
+\contentsline {subsubsection}{RoboBuilder 5710k TODO}{21}{section*.13}
+\contentsline {subsubsection}{Vstone Robovie-X TODO}{22}{section*.14}
 \contentsline {subsubsection}{Robotis Bioloid}{22}{section*.15}
-\contentsline {subsubsection}{comparativa y elecci\'on final}{23}{section*.16}
-\contentsline {section}{\numberline {5.2}Modificaciones b\'asicas sobre el robot Bioloid}{23}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Alimentaci\'on}{23}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Cabeza m\'ovil}{23}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Elecci\'on del controlador}{23}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Controlador de locomoci\'on}{23}{subsection.5.3.1}
-\contentsline {subsubsection}{Arbotix}{23}{section*.17}
-\contentsline {subsubsection}{Serie OpenCM}{23}{section*.18}
-\contentsline {subsection}{\numberline {5.3.2}Controlador de visi\'on}{23}{subsection.5.3.2}
-\contentsline {subsubsection}{BeagleBone Black}{23}{section*.19}
-\contentsline {subsubsection}{Raspberry Pi}{23}{section*.20}
-\contentsline {subsubsection}{Comparativa y selecci\'on}{23}{section*.21}
-\contentsline {section}{\numberline {5.4}Sensorizaci\'on}{23}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Sensores de distancia}{23}{subsection.5.4.1}
-\contentsline {subsubsection}{Infrarrojos}{23}{section*.22}
-\contentsline {subsection}{\numberline {5.4.2}Sensor inercial}{23}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}C\'amara}{23}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Configuraci\'on final}{23}{subsection.5.4.4}
-\contentsline {paragraph}{Palabras clave:}{23}{section*.23}
-\contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{25}{chapter.6}
-\contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{25}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{25}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{26}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{27}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}KiCad}{27}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{28}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Qt Creator}{28}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}CM9 IDE}{28}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}CMake}{28}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}OpenCV}{28}{subsection.6.3.4}
-\contentsline {paragraph}{Palabras clave:}{28}{section*.24}
-\contentsline {chapter}{\numberline {7}Desarrollo}{29}{chapter.7}
-\contentsline {section}{\numberline {7.1}Dise\~no de las partes mec\'anicas}{29}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Cabeza}{29}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Tronco}{29}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Brazos}{29}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Piernas}{29}{subsection.7.1.4}
-\contentsline {section}{\numberline {7.2}Montaje del controlador}{29}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Esquema de montaje}{29}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Sistema de alimentaci\'on}{29}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Adecuaci\'on de sensores}{29}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Desarrollo de una placa de expansi\'on}{29}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Puesta en marcha del controlador}{29}{subsection.7.2.5}
-\contentsline {section}{\numberline {7.3}Programaci\'on}{29}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Sistema de locomoci\'on}{29}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Algoritmos de visi\'on}{29}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Pruebas de CEABOT}{29}{subsection.7.3.3}
-\contentsline {paragraph}{Palabras clave:}{29}{section*.25}
-\contentsline {chapter}{\numberline {8}Evaluaci\'on de resultados}{31}{chapter.8}
-\contentsline {section}{\numberline {8.1}Pruebas de funcionamiento}{31}{section.8.1}
-\contentsline {section}{\numberline {8.2}Conclusi\'on}{31}{section.8.2}
-\contentsline {section}{\numberline {8.3}Situaci\'on y desarrollos futuros}{31}{section.8.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{33}{section.8.3}
+\contentsline {subsubsection}{comparativa y elecci\'on final}{25}{section*.16}
+\contentsline {section}{\numberline {5.2}Modificaciones b\'asicas sobre el robot Bioloid}{25}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Alimentaci\'on}{25}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Cabeza m\'ovil}{25}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Elecci\'on del controlador}{25}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Controlador de locomoci\'on}{25}{subsection.5.3.1}
+\contentsline {subsubsection}{Arbotix}{25}{section*.17}
+\contentsline {subsubsection}{Serie OpenCM}{25}{section*.18}
+\contentsline {subsection}{\numberline {5.3.2}Controlador de visi\'on}{25}{subsection.5.3.2}
+\contentsline {subsubsection}{BeagleBone Black}{25}{section*.19}
+\contentsline {subsubsection}{Raspberry Pi}{25}{section*.20}
+\contentsline {subsubsection}{Comparativa y selecci\'on}{25}{section*.21}
+\contentsline {section}{\numberline {5.4}Sensorizaci\'on}{25}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Sensores de distancia}{25}{subsection.5.4.1}
+\contentsline {subsubsection}{Infrarrojos}{25}{section*.22}
+\contentsline {subsection}{\numberline {5.4.2}Sensor inercial}{25}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}C\'amara}{25}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Configuraci\'on final}{25}{subsection.5.4.4}
+\contentsline {paragraph}{Palabras clave:}{25}{section*.23}
+\contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{27}{chapter.6}
+\contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{27}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{27}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{28}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{29}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}KiCad}{29}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{30}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}OpenCV}{30}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Qt Creator}{31}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}CMake}{32}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}CM9 IDE}{32}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Git}{33}{subsection.6.3.5}
+\contentsline {paragraph}{Palabras clave:}{33}{section*.24}
+\contentsline {chapter}{\numberline {7}Desarrollo}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}Dise\~no de las partes mec\'anicas}{35}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Cabeza}{35}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Tronco}{35}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Brazos}{35}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Piernas}{35}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}Montaje del controlador}{35}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Esquema de montaje}{35}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Sistema de alimentaci\'on}{35}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Adecuaci\'on de sensores}{35}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Desarrollo de una placa de expansi\'on}{35}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}Puesta en marcha del controlador}{35}{subsection.7.2.5}
+\contentsline {section}{\numberline {7.3}Programaci\'on}{35}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Sistema de locomoci\'on}{35}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Algoritmos de visi\'on}{35}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Pruebas de CEABOT}{35}{subsection.7.3.3}
+\contentsline {paragraph}{Palabras clave:}{35}{section*.25}
+\contentsline {chapter}{\numberline {8}Evaluaci\'on de resultados}{37}{chapter.8}
+\contentsline {section}{\numberline {8.1}Pruebas de funcionamiento}{37}{section.8.1}
+\contentsline {section}{\numberline {8.2}Conclusi\'on}{37}{section.8.2}
+\contentsline {section}{\numberline {8.3}Situaci\'on y desarrollos futuros}{37}{section.8.3}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{39}{section.8.3}
