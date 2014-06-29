@@ -44,6 +44,8 @@ En su configuración standard, el KHR-3HV cuenta con 17 servomotores KRS-2552HV d
 
 Uno de los robots mas interesantes por su atípica configuración de servomotores es el RoboBuilder 5710k (figura \ref{robobuilder}). Se presenta como un kit modular con el que se pueden construir diferentes configuraciones de robots, siendo la mas avanzada la antropomórfica.
 
+Este modelo cuenta con 16 grados de libertad
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/robobuilder}   
@@ -51,11 +53,23 @@ Uno de los robots mas interesantes por su atípica configuración de servomotores 
 \label{robobuilder}
 \end{figure}
 
+TODO
 
 
+\subsubsection{Vstone Robovie-X}
 
-\subsubsection{Vstone Robovie-X TODO}
-The Robovie-X is the standard model and comes with 17 degrees of freedom and features VS-S092J servos which have 9.2kg/cm of torque. The VS-RC003HV onboard controller features a built-in audio system.
+El Robovie-X, uno de los robots humanoides de la empresa Vstone, se presenta en tres versiones diferentes: Lite, Standard y PRO. La diferencia entre los tres modelos radica en el número y tipo de servos que montan, manteniendo comunes el resto de partes del robot. El modelo Standard (figura \ref{robovie}) posee 17 grados de libertad, movidos por servos VS-S092J que desarrollan un torque de 9.2kg/cm. El controlador es un VS-C1, el cual tiene 30 canales para controlar servos. Vstone también fabrica diversas placas de expansión para la conexión de sensores en el Robovie-X.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/robovie.jpg}
+\caption{Vstone Robovie-X}
+\label{robovie}
+\end{figure}
+
+Junto al robot se suministra el programa RobovieMaker2, necesario para programarlo. El método de programación está orientado a la construcción de diagramas de flujo desde los que se controlan tanto los movimientos como la lectura de sensores externos.
+
+
 \subsubsection{Robotis Bioloid}
 
 La empresa koreana Robotis, comercializa un kit robótico conocido como Bioloid. Este kit proporciona una amplia gama de piezas diferentes para montar distintos modelos de robots. La modularidad de los componentes le convierten en una base excelente sobre la que realizar modificaciones, pudiendo diseñar configuraciones alternativas con gran facilidad.
@@ -83,12 +97,9 @@ Basada en un microcontrolador  ATMega2561. Además de los sensores de la propia m
 \item \textbf{Robotis CM-530}.
  
 Presentado como la evolución de la CM-510, en este caso el microcontrolador de la placa es un ARM Cortex STM32F103RE, de 32 bits. El resto de características son similares a las de la CM-510, tiene cinco puertos de expasión para sensores analógicos y un puerto para conectar un receptor ZigBee o Bluetooth.
-\end{itemize} 
+\end{itemize}
 
-Estas controladoras han sido diseñadas para controlar los servos Dynamixel, programándolos a través Roboplus. sin embargo, su capacidad para montar sensores es muy limitada. La controladora CM-5 solo admite un módulo con sensores integrados, el Dynamixel AX-S1. La CM-510 y CM-530 poseen puertos para colocar hasta cinco sensores infrarrojos Sharp y un giróscopo 
-  Roboplus es una suite de programas distribuida gratuitamente por Robotis para la programación de sus robots educativos. Destaca por ser un entorno con un lenguaje de programación (R+) muy visual e intuitivo, preparado para su uso por niños o gente sin conocimientos muy avanzados de programación. Sin embargo, esto lo convierte en un lenguaje de programación muy limitado, hasta el punto que no permite exprimir todo el potencial de los actuadores Dynamixel.
-
-
+En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas distribuida gratuitamente por Robotis para la programación de sus robots educativos. Destaca por ser un entorno con un lenguaje de programación (R+) muy visual e intuitivo, preparado para su uso por niños o gente sin conocimientos muy avanzados de programación. Sin embargo, esto lo convierte en un lenguaje de programación muy limitado, hasta el punto que no permite exprimir todo el potencial de los actuadores Dynamixel.
 
 
 
