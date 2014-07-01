@@ -10,89 +10,101 @@
 
 using namespace cv;
 
-void thinningIteration(cv::Mat& im, int iter)
-{
-    cv::Mat marker = cv::Mat::zeros(im.size(), CV_8UC1);
-
-    for (int i = 1; i < im.rows-1; i++)
-    {
-        for (int j = 1; j < im.cols-1; j++)
-        {
-            uchar p2 = im.at<uchar>(i-1, j);
-            uchar p3 = im.at<uchar>(i-1, j+1);
-            uchar p4 = im.at<uchar>(i, j+1);
-            uchar p5 = im.at<uchar>(i+1, j+1);
-            uchar p6 = im.at<uchar>(i+1, j);
-            uchar p7 = im.at<uchar>(i+1, j-1);
-            uchar p8 = im.at<uchar>(i, j-1);
-            uchar p9 = im.at<uchar>(i-1, j-1);
-
-            int A  = (p2 == 0 && p3 == 1) + (p3 == 0 && p4 == 1) +
-                     (p4 == 0 && p5 == 1) + (p5 == 0 && p6 == 1) +
-                     (p6 == 0 && p7 == 1) + (p7 == 0 && p8 == 1) +
-                     (p8 == 0 && p9 == 1) + (p9 == 0 && p2 == 1);
-            int B  = p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9;
-            int m1 = iter == 0 ? (p2 * p4 * p6) : (p2 * p4 * p8);
-            int m2 = iter == 0 ? (p4 * p6 * p8) : (p2 * p6 * p8);
-
-            if (A == 1 && (B >= 2 && B <= 6) && m1 == 0 && m2 == 0)
-                marker.at<uchar>(i,j) = 1;
-        }
-    }
-
-    im &= ~marker;
+void showMap(Mat input, Mat output){
+    int type = CV_8UC3;
+    Scalar red(0,0,255); //debug
+    Scalar black(0,0,0); //debug
+    Mat way(input.rows,input.cols, type, Scalar(0,0,0)); //debug
+    way.setTo(red,output); //debug
+    Mat obstacles(input.rows,input.cols, type, Scalar(255,255,255)); //debug
+    obstacles.setTo(black,input); //debug
+    Mat ground(input.rows,input.cols, type, Scalar(0,255,0)); //debug
+    Mat result=obstacles.clone()+ground.clone();
+    result.setTo(red,output);
+    imshow("Mapa",result);
 }
 
-/**
- * Function for thinning the given binary image
- *
- * @param  im  Binary image with range = 0-255
- */
-void thinning(cv::Mat& im)
+void drawLine( Mat &img, Point start, Point end )
 {
-    im /= 255;
-    std::cout<<"TODO OK";
-
-    cv::Mat prev = cv::Mat::zeros(im.size(), CV_8UC1);
-    cv::Mat diff;
-
-    do {
-        thinningIteration(im, 0);
-        thinningIteration(im, 1);
-        cv::absdiff(im, prev, diff);
-        im.copyTo(prev);
-    }
-    while (cv::countNonZero(diff) > 0);
-
-    im *= 255;
+  int thickness = 40;
+  int lineType = 8;
+  line( img,
+        start,
+        end,
+        Scalar( 200, 0, 0 ),
+        thickness,
+        lineType );
 }
-
 
 
 int main()
 {
-    //openCamera(1);
-    //Mat image=getFrame();
+    openCamera(1);
 
-    Mat image=imread("../../../../../Imagenes/bloques2.png");
+    while(1){
+        char c=waitKey(0);
+        if (c=='\n'||c=='a') return 0;
 
-    Mat1b bw=image.clone();
-    threshold(bw, bw, 50 , 255, THRESH_BINARY);
+//TOMAMOS UNA MUESTRA
+    Mat image=getFrame();
+    int size_factor=3;
+    cv::Size size(160*size_factor,120*size_factor);
+    resize(image,image,size);
+    imshow("camara",image);
+
+//DETECCION DE VERDE
+    Mat1b input=detectGreen(image);
+    threshold(input, input, 50 , 255, THRESH_BINARY);
+    input=dilation(input,20);
+
+//QUITO LAS RAYAS HORIZONTALES DEL MARCO
+    for (int i=0;i<input.rows;i++)
+    input.at<uchar>(i,0)=0;
+    for (int i=0;i<input.rows;i++)
+    input.at<uchar>(i,input.cols-1)=0;
+
+//VORONOI
+    Mat output=input.clone();
+    voronoi(output);
+    output=dilation(output,2);
+    imshow("rayitas",output);
+
+//BUSQUEDA DE CONTORNOS
+    vector<vector<Point> > contours;
+    findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
+    std::cout<<"\n\n\nContornos: "<<contours.size();
+
+//ME CEPILLO EL CONTORNO MAS DEBIL
+    int big_line=0;
+    int high_max=output.rows;
+    for(int i=0;i<contours.size();i++){
+        int high=output.rows;
+        for(int j=0;j<contours.at(i).size();j++){
+            if(contours.at(i).at(j).y<high) high=contours.at(i).at(j).y;
+        }
+        std::cout<<"\nHartura: "<<high;
+        if (high<high_max){ //Menor, es decir, mas cerca de arriba
+            high_max=high;
+            big_line=i;
+        }
+    }
+
+//PINTO EL GORDO
+    Mat drawing = Mat::zeros( output.size(), CV_8UC3 );
+
+         Scalar color = Scalar(255,0,0);
+         drawContours( drawing, contours, big_line, color, 2, 8);
+
+    imshow("El gordo", drawing);
 
 
-    imshow("original",bw);
-    waitKey();
 
+//RESULADO FINAL
+    showMap(input,output);
 
-    std::cout<<"HI\n";
-    thinning(bw);
-    std::cout<<"BYE";
+    std::cout<<"\n***************************************";
 
-    cv::imshow("dst", bw);
-    cv::waitKey(0);
-//}
+    }//while
     return 0;
-
 }
-
 
