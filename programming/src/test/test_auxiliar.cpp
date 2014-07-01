@@ -42,12 +42,12 @@ int main()
     openCamera(1);
 
     while(1){
-        char c=waitKey(0);
+        char c=waitKey(100);
         if (c=='\n'||c=='a') return 0;
 
 //TOMAMOS UNA MUESTRA
     Mat image=getFrame();
-    int size_factor=3;
+    int size_factor=2;
     cv::Size size(160*size_factor,120*size_factor);
     resize(image,image,size);
     imshow("camara",image);
@@ -55,7 +55,7 @@ int main()
 //DETECCION DE VERDE
     Mat1b input=detectGreen(image);
     threshold(input, input, 50 , 255, THRESH_BINARY);
-    input=dilation(input,20);
+    input=dilation(input,10);
 
 //QUITO LAS RAYAS HORIZONTALES DEL MARCO
     for (int i=0;i<input.rows;i++)
@@ -82,7 +82,7 @@ int main()
         for(int j=0;j<contours.at(i).size();j++){
             if(contours.at(i).at(j).y<high) high=contours.at(i).at(j).y;
         }
-        std::cout<<"\nHartura: "<<high;
+        std::cout<<"\nHartura: "<<high<<std::endl;
         if (high<high_max){ //Menor, es decir, mas cerca de arriba
             high_max=high;
             big_line=i;
@@ -91,11 +91,9 @@ int main()
 
 //PINTO EL GORDO
     Mat drawing = Mat::zeros( output.size(), CV_8UC3 );
-
-         Scalar color = Scalar(255,0,0);
-         drawContours( drawing, contours, big_line, color, 2, 8);
-
-    imshow("El gordo", drawing);
+    Scalar color = Scalar(255,0,0);
+    drawContours( drawing, contours, big_line, color, CV_FILLED);
+    imshow("El camino", drawing);
 
 
 
