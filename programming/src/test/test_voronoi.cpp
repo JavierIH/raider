@@ -24,25 +24,79 @@ void showMap(Mat input, Mat output){
     imshow("Mapa",result);
 }
 
+void drawLine( Mat &img, Point start, Point end )
+{
+  int thickness = 40;
+  int lineType = 8;
+  line( img,
+        start,
+        end,
+        Scalar( 200, 0, 0 ),
+        thickness,
+        lineType );
+}
+
 
 int main()
 {
-    //openCamera(1);
-    //Mat image=getFrame();
-    Mat image=imread("../../../../../Imagenes/bloques2.png");
+    openCamera(1);
 
-    Mat1b input=image.clone();
+    while(1){
+        char c=waitKey(0);
+        if (c=='\n'||c=='a') return 0;
+
+    Mat image=getFrame();
+
+    int size_factor=3;
+    cv::Size size(160*size_factor,120*size_factor);
+    resize(image,image,size);
+
+
+    imshow("camara",image);
+  //  waitKey();
+
+
+    Mat1b input=detectGreen(image);
     threshold(input, input, 50 , 255, THRESH_BINARY);
+    //imshow("original",input);
+    //waitKey();
+    input=dilation(input,20);
+int dist=300;
+/*
+    for (int i=input.cols/2+dist;i<input.cols;i++)
+    input.at<uchar>(input.rows-1,i)=0;
 
-    imshow("original",input);
-    waitKey();
+    for (int i=0;i<input.cols/2-dist;i++)
+    input.at<uchar>(input.rows-1,i)=0;*/
+
+    for (int i=0;i<input.rows;i++)
+    input.at<uchar>(i,0)=0;
+
+    for (int i=0;i<input.rows;i++)
+    input.at<uchar>(i,input.cols-1)=0;
+
+
+
+    //imshow("dilation",input);
+    //waitKey();
 
     Mat output=input.clone();
     voronoi(output);
-    dilate(output, output, Mat(),Point(-1,-1),3);
+    output=dilation(output,2);
+
+    imshow("rayitas",output);
+
+    vector<vector<Point> > contours;
+    findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
+
+    std::cout<<"\n\n\nContornos: "<<contours.size();
+
+
+
+
 
     showMap(input,output);
-    waitKey();
-
+//    waitKey();
+}
     return 0;
 }

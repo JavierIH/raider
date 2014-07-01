@@ -59,8 +59,13 @@ cv::Mat1b detectGreen(Mat image){
     return out;
 }
 
-void thinningIteration(cv::Mat& img, int iter)
-{
+cv::Mat1b dilation(Mat1b input, int level){
+    Mat1b output;
+    dilate(input, output, Mat(),Point(-1,-1),level);
+    return output;
+}
+
+void thinningIteration(cv::Mat& img, int iter){
     CV_Assert(img.channels() == 1);
     CV_Assert(img.depth() != sizeof(uchar));
     CV_Assert(img.rows > 3 && img.cols > 3);
@@ -134,8 +139,7 @@ void thinningIteration(cv::Mat& img, int iter)
     img &= ~marker;
 }
 
-void voronoi(cv::Mat& im)
-{
+void voronoi(cv::Mat& im){
     im /= 255;
 
     cv::Mat prev = cv::Mat::zeros(im.size(), CV_8UC1);
@@ -146,14 +150,20 @@ void voronoi(cv::Mat& im)
         thinningIteration(im, 1);
         cv::absdiff(im, prev, diff);
         im.copyTo(prev);
-        Mat aux=im.clone();
+        /*Mat aux=im.clone();
         aux*=255;
         imshow("im",aux);
-        waitKey(100);
+        waitKey(10);/**/
     }
     while (cv::countNonZero(diff) > 0);
 
     im *= 255;
+
+    for (int i=0;i<im.cols;i++)
+    im.at<uchar>(im.rows-1,i)=0;
+
+    for (int i=0;i<im.cols;i++)
+    im.at<uchar>(0,i)=0;
 }
 
 
