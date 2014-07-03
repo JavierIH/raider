@@ -40,17 +40,17 @@ void drawLine( Mat &img, Point start, Point end )
 int main()
 {
     openCamera(1);
-
-    while(1){
-        char c=waitKey(100);
-        if (c=='\n'||c=='a') return 0;
+    std::cout<<"\n\n\nGO!!!!!!!!!!!\n\n\n\n";
+    //while(1){
+      //  char c=waitKey(100);
+      //  if (c=='\n'||c=='a') return 0;
 
 //TOMAMOS UNA MUESTRA
     Mat image=getFrame();
     int size_factor=2;
     cv::Size size(160*size_factor,120*size_factor);
     resize(image,image,size);
-    imshow("camara",image);
+    //imshow("camara",image);
 
 //DETECCION DE VERDE
     Mat1b input=detectGreen(image);
@@ -67,7 +67,7 @@ int main()
     Mat output=input.clone();
     voronoi(output);
     output=dilation(output,2);
-    imshow("rayitas",output);
+    //imshow("rayitas",output);
 
 //BUSQUEDA DE CONTORNOS
     vector<vector<Point> > contours;
@@ -93,7 +93,7 @@ int main()
     Mat drawing = Mat::zeros( output.size(), CV_8UC3 );
     Scalar color = Scalar(255,0,0);
     drawContours( drawing, contours, big_line, color, CV_FILLED);
-    imshow("El camino", drawing);
+    //imshow("El camino", drawing);
 
 
 
@@ -102,7 +102,7 @@ int main()
 
     std::cout<<"\n***************************************";
 
-    }//while
+    //}//while
     return 0;
 }
 
