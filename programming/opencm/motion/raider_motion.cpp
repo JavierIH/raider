@@ -55,6 +55,7 @@ void Robot::init(){
   for (int i=0; i<=19; i++){
     currentPosition[i]=targetPosition[i]-50; //Un valor cercano para el primer movimiento 
   }
+        SerialUSB.println("dentro de init!!");
 
   move(1.5); //ejecutamos movimiento
   delay(3000);  //esperamos
@@ -91,19 +92,21 @@ void Robot::setTargetPosition(int pan, int tilt, int s1, int s2, int s3, int s4,
 
 
 void Robot::move(float tiempo){
-  Dxl.setPosition(25,targetPosition[0]+TRIM[0],(abs(currentPosition[0]-targetPosition[0])/tiempo)*0.7);
+
+  //Dxl.setPosition(25,targetPosition[0]+TRIM[0],(abs(currentPosition[0]-targetPosition[0])/tiempo)*0.7);
   SerialUSB.print("P:25 en ");
   SerialUSB.println(targetPosition[0]+TRIM[0]);
-  head.writeMicroseconds(targetPosition[1]+1000); //Valor entre 1000 y 2024
+  //head.writeMicroseconds(targetPosition[1]+1000); //Valor entre 1000 y 2024
   SerialUSB.print("T:S en ");
   SerialUSB.println(targetPosition[1]);
   for(int i=1; i<=18; i++){      
-    Dxl.setPosition(i,targetPosition[i+1]+TRIM[i+1],(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.7);
+    //Dxl.setPosition(i,targetPosition[i+1]+TRIM[i+1],(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.7);
     SerialUSB.print("ID:");
-    SerialUSB.print(i+1);
+    SerialUSB.print(i);
     SerialUSB.print(" en ");
     SerialUSB.println(targetPosition[i]+TRIM[i]);
   }
+
   updateCurrentPosition();
   //temp=millis()-temp;
   //SerialUSB.print("Tiempo de ejecucion: ");
