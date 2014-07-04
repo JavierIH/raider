@@ -36,21 +36,33 @@ void drawLine( Mat &img, Point start, Point end )
         lineType );
 }
 
+void drawPoint( Mat img, Point center )
+{
+ int thickness = -1;
+ int lineType = 8;
+
+ circle( img,
+         center,
+         4,
+         Scalar( 0, 0, 255 ),
+         thickness,
+         lineType );
+}
 
 int main()
 {
     openCamera(1);
     std::cout<<"\n\n\nGO!!!!!!!!!!!\n\n\n\n";
-    //while(1){
-      //  char c=waitKey(100);
-      //  if (c=='\n'||c=='a') return 0;
+    while(1){
+        char c=waitKey(100);
+        if (c=='\n'||c=='a') return 0;
 
 //TOMAMOS UNA MUESTRA
     Mat image=getFrame();
     int size_factor=2;
     cv::Size size(160*size_factor,120*size_factor);
     resize(image,image,size);
-    //imshow("camara",image);
+    imshow("camara",image);
 
 //DETECCION DE VERDE
     Mat1b input=detectGreen(image);
@@ -93,7 +105,16 @@ int main()
     Mat drawing = Mat::zeros( output.size(), CV_8UC3 );
     Scalar color = Scalar(255,0,0);
     drawContours( drawing, contours, big_line, color, CV_FILLED);
-    //imshow("El camino", drawing);
+
+    int base=50;
+    drawPoint( drawing, Point (drawing.cols/2+base/2,drawing.rows-2) );
+    drawPoint( drawing, Point (drawing.cols/2-base/2,drawing.rows-2) );
+
+
+
+
+
+    imshow("El camino", drawing);
 
 
 
@@ -102,7 +123,7 @@ int main()
 
     std::cout<<"\n***************************************";
 
-    //}//while
+    }//while
     return 0;
 }
 
