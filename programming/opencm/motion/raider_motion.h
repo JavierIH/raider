@@ -5,7 +5,7 @@
 #include "Servo.h"
 
 #define TRIMP 0
-#define TRIMT 0
+#define TRIMT -60
 #define TRIM1 0
 #define TRIM2 0
 #define TRIM3 0
@@ -28,9 +28,9 @@
 #define HEAD_PIN 9
 
 class Robot{
-    int currentPosition[21];
-    int targetPosition[21];
-    int TRIM[21];
+    int currentPosition[20];
+    int targetPosition[20];
+    int TRIM[20];
     Servo head;
   public:
     Robot();
@@ -38,6 +38,7 @@ class Robot{
     void updateCurrentPosition();
     void setTargetPosition(int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int);
     void move(float); //mueve todos los servos a goalPosition
+    void movVertical(int,int);
 
 
     //char readCommand(){}

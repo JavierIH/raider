@@ -4,6 +4,8 @@
 
 Robot::Robot(){
   
+  Dxl.begin(1);
+
   head.attach(HEAD_PIN);
   
   TRIM[0]=TRIMP;
@@ -32,9 +34,9 @@ Robot::Robot(){
 
 void Robot::init(){
   targetPosition[0]=512;
-  targetPosition[1]=512;
-  targetPosition[2]=62;
-  targetPosition[3]=962;
+  targetPosition[1]=0;
+  targetPosition[2]=512;
+  targetPosition[3]=512;
   targetPosition[4]=212;
   targetPosition[5]=812;
   targetPosition[6]=662;
@@ -55,9 +57,10 @@ void Robot::init(){
   for (int i=0; i<=19; i++){
     currentPosition[i]=targetPosition[i]-50; //Un valor cercano para el primer movimiento 
   }
-        SerialUSB.println("dentro de init!!");
+        //SerialUSB.println("dentro de init!!");
 
-  move(1.5); //ejecutamos movimiento
+  move(5); //ejecutamos movimiento
+  updateCurrentPosition();
   delay(3000);  //esperamos
 }
 
@@ -93,18 +96,18 @@ void Robot::setTargetPosition(int pan, int tilt, int s1, int s2, int s3, int s4,
 
 void Robot::move(float tiempo){
 
-  //Dxl.setPosition(25,targetPosition[0]+TRIM[0],(abs(currentPosition[0]-targetPosition[0])/tiempo)*0.7);
-  SerialUSB.print("P:25 en ");
-  SerialUSB.println(targetPosition[0]+TRIM[0]);
-  //head.writeMicroseconds(targetPosition[1]+1000); //Valor entre 1000 y 2024
-  SerialUSB.print("T:S en ");
-  SerialUSB.println(targetPosition[1]);
-  for(int i=1; i<=18; i++){      
-    //Dxl.setPosition(i,targetPosition[i+1]+TRIM[i+1],(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.7);
-    SerialUSB.print("ID:");
-    SerialUSB.print(i);
-    SerialUSB.print(" en ");
-    SerialUSB.println(targetPosition[i]+TRIM[i]);
+  Dxl.setPosition(25,targetPosition[0]+TRIM[0],(abs(currentPosition[0]-targetPosition[0])/tiempo)*0.7); // TODO volver a la función antigua 
+  //SerialUSB.print("P:25 en ");
+  //SerialUSB.println(targetPosition[0]+TRIM[0]);
+  head.writeMicroseconds(targetPosition[1]+1000+TRIM[1]); //Valor entre 1000 y 2024
+  //SerialUSB.print("T:S en ");
+  //SerialUSB.println(targetPosition[1]);
+  for(int i=1; i<=18; i++){  // TODO resvisar
+    Dxl.setPosition(i,targetPosition[i+1]+TRIM[i+1],(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.7);
+    //SerialUSB.print("ID:");
+    //SerialUSB.print(i);
+    //SerialUSB.print(" en ");
+    //SerialUSB.println(targetPosition[i]+TRIM[i]);
   }
 
   updateCurrentPosition();
@@ -115,7 +118,28 @@ void Robot::move(float tiempo){
   delay(tiempo*1000); // TODO a lo mejor puede cambiarse por isMoving
 }
 
-
+void Robot::movVertical(int left_amp, int right_amp){
+      setTargetPosition(targetPosition[0],
+                        targetPosition[1],
+                        targetPosition[2],
+                        targetPosition[3],
+                        targetPosition[4],
+                        targetPosition[5],
+                        targetPosition[6],
+                        targetPosition[7],
+                        targetPosition[8],
+                        targetPosition[9],
+                        targetPosition[10],
+                        targetPosition[11],
+                        targetPosition[12]+right_amp, //11
+                        targetPosition[13]-left_amp,
+                        targetPosition[14]+2*right_amp,
+                        targetPosition[15]-2*left_amp,
+                        targetPosition[16]-right_amp,
+                        targetPosition[17]+left_amp,
+                        targetPosition[18],
+                        targetPosition[19]);
+}
 
 
 /*void Robot::setPos(int id, int nueva){
