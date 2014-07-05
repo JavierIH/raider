@@ -39,6 +39,7 @@ class Robot{
     void setTargetPosition(int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int);
     void move(float); //mueve todos los servos a goalPosition
     void movVertical(int,int);
+    void movLateral(int,int);
 
 
     //char readCommand(){}
@@ -49,3 +50,4 @@ class Robot{
 
 
 #endif
+

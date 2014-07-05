@@ -9,8 +9,8 @@ Robot::Robot(){
 
 
   head.attach(HEAD_PIN);
-  SerialUSB.print("Servo");
-  SerialUSB.println(HEAD_PIN);
+//  SerialUSB.print("Servo");
+//  SerialUSB.println(HEAD_PIN);
   
     
   TRIM[0]=TRIMP;
@@ -50,12 +50,12 @@ void Robot::init(){
   targetPosition[9]=512;
   targetPosition[10]=512;
   targetPosition[11]=512;
-  targetPosition[12]=332;
-  targetPosition[13]=692;
-  targetPosition[14]=162;
-  targetPosition[15]=862;
-  targetPosition[16]=712;
-  targetPosition[17]=312;
+  targetPosition[12]=512;
+  targetPosition[13]=512;
+  targetPosition[14]=512;
+  targetPosition[15]=512;
+  targetPosition[16]=512;
+  targetPosition[17]=512;
   targetPosition[18]=512;
   targetPosition[19]=512;
   
@@ -101,20 +101,24 @@ void Robot::setTargetPosition(int pan, int tilt, int s1, int s2, int s3, int s4,
 
 void Robot::move(float tiempo){
 
-  Dxl.setPosition(25,targetPosition[0]+TRIM[0],(abs(currentPosition[0]-targetPosition[0])/tiempo)*0.7); // TODO volver a la función antigua 
-  SerialUSB.print("P:25 en ");
-  SerialUSB.println(targetPosition[0]+TRIM[0]);
+//  Dxl.setPosition(25,targetPosition[0]+TRIM[0],(abs(currentPosition[0]-targetPosition[0])/tiempo)*0.5); // TODO volver a la función antigua
+  Dxl.writeWord(25, 32, (abs(currentPosition[0]-targetPosition[0])/tiempo)*0.5); //Velocidad fija para servos (no hay referencia). 
+  Dxl.writeWord(25, 30, targetPosition[0]+TRIM[0]); //Posicionamiento del servo i en posicion[i].
+//  SerialUSB.print("P:25 en ");
+//  SerialUSB.println(targetPosition[0]+TRIM[0]);
   
-  head.writeMicroseconds(targetPosition[1]+1000); //Valor entre 1000 y 2024
-  SerialUSB.print("T:S en ");
-  SerialUSB.println(targetPosition[1]+1000);
+  head.writeMicroseconds(targetPosition[1]+1000+TRIM[1]); //Valor entre 1000 y 2024
+//  SerialUSB.print("T:S en ");
+//  SerialUSB.println(targetPosition[1]+1000);
   
   for(int i=1; i<=18; i++){  // TODO resvisar
-    Dxl.setPosition(i,targetPosition[i+1]+TRIM[i+1],(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.7);
-    SerialUSB.print("ID:");
-    SerialUSB.print(i);
-    SerialUSB.print(" en ");
-    SerialUSB.println(targetPosition[i]+TRIM[i]);
+    //Dxl.setPosition(i,targetPosition[i+1]+TRIM[i+1],(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.5);
+    Dxl.writeWord(i, 32,(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.5); //Velocidad fija para servos (no hay referencia). 
+    Dxl.writeWord(i, 30, targetPosition[i+1]+TRIM[i+1]); //Posicionamiento del servo i en posicion[i].
+//    SerialUSB.print("ID:");
+//    SerialUSB.print(i);
+//    SerialUSB.print(" en ");
+//    SerialUSB.println(targetPosition[i]+TRIM[i]);
   }
 
   updateCurrentPosition();
@@ -122,7 +126,7 @@ void Robot::move(float tiempo){
   //SerialUSB.print("Tiempo de ejecucion: ");
   //SerialUSB.print(temp);
   //SerialUSB.println(" ms");
-  delay(tiempo*1000); // TODO a lo mejor puede cambiarse por isMoving
+  delay(tiempo*900); // TODO a lo mejor puede cambiarse por isMoving
 }
 
 void Robot::movVertical(int left_amp, int right_amp){
@@ -147,6 +151,30 @@ void Robot::movVertical(int left_amp, int right_amp){
                         targetPosition[18],
                         targetPosition[19]);
 }
+
+void Robot::movLateral(int left_amp, int right_amp){
+      setTargetPosition(targetPosition[0],
+                        targetPosition[1],
+                        targetPosition[2],
+                        targetPosition[3],
+                        targetPosition[4],
+                        targetPosition[5],
+                        targetPosition[6],
+                        targetPosition[7],
+                        targetPosition[8],
+                        targetPosition[9],
+                        targetPosition[10]+right_amp,
+                        targetPosition[11]+left_amp,
+                        targetPosition[12], //11
+                        targetPosition[13],
+                        targetPosition[14],
+                        targetPosition[15],
+                        targetPosition[16],
+                        targetPosition[17],
+                        targetPosition[18]-right_amp,
+                        targetPosition[19]-left_amp);
+}
+
 
 
 /*void Robot::setPos(int id, int nueva){
