@@ -64,7 +64,7 @@ void Robot::init(){
   }
         //SerialUSB.println("dentro de init!!");
 
-  move(5); //ejecutamos movimiento
+  move(2); //ejecutamos movimiento
   updateCurrentPosition();
   //delay(3000);  //esperamos
 }
@@ -126,7 +126,11 @@ void Robot::move(float tiempo){
   //SerialUSB.print("Tiempo de ejecucion: ");
   //SerialUSB.print(temp);
   //SerialUSB.println(" ms");
-  delay(tiempo*900); // TODO a lo mejor puede cambiarse por isMoving
+  delay(tiempo*1000); // TODO a lo mejor puede cambiarse por isMoving
+}
+
+void Robot::movOffset(int id, int offset){
+//targePosition[id+1]+=offset;
 }
 
 void Robot::movVertical(int left_amp, int right_amp){
@@ -175,6 +179,28 @@ void Robot::movLateral(int left_amp, int right_amp){
                         targetPosition[19]-left_amp);
 }
 
+void Robot::movFrontal(int left_amp, int right_amp){
+      setTargetPosition(targetPosition[0],
+                        targetPosition[1],
+                        targetPosition[2],
+                        targetPosition[3],
+                        targetPosition[4],
+                        targetPosition[5],
+                        targetPosition[6],
+                        targetPosition[7],
+                        targetPosition[8],
+                        targetPosition[9],
+                        targetPosition[10],
+                        targetPosition[11],
+                        targetPosition[12]-right_amp, //11
+                        targetPosition[13]+left_amp,
+                        targetPosition[14],
+                        targetPosition[15],
+                        targetPosition[16]-right_amp,
+                        targetPosition[17]+left_amp,
+                        targetPosition[18],
+                        targetPosition[19]);
+}
 
 
 /*void Robot::setPos(int id, int nueva){
