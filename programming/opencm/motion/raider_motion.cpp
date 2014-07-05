@@ -4,10 +4,15 @@
 
 Robot::Robot(){
   
+  delay(3000);
   Dxl.begin(1);
 
+
   head.attach(HEAD_PIN);
+  SerialUSB.print("Servo");
+  SerialUSB.println(HEAD_PIN);
   
+    
   TRIM[0]=TRIMP;
   TRIM[1]=TRIMT;
   TRIM[2]=TRIM1;
@@ -19,15 +24,15 @@ Robot::Robot(){
   TRIM[8]=TRIM7;
   TRIM[9]=TRIM8;  
   TRIM[10]=TRIM9;  
-  TRIM[12]=TRIM10;  
-  TRIM[13]=TRIM11;  
-  TRIM[14]=TRIM12;  
-  TRIM[15]=TRIM13;  
-  TRIM[16]=TRIM14;  
-  TRIM[17]=TRIM15;  
-  TRIM[18]=TRIM16;  
-  TRIM[19]=TRIM17;  
-  TRIM[20]=TRIM18;
+  TRIM[11]=TRIM10;  
+  TRIM[12]=TRIM11;  
+  TRIM[13]=TRIM12;  
+  TRIM[14]=TRIM13;  
+  TRIM[15]=TRIM14;  
+  TRIM[16]=TRIM15;  
+  TRIM[17]=TRIM16;  
+  TRIM[18]=TRIM17;  
+  TRIM[19]=TRIM18;  
 
 }
 
@@ -61,7 +66,7 @@ void Robot::init(){
 
   move(5); //ejecutamos movimiento
   updateCurrentPosition();
-  delay(3000);  //esperamos
+  //delay(3000);  //esperamos
 }
 
 
@@ -97,17 +102,19 @@ void Robot::setTargetPosition(int pan, int tilt, int s1, int s2, int s3, int s4,
 void Robot::move(float tiempo){
 
   Dxl.setPosition(25,targetPosition[0]+TRIM[0],(abs(currentPosition[0]-targetPosition[0])/tiempo)*0.7); // TODO volver a la función antigua 
-  //SerialUSB.print("P:25 en ");
-  //SerialUSB.println(targetPosition[0]+TRIM[0]);
-  head.writeMicroseconds(targetPosition[1]+1000+TRIM[1]); //Valor entre 1000 y 2024
-  //SerialUSB.print("T:S en ");
-  //SerialUSB.println(targetPosition[1]);
+  SerialUSB.print("P:25 en ");
+  SerialUSB.println(targetPosition[0]+TRIM[0]);
+  
+  head.writeMicroseconds(targetPosition[1]+1000); //Valor entre 1000 y 2024
+  SerialUSB.print("T:S en ");
+  SerialUSB.println(targetPosition[1]+1000);
+  
   for(int i=1; i<=18; i++){  // TODO resvisar
     Dxl.setPosition(i,targetPosition[i+1]+TRIM[i+1],(abs(currentPosition[i+1]-targetPosition[i+1])/tiempo)*0.7);
-    //SerialUSB.print("ID:");
-    //SerialUSB.print(i);
-    //SerialUSB.print(" en ");
-    //SerialUSB.println(targetPosition[i]+TRIM[i]);
+    SerialUSB.print("ID:");
+    SerialUSB.print(i);
+    SerialUSB.print(" en ");
+    SerialUSB.println(targetPosition[i]+TRIM[i]);
   }
 
   updateCurrentPosition();
