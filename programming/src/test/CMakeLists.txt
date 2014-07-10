@@ -22,6 +22,12 @@ add_executable(test_auxiliar test_auxiliar.cpp)
 target_link_libraries(test_auxiliar serialib raider bones eye ${OpenCV_LIBS})
 ENDIF ()
 
+OPTION(TEST_IMU "Magnetometer, gyroscope and acelerometer" 1)
+IF (TEST_IMU)
+add_executable(test_imu test_imu.cpp)
+target_link_libraries(test_imu serialib raider bones eye ${OpenCV_LIBS})
+ENDIF ()
+
 OPTION(TEST_VORONOI "Thinning algorithms" 1)
 IF (TEST_VORONOI)
 add_executable(test_voronoi test_voronoi.cpp)
