@@ -6,20 +6,32 @@
 #include "../libraries/raider/raider.h"
 #include "../libraries/eye/eye.h"
 #include <iostream>
+#include <linux/i2c.h>
+#include <linux/i2c-dev.h>
+
 
 
 using namespace cv;
 
+//Direccion del imu: 69 (1000101)
+
 int main()
 {
-//OPENING THE BUS
+    bool error;
+
+//ABRIMOS EL PUERTO
     int file;
     char *filename = "/dev/i2c-2";
-    if ((file = open(filename, O_RDWR)) < 0) {
-        std::cout<<"Failed to open the i2c bus";
-        exit(1);
-    }
-    else std::cout<<"\nOpen is OK\n";
-    return 0;
+    if ((file = open(filename, O_RDWR)) < 0) error=1;
+    else error=0;
+
+    std::cout<<"\nApertura del puerto: "<<error<<std::endl;
+
+    int addr = 0b01000101;          // TODO poner direccion
+    if (ioctl(file, I2C_SLAVE, addr) < 0) error=1;
+    else error=0;
+
+    std::cout<<"\nLectura de direccion: "<<error<<std::endl;
+
 }
 
