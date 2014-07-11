@@ -21,7 +21,7 @@ int main()
 
 //ABRIMOS EL PUERTO
     int file;
-    char *filename = "/dev/i2c-2";
+    char *filename = "/dev/i2c-1";
     if ((file = open(filename, O_RDWR)) < 0) error=1;
     else error=0;
 

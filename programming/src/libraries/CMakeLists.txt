@@ -1,5 +1,6 @@
 add_subdirectory(serialib)
 add_subdirectory(bones)
 add_subdirectory(eye)
+add_subdirectory(i2c)
+add_subdirectory(motion)
 add_subdirectory(raider)
-
