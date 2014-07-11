@@ -7,14 +7,12 @@
  
 #include "motion.h"
 #include "../i2c/i2c.h"
-#include <linux/i2c.h>
-#include <linux/i2c-dev.h>
 #include <iostream>
 using namespace std;
 
 MotionSensor::MotionSensor() {
 	cout << "Initializing MotionSensor" << endl;
-	i2c = new I2C(2, 0xD0);
+    i2c = new I2C(2, 0xD0); // TODO revisar esta direccion
 	cout << "MotionSensor initialized" << endl;
 }
 

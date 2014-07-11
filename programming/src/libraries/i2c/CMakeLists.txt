@@ -1,2 +1,5 @@
 add_library(i2c SHARED i2c.cpp)
+#add_library(i2c-dev SHARED i2c-dev.h)
+#target_link_libraries(i2c-dev i2c-dev)
+#target_link_libraries(i2c i2c i2c-dev)
 target_link_libraries(i2c i2c)

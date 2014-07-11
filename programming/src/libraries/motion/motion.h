@@ -9,9 +9,6 @@
 #define MOTION_H_
 
 #include "../i2c/i2c.h"
-#include <linux/i2c.h>
-#include <linux/i2c-dev.h>
-
 
 class MotionSensor {
 private:

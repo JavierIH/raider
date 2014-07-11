@@ -5,14 +5,12 @@
  *      Author: mike
  */
 
-#include "../i2c/i2c.h"
+#include "i2c.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h> // open();
 #include <unistd.h> // close();
 #include <sys/ioctl.h> // ioctl();
-#include <linux/i2c.h>
-#include <linux/i2c-dev.h>
 
 I2C::I2C(int bus, __u16 address) {
 	file = 0;
