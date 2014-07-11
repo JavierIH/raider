@@ -8,6 +8,6 @@ int main() {
     MotionSensor motion;
 
 
-    cout << "\tAccel X:\t" << motion.getAccelerometerX()<<endl;
+    //cout << "\tAccel X:\t" << motion.getAccelerometerX()<<endl;
 
 }

@@ -11,9 +11,14 @@
 using namespace std;
 
 MotionSensor::MotionSensor() {
-	cout << "Initializing MotionSensor" << endl;
-    i2c = new I2C(2, 0xD0); // TODO revisar esta direccion
-	cout << "MotionSensor initialized" << endl;
+    i2c = new I2C(2, 0x69); // TODO revisar esta direccion
+
+    //Despertar
+    i2c->write8(0x6B,0);
+
+
+
+
 }
 
 MotionSensor::~MotionSensor() {

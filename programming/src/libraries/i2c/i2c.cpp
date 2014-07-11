@@ -63,7 +63,7 @@ int I2C::write8(__u8 reg, __u8 data) {
 	__s32 result;
 	result = i2c_smbus_write_byte_data(file, reg, data);
 	if (result < 0) {
-		// Error handling here
+        printf("ERROR en write");
 	}
 
 	this->closeConnection();
