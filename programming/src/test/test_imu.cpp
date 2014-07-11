@@ -1,13 +1,13 @@
 #include <iostream>
-#include "../libraries/motion/motion.h"
+#include "../libraries/i2c/i2c.h"
 
 using namespace std;
 
 int main() {
 
-    MotionSensor motion;
+    I2C con(1,0x69);
 
+    cout<<con.read8(0x00);
 
-    //cout << "\tAccel X:\t" << motion.getAccelerometerX()<<endl;
 
 }
