@@ -25,10 +25,12 @@ bool I2C::openConnection() {
 	snprintf(filename, 19, "/dev/i2c-%d", bus);
 	file = open(filename, O_RDWR);
 	if (file < 0) {
+        report(WARNING,"I2C openConnection FAILED 1");
 		return false;
 	}
 
 	if (ioctl(file, I2C_SLAVE, address) < 0) {
+        report(WARNING,"I2C openConnection FAILED 2");
 		return false;
 	}
 
