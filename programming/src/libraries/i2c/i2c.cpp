@@ -18,7 +18,8 @@ I2C::I2C(int bus, __u16 address) {
 }
 
 I2C::~I2C() {
-	// Deallocate memory and free pointers
+    addres = 0;
+    close(file);
 }
 
 bool I2C::openConnection() {
@@ -38,7 +39,7 @@ bool I2C::openConnection() {
 }
 
 bool I2C::closeConnection() {
-	address = 0;
+    //address = 0; // TODO venga ya!! que mierda es esto??
 	if(close(file) < 0) return false;
 	return true;
 }
