@@ -18,7 +18,7 @@ I2C::I2C(int bus, __u16 address) {
 }
 
 I2C::~I2C() {
-    addres = 0;
+    address = 0;
     close(file);
 }
 
