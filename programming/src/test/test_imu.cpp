@@ -1,13 +1,14 @@
 #include <iostream>
-#include "../libraries/i2c/i2c.h"
+#include "../libraries/imu/imu.h"
+
 
 using namespace std;
 
+// cout << "\033[1;33mCOLOR\033[0m\n";
+
+
 int main() {
 
-    I2C con(1,0x69);
-
-    cout<<con.read8(0x00);
-
+IMU imu;
 
 }

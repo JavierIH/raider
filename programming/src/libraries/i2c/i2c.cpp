@@ -49,8 +49,8 @@ __s32 I2C::read8(__u8 reg) {
 	__s32 result;
 	result = i2c_smbus_read_byte_data(file, reg);
 	if (result < 0) {
-		// Error handling here
-	}
+        printf("\033[1;31[ERROR] in I2C read (read8) operation\033[0m\n");
+    }
 
 	this->closeConnection();
 	return result;
@@ -63,7 +63,7 @@ int I2C::write8(__u8 reg, __u8 data) {
 	__s32 result;
 	result = i2c_smbus_write_byte_data(file, reg, data);
 	if (result < 0) {
-        printf("ERROR en write");
+        printf("\033[1;31m[ERROR] in I2C write (write8) operation\033[0m\n");
 	}
 
 	this->closeConnection();
@@ -77,8 +77,8 @@ int I2C::read16(__u8 reg) {
 	__s32 result;
 	result = i2c_smbus_read_word_data(file, reg);
 	if (result < 0) {
-		// Error handling here
-	}
+        printf("\033[1;31m[ERROR] in I2C read (read16) operation\033[0m\n");
+    }
 
 	this->closeConnection();
 	return result;
@@ -91,8 +91,8 @@ int I2C::write16(__u8 reg, __u16 data) {
 	__s32 result;
 	result = i2c_smbus_write_byte_data(file, reg, data);
 	if (result < 0) {
-		// Error handling here
-	}
+        printf("\033[1;31m[ERROR] in I2C write (write16) operation\033[0m\n");
+    }
 
 	this->closeConnection();
 	return result;
