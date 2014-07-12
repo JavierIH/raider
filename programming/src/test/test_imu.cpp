@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string>
 #include "../libraries/imu/imu.h"
+#include "../libraries/debug/debug.h"
 
 
 using namespace std;
@@ -9,6 +11,13 @@ using namespace std;
 
 int main() {
 
-IMU imu;
+    report(INFO,"Beginning TEST_IMU\n");
+
+    IMU imu;
+
+    report("getting AX");
+
+    if(65535==imu.getAccelerometerX()) report(WARNING, "Getting accelerometer may be not working on X axis");
+
 
 }

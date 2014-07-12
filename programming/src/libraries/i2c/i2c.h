@@ -2,13 +2,23 @@
  * i2c.h
  *
  *  Created on: Jul 8, 2013
- *      Author: mike
+ *  Original author: mike
+ *
+ *  Customized on Jul 2, 2014
+ *  Secondary author: JavierIH
+ *
  */
 
 #ifndef I2C_H_
 #define I2C_H_
 
+#include "../debug/debug.h"
 #include <linux/i2c-dev.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h> // open();
+#include <unistd.h> // close();
+#include <sys/ioctl.h> // ioctl();
 
 class I2C {
 private:

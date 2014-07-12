@@ -12,7 +12,7 @@ int main()
     report(ERROR,"Mensaje de error de color rojo :(");
     report(OK,"Mensaje de ok de color verde :)");
     report(WARNING,"Mensaje de warning de color amarillo :O");
-    report("mensaje comun y moliento");
+    report("mensaje comun y moliente");
 
 }
 
