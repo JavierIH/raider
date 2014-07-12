@@ -5,7 +5,7 @@
 using namespace std;
 
 IMU::IMU() {
-    i2c = new I2C(2, 0x69);
+    i2c = new I2C(1, 0x69);
 
     //Despertar
     if(i2c->write8(0x6B,0)<0) report(ERROR, "IMU connection failed (not waking up)");

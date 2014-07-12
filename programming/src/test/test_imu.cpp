@@ -17,7 +17,12 @@ int main() {
 
     report("getting AX");
 
-    if(65535==imu.getAccelerometerX()) report(WARNING, "Getting accelerometer may be not working on X axis");
+    for(int i=0; i<100;i++){
+    int ax=imu.getAccelerometerX();
+    if(65535==ax) report(WARNING, "Getting accelerometer may be not working on X axis");
+    else cout<<ax<<endl;
+    usleep(500000);
+    }
 
 
 }
