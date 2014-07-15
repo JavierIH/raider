@@ -38,8 +38,9 @@ difference(){
 union(){
 
 	difference(){
-translate([-51,6,0])cube([102,59,5]);
-		translate([-49,4,3])cube([98,59,20]);
+translate([-51,6,0])cube([102,59,25]);
+		translate([-49,4,3])cube([98,59,30]);
+		translate([-60,4,6])cube([120,59,30]);
 }
 
 
@@ -54,6 +55,18 @@ translate([-51,6,0])cube([102,59,5]);
 		mirror([1,0,0])translate([-10-51,-12,-5])rotate([0,0,-20])cube([20,20,80]);
 		translate([-15-19,12,0])bbbholes(6);
 
+
+		for(i=[0:5]) translate([0,i*8+13,0])cube([50,5,20],center=true);
+
+		hull(){
+			translate([45,56,-10])cylinder(r=3,h=20);
+			translate([39,56,-10])cylinder(r=3,h=20);
+			translate([45,39,-10])cylinder(r=3,h=20);
+			translate([36,39,-10])cylinder(r=3,h=20);
+		}
+		
+		translate([13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200);
+		translate([-13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200);
 
 
 	}

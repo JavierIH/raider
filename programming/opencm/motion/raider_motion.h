@@ -22,8 +22,8 @@
 #define TRIM14 -5
 #define TRIM15 0
 #define TRIM16 -3
-#define TRIM17 0
-#define TRIM18 0
+#define TRIM17 10
+#define TRIM18 -10
 
 #define HEAD_PIN 9
 
