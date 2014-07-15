@@ -15,18 +15,18 @@ void loop() {
 
 //while(1);
 int amp=60;
-float tiempo=0.1;
-int altura_paso=20;
+float tiempo=0.03;
+int altura_paso=10;
 int balanceo=0;
 int tiempo_balanceo=0;
-int avance=20;
+int avance=10;
 int m=30; 
                             // P  T  1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
      raider.setTargetPosition(512,0,512,512,212,812,662,362,512,512,512,512,512-60,512+60,512,512,512,512,512,512);
      raider.movVertical(-120,-120);
      //raider.movLateral(-15,15);
           raider.move(tiempo); 
-          delay(50);
+          delay(500);
 
 //while(1);
 
@@ -40,7 +40,7 @@ int m=30;
    raider.move(tiempo); 
 
    
-   for (int i=0;i<12;i++){
+   for (int i=0;i<200;i++){
 //PASO DERECHO 
 
    raider.move(tiempo_balanceo); 
