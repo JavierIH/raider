@@ -31,7 +31,7 @@ int m=30;
 //while(1);
 
 //PASO INICIAL IZQUIERDO
-//proof
+//proofi
 
    raider.movVertical(-altura_paso,0); //Subir pie
    raider.movFrontal(avance/2,-avance/2);
