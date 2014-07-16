@@ -26,7 +26,7 @@ int getAnalog(int pin){
     return value;
 }
 /* ESTO FUERA DE AQUI TODO TODO TODO*/
-bool openSerial(int port){
+/*bool openSerial(int port){
 
     if(port<0||port>5) return 0;
 

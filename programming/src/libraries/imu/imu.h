@@ -7,7 +7,7 @@ class IMU {
 private:
 	I2C *i2c;
 public:
-    IMU();
+    IMU(I2C *connection);
     ~IMU();
 
     bool openIMU();

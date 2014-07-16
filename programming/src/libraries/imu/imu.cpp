@@ -4,12 +4,11 @@
 #include <iostream>
 using namespace std;
 
-IMU::IMU() {
-    i2c = new I2C(1, 0x69);
+IMU::IMU(I2C *connection) {
+    i2c = connection;
 
     //Despertar
     if(i2c->write8(0x6B,0)<0) report(ERROR, "IMU connection failed (not waking up)");
-    else report(OK, "IMU connected");
 }
 
 IMU::~IMU() {
@@ -19,9 +18,6 @@ IMU::~IMU() {
     report(OK, "IMU disconnected");
 }
 
-bool IMU::openIMU(){
-
-}
 
 __u16 IMU::getAccelerometerX() {
 	return (i2c->read8(0x3B) << 8) | i2c->read8(0x3C);

@@ -11,6 +11,7 @@ int main()
     Raider raider;
 
     raider.walk();
+    raider.isStanding();
 
 
 

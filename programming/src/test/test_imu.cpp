@@ -11,9 +11,9 @@ using namespace std;
 
 int main() {
 
-    report(INFO,"Beginning TEST_IMU\n");
+    /*report(INFO,"Beginning TEST_IMU\n");
 
-    IMU imu;
+    IMU imu(1, 0x69);
 
     report("getting AX");
 
@@ -42,5 +42,5 @@ int main() {
 
             usleep(100000);
         }
-    }
+    }*/
 }

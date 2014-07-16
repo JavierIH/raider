@@ -33,6 +33,8 @@ public:
 	I2C(int bus, __u16 address);
 	~I2C();
 
+    bool test();
+
 	__s32 read8(__u8 reg);
 	__s32 write8(__u8 reg, __u8 data);
 	__s32 read16(__u8 reg);

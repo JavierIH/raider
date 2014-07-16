@@ -13,7 +13,7 @@ ENDIF ()
 OPTION(TEST_INTEGRATION "Integration test" 1)
 IF (TEST_INTEGRATION)
 add_executable(test_integration test_integration.cpp)
-target_link_libraries(test_integration debuga serialib raider bones eye ${OpenCV_LIBS})
+target_link_libraries(test_integration debuga imu serialib raider bones eye ${OpenCV_LIBS})
 ENDIF ()
 
 OPTION(TEST_AUXILIAR "Auxiliar, not for Beaglebone" 1)

@@ -22,6 +22,12 @@ I2C::~I2C() {
     close(file);
 }
 
+bool I2C::test(){
+    if(!this->openConnection()) return 0;
+    else if(!this->closeConnection()) return 0;
+    else return 1;
+}
+
 bool I2C::openConnection() {
 	snprintf(filename, 19, "/dev/i2c-%d", bus);
 	file = open(filename, O_RDWR);

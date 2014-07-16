@@ -29,27 +29,37 @@ Raider::Raider(){
 
     report(INFO, "Wake up Raider!");
 
-    report("Settint serial communication...");
-
-    serial= new serialib();
+//SERIAL COMMUNICATION
+    report("Setting serial communication...");
+    serial = new serialib();
     int serial_flag=serial->Open(SERIAL_PORT, BAUD_RATE); // TODO revisar bool char
-
-    if (serial_flag==1) report(OK, "Serial communication connected");
+    if (serial_flag==1) report(OK, "Serial communication connected!");
     else if (serial_flag==-2)report(ERROR, "Serial communication failed (at opening device)");
     else if (serial_flag==-4)report(ERROR, "Serial communication failed (check baud rate)");
     else report(ERROR, "Serial communication failed (unknown error)");
 
-    char command= 'w';
-    int error=serial->WriteChar(command);
+//I2C BUS CONNECTION
+    i2c = new I2C(I2C_BUS, IMU_ADDRESS);
+    if (i2c->test()) report(OK, "I2C bus connected!");
+    else report(ERROR, "I2C doesn't work!");
 
-    if (error==-1)
-        report(WARNING,"Failed sending command (walk)");
 
-    report("Settint infrarred sensors...");
 
-    report("Settint imu sensor...");
+//IMU SENSOR
+    report("Setting imu sensor...");
+    imu = new IMU(i2c);
+    if(4294967295==imu->getMagnetometerX()) report(ERROR, "IMU sensor connection FAILED");
+    else if(65535==imu->getMagnetometerX()) report(WARNING, "Getting accelerometer may be not working (please check)");
+    else report(OK, "IMU sensor connected!");
 
-    report("Settint camera...");
+
+
+    report("Setting infrarred sensors...");
+
+
+
+
+    report("Setting camera...");
 
 
 }
@@ -65,23 +75,27 @@ int Raider::getIR(bool side){
     }
 }
 
-int Raider::sendCommand(char command){
 
-    int error=sendSerial(command);
-    return error;
 
+
+bool Raider::isStanding(){
+
+    int ax=imu->getAccelerometerX()*360/65355;
+    if(ax>360-FALL_DEGREES||ax<FALL_DEGREES) return 1;
+    else{
+        report(WARNING, "DANGER!!! Raider fell!!!");
+        return 0;
+    }
 }
 
 bool Raider::walk(){
 
     char command= 'w';
     int error=serial->WriteChar(command);
-
     if (error==-1){
         report(WARNING,"Failed sending command (walk)");
         return 0;
     }
-
     return 1;
 }
 
