@@ -9,6 +9,8 @@ IMU::IMU(I2C *connection) {
 
     //Despertar
     if(i2c->write8(0x6B,0)<0) report(ERROR, "IMU connection failed (not waking up)");
+
+    // TODO meter la parte de la brujula
 }
 
 IMU::~IMU() {

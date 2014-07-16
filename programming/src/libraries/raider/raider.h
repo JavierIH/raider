@@ -5,6 +5,7 @@
 #include "../eye/eye.h"
 #include "../debug/debug.h"
 #include "../imu/imu.h"
+#include "../serialib/serialib.h"
 
 
 //Serial communication settings
@@ -14,41 +15,46 @@
 //MPU9150 IMU I2C sensor settings
 #define I2C_BUS             1
 #define IMU_ADDRESS         0x69
+#define COMPASS_ADDRES      0x0C
 
 //Camera settings
 #define CAMERA_ID           1
 
 //Beaglebone Black GPIOs settings
-#define INFRARRED_R         0
-#define INFRARRED_L         1
-
+#define AIN3                3
+#define AIN5                5
 
 //General configuration
 #define FALL_DEGREES        60
+#define INFRARED_MAX        1500
 
 
 
 class Raider
 {
 private:
+    I2C *i2c;
+    IMU *imu;
+    serialib *serial;
 
-    //Estado de los sensores
+    //ESTADO DE LOS SENSORES
     int rightIR;
     int leftIR;
     int compass;
     bool fall;
 
-    I2C *i2c;
-    IMU *imu;
-    serialib *serial;
 
 public:
     Raider();
-    int getIR(bool);
 
-
+    //FUNCIONES DE ESTADO
     bool isStanding();
+    bool getLeftIR();
+    bool getRightIR();
 
+    //FUNCIONES DE VISION
+//    findWay();
+//    findBall();
 
     //MOVIMIENTOS
     bool walk();
@@ -57,19 +63,6 @@ public:
     bool stepLeft();
     bool stepRight();
     bool standUp();
-
-
-/*
-    findWay()
-    findBall()
-    getIR()
-
-
-*/
-
-
-    // TODO funciones que hay que quitar de aqui y poner en otro sitio
-   // int sendCommand(char);
 
 };
 

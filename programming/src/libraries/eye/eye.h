@@ -1,7 +1,12 @@
 #ifndef EYE_H
 #define EYE_H
 
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
 #include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 bool openCamera(int);
 void cleanBuffer();

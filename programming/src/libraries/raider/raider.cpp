@@ -14,19 +14,6 @@ Raider::Raider(){
 //ofstream Serial ("/sys/devices/bone_capemgr.9/slots");
 //ofstream ADC("/sys/devices/bone_capemgr.9/slots");
 
-
-    /*error=openSerial(SERIAL_PORT);
-    if(error==0){
-        cout<<"("<<error<<")"<<"FALLO en openSerial";
-    }
-
-    error=openCamera(CAMERA_ID);
-    if(error==0){
-        cout<<"("<<error<<")"<<"FALLO en openCamera";
-    }
-*/
-
-
     report(INFO, "Wake up Raider!");
 
 //SERIAL COMMUNICATION
@@ -57,30 +44,25 @@ Raider::Raider(){
     else if(getAnalog(1)<=0) report(ERROR, "Error in infrarred sensors (pin 1)");
     else report(OK,"Infrarred sensors are working fine!");
 
-
-
-
-
     report("Setting camera...");
 
+    // TODO inicialización de cámara
+}
+
+bool Raider::getLeftIR(){
+    leftIR=getAnalog(AIN5);
+    if(leftIR>INFRARED_MAX) return 1;
+    else return 0;
 
 }
 
-int Raider::getIR(bool side){
-    if(side){
-        rightIR=getAnalog(INFRARRED_R);
-        return rightIR;
-    }
-    else{
-        leftIR=getAnalog(INFRARRED_L);
-        return leftIR;
-    }
+bool Raider::getRightIR(){
+    rightIR=getAnalog(AIN3);
+    if(rightIR>INFRARED_MAX) return 1;
+    else return 0;
 }
 
-
-
-
-bool Raider::isStanding(){
+bool Raider::isStanding(){ // TODO pa un lao y pal otro
 
     int ax=imu->getAccelerometerX()*360/65355;
     if(ax>360-FALL_DEGREES||ax<FALL_DEGREES) return 1;
