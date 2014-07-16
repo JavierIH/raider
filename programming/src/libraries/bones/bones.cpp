@@ -1,4 +1,5 @@
 #include "bones.h"
+#include "../debug/debug.h"
 
 #include <iostream>
 #include <fstream>
@@ -14,7 +15,11 @@ int getAnalog(int pin){
 
     string path="/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN";
     path+=(char)pin+'0';
-    ifstream AIN ("/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN1");
+
+    report(INFO,path.c_str());
+
+
+    ifstream AIN (path.c_str());
     if(!AIN) return -1;
 
     int value;
