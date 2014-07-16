@@ -39,6 +39,12 @@ Raider::Raider(){
     else if (serial_flag==-4)report(ERROR, "Serial communication failed (check baud rate)");
     else report(ERROR, "Serial communication failed (unknown error)");
 
+    char command= 'w';
+    int error=serial->WriteChar(command);
+
+    if (error==-1)
+        report(WARNING,"Failed sending command (walk)");
+
     report("Settint infrarred sensors...");
 
     report("Settint imu sensor...");
@@ -61,8 +67,8 @@ int Raider::getIR(bool side){
 
 int Raider::sendCommand(char command){
 
-    //int error=sendSerial(command);
-    //return error;
+    int error=sendSerial(command);
+    return error;
 
 }
 
@@ -71,7 +77,7 @@ bool Raider::walk(){
     char command= 'w';
     int error=serial->WriteChar(command);
 
-    if (error!=1){
+    if (error==-1){
         report(WARNING,"Failed sending command (walk)");
         return 0;
     }

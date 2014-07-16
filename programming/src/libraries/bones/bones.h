@@ -20,8 +20,8 @@ int getAnalog(int);
 
 
 // TODO FUERA DE AQUI
-//bool openSerial(int);
-//bool sendSerial(char);
+bool openSerial(int);
+bool sendSerial(char);
 //int getSerial(int);
 
 
