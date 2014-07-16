@@ -207,7 +207,7 @@ void serialib::Close()
      \return 1 success
      \return -1 error while writting data
   */
-char serialib::WriteChar(const char Byte)
+int serialib::WriteChar(const char Byte)
 {
     if (write(fd,&Byte,1)!=1)                                           // Write the char
         return -1;                                                      // Error while writting

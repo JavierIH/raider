@@ -78,7 +78,7 @@ public:
 
 
     // Write a char
-    char    WriteChar   (char);
+    int    WriteChar   (char);
 
     // Read a char (with timeout)
     char    ReadChar    (char *pByte,const unsigned int TimeOut_ms=NULL);

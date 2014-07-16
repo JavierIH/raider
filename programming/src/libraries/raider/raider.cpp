@@ -66,21 +66,23 @@ int Raider::sendCommand(char command){
 
 }
 
-void Raider::walk(){
+bool Raider::walk(){
 
-//    int error=0;
-//    error=SC.WriteChar(command);
+    char command= 'w';
+    int error=serial->WriteChar(command);
 
-//    error=serial->WriteChar();
+    if (error!=1){
+        report(WARNING,"Failed sending command (walk)");
+        return 0;
+    }
 
-//    if (error!=1) return 0;
-//    return 1;
-
+    return 1;
 }
-void Raider::turnLeft(){}
-void Raider::turnRigt(){}
-void Raider::stepLeft(){}
-void Raider::stepRight(){}
-void Raider::standUp(){}
+
+bool Raider::turnLeft(){}
+bool Raider::turnRigt(){}
+bool Raider::stepLeft(){}
+bool Raider::stepRight(){}
+bool Raider::standUp(){}
 
 

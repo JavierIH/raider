@@ -37,12 +37,12 @@ private:
 public:
     Raider();
     int getIR(bool);
-    void walk();
-    void turnLeft();
-    void turnRigt();
-    void stepLeft();
-    void stepRight();
-    void standUp();
+    bool walk();
+    bool turnLeft();
+    bool turnRigt();
+    bool stepLeft();
+    bool stepRight();
+    bool standUp();
 /*
     findWay()
     findBall()
