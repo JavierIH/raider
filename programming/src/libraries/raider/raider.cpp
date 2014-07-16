@@ -39,22 +39,24 @@ Raider::Raider(){
     else report(ERROR, "Serial communication failed (unknown error)");
 
 //I2C BUS CONNECTION
+    report("Setting I2C bus...");
     i2c = new I2C(I2C_BUS, IMU_ADDRESS);
     if (i2c->test()) report(OK, "I2C bus connected!");
     else report(ERROR, "I2C doesn't work!");
-
-
 
 //IMU SENSOR
     report("Setting imu sensor...");
     imu = new IMU(i2c);
     if(4294967295==imu->getMagnetometerX()) report(ERROR, "IMU sensor connection FAILED");
-    else if(65535==imu->getMagnetometerX()) report(WARNING, "Getting accelerometer may be not working (please check)");
+    else if(65535==imu->getMagnetometerX()) report(WARNING, "Accelerometer may be not working (please check)");
     else report(OK, "IMU sensor connected!");
 
-
-
+//INFRARRED SENSORS
     report("Setting infrarred sensors...");
+    if(getAnalog(0)<=0) report(ERROR, "Error in infrarred sensors (pin 0)");
+    else if(getAnalog(1)<=0) report(ERROR, "Error in infrarred sensors (pin 1)");
+    else report(OK,"Infrarred sensors are working fine!");
+
 
 
 

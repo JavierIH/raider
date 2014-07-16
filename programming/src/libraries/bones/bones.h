@@ -15,14 +15,4 @@ int getAnalog(int);
 
 */
 
-
-
-
-
-// TODO FUERA DE AQUI
-bool openSerial(int);
-bool sendSerial(char);
-//int getSerial(int);
-
-
 #endif // BONES_H

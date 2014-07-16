@@ -3,7 +3,7 @@
 
 #include<iostream>
 
-#define DEBUG_LEVEL 0
+#define DEBUG_LEVEL 2
 
 #define ERROR 1
 #define WARNING 2
