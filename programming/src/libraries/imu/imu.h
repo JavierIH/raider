@@ -10,6 +10,8 @@ public:
     IMU();
     ~IMU();
 
+    bool openIMU();
+
     __u16 getAccelerometerX();
     __u16 getAccelerometerY();
     __u16 getAccelerometerZ();

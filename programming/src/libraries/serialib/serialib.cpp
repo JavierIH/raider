@@ -87,7 +87,7 @@ serialib::~serialib()
      \return -5 error while writing port parameters
      \return -6 error while writing timeout parameters
   */
-char serialib::Open(const char *Device,const unsigned int Bauds)
+int serialib::Open(const char *Device,const unsigned int Bauds)
 {
 #if defined (_WIN32) || defined( _WIN64)
 
@@ -209,17 +209,9 @@ void serialib::Close()
   */
 char serialib::WriteChar(const char Byte)
 {
-#if defined (_WIN32) || defined( _WIN64)
-    DWORD dwBytesWritten;                                               // Number of bytes written
-    if(!WriteFile(hSerial,&Byte,1,&dwBytesWritten,NULL))                // Write the char
-        return -1;                                                      // Error while writing
-    return 1;                                                           // Write operation successfull
-#endif
-#ifdef __linux__
     if (write(fd,&Byte,1)!=1)                                           // Write the char
         return -1;                                                      // Error while writting
     return 1;                                                           // Write operation successfull
-#endif
 }
 
 

@@ -66,7 +66,7 @@ public:
 
 
     // Open a device
-    char    Open        (const char *Device,const unsigned int Bauds);
+    int    Open        (const char *Device,const unsigned int Bauds);
 
     // Close the current device
     void    Close();

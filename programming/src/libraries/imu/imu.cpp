@@ -19,6 +19,10 @@ IMU::~IMU() {
     report(OK, "IMU disconnected");
 }
 
+bool IMU::openIMU(){
+
+}
+
 __u16 IMU::getAccelerometerX() {
 	return (i2c->read8(0x3B) << 8) | i2c->read8(0x3C);
 }

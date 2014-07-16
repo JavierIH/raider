@@ -5,8 +5,23 @@
 
 
 int getAnalog(int);
-bool openSerial(int);
-bool sendSerial(char);
+/*
+    TODO : Hacer estas funciones
+
+    getPin();
+    setPin();
+    setPWM();
+
+
+*/
+
+
+
+
+
+// TODO FUERA DE AQUI
+//bool openSerial(int);
+//bool sendSerial(char);
 //int getSerial(int);
 
 
