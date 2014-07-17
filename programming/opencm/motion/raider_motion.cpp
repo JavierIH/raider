@@ -4,7 +4,6 @@
 
 Robot::Robot(){
   
-  delay(3000);
   Dxl.begin(1);
 
 
@@ -198,6 +197,29 @@ void Robot::movFrontal(int left_amp, int right_amp){
                         targetPosition[15],
                         targetPosition[16]-right_amp,
                         targetPosition[17]+left_amp,
+                        targetPosition[18],
+                        targetPosition[19]);
+}
+
+void Robot::movHead(int degrees){
+      setTargetPosition(targetPosition[0],
+                        degrees,
+                        targetPosition[2],
+                        targetPosition[3],
+                        targetPosition[4],
+                        targetPosition[5],
+                        targetPosition[6],
+                        targetPosition[7],
+                        targetPosition[8],
+                        targetPosition[9],
+                        targetPosition[10],
+                        targetPosition[11],
+                        targetPosition[12], //11
+                        targetPosition[13],
+                        targetPosition[14],
+                        targetPosition[15],
+                        targetPosition[16],
+                        targetPosition[17],
                         targetPosition[18],
                         targetPosition[19]);
 }
