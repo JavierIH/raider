@@ -42,7 +42,9 @@ class Robot{
     void movLateral(int,int);
     void movFrontal(int,int);
     void movOffset(int,int);
-
+    
+    void run(int);
+    void walk(int);
 
     //char readCommand(){}
     //char sendCommand(){}
