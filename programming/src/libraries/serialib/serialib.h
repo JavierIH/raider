@@ -81,7 +81,7 @@ public:
     int    WriteChar   (char);
 
     // Read a char (with timeout)
-    char    ReadChar    (char *pByte,const unsigned int TimeOut_ms=NULL);
+    char    ReadChar    (char *pByte,const unsigned int TimeOut_ms=0);
 
 
 
@@ -95,7 +95,7 @@ public:
     int     ReadString  (   char *String,
                             char FinalChar,
                             unsigned int MaxNbBytes,
-                            const unsigned int TimeOut_ms=NULL);
+                            const unsigned int TimeOut_ms=0);
 
 
 
@@ -107,7 +107,7 @@ public:
     char    Write       (const void *Buffer, const unsigned int NbBytes);
 
     // Read an array of byte (with timeout)
-    int     Read        (void *Buffer,unsigned int MaxNbBytes,const unsigned int TimeOut_ms=NULL);
+    int     Read        (void *Buffer,unsigned int MaxNbBytes,const unsigned int TimeOut_ms=0);
 
 
     // _________________________

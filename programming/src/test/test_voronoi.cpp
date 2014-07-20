@@ -39,7 +39,7 @@ void drawLine( Mat &img, Point start, Point end )
 
 int main()
 {
-    openCamera(1);
+    openCamera(0);
 
     while(1){
         char c=waitKey(0);
@@ -90,6 +90,8 @@ int dist=300;
     findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
 
     std::cout<<"\n\n\nContornos: "<<contours.size();
+    std::cout<<"\n\n\nContorn1os: "<<contours.at(0).size();
+    std::cout<<"\n\n\nContorn2os: "<<contours.at(1).size();
 
 
 

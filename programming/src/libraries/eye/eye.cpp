@@ -48,6 +48,9 @@ cv::Mat1b detectGreen(Mat image){
 
     GaussianBlur(result,result,Size(11,11),0,0);
 
+    imshow("ol",result);
+
+
     Mat1b out;
     threshold(result, out, 50 , 255, THRESH_BINARY);
 

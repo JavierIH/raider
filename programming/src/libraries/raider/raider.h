@@ -15,7 +15,7 @@
 //MPU9150 IMU I2C sensor settings
 #define I2C_BUS             1
 #define IMU_ADDRESS         0x69
-#define COMPASS_ADDRES      0x0C
+#define COMPASS_ADDRESS     0x0C
 
 //Camera settings
 #define CAMERA_ID           1
