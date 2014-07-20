@@ -4,7 +4,6 @@
 
 Robot::Robot(){
   
-  delay(3000);
   Dxl.begin(1);
 
 
@@ -202,14 +201,110 @@ void Robot::movFrontal(int left_amp, int right_amp){
                         targetPosition[19]);
 }
 
-
-/*void Robot::setPos(int id, int nueva){
-  if(id>=0&&id<=19)pos[id]=nueva;
+void Robot::movHead(int degrees){
+      setTargetPosition(targetPosition[0],
+                        degrees,
+                        targetPosition[2],
+                        targetPosition[3],
+                        targetPosition[4],
+                        targetPosition[5],
+                        targetPosition[6],
+                        targetPosition[7],
+                        targetPosition[8],
+                        targetPosition[9],
+                        targetPosition[10],
+                        targetPosition[11],
+                        targetPosition[12], //11
+                        targetPosition[13],
+                        targetPosition[14],
+                        targetPosition[15],
+                        targetPosition[16],
+                        targetPosition[17],
+                        targetPosition[18],
+                        targetPosition[19]);
 }
 
+void Robot::run(int pasos){
+  
+float tiempo=0.1;
+int altura_paso=20;
+int avance=20;
 
-int Robot::getPos(int id){
-  return pos[id];
-}*/
+     setTargetPosition(512,0,512,512,212,812,662,362,512,512,512,512,512-60,512+60,512,512,512,512,512,512);
+     movVertical(-120,-120);
+     //raider.movLateral(-15,15);
+          move(tiempo);
+          delay(50);
+    
+  //PASO INICIAL IZQUIERDO
+   movVertical(-altura_paso,0); //Subir pie
+   movFrontal(avance/2,-avance/2);
+   move(tiempo/2);
+   movVertical(altura_paso,0);//Bajar pie
+   move(tiempo);
+   for (int i=0;i<pasos;i++){
+//PASO DERECHO
+   movVertical(0,-altura_paso); //subir pie
+   movFrontal(-avance,avance);
+   move(tiempo/2);
+   delay(100);
+   movVertical(0,altura_paso);
+   move(tiempo);
+//PASO IZQUIERDO
+   movVertical(-altura_paso,0); //subir pie
+   movFrontal(avance,-avance);
+   move(tiempo/2);
+   delay(100);
+   movVertical(altura_paso,0);
+   move(tiempo);
+   }
+//PASO FINAL DERECHO
+   movVertical(0,-altura_paso); //Subir pie
+   movFrontal(-avance/2,avance/2);
+   move(tiempo/2);
+   movVertical(0,0+altura_paso);//Bajar pie
+   move(tiempo);
+}
 
+void Robot::walk(int pasos){
+
+float tiempo=0.03;
+int altura_paso=10;
+int avance=10;   
+
+     setTargetPosition(512,0,512,512,212,812,662,362,512,512,512,512,512-60,512+60,512,512,512,512,512,512);
+     movVertical(-120,-120);
+     //raider.movLateral(-15,15);
+          move(tiempo);
+          delay(50);
+          
+  //PASO INICIAL IZQUIERDO
+   movVertical(-altura_paso,0); //Subir pie
+   movFrontal(avance/2,-avance/2);
+   move(tiempo/2);
+   movVertical(altura_paso,0);//Bajar pie
+   move(tiempo);
+   for (int i=0;i<pasos;i++){
+//PASO DERECHO
+   movVertical(0,-altura_paso); //subir pie
+   movFrontal(-avance,avance);
+   move(tiempo/2);
+   delay(100);
+   movVertical(0,altura_paso);
+   move(tiempo);
+//PASO IZQUIERDO
+   movVertical(-altura_paso,0); //subir pie
+   movFrontal(avance,-avance);
+   move(tiempo/2);
+   delay(100);
+   movVertical(altura_paso,0);
+   move(tiempo);
+   }
+//PASO FINAL DERECHO
+   movVertical(0,-altura_paso); //Subir pie
+   movFrontal(-avance/2,avance/2);
+   move(tiempo/2);
+   movVertical(0,0+altura_paso);//Bajar pie
+   move(tiempo);
+}
 

@@ -1,7 +1,6 @@
 #ifndef raider_motion_h
 #define raider_motion_h
 
-#include "wirish.h"
 #include "Servo.h"
 
 #define TRIMP 0
@@ -25,7 +24,7 @@
 #define TRIM17 10
 #define TRIM18 -10
 
-#define HEAD_PIN 9
+#define HEAD_PIN 7
 
 class Robot{
     int currentPosition[20];
@@ -38,11 +37,14 @@ class Robot{
     void updateCurrentPosition();
     void setTargetPosition(int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int);
     void move(float); //mueve todos los servos a goalPosition
+    void movHead(int);
     void movVertical(int,int);
     void movLateral(int,int);
     void movFrontal(int,int);
     void movOffset(int,int);
-
+    
+    void run(int);
+    void walk(int);
 
     //char readCommand(){}
     //char sendCommand(){}
