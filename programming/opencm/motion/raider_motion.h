@@ -7,8 +7,8 @@
 #define TRIMT -60
 #define TRIM1 0
 #define TRIM2 0
-#define TRIM3 0
-#define TRIM4 0
+#define TRIM3 -4
+#define TRIM4 -10
 #define TRIM5 0
 #define TRIM6 0
 #define TRIM7 0
@@ -45,6 +45,8 @@ class Robot{
     
     void run(int);
     void walk(int);
+    void turnL();
+    void turnR();
 
     //char readCommand(){}
     //char sendCommand(){}
