@@ -36,6 +36,7 @@ class Robot{
     void init(); //movimiento inicial
     void updateCurrentPosition();
     void setTargetPosition(int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int);
+    void setTargetOffset(int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int);
     void move(float); //mueve todos los servos a goalPosition
     void movHead(int);
     void movVertical(int,int);

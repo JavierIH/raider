@@ -38,6 +38,9 @@ Robot::Robot(){
 void Robot::init(){
 
   setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,452,572,512,512,512,512,512,512);
+  
+       setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,452,572,512,512,512,512,512,512);
+     movVertical(-120,-120);
 
   for (int i=0; i<=19; i++){
     currentPosition[i]=targetPosition[i]-50; //Un valor cercano para el primer movimiento TODO capuza 
@@ -76,6 +79,29 @@ void Robot::setTargetPosition(int pan, int tilt, int s1, int s2, int s3, int s4,
   targetPosition[17]=s16;
   targetPosition[18]=s17;
   targetPosition[19]=s18;
+}
+
+void Robot::setTargetOffset(int pan, int tilt, int s1, int s2, int s3, int s4, int s5, int s6, int s7, int s8, int s9, int s10, int s11, int s12, int s13, int s14, int s15, int s16, int s17, int s18){
+  targetPosition[0]+=pan;
+  targetPosition[1]+=tilt;
+  targetPosition[2]+=s1;
+  targetPosition[3]+=s2;
+  targetPosition[4]+=s3;
+  targetPosition[5]+=s4;
+  targetPosition[6]+=s5;
+  targetPosition[7]+=s6;
+  targetPosition[8]+=s7;
+  targetPosition[9]+=s8;
+  targetPosition[10]+=s9;
+  targetPosition[11]+=s10;
+  targetPosition[12]+=s11;
+  targetPosition[13]+=s12;
+  targetPosition[14]+=s13;
+  targetPosition[15]+=s14;
+  targetPosition[16]+=s15;
+  targetPosition[17]+=s16;
+  targetPosition[18]+=s17;
+  targetPosition[19]+=s18;
 }
 
 
@@ -249,8 +275,8 @@ int avance=20;
 void Robot::walk(int pasos){
 
 float tiempo=0.03;
-int altura_paso=10;
-int avance=10;   
+int altura_paso=10; //10
+int avance=10; //10   
 
      setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,452,572,512,512,512,512,512,512);
      movVertical(-120,-120);

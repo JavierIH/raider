@@ -1,3 +1,7 @@
+use <raid3r/raid3r.scad>
+
+
+
 module base(){union(){
 difference(){
 	union(){
@@ -30,25 +34,30 @@ module pinza(){
 difference(){
 	union(){
 		difference(){
-			translate([-4,0,0])cube([55,16,36]);
+			translate([-4,0,0])cube([60,16,36]);
 			translate([26,-23,-1])cylinder(r=30, h=38,$fn=13);
 			translate([-20,-6.5,-1])rotate([0,0,35])cube([75,21,38]);
 			translate([20,27,-1])rotate([0,0,-30])cube([75,21,38]);
 		}
-		cylinder(r=6, h=36);
+		translate([3,0,0])hull(){
+			cylinder(r=6, h=36);
+			translate([-10,-2,0])cube([5,13,36]);
 	}
-	translate([0,0,-1])cylinder(r=1.5, h=38, $fn=10);
+}
 
-	translate([-9,-5,-1])rotate([0,0,-18])cube([13,50,6]);
-	translate([-9,-5,31])rotate([0,0,-18])cube([13,50,5]);
 	
-	translate([0,0,11.5])cylinder(r=7, h=6.5);
-	translate([0,0,24.5])cylinder(r=7, h=6.5);
 
 }
 }
 
-translate([-27,17,0])rotate([0,-90,180])base();
-color("red",1)rotate([0,0,20])pinza();
-color("blue",1)translate([0,0,36])rotate([180,0,-20])pinza();
+difference(){
+union(){
+color("blue",1)translate([0,-1,36])rotate([180,0,0])pinza();
+color("blue",1)translate([0,1,0])rotate([0,0,0])pinza();
+}
 
+			translate([50,0,-5])cylinder(r=3.5, h=50);
+			translate([3,0,18])rotate([0,90,0])cylinder(r=3.5, h=70);
+			translate([-17,-6,10])rotate([90,0,90])agujereado(3,3,20);
+
+}
