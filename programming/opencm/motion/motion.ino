@@ -29,13 +29,42 @@ void loop() {
     SerialUSB.println(command);
    digitalWrite(BOARD_LED_PIN, LOW);
    switch (command){ 
-     case 70:
-     break; 
+     case 87:
+       raider.walk(5);
+       break; 
+     case 65:
+       raider.turnL();
+       break; 
+     case 68:
+       raider.turnR();
+       break; 
    } 
    Serial2.flush();
   }
-       raider.setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,452,572,512,512,512,512,512,512);
-     raider.movVertical(-120,-120);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     //  raider.setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,452,572,512,512,512,512,512,512);
+     //raider.movVertical(-120,-120);
           /*raider.move(3);
   raider.walk(20);
   raider.turnL();
@@ -44,7 +73,7 @@ void loop() {
   raider.turnL();
   raider.turnL();
   raider.turnL();*/
-
+/*
                      
                             //   P  T   1   2   3   4   5 6 7 8 9 10 11 12 13 14 15 16 17 18
      raider.setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,452,572,512,512,512,512,512,512);
@@ -74,7 +103,7 @@ void loop() {
      raider.setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,452,572,512,512,512,512,512,512);
      raider.movVertical(-120,-120);
      raider.move(1);
-          while(1);
+          while(1);*/
   /*        
      raider.walk(5);
      

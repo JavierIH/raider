@@ -324,8 +324,8 @@ void Robot::turnL()
 
 void Robot::turnR()
 {
-  int i=50;
-  float t=0.2;
+  int i=30;
+  float t=0.02;
 
 //Recomendado t=0.2
   setTargetPosition(512,0,512,512,212,812,662,362,512,512,501,510,342-i,681+i,242,782,646,377,523,514); move(t);
