@@ -50,6 +50,7 @@ class Robot{
     void turnR();
     void kick();
     void getUp();
+    void hello();
     void yes();
 
     //char readCommand(){}
