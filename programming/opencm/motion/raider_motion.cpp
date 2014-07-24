@@ -312,6 +312,21 @@ int avance=10; //10
    move(tiempo);
 }
 
+void Robot::kick(){
+                          //   P  T  1   2   3   4   5  6   7   8   9  10  11  12  13  14  15  16  17  18
+     setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,332,692,272,752,632,392,512,512);
+     move(0.2);
+     movLateral(20,20);
+     setTargetOffset(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-100);
+     move(0.2);
+     movFrontal(40,0);
+     move(0.0);
+     delay(500);
+     movFrontal(-40,0);
+     move(0.3);
+     setTargetPosition(512,0,462,562,212,812,962,62,512,512,512,512,332,692,272,752,632,392,512,512);
+     move(0.3);
+}
 
 void Robot::turnL()
 {

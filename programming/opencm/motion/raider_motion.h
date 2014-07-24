@@ -48,6 +48,7 @@ class Robot{
     void walk(int);
     void turnL();
     void turnR();
+    void kick();
 
     //char readCommand(){}
     //char sendCommand(){}
