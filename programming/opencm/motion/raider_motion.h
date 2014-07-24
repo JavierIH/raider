@@ -15,8 +15,8 @@
 #define TRIM8 0
 #define TRIM9 -5
 #define TRIM10 10
-#define TRIM11 0   
-#define TRIM12 -5
+#define TRIM11 13   
+#define TRIM12 -18
 #define TRIM13 0
 #define TRIM14 -5
 #define TRIM15 0
@@ -49,6 +49,8 @@ class Robot{
     void turnL();
     void turnR();
     void kick();
+    void getUp();
+    void yes();
 
     //char readCommand(){}
     //char sendCommand(){}
