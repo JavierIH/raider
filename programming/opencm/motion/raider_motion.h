@@ -52,6 +52,7 @@ class Robot{
     void getUp();
     void hello();
     void yes();
+    void roll();
 
     //char readCommand(){}
     //char sendCommand(){}
