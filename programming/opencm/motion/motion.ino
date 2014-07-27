@@ -12,7 +12,7 @@ void setup() {
    // Serial3.begin(9600); //Beaglebone
     pinMode(BOARD_LED_PIN, OUTPUT);
 
-    //  raider.init();
+    raider.init();
 
 
 }
@@ -31,7 +31,7 @@ void loop() {
    Serial2.flush();
    switch (command){ 
      case 'W':
-       raider.walk(5);
+       raider.walk(2);
        break; 
      case 'A':
        raider.turnL();
@@ -39,6 +39,9 @@ void loop() {
      case 'D':
        raider.turnR();
        break; 
+     case 'S':
+       raider.run(10);
+       break;
      case 'K':
        raider.kick();
        break;
@@ -53,11 +56,7 @@ void loop() {
        break;
      case 'R':
        raider.roll();
-       break;
-       
+       break;  
    } 
   }
-  
-  raider.run(10);
-  while(1);
 }
