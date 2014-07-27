@@ -28,10 +28,9 @@ void loop() {
     command=Serial2.read();
     SerialUSB.println(command);
    digitalWrite(BOARD_LED_PIN, LOW);
-   Serial2.flush();
    switch (command){ 
      case 'W':
-       raider.walk(2);
+       raider.walk(10);
        break; 
      case 'A':
        raider.turnL();
@@ -40,7 +39,7 @@ void loop() {
        raider.turnR();
        break; 
      case 'S':
-       raider.run(10);
+       raider.run(4);
        break;
      case 'K':
        raider.kick();
@@ -58,5 +57,6 @@ void loop() {
        raider.roll();
        break;  
    } 
+      Serial2.flush();
   }
 }
