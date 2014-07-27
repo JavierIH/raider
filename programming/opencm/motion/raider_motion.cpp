@@ -232,19 +232,33 @@ void Robot::run(int pasos){
   
 float tiempo=0.1;
 int altura_paso=20;
-int avance=20;
+int avance=10;
 
-     setTargetPosition(512,0,462,562,212,812,992,32,512,512,512,512,452,572,512,512,512,512,512,512);
+     setTargetPosition(512,0,462,562,212,812,992,32,512,512,512,512,442,582,512,512,512,512,512,512);
      movVertical(-120,-120);
+     movLateral(10,-10);
      move(tiempo);
           
     
-  //PASO INICIAL IZQUIERDO
+  //PRE-PASO INICIAL
+   movVertical(0,-altura_paso); //Subir pie
+   //movFrontal(avance/2,-avance/2);
+   move(tiempo/2);
+   movVertical(0,altura_paso);//Bajar pie
+   move(tiempo);
+   
+//PASO INICIAL IZQUIERDO
+   
    movVertical(-altura_paso,0); //Subir pie
    movFrontal(avance/2,-avance/2);
    move(tiempo/2);
    movVertical(altura_paso,0);//Bajar pie
    move(tiempo);
+   
+   
+   
+   
+   
    for (int i=0;i<pasos;i++){
 //PASO DERECHO
    movVertical(0,-altura_paso); //subir pie

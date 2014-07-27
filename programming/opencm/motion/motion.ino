@@ -57,4 +57,7 @@ void loop() {
        
    } 
   }
+  
+  raider.run(10);
+  while(1);
 }
