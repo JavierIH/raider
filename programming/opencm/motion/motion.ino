@@ -30,7 +30,7 @@ void loop() {
    digitalWrite(BOARD_LED_PIN, LOW);
    switch (command){ 
      case 'W':
-       raider.walk(10);
+       raider.walk(3);
        break; 
      case 'A':
        raider.turnL();
@@ -39,7 +39,7 @@ void loop() {
        raider.turnR();
        break; 
      case 'S':
-       raider.run(4);
+       raider.run(10);
        break;
      case 'K':
        raider.kick();

@@ -234,10 +234,10 @@ float tiempo=0.07;
 int altura_paso=20;
 int avance=15;
 
-     setTargetPosition(512,0,462,562,212,812,992,32,512,512,512,512,462,562,512,512,512,512,512,512);
+     setTargetPosition(512,0,462,562,212,812,992,32,512,512,512,512,462,562,512,512,512+5,512-5,512,512);
      movVertical(-120,-120);
      movLateral(10,-10);
-     move(1);
+     move(0.2);
           
     
   //PRE-PASO INICIAL
@@ -288,7 +288,7 @@ int avance=15;
 
 void Robot::walk(int pasos){
 
-float tiempo=0.02;
+float tiempo=0.015;
 int altura_paso=15; //10
 int avance=10; //10   
 
