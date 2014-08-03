@@ -169,3 +169,5 @@ bool Raider::sendCommand(char command){
     sleep(5);
     return 1;
 }
+
+
