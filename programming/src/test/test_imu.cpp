@@ -13,7 +13,7 @@ int main() {
 
     Raider raider;
 
-    while(1){
+    /*while(1){  // NO BORRAR, PARTE DEL PROGRAMA FINAL
         int state=raider.getFall();
         if (state==1){
             report(INFO, "FRONT fall  > ");
@@ -28,5 +28,7 @@ int main() {
             report(INFO, "Standing up | ");
         }
         sleep(1);
-    }
+    }*/
+
+
 }

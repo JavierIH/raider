@@ -12,13 +12,13 @@ IMU::IMU(I2C *connection) {
 
     i2c->write8(0x6A,0x20); //Habilitar brujula
 
-    i2c->setAddress(0x0C);      //change Adress to Compass
+    i2c->setAddress(0x0C);      //change Address to Compass
 
     i2c->write8(0x0A, 0x00); //PowerDownMode
     i2c->write8(0x0A, 0x0F); //SelfTest
     i2c->write8(0x0A, 0x00); //PowerDownMode
 
-    i2c->setAddress(0x69);      //change Adress to MPU
+    i2c->setAddress(0x69);      //change Address to MPU
 
 
     i2c->write8(0x24, 0x40); //Wait for Data at Slave0
@@ -75,15 +75,15 @@ __u32 IMU::getGyroscopeZ() {
 }
 
 __u32 IMU::getMagnetometerX() {
-	return (i2c->read8(0x04) << 8) | i2c->read8(0x03);
+    return (i2c->read8(0x4B) << 8) | i2c->read8(0x4A);
 }
 
 __u32 IMU::getMagnetometerY() {
-	return (i2c->read8(0x06) << 8) | i2c->read8(0x05);
+    return (i2c->read8(0x4D) << 8) | i2c->read8(0x4C);
 }
 
 __u32 IMU::getMagnetometerZ() {
-	return (i2c->read8(0x08) << 8) | i2c->read8(0x07);
+    return (i2c->read8(0x4F) << 8) | i2c->read8(0x4E);
 }
 
 __u32 IMU::getTemp() {
