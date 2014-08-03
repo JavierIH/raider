@@ -37,6 +37,7 @@ int main() {
     cout<<mpu9150.getMagnetometerX()<<endl;
     cout<<mpu9150.getMagnetometerY()<<endl;
     cout<<mpu9150.getMagnetometerZ()<<endl<<endl;
+    usleep(200000);
     }
 
 }

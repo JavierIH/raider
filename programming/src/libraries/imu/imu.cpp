@@ -75,15 +75,15 @@ __u32 IMU::getGyroscopeZ() {
 }
 
 __u32 IMU::getMagnetometerX() {
-    return (i2c->read8(0x4B) << 8) | i2c->read8(0x4A);
+    return /*(i2c->read8(0x4B) << 8) | */i2c->read8(0x4A);
 }
 
 __u32 IMU::getMagnetometerY() {
-    return (i2c->read8(0x4D) << 8) | i2c->read8(0x4C);
+    return /*(i2c->read8(0x4D) << 8) | */i2c->read8(0x4C);
 }
 
 __u32 IMU::getMagnetometerZ() {
-    return (i2c->read8(0x4F) << 8) | i2c->read8(0x4E);
+    return /*(i2c->read8(0x4F) << 8) | */i2c->read8(0x4E);
 }
 
 __u32 IMU::getTemp() {
