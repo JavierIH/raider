@@ -10,8 +10,8 @@ int main()
 {
     Raider raider;
 
-    raider.walk();
-    raider.isStanding();
+    //raider.walk();
+    //raider.isStanding();
 
     return 0;
 }

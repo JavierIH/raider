@@ -41,7 +41,6 @@ private:
     int rightIR;
     int leftIR;
     int compass;
-    bool fall;
 
 
 public:
@@ -49,6 +48,7 @@ public:
 
     //FUNCIONES DE ESTADO
     bool isStanding();
+    bool fall();
     bool getLeftIR();
     bool getRightIR();
 
@@ -63,6 +63,7 @@ public:
     bool stepLeft();
     bool stepRight();
     bool standUp();
+    bool roll();
 
     //FUNCIONES AUXILIARES
     bool sendCommand(char);
