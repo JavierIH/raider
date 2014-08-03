@@ -34,6 +34,7 @@ public:
 	~I2C();
 
     bool test();
+    void setAddress(__u16);
 
 	__s32 read8(__u8 reg);
 	__s32 write8(__u8 reg, __u8 data);

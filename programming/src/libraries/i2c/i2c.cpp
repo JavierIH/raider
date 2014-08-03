@@ -22,6 +22,10 @@ I2C::~I2C() {
     close(file);
 }
 
+void I2C::setAddress(__u16 new_address){
+    this->address=new_address;
+}
+
 bool I2C::test(){
     if(!this->openConnection()) return 0;
     else if(!this->closeConnection()) return 0;

@@ -10,7 +10,36 @@ IMU::IMU(I2C *connection) {
     //Despertar
     if(i2c->write8(0x6B,0)<0) report(ERROR, "IMU connection failed (not waking up)");
 
-    // TODO meter la parte de la brujula
+    i2c->write8(0x6A,0x20); //Habilitar brujula
+
+    i2c->setAddress(0x0C);      //change Adress to Compass
+
+    i2c->write8(0x0A, 0x00); //PowerDownMode
+    i2c->write8(0x0A, 0x0F); //SelfTest
+    i2c->write8(0x0A, 0x00); //PowerDownMode
+
+    i2c->setAddress(0x69);      //change Adress to MPU
+
+
+    i2c->write8(0x24, 0x40); //Wait for Data at Slave0
+    i2c->write8(0x25, 0x8C); //Set i2c address at slave0 at 0x0C
+    i2c->write8(0x26, 0x02); //Set where reading at slave 0 starts
+    i2c->write8(0x27, 0x88); //set offset at start reading and enable
+    i2c->write8(0x28, 0x0C); //set i2c address at slv1 at 0x0C
+    i2c->write8(0x29, 0x0A); //Set where reading at slave 1 starts
+    i2c->write8(0x2A, 0x81); //Enable at set length to 1
+    i2c->write8(0x64, 0x01); //overvride register
+    i2c->write8(0x67, 0x03); //set delay rate
+    i2c->write8(0x01, 0x80);
+
+    i2c->write8(0x34, 0x04); //set i2c slv4 delay
+    i2c->write8(0x64, 0x00); //override register
+    i2c->write8(0x6A, 0x00); //clear usr setting
+    i2c->write8(0x64, 0x01); //override register
+    i2c->write8(0x6A, 0x20); //enable master i2c mode
+    i2c->write8(0x34, 0x13); //disable slv4
+
+
 }
 
 IMU::~IMU() {
