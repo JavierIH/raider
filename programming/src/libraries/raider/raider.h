@@ -64,6 +64,9 @@ public:
     bool stepRight();
     bool standUp();
 
+    //FUNCIONES AUXILIARES
+    bool sendCommand(char);
+
 };
 
 #endif // RAIDER_H

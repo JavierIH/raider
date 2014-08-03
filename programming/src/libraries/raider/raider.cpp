@@ -83,6 +83,7 @@ bool Raider::walk(){
     return 1;
 }
 
+
 bool Raider::turnLeft(){}
 bool Raider::turnRigt(){}
 bool Raider::stepLeft(){}
@@ -90,3 +91,13 @@ bool Raider::stepRight(){}
 bool Raider::standUp(){}
 
 
+
+bool Raider::sendCommand(char command){
+
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command");
+        return 0;
+    }
+    return 1;
+}
