@@ -10,7 +10,7 @@ IMU::IMU(I2C *connection) {
     //Despertar
     if(i2c->write8(0x6B,0)<0) report(ERROR, "IMU connection failed (not waking up)");
 
-    i2c->write8(0x6A,0x20); //Habilitar brujula
+    i2c->write8(0x37,0x02); //Habilitar brujula
 
     i2c->setAddress(0x0C);      //change Address to Compass
 
