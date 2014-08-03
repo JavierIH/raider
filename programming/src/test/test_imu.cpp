@@ -32,10 +32,11 @@ int main() {
 
     IMU mpu9150(new I2C(I2C_BUS, IMU_ADDRESS));
 
-
+    while(1){
     cout<<"Compass:"<<endl;
     cout<<mpu9150.getMagnetometerX()<<endl;
     cout<<mpu9150.getMagnetometerY()<<endl;
     cout<<mpu9150.getMagnetometerZ()<<endl<<endl;
+    }
 
 }
