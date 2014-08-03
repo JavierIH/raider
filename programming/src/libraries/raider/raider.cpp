@@ -73,13 +73,13 @@ bool Raider::isStanding(){ // TODO pa un lao y pal otro cmabiar eje
     cout<<ax<<endl;
 }
 
-bool Raider::fall(){ // TODO pa un lao y pal otro cmabiar eje
+int Raider::fall(){ // TODO pa un lao y pal otro cmabiar eje
 
     int ay=imu->getAccelerometerY()*360/65355;
-    if(ay<360-FALL_DEGREES){
+    if(ay<=90&&ay>FALL_DEGREES){
         return 1;
     }
-    else if(ay>FALL_DEGREES){
+    else if(ay>=270&&ay<360-FALL_DEGREES){
         return 2;
     }
     else{

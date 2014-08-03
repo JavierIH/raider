@@ -48,7 +48,7 @@ public:
 
     //FUNCIONES DE ESTADO
     bool isStanding();
-    bool fall();
+    int fall();
     bool getLeftIR();
     bool getRightIR();
 
