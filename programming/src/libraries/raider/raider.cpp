@@ -62,18 +62,7 @@ bool Raider::getRightIR(){
     else return 0;
 }
 
-bool Raider::isStanding(){ // TODO pa un lao y pal otro cmabiar eje
-
-    int ax=imu->getAccelerometerX()*360/65355;
-    if(ax>360-FALL_DEGREES||ax<FALL_DEGREES) return 1;
-    else{
-        report(WARNING, "DANGER!!! Raider fell!!!");
-        return 0;
-    }
-    cout<<ax<<endl;
-}
-
-int Raider::fall(){ // TODO pa un lao y pal otro cmabiar eje
+int Raider::fall(){
 
     int ay=imu->getAccelerometerY()*360/65355;
     if(ay<=90&&ay>FALL_DEGREES){
@@ -87,9 +76,6 @@ int Raider::fall(){ // TODO pa un lao y pal otro cmabiar eje
     }
 }
 
-
-
-
 bool Raider::walk(){
 
     char command= 'w';
@@ -100,13 +86,40 @@ bool Raider::walk(){
     }
     return 1;
 }
+bool Raider::standUp(){ // TODO revisar comando
 
+    char command= 'H';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (walk)");
+        return 0;
+    }
+    return 1;
+}
 
-bool Raider::turnLeft(){}
-bool Raider::turnRigt(){}
+bool Raider::turnLeft(){
+
+    char command= 'A';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (walk)");
+        return 0;
+    }
+    return 1;
+}
+bool Raider::turnRigt(){
+
+    char command= 'D';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (walk)");
+        return 0;
+    }
+    return 1;
+}
+
 bool Raider::stepLeft(){}
 bool Raider::stepRight(){}
-bool Raider::standUp(){}
 
 bool Raider::roll(){
 

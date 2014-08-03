@@ -47,7 +47,6 @@ public:
     Raider();
 
     //FUNCIONES DE ESTADO
-    bool isStanding();
     int fall();
     bool getLeftIR();
     bool getRightIR();
