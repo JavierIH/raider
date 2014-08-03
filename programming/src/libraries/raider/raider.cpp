@@ -91,7 +91,7 @@ bool Raider::standUp(){ // TODO revisar comando
     char command= 'H';
     int error=serial->WriteChar(command);
     if (error==-1){
-        report(WARNING,"Failed sending command (walk)");
+        report(WARNING,"Failed sending command (standUp)");
         return 0;
     }
     return 1;
@@ -102,7 +102,7 @@ bool Raider::turnLeft(){
     char command= 'A';
     int error=serial->WriteChar(command);
     if (error==-1){
-        report(WARNING,"Failed sending command (walk)");
+        report(WARNING,"Failed sending command (turnLeft)");
         return 0;
     }
     return 1;
@@ -112,7 +112,7 @@ bool Raider::turnRigt(){
     char command= 'D';
     int error=serial->WriteChar(command);
     if (error==-1){
-        report(WARNING,"Failed sending command (walk)");
+        report(WARNING,"Failed sending command (turnRight)");
         return 0;
     }
     return 1;

@@ -16,11 +16,11 @@ int main() {
     while(1){
         int state=raider.fall();
         if (state==1){
-            report(INFO, "FRONT fall  / ");
+            report(INFO, "FRONT fall  > ");
             raider.standUp();
         }
         else if (state==2){
-            report(INFO, "BACK  fall  \ ");
+            report(INFO, "BACK  fall  < ");
             raider.roll();
             raider.standUp();
         }
