@@ -47,7 +47,7 @@ public:
     Raider();
 
     //FUNCIONES DE ESTADO
-    int fall();
+    int getFall();
     bool getLeftIR();
     bool getRightIR();
 

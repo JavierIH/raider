@@ -1,7 +1,10 @@
 [] Comprobar comunicación serie (en dos direcciones) (2 dias) 
-[] Poner en marcha el giróscopo (2 dias)
+[X] Poner en marcha el giróscopo (2 dias)
 [X] Arreglar el puerto I2C de la shield (1 dia)
-[] Ajustar caminata (3 dias)
+[X] Ajustar caminata (3 dias)
+[] Ajustar tiempos entre funciones
 [] Diseñar protector trasero (1 dia)
 [] Cablear led y boton de seguridad (1 dia)
 [] Sacar datos del algoritmo de visión (3 dias)
+[] Prueba de vision
+[] Prueba de sumo

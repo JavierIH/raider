@@ -62,7 +62,7 @@ bool Raider::getRightIR(){
     else return 0;
 }
 
-int Raider::fall(){
+int Raider::getFall(){
 
     int ay=imu->getAccelerometerY()*360/65355;
     if(ay<=90&&ay>FALL_DEGREES){
@@ -78,22 +78,24 @@ int Raider::fall(){
 
 bool Raider::walk(){
 
-    char command= 'w';
+    char command= 'W';
     int error=serial->WriteChar(command);
     if (error==-1){
         report(WARNING,"Failed sending command (walk)");
         return 0;
     }
+    sleep(5);
     return 1;
 }
 bool Raider::standUp(){ // TODO revisar comando
 
-    char command= 'H';
+    char command= 'U';
     int error=serial->WriteChar(command);
     if (error==-1){
         report(WARNING,"Failed sending command (standUp)");
         return 0;
     }
+    sleep(5);
     return 1;
 }
 
@@ -105,6 +107,7 @@ bool Raider::turnLeft(){
         report(WARNING,"Failed sending command (turnLeft)");
         return 0;
     }
+    sleep(5);
     return 1;
 }
 bool Raider::turnRigt(){
@@ -115,11 +118,32 @@ bool Raider::turnRigt(){
         report(WARNING,"Failed sending command (turnRight)");
         return 0;
     }
+    sleep(5);
     return 1;
 }
 
-bool Raider::stepLeft(){}
-bool Raider::stepRight(){}
+bool Raider::stepLeft(){
+
+    char command= 'Q';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (stepLeft)");
+        return 0;
+    }
+    sleep(5);
+    return 1;
+}
+bool Raider::stepRight(){
+
+    char command= 'E';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (stepRight)");
+        return 0;
+    }
+    sleep(5);
+    return 1;
+}
 
 bool Raider::roll(){
 
@@ -129,6 +153,7 @@ bool Raider::roll(){
         report(WARNING,"Failed sending command (roll)");
         return 0;
     }
+    sleep(5);
     return 1;
 }
 
@@ -141,5 +166,6 @@ bool Raider::sendCommand(char command){
         report(WARNING,"Failed sending command");
         return 0;
     }
+    sleep(5);
     return 1;
 }

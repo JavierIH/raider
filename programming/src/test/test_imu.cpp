@@ -14,7 +14,7 @@ int main() {
     Raider raider;
 
     while(1){
-        int state=raider.fall();
+        int state=raider.getFall();
         if (state==1){
             report(INFO, "FRONT fall  > ");
             raider.standUp();
