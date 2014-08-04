@@ -1,0 +1,23 @@
+OPTION(NAVIGATION "Communication test" 1)
+IF (NAVIGATION)
+add_executable(navigation navigation.cpp)
+target_link_libraries(navigation raider)
+ENDIF ()
+
+OPTION(VISION "Opencv test" 1)
+IF (TEST_OPENCV)
+add_executable(vision vision.cpp)
+target_link_libraries(vision raider)
+ENDIF ()
+
+OPTION(FIGHT "Integration test" 1)
+IF (FIGHT)
+add_executable(fight fight.cpp)
+target_link_libraries(fight raider)
+ENDIF ()
+
+OPTION( STAIRS "Auxiliar, not for Beaglebone" 1)
+IF (STAIRS)
+add_executable(stairs stairs.cpp)
+target_link_libraries(stairs raider)
+ENDIF ()
