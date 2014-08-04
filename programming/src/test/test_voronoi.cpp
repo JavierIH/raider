@@ -82,18 +82,42 @@ int dist=300;
 
     Mat output=input.clone();
     voronoi(output);
-    output=dilation(output,2);
+    //output=dilation(output,2);
 
     imshow("rayitas",output);
 
     vector<vector<Point> > contours;
     findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
 
-    std::cout<<"\n\n\nContornos: "<<contours.size();
-    std::cout<<"\n\n\nContorn1os: "<<contours.at(0).size();
-    std::cout<<"\n\n\nContorn2os: "<<contours.at(1).size();
+    for(int i=0; i<contours.size(); i++) std::cout<<"\n\n\nContorno "<<i<<": "<<contours.at(i).size();
+
+    int way=0;
+    int y_top=500; // TODO arreglar valor
+    int y_top_max=500; // TODO arreglar valor
+    int inicio_del_camino=0;
+    int y_bot=0;
+    int y_bot_max=0;
+    bool way_flag=false;
 
 
+    for(int i=0; i<contours.size(); i++){
+        for(int j=0; j<contours.at(i).size(); j++){
+            if(contours.at(i).at(j).y<y_top){
+                y_top=contours.at(i).at(j).y;
+            }
+            if(contours.at(i).at(j).y>y_bot){
+                y_bot=contours.at(i).at(j).y;
+            }
+        }
+        cout<<"\nthis way: "<<i<<endl;
+        cout<<"Empieza en y: "<<y_bot<<endl;
+        cout<<"Termina en y: "<<y_top<<endl<<endl<<endl;
+
+        if((y_top<y_top_max)&&(y_bot>output.rows*0.9)){
+            way=i;
+            way_flag=true;
+        }
+    }
 
 
 
