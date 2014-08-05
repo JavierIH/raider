@@ -49,7 +49,7 @@ int main()
 
     Mat image=getFrame();
 
-    int size_factor=3;
+    int size_factor=1;
     cv::Size size(160*size_factor,120*size_factor);
     resize(image,image,size);
 
@@ -138,8 +138,7 @@ int main()
     showMap(input,output);
 }*/
 
-
-    char command=findWay(image,10,20);
+    char command=findWay(image,10*size_factor,20);
 
     report(INFO,"Command: "+to_string(command));
     contador++;

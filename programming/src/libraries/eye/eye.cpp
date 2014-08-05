@@ -195,6 +195,8 @@ char findWay(Mat image, int param_dist, int param_alfa){
 
     Mat1b input=detectGreen(image);
 
+    imshow("Frame", image );
+
     threshold(input, input, 50 , 255, THRESH_BINARY);
 
     input=dilation(input,20);
@@ -216,7 +218,7 @@ char findWay(Mat image, int param_dist, int param_alfa){
     Point bot_max(0,0);
     Point mid_max;
     bool way_flag=false;
-
+    if(contours.empty())return 'Z';
     for(int i=0; i<contours.size(); i++){
         Point top(0,output.rows);
         Point bot(0,0);
@@ -254,8 +256,10 @@ char findWay(Mat image, int param_dist, int param_alfa){
     else alfa=atan(x/y)*180/3.1415927;
     report(INFO,"Way angle: "+to_string(alfa)+" (max: "+to_string(param_alfa)+")");
 
-    //drawLine(output,bot_max,mid_max); //debug
-    //showMap(input,output); //debug
+    drawLine(output,bot_max,mid_max); //debug
+    drawLine(output,Point(output.cols/2-param_dist,output.rows),
+                    Point(output.cols/2+param_dist,output.rows)); //debug
+    showMap(input,output); //debug
 
 
     //SENDING MOVE COMMAND BASED ON GIVEN PARAMETERS
