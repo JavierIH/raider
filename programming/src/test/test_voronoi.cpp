@@ -6,6 +6,7 @@
 #include "../libraries/raider/raider.h"
 #include "../libraries/eye/eye.h"
 #include <iostream>
+#include <math.h>
 
 
 using namespace cv;
@@ -26,12 +27,12 @@ void showMap(Mat input, Mat output){
 
 void drawLine( Mat &img, Point start, Point end )
 {
-  int thickness = 40;
+  int thickness = 4;
   int lineType = 8;
   line( img,
         start,
         end,
-        Scalar( 200, 0, 0 ),
+        Scalar( 120, 0, 0 ),
         thickness,
         lineType );
 }
@@ -42,12 +43,14 @@ int main()
     openCamera(0);
 
     while(1){
-        char c=waitKey(0);
+        char c=waitKey(50);
         if (c=='\n'||c=='a') return 0;
 
     Mat image=getFrame();
 
-    int size_factor=3;
+    imwrite("tolai.jpg",image);
+
+    int size_factor=1;
     cv::Size size(160*size_factor,120*size_factor);
     resize(image,image,size);
 
@@ -84,7 +87,6 @@ int dist=300;
     voronoi(output);
     //output=dilation(output,2);
 
-    imshow("rayitas",output);
 
     vector<vector<Point> > contours;
     findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
@@ -92,34 +94,67 @@ int dist=300;
     for(int i=0; i<contours.size(); i++) std::cout<<"\n\n\nContorno "<<i<<": "<<contours.at(i).size();
 
     int way=0;
-    int y_top=500; // TODO arreglar valor
-    int y_top_max=500; // TODO arreglar valor
-    int inicio_del_camino=0;
-    int y_bot=0;
-    int y_bot_max=0;
+    Point top_max(0,output.rows);
+    Point bot_max(0,0);
+    Point mid_max;
     bool way_flag=false;
 
 
     for(int i=0; i<contours.size(); i++){
+        Point top(0,output.rows);
+        Point bot(0,0);
+
         for(int j=0; j<contours.at(i).size(); j++){
-            if(contours.at(i).at(j).y<y_top){
-                y_top=contours.at(i).at(j).y;
+            if(contours.at(i).at(j).y<top.y){
+                top=contours.at(i).at(j);
             }
-            if(contours.at(i).at(j).y>y_bot){
-                y_bot=contours.at(i).at(j).y;
+            if(contours.at(i).at(j).y>bot.y){
+                bot=contours.at(i).at(j);
             }
+
         }
         cout<<"\nthis way: "<<i<<endl;
-        cout<<"Empieza en y: "<<y_bot<<endl;
-        cout<<"Termina en y: "<<y_top<<endl<<endl<<endl;
+        cout<<"Empieza en y: "<<bot.y<<endl;
+        cout<<"Termina en y: "<<top.y<<endl<<endl<<endl;
 
-        if((y_top<y_top_max)&&(y_bot>output.rows*0.9)){
+        if((top.y<top_max.y)&&(bot.y>output.rows*0.9)){
             way=i;
             way_flag=true;
+            top_max=top;
+            bot_max=bot;
         }
     }
 
+    for(int j=0; j<contours.at(way).size(); j++){
+        if(contours.at(way).at(j).y>output.rows*0.8&&contours.at(way).at(j).y<output.rows*0.9){
+            mid_max=contours.at(way).at(j);
+        }
+    }
 
+    report(INFO,"El mejor camino es el "+to_string(way));
+    report(INFO,"Va de "+to_string(bot_max));
+    report(INFO,"a "+to_string(top_max));
+
+    float x=mid_max.x-bot_max.x;
+    float y=bot_max.y-mid_max.y;
+    float alfa;
+
+    report(INFO,"El punto de partida se aleja del centro: "+to_string(-output.cols/2+bot_max.x));
+    if(x==0) alfa=0;
+    else alfa=atan(x/y
+                   )*180/3.1415927;
+
+
+    report(INFO,"Con una inclinacion de: "+to_string(alfa));
+
+
+
+    drawLine(output,bot_max,mid_max);
+    drawLine(output,bot_max,top_max);
+
+
+
+    imshow("rayitas",output);
 
     showMap(input,output);
 //    waitKey();
