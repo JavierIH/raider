@@ -254,13 +254,12 @@ char findWay(Mat image, int param_dist, int param_alfa){
     else alfa=atan(x/y)*180/3.1415927;
     report(INFO,"Way angle: "+to_string(alfa)+" (max: "+to_string(param_alfa)+")");
 
-    drawLine(output,bot_max,mid_max); //debug
-    showMap(input,output); //debug
+    //drawLine(output,bot_max,mid_max); //debug
+    //showMap(input,output); //debug
 
 
     //SENDING MOVE COMMAND BASED ON GIVEN PARAMETERS
     if(abs(dist)>param_dist){
-        report("Lejos del punto de inicio (necesita un paso lateral)");
         if(dist>0){
             report(OK,"E -> Paso lateral a la derecha");
             return 'E';
@@ -274,8 +273,6 @@ char findWay(Mat image, int param_dist, int param_alfa){
         report("cerca del punto de inicio");
 
         if(abs(alfa)>param_alfa){
-            report("necesita re-orientarse");
-
             if(alfa<0){
                 report(OK,"D -> Girar a la izquierda");
                 return 'D';
@@ -286,8 +283,6 @@ char findWay(Mat image, int param_dist, int param_alfa){
             }
         }
         else{
-            report("no necesita reorientarse");
-
             report(OK,"W -> Avanza recto");
             return 'W';
         }
