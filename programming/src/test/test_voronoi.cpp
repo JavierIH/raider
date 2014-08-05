@@ -11,7 +11,7 @@
 
 using namespace cv;
 
-void showMap(Mat input, Mat output){
+/*void showMap(Mat input, Mat output){
     int type = CV_8UC3;
     Scalar red(0,0,255); //debug
     Scalar black(0,0,0); //debug
@@ -23,9 +23,9 @@ void showMap(Mat input, Mat output){
     Mat result=obstacles.clone()+ground.clone();
     result.setTo(red,output);
     imshow("Mapa",result);
-}
+}*/
 
-void drawLine( Mat &img, Point start, Point end )
+/*void drawLine( Mat &img, Point start, Point end )
 {
   int thickness = 4;
   int lineType = 8;
@@ -35,7 +35,7 @@ void drawLine( Mat &img, Point start, Point end )
         Scalar( 120, 0, 0 ),
         thickness,
         lineType );
-}
+}*/
 
 
 int main()
@@ -48,29 +48,18 @@ int main()
 
     Mat image=getFrame();
 
-    imwrite("tolai.jpg",image);
-
-    int size_factor=1;
+    int size_factor=3;
     cv::Size size(160*size_factor,120*size_factor);
     resize(image,image,size);
 
+   /* Mat1b input=detectGreen(image);
 
-    imshow("camara",image);
-  //  waitKey();
-
-
-    Mat1b input=detectGreen(image);
+//-----------------------------PREPARAR INPUT
     threshold(input, input, 50 , 255, THRESH_BINARY);
-    //imshow("original",input);
-    //waitKey();
-    input=dilation(input,20);
-int dist=300;
-/*
-    for (int i=input.cols/2+dist;i<input.cols;i++)
-    input.at<uchar>(input.rows-1,i)=0;
 
-    for (int i=0;i<input.cols/2-dist;i++)
-    input.at<uchar>(input.rows-1,i)=0;*/
+    input=dilation(input,20);
+    input=dilation(input,-10);
+
 
     for (int i=0;i<input.rows;i++)
     input.at<uchar>(i,0)=0;
@@ -78,16 +67,12 @@ int dist=300;
     for (int i=0;i<input.rows;i++)
     input.at<uchar>(i,input.cols-1)=0;
 
-
-
-    //imshow("dilation",input);
-    //waitKey();
-
     Mat output=input.clone();
+//------------------------------------------
+
     voronoi(output);
-    //output=dilation(output,2);
 
-
+//BUSCAR CAMINO
     vector<vector<Point> > contours;
     findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
 
@@ -98,7 +83,6 @@ int dist=300;
     Point bot_max(0,0);
     Point mid_max;
     bool way_flag=false;
-
 
     for(int i=0; i<contours.size(); i++){
         Point top(0,output.rows);
@@ -141,23 +125,22 @@ int dist=300;
 
     report(INFO,"El punto de partida se aleja del centro: "+to_string(-output.cols/2+bot_max.x));
     if(x==0) alfa=0;
-    else alfa=atan(x/y
-                   )*180/3.1415927;
-
+    else alfa=atan(x/y)*180/3.1415927;
 
     report(INFO,"Con una inclinacion de: "+to_string(alfa));
-
-
 
     drawLine(output,bot_max,mid_max);
     drawLine(output,bot_max,top_max);
 
-
-
     imshow("rayitas",output);
 
     showMap(input,output);
-//    waitKey();
-}
-    return 0;
+}*/
+
+
+    char command=findWay(image,30,20);
+
+    report(INFO,"Command: "+to_string(command));
+
+    }
 }

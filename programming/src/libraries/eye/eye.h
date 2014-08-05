@@ -16,6 +16,9 @@ cv::Mat1b detectGreen(cv::Mat);
 void thinningIteration(cv::Mat&,int);
 void voronoi(cv::Mat&);
 cv::Mat1b dilation(cv::Mat1b, int level);
+char findWay(cv::Mat, int, int);
+void drawLine(cv::Mat&, cv::Point, cv::Point);
+void showMap(cv::Mat, cv::Mat);
 
 
 #endif // EYE_H

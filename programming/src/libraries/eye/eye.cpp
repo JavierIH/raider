@@ -1,4 +1,6 @@
 #include "eye.h"
+#include "../debug/debug.h"
+
 
 using namespace cv;
 
@@ -48,9 +50,6 @@ cv::Mat1b detectGreen(Mat image){
 
     GaussianBlur(result,result,Size(11,11),0,0);
 
-    imshow("ol",result);
-
-
     Mat1b out;
     threshold(result, out, 50 , 255, THRESH_BINARY);
 
@@ -59,7 +58,9 @@ cv::Mat1b detectGreen(Mat image){
 
 cv::Mat1b dilation(Mat1b input, int level){
     Mat1b output;
-    dilate(input, output, Mat(),Point(-1,-1),level);
+    if(level>0)dilate(input, output, Mat(),Point(-1,-1),level);
+    if(level<0)erode(input, output, Mat(),Point(-1,-1),-level);
+
     return output;
 }
 
@@ -164,4 +165,132 @@ void voronoi(cv::Mat& im){
     im.at<uchar>(0,i)=0;
 }
 
+void drawLine( Mat &img, Point start, Point end )
+{
+  int thickness = 4;
+  int lineType = 8;
+  line( img,
+        start,
+        end,
+        Scalar( 120, 0, 0 ),
+        thickness,
+        lineType );
+}
+
+void showMap(Mat input, Mat output){
+    int type = CV_8UC3;
+    Scalar red(0,0,255); //debug
+    Scalar black(0,0,0); //debug
+    Mat way(input.rows,input.cols, type, Scalar(0,0,0)); //debug
+    way.setTo(red,output); //debug
+    Mat obstacles(input.rows,input.cols, type, Scalar(255,255,255)); //debug
+    obstacles.setTo(black,input); //debug
+    Mat ground(input.rows,input.cols, type, Scalar(0,255,0)); //debug
+    Mat result=obstacles.clone()+ground.clone();
+    result.setTo(red,output);
+    imshow("Mapa",result);
+}
+
+char findWay(Mat image, int param_dist, int param_alfa){
+
+    Mat1b input=detectGreen(image);
+
+    threshold(input, input, 50 , 255, THRESH_BINARY);
+
+    input=dilation(input,20);
+    input=dilation(input,-10);
+
+    //DIBUJAR LINEAS
+    for (int i=0;i<input.rows;i++) input.at<uchar>(i,0)=0;
+    for (int i=0;i<input.rows;i++) input.at<uchar>(i,input.cols-1)=0;
+
+    Mat output=input.clone();
+
+    voronoi(output);
+
+    vector<vector<Point> > contours;
+    findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
+
+    int way=0;
+    Point top_max(0,output.rows);
+    Point bot_max(0,0);
+    Point mid_max;
+    bool way_flag=false;
+
+    for(int i=0; i<contours.size(); i++){
+        Point top(0,output.rows);
+        Point bot(0,0);
+
+        for(int j=0; j<contours.at(i).size(); j++){
+            if(contours.at(i).at(j).y<top.y){
+                top=contours.at(i).at(j);
+            }
+            if(contours.at(i).at(j).y>bot.y){
+                bot=contours.at(i).at(j);
+            }
+
+        }
+        if((top.y<top_max.y)&&(bot.y>output.rows*0.9)){
+            way=i;
+            way_flag=true;
+            top_max=top;
+            bot_max=bot;
+        }
+    }
+
+    for(int j=0; j<contours.at(way).size(); j++){
+        if(contours.at(way).at(j).y>output.rows*0.8&&contours.at(way).at(j).y<output.rows*0.9){
+            mid_max=contours.at(way).at(j);
+        }
+    }
+
+    float x=mid_max.x-bot_max.x;
+    float y=bot_max.y-mid_max.y;
+    float alfa;
+    int dist=-output.cols/2+bot_max.x;
+
+    report(INFO,"Distance to way: "+to_string(dist)+" (max: "+to_string(param_dist)+")");
+    if(x==0) alfa=0;
+    else alfa=atan(x/y)*180/3.1415927;
+    report(INFO,"Way angle: "+to_string(alfa)+" (max: "+to_string(param_alfa)+")");
+
+    drawLine(output,bot_max,mid_max); //debug
+    showMap(input,output); //debug
+
+
+    //SENDING MOVE COMMAND BASED ON GIVEN PARAMETERS
+    if(abs(dist)>param_dist){
+        report("Lejos del punto de inicio (necesita un paso lateral)");
+        if(dist>0){
+            report(OK,"E -> Paso lateral a la derecha");
+            return 'E';
+        }
+        if(dist<0){
+            report(OK,"Q -> Paso lateral a la izquierda");
+            return 'Q';
+        }
+    }
+    else{
+        report("cerca del punto de inicio");
+
+        if(abs(alfa)>param_alfa){
+            report("necesita re-orientarse");
+
+            if(alfa<0){
+                report(OK,"D -> Girar a la izquierda");
+                return 'D';
+            }
+            if(alfa>0){
+                report(OK,"A -> Girar a la derecha");
+                return 'A';
+            }
+        }
+        else{
+            report("no necesita reorientarse");
+
+            report(OK,"W -> Avanza recto");
+            return 'W';
+        }
+    }
+}
 
