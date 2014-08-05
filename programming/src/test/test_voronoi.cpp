@@ -42,7 +42,8 @@ int main()
 {
     openCamera(0);
 
-    while(1){
+    int contador=0;
+    while(contador<20){
         char c=waitKey(50);
         if (c=='\n'||c=='a') return 0;
 
@@ -141,6 +142,6 @@ int main()
     char command=findWay(image,10,20);
 
     report(INFO,"Command: "+to_string(command));
-
+    contador++;
     }
 }
