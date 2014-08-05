@@ -49,7 +49,7 @@ int main()
 
     Mat image=getFrame();
 
-    int size_factor=1;
+    int size_factor=3;
     cv::Size size(160*size_factor,120*size_factor);
     resize(image,image,size);
 
