@@ -22,41 +22,42 @@ void loop() {
 //    SerialUSB.println("ok");
 
 
-       digitalWrite(BOARD_LED_PIN, HIGH);
+    
+float tiempo=1;
+int altura_paso=10;
+int avance=40;
+int amplitud=30;
 
-  if(Serial2.available()){
-    command=Serial2.read();
-    SerialUSB.println(command);
-   digitalWrite(BOARD_LED_PIN, LOW);
-   switch (command){ 
-     case 'W':
-       raider.walk(3);
-       break; 
-     case 'A':
-       raider.turnL();
-       break; 
-     case 'D':
-       raider.turnR();
-       break; 
-     case 'S':
-       raider.run(10);
-       break;
-     case 'K':
-       raider.kick();
-       break;
-     case 'Y':
-       raider.yes();
-       break;
-     case 'G':
-       raider.getUp();
-       break;
-     case 'H':
-       raider.hello();
-       break;
-     case 'R':
-       raider.roll();
-       break;  
-   } 
-      Serial2.flush();
-  }
+
+     raider.setTargetPosition(512,0,462,562,212,812,992,32,512,512,512,512,462,562,512,512,512+5,512-5,512,512);
+     raider.movVertical(-120,-120);
+     raider.setTargetOffset(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+     raider.movLateral(20,-20);
+     raider.move(0.1);
+     
+  
+  
+     raider.movLateral(avance,-avance);
+     raider.setTargetOffset(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40);
+     raider.movVertical(0,-30);
+     raider.move(0.1);
+     
+     raider.setTargetOffset(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-20,0);
+     raider.move(0.1);
+     
+     raider.movLateral(-avance,avance);
+     raider.setTargetOffset(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-40);
+     raider.movVertical(-30,0);
+     raider.move(0.1);
+
+
+     
+
+
+  delay(3000);
+
+   
+
+
+   
 }

@@ -50,6 +50,8 @@ class Robot{
     void walk(int);
     void turnL();
     void turnR();
+    void stepL();
+    void stepR();
     void kick();
     void getUp();
     void hello();
