@@ -3,7 +3,7 @@ use <raid3r/raid3r.scad>
 
 module screw(d){
 translate([0,0,-5])rotate([0,0,0])union(){
-cylinder(r=5.3/2, h=6, $fn=10);
+//cylinder(r=5.3/2, h=6, $fn=10);
 cylinder(r=2.9/2, h=6+d, $fn=10);
 }
 }
@@ -56,20 +56,27 @@ translate([-51,6,0])cube([102,59,25]);
 		translate([-15-19,12,0])bbbholes(6);
 
 
-		for(i=[0:5]) translate([0,i*8+13,0])cube([50,5,20],center=true);
+hull(){
+translate([-20,25,-5])cylinder(r=5,h=20,$fn=30);
+translate([20,25,-5])cylinder(r=5,h=20,$fn=30);
+}
+hull(){
+translate([-20,47,-5])cylinder(r=5,h=20,$fn=30);
+translate([20,47,-5])cylinder(r=5,h=20,$fn=30);
+}
 
-		hull(){
-			translate([45,56,-10])cylinder(r=3,h=20);
-			translate([39,56,-10])cylinder(r=3,h=20);
-			translate([45,39,-10])cylinder(r=3,h=20);
-			translate([36,39,-10])cylinder(r=3,h=20);
-		}
+//		hull(){
+//			translate([45,56,-10])cylinder(r=3,h=20);
+//			translate([39,56,-10])cylinder(r=3,h=20);
+//			translate([45,43,-10])cylinder(r=3,h=20);
+//			translate([36,43,-10])cylinder(r=3,h=20);
+//		}
 		
 		translate([13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200);
 		translate([-13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200);
+		mirror([1,0,0])translate([30,0,-1])rotate([0,0,-30])cube(50);
+		translate([30,0,-1])rotate([0,0,-30])cube(50);
 
 
 	}
-
-
 
