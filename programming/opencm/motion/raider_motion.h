@@ -19,8 +19,6 @@
 #define TRIM12 -18
 #define TRIM13 0
 #define TRIM14 -5
-//#define TRIM15 3 original
-//#define TRIM16 -3
 #define TRIM15 -1
 #define TRIM16 1
 #define TRIM17 10
@@ -57,6 +55,10 @@ class Robot{
     void hello();
     void yes();
     void roll();
+    
+    void controller(char);
+    
+    
 
     //char readCommand(){}
     //char sendCommand(){}

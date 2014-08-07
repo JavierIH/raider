@@ -34,6 +34,43 @@ Robot::Robot(){
 
 }
 
+void Robot::controller(char command){
+   switch (command){
+case 'W':
+walk(3);
+break;
+case 'A':
+turnL();
+break;
+case 'D':
+turnR();
+break;
+case 'Q':
+stepL();
+break;
+case 'E':
+stepR();
+break;
+case 'S':
+run(10);
+break;
+case 'K':
+kick();
+break;
+case 'Y':
+yes();
+break;
+case 'G':
+getUp();
+break;
+case 'H':
+hello();
+break;
+case 'R':
+roll();
+break;
+} 
+}
 
 void Robot::init(){
      setTargetPosition(512,0,462,562,212,812,992,32,512,512,512,512,452,572,512,512,512,512,512,512);

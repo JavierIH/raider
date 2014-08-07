@@ -1,39 +1,41 @@
 #include <Servo.h>
 #include "raider_motion.h"
 
-    Robot raider;
-    bool manual_mode=false;
+//STATE SIGNALS
+#define STOP_BUTTON 0
+#define STATE_LED 1
 
-int command;
+//BAUD RATE FOR COMMUNICATION
+#define BBB_BAUD_RATE 9600
+#define BT_BAUD_RATE 9600
 
-    
+Robot raider;
+
+  
 void setup() {
-    Serial2.begin(9600); //Bluetooth
-   // Serial3.begin(9600); //Beaglebone
+ // Serial2.begin(BT_BAUD_RATE); //Bluetooth
+    Serial3.begin(BBB_BAUD_RATE); //Beaglebone
+ 
     pinMode(BOARD_LED_PIN, OUTPUT);
+    pinMode(STOP_BUTTON, INPUT);
+    pinMode(STATE_LED, OUTPUT);
 
     raider.init();
-
-
 }
 
 void loop() {
-//    SerialUSB.begin();
-//    SerialUSB.println("ok");
 
-
-    
-float tiempo=1;
-int altura_paso=10;
-int avance=40;
-int amplitud=30;
-
-     raider.stepL();
-
-  delay(300);
-
-   
-
-
-   
-}
+//  if(digitalRead(STOP_BUTTON)){
+//    digitalWrite(1, HIGH);
+//  }
+//  else{
+//    digitalWrite(1, LOW); 
+    if(Serial3.available()){
+      char command=Serial3.read();
+      SerialUSB.println(command);
+      digitalWrite(BOARD_LED_PIN, LOW);
+      raider.controller(command);
+      Serial3.flush();
+//    } 
+//  }
+//}
