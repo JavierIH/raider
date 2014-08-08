@@ -75,7 +75,8 @@ int main()
                 break;
             }
             else if(abs(line_result[1]<=FL_ANGLE)){
-                report("Linea de frente (La cruzo)");
+                report(RAIDER,"Voy a cruzar la linea");
+                report(MOVE,"W -> Avanzar recto");
                 raider.walk(); // TODO cerciorarse de que cruza
                 raider.walk();
                 flag_line=true;
@@ -93,7 +94,7 @@ int main()
                     raider.turnRight();
                 }
                 if(line_result[0]<=FL_DISTANCE){
-                    report("Linea cercana (La cruzo)");
+                    report(RAIDER,"Voy a cruzar la linea");
                     report(MOVE,"W -> Avanzar recto");
                     raider.walk(); // TODO cerciorarse de que cruza
                     raider.walk();
@@ -102,7 +103,7 @@ int main()
                     break;
                 }
                 else{
-                    report("No he cruzado, vuelvo a intentarlo");
+                    report(RAIDER,"No he cruzado, vuelvo a intentarlo");
                     state=2; // -> findLine
                     break;
                 }

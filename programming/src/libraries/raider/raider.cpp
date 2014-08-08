@@ -261,10 +261,10 @@ Vec2i Raider::findWay(Mat image){
     float alfa;
     int d=-output.cols/2+bot_max.x;
 
-    report(INFO,"Distance to way: "+to_string(d));
+    report("Distance to way: "+to_string(d));
     if(x==0) alfa=0;
     else alfa=atan(x/y)*180/3.1415927;
-    report(INFO,"Way angle: "+to_string(alfa));
+    report("Way angle: "+to_string(alfa));
 
     //drawLine(output,bot_max,mid_max); //debug
     //drawLine(output,Point(output.cols/2-param_dist,output.rows),
