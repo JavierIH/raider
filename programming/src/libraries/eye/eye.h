@@ -16,7 +16,7 @@ cv::Mat1b detectGreen(cv::Mat);
 void thinningIteration(cv::Mat&,int);
 void voronoi(cv::Mat&);
 cv::Mat1b dilation(cv::Mat1b, int level);
-char findWay(cv::Mat, int, int);
+cv::Vec2i findWay(cv::Mat);
 void drawLine(cv::Mat&, cv::Point, cv::Point);
 void showMap(cv::Mat, cv::Mat);
 

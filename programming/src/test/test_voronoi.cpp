@@ -47,100 +47,24 @@ int main()
         char c=waitKey(50);
         if (c=='\n'||c=='a') return 0;
 
-    Mat image=getFrame();
+        Mat image=getFrame();
+        int size_factor=1;
+        cv::Size size(160*size_factor,120*size_factor);
+        resize(image,image,size);
 
-    int size_factor=1;
-    cv::Size size(160*size_factor,120*size_factor);
-    resize(image,image,size);
+        Vec2i way_result=findWay(image);//,10*size_factor,20);
 
-   /* Mat1b input=detectGreen(image);
-
-//-----------------------------PREPARAR INPUT
-    threshold(input, input, 50 , 255, THRESH_BINARY);
-
-    input=dilation(input,20);
-    input=dilation(input,-10);
-
-
-    for (int i=0;i<input.rows;i++)
-    input.at<uchar>(i,0)=0;
-
-    for (int i=0;i<input.rows;i++)
-    input.at<uchar>(i,input.cols-1)=0;
-
-    Mat output=input.clone();
-//------------------------------------------
-
-    voronoi(output);
-
-//BUSCAR CAMINO
-    vector<vector<Point> > contours;
-    findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
-
-    for(int i=0; i<contours.size(); i++) std::cout<<"\n\n\nContorno "<<i<<": "<<contours.at(i).size();
-
-    int way=0;
-    Point top_max(0,output.rows);
-    Point bot_max(0,0);
-    Point mid_max;
-    bool way_flag=false;
-
-    for(int i=0; i<contours.size(); i++){
-        Point top(0,output.rows);
-        Point bot(0,0);
-
-        for(int j=0; j<contours.at(i).size(); j++){
-            if(contours.at(i).at(j).y<top.y){
-                top=contours.at(i).at(j);
+        if(abs(way_result[0])>10*size_factor){ // PARAMETRO DISTANCIA
+            if(way_result[0]>0) report(OK,"E -> Paso lateral a la derecha");
+            if(way_result[0]<0) report(OK,"Q -> Paso lateral a la izquierda");
+        }
+        else{
+            if(abs(way_result[1])>20){ // PARAMETRO ANGULO
+                if(way_result[1]<0) report(OK,"D -> Girar a la izquierda");
+                if(way_result[1]>0) report(OK,"A -> Girar a la derecha");
             }
-            if(contours.at(i).at(j).y>bot.y){
-                bot=contours.at(i).at(j);
-            }
-
+            else report(OK,"W -> Avanza recto");
         }
-        cout<<"\nthis way: "<<i<<endl;
-        cout<<"Empieza en y: "<<bot.y<<endl;
-        cout<<"Termina en y: "<<top.y<<endl<<endl<<endl;
-
-        if((top.y<top_max.y)&&(bot.y>output.rows*0.9)){
-            way=i;
-            way_flag=true;
-            top_max=top;
-            bot_max=bot;
-        }
-    }
-
-    for(int j=0; j<contours.at(way).size(); j++){
-        if(contours.at(way).at(j).y>output.rows*0.8&&contours.at(way).at(j).y<output.rows*0.9){
-            mid_max=contours.at(way).at(j);
-        }
-    }
-
-    report(INFO,"El mejor camino es el "+to_string(way));
-    report(INFO,"Va de "+to_string(bot_max));
-    report(INFO,"a "+to_string(top_max));
-
-    float x=mid_max.x-bot_max.x;
-    float y=bot_max.y-mid_max.y;
-    float alfa;
-
-    report(INFO,"El punto de partida se aleja del centro: "+to_string(-output.cols/2+bot_max.x));
-    if(x==0) alfa=0;
-    else alfa=atan(x/y)*180/3.1415927;
-
-    report(INFO,"Con una inclinacion de: "+to_string(alfa));
-
-    drawLine(output,bot_max,mid_max);
-    drawLine(output,bot_max,top_max);
-
-    imshow("rayitas",output);
-
-    showMap(input,output);
-}*/
-
-    char command=findWay(image,10*size_factor,20);
-
-    report(INFO,"Command: "+to_string(command));
-    contador++;
+        contador++;
     }
 }

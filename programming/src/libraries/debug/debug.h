@@ -6,7 +6,7 @@
 #include <sstream>
 #include <vector>
 
-#define DEBUG_LEVEL 1
+#define DEBUG_LEVEL 2
 
 #define ERROR 1
 #define WARNING 2

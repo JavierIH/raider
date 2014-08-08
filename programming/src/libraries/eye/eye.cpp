@@ -51,7 +51,7 @@ cv::Mat1b detectGreen(Mat image){
     GaussianBlur(result,result,Size(11,11),0,0);
 
     Mat1b out;
-    threshold(result, out, 50 , 255, THRESH_BINARY);
+    threshold(result, out, 30 /*50*/, 255, THRESH_BINARY);
 
     return out;
 }
@@ -138,7 +138,7 @@ void thinningIteration(cv::Mat& img, int iter){
     img &= ~marker;
 }
 
-void voronoi(cv::Mat& im){
+void voronoi(cv::Mat& im){ 
     im /= 255;
 
     cv::Mat prev = cv::Mat::zeros(im.size(), CV_8UC1);
@@ -191,7 +191,7 @@ void showMap(Mat input, Mat output){
     imshow("Mapa",result);
 }
 
-char findWay(Mat image, int param_dist, int param_alfa){
+Vec2i findWay(Mat image){
 
     Mat1b input=detectGreen(image);
 
@@ -249,26 +249,26 @@ char findWay(Mat image, int param_dist, int param_alfa){
     float x=mid_max.x-bot_max.x;
     float y=bot_max.y-mid_max.y;
     float alfa;
-    int dist=-output.cols/2+bot_max.x;
+    int d=-output.cols/2+bot_max.x;
 
-    report(INFO,"Distance to way: "+to_string(dist)+" (max: "+to_string(param_dist)+")");
+    report(INFO,"Distance to way: "+to_string(d));
     if(x==0) alfa=0;
     else alfa=atan(x/y)*180/3.1415927;
-    report(INFO,"Way angle: "+to_string(alfa)+" (max: "+to_string(param_alfa)+")");
+    report(INFO,"Way angle: "+to_string(alfa));
 
     //drawLine(output,bot_max,mid_max); //debug
     //drawLine(output,Point(output.cols/2-param_dist,output.rows),
     //                Point(output.cols/2+param_dist,output.rows)); //debug
     //showMap(input,output); //debug
 
-
+    return Vec2i(d,alfa);
     //SENDING MOVE COMMAND BASED ON GIVEN PARAMETERS
-    if(abs(dist)>param_dist){
-        if(dist>0){
+    /*if(abs(d)>param_dist){
+        if(d>0){
             report(OK,"E -> Paso lateral a la derecha");
             return 'E';
         }
-        if(dist<0){
+        if(d<0){
             report(OK,"Q -> Paso lateral a la izquierda");
             return 'Q';
         }
@@ -290,6 +290,50 @@ char findWay(Mat image, int param_dist, int param_alfa){
             report(OK,"W -> Avanza recto");
             return 'W';
         }
-    }
+    }*/
 }
 
+
+Vec2i findLine(Mat image){
+
+    Mat1b input=detectGreen(image);
+    input=dilation(input,2); // TODO ajuste importante
+    //imshow("original",input);// debug
+
+    input=255-input; //Inversion de input
+
+    vector<Vec4i> lines;
+    HoughLinesP(input, lines, 1, CV_PI/180, 80, 50, 40 );// TODO ajustar
+    int max_length=0;
+    int max_line=0;
+    if(lines.size()>0){
+        for( size_t i = 0; i < lines.size(); i++ )
+        {
+            Vec4i l = lines[i];
+            int length=sqrt(pow((l[2]-l[0]),2)+pow((l[3]-l[1]),2));
+            if(length>max_length){
+                max_length=length;
+                max_line=i;
+            }
+        }
+        line( image,
+              Point(lines.at(max_line)[0], lines.at(max_line)[1]),
+              Point(lines.at(max_line)[2], lines.at(max_line)[3]),
+              Scalar(255,0,0), 1, CV_AA);
+
+        float y=lines.at(max_line)[2]-lines.at(max_line)[0];
+        float x=lines.at(max_line)[3]-lines.at(max_line)[1];
+        int alfa;
+        if(y==0)alfa=90;
+        else alfa=atan(x/y)*180/CV_PI;
+        int d=input.rows-(lines.at(max_line)[3]+lines.at(max_line)[1])/2;
+
+        report("Numero de lineas: "+to_string(lines.size()));
+        report("La mas larga mide: "+to_string(max_length));
+        report("Está a un angulo de: "+to_string(alfa));
+        report("A una distancia de: "+to_string(d));
+        //imshow("Resultado", image); //debug
+        return Vec2i(d,alfa);
+    }
+    else return Vec2i(-1,0); //No hay linea
+}
