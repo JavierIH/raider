@@ -6,11 +6,20 @@ void report(int type, std::string msg){
     case ERROR:
         if(DEBUG_LEVEL<=5)std::cout<<"\033[1;31m[ERROR]   "+msg+"\033[0m"<<endl;
         break;
+    case RAIDER:
+        if(DEBUG_LEVEL<=5)std::cout<<"\033[1;31m[RAIDER]\033[0m  \033[3;31m"+msg+"\033[0m"<<endl;
+        break;
     case WARNING:
         if(DEBUG_LEVEL<=2)std::cout<<"\033[1;33m[WARNING]\033[0m \033[0;33m"+msg+"\033[0m"<<endl;
         break;
     case OK:
         if(DEBUG_LEVEL<=3)std::cout<<"\033[1;32m[OK]      "+msg+"\033[0m"<<endl;
+        break;
+    case MOVE:
+        if(DEBUG_LEVEL<=3)std::cout<<"\033[1;32m[MOVE]\033[0m    "+msg<<endl;
+        break;
+    case STATE:
+        if(DEBUG_LEVEL<=4)std::cout<<"\033[1;35m[STATE]\033[0m   "+msg<<endl;
         break;
     case INFO:
         if(DEBUG_LEVEL<=4)std::cout<<"\033[1;34m[INFO]   \033[0m \033[0;34m"+msg+"\033[0m"<<endl;

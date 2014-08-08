@@ -73,6 +73,7 @@ public:
     bool stepRight();
     bool standUp();
     bool roll();
+    bool yes();
 
     //FUNCIONES AUXILIARES
     bool sendCommand(char);

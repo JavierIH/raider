@@ -171,7 +171,17 @@ bool Raider::roll(){
     return 1;
 }
 
+bool Raider::yes(){
 
+    char command= 'Y';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (roll)");
+        return 0;
+    }
+    sleep(5);
+    return 1;
+}
 
 bool Raider::sendCommand(char command){
 

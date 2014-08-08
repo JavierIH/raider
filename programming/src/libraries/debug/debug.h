@@ -12,6 +12,11 @@
 #define WARNING 2
 #define OK 3
 #define INFO 4
+#define STATE 5
+#define MOVE 6
+#define RAIDER 13
+
+
 
 using namespace std;
 
