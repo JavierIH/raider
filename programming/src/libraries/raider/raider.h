@@ -1,6 +1,11 @@
 #ifndef RAIDER_H
 #define RAIDER_H
 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <stdlib.h>
+
 #include "../bones/bones.h"
 #include "../eye/eye.h"
 #include "../debug/debug.h"
@@ -18,7 +23,7 @@
 #define COMPASS_ADDRESS     0x0C
 
 //Camera settings
-#define CAMERA_ID           1
+#define CAMERA_ID           -1
 
 //Beaglebone Black GPIOs settings
 #define AIN3                3
@@ -36,6 +41,8 @@ private:
     I2C *i2c;
     IMU *imu;
     serialib *serial;
+    cv::VideoCapture *camera;
+
 
     //ESTADO DE LOS SENSORES
     int rightIR;
@@ -52,13 +59,16 @@ public:
     bool getRightIR();
 
     //FUNCIONES DE VISION
-//    findWay();
-//    findBall();
+    cv::Mat getFrame();
+    cv::Vec2i findWay(cv::Mat);
+    cv::Vec2i findLine(cv::Mat);
+    //    findBall();
 
     //MOVIMIENTOS
     bool walk();
+    bool run();
     bool turnLeft();
-    bool turnRigt();
+    bool turnRight();
     bool stepLeft();
     bool stepRight();
     bool standUp();

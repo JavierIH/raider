@@ -9,14 +9,13 @@
 #include <opencv2/imgproc/imgproc.hpp>
 
 bool openCamera(int);
-void cleanBuffer();
+void cleanBuffer(cv::VideoCapture &);
 cv::Mat getFrame();
 cv::Mat extractChannel(cv::Mat,int);
 cv::Mat1b detectGreen(cv::Mat);
 void thinningIteration(cv::Mat&,int);
 void voronoi(cv::Mat&);
 cv::Mat1b dilation(cv::Mat1b, int level);
-cv::Vec2i findWay(cv::Mat);
 void drawLine(cv::Mat&, cv::Point, cv::Point);
 void showMap(cv::Mat, cv::Mat);
 
