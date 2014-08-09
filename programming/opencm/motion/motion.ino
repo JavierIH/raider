@@ -28,14 +28,14 @@ void loop() {
   digitalWrite(BOARD_LED_PIN, HIGH);
 
   if(digitalRead(STOP_BUTTON)){
-    digitalWrite(1, HIGH);
+    digitalWrite(STATE_LED, HIGH);
     SerialUSB.println("stop");
      raider.setTargetPosition(512,0,512,512,212,812,992,32,512,512,512,512,512,512,512,512,512,512,512,512);
      //movVertical(-120,-120);
      raider.move(5);
    }
   else{
-    digitalWrite(1, LOW); 
+    digitalWrite(STATE_LED, LOW); 
     if(Serial3.available()){
       char command=Serial3.read();
       SerialUSB.println(command);
