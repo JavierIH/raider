@@ -44,6 +44,8 @@ int main()
     while(1){
         // TODO meter inicializaciones, tiempo de espera, boton...
         Mat image = raider.getFrame();
+        cv::Size size(160,120);
+        resize(image,image,size);
         switch (state) {
 
         case 0:{
