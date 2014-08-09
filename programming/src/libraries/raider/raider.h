@@ -33,6 +33,19 @@
 #define FALL_DEGREES        60
 #define INFRARED_MAX        1500
 
+//Movements delay time (us)
+#define RUN                 2500000
+#define WALK                1200000
+#define TURNR               1450000
+#define TURNL               1450000
+#define STEPR               1050000
+#define STEPL               1050000
+#define YES                 900000
+#define HELLO               7000000
+#define GETUP               5450000
+#define ROLL                7750000
+
+
 
 
 class Raider
@@ -67,11 +80,11 @@ public:
     //MOVIMIENTOS
     bool walk();
     bool run();
-    bool turnLeft();
-    bool turnRight();
-    bool stepLeft();
-    bool stepRight();
-    bool standUp();
+    bool turnL();
+    bool turnR();
+    bool stepL();
+    bool stepR();
+    bool getUp();
     bool roll();
     bool yes();
 

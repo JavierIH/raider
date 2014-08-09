@@ -64,21 +64,21 @@ int main()
             if(abs(way_result[0])>=FW_DISTANCE){
                 if(way_result[0]>0){
                     report(MOVE,"E -> Paso lateral a la derecha");
-                    raider.stepRight();
+                    raider.stepR();
                 }
                 else if(way_result[0]<0){
                     report(MOVE,"Q -> Paso lateral a la izquierda");
-                    raider.stepLeft();
+                    raider.stepL();
                 }
             }
             else if(abs(way_result[1])>=FW_ANGLE){
                 if(way_result[1]<0){
                     report(MOVE,"D -> Girar a la izquierda");
-                    raider.turnLeft();
+                    raider.turnL();
                 }
                 else if(way_result[1]>0){
                     report(MOVE,"A -> Girar a la derecha");
-                    raider.turnRight();
+                    raider.turnR();
                 }
             }
             else{
@@ -111,11 +111,11 @@ int main()
                 report("Me preparo para cruzar la linea");
                 if(line_result[1]>0){
                     report(MOVE,"D -> Girar a la izquierda");
-                    raider.turnLeft();
+                    raider.turnL();
                 }
                 else if(line_result[1]<0){
                     report(MOVE,"A -> Girar a la derecha");
-                    raider.turnRight();
+                    raider.turnR();
                 }
                 if(line_result[0]<=FL_DISTANCE){
                     report(RAIDER,"Voy a cruzar la linea");
@@ -138,10 +138,10 @@ int main()
             report(STATE, "Estado 3 (Vuelta a casa)");
             report("Inicio secuencia para dar la vuelta");
             report(MOVE,"A -> Girar a la derecha X4");
-            raider.turnRight();
-            raider.turnRight();
-            raider.turnRight();
-            raider.turnRight(); // TODO meter brujula
+            raider.turnR();
+            raider.turnR();
+            raider.turnR();
+            raider.turnR(); // TODO meter brujula
 
             state=1;
             break;

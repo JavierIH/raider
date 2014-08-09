@@ -85,7 +85,7 @@ bool Raider::walk(){
         report(WARNING,"Failed sending command (walk)");
         return 0;
     }
-    sleep(5);
+    usleep(WALK);
     return 1;
 }
 
@@ -97,11 +97,11 @@ bool Raider::run(){
         report(WARNING,"Failed sending command (run)");
         return 0;
     }
-    sleep(5);
+    usleep(RUN);
     return 1;
 }
 
-bool Raider::standUp(){ // TODO revisar comando
+bool Raider::getUp(){ // TODO revisar comando
 
     char command= 'U';
     int error=serial->WriteChar(command);
@@ -109,11 +109,11 @@ bool Raider::standUp(){ // TODO revisar comando
         report(WARNING,"Failed sending command (standUp)");
         return 0;
     }
-    sleep(5);
+    usleep(GETUP);
     return 1;
 }
 
-bool Raider::turnLeft(){
+bool Raider::turnL(){
 
     char command= 'A';
     int error=serial->WriteChar(command);
@@ -121,10 +121,10 @@ bool Raider::turnLeft(){
         report(WARNING,"Failed sending command (turnLeft)");
         return 0;
     }
-    sleep(5);
+    usleep(TURNL);
     return 1;
 }
-bool Raider::turnRight(){
+bool Raider::turnR(){
 
     char command= 'D';
     int error=serial->WriteChar(command);
@@ -132,11 +132,11 @@ bool Raider::turnRight(){
         report(WARNING,"Failed sending command (turnRight)");
         return 0;
     }
-    sleep(5);
+    usleep(TURNL);
     return 1;
 }
 
-bool Raider::stepLeft(){
+bool Raider::stepL(){
 
     char command= 'Q';
     int error=serial->WriteChar(command);
@@ -144,10 +144,10 @@ bool Raider::stepLeft(){
         report(WARNING,"Failed sending command (stepLeft)");
         return 0;
     }
-    sleep(5);
+    usleep(STEPL);
     return 1;
 }
-bool Raider::stepRight(){
+bool Raider::stepR(){
 
     char command= 'E';
     int error=serial->WriteChar(command);
@@ -155,7 +155,7 @@ bool Raider::stepRight(){
         report(WARNING,"Failed sending command (stepRight)");
         return 0;
     }
-    sleep(5);
+    usleep(STEPR);
     return 1;
 }
 
@@ -167,7 +167,7 @@ bool Raider::roll(){
         report(WARNING,"Failed sending command (roll)");
         return 0;
     }
-    sleep(5);
+    usleep(ROLL);
     return 1;
 }
 
@@ -179,7 +179,7 @@ bool Raider::yes(){
         report(WARNING,"Failed sending command (roll)");
         return 0;
     }
-    sleep(5);
+    usleep(YES);
     return 1;
 }
 
@@ -190,7 +190,6 @@ bool Raider::sendCommand(char command){
         report(WARNING,"Failed sending command");
         return 0;
     }
-    sleep(5);
     return 1;
 }
 
