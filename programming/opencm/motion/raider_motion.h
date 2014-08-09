@@ -15,8 +15,8 @@
 #define TRIM8 0
 #define TRIM9 -5
 #define TRIM10 10
-#define TRIM11 10   
-#define TRIM12 -18
+#define TRIM11 0   
+#define TRIM12 -8
 #define TRIM13 0
 #define TRIM14 -5
 #define TRIM15 -1
