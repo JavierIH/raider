@@ -39,7 +39,6 @@ Raider::Raider(){
     else if(getAnalog(1)<=0) report(ERROR, "Error in infrarred sensors (pin 1)");
     else report(OK,"Infrarred sensors are working fine!");
 
-
 //CAMERA
     report("Setting camera...");
     camera = new VideoCapture(CAMERA_ID);
