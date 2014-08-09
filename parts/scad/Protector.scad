@@ -72,8 +72,11 @@ translate([20,47,-5])cylinder(r=5,h=20,$fn=30);
 //			translate([36,43,-10])cylinder(r=3,h=20);
 //		}
 		
-		translate([13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200);
-		translate([-13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200);
+		translate([13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200,$fn=30);
+		translate([13.2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200,$fn=30);
+		translate([-13.2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200,$fn=30);
+		translate([-13.2/2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200,$fn=30);
+		translate([13.2*2,0,6])rotate([-90,0,0])cylinder(r=1.8,h=200,$fn=30);
 		mirror([1,0,0])translate([30,0,-1])rotate([0,0,-30])cube(50);
 		translate([30,0,-1])rotate([0,0,-30])cube(50);
 
