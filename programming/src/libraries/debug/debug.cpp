@@ -28,7 +28,6 @@ void report(int type, std::string msg){
         if(DEBUG_LEVEL<=1)std::cout<<msg<<endl;
         break;
     }
-cout.flush();
 }
 void report(std::string msg){
     if(DEBUG_LEVEL<=1)std::cout<<msg<<endl;

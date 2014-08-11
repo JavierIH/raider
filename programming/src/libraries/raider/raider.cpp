@@ -131,9 +131,7 @@ bool Raider::turnR(){
         report(WARNING,"Failed sending command (turnRight)");
         return 0;
     }
-    //usleep(TURNR);
-     fflush(stdout);
-    sleep(10);
+    usleep(TURNR);
     return 1;
 }
 
