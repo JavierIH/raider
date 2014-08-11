@@ -131,7 +131,9 @@ bool Raider::turnR(){
         report(WARNING,"Failed sending command (turnRight)");
         return 0;
     }
-    usleep(TURNL);
+    //usleep(TURNR);
+     fflush(stdout);
+    sleep(10);
     return 1;
 }
 
@@ -276,13 +278,16 @@ Vec2i Raider::findWay(Mat image){
 Vec2i Raider::findLine(Mat image){
 
     Mat1b input=detectGreen(image);
-    input=dilation(input,2); // TODO ajuste importante
+
+    Canny(input, input, 50, 200, 5);
+
+    input=dilation(input,8);
+    input=dilation(input,-9);
+
     //imshow("original",input);// debug
 
-    input=255-input; //Inversion de input
-
     vector<Vec4i> lines;
-    HoughLinesP(input, lines, 1, CV_PI/180, 80, 50, 40 );// TODO ajustar
+    HoughLinesP(input, lines, 1, CV_PI/180, 80,40, 30 );// TODO ajustar
     int max_length=0;
     int max_line=0;
     if(lines.size()>0){
@@ -297,8 +302,8 @@ Vec2i Raider::findLine(Mat image){
         }
         line( image,
               Point(lines.at(max_line)[0], lines.at(max_line)[1]),
-              Point(lines.at(max_line)[2], lines.at(max_line)[3]),
-              Scalar(255,0,0), 1, CV_AA);
+                Point(lines.at(max_line)[2], lines.at(max_line)[3]),
+                Scalar(255,0,0), 1, CV_AA);
 
         float y=lines.at(max_line)[2]-lines.at(max_line)[0];
         float x=lines.at(max_line)[3]-lines.at(max_line)[1];
@@ -309,10 +314,13 @@ Vec2i Raider::findLine(Mat image){
 
         report("Numero de lineas: "+to_string(lines.size()));
         report("La mas larga mide: "+to_string(max_length));
-        report("Está a un angulo de: "+to_string(alfa));
-        report("A una distancia de: "+to_string(d));
-        //imshow("Resultado", image); //debug
-        return Vec2i(d,alfa);
+        report(INFO,"Linea a un angulo de: "+to_string(alfa));
+        report(INFO,"A una distancia de: "+to_string(d));
+       // imshow("Resultado", image);
+        Vec2i result(d,alfa);
+        return result;
+
+
     }
     else return Vec2i(-1,0); //No hay linea
 }

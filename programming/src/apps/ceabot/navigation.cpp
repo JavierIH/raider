@@ -3,7 +3,7 @@
 
 #define FW_ANGLE 20
 #define FW_DISTANCE 20
-#define FL_ANGLE 20
+#define FL_ANGLE 15
 #define FL_DISTANCE 30
 
 using namespace std;
@@ -16,7 +16,7 @@ int main()
     int state=0;
     int flag_line=0;
 
-    report(INFO,"Cuenta atrás!");
+ /*   report(INFO,"Cuenta atrás!");
     report(INFO,"10...");
     usleep(1000000);
     report(INFO,"9...");
@@ -34,7 +34,7 @@ int main()
     report(INFO,"3...");
     usleep(1000000);
     report(INFO,"2...");
-    usleep(1000000);
+    usleep(1000000);*/
     report(INFO,"1...");
     usleep(1000000);
 
@@ -44,6 +44,8 @@ int main()
     while(1){
         // TODO meter inicializaciones, tiempo de espera, boton...
         Mat image = raider.getFrame();
+
+        //imshow("image",image);
         cv::Size size(160,120);
         resize(image,image,size);
         switch (state) {
@@ -92,13 +94,14 @@ int main()
         case 2:{
             report(STATE, "Estado 2 (Busqueda de linea)");
             Vec2i line_result = raider.findLine(image);
+            report(OK, "LINEA result "+to_string(line_result[0])+"__"+to_string(line_result[1]));
 
             if (line_result[0]==-1){
                 report("No se encuentra la linea");
                 state=1; // -> findWay
                 break;
             }
-            else if(abs(line_result[1]<=FL_ANGLE)){
+            else if(abs(line_result[1])<=FL_ANGLE){
                 report(RAIDER,"Voy a cruzar la linea");
                 report(MOVE,"W -> Avanzar recto");
                 raider.walk(); // TODO cerciorarse de que cruza
@@ -109,16 +112,16 @@ int main()
             }
             else{
                 report("Me preparo para cruzar la linea");
-                if(line_result[1]>0){
+                if(line_result[1]<0){
                     report(MOVE,"D -> Girar a la izquierda");
                     raider.turnL();
                 }
-                else if(line_result[1]<0){
+                else if(line_result[1]>0){
                     report(MOVE,"A -> Girar a la derecha");
                     raider.turnR();
                 }
                 if(line_result[0]<=FL_DISTANCE){
-                    report(RAIDER,"Voy a cruzar la linea");
+                    report(RAIDER,"Voy a cruzar la linea "+to_string(FL_ANGLE)+"  _  "+to_string(abs(line_result[0])));
                     report(MOVE,"W -> Avanzar recto");
                     raider.walk(); // TODO cerciorarse de que cruza
                     raider.walk();
@@ -149,5 +152,7 @@ int main()
             state=1;
             break;
         } //swicht
+        //waitKey(0);
+
     }//while
 }//main

@@ -65,69 +65,74 @@ int test_hough(){
 Vec2i funcion_findLine(Mat image){
     Mat1b input=detectGreen(image);
 
-            input=dilation(input,2); // TODO ajuste importante
-            imshow("original",input);// debug
-
-            input=255-input;
 
 
-            vector<Vec4i> lines;
-            HoughLinesP(input, lines, 1, CV_PI/180, 80, 50, 40 );// TODO ajustar
-            int max_length=0;
-            int max_line=0;
-            if(lines.size()>0){
-                for( size_t i = 0; i < lines.size(); i++ )
-                {
-                    Vec4i l = lines[i];
-                    int length=sqrt(pow((l[2]-l[0]),2)+pow((l[3]-l[1]),2));
-                    if(length>max_length){
-                        max_length=length;
-                        max_line=i;
-                    }
-                }
-                line( image,
-                      Point(lines.at(max_line)[0], lines.at(max_line)[1]),
-                        Point(lines.at(max_line)[2], lines.at(max_line)[3]),
-                        Scalar(255,0,0), 1, CV_AA);
+    Canny(input, input, 50, 200, 3);
 
-                float y=lines.at(max_line)[2]-lines.at(max_line)[0];
-                float x=lines.at(max_line)[3]-lines.at(max_line)[1];
-                int alfa;
-                if(y==0)alfa=90;
-                else alfa=atan(x/y)*180/CV_PI;
-                int d=input.rows-(lines.at(max_line)[3]+lines.at(max_line)[1])/2;
+    input=dilation(input,5);
+    input=dilation(input,-6);
 
-                report("Numero de lineas: "+to_string(lines.size()));
-                report("La mas larga mide: "+to_string(max_length));
-                report("Está a un angulo de: "+to_string(alfa));
-                report(INFO,"A una distancia de: "+to_string(d));
-                imshow("Resultado", image);
-                Vec2i result(d,alfa);
-                return result;
 
+    imshow("original",input);// debug
+
+
+
+    vector<Vec4i> lines;
+    HoughLinesP(input, lines, 1, CV_PI/180, 80, 50, 40 );// TODO ajustar
+    int max_length=0;
+    int max_line=0;
+    if(lines.size()>0){
+        for( size_t i = 0; i < lines.size(); i++ )
+        {
+            Vec4i l = lines[i];
+            int length=sqrt(pow((l[2]-l[0]),2)+pow((l[3]-l[1]),2));
+            if(length>max_length){
+                max_length=length;
+                max_line=i;
             }
-            else return Vec2i(-1,0); //No hay linea
+        }
+        line( image,
+              Point(lines.at(max_line)[0], lines.at(max_line)[1]),
+                Point(lines.at(max_line)[2], lines.at(max_line)[3]),
+                Scalar(255,0,0), 1, CV_AA);
+
+        float y=lines.at(max_line)[2]-lines.at(max_line)[0];
+        float x=lines.at(max_line)[3]-lines.at(max_line)[1];
+        int alfa;
+        if(y==0)alfa=90;
+        else alfa=atan(x/y)*180/CV_PI;
+        int d=input.rows-(lines.at(max_line)[3]+lines.at(max_line)[1])/2;
+
+        report("Numero de lineas: "+to_string(lines.size()));
+        report("La mas larga mide: "+to_string(max_length));
+        report("Está a un angulo de: "+to_string(alfa));
+        report(INFO,"A una distancia de: "+to_string(d));
+        imshow("Resultado", image);
+        Vec2i result(d,alfa);
+        return result;
+
+    }
+    else return Vec2i(-1,0); //No hay linea
 }
 
 
 
 int main()
 {
-    openCamera(-1);
 
-    while(1){
-        char c=waitKey(200);
-        if (c=='\n'||c=='a') return 0;
 
-        Mat image=getFrame();
-        imshow("Frame",image);
+        Mat image=imread("fotolinea2.jpg");
         int size_factor=1;
         cv::Size size(160*size_factor,120*size_factor);
         resize(image,image,size);
+
+        imshow("Frame",image);
+
 
         Vec2i result=funcion_findLine(image);
         if(result[0]==-1)report(WARNING,"No line "+to_string(result));
         else report(INFO, "Line at "+to_string(result));
 
-    }
+        waitKey();
+
 }
