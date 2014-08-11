@@ -16,8 +16,8 @@ int main()
     int state=0;
     int flag_line=0;
 
- /*   report(INFO,"Cuenta atrás!");
-    report(INFO,"10...");
+    report(INFO,"Cuenta atrás!");
+    report(INFO,"10....");
     usleep(1000000);
     report(INFO,"9...");
     usleep(1000000);
@@ -34,7 +34,7 @@ int main()
     report(INFO,"3...");
     usleep(1000000);
     report(INFO,"2...");
-    usleep(1000000);*/
+    usleep(1000000);
     report(INFO,"1...");
     usleep(1000000);
 
