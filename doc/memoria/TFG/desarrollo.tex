@@ -29,25 +29,71 @@ Para conseguir que Raider pueda moverse con soltura se han seguido varios pasos,
 Para comunicarse con los actuadores Dynamixel (de los que hablamos en TODO ) debemos utilizar su protocolo particular. Los servos son controlados mediante el envio de paquetes de datos binarios. Existen dos tipos de paquetes en el protocolo: Los paquetes de instrucciones, que son los que envia el controlador a los servos; y los paquetes de estado, que son los los servos envían al controlador.
 
 Cada servo tiene una ID, o dicho de otra forma, un número de identidad propio e irrepetible que identifica a un servo particular dentro del bus. La comunicación en el bus se realiza mediante el intercambio de paquetes de instrucciones y estados con una ID concreta.
-Por esta razón, en un mismo bus no deben existir servos con la misma ID, ya que provocarán colisiones entre los paquetes e impedirán el correcto funcionamiento del sistema. Sin embargo, estas ID son facilmente reprogramables y pueden modificarse realizando una escritura sobre el registro 3 (0X03).
+Por esta razón, en un mismo bus no deben existir servos con la misma ID, ya que provocarán colisiones entre los paquetes e impedirán el correcto funcionamiento del sistema. Sin embargo, estas ID son fácilmente reprogramables y pueden modificarse realizando una escritura sobre el registro 3 (0X03).
 
 El protocolo de comunicación utilizado es una comunicación serie asíncrona de 8 bits, con 1 bit de Stop y sin paridad.
 
-Half duplex UART is a serial communication protocol where both TxD and RxD cannot be used at the same time. This method is generally used when many devices need to be connected to a single bus. Since more than one device are connected to the same bus, all the other devices need to be in input mode while one device is transmitting. The Main Controller that controllers the Dynamixel actuators sets the communication direction to input mode, and only when it is transmitting an Instruction Packet, it changes the direction to output mode.
+La conexión, de tipo Half Duplex, no permite la transmision y recepción de paquetes de forma simultanea. Esto la convierte en una conexión bastante típica en los sistema que utilizan un solo bus de comunicación. Como en el mismo bus existe mas de un dispositivo, todos deben permanecer en modo de escucha salvo el que esté transmitiendo en ese instante. El controlador principal, la placa OpenCM 9.04, asigna la dirección del bus en modo escucha, y solo cambia la dirección del bus a modo de envio mientras manda un paquete. (TODO revisar)
 
+Los Dynamixel AX-12A poseen una tabla de registros (tabla TODO ) sobre la cual podemos variar varios parámetros referente a su estado y su funcionamiento. La tabla de registros puede consultarse en TODO .
 
+Para realizar una rotación simple en un servomotor, sería suficiente con escribir en el registro 32 (Goal Position) un valor comprendido entre 0 y 1023, y el servo se situará inmediatamente en esa posición. Sin embargo, existen otros parámetros interesantes en el mapa de registros que conviene controlar, como la posición instantanea, la velocidad de giro, el consumo electrico o incluso la temperatura del dispositivo.
 
+Para mover los 19 AX-12A de Raider se utilizan los parámetros de posición objetivo (Goal Position) y velocidad de giro (Moving Speed) de forma combinada. Dado que está programación se ha realizado desde la OpenCM 9.04 se ha utilizado la biblioteca Dynamixel.h, que funciona como una macro para leer y escribir en los registros de forma sencilla y eficiente. Dentro de la biblioteca utilizaremos la función writeWord con la siguiente sintaxis:
 
+% TODO arreglar codigos
 
-poseen una tabla de registros (tabla) sobre la cual podemos variar varios parámetros referente a su estado y su funcionamiento. La tabla de registros puede consultarse en TODO .
+\begin{verbatim}
+Dxl.writeWord(
+	Dynamixel_Motor_Number,	
+	Address_Number,
+	Address_Data
+);
+\end{verbatim}
 
-Para realizar una rotación en un servomotor, sería suficiente con escribir en el registro 32, Goal Position,
+A modo de ejemplo, para asignar una velocidad de $3.5rad/s$ al servo con la ID 5, primero calcularíamos el valor correspondiente para una resolución de 10 bits. Según el manual de los servos Dynamixel ( TODO citar) AX-12A, la velocidad máxima de estos servomotores es de $114rpm$. Por tanto, se realizaría la siguiente conversión:
 
+\[ 3.5 \cdot \frac{rad}{s} \cdot \frac{60 s}{2 \pi rad} \cdot rpm \cdot \frac{1024}{114 rpm}= 300.216 \simeq 300 \]
 
+Dentro del código, utilizaremos la función writeWord para asignar este valor en el registro 32 (Moving Speed):
 
+% TODO arreglar codigos
+\begin{verbatim}
+Dxl.writeWord(5,32,300);
+\end{verbatim} 
 
+Seguidamente, asignaríamos al servo una posición final siguiendo el criterio de la figura \ref{goalposition}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.55\textwidth]{figuras/goalposition}   
+\caption{Amplitud de giro de un AX-12A}
+\label{goalposition}
+\end{figure}
+
+Continuando con el ejemplo, calcularemos el valor que debemos darle al registro para mover el servo a una posición de $120º$, teniendo en cuenta que las especificaciones nos indican una amplitud de giro total de 300º reales con una resolución de 10 bits. De esta forma, haríamos la siguiente conversión:
+
+\[ 120º \cdot \frac{1024}{300º}= 409.6 \simeq 410 \]
+
+En nuestro programa escribiríamos en el registro 30 (Goal Position) de la siguiente forma:
+
+% TODO arreglar codigos
+\begin{verbatim}
+Dxl.writeWord(5,30,410);
+\end{verbatim} 
+
+Como resumen, con estos pasos hemos conseguido mover el servo con la ID 5 (Que corresponde al codo del brazo izquierdo de Raider), a una posición de $120º$ con una velocidad de $3.5 rad/s$
 
 \subsubsection{Movimiento sincronizado de las articulaciones}
+
+En el apartado anterior se ha mostrado cómo se realiza el movimiento de un servo, sin embargo, para mover el cuerpo del robot necesitaremos mover todos al mismo tiempo de una forma sincronizada. Si en el apartado anterior utilizabamos la posición objetivo y la velocidad de movimiento como parámetros, en este punto, por comodidad a la hora de programar, utilizaremos como parámetros la posición objetivo de los 20 servos, su posición actual y el tiempo total durante el que se realizará su movimiento entre ambos puntos.
+
+Este es quizás uno de los apartados mas críticos a la hora de diseñar las funciones que moverán el robot. Se pretende programar una biblioteca que permita mover 20 servos simultaneamente, con velocidades diferentes condicionadas por un tiempo de ejecución común. De esta forma, los servos cuya posición objetivo sea lejana a su posición actual se moverán con una velocidad mayor que la de los servos cuya posición objetivo sea cercana a su posición actual.
+
+Las funciones pueden encontrarse en la biblioteca opencm/raider_motion.h y son las siguientes
+
+
+
 \subsubsection{Funciones de movimientos combinados} 
 \subsubsection{Creación de movimientos completos} 
 \subsubsection{Controlador de mocimiento} 

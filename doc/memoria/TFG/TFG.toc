@@ -76,15 +76,15 @@
 \contentsline {section}{\numberline {7.3}Programaci\'on}{35}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Sistema de locomoci\'on}{35}{subsection.7.3.1}
 \contentsline {subsubsection}{Movimiento de los actuadores Dyamixel}{36}{section*.24}
-\contentsline {subsubsection}{Movimiento sincronizado de las articulaciones}{36}{section*.25}
-\contentsline {subsubsection}{Funciones de movimientos combinados}{36}{section*.26}
-\contentsline {subsubsection}{Creaci\'on de movimientos completos}{36}{section*.27}
-\contentsline {subsubsection}{Controlador de mocimiento}{36}{section*.28}
-\contentsline {subsection}{\numberline {7.3.2}Algoritmos de visi\'on}{36}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Pruebas de CEABOT}{36}{subsection.7.3.3}
-\contentsline {paragraph}{Palabras clave:}{36}{section*.29}
-\contentsline {chapter}{\numberline {8}Evaluaci\'on de resultados}{37}{chapter.8}
-\contentsline {section}{\numberline {8.1}Pruebas de funcionamiento}{37}{section.8.1}
-\contentsline {section}{\numberline {8.2}Conclusi\'on}{37}{section.8.2}
-\contentsline {section}{\numberline {8.3}Situaci\'on y desarrollos futuros}{37}{section.8.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{39}{section.8.3}
+\contentsline {subsubsection}{Movimiento sincronizado de las articulaciones}{38}{section*.25}
+\contentsline {subsubsection}{Funciones de movimientos combinados}{38}{section*.26}
+\contentsline {subsubsection}{Creaci\'on de movimientos completos}{38}{section*.27}
+\contentsline {subsubsection}{Controlador de mocimiento}{38}{section*.28}
+\contentsline {subsection}{\numberline {7.3.2}Algoritmos de visi\'on}{38}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Pruebas de CEABOT}{38}{subsection.7.3.3}
+\contentsline {paragraph}{Palabras clave:}{38}{section*.29}
+\contentsline {chapter}{\numberline {8}Evaluaci\'on de resultados}{39}{chapter.8}
+\contentsline {section}{\numberline {8.1}Pruebas de funcionamiento}{39}{section.8.1}
+\contentsline {section}{\numberline {8.2}Conclusi\'on}{39}{section.8.2}
+\contentsline {section}{\numberline {8.3}Situaci\'on y desarrollos futuros}{39}{section.8.3}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{41}{section.8.3}
