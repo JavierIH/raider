@@ -11,36 +11,35 @@ Para conseguir que Raider pueda moverse con soltura se han seguido varios pasos,
 % aqui no explicar el principio de funcionamiento, solo la parte de programacion
 % o sea, de Servo.write para arriba
 
-El control de servo PWM de Raider, situado en su cabeza, se realiza con la biblioteca Servo.h orginalmente desarrolladas para Arduino y que posteriormente han sido portadas para su utilización en OpenCM. Dada la función de este servo, no será necesario realizar un control de su velocidad, por lo que un simple control de su posición será suficiente.
+El control del servo PWM de Raider, situado en su cabeza, se realiza con la biblioteca Servo.h orginalmente desarrolladas para Arduino y que posteriormente ha sido portada para su utilización en OpenCM. Dado el cometido de este servo, no será necesario realizar un control de su velocidad, por lo que un simple control de su posición será suficiente.
 
 La biblioteca Servo.h nos permite controlar el movimiento de un servo a partir de un valor de posición, y se encarga de producir la señal PWM correspondiente. Aunque los métodos utilizados pueden encontrarse en la documentación de Arduino ( TODO ), a continuación introduzco una breve explicación de los que han sido utilizados en este proyecto:
 
 % TODO revisar nombres de las funciones en las bibliotecas
 
-\subsubsection{Servo::attach(int)}
+\subsubsection{Servo::attach(uint8 pin)}
 
-Con esta función configuramos un pin de la OpenCM para que actúe como emisora de señales PWM.
+Con esta función configuramos un pin de la OpenCM para que actúe como emisora de señales PWM. A partir de esta inicialización ya puede moverse el servo.
 
-\subsubsection{Servo::writeMicroseconds(int)}
+\subsubsection{Servo::writeMicroseconds(uint16 pulseWidth)}
 
-Para mover el servo se utiliza la función writeMicroseconds, cuyo parámetro define la amplitud ( TODO ) de la onda PWM . Si bien es cierto, existe otra función paralela llamada write(int) que directamente utiliza como parámetro la posición en grados, se ha utilizado writeMicroseconds por su mayor precision. Para ( TODO )
+Para mover el servo se utiliza la función writeMicroseconds, cuyo parámetro define la amplitud  del pulso de la onda PWM . Si bien es cierto, existe otra función paralela llamada write(int angle) que directamente utiliza como parámetro la posición en grados, se ha utilizado writeMicroseconds por su mayor precisión. Acepta valores de entre 1000 y 2000 microsegundos, pero para mantener un formato constante con el resto de articulaciones, se ha realizado una conversión matemática a un rango de 0 a 1023.
 
 \subsection{Movimiento de los actuadores Dynamixel}
 
-
 Para comunicarse con los actuadores Dynamixel (de los que hablamos en TODO ) debemos utilizar su protocolo particular. Los servos son controlados mediante el envio de paquetes de datos binarios. Existen dos tipos de paquetes en el protocolo: Los paquetes de instrucciones, que son los que envia el controlador a los servos; y los paquetes de estado, que son los los servos envían al controlador.
 
+\medskip 
 Cada servo tiene una ID, o dicho de otra forma, un número de identidad propio e irrepetible que identifica a un servo particular dentro del bus. La comunicación en el bus se realiza mediante el intercambio de paquetes de instrucciones y estados con una ID concreta.
 Por esta razón, en un mismo bus no deben existir servos con la misma ID, ya que provocarán colisiones entre los paquetes e impedirán el correcto funcionamiento del sistema. Sin embargo, estas ID son fácilmente reprogramables y pueden modificarse realizando una escritura sobre el registro 3 (0X03).
 
-El protocolo de comunicación utilizado es una comunicación serie asíncrona de 8 bits, con 1 bit de Stop y sin paridad.
+\medskip 
+El protocolo de comunicación utilizado es una comunicación serie asíncrona de 8 bits, con 1 bit de Stop y sin paridad. La conexión, de tipo Half Duplex, no permite la transmision y recepción de paquetes de forma simultanea. Esto la convierte en una conexión bastante típica en los sistema que utilizan un solo bus de comunicación. Como en el mismo bus existe mas de un dispositivo, todos deben permanecer en modo de escucha salvo el que esté transmitiendo en ese instante. El controlador principal, la placa OpenCM 9.04, asigna la dirección del bus en modo escucha, y solo cambia la dirección del bus a modo de envio mientras manda un paquete. (TODO revisar) Los Dynamixel AX-12A poseen una tabla de registros (tabla TODO ) sobre la cual podemos modificar varios parámetros referente a su estado y su funcionamiento. La tabla de registros puede consultarse en TODO .
 
-La conexión, de tipo Half Duplex, no permite la transmision y recepción de paquetes de forma simultanea. Esto la convierte en una conexión bastante típica en los sistema que utilizan un solo bus de comunicación. Como en el mismo bus existe mas de un dispositivo, todos deben permanecer en modo de escucha salvo el que esté transmitiendo en ese instante. El controlador principal, la placa OpenCM 9.04, asigna la dirección del bus en modo escucha, y solo cambia la dirección del bus a modo de envio mientras manda un paquete. (TODO revisar)
+\medskip 
+Para realizar una rotación simple en un servomotor, sería suficiente con escribir en el registro 32 (Goal Position) un valor comprendido entre 0 y 1023, y el servo se situará inmediatamente en esa posición. Sin embargo, existen otros parámetros interesantes en el mapa de registros que conviene controlar, como la posición instantanea, la velocidad de giro, el consumo eléctrico o incluso la temperatura del dispositivo.
 
-Los Dynamixel AX-12A poseen una tabla de registros (tabla TODO ) sobre la cual podemos variar varios parámetros referente a su estado y su funcionamiento. La tabla de registros puede consultarse en TODO .
-
-Para realizar una rotación simple en un servomotor, sería suficiente con escribir en el registro 32 (Goal Position) un valor comprendido entre 0 y 1023, y el servo se situará inmediatamente en esa posición. Sin embargo, existen otros parámetros interesantes en el mapa de registros que conviene controlar, como la posición instantanea, la velocidad de giro, el consumo electrico o incluso la temperatura del dispositivo.
-
+\medskip 
 Para mover los 19 AX-12A de Raider se utilizan los parámetros de posición objetivo (Goal Position) y velocidad de giro (Moving Speed) de forma combinada. Dado que está programación se ha realizado desde la OpenCM 9.04 se ha utilizado la biblioteca Dynamixel.h, que funciona como una macro para leer y escribir en los registros de forma sencilla y eficiente. Dentro de la biblioteca utilizaremos la función writeWord con la siguiente sintaxis:
 
 % TODO arreglar codigos
@@ -57,6 +56,7 @@ A modo de ejemplo, para asignar una velocidad de $3.5rad/s$ al servo con la ID 5
 
 \[ 3.5 \cdot \frac{rad}{s} \cdot \frac{60 s}{2 \pi rad} \cdot rpm \cdot \frac{1024}{114 rpm}= 300.216 \simeq 300 \]
 
+\medskip
 Dentro del código, utilizaremos la función writeWord para asignar este valor en el registro 32 (Moving Speed):
 
 % TODO arreglar codigos
@@ -77,6 +77,7 @@ Continuando con el ejemplo, calcularemos el valor que debemos darle al registro 
 
 \[ 120º \cdot \frac{1024}{300º}= 409.6 \simeq 410 \]
 
+\medskip
 En nuestro programa escribiríamos en el registro 30 (Goal Position) de la siguiente forma:
 
 % TODO arreglar codigos
@@ -90,15 +91,15 @@ Como resumen, con estos pasos hemos conseguido mover el servo con la ID 5 (Que c
 
 En el apartado anterior se ha mostrado cómo se realiza el movimiento de un servo, sin embargo, para mover el cuerpo del robot necesitaremos mover todos al mismo tiempo de una forma sincronizada. Si en el apartado anterior utilizabamos la posición objetivo y la velocidad de movimiento como parámetros, en este punto, por comodidad a la hora de programar, utilizaremos como parámetros la posición objetivo de los 20 servos, su posición actual y el tiempo total durante el que se realizará su movimiento entre ambos puntos.
 
+\medskip
 Este es quizás uno de los apartados mas críticos a la hora de diseñar las funciones que moverán el robot. Se pretende programar una biblioteca que permita mover 20 servos simultaneamente, con velocidades diferentes condicionadas por un tiempo de ejecución común. De esta forma, los servos cuya posición objetivo sea lejana a su posición actual se moverán con una velocidad mayor que la de los servos cuya posición objetivo sea cercana a su posición actual.
 
-Las funciones pueden encontrarse en la biblioteca opencm/raider_motion.h:
+\medskip
+Las funciones pueden encontrarse en la biblioteca raider TODO motion.h
 
 \subsubsection{class Robot} 
 
-La clase Robot abarca todas las funciones relativas al movimiento de Raider (aunque por el momento en esta sección solo se presenta algunas de ellas), y abstrae su controlador principal, la BeagleBone Black de la parte de locomoción.
-
-Dentro de la clase, encontramos tres variables miembros importantes:
+La clase Robot abarca todas las funciones relativas al movimiento de Raider (aunque por el momento en esta sección solo se presenta algunas de ellas), y abstrae su controlador principal, la BeagleBone Black de la parte de locomoción. Dentro de la clase, encontramos tres variables miembros importantes:
 
 \begin{itemize}
 \item \textbf{int currentPosition[20]}.
@@ -138,17 +139,19 @@ Esta función tiene un funcionamiento sencillo, se ocupa de volcar los datos de l
 
 La función move es la mas importante de todas, ya que es la función que se encarga de mover las articulaciones. A esta función se le pasa un valor de tiempo expresado en segundos, y tal y como se comentó al principio de este apartado, será el tiempo en el que los servos pasarán de la posición actual (currentPosition[20]) a la posición final (targetPosition[20]).
 
+\medskip
 Para ello, la función calcula la amplitud del movimiento y asigna una velocidad independiente para ese servo. Gracias a esto, todos los servos empiezan y terminan de moverse al mismo tiempo y permiten un control mas sencillo de las inercias entre movimientos consecutivos.
 
 \subsection{Funciones de movimientos combinados} 
 
 Llegado este punto hemos abordado como mover un servo y como mover los 20 servos de forma coordinada. En este apartado se presentan algunas funciones intermedias entre lo comentado y movimientos de alto nivel como puede ser el desplazamiento bípedo.
 
+\medskip
 Para facilitar la programación de movimientos mas complejos se han programado una seríe de utilidades que permiten mover los servos en pequeños grupos que desempeñan una funcion común. Estas funciones modifican los valores del array de posiciones finales, targetPosition[20], lo que quiere decir que para efectuar el movimiento será necesario realizar una llamada a la funcion move(float). Por tanto, es posible la utilización de varias funciones en un mismo movimiento, dando la posibilidad de sumar sus modificaciones y superponer su utilidades. 
 
 \subsubsection{void movHead(int)}
 
-movHead es una función que permite mover el servo PWM de la cabeza del robot. Sirve para mover la cámara independientemente de la posición del robot.
+movHead es una función que permite mover el servo PWM de la cabeza del robot. Sirve para mover la cámara independientemente de la posición instantanea del robot.
 
 
 % Dibujos y otras movidas
@@ -156,9 +159,20 @@ movHead es una función que permite mover el servo PWM de la cabeza del robot. Si
 \subsubsection{void movLateral(int,int)}
 \subsubsection{void movFrontal(int,int)}
 
-\subsection{Creación de movimientos completos} 
-\subsection{Controlador de movimiento} 
+\subsection{Creación de movimientos completos}
+
+Encontrándonos en este punto, la prográmación de desplazamientos, giros y otros movimientos complejos, se ha realizado mediante la combinación de las funciones anteriormente descritas (TODO aquí hay que pensar si meter ilustraciones o como)
+
+\subsection{Controlador de movimiento}
+
+WASD foto de teclado y juegos
+ 
 \section{Algoritmos de visión} 
+\subsection{Análisis de trayectorias en navegación} 
+\subsection{Búsqueda de lineas}
+\subsection{Lectura de códigos QR} 
+ 
+
 
 
 

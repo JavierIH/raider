@@ -90,9 +90,12 @@ En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas di
 
 \subsubsection{comparativa y elección final}
 
-\section{Modificaciones básicas sobre el robot Bioloid}
+\section{Modificaciones básicas}
 
 \subsection{Alimentación}
+
+batería mas ubec de ¿3A?
+
 \subsection{Cabeza móvil}
 
 
@@ -109,8 +112,43 @@ En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas di
 %Estudio de diferentes sensores
 \subsection{Sensores de distancia}
 \subsubsection{Infrarrojos}
+\subsubsection{Ultrasonidos}
 \subsection{Sensor inercial}
+
+El control del equilibrio del robot es muy importante en configuraciones bípedas, ya que estos robots son conocidos por su facilidad para tropezar y caer al suelo. Con el objetivo de analizar la posición del robot respecto al suelo se ha requerido la inclusión de un sensor inercial.
+
+% TODO cambiar por foto real
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figuras/imu}   
+\caption{Sensor inercial MPU9150}
+\label{imu}
+\end{figure}
+
+En el mercado existen varios modelos económicos. En este proyecto se ha utilizado un sensor MPU9150 (figura \ref{imu}), que es un sensor inercial compuesto de acelerómetro de 3 ejes, giroscopio de 3 ejes y brújula de 3 ejes. Este sensor combina dos sensores, un MPU6050 (incluye el acelerometro y el giroscopio) y un AK8975 (incluye la brújula).
+
+\subsection{Brújula}
+
+TODO está por ver si meto la anisotropica o la normal
+
 \subsection{Cámara}
+
+La elección de la cámara ha sido condicionada principalmente por su compatibilidad con el driver de Linux v4l2. Existe una amplia variedad de cámaras válidas en el mercado. Dado el carácter de este proyecto, se ha optado por utilizar una webcam, ya que son mas accesibles que las cámaras avanzadas de investigación y los algoritmos de visión que serán programados no requieren imágenes de alta calidad.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figuras/camara}   
+\caption{Microsoft LifeCam Cinema}
+\label{camara}
+\end{figure}
+
+El modelo selecionado ha sido una Microsoft LifeCam Cinema (figura \ref{camara}). Entre sus carácterísticas destacan su posibilidad de grabar video en 720p y el ajuste automático de brillos en tiempo real.
+
+Cabe remarcar que antes de utilizar esta cámara se realizaron pruebas con una Hama Pocket, pero dada su baja calidad de construcción presentó diversos problemas de fiabilidad y fue despreciada en favor de la Microsoft. 
+
+
 \subsection{Configuración final}
+
+
 
 \paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.

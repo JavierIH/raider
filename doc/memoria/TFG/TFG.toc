@@ -29,9 +29,9 @@
 \contentsline {subsubsection}{Kondo KHR-3HV}{20}{section*.12}
 \contentsline {subsubsection}{Vstone Robovie-X}{21}{section*.13}
 \contentsline {subsubsection}{Robotis Bioloid}{22}{section*.14}
-\contentsline {subsubsection}{comparativa y elecci\'on final}{25}{section*.15}
-\contentsline {section}{\numberline {5.2}Modificaciones b\'asicas sobre el robot Bioloid}{25}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Alimentaci\'on}{25}{subsection.5.2.1}
+\contentsline {subsubsection}{comparativa y elecci\'on final}{24}{section*.15}
+\contentsline {section}{\numberline {5.2}Modificaciones b\'asicas}{24}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Alimentaci\'on}{24}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Cabeza m\'ovil}{25}{subsection.5.2.2}
 \contentsline {section}{\numberline {5.3}Elecci\'on del controlador}{25}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Controlador de locomoci\'on}{25}{subsection.5.3.1}
@@ -44,60 +44,69 @@
 \contentsline {section}{\numberline {5.4}Sensorizaci\'on}{25}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Sensores de distancia}{25}{subsection.5.4.1}
 \contentsline {subsubsection}{Infrarrojos}{25}{section*.21}
+\contentsline {subsubsection}{Ultrasonidos}{25}{section*.22}
 \contentsline {subsection}{\numberline {5.4.2}Sensor inercial}{25}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}C\'amara}{25}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Configuraci\'on final}{25}{subsection.5.4.4}
-\contentsline {paragraph}{Palabras clave:}{25}{section*.22}
-\contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{27}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{27}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{28}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{29}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}KiCad}{29}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{30}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}OpenCV}{30}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Qt Creator}{31}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}CMake}{32}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}CM9 IDE}{32}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Git}{33}{subsection.6.3.5}
-\contentsline {paragraph}{Palabras clave:}{33}{section*.23}
-\contentsline {chapter}{\numberline {7}Desarrollo}{35}{chapter.7}
-\contentsline {section}{\numberline {7.1}Dise\~no de las partes mec\'anicas}{35}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Cabeza}{35}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Tronco}{35}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Brazos}{35}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Piernas}{35}{subsection.7.1.4}
-\contentsline {section}{\numberline {7.2}Montaje del controlador}{35}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Esquema de montaje}{35}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Sistema de alimentaci\'on}{35}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Adecuaci\'on de sensores}{35}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Desarrollo de una placa de expansi\'on}{35}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Puesta en marcha del controlador}{35}{subsection.7.2.5}
+\contentsline {subsection}{\numberline {5.4.3}Br\'ujula}{26}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}C\'amara}{26}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Configuraci\'on final}{27}{subsection.5.4.5}
+\contentsline {paragraph}{Palabras clave:}{27}{section*.23}
+\contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{29}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{29}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{30}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{31}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}KiCad}{31}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{32}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}OpenCV}{32}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Qt Creator}{33}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}CMake}{34}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}CM9 IDE}{34}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Git}{35}{subsection.6.3.5}
 \contentsline {paragraph}{Palabras clave:}{35}{section*.24}
-\contentsline {chapter}{\numberline {8}Programaci\'on}{37}{chapter.8}
-\contentsline {section}{\numberline {8.1}Sistema de locomoci\'on}{37}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Movimiento del servo PWM}{37}{subsection.8.1.1}
-\contentsline {subsubsection}{Servo::attach(int)}{38}{section*.25}
-\contentsline {subsubsection}{Servo::writeMicroseconds(int)}{38}{section*.26}
-\contentsline {subsection}{\numberline {8.1.2}Movimiento de los actuadores Dynamixel}{38}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Movimiento sincronizado de las articulaciones}{40}{subsection.8.1.3}
-\contentsline {subsubsection}{class Robot}{41}{section*.27}
-\contentsline {subsubsection}{Robot::Robot()}{41}{section*.28}
-\contentsline {subsubsection}{void Robot::setTargetPosition(int,int,... int)}{42}{section*.29}
-\contentsline {subsubsection}{void Robot::setTargetOffset(int,int,... int)}{42}{section*.30}
-\contentsline {subsubsection}{void Robot::updateCurrentPosition()}{42}{section*.31}
-\contentsline {subsubsection}{void Robot::move(float)}{42}{section*.32}
-\contentsline {subsection}{\numberline {8.1.4}Funciones de movimientos combinados}{42}{subsection.8.1.4}
-\contentsline {subsubsection}{void movHead(int)}{43}{section*.33}
-\contentsline {subsubsection}{void movVertical(int,int)}{43}{section*.34}
-\contentsline {subsubsection}{void movLateral(int,int)}{43}{section*.35}
-\contentsline {subsubsection}{void movFrontal(int,int)}{43}{section*.36}
-\contentsline {subsection}{\numberline {8.1.5}Creaci\'on de movimientos completos}{43}{subsection.8.1.5}
-\contentsline {subsection}{\numberline {8.1.6}Controlador de movimiento}{43}{subsection.8.1.6}
-\contentsline {section}{\numberline {8.2}Algoritmos de visi\'on}{43}{section.8.2}
-\contentsline {paragraph}{Palabras clave:}{43}{section*.37}
-\contentsline {chapter}{\numberline {9}Evaluaci\'on de resultados}{45}{chapter.9}
-\contentsline {section}{\numberline {9.1}Pruebas de funcionamiento}{45}{section.9.1}
-\contentsline {section}{\numberline {9.2}Conclusi\'on}{45}{section.9.2}
-\contentsline {section}{\numberline {9.3}Situaci\'on y desarrollos futuros}{45}{section.9.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{47}{section.9.3}
+\contentsline {chapter}{\numberline {7}Desarrollo}{37}{chapter.7}
+\contentsline {section}{\numberline {7.1}Dise\~no de las partes mec\'anicas}{37}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Cabeza}{37}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Tronco}{37}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Brazos}{37}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Piernas}{37}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}Montaje del controlador}{37}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Esquema de montaje}{37}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Sistema de alimentaci\'on}{37}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Adecuaci\'on de sensores}{37}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Desarrollo de una placa de expansi\'on}{37}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}Puesta en marcha del controlador}{37}{subsection.7.2.5}
+\contentsline {paragraph}{Palabras clave:}{37}{section*.25}
+\contentsline {chapter}{\numberline {8}Programaci\'on}{39}{chapter.8}
+\contentsline {section}{\numberline {8.1}Sistema de locomoci\'on}{39}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Movimiento del servo PWM}{39}{subsection.8.1.1}
+\contentsline {subsubsection}{Servo::attach(uint8 pin)}{40}{section*.26}
+\contentsline {subsubsection}{Servo::writeMicroseconds(uint16 pulseWidth)}{40}{section*.27}
+\contentsline {subsection}{\numberline {8.1.2}Movimiento de los actuadores Dynamixel}{40}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Movimiento sincronizado de las articulaciones}{42}{subsection.8.1.3}
+\contentsline {subsubsection}{class Robot}{43}{section*.28}
+\contentsline {subsubsection}{Robot::Robot()}{44}{section*.29}
+\contentsline {subsubsection}{void Robot::setTargetPosition(int,int,... int)}{44}{section*.30}
+\contentsline {subsubsection}{void Robot::setTargetOffset(int,int,... int)}{44}{section*.31}
+\contentsline {subsubsection}{void Robot::updateCurrentPosition()}{44}{section*.32}
+\contentsline {subsubsection}{void Robot::move(float)}{44}{section*.33}
+\contentsline {subsection}{\numberline {8.1.4}Funciones de movimientos combinados}{44}{subsection.8.1.4}
+\contentsline {subsubsection}{void movHead(int)}{45}{section*.34}
+\contentsline {subsubsection}{void movVertical(int,int)}{45}{section*.35}
+\contentsline {subsubsection}{void movLateral(int,int)}{45}{section*.36}
+\contentsline {subsubsection}{void movFrontal(int,int)}{45}{section*.37}
+\contentsline {subsection}{\numberline {8.1.5}Creaci\'on de movimientos completos}{45}{subsection.8.1.5}
+\contentsline {subsection}{\numberline {8.1.6}Controlador de movimiento}{45}{subsection.8.1.6}
+\contentsline {section}{\numberline {8.2}Algoritmos de visi\'on}{45}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}An\'alisis de trayectorias en navegaci\'on}{45}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}B\'usqueda de lineas}{45}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Lectura de c\'odigos QR}{45}{subsection.8.2.3}
+\contentsline {paragraph}{Palabras clave:}{45}{section*.38}
+\contentsline {chapter}{\numberline {9}Aplicaciones}{47}{chapter.9}
+\contentsline {section}{\numberline {9.1}CEABOT 2014}{47}{section.9.1}
+\contentsline {section}{\numberline {9.2}Spain Experience}{47}{section.9.2}
+\contentsline {paragraph}{Palabras clave:}{47}{section*.39}
+\contentsline {chapter}{\numberline {10}Evaluaci\'on de resultados}{49}{chapter.10}
+\contentsline {section}{\numberline {10.1}Pruebas de funcionamiento}{49}{section.10.1}
+\contentsline {section}{\numberline {10.2}Conclusi\'on}{49}{section.10.2}
+\contentsline {section}{\numberline {10.3}Situaci\'on y desarrollos futuros}{49}{section.10.3}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{51}{section.10.3}
