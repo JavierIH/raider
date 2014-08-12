@@ -54,12 +54,17 @@
 \BOOKMARK [2][-]{subsection.7.2.3}{Adecuaci\363n de sensores}{section.7.2}% 54
 \BOOKMARK [2][-]{subsection.7.2.4}{Desarrollo de una placa de expansi\363n}{section.7.2}% 55
 \BOOKMARK [2][-]{subsection.7.2.5}{Puesta en marcha del controlador}{section.7.2}% 56
-\BOOKMARK [1][-]{section.7.3}{Programaci\363n}{chapter.7}% 57
-\BOOKMARK [2][-]{subsection.7.3.1}{Sistema de locomoci\363n}{section.7.3}% 58
-\BOOKMARK [2][-]{subsection.7.3.2}{Algoritmos de visi\363n}{section.7.3}% 59
-\BOOKMARK [2][-]{subsection.7.3.3}{Pruebas de CEABOT}{section.7.3}% 60
-\BOOKMARK [0][-]{chapter.8}{Evaluaci\363n de resultados}{}% 61
-\BOOKMARK [1][-]{section.8.1}{Pruebas de funcionamiento}{chapter.8}% 62
-\BOOKMARK [1][-]{section.8.2}{Conclusi\363n}{chapter.8}% 63
-\BOOKMARK [1][-]{section.8.3}{Situaci\363n y desarrollos futuros}{chapter.8}% 64
-\BOOKMARK [0][-]{section.8.3}{Bibliograf\355a}{}% 65
+\BOOKMARK [0][-]{chapter.8}{Programaci\363n}{}% 57
+\BOOKMARK [1][-]{section.8.1}{Sistema de locomoci\363n}{chapter.8}% 58
+\BOOKMARK [2][-]{subsection.8.1.1}{Movimiento del servo PWM}{section.8.1}% 59
+\BOOKMARK [2][-]{subsection.8.1.2}{Movimiento de los actuadores Dynamixel}{section.8.1}% 60
+\BOOKMARK [2][-]{subsection.8.1.3}{Movimiento sincronizado de las articulaciones}{section.8.1}% 61
+\BOOKMARK [2][-]{subsection.8.1.4}{Funciones de movimientos combinados}{section.8.1}% 62
+\BOOKMARK [2][-]{subsection.8.1.5}{Creaci\363n de movimientos completos}{section.8.1}% 63
+\BOOKMARK [2][-]{subsection.8.1.6}{Controlador de movimiento}{section.8.1}% 64
+\BOOKMARK [1][-]{section.8.2}{Algoritmos de visi\363n}{chapter.8}% 65
+\BOOKMARK [0][-]{chapter.9}{Evaluaci\363n de resultados}{}% 66
+\BOOKMARK [1][-]{section.9.1}{Pruebas de funcionamiento}{chapter.9}% 67
+\BOOKMARK [1][-]{section.9.2}{Conclusi\363n}{chapter.9}% 68
+\BOOKMARK [1][-]{section.9.3}{Situaci\363n y desarrollos futuros}{chapter.9}% 69
+\BOOKMARK [0][-]{section.9.3}{Bibliograf\355a}{}% 70
