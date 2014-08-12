@@ -18,7 +18,39 @@ Este proyecto de resume en.................
 \subsection{Desarrollo de una placa de expansión}
 \subsection{Puesta en marcha del controlador}
 \section{Programación}
-\subsection{Sistema de locomoción} 
+\subsection{Sistema de locomoción}
+
+Antes de comenzar con esta sección, es importante señalar algunos detalles importantes. Si bien es cierto, el control del robot girará en torno a un algoritmo de visión, su funcionamiento de apoyará en un control de locomoción robusto que permita al robot realizar desplazamientos seguros sobre el terreno. Por tanto, dado que se trata de un robot bípedo, la programación de movimientos no es un tema trivial como lo podría ser en un robot con ruedas.
+
+Para conseguir que Raider pueda moverse con soltura se han seguido varios pasos, cada cual de un nivel superior al anterior.
+
+\subsubsection{Movimiento de los actuadores Dyamixel}
+
+Para comunicarse con los actuadores Dynamixel (de los que hablamos en TODO ) debemos utilizar su protocolo particular. Los servos son controlados mediante el envio de paquetes de datos binarios. Existen dos tipos de paquetes en el protocolo: Los paquetes de instrucciones, que son los que envia el controlador a los servos; y los paquetes de estado, que son los los servos envían al controlador.
+
+Cada servo tiene una ID, o dicho de otra forma, un número de identidad propio e irrepetible que identifica a un servo particular dentro del bus. La comunicación en el bus se realiza mediante el intercambio de paquetes de instrucciones y estados con una ID concreta.
+Por esta razón, en un mismo bus no deben existir servos con la misma ID, ya que provocarán colisiones entre los paquetes e impedirán el correcto funcionamiento del sistema. Sin embargo, estas ID son facilmente reprogramables y pueden modificarse realizando una escritura sobre el registro 3 (0X03).
+
+El protocolo de comunicación utilizado es una comunicación serie asíncrona de 8 bits, con 1 bit de Stop y sin paridad.
+
+Half duplex UART is a serial communication protocol where both TxD and RxD cannot be used at the same time. This method is generally used when many devices need to be connected to a single bus. Since more than one device are connected to the same bus, all the other devices need to be in input mode while one device is transmitting. The Main Controller that controllers the Dynamixel actuators sets the communication direction to input mode, and only when it is transmitting an Instruction Packet, it changes the direction to output mode.
+
+
+
+
+
+poseen una tabla de registros (tabla) sobre la cual podemos variar varios parámetros referente a su estado y su funcionamiento. La tabla de registros puede consultarse en TODO .
+
+Para realizar una rotación en un servomotor, sería suficiente con escribir en el registro 32, Goal Position,
+
+
+
+
+
+\subsubsection{Movimiento sincronizado de las articulaciones}
+\subsubsection{Funciones de movimientos combinados} 
+\subsubsection{Creación de movimientos completos} 
+\subsubsection{Controlador de mocimiento} 
 \subsection{Algoritmos de visión} 
 \subsection{Pruebas de CEABOT} 
 
