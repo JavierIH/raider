@@ -118,9 +118,14 @@ Servo AX-12A
 \subsection{Sensores de distancia TODO}
 \subsubsection{Infrarrojos TODO}
 \subsubsection{Ultrasonidos TODO}
-\subsection{Sensor inercial  TODO}
+\subsection{Sensores inerciales TODO}
 
 El control del equilibrio del robot es muy importante en configuraciones bípedas, ya que estos robots son conocidos por su facilidad para tropezar y caer al suelo. Con el objetivo de analizar la posición del robot respecto al suelo se ha requerido la inclusión de un sensor inercial.
+
+\subsubsection{Brújula}
+\subsubsection{Girsocopio TODO}
+\subsubsection{Acelerómetro TODO}
+
 
 % TODO cambiar por foto real
 \begin{figure}[H]
@@ -132,9 +137,6 @@ El control del equilibrio del robot es muy importante en configuraciones bípedas
 
 En el mercado existen varios modelos económicos. En este proyecto se ha utilizado un sensor MPU9150 (figura \ref{imu}), que es un sensor inercial compuesto de acelerómetro de 3 ejes, giroscopio de 3 ejes y brújula de 3 ejes. Este sensor combina dos sensores, un MPU6050 (incluye el acelerometro y el giroscopio) y un AK8975 (incluye la brújula).
 
-\subsection{Brújula TODO}
-
-TODO está por ver si meto la anisotropica o la normal
 
 \subsection{Cámara TODO}
 
@@ -153,11 +155,11 @@ Cabe remarcar que antes de utilizar esta cámara se realizaron pruebas con una Ha
 
 \section{Alimentación TODO}
 
-\subsection{Batería}
-
 La batería contenida en el kit está compuesta es una batería NiMH de 8 elementos AA Sanyo Eneloop que desarrolla 9.6 voltios y 1900 mAh. Para el consumo de este robot es una opción aceptable que proporciona cerca de 10 minutos de autonomía. No está mal si se tiene en cuenta que pruebas con el CEABOT tiene una duración máxima limitada a 5 minutos. Sin embargo tiene un inconveniente, su peso y su volumen es muy alto, y al estar situado en la espalda, sube el centro de gravedad del robot de forma considerable. Esto causa inestabilidad en el robot y complica bastante la programación de desplazamientos.
 
-Por estas razones, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9 a 12 voltios, respecto al resto de elementos que serán alimentados a 5 o 3.3 voltios, nos centraremos principalmente en encontrar una batería adecuada para los servos.
+\subsection{Batería}
+
+Por las razones descritas, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9 a 12 voltios, respecto al resto de elementos que serán alimentados a 5 o 3.3 voltios, nos centraremos principalmente en encontrar una batería adecuada para los servos.
 
 Hoy en dia, las baterías ne NiMH están empezando a caer en desuso a favor de la baterías de litio. Se barajaron dos posibilidades.
 
@@ -203,12 +205,28 @@ Microsoft LifeCam & x1  &  $5V\cdot200mA=1000mW$ &  $1000mW$ \\ \hline \hline
 Por tanto, la estimación de autonomía del robot en funcionamiento es la siguiente:
 \[ \dfrac{11.1V\cdot1750mAh}{135530mW}\cdot\dfrac{60min}{h}\simeq8.6min\]
 
-Entre 8 y 9 minutos de autonomía teóricos es un buena cifra contando con el tamaño del robot y sus prestaciones. Como conclusión podemos remarcar el hecho de que gracias al nuevo sistema de alimentación hemos podido introducir los dispositivos necesarios para cumplir los requerimientos de este proyecto sin comprometer la autonomía del robot
+Entre 8 y 9 minutos de autonomía teóricos es un buena cifra contando con el tamaño del robot y sus prestaciones. Como conclusión podemos remarcar el hecho de que gracias al nuevo sistema de alimentación hemos podido introducir los dispositivos necesarios para cumplir los requerimientos de este proyecto sin comprometer la autonomía del robot.
 
 \subsection{Regulador de tensión TODO }
+
+Hasta aquí parece que es suficiente con la elección de la nueva batería, sin embargo, aún falta un detalle que deberemos resolver. La mayor parte de los dispositivos que forman el conjunto están alimentados a 5 voltios. La batería que hemos elegido tiene una tensión de 11.1 voltios, y se ha observado, que cuando está cargada al máximo desarrolla hasta 12.6 voltios. No podemos alimentar la BeagleBone Black y el resto de componentes a una tensión tan alta, por lo que será necesario colocar un regulador que nos proporcione 5 voltios.
+
 \subsubsection{Regulador lineal TODO }
-\subsubsection{Convertidor UBEC/SBEC TODO }
 
+La primera idea fue utilizar un pequeño circuito con un regulador lineal LM7805 (figura \ref{7805}). El LM7805 es un componente muy común en los circuitos electrónicos, ya que ofrecen una salida de 5 voltios a partir de tensiones de entrada de hasta 35 voltios. En principio no parecería muy descabellado conectar los servos AX-12A  y la placa OpenCM directamente a la batería, y conectar en resto de componentes a través del regulador.
 
+[FOTO DE UN REGULADOR]
+
+No obstante existen dos problemas para realizar este montaje. El primero es que la eficiencia de este componente es muy pobre, cercana al 60\% según su hoja de características. Esto provocaría una disminución drástica en el tiempo de operación del robot y una disipación de energia tan alta que sería necesario incluir un disipador. Pero el segundo problema es mas importante, el componente está diseñado para aportar una corriente máxima al circuito de 1 amperio. Teniendo en cuenta los datos del cuadro \ref{consumo}, solo la BeagleBone Black ya requiere una corriente de 1.2 amperios, y junto al resto de componentes, asciende hasta 1.7 amperios . Un consumo superior al marcado por el fabricante puede producir fallos de funcionamiento en el componente. En este caso particular, podría producirse un calentamiento excesivo, que a su vez puede llegar a provocar cortocircuitos internos entre la patilla de entrada y la de salida. Las consecuencias de un fallo así serían nefastas, ya que deteriorarían los dispositivos conectados a él.
+
+\subsubsection{Convertidor UBEC TODO }
+
+Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC se utilizan normalmente con baterías de litio cuando el sistema necesita una tensión de alimentación de 5 o 6 voltios. Es por ello que se utilizan mucho en receptores de emisoras de radiocontrol, y gracias a esto existe una amplia variedad de UBECs asequibles en el mercado. La mayor ventaja de estos circuitos convertidores es su eficiencia superior al 90\%. Gracias a esto nuestro sistema tebndrá unas perdidas menores, no se calentará en exceso y gozará de una autonomía mayor. 
+
+[FOTO DE UBEC]
+
+\subsubsection{Elección final}
+
+Tal y como se comentaba anteriormente, nuestro sistema tiene un consumo estimado de unos 1.7 amperios en la salida de 5 voltios, por lo que un UBEC de 3 amperios sería suficiente para proporcionar al circuito la corriente necesaria para su funcionamiento. Adicionalmente se han incluido unos condensadores en la entrada y salida del circuito para ... como ser verá en el apartado ( TODO )
 
 \paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.
