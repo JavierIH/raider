@@ -22,7 +22,7 @@ module lifecam (){
 }
 
 module servo(){
-	color("black")import("../stl/CuelloV2.stl");
+	color("grey")import("../stl/CuelloV2.stl");
 }
 
 altura=5;
@@ -104,7 +104,7 @@ translate([-14,50,25])rotate([-90,0,0])cylinder(r=1,h=30,$fn=10);
 }
 
 	translate([0,-2,31])rotate([-90,0,0]){
-		//%lifecam();
+		%lifecam();
 		difference(){
 			translate([-18,-11,2.2])cube([36,22,3]);
 			translate([-13,-12,1.2])cube([26,24,9]);
@@ -116,7 +116,7 @@ translate([-14,50,25])rotate([-90,0,0])cylinder(r=1,h=30,$fn=10);
 	}
 
 }
-	//translate([-17,47+3,0])rotate([0,0,-90])servo();
+	translate([-17,47+3,0])rotate([0,0,-90])servo();
 
 
 

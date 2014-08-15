@@ -20,13 +20,16 @@
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Sensor inercial MPU9150}}{26}{figure.5.5}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Microsoft LifeCam Cinema}}{27}{figure.5.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{30}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{31}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces KiCad}}{32}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Qt Creator}}{33}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces CM9 IDE}}{34}{figure.6.5}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{32}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{33}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces KiCad}}{34}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Qt Creator}}{35}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces CM9 IDE}}{36}{figure.6.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Amplitud de giro de un AX-12A}}{42}{figure.8.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Amplitud de giro de un AX-12A}}{50}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Esquema de puertos serie en una BeagleBone Black}}{55}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{56}{figure.9.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

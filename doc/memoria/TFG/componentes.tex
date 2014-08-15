@@ -88,32 +88,37 @@ En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas di
 
 
 
-\subsubsection{comparativa y elección final}
+\subsubsection{comparativa y elección final TODO}
 
-\section{Modificaciones básicas}
+\section{Modificaciones estructurales}
 
-\subsection{Alimentación}
-
-batería mas ubec de ¿3A?
-
-\subsection{Cabeza móvil}
+El Bioloid Comprehensive es un buen punto de partida, sin embargo tiene algunos puntos débiles que conviene revisar. Además, para poder implantar en el robot los dispositivos que requiere este proyecto se necesitará mejorar las capacidades de la plataforma.
 
 
-\section{Elección del controlador}
+
+\subsection{Cabeza móvil TODO}
+
+Microservo pwm 
+
+\subsection{Cintura móvil TODO}
+
+Servo AX-12A
+
+\section{Elección del controlador TODO}
 %mixto
-\subsection{Controlador de locomoción}
-\subsubsection{Arbotix}
-\subsubsection{Serie OpenCM}
-\subsection{Controlador de visión}
-\subsubsection{BeagleBone Black}
-\subsubsection{Raspberry Pi}
-\subsubsection{Comparativa y selección}
-\section{Sensorización}
+\subsection{Controlador de locomoción TODO}
+\subsubsection{Arbotix TODO}
+\subsubsection{Serie OpenCM TODO}
+\subsection{Controlador de visión TODO}
+\subsubsection{BeagleBone Black TODO}
+\subsubsection{Raspberry Pi TODO}
+\subsubsection{Comparativa y selección TODO}
+\section{Sensorización TODO}
 %Estudio de diferentes sensores
-\subsection{Sensores de distancia}
-\subsubsection{Infrarrojos}
-\subsubsection{Ultrasonidos}
-\subsection{Sensor inercial}
+\subsection{Sensores de distancia TODO}
+\subsubsection{Infrarrojos TODO}
+\subsubsection{Ultrasonidos TODO}
+\subsection{Sensor inercial  TODO}
 
 El control del equilibrio del robot es muy importante en configuraciones bípedas, ya que estos robots son conocidos por su facilidad para tropezar y caer al suelo. Con el objetivo de analizar la posición del robot respecto al suelo se ha requerido la inclusión de un sensor inercial.
 
@@ -127,11 +132,11 @@ El control del equilibrio del robot es muy importante en configuraciones bípedas
 
 En el mercado existen varios modelos económicos. En este proyecto se ha utilizado un sensor MPU9150 (figura \ref{imu}), que es un sensor inercial compuesto de acelerómetro de 3 ejes, giroscopio de 3 ejes y brújula de 3 ejes. Este sensor combina dos sensores, un MPU6050 (incluye el acelerometro y el giroscopio) y un AK8975 (incluye la brújula).
 
-\subsection{Brújula}
+\subsection{Brújula TODO}
 
 TODO está por ver si meto la anisotropica o la normal
 
-\subsection{Cámara}
+\subsection{Cámara TODO}
 
 La elección de la cámara ha sido condicionada principalmente por su compatibilidad con el driver de Linux v4l2. Existe una amplia variedad de cámaras válidas en el mercado. Dado el carácter de este proyecto, se ha optado por utilizar una webcam, ya que son mas accesibles que las cámaras avanzadas de investigación y los algoritmos de visión que serán programados no requieren imágenes de alta calidad.
 
@@ -142,12 +147,67 @@ La elección de la cámara ha sido condicionada principalmente por su compatibilid
 \label{camara}
 \end{figure}
 
-El modelo selecionado ha sido una Microsoft LifeCam Cinema (figura \ref{camara}). Entre sus carácterísticas destacan su posibilidad de grabar video en 720p y el ajuste automático de brillos en tiempo real.
+El modelo selecionado ha sido una Microsoft LifeCam Cinema (figura \ref{camara}). Entre sus carácterísticas destacan su posibilidad de grabar video en 720p HD, enfoque automático y la regulación de brillos en tiempo real. Adicionalmente, se trata de una cámara de fácil desmontaje y dimensiones contenidas, por lo que será sencillo integrarla en el robot.
 
 Cabe remarcar que antes de utilizar esta cámara se realizaron pruebas con una Hama Pocket, pero dada su baja calidad de construcción presentó diversos problemas de fiabilidad y fue despreciada en favor de la Microsoft. 
 
+\section{Alimentación TODO}
 
-\subsection{Configuración final}
+\subsection{Batería}
+
+La batería contenida en el kit está compuesta es una batería NiMH de 8 elementos AA Sanyo Eneloop que desarrolla 9.6 voltios y 1900 mAh. Para el consumo de este robot es una opción aceptable que proporciona cerca de 10 minutos de autonomía. No está mal si se tiene en cuenta que pruebas con el CEABOT tiene una duración máxima limitada a 5 minutos. Sin embargo tiene un inconveniente, su peso y su volumen es muy alto, y al estar situado en la espalda, sube el centro de gravedad del robot de forma considerable. Esto causa inestabilidad en el robot y complica bastante la programación de desplazamientos.
+
+Por estas razones, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9 a 12 voltios, respecto al resto de elementos que serán alimentados a 5 o 3.3 voltios, nos centraremos principalmente en encontrar una batería adecuada para los servos.
+
+Hoy en dia, las baterías ne NiMH están empezando a caer en desuso a favor de la baterías de litio. Se barajaron dos posibilidades.
+
+% TODO al final de la sección se debe calcular la autonomía del robot
+
+\subsubsection{Baterías de polímero de litio}
+
+Las baterías de polímero de litio, mas conocidas como baterías LiPo, destacan por desarrollar una tasa de descarga bastante alta y por tener un tamaño y peso reducido. Dado su uso en automodelismo y aeromodelismo, son unas baterías muy comunes que en los últimos años han ido bajando su precio. Actualmente existe una gran variedad de baterías LiPo de diversos tamaños y precio asequible. Cada célula LiPo ofrece 3.7 voltios, por lo que la elección correcta para este robot sería una batería de 3S, o lo que es lo mismo, 11,1 voltios. Sin embargo, las baterías LiPo tienen una desventaja importante, su fragilidad. El proceso de carga y descarga de una batería de este tipo no es un asunto trivial, una sobredescarga de la batería provoca un deterioro inmediato de la misma, calentando sus elementos e incluso pudiendo llegar a incendiarse. Es por ello que se necesita un cargador con capacidad para balancear las células, de forma que las tensiones de cada una de ellas se tengan bajo control durante el proceso.
+
+\subsubsection{Baterías de litio fosfato de hierro}  
+
+Las batería de litio fosfato de hierro, es decir, LiFe, son conocidas por su gran resistencia y larga vida útil. Cada célula de LiFe desarrolla 3.3 voltios y no presenta problemas por sobredescargas. De hecho, estas baterías ni siquiera requieren de un cargador balanceador para su carga, sino que pueden cargarse sin problemas con un cargador normal. El gran problema de estas baterías es que sus elementos son bastante voluminosos, y, al no ser tan populares como las LiPo, tampoco es demasiado fácil encontrar modelos de tamaño y capacidad adecuados en el mercado. 
+
+\subsubsection{Elección y diseño del sistema}  
+
+Por su tamaño y prestaciones se ha elegido una batería LiPo Rhino de 3S y 1750mAh. Esta batería tiene unas dimensiones perfectas para montarse en la cintura del robot y su peso es 50 ( TODO pesarla, que ahora no la tengo a mano ) gramos menor al de la batería original (215 gramos). 
+
+A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación de la autonomía del robot basada en el consumo medio de todos sus elementos por separado.
+
+% TODO foto de la batería
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ >{\arraybackslash}m{2cm} >{\centering\arraybackslash}m{1.3cm}  >{\arraybackslash}m{5cm}  >{\arraybackslash}m{3cm}}
+\hline
+Dispositivo & Número & Consumo unitario & Consumo total  \\
+\hline \hline
+Dynamixel AX-12A & x19 & $11.1V\cdot600mA=6660mW$ & $126540mW$ \\ \hline
+Tower Pro MG90s & x1 & $5V\cdot120mA=600mW$ & $600mW$ \\ \hline
+BeagleBone Black & x1 & $5V\cdot1200mA=6000mW$ & $6000mW$ \\ \hline
+OpenCM 9.04 & x1 & $11.1V\cdot90mA\simeq1000mW$ & $1000mW$ \\ \hline
+Sharp IR & x2 & $5V\cdot30mA=150mW$ & $300mW$ \\ \hline
+MPU9150 & x1 & $3.3V\cdot15mA\simeq50mW$ & $50mW$ \\ \hline
+HMC5883L &  x1  &  $3.3V\cdot12mA\simeq40mW$ & $40mW$ \\ \hline
+Microsoft LifeCam & x1  &  $5V\cdot200mA=1000mW$ &  $1000mW$ \\ \hline \hline 
+\medskip Total &  &  & \medskip $135530mW\simeq136W$  \\ \hline
+\hline
+\end{tabular}
+\caption{Consumo medio}
+\label{consumo}
+\end{table}
+
+Por tanto, la estimación de autonomía del robot en funcionamiento es la siguiente:
+\[ \dfrac{11.1V\cdot1750mAh}{135530mW}\cdot\dfrac{60min}{h}\simeq8.6min\]
+
+Entre 8 y 9 minutos de autonomía teóricos es un buena cifra contando con el tamaño del robot y sus prestaciones. Como conclusión podemos remarcar el hecho de que gracias al nuevo sistema de alimentación hemos podido introducir los dispositivos necesarios para cumplir los requerimientos de este proyecto sin comprometer la autonomía del robot
+
+\subsection{Regulador de tensión TODO }
+\subsubsection{Regulador lineal TODO }
+\subsubsection{Convertidor UBEC/SBEC TODO }
 
 
 

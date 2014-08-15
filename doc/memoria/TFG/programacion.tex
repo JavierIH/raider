@@ -1,7 +1,15 @@
 %chapter introduce un nuevo capítulo
-\chapter{Programación}
+\chapter{Programación TODO}
 
-\section{Sistema de locomoción}
+\section{Configuración de la BeagleBone Black TODO}
+
+\subsection{Sistema operativo TODO}
+
+\subsection{Instalación de librerías TODO}
+
+\subsection{Programaciés de scripts de configuración TODO}
+
+\section{Sistema de locomoción TODO}
 
 Antes de comenzar con esta sección, es importante señalar algunos detalles importantes. Si bien es cierto, el control del robot girará en torno a un algoritmo de visión, su funcionamiento de apoyará en un control de locomoción robusto que permita al robot realizar desplazamientos seguros sobre el terreno. Por tanto, dado que se trata de un robot bípedo, la programación de movimientos no es un tema trivial como lo podría ser en un robot con ruedas.
 
@@ -14,8 +22,6 @@ Para conseguir que Raider pueda moverse con soltura se han seguido varios pasos,
 El control del servo PWM de Raider, situado en su cabeza, se realiza con la biblioteca Servo.h orginalmente desarrolladas para Arduino y que posteriormente ha sido portada para su utilización en OpenCM. Dado el cometido de este servo, no será necesario realizar un control de su velocidad, por lo que un simple control de su posición será suficiente.
 
 La biblioteca Servo.h nos permite controlar el movimiento de un servo a partir de un valor de posición, y se encarga de producir la señal PWM correspondiente. Aunque los métodos utilizados pueden encontrarse en la documentación de Arduino ( TODO ), a continuación introduzco una breve explicación de los que han sido utilizados en este proyecto:
-
-% TODO revisar nombres de las funciones en las bibliotecas
 
 \subsubsection{Servo::attach(uint8 pin)}
 
@@ -142,7 +148,7 @@ La función move es la mas importante de todas, ya que es la función que se encar
 \medskip
 Para ello, la función calcula la amplitud del movimiento y asigna una velocidad independiente para ese servo. Gracias a esto, todos los servos empiezan y terminan de moverse al mismo tiempo y permiten un control mas sencillo de las inercias entre movimientos consecutivos.
 
-\subsection{Funciones de movimientos combinados} 
+\subsection{Funciones de movimientos combinados TODo } 
 
 Llegado este punto hemos abordado como mover un servo y como mover los 20 servos de forma coordinada. En este apartado se presentan algunas funciones intermedias entre lo comentado y movimientos de alto nivel como puede ser el desplazamiento bípedo.
 
@@ -155,22 +161,84 @@ movHead es una función que permite mover el servo PWM de la cabeza del robot. Si
 
 
 % Dibujos y otras movidas
-\subsubsection{void movVertical(int,int)}
-\subsubsection{void movLateral(int,int)}
-\subsubsection{void movFrontal(int,int)}
+\subsubsection{void movVertical(int,int) TODO}
+\subsubsection{void movLateral(int,int) TODO}
+\subsubsection{void movFrontal(int,int) TODO}
 
-\subsection{Creación de movimientos completos}
+\subsection{Creación de movimientos completos TODO}
 
-Encontrándonos en este punto, la prográmación de desplazamientos, giros y otros movimientos complejos, se ha realizado mediante la combinación de las funciones anteriormente descritas (TODO aquí hay que pensar si meter ilustraciones o como)
+Encontrándonos en este punto, la programación de desplazamientos, giros y otros movimientos complejos, se ha realizado mediante la combinación de las funciones anteriormente descritas (TODO aquí hay que pensar si meter ilustraciones o como)
 
-\subsection{Controlador de movimiento}
+\subsection{Controlador de movimientos TODO}
 
-WASD foto de teclado y juegos
+
+\section{Comunicación serie}
+
+En la sección anterior hemos completado la programación de movimientos sobre la placa OpenCM, sin embargo, el control principal del robot se realiza desde la BeagleBone. En este apartado se comunicará la BeagleBone con la OpenCM de forma que adopten una configuración de maestro y esclavo. La estrategia consistirá en el envío de comandos sencillos desde la BeagleBone a la OpenCM. Cada comando servirá de identificador para un movimiento completo. Se ha seguido el criterio que típicamente es usado en los videojuegos de PC (figura ), utilizando las teclas W, A, S, y D para los desplazamientos del robot e identificando el resto de movimientos por su letra inicial. A continuación, en el cuadro \ref{movimientos} se presenta una tabla con los movimientos programados y su comando asignado.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{1.5cm} p{2cm} p{8cm}}
+\hline
+Comando & Función & Descripción \\
+\hline \hline
+\centering W & walk(3) & Caminar 3 pasos cortos\\ \hline
+\centering A & turnL() & Rotación a la izquierda  \\ \hline
+\centering D & turnR() & Rotación a la derecha  \\ \hline
+\centering S & run(3) & Caminar 3 pasos largos y rápidos  \\ \hline
+\centering Q & stepL() & Paso lateral a la izquierda  \\ \hline
+\centering E & stepR() & Paso lateral a la derecha  \\ \hline
+\centering K & kick() & Patada (para golpear una pelota)  \\ \hline
+\centering Y & yes() & Movimiento intermitente de la cabeza  \\ \hline
+\centering G & getUp() & Levantamiento desde una caída frontal  \\ \hline
+\centering R & roll() & Rodar, se utiliza cuando el robot cae de espaldas  \\ \hline
+\centering H & hello() & Saludo  \\ \hline
+
+
+\end{tabular}
+\caption{Movimientos programados}
+\label{movimientos}
+\end{table}
+
+
+En primer lugar, se debe realizar una conexión entre las dos placas. Se ha elegido una comunicación tipo serie por su fácil puesta en marcha y fiabilidad. La BeagleBone posee hasta 5 puertos serie. En la figura \ref{serial} puede observarse la configuración de pines para cada uno de los puertos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figuras/serial}   
+\caption{Esquema de puertos serie en una BeagleBone Black}
+\label{serial}
+\end{figure}
+
+Por otro lado, la OpenCM posee 3 puertos serie, de los cuales uno de ellos está reservado para el control del bus Dynamixel. En el esquema de la figura \ref{serialcm} se presenta la configuración de puertos serie de la OpenCM.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/serialcm}   
+\caption{Esquema de puertos serie en una OpenCM 9.04}
+\label{Serialcm}
+\end{figure}
+
+Adicionalmente, se ha incluido la posibilidad de utilizar un control auxiliar por Bluetooth desde un dispositivo externo. Para ello se ha conectado un modulo Bluetooth directamente a la OpenCM. La función de esta otra vía de control no es otra que la realización de pruebas experiemtnales controladas, ya que nos permite modificar el comportamiento del robot en los momentos en los que sea necesario. Por supuesto, de cara a su funcionamiento autónomo, el módulo Bluetooth se inutilizará. Sin embargo, será necesario dejar preparada su conexión y programación.
+
+\subsection{Comunicación serie en OpenCM  TODO}
+
+Para la programación de la comunicación serie en la placa OpenCM se ha utilizado la biblioteca HardwareSerial.h, contenida en CM9 IDE. La documentación de la biblioteca está disponible en (  TODO), sin embargo, a continuación se listan las funciones que se han utilizado junto a una breve explicación de su funcionamiento.
+ ( TODO )
+% todo 
+\subsubsection{void HardwareSerial::begin(unsigned int baud) TODO}
+\subsubsection{unsigned int HardwareSerial::available() TODO}
+\subsubsection{unsigned char HardwareSerial::read() TODO}
+\subsubsection{void HardwareSerial::flush() TODO}
  
-\section{Algoritmos de visión} 
-\subsection{Análisis de trayectorias en navegación} 
-\subsection{Búsqueda de lineas}
-\subsection{Lectura de códigos QR} 
+\subsection{Comunicación serie en BeagleBone TODO}
+
+\subsection{Comunicación con módulo Bluetooth TODO}
+
+\section{Algoritmos de visión TODO} 
+\subsection{Análisis de trayectorias en navegación TODO} 
+\subsection{Búsqueda de lineas TODO}
+\subsection{Lectura de códigos QR TODO} 
  
 
 

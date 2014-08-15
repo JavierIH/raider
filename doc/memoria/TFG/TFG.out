@@ -19,59 +19,72 @@
 \BOOKMARK [0][-]{chapter.5}{Elecci\363n de componentes}{}% 19
 \BOOKMARK [1][-]{section.5.1}{Plataforma rob\363tica}{chapter.5}% 20
 \BOOKMARK [2][-]{subsection.5.1.1}{Selecci\363n de una plataforma rob\363tica}{section.5.1}% 21
-\BOOKMARK [1][-]{section.5.2}{Modificaciones b\341sicas}{chapter.5}% 22
-\BOOKMARK [2][-]{subsection.5.2.1}{Alimentaci\363n}{section.5.2}% 23
-\BOOKMARK [2][-]{subsection.5.2.2}{Cabeza m\363vil}{section.5.2}% 24
-\BOOKMARK [1][-]{section.5.3}{Elecci\363n del controlador}{chapter.5}% 25
-\BOOKMARK [2][-]{subsection.5.3.1}{Controlador de locomoci\363n}{section.5.3}% 26
-\BOOKMARK [2][-]{subsection.5.3.2}{Controlador de visi\363n}{section.5.3}% 27
-\BOOKMARK [1][-]{section.5.4}{Sensorizaci\363n}{chapter.5}% 28
-\BOOKMARK [2][-]{subsection.5.4.1}{Sensores de distancia}{section.5.4}% 29
-\BOOKMARK [2][-]{subsection.5.4.2}{Sensor inercial}{section.5.4}% 30
-\BOOKMARK [2][-]{subsection.5.4.3}{Br\372jula}{section.5.4}% 31
-\BOOKMARK [2][-]{subsection.5.4.4}{C\341mara}{section.5.4}% 32
-\BOOKMARK [2][-]{subsection.5.4.5}{Configuraci\363n final}{section.5.4}% 33
-\BOOKMARK [0][-]{chapter.6}{Descripci\363n de las herramientas a utilizar}{}% 34
-\BOOKMARK [1][-]{section.6.1}{Herramientas de dise\361o y fabricaci\363n de piezas}{chapter.6}% 35
-\BOOKMARK [2][-]{subsection.6.1.1}{OpenSCAD}{section.6.1}% 36
-\BOOKMARK [2][-]{subsection.6.1.2}{Impresi\363n 3d}{section.6.1}% 37
-\BOOKMARK [1][-]{section.6.2}{Herramientas de dise\361o de circuitos}{chapter.6}% 38
-\BOOKMARK [2][-]{subsection.6.2.1}{KiCad}{section.6.2}% 39
-\BOOKMARK [1][-]{section.6.3}{Herramientas de programaci\363n}{chapter.6}% 40
-\BOOKMARK [2][-]{subsection.6.3.1}{OpenCV}{section.6.3}% 41
-\BOOKMARK [2][-]{subsection.6.3.2}{Qt Creator}{section.6.3}% 42
-\BOOKMARK [2][-]{subsection.6.3.3}{CMake}{section.6.3}% 43
-\BOOKMARK [2][-]{subsection.6.3.4}{CM9 IDE}{section.6.3}% 44
-\BOOKMARK [2][-]{subsection.6.3.5}{Git}{section.6.3}% 45
-\BOOKMARK [0][-]{chapter.7}{Desarrollo}{}% 46
-\BOOKMARK [1][-]{section.7.1}{Dise\361o de las partes mec\341nicas}{chapter.7}% 47
-\BOOKMARK [2][-]{subsection.7.1.1}{Cabeza}{section.7.1}% 48
-\BOOKMARK [2][-]{subsection.7.1.2}{Tronco}{section.7.1}% 49
-\BOOKMARK [2][-]{subsection.7.1.3}{Brazos}{section.7.1}% 50
-\BOOKMARK [2][-]{subsection.7.1.4}{Piernas}{section.7.1}% 51
-\BOOKMARK [1][-]{section.7.2}{Montaje del controlador}{chapter.7}% 52
-\BOOKMARK [2][-]{subsection.7.2.1}{Esquema de montaje}{section.7.2}% 53
-\BOOKMARK [2][-]{subsection.7.2.2}{Sistema de alimentaci\363n}{section.7.2}% 54
-\BOOKMARK [2][-]{subsection.7.2.3}{Adecuaci\363n de sensores}{section.7.2}% 55
-\BOOKMARK [2][-]{subsection.7.2.4}{Desarrollo de una placa de expansi\363n}{section.7.2}% 56
-\BOOKMARK [2][-]{subsection.7.2.5}{Puesta en marcha del controlador}{section.7.2}% 57
-\BOOKMARK [0][-]{chapter.8}{Programaci\363n}{}% 58
-\BOOKMARK [1][-]{section.8.1}{Sistema de locomoci\363n}{chapter.8}% 59
-\BOOKMARK [2][-]{subsection.8.1.1}{Movimiento del servo PWM}{section.8.1}% 60
-\BOOKMARK [2][-]{subsection.8.1.2}{Movimiento de los actuadores Dynamixel}{section.8.1}% 61
-\BOOKMARK [2][-]{subsection.8.1.3}{Movimiento sincronizado de las articulaciones}{section.8.1}% 62
-\BOOKMARK [2][-]{subsection.8.1.4}{Funciones de movimientos combinados}{section.8.1}% 63
-\BOOKMARK [2][-]{subsection.8.1.5}{Creaci\363n de movimientos completos}{section.8.1}% 64
-\BOOKMARK [2][-]{subsection.8.1.6}{Controlador de movimiento}{section.8.1}% 65
-\BOOKMARK [1][-]{section.8.2}{Algoritmos de visi\363n}{chapter.8}% 66
-\BOOKMARK [2][-]{subsection.8.2.1}{An\341lisis de trayectorias en navegaci\363n}{section.8.2}% 67
-\BOOKMARK [2][-]{subsection.8.2.2}{B\372squeda de lineas}{section.8.2}% 68
-\BOOKMARK [2][-]{subsection.8.2.3}{Lectura de c\363digos QR}{section.8.2}% 69
-\BOOKMARK [0][-]{chapter.9}{Aplicaciones}{}% 70
-\BOOKMARK [1][-]{section.9.1}{CEABOT 2014}{chapter.9}% 71
-\BOOKMARK [1][-]{section.9.2}{Spain Experience}{chapter.9}% 72
-\BOOKMARK [0][-]{chapter.10}{Evaluaci\363n de resultados}{}% 73
-\BOOKMARK [1][-]{section.10.1}{Pruebas de funcionamiento}{chapter.10}% 74
-\BOOKMARK [1][-]{section.10.2}{Conclusi\363n}{chapter.10}% 75
-\BOOKMARK [1][-]{section.10.3}{Situaci\363n y desarrollos futuros}{chapter.10}% 76
-\BOOKMARK [0][-]{section.10.3}{Bibliograf\355a}{}% 77
+\BOOKMARK [1][-]{section.5.2}{Modificaciones estructurales}{chapter.5}% 22
+\BOOKMARK [2][-]{subsection.5.2.1}{Cabeza m\363vil TODO}{section.5.2}% 23
+\BOOKMARK [2][-]{subsection.5.2.2}{Cintura m\363vil TODO}{section.5.2}% 24
+\BOOKMARK [1][-]{section.5.3}{Elecci\363n del controlador TODO}{chapter.5}% 25
+\BOOKMARK [2][-]{subsection.5.3.1}{Controlador de locomoci\363n TODO}{section.5.3}% 26
+\BOOKMARK [2][-]{subsection.5.3.2}{Controlador de visi\363n TODO}{section.5.3}% 27
+\BOOKMARK [1][-]{section.5.4}{Sensorizaci\363n TODO}{chapter.5}% 28
+\BOOKMARK [2][-]{subsection.5.4.1}{Sensores de distancia TODO}{section.5.4}% 29
+\BOOKMARK [2][-]{subsection.5.4.2}{Sensor inercial TODO}{section.5.4}% 30
+\BOOKMARK [2][-]{subsection.5.4.3}{Br\372jula TODO}{section.5.4}% 31
+\BOOKMARK [2][-]{subsection.5.4.4}{C\341mara TODO}{section.5.4}% 32
+\BOOKMARK [1][-]{section.5.5}{Alimentaci\363n TODO}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.5.1}{Bater\355a}{section.5.5}% 34
+\BOOKMARK [2][-]{subsection.5.5.2}{Regulador de tensi\363n TODO }{section.5.5}% 35
+\BOOKMARK [0][-]{chapter.6}{Descripci\363n de las herramientas a utilizar}{}% 36
+\BOOKMARK [1][-]{section.6.1}{Herramientas de dise\361o y fabricaci\363n de piezas}{chapter.6}% 37
+\BOOKMARK [2][-]{subsection.6.1.1}{OpenSCAD}{section.6.1}% 38
+\BOOKMARK [2][-]{subsection.6.1.2}{Impresi\363n 3d}{section.6.1}% 39
+\BOOKMARK [1][-]{section.6.2}{Herramientas de dise\361o de circuitos}{chapter.6}% 40
+\BOOKMARK [2][-]{subsection.6.2.1}{KiCad}{section.6.2}% 41
+\BOOKMARK [1][-]{section.6.3}{Herramientas de programaci\363n}{chapter.6}% 42
+\BOOKMARK [2][-]{subsection.6.3.1}{OpenCV}{section.6.3}% 43
+\BOOKMARK [2][-]{subsection.6.3.2}{Qt Creator}{section.6.3}% 44
+\BOOKMARK [2][-]{subsection.6.3.3}{CMake}{section.6.3}% 45
+\BOOKMARK [2][-]{subsection.6.3.4}{CM9 IDE}{section.6.3}% 46
+\BOOKMARK [2][-]{subsection.6.3.5}{Git}{section.6.3}% 47
+\BOOKMARK [0][-]{chapter.7}{Dise\361o de las partes mec\341nicas TODO}{}% 48
+\BOOKMARK [1][-]{section.7.1}{Cabeza}{chapter.7}% 49
+\BOOKMARK [1][-]{section.7.2}{Cintura}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.3}{Tronco}{chapter.7}% 51
+\BOOKMARK [1][-]{section.7.4}{Brazos}{chapter.7}% 52
+\BOOKMARK [1][-]{section.7.5}{Piernas}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.6}{Pies y tobillos}{chapter.7}% 54
+\BOOKMARK [1][-]{section.7.7}{Lista de piezas}{chapter.7}% 55
+\BOOKMARK [0][-]{chapter.8}{Desarrollo}{}% 56
+\BOOKMARK [1][-]{section.8.1}{Montaje del controlador}{chapter.8}% 57
+\BOOKMARK [2][-]{subsection.8.1.1}{Esquema de montaje}{section.8.1}% 58
+\BOOKMARK [2][-]{subsection.8.1.2}{Sistema de alimentaci\363n}{section.8.1}% 59
+\BOOKMARK [2][-]{subsection.8.1.3}{Adecuaci\363n de sensores}{section.8.1}% 60
+\BOOKMARK [2][-]{subsection.8.1.4}{Desarrollo de una placa de expansi\363n}{section.8.1}% 61
+\BOOKMARK [2][-]{subsection.8.1.5}{Puesta en marcha del controlador}{section.8.1}% 62
+\BOOKMARK [0][-]{chapter.9}{Programaci\363n TODO}{}% 63
+\BOOKMARK [1][-]{section.9.1}{Configuraci\363n de la BeagleBone Black TODO}{chapter.9}% 64
+\BOOKMARK [2][-]{subsection.9.1.1}{Sistema operativo TODO}{section.9.1}% 65
+\BOOKMARK [2][-]{subsection.9.1.2}{Instalaci\363n de librer\355as TODO}{section.9.1}% 66
+\BOOKMARK [2][-]{subsection.9.1.3}{Programaci\351s de scripts de configuraci\363n TODO}{section.9.1}% 67
+\BOOKMARK [1][-]{section.9.2}{Sistema de locomoci\363n TODO}{chapter.9}% 68
+\BOOKMARK [2][-]{subsection.9.2.1}{Movimiento del servo PWM}{section.9.2}% 69
+\BOOKMARK [2][-]{subsection.9.2.2}{Movimiento de los actuadores Dynamixel}{section.9.2}% 70
+\BOOKMARK [2][-]{subsection.9.2.3}{Movimiento sincronizado de las articulaciones}{section.9.2}% 71
+\BOOKMARK [2][-]{subsection.9.2.4}{Funciones de movimientos combinados TODo }{section.9.2}% 72
+\BOOKMARK [2][-]{subsection.9.2.5}{Creaci\363n de movimientos completos TODO}{section.9.2}% 73
+\BOOKMARK [2][-]{subsection.9.2.6}{Controlador de movimientos TODO}{section.9.2}% 74
+\BOOKMARK [1][-]{section.9.3}{Comunicaci\363n serie}{chapter.9}% 75
+\BOOKMARK [2][-]{subsection.9.3.1}{Comunicaci\363n serie en OpenCM TODO}{section.9.3}% 76
+\BOOKMARK [2][-]{subsection.9.3.2}{Comunicaci\363n serie en BeagleBone TODO}{section.9.3}% 77
+\BOOKMARK [2][-]{subsection.9.3.3}{Comunicaci\363n con m\363dulo Bluetooth TODO}{section.9.3}% 78
+\BOOKMARK [1][-]{section.9.4}{Algoritmos de visi\363n TODO}{chapter.9}% 79
+\BOOKMARK [2][-]{subsection.9.4.1}{An\341lisis de trayectorias en navegaci\363n TODO}{section.9.4}% 80
+\BOOKMARK [2][-]{subsection.9.4.2}{B\372squeda de lineas TODO}{section.9.4}% 81
+\BOOKMARK [2][-]{subsection.9.4.3}{Lectura de c\363digos QR TODO}{section.9.4}% 82
+\BOOKMARK [0][-]{chapter.10}{Aplicaciones}{}% 83
+\BOOKMARK [1][-]{section.10.1}{CEABOT 2014}{chapter.10}% 84
+\BOOKMARK [1][-]{section.10.2}{Spain Experience}{chapter.10}% 85
+\BOOKMARK [0][-]{chapter.11}{Evaluaci\363n de resultados}{}% 86
+\BOOKMARK [1][-]{section.11.1}{Pruebas de funcionamiento}{chapter.11}% 87
+\BOOKMARK [1][-]{section.11.2}{Conclusi\363n}{chapter.11}% 88
+\BOOKMARK [1][-]{section.11.3}{Situaci\363n y desarrollos futuros}{chapter.11}% 89
+\BOOKMARK [0][-]{section.11.3}{Bibliograf\355a}{}% 90
