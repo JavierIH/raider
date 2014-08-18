@@ -5,9 +5,32 @@ Como punto de partida, se han seleccionado una serie de componentes adecuados pa
 
 \section{Plataforma robótica}
 
-El primer paso para la realización de este proyecto fue el estudio y selección de las plataformas robóticas que pueden conseguirse actualmente. Dado que el objetivo es encontrar un robot humanoide sobre el que se pueda implantar un sistema de visión, es necesario analizar diversos aspectos; algunos mecánicos como el numero y fuerza de los actuadores, y otros electrónicos como la capacidad de procesamiento y velocidad del controlador. Sin embargo, dado que este proyecto es autofinanciado en su mayor medida, el factor económico también es un limitante destacable. 
+El primer paso para la realización de este proyecto fue el estudio y selección de las plataformas robóticas que pueden conseguirse actualmente. Dado que el objetivo es encontrar un robot humanoide sobre el que se pueda implantar un sistema de visión, es necesario analizar diversos aspectos; algunos mecánicos como el numero y fuerza de los actuadores, y otros electrónicos como la capacidad de procesamiento y velocidad del controlador. Sin embargo, dado que este proyecto es autofinanciado en su mayor medida, el factor económico también es un limitante destacable. Buscamos una plataforma que cumpliese los siguientes requisitos:
 
-En el siguiente apartado se presenta un estudio las principales principales opciones.
+\begin{itemize}
+\item \textbf{Programable en C/C++} 
+
+Se requiere que sea programable en C/C++ y que además no dependa de una IDE concreta.
+
+\item \textbf{Posibilidad de conectarle una cámara}
+
+Se necesita que permita conectarle una cámara y realizar programas con OpenCV.
+
+\item \textbf{Expandible con sensores y actuadores}
+
+El sistema debe permitir la adición de nuevos sensores y actuadores, sin verse limitado por hardware o software.
+
+\item \textbf{Servos de al menos 12kg/cm}
+
+Ya que se van a incluir nuevas partes, es absolutamente necesario que los servos puedan soportar carga adicional colocada en el robot.
+
+\item \textbf{Chasis reconfigurable}
+
+Aunque no es tan importante como el resto, es posible que el robot requiera modificaciones, por lo que una base reconfigurable y versátil será apreciada.
+
+\end{itemize}
+
+En el siguiente apartado se presenta un estudio las principales opciones.
 
 \subsection{Selección de una plataforma robótica}
 
@@ -90,40 +113,86 @@ En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas di
 
 \subsubsection{comparativa y elección final TODO}
 
+Realizando un primer análisis, ninguno de los robots candidatos cumple los requísitos. Todos utilizan IDEs y lenguajes propios para su programación. El Robonova y el Robovie tienen unos servos demasiado débiles, lo que dificultaría mucho añadir mas peso al robot. En lo que a grados de libertad se refiere, solo el Bioloid es capaz de rotar las pierna en un eje perpendicular al suelo, lo que supone una ventaja a la hora de programar la locomoción del robot. Entre el Kondo y el Bioloid, se ha elegido el Bioloid por tres razones: Es mas fácil de modificar, el kit trae mas servos, y es mas barato.
+
+
 \section{Modificaciones estructurales}
 
 El Bioloid Comprehensive es un buen punto de partida, sin embargo tiene algunos puntos débiles que conviene revisar. Además, para poder implantar en el robot los dispositivos que requiere este proyecto se necesitará mejorar las capacidades de la plataforma.
 
-
-
 \subsection{Cabeza móvil TODO}
 
-Microservo pwm 
+Un requisito importante del proyecto es permitir que la cámara que vamos a montar pueda moverse con libertad para enfocar a diferentes zonas de su entorno. Dado que en CEABOT la mayoría de los datos  que aporta el entorno están situados en el suelo, necesitamos que la cámara al menos pueda dirigirse hacia el frente y hacia el suelo. Esto lo conseguiremos con la adición de un microservo PWM y una plataforma articulada para la cabeza. Dadas las características de este movimiento, no necesitamos un servo con grandes capacidades, ya que su rango de acción estará muy limitado y su efecto será despreciable en el reparto de pesos del robot.
+
+[FOTO REAL DEL MICROSERVO]
+
+Se ha elegido un microservo PWM por su bajo tamaño y peso, su bajo precio y su sencillez a la hora de montarlo y programarlo. El principio de funcionamiento de un servo PWM es muy simple. De las tres patillas de su conector, dos son de alimentación y la tercera se encarga de recibir una onda PWM que, variando la amplitud de su pulso, ordena al servo a colocarse en la posición fijada.
+
+Particularmente, se ha escogido un servo Tower Pro MG90s (figura \ref{microservo}) cuyas especificaciones presentan un torque de 2.4=kg/cm, y una transmisión metálica soportada por rodamientos. Este último dato es muy importande si tenemos en cuenta que el sistema de cabeza móvil se situará en una zona extrema del robot, y que un golpe producido por una caida forzará de forma directa el eje del servo de la articulación. Este servo proporcionará a la cabeza la robustez necesaria para salir indemne de este tipo de accidentes, muy comunes teniendo en cuenta que el robot estará destinado a la realización de pruebas de competición.
 
 \subsection{Cintura móvil TODO}
 
-Servo AX-12A
+Otra de las modificaciones básicas a realizar sobre la paltaforma robótica, ha sido la inclusión de un servo adicional Dynamixel AX-12A para articular la cintura. A parte de la mejora de capacidades que se produce en los movimientos del robot, servirá para girar la dirección de la cámara radialmente. Podría decirse que entre el servo de la cabeza y el de la cintura, se ha creado un sistema distribuido de pan-tilt ( TODO explicar qué significa ) que permitirá mover la cámara en todas las direcciones manteniendo fija la base del robot, es decir, sus piernas.
 
-\section{Elección del controlador TODO}
-%mixto
-\subsection{Controlador de locomoción TODO}
-\subsubsection{Arbotix TODO}
-\subsubsection{Serie OpenCM TODO}
-\subsection{Controlador de visión TODO}
-\subsubsection{BeagleBone Black TODO}
-\subsubsection{Raspberry Pi TODO}
-\subsubsection{Comparativa y selección TODO}
 \section{Sensorización TODO}
-%Estudio de diferentes sensores
+
+El funcionamiento del robot y su control va a estar basado principalmente en la cámara y los algoritmos de visión que se programarán. No obstante, la cámara consume muchos recursos del procesador y existen alguna tareas sencillas que es mas fácil programar con sensores mas simples. A continuación se muestra un estudio de sensores que pueden ser útiles en el proyecto.
+
 \subsection{Sensores de distancia TODO}
-\subsubsection{Infrarrojos TODO}
-\subsubsection{Ultrasonidos TODO}
+
+Existen diferentes tipo de sensores de distancia. El propósito de estos sensores no es otro que la medición de longitudes físicas utilizando diferentes principios físicos. Se ha planteado el uso de sensores infrarrojos y de sensores de ultrasonidos.
+
+\subsubsection{Sensores de infrarrojos TODO}
+
+Los sensores de infrarrojos basan su funcionamiento en la reflexión de luz infrarroja sobre superficies. El sensor está formado por dos LEDs infrarrojos, uno emisor y otro receptor. El emisor emite de forma continua una luz infrarroja dirigida hacia un punto fijo. Si en ese punto fijo se encuentra un objeto físico, la luz se reflejará y será captada por el diodo receptor. La salida de estos sensores se mide mediante la diferencia de potencial que se produce en el diodo receptor. Se ha estudiado la inclusión en el proyecto de sensores infrarrojos Sharp, especialmente de su modelo GP2Y0A21YK, que tiene un rango de operación de entre 4 y 150cm. En la gráfica de la figura \ref{graficair} se presenta la variación de tensión de salida respecto a distancia para un Sharp GP2Y0A21YK.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figuras/graficair}   
+\caption{Salida de un sensor Sharp respecto a su medición.}
+\label{graficair}
+\end{figure}
+
+\subsubsection{Sensores de ultrasonidos TODO}
+
+Los sensores de ultrasonidos detectan distancias basandose en el tiempo en el que un ultrasonido recorre el espacio. Normalmente, los sensores de ultrasonidos tienen dos focos, uno emisor y otro receptor. Una de las diferencias de este tipo de sensores con los sensores infrarrojos es que mientras los sensores infrarrojos toman medidas de un punto, el rango de operación de los sensores de ultrasonidos se abre en un como de 60º de amplitus desde su emisor. Se ha analizado el sensor de ultrasonidos HC-SR04 como posible candidato para formar parte del robot por su fácil accesibilidad. Otro punto importante es que en estos sensores la salida es proporcional a la distancia medida, es decir, se adecúa a una recta. Es por esto por lo que podremos realizar medidas reales directamente midiendo la salida del sensor.
+
+\subsubsection{Experimentos de medida TODO}
+
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.5\textwidth]{figuras/expir1} & \includegraphics[width=0.5\textwidth]{figuras/expus1}  \\
+\end{tabular}
+\caption{Primer experimento.}
+\label{experimento1}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.5\textwidth]{figuras/expir2} & \includegraphics[width=0.5\textwidth]{figuras/expus2}  \\
+\end{tabular}
+\caption{Segundo experimento.}
+\label{experimento2}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.5\textwidth]{figuras/expir3} & \includegraphics[width=0.5\textwidth]{figuras/expus3}  \\
+\end{tabular}
+\caption{Tercer experimento.}
+\label{experimento3}
+\end{figure} 
+
 \subsection{Sensores inerciales TODO}
 
-El control del equilibrio del robot es muy importante en configuraciones bípedas, ya que estos robots son conocidos por su facilidad para tropezar y caer al suelo. Con el objetivo de analizar la posición del robot respecto al suelo se ha requerido la inclusión de un sensor inercial.
+El control del equilibrio del robot es muy importante en configuraciones bípedas, ya que estos robots son conocidos por su facilidad para tropezar y caer al suelo. Con el objetivo de analizar la posición del robot respecto al suelo se ha requerido la inclusión de diferentes sensores inerciales.
 
-\subsubsection{Brújula}
-\subsubsection{Girsocopio TODO}
+\subsubsection{Brújula TODO}
+\subsubsection{Giroscopio TODO}
 \subsubsection{Acelerómetro TODO}
 
 
@@ -153,13 +222,135 @@ El modelo selecionado ha sido una Microsoft LifeCam Cinema (figura \ref{camara})
 
 Cabe remarcar que antes de utilizar esta cámara se realizaron pruebas con una Hama Pocket, pero dada su baja calidad de construcción presentó diversos problemas de fiabilidad y fue despreciada en favor de la Microsoft. 
 
-\section{Alimentación TODO}
+\section{Elección del controlador TODO}
 
-La batería contenida en el kit está compuesta es una batería NiMH de 8 elementos AA Sanyo Eneloop que desarrolla 9.6 voltios y 1900 mAh. Para el consumo de este robot es una opción aceptable que proporciona cerca de 10 minutos de autonomía. No está mal si se tiene en cuenta que pruebas con el CEABOT tiene una duración máxima limitada a 5 minutos. Sin embargo tiene un inconveniente, su peso y su volumen es muy alto, y al estar situado en la espalda, sube el centro de gravedad del robot de forma considerable. Esto causa inestabilidad en el robot y complica bastante la programación de desplazamientos.
+Llegamos a un punto crítico del proyecto, y es la elección de un controlador para nuestro sistema. La controlador CM-5 contenida en el kit original de Bioloid Comprehensive se encuentra muy lejos de poder soportar el conjunto de nuevos dispositivos que se usarán en el proyecto. Necesitaremos reemplazarla por un sistema mas complejo que nos permita conectar y programar los sensores seleccionados, programar algoritmos de visión y comunicarse con los servos Dynamixel.
+
+Para solucionar esto se decide colocar un SBC (Single Board Computer, ordenador de placa única), que dadas sus capacidades de procesamiento se utilizará como controlador principal. Así mismo, será el encargado de realizar el procesamiento de imágenes. Junto al SBC, se conectará un controlador mas sencillo basado en un microcontrolador para controlar los Dynamixel AX-12A por separado. 
+
+De esta forma, el controlador del robot estará formado por dos elementos, el SBC que se encargará del procesamiento de imágenenes y sensores, y un microcontrolador se encargará de la locomoción del robot.
+
+\subsection{Controlador de locomoción TODO}
+
+El controlador de locomoción debe encargarse de mover los 20 servos del robot y de comunicarse con el controlador de visión para recibir instrucciones. A continuación se realiza un estudio de posibles placas que podrían utilizarse.
+
+\subsubsection{Arduino TODO}
+
+Las placas Arduino (figura \ref{arduino}) se han hecho famosas por su fácil programación y puesta en marcha. Dada su popularidad, existe una gran comunidad de usuarios que generan documentación de forma constante. Con una placa Arduino disponemos una amplia colección de bibliotecas para interactuar con sensores y actuadores.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/arduino}   
+\caption{Placa Arduino}
+\label{arduino}
+\end{figure}
+
+Sin embargo, estas placas por si solas no soportan la comunicación con los servos Dynamixel. Por esta razón, se ha desestimado su uso en el proyecto.  
+
+\subsubsection{Arbotix}
+
+La placa Arbotix (figura \ref{arbotix}) está basada, al igual que las placas Arduino, en un microcontrolador AVR. No obstante, esta placa de desarrollo está orientada principalmente a la construcción de pequeños robots, por lo que posee capacidades mejores que las de las placas Arduino. Entre sus especificaciones destacan: 2 puertos serie (uno de ellos reservado para el bus Dynamixel), 32 pines de entrada/salida, 8 entradas analógicas, 2 drivers de 1A para motores de continua y zócalos para la conexión de módulos XBEE. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/arbotix}   
+\caption{Placa Arbotix}
+\label{arbotix}
+\end{figure}
+
+El problema de estas placas es que no existe un distribuidor que las venda en Europa. Eso no solo significa que sean difíciles de conseguir, sino tambien que no tienen demasiados usuarios, y por tanto la documentación es escasa y heterogenea.
+
+\subsubsection{Serie OpenCM TODO}
+
+Recientemente la empresa Robotis ha sacado a la venta una nueva linea de placas de desarrollo, las placas OpenCM (figura \ref{cm900}). Estas placas de desarrollo están basadas en las placas Arduino, copiando sus funcionalidades y añadiendo al sistema la posibilidad de comunicarse con actuadores Dynamixel. Su entorno de programación está basado en Arduino IDE y continene bibliotecas similares a las de Arduino para la comunicación con sensores y actuadores. Su alta compatibilidad con Arduino proporciona al usuario una mayor facilidad a la hora de buscar documentación sobre cómo utilizar la placa.
+
+[FOTO REAL DE CM900]
+
+Si bien es cierto, es necesario comentar que la primera edición, la CM900, presentó problemas en su diseño que la conviertieron en una placa muy poco fiable y propensa a romperse prematuramente.  En este proyecto se utilizará la OpenCM 904 (figura \{opencm}), sucesora de la CM900 con similares capacidades y tamaño reducido. Entre sus especificaciones destacan: microcontrolador ARM Cortex-M3, 26 pines de entrada/salida, 10 entradas analogicas de 12 bits y 3 puertos serie (uno de ellos reservado para el bus Dynamixel).
+
+[FOTO REAL DE OPENCM]
+
+\subsection{Controlador de visión TODO}
+
+Como controlador principal y maestro, se utilizará un SBC. Por tamaño y capacidades existen dos alternativas directas: La Raspberry Pi B y la BeagleBone Black.
+
+\subsubsection{Raspberry Pi TODO}
+
+La Raspberry Pi es un ordenador completo del tamaño de una tarjeta de crédito, dirigida a formar parte de proyectos de electrónica, informatica y robótica. Dado su bajo coste y fácil adquisición, la Raspberry Pi cuenta con una comunidad de usuarios muy extensa repartida a lo largo del mundo. En internet existen colecciones de tutoriales educativos para formar al usuario y dar soporte a sus proyectos. En el cuadro \ref{raspec} se describen las especificaciones técnicas de la placa.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ >{\arraybackslash}m{3.5cm} >{\arraybackslash}m{7.5cm}}
+\hline
+Especificaciones Rasp \\
+\hline \hline
+CPU & ARM 1176JZF\-S 700 MHz  \\ \hline
+Memoria (SDRAM) & 512 MB (compartidos con la GPU)\\ \hline
+Puertos USB 2.0 & 2 (vía hub USB integrado) \\ \hline
+Almacenamiento integrado & SD / MMC / ranura para SDIO \\ \hline
+Periféricos de bajo nivel & 8 x GPIO, SPI, I2C, UART \\ \hline
+Consumo energético & 700 mA (3.5 W) \\ \hline
+Fuente de alimentación & 5 V vía Micro USB o GPIO header  \\ \hline
+Dimensiones: & 85.60mm $\times$ 53.98mm\\ \hline
+Sistemas operativos soportados: &  GNU/Linux: Debian (Raspbian), Fedora (Pidora), Arch Linux (Arch Linux ARM), Slackware Linux. RISC OS2 \\ \hline
+\end{tabular}
+\caption{Especificaciones Raspberry Pi B}
+\label{raspec}
+\end{table}
+
+En el caso que nos ocupa, sería una perfecta candidata a ocuparse del procesamiento de imágenes del robot, sin embargo hay algunos detalles que es importante conocer. El primer problema de la Raspberry Pi es que la lógica de sus pines trabaja a 5V, mientras que la placa que hemos seleccionado para la parte de locomoción, la OpenCM, funciona a 3.3V. Esto significa que para comunicar ambas placas sería necesario incluir un convertidor lógico en el sistema. Por otra parte, sus GPIOs tienen un funcionamiento puramente binario, sin entradas analógicas ni generación de señales PWM. Por último, como puede observarse en la figura \ref{raspberry} aunque tiene un tamaño razonable, la placa cuenta con varios conectores de video, audio, conexion en red... etc que aunque podrían resultar útiles en otro tipo de proyectos, en nuestro caso estorbarán a la hora de integrar el dispositivo en la espalda del robot.
+
+[FOTO REAL DE UNA RASPEBRRY] TODO
+
+\subsubsection{BeagleBone Black TODO}
+
+La BeagleBone Black (figura \ref{beaglebone}), de Texas Instruments no es tan popular como la Raspberry Pi, sin embargo posee algunas características muy interesantes.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ >{\arraybackslash}m{3.5cm} >{\arraybackslash}m{7.5cm}}
+\hline
+Especificaciones BBB \\
+\hline \hline
+CPU &  AM335x 1GHz ARM Cortex-A8  \\ \hline
+Memoria (SDRAM) & 512 MiB \\ \hline
+Puertos USB 2.0 & 1x Standard A y 1x mini B \\ \hline
+Almacenamiento integrado & 4GB 8-bit eMMC / microSD \\ \hline
+Periféricos de bajo nivel & 4xUART, 8x PWM, LCD, GPMC, MMC1, 2x SPI, 2x I2C, A/D Converter, 2x CAN bus \\ \hline
+Consumo energético & 1200 mA (6 W) \\ \hline
+Fuente de alimentación & 5 V vía Micro USB, jack de 5.5mm a 5 V o GPIO header  \\ \hline
+Dimensiones: & 86.40 mm $\times$ 53.30 mm \\ \hline
+Sistemas operativos soportados: &   Fedora, Android, Ubuntu, Debian, openSUSE , Ångström, FreeBSD, NetBSD, OpenBSD, QNX, MINIX 3, RISC OS, y Windows Embedded. \\ \hline
+\end{tabular}
+\caption{Especificaciones BeagleBone Black}
+\label{blaspec}
+\end{table}
+
+Como puede observarse en el cuadro \ref{blaspec}, sus características son ligeramente superiores a las de la Raspberry. Principalmente, el hecho de que tenga tal variedad de pines la hace muy adecuada para usarse como controlador principal de un robot. La BeagleBone Black actualmente no cuenta con una comunidad tan extensa como la Raspberry Pi, pero cada vez se ve mas en proyectos. El problema fundamental de la BeagleBone Black es la falta de bibliotecas en C/C++ que permitan programar sus periféricos de bajo nivel. Esto significa que en el caso de utilizar esta placa, se deberán programar bibliotecas propias para estos propósitos. 
+
+[FIGURA DE BEAGLEBONE] TODO
+
+Por otro lado, su lógica funciona a 3.3V y es mas compacta que la Raspberry Pi. Por todo lo comentado, y aunque trabajar con ella pueda resultar mas tedioso que con la Raspberry Pi, se ha seleccionado la Beaglebone Black como controlador principal del robot.
+
+\subsection{Diseño del sistema TODO}
+
+Una vez se ha seleccionado todos los elementos que fomarán parte del robot, se ha diseñado el conexionado que llevarán. Tal y como se ha ido viendo a lo largo de este apartado, por un lado tendremos la OpenCM que se encargará de controlar el servo PWM y los servos Dynamixel. La BeagleBone en cambio, se encargará de recibir los datos de todos los sensores y de la cámara. Las dos placas se conectarán en serie. El diagrama de la figura \ref{dia1} representa las conexiones de todos los dispositivos, a excepción de la parte de alimentación, que se verá en la próxima sección.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figuras/dia1}   
+\caption{Diagrama de conexiones}
+\label{dia1}
+\end{figure}
+
+
+\section{Alimentación}
+
+La batería contenida en el kit es una batería NiMH de 8 elementos AA Sanyo Eneloop que desarrolla 9.6V y 1900mAh. Para el consumo de este robot es una opción aceptable que proporciona cerca de 10 minutos de autonomía. No está mal si se tiene en cuenta que pruebas con el CEABOT tiene una duración máxima limitada a 5 minutos. Sin embargo tiene un inconveniente, su peso y su volumen es muy alto, y al estar situado en la espalda, sube el centro de gravedad del robot de forma considerable. Esto causa inestabilidad en el robot y complica bastante la programación de desplazamientos.
 
 \subsection{Batería}
 
-Por las razones descritas, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9 a 12 voltios, respecto al resto de elementos que serán alimentados a 5 o 3.3 voltios, nos centraremos principalmente en encontrar una batería adecuada para los servos.
+Por las razones descritas, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9V a 12V, respecto al resto de elementos que serán alimentados a 5V o 3.3V, nos centraremos principalmente en encontrar una batería adecuada para los servos.
 
 Hoy en dia, las baterías ne NiMH están empezando a caer en desuso a favor de la baterías de litio. Se barajaron dos posibilidades.
 
@@ -167,17 +358,17 @@ Hoy en dia, las baterías ne NiMH están empezando a caer en desuso a favor de la 
 
 \subsubsection{Baterías de polímero de litio}
 
-Las baterías de polímero de litio, mas conocidas como baterías LiPo, destacan por desarrollar una tasa de descarga bastante alta y por tener un tamaño y peso reducido. Dado su uso en automodelismo y aeromodelismo, son unas baterías muy comunes que en los últimos años han ido bajando su precio. Actualmente existe una gran variedad de baterías LiPo de diversos tamaños y precio asequible. Cada célula LiPo ofrece 3.7 voltios, por lo que la elección correcta para este robot sería una batería de 3S, o lo que es lo mismo, 11,1 voltios. Sin embargo, las baterías LiPo tienen una desventaja importante, su fragilidad. El proceso de carga y descarga de una batería de este tipo no es un asunto trivial, una sobredescarga de la batería provoca un deterioro inmediato de la misma, calentando sus elementos e incluso pudiendo llegar a incendiarse. Es por ello que se necesita un cargador con capacidad para balancear las células, de forma que las tensiones de cada una de ellas se tengan bajo control durante el proceso.
+Las baterías de polímero de litio, mas conocidas como baterías LiPo, destacan por desarrollar una tasa de descarga bastante alta y por tener un tamaño y peso reducido. Dado su uso en automodelismo y aeromodelismo, son unas baterías muy comunes que en los últimos años han ido bajando su precio. Actualmente existe una gran variedad de baterías LiPo de diversos tamaños y precio asequible. Cada célula LiPo ofrece 3.7V, por lo que la elección correcta para este robot sería una batería de 3S, o lo que es lo mismo, 11,1V. Sin embargo, las baterías LiPo tienen una desventaja importante, su fragilidad. El proceso de carga y descarga de una batería de este tipo no es un asunto trivial, una sobredescarga de la batería provoca un deterioro inmediato de la misma, calentando sus elementos e incluso pudiendo llegar a incendiarse. Es por ello que se necesita un cargador con capacidad para balancear las células, de forma que las tensiones de cada una de ellas se tengan bajo control durante el proceso.
 
 \subsubsection{Baterías de litio fosfato de hierro}  
 
-Las batería de litio fosfato de hierro, es decir, LiFe, son conocidas por su gran resistencia y larga vida útil. Cada célula de LiFe desarrolla 3.3 voltios y no presenta problemas por sobredescargas. De hecho, estas baterías ni siquiera requieren de un cargador balanceador para su carga, sino que pueden cargarse sin problemas con un cargador normal. El gran problema de estas baterías es que sus elementos son bastante voluminosos, y, al no ser tan populares como las LiPo, tampoco es demasiado fácil encontrar modelos de tamaño y capacidad adecuados en el mercado. 
+Las batería de litio fosfato de hierro, es decir, LiFe, son conocidas por su gran resistencia y larga vida útil. Cada célula de LiFe desarrolla 3.3V y no presenta problemas por sobredescargas. De hecho, estas baterías ni siquiera requieren de un cargador balanceador para su carga, sino que pueden cargarse sin problemas con un cargador normal. El gran problema de estas baterías es que sus elementos son bastante voluminosos, y, al no ser tan populares como las LiPo, tampoco es demasiado fácil encontrar modelos de tamaño y capacidad adecuados en el mercado. 
 
 \subsubsection{Elección y diseño del sistema}  
 
 Por su tamaño y prestaciones se ha elegido una batería LiPo Rhino de 3S y 1750mAh. Esta batería tiene unas dimensiones perfectas para montarse en la cintura del robot y su peso es 50 ( TODO pesarla, que ahora no la tengo a mano ) gramos menor al de la batería original (215 gramos). 
 
-A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación de la autonomía del robot basada en el consumo medio de todos sus elementos por separado.
+A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación del consumo medio de todos sus elementos.
 
 % TODO foto de la batería
 
@@ -207,26 +398,25 @@ Por tanto, la estimación de autonomía del robot en funcionamiento es la siguient
 
 Entre 8 y 9 minutos de autonomía teóricos es un buena cifra contando con el tamaño del robot y sus prestaciones. Como conclusión podemos remarcar el hecho de que gracias al nuevo sistema de alimentación hemos podido introducir los dispositivos necesarios para cumplir los requerimientos de este proyecto sin comprometer la autonomía del robot.
 
-\subsection{Regulador de tensión TODO }
+\subsection{Regulador de tensión}
 
-Hasta aquí parece que es suficiente con la elección de la nueva batería, sin embargo, aún falta un detalle que deberemos resolver. La mayor parte de los dispositivos que forman el conjunto están alimentados a 5 voltios. La batería que hemos elegido tiene una tensión de 11.1 voltios, y se ha observado, que cuando está cargada al máximo desarrolla hasta 12.6 voltios. No podemos alimentar la BeagleBone Black y el resto de componentes a una tensión tan alta, por lo que será necesario colocar un regulador que nos proporcione 5 voltios.
+Hasta aquí parece que es suficiente con la elección de la nueva batería, sin embargo, aún falta un detalle que deberemos resolver. La mayor parte de los dispositivos que forman el conjunto están alimentados a 5V. La batería que hemos elegido tiene una tensión de 11.1V, y se ha observado, que cuando está cargada al máximo desarrolla hasta 12.6V. No podemos alimentar la BeagleBone Black y el resto de componentes a una tensión tan alta, por lo que será necesario colocar un regulador que nos proporcione 5V.
 
-\subsubsection{Regulador lineal TODO }
+\subsubsection{Regulador lineal}
 
-La primera idea fue utilizar un pequeño circuito con un regulador lineal LM7805 (figura \ref{7805}). El LM7805 es un componente muy común en los circuitos electrónicos, ya que ofrecen una salida de 5 voltios a partir de tensiones de entrada de hasta 35 voltios. En principio no parecería muy descabellado conectar los servos AX-12A  y la placa OpenCM directamente a la batería, y conectar en resto de componentes a través del regulador.
+La primera idea fue utilizar un pequeño circuito con un regulador lineal LM7805. El LM7805 es un componente muy común en los circuitos electrónicos, ya que ofrecen una salida de 5V a partir de tensiones de entrada de hasta 35V. En principio no parecería muy descabellado conectar los servos AX-12A  y la placa OpenCM directamente a la batería, y conectar en resto de componentes a través del regulador.
+\medskip
 
-[FOTO DE UN REGULADOR]
-
-No obstante existen dos problemas para realizar este montaje. El primero es que la eficiencia de este componente es muy pobre, cercana al 60\% según su hoja de características. Esto provocaría una disminución drástica en el tiempo de operación del robot y una disipación de energia tan alta que sería necesario incluir un disipador. Pero el segundo problema es mas importante, el componente está diseñado para aportar una corriente máxima al circuito de 1 amperio. Teniendo en cuenta los datos del cuadro \ref{consumo}, solo la BeagleBone Black ya requiere una corriente de 1.2 amperios, y junto al resto de componentes, asciende hasta 1.7 amperios . Un consumo superior al marcado por el fabricante puede producir fallos de funcionamiento en el componente. En este caso particular, podría producirse un calentamiento excesivo, que a su vez puede llegar a provocar cortocircuitos internos entre la patilla de entrada y la de salida. Las consecuencias de un fallo así serían nefastas, ya que deteriorarían los dispositivos conectados a él.
+No obstante existen dos problemas para realizar este montaje. El primero es que la eficiencia de este componente es muy pobre, cercana al 60\% según su hoja de características. Esto provocaría una disminución drástica en el tiempo de operación del robot y una disipación de energia tan alta que sería necesario incluir un disipador. Pero el segundo problema es mas importante, el componente está diseñado para aportar una corriente máxima al circuito de 1 amperio. Teniendo en cuenta los datos del cuadro \ref{consumo}, solo la BeagleBone Black ya requiere una corriente de 1.2A, y junto al resto de componentes, asciende hasta 1.7A . Un consumo superior al marcado por el fabricante puede producir fallos de funcionamiento en el componente. En este caso particular, podría producirse un calentamiento excesivo, que a su vez puede llegar a provocar cortocircuitos internos entre la patilla de entrada y la de salida. Las consecuencias de un fallo así serían nefastas, ya que deteriorarían los dispositivos conectados a él.
 
 \subsubsection{Convertidor UBEC TODO }
 
-Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC se utilizan normalmente con baterías de litio cuando el sistema necesita una tensión de alimentación de 5 o 6 voltios. Es por ello que se utilizan mucho en receptores de emisoras de radiocontrol, y gracias a esto existe una amplia variedad de UBECs asequibles en el mercado. La mayor ventaja de estos circuitos convertidores es su eficiencia superior al 90\%. Gracias a esto nuestro sistema tebndrá unas perdidas menores, no se calentará en exceso y gozará de una autonomía mayor. 
+Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC se utilizan normalmente con baterías de litio cuando el sistema necesita una tensión de alimentación de 5V o 6V. Es por ello que se utilizan mucho en receptores de emisoras de radiocontrol, y gracias a esto existe una amplia variedad de UBECs asequibles en el mercado. La mayor ventaja de estos circuitos convertidores es su eficiencia superior al 90\%. Gracias a esto nuestro sistema tebndrá unas perdidas menores, no se calentará en exceso y gozará de una autonomía mayor. 
 
 [FOTO DE UBEC]
 
-\subsubsection{Elección final}
+\subsubsection{Elección final TODO }
 
-Tal y como se comentaba anteriormente, nuestro sistema tiene un consumo estimado de unos 1.7 amperios en la salida de 5 voltios, por lo que un UBEC de 3 amperios sería suficiente para proporcionar al circuito la corriente necesaria para su funcionamiento. Adicionalmente se han incluido unos condensadores en la entrada y salida del circuito para ... como ser verá en el apartado ( TODO )
+Tal y como se comentaba anteriormente, nuestro sistema tiene un consumo estimado de unos 1.7A en la salida de 5V, por lo que un UBEC de 3A sería suficiente para proporcionar al circuito la corriente necesaria para su funcionamiento. Adicionalmente se han incluido unos condensadores en la entrada y salida del circuito para ... como ser verá en el apartado ( TODO )
 
 \paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.

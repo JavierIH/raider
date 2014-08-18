@@ -13,9 +13,9 @@
 \contentsline {section}{\numberline {2.1}Linea de investigaci\'on de robots mini-humanoides}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Campeonato CEABOT}{6}{section.2.2}
 \contentsline {paragraph}{Palabras clave:}{8}{section*.8}
-\contentsline {chapter}{\numberline {3}Estado del arte}{11}{chapter.3}
+\contentsline {chapter}{\numberline {3}Estado del arte TODO VACIO }{11}{chapter.3}
 \contentsline {paragraph}{Palabras clave:}{11}{section*.9}
-\contentsline {chapter}{\numberline {4}Objetivos TODO}{13}{chapter.4}
+\contentsline {chapter}{\numberline {4}Objetivos TODO RE-ESCRIBIR }{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Implantaci\'on de un controlador basado en visi\'on por computador}{13}{section.4.1}
 \contentsline {section}{\numberline {4.2}Estudio de sensores y actuadores}{14}{section.4.2}
 \contentsline {section}{\numberline {4.3}Dise\~no electr\'onico}{14}{section.4.3}
@@ -24,115 +24,121 @@
 \contentsline {paragraph}{Palabras clave:}{17}{section*.10}
 \contentsline {chapter}{\numberline {5}Elecci\'on de componentes}{19}{chapter.5}
 \contentsline {section}{\numberline {5.1}Plataforma rob\'otica}{19}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Selecci\'on de una plataforma rob\'otica}{19}{subsection.5.1.1}
-\contentsline {subsubsection}{Hitec Robonova}{19}{section*.11}
-\contentsline {subsubsection}{Kondo KHR-3HV}{20}{section*.12}
+\contentsline {subsection}{\numberline {5.1.1}Selecci\'on de una plataforma rob\'otica}{20}{subsection.5.1.1}
+\contentsline {subsubsection}{Hitec Robonova}{20}{section*.11}
+\contentsline {subsubsection}{Kondo KHR-3HV}{21}{section*.12}
 \contentsline {subsubsection}{Vstone Robovie-X}{21}{section*.13}
 \contentsline {subsubsection}{Robotis Bioloid}{22}{section*.14}
 \contentsline {subsubsection}{comparativa y elecci\'on final TODO}{24}{section*.15}
-\contentsline {section}{\numberline {5.2}Modificaciones estructurales}{24}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Cabeza m\'ovil TODO}{24}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Cintura m\'ovil TODO}{24}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Elecci\'on del controlador TODO}{25}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Controlador de locomoci\'on TODO}{25}{subsection.5.3.1}
-\contentsline {subsubsection}{Arbotix TODO}{25}{section*.16}
-\contentsline {subsubsection}{Serie OpenCM TODO}{25}{section*.17}
-\contentsline {subsection}{\numberline {5.3.2}Controlador de visi\'on TODO}{25}{subsection.5.3.2}
-\contentsline {subsubsection}{BeagleBone Black TODO}{25}{section*.18}
-\contentsline {subsubsection}{Raspberry Pi TODO}{25}{section*.19}
-\contentsline {subsubsection}{Comparativa y selecci\'on TODO}{25}{section*.20}
-\contentsline {section}{\numberline {5.4}Sensorizaci\'on TODO}{25}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Sensores de distancia TODO}{25}{subsection.5.4.1}
-\contentsline {subsubsection}{Infrarrojos TODO}{25}{section*.21}
-\contentsline {subsubsection}{Ultrasonidos TODO}{25}{section*.22}
-\contentsline {subsection}{\numberline {5.4.2}Sensores inerciales TODO}{25}{subsection.5.4.2}
-\contentsline {subsubsection}{Br\'ujula}{26}{section*.23}
-\contentsline {subsubsection}{Girsocopio TODO}{26}{section*.24}
-\contentsline {subsubsection}{Aceler\'ometro TODO}{26}{section*.25}
-\contentsline {subsection}{\numberline {5.4.3}C\'amara TODO}{26}{subsection.5.4.3}
-\contentsline {section}{\numberline {5.5}Alimentaci\'on TODO}{27}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Bater\IeC {\'\i }a}{27}{subsection.5.5.1}
-\contentsline {subsubsection}{Bater\IeC {\'\i }as de pol\IeC {\'\i }mero de litio}{28}{section*.26}
-\contentsline {subsubsection}{Bater\IeC {\'\i }as de litio fosfato de hierro}{28}{section*.27}
-\contentsline {subsubsection}{Elecci\'on y dise\~no del sistema}{28}{section*.28}
-\contentsline {subsection}{\numberline {5.5.2}Regulador de tensi\'on TODO }{29}{subsection.5.5.2}
-\contentsline {subsubsection}{Regulador lineal TODO }{30}{section*.29}
-\contentsline {subsubsection}{Convertidor UBEC TODO }{30}{section*.30}
-\contentsline {subsubsection}{Elecci\'on final}{31}{section*.31}
-\contentsline {paragraph}{Palabras clave:}{31}{section*.32}
-\contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{33}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{33}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{34}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{35}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}KiCad}{35}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{36}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}OpenCV}{36}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Qt Creator}{37}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}CMake}{38}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}CM9 IDE}{38}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Git}{39}{subsection.6.3.5}
-\contentsline {paragraph}{Palabras clave:}{39}{section*.33}
-\contentsline {chapter}{\numberline {7}Dise\~no de las partes mec\'anicas TODO}{41}{chapter.7}
-\contentsline {section}{\numberline {7.1}Cabeza}{41}{section.7.1}
-\contentsline {section}{\numberline {7.2}Cintura}{41}{section.7.2}
-\contentsline {section}{\numberline {7.3}Tronco}{42}{section.7.3}
-\contentsline {section}{\numberline {7.4}Brazos}{42}{section.7.4}
-\contentsline {section}{\numberline {7.5}Piernas}{42}{section.7.5}
-\contentsline {section}{\numberline {7.6}Pies y tobillos}{42}{section.7.6}
-\contentsline {section}{\numberline {7.7}Lista de piezas}{42}{section.7.7}
-\contentsline {paragraph}{Palabras clave:}{42}{section*.34}
-\contentsline {chapter}{\numberline {8}Desarrollo}{47}{chapter.8}
-\contentsline {section}{\numberline {8.1}Montaje del controlador}{47}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Esquema de montaje}{47}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Sistema de alimentaci\'on}{47}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Adecuaci\'on de sensores}{47}{subsection.8.1.3}
-\contentsline {subsection}{\numberline {8.1.4}Desarrollo de una placa de expansi\'on}{47}{subsection.8.1.4}
-\contentsline {subsection}{\numberline {8.1.5}Puesta en marcha del controlador}{47}{subsection.8.1.5}
-\contentsline {paragraph}{Palabras clave:}{47}{section*.35}
-\contentsline {chapter}{\numberline {9}Programaci\'on TODO}{49}{chapter.9}
-\contentsline {section}{\numberline {9.1}Configuraci\'on de la BeagleBone Black TODO}{49}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}Sistema operativo TODO}{49}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}Instalaci\'on de librer\IeC {\'\i }as TODO}{49}{subsection.9.1.2}
-\contentsline {subsection}{\numberline {9.1.3}Programaci\'es de scripts de configuraci\'on TODO}{49}{subsection.9.1.3}
-\contentsline {section}{\numberline {9.2}Sistema de locomoci\'on TODO}{49}{section.9.2}
-\contentsline {subsection}{\numberline {9.2.1}Movimiento del servo PWM}{49}{subsection.9.2.1}
-\contentsline {subsubsection}{Servo::attach(uint8 pin)}{50}{section*.36}
-\contentsline {subsubsection}{Servo::writeMicroseconds(uint16 pulseWidth)}{50}{section*.37}
-\contentsline {subsection}{\numberline {9.2.2}Movimiento de los actuadores Dynamixel}{50}{subsection.9.2.2}
-\contentsline {subsection}{\numberline {9.2.3}Movimiento sincronizado de las articulaciones}{52}{subsection.9.2.3}
-\contentsline {subsubsection}{class Robot}{53}{section*.38}
-\contentsline {subsubsection}{Robot::Robot()}{54}{section*.39}
-\contentsline {subsubsection}{void Robot::setTargetPosition(int,int,... int)}{54}{section*.40}
-\contentsline {subsubsection}{void Robot::setTargetOffset(int,int,... int)}{54}{section*.41}
-\contentsline {subsubsection}{void Robot::updateCurrentPosition()}{54}{section*.42}
-\contentsline {subsubsection}{void Robot::move(float)}{54}{section*.43}
-\contentsline {subsection}{\numberline {9.2.4}Funciones de movimientos combinados TODo }{55}{subsection.9.2.4}
-\contentsline {subsubsection}{void movHead(int)}{55}{section*.44}
-\contentsline {subsubsection}{void movVertical(int,int) TODO}{55}{section*.45}
-\contentsline {subsubsection}{void movLateral(int,int) TODO}{55}{section*.46}
-\contentsline {subsubsection}{void movFrontal(int,int) TODO}{55}{section*.47}
-\contentsline {subsection}{\numberline {9.2.5}Creaci\'on de movimientos completos TODO}{55}{subsection.9.2.5}
-\contentsline {subsection}{\numberline {9.2.6}Controlador de movimientos TODO}{55}{subsection.9.2.6}
-\contentsline {section}{\numberline {9.3}Comunicaci\'on serie}{55}{section.9.3}
-\contentsline {subsection}{\numberline {9.3.1}Comunicaci\'on serie en OpenCM TODO}{58}{subsection.9.3.1}
-\contentsline {subsubsection}{void HardwareSerial::begin(unsigned int baud) TODO}{59}{section*.48}
-\contentsline {subsubsection}{unsigned int HardwareSerial::available() TODO}{59}{section*.49}
-\contentsline {subsubsection}{unsigned char HardwareSerial::read() TODO}{59}{section*.50}
-\contentsline {subsubsection}{void HardwareSerial::flush() TODO}{59}{section*.51}
-\contentsline {subsection}{\numberline {9.3.2}Comunicaci\'on serie en BeagleBone TODO}{59}{subsection.9.3.2}
-\contentsline {subsection}{\numberline {9.3.3}Comunicaci\'on con m\'odulo Bluetooth TODO}{59}{subsection.9.3.3}
-\contentsline {section}{\numberline {9.4}Algoritmos de visi\'on TODO}{59}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}An\'alisis de trayectorias en navegaci\'on TODO}{59}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}B\'usqueda de lineas TODO}{59}{subsection.9.4.2}
-\contentsline {subsection}{\numberline {9.4.3}Lectura de c\'odigos QR TODO}{59}{subsection.9.4.3}
-\contentsline {paragraph}{Palabras clave:}{59}{section*.52}
-\contentsline {chapter}{\numberline {10}Aplicaciones}{61}{chapter.10}
-\contentsline {section}{\numberline {10.1}CEABOT 2014}{61}{section.10.1}
-\contentsline {section}{\numberline {10.2}Spain Experience}{61}{section.10.2}
-\contentsline {paragraph}{Palabras clave:}{61}{section*.53}
-\contentsline {chapter}{\numberline {11}Evaluaci\'on de resultados}{63}{chapter.11}
-\contentsline {section}{\numberline {11.1}Pruebas de funcionamiento}{63}{section.11.1}
-\contentsline {section}{\numberline {11.2}Conclusi\'on}{63}{section.11.2}
-\contentsline {section}{\numberline {11.3}Situaci\'on y desarrollos futuros}{63}{section.11.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{65}{section.11.3}
+\contentsline {section}{\numberline {5.2}Modificaciones estructurales}{25}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Cabeza m\'ovil TODO}{25}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Cintura m\'ovil TODO}{26}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Sensorizaci\'on TODO}{26}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Sensores de distancia TODO}{26}{subsection.5.3.1}
+\contentsline {subsubsection}{Sensores de infrarrojos TODO}{26}{section*.16}
+\contentsline {subsubsection}{Sensores de ultrasonidos TODO}{27}{section*.17}
+\contentsline {subsubsection}{Experimentos de medida TODO}{28}{section*.18}
+\contentsline {subsection}{\numberline {5.3.2}Sensores inerciales TODO}{29}{subsection.5.3.2}
+\contentsline {subsubsection}{Br\'ujula TODO}{30}{section*.19}
+\contentsline {subsubsection}{Giroscopio TODO}{30}{section*.20}
+\contentsline {subsubsection}{Aceler\'ometro TODO}{30}{section*.21}
+\contentsline {subsection}{\numberline {5.3.3}C\'amara TODO}{30}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Elecci\'on del controlador TODO}{31}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Controlador de locomoci\'on TODO}{32}{subsection.5.4.1}
+\contentsline {subsubsection}{Arduino TODO}{32}{section*.22}
+\contentsline {subsubsection}{Arbotix TODO}{32}{section*.23}
+\contentsline {subsubsection}{Serie OpenCM TODO}{33}{section*.24}
+\contentsline {subsection}{\numberline {5.4.2}Controlador de visi\'on TODO}{34}{subsection.5.4.2}
+\contentsline {subsubsection}{Raspberry Pi TODO}{34}{section*.25}
+\contentsline {subsubsection}{BeagleBone Black TODO}{35}{section*.26}
+\contentsline {subsection}{\numberline {5.4.3}Dise\~no del sistema TODO}{36}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Alimentaci\'on}{37}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Bater\IeC {\'\i }a}{38}{subsection.5.5.1}
+\contentsline {subsubsection}{Bater\IeC {\'\i }as de pol\IeC {\'\i }mero de litio}{38}{section*.27}
+\contentsline {subsubsection}{Bater\IeC {\'\i }as de litio fosfato de hierro}{38}{section*.28}
+\contentsline {subsubsection}{Elecci\'on y dise\~no del sistema}{39}{section*.29}
+\contentsline {subsection}{\numberline {5.5.2}Regulador de tensi\'on}{39}{subsection.5.5.2}
+\contentsline {subsubsection}{Regulador lineal TODO }{40}{section*.30}
+\contentsline {subsubsection}{Convertidor UBEC TODO }{40}{section*.31}
+\contentsline {subsubsection}{Elecci\'on final TODO }{41}{section*.32}
+\contentsline {paragraph}{Palabras clave:}{41}{section*.33}
+\contentsline {chapter}{\numberline {6}Descripci\'on de las herramientas a utilizar}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Herramientas de dise\~no y fabricaci\'on de piezas}{43}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}OpenSCAD}{43}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Impresi\'on 3d}{44}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Herramientas de dise\~no de circuitos}{45}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}KiCad}{45}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Herramientas de programaci\'on}{46}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}OpenCV}{46}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Qt Creator}{47}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}CMake}{48}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}CM9 IDE}{48}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Git}{49}{subsection.6.3.5}
+\contentsline {paragraph}{Palabras clave:}{49}{section*.34}
+\contentsline {chapter}{\numberline {7}Dise\~no de las partes mec\'anicas TODO}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}Cabeza}{51}{section.7.1}
+\contentsline {section}{\numberline {7.2}Cintura}{51}{section.7.2}
+\contentsline {section}{\numberline {7.3}Tronco}{52}{section.7.3}
+\contentsline {section}{\numberline {7.4}Brazos}{52}{section.7.4}
+\contentsline {section}{\numberline {7.5}Piernas}{52}{section.7.5}
+\contentsline {section}{\numberline {7.6}Pies y tobillos}{52}{section.7.6}
+\contentsline {section}{\numberline {7.7}Lista de piezas}{52}{section.7.7}
+\contentsline {paragraph}{Palabras clave:}{52}{section*.35}
+\contentsline {chapter}{\numberline {8}Desarrollo TODO MONTAJES}{57}{chapter.8}
+\contentsline {section}{\numberline {8.1}Adecuaci\'on de sensores}{57}{section.8.1}
+\contentsline {section}{\numberline {8.2}Desarrollo de una placa de expansi\'on}{57}{section.8.2}
+\contentsline {section}{\numberline {8.3}Montaje}{57}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Montaje de la placa de expansi\'on}{57}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Integraci\'on de la c\'amara en la cabeza}{57}{subsection.8.3.2}
+\contentsline {paragraph}{Palabras clave:}{57}{section*.36}
+\contentsline {chapter}{\numberline {9}Programaci\'on TODO}{59}{chapter.9}
+\contentsline {section}{\numberline {9.1}Configuraci\'on de la BeagleBone Black TODO}{59}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}Sistema operativo TODO}{59}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}Instalaci\'on de librer\IeC {\'\i }as TODO}{59}{subsection.9.1.2}
+\contentsline {subsection}{\numberline {9.1.3}Configuraci\'on de la c\'amara y driver TODO}{59}{subsection.9.1.3}
+\contentsline {subsection}{\numberline {9.1.4}Programaci\'es de scripts de configuraci\'on TODO}{59}{subsection.9.1.4}
+\contentsline {section}{\numberline {9.2}Sistema de locomoci\'on TODO}{59}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Movimiento del servo PWM}{59}{subsection.9.2.1}
+\contentsline {subsubsection}{Servo::attach(uint8 pin)}{60}{section*.37}
+\contentsline {subsubsection}{Servo::writeMicroseconds(uint16 pulseWidth)}{60}{section*.38}
+\contentsline {subsection}{\numberline {9.2.2}Movimiento de los actuadores Dynamixel}{60}{subsection.9.2.2}
+\contentsline {subsection}{\numberline {9.2.3}Movimiento sincronizado de las articulaciones}{62}{subsection.9.2.3}
+\contentsline {subsubsection}{class Robot}{63}{section*.39}
+\contentsline {subsubsection}{Robot::Robot()}{64}{section*.40}
+\contentsline {subsubsection}{void Robot::setTargetPosition(int,int,... int)}{64}{section*.41}
+\contentsline {subsubsection}{void Robot::setTargetOffset(int,int,... int)}{64}{section*.42}
+\contentsline {subsubsection}{void Robot::updateCurrentPosition()}{64}{section*.43}
+\contentsline {subsubsection}{void Robot::move(float)}{64}{section*.44}
+\contentsline {subsection}{\numberline {9.2.4}Funciones de movimientos combinados TODo }{65}{subsection.9.2.4}
+\contentsline {subsubsection}{void movHead(int)}{65}{section*.45}
+\contentsline {subsubsection}{void movVertical(int,int) TODO}{65}{section*.46}
+\contentsline {subsubsection}{void movLateral(int,int) TODO}{65}{section*.47}
+\contentsline {subsubsection}{void movFrontal(int,int) TODO}{65}{section*.48}
+\contentsline {subsection}{\numberline {9.2.5}Creaci\'on de movimientos completos TODO}{65}{subsection.9.2.5}
+\contentsline {subsection}{\numberline {9.2.6}Controlador de movimientos TODO}{65}{subsection.9.2.6}
+\contentsline {section}{\numberline {9.3}Comunicaci\'on serie}{65}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}Comunicaci\'on serie en OpenCM TODO}{68}{subsection.9.3.1}
+\contentsline {subsubsection}{void HardwareSerial::begin(unsigned int baud) TODO}{69}{section*.49}
+\contentsline {subsubsection}{unsigned int HardwareSerial::available() TODO}{69}{section*.50}
+\contentsline {subsubsection}{unsigned char HardwareSerial::read() TODO}{69}{section*.51}
+\contentsline {subsubsection}{void HardwareSerial::flush() TODO}{69}{section*.52}
+\contentsline {subsection}{\numberline {9.3.2}Comunicaci\'on serie en BeagleBone TODO}{69}{subsection.9.3.2}
+\contentsline {subsection}{\numberline {9.3.3}Comunicaci\'on con m\'odulo Bluetooth TODO}{69}{subsection.9.3.3}
+\contentsline {section}{\numberline {9.4}Programaci\'on de sensores TODO}{69}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}Infrarrojos TODO}{69}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}IMU TODO}{69}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.3}Br\'ujula TODO}{69}{subsection.9.4.3}
+\contentsline {section}{\numberline {9.5}Algoritmos de visi\'on TODO}{69}{section.9.5}
+\contentsline {subsection}{\numberline {9.5.1}An\'alisis de trayectorias en navegaci\'on TODO}{69}{subsection.9.5.1}
+\contentsline {subsection}{\numberline {9.5.2}B\'usqueda de lineas TODO}{69}{subsection.9.5.2}
+\contentsline {subsection}{\numberline {9.5.3}Lectura de c\'odigos QR TODO}{69}{subsection.9.5.3}
+\contentsline {paragraph}{Palabras clave:}{69}{section*.53}
+\contentsline {chapter}{\numberline {10}Aplicaciones}{71}{chapter.10}
+\contentsline {section}{\numberline {10.1}CEABOT 2014}{71}{section.10.1}
+\contentsline {section}{\numberline {10.2}Spain Experience}{71}{section.10.2}
+\contentsline {paragraph}{Palabras clave:}{71}{section*.54}
+\contentsline {chapter}{\numberline {11}Evaluaci\'on de resultados}{73}{chapter.11}
+\contentsline {section}{\numberline {11.1}Pruebas de funcionamiento}{73}{section.11.1}
+\contentsline {section}{\numberline {11.2}Conclusi\'on}{73}{section.11.2}
+\contentsline {section}{\numberline {11.3}Situaci\'on y desarrollos futuros}{73}{section.11.3}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{75}{section.11.3}

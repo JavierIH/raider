@@ -13,23 +13,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Hitec Robonova}}{20}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Kondo KHR-3HV}}{21}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Vstone Robovie-X}}{22}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Bioloid Premium}}{23}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Sensor inercial MPU9150}}{26}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Microsoft LifeCam Cinema}}{27}{figure.5.6}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Hitec Robonova}}{21}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Kondo KHR-3HV}}{22}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Vstone Robovie-X}}{23}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Bioloid Premium}}{24}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Salida de un sensor Sharp respecto a su medici\'on.}}{27}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Primer experimento.}}{28}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Segundo experimento.}}{28}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Tercer experimento.}}{29}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Sensor inercial MPU9150}}{30}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Microsoft LifeCam Cinema}}{31}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Placa Arbotix}}{33}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Diagrama de conexiones}}{37}{figure.5.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{34}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{35}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces KiCad}}{36}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Qt Creator}}{37}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces CM9 IDE}}{38}{figure.6.5}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{44}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{45}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces KiCad}}{46}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Qt Creator}}{47}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces CM9 IDE}}{48}{figure.6.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Amplitud de giro de un AX-12A}}{52}{figure.9.1}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Esquema de puertos serie en una BeagleBone Black}}{57}{figure.9.2}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{58}{figure.9.3}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Amplitud de giro de un AX-12A}}{62}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Esquema de puertos serie en una BeagleBone Black}}{67}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{68}{figure.9.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
