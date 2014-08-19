@@ -1,53 +1,25 @@
 \chapter{Introducción}
 
-En este capítulo...
-
 %section es un apartado dentro de un chapter. También existe subsection y subsubsection
-
 %las referencias a artículos se ponen con \cite, 
 %las referencias a imágenes \ref, 
 %y las referencias a ecuaciones \eqref
 
 Este tema.... Esto es un ejemplo de cita de un artículo \cite{gonzalezeducational}.
 
-%itemize es una lista. Cada término lleva delante un \item
-\begin{itemize}
-\item \textbf{ejemplo de lista de puntos}. Ejemplo.
-\item \textbf{ejemplo2 de lista}. Ejemplo2.
-\end{itemize} 
+%\section{Introduccion a la robótica Open-Source TODO Muchas papeletas para ser borrado}
 
-Ejemplo de referencia a figura (figura \ref{uc3m}).
+% TODO TODO TODO TODO TODO (Lo siguiente son ideas sueltas sin orden)
 
-%caption es el pie de foto, y label es el nombre que se da a la imagen para referenciarla después. label no puede llevar acentos y no se muestra de cara al documento final (es sólo interno).
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{figuras/uc3m}   
-\caption{Logotipo de la UC3M \copyright UC3M}
-\label{uc3m}
-\end{figure}
+%En los ultimos años blablabla impresoras 3d. El uso de esta nueva herramienta ha revolucionado blablabla hacer robots. La fabricación de piezas, que en la mayoría de los caso resultaba inaccesible para los estudiantes interesados en construir sus propios prototipos, se ha visto impulsada enormemente. Gracias a esto ahora tenemos a nuestro alcance la posibilidad de fabricar de una forma muy rápida y económica robots de un nivel superior al que estamos acostumbrados a ver.
+
+%Una de las ramas de la robótica que mas puede haberse beneficiado de este hecho es la robótica humanoide. 
+
+% El campo de la robótica humanoide tiene como objetivo el desarrollo de robots antropomórficos. El motivo principal es favorecer el hecho de que los robots se desenvuelvan en entornos diseñados por y para seres humanos. Otros robots, como los robots móviles movidos por ruedas, suelen necesitar entornos modificados convenientemente para poder suplir las necesidades que se requieren. Por el contrario, un robot humanoide posee la ventaja de poder interaccionar con un entorno ya existente, así como la posibilidad de utilizar herramientas humanas. Por supuesto, el acceso de un alumno a un robot de este tipo parece algo impensable. Es por ello que en la asociación de robótica existe un linea de investigación de mini-humanoides. A priori, puede parecer que este tipo de robots están muy alejados de los humanoides de los laboratorios mas famosos, sin embargo, suponen un punto de partida viable para el comienzo de su estudio. Los miembros del grupo de mini-humanoides, tienen la oportunidad de trabajar libremente con robots reales, experimentando con su construcción, programación y modificación.
 
 
 
-La idea...
-
-\section{Introduccion a la robótica Open-Source TODO}
-
-TODO TODO TODO TODO TODO (Lo siguiente son ideas sueltas sin orden)
-
-En los ultimos años blablabla impresoras 3d. El uso de esta nueva herramienta ha revolucionado blablabla hacer robots. La fabricación de piezas, que en la mayoría de los caso resultaba inaccesible para los estudiantes interesados en construir sus propios prototipos, se ha visto impulsada enormemente. Gracias a esto ahora tenemos a nuestro alcance la posibilidad de fabricar de una forma muy rápida y económica robots de un nivel superior al que estamos acostumbrados a ver.
-
-Una de las ramas de la robótica que mas puede haberse beneficiado de este hecho es la robótica humanoide. 
-
-El campo de la robótica humanoide tiene como objetivo el desarrollo de robots antropomórficos. El motivo principal es favorecer el hecho de que los robots se desenvuelvan en entornos diseñados por y para seres humanos. Otros robots, como los robots móviles movidos por ruedas, suelen necesitar entornos modificados convenientemente para poder suplir las necesidades que se requieren. Por el contrario, un robot humanoide posee la ventaja de poder interaccionar con un entorno ya existente, así como la posibilidad de utilizar herramientas humanas. Por supuesto, el acceso de un alumno a un robot de este tipo parece algo impensable. Es por ello que en la asociación de robótica existe un linea de investigación de mini-humanoides. A priori, puede parecer que este tipo de robots están muy alejados de los humanoides de los laboratorios mas famosos, sin embargo, suponen un punto de partida viable para el comienzo de su estudio. Los miembros del grupo de mini-humanoides, tienen la oportunidad de trabajar libremente con robots reales, experimentando con su construcción, programación y modificación.
-
-
- Acostumbrados a verla como una linea de investigación inaccesible . blablabla es cara y practicamente la única forma que tiene un estudiante de darle caña es con simulaciones.
-
-Si bien es cierto, esto no significa que los robots imprimibles vayan a sustituir a los robots caros de laboratorio, pero suponen una primera aproximación a ellos.
-
-TODO TODO Esto hay que ver si se hila con el siguiente apartado o se separa
-
-\section{Asociación de Robótica de la Universidad Carlos III}
+\section{ASROB y CEABOT}
 
 La Asociación de Robótica de la Universidad Carlos III de Madrid, AsRob, surgió en el año 2006 con el objetivo de acercar la robótica a los alumnos de la universidad que compartían inquietudes e interés por el campo de la robótica.
 
@@ -62,10 +34,83 @@ A día de hoy, la asociación cuenta con mas de cien ( <- TODO cuantos ) miembros 
 
 Sin embargo, cabe destacar que aunque se trata de proyectos diferentes, existe una gran sinergia entre ellos. Particularmente, los miembros de la linea de Robots Mini-Humanoides, estamos muy ligados al estudio de las impresoras 3D, investigando diferentes técnicas de impresión, diseño de estructuras y materiales. Ejemplo de ello es el proyecto MYOD ( <- TODO referencia ), en el que se propone la construcción de robots mini-humanoides compuestos integramente con piezas impresas y replicables.
 
+\subsection{Linea de investigación de robots mini-humanoides TODO}
 
-\section{Descripción del proyecto TODO}
+La sección de la asociación que enmarca este trabajo es la linea de investigación de robots mini-humanoides.
 
-blablablabla mi proyecto es la monda
+Los robots mini-humanoides son robots antropomórficos con una altura máxima de 50cm, tal y como indica la normativa del campeonato CEABOT ( <- TODO referencia al reglamento). De fomar orientativa, tomando como referencia la Humanoid League del campeonato RoboCup, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". Robots participantes de la RoboCup en la división KidSize como son el DARwIn-OP de Robotis o el Nao (figura \ref{naoydarwin}) de Aldebaran no entrarían dentro de la definición mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
+%\\[0.5 cm]
+%\includegraphics[width=1\textwidth]{figuras/naoydarwin.jpg}  \\[0.5 cm]
+
+%caption es el pie de foto, y label es el nombre que se da a la imagen para referenciarla después. label no puede llevar acentos y no se muestra de cara al documento final (es sólo interno).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figuras/naoydarwin}   
+\caption{Robots Nao y DARwIn-OP}
+\label{naoydarwin}
+\end{figure}
+
+TODO	 [EL OBJETIVO ES COMPETIR EN CEABOT]
+
+\subsection{Campeonato CEABOT}
+
+Desde el año 2006, el campeonato nacional CEABOT reúne anualmente a robots mini-humanoides procedentes de universidades españolas y equipos independientes. Durante tres días, los equipos tienen la posibilidad de presentar a sus robots a diferentes pruebas de habilidad para demostrar sus capacidades. En el reglamento de la edición del 2014, existen un total de cuatro pruebas combinadas de diversa temática que ponen a prueba la locomoción y percepción y actuación sobre el entorno de los robots participantes. Las pruebas son puntuadas por separado, sumandose de forma proporcional a su dificultad en la clasificación final del concurso.
+
+Las pruebas previstas son las siguientes:
+
+\begin{itemize}
+\item \textbf{Carrera de obstáculos}.
+
+El la carrera de obstáculos los robots deben realizar de forma autónoma un recorrido de ida y vuelta sobre una pista de características fijas. El campo (figura \ref{carrera}) consiste en una superficie plana de color verde en cuya zona intermedia se colocan de forma arbitraria diferentes obstáculos inmóviles de color blanco. Estos obstáculos tienen forma paralelepípeda y unas dimensiones fijas de 20x20x50cm
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figuras/carrera}   
+\caption{Prueba de la carrera de obstáculos}
+\label{carrera}
+\end{figure}
+
+El robot participante debe cruzar el campo de extremo a extremo, y una vez haya accedido a la zona de llegada debe darse la vuelta y realizar el recorrido en el sentido contrario. En esta prueba se puntua favorablemente el menor tiempo ocupado y la mayor longitud recorrida, mientras que las caídas o bloqueos que requieran la intervención de un juez, producen penalizaciónes en la puntuación.
+
+\item \textbf{Escalera}.
+
+La prueba de la escalera supone una combinación de las habilidades mecánicas y de sensorización de los robots. La prueba se desarrolla en un escenario formado por tres escalones de subida y tres escalones de bajada consecutivos (figura \ref{escalera}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/escalera}   
+\caption{Prueba de la escalera}
+\label{escalera}
+\end{figure}
+
+En este caso el robot debe sortear escalones con una altura fija e igual a 3cm, pero con amplitud variable. El desarrollo consiste en la superación de tres escalones descendentes, cruzar la cima de las escaleras y descender otros tres escalones hasta volver al suelo. De forma paralela a la prueba de navegación, se puntuan el número de escalones superados y el tiempo utilizado; mientras que las caidas y bloqueos que el robot no sea capaz de manejar por sí mismo contarán negativamente. 
+
+\item \textbf{Lucha (Sumo)}.
+
+La prueba de sumo (figura \ref{sumo}) es una de las mas famosas del concurso. A diferencia del resto de pruebas, en el sumo los robots se enfrentan en parejas. Los duelos están constituidos por tres asaltos de dos minutos cada uno. El ring sobre el que se enfrentan los robots tiene forma circular, con un diámetro de 1.5m. Los robots compiten para derribar y/o sacar del ring a su adversario.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.55\textwidth]{figuras/sumo}   
+\caption{Prueba de sumo}
+\label{sumo}
+\end{figure}
+
+\item \textbf{Visión}.
+
+La prueba de visión se presenta como una novedad en la edición de 2014 del concurso. Por primera vez se implanta en la competición una prueba que obliga a los robots a portar una cámara y realizar procesamiento de imágenes para su superación. El tablero de juego se comparte con el campo de la carrera de obtáculos. En esta prueba, el robot se colocará en el centro del tablero, y a su alrededor se colocarán obstaculos (los mismos que en la carrera de obstaculos) en intervalos de 45º. En la parte superior de los obstáculos se colocará un rectangulo rojo con un código QR en su interior (figura \ref{pruebavision}). El robot deberá leer el código QR, en el que se le indicará una rotación que le permitirá encontrar el siguiente marcador. De esta forma, el robot deberá seguir una secuencia de rotaciones para pasar la prueba.
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.45\textwidth]{figuras/pruebavision}   
+\caption{Marcador de la prueba de visión}
+\label{pruebavision}
+\end{figure}
+
+\end{itemize}
+
 
 \section{Estructura del documento TODO}
 
