@@ -34,15 +34,10 @@ A día de hoy, la asociación cuenta con mas de cien ( <- TODO cuantos ) miembros 
 
 Sin embargo, cabe destacar que aunque se trata de proyectos diferentes, existe una gran sinergia entre ellos. Particularmente, los miembros de la linea de Robots Mini-Humanoides, estamos muy ligados al estudio de las impresoras 3D, investigando diferentes técnicas de impresión, diseño de estructuras y materiales. Ejemplo de ello es el proyecto MYOD ( <- TODO referencia ), en el que se propone la construcción de robots mini-humanoides compuestos integramente con piezas impresas y replicables.
 
-\subsection{Linea de investigación de robots mini-humanoides TODO}
+\subsection{Linea de investigación de robots Mini-Humanoides TODO}
 
-La sección de la asociación que enmarca este trabajo es la linea de investigación de robots mini-humanoides.
+La sección de la asociación que enmarca este trabajo es la linea de investigación de robots mini-humanoides. Los robots mini-humanoides son robots antropomórficos con una altura máxima de 50cm, tal y como indica la normativa del campeonato CEABOT ( <- TODO referencia al reglamento). De fomar orientativa, tomando como referencia la Humanoid League del campeonato RoboCup, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". Robots participantes de la RoboCup en la división KidSize como son el DARwIn-OP de Robotis o el Nao (figura \ref{naoydarwin}) de Aldebaran no entrarían dentro de la definición mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
 
-Los robots mini-humanoides son robots antropomórficos con una altura máxima de 50cm, tal y como indica la normativa del campeonato CEABOT ( <- TODO referencia al reglamento). De fomar orientativa, tomando como referencia la Humanoid League del campeonato RoboCup, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". Robots participantes de la RoboCup en la división KidSize como son el DARwIn-OP de Robotis o el Nao (figura \ref{naoydarwin}) de Aldebaran no entrarían dentro de la definición mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
-%\\[0.5 cm]
-%\includegraphics[width=1\textwidth]{figuras/naoydarwin.jpg}  \\[0.5 cm]
-
-%caption es el pie de foto, y label es el nombre que se da a la imagen para referenciarla después. label no puede llevar acentos y no se muestra de cara al documento final (es sólo interno).
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.75\textwidth]{figuras/naoydarwin}   
@@ -58,8 +53,7 @@ Desde el año 2006, el campeonato nacional CEABOT reúne anualmente a robots mini-
 
 Las pruebas previstas son las siguientes:
 
-\begin{itemize}
-\item \textbf{Carrera de obstáculos}.
+\subsubsection{Carrera de obstáculos}
 
 El la carrera de obstáculos los robots deben realizar de forma autónoma un recorrido de ida y vuelta sobre una pista de características fijas. El campo (figura \ref{carrera}) consiste en una superficie plana de color verde en cuya zona intermedia se colocan de forma arbitraria diferentes obstáculos inmóviles de color blanco. Estos obstáculos tienen forma paralelepípeda y unas dimensiones fijas de 20x20x50cm
 
@@ -72,7 +66,7 @@ El la carrera de obstáculos los robots deben realizar de forma autónoma un recor
 
 El robot participante debe cruzar el campo de extremo a extremo, y una vez haya accedido a la zona de llegada debe darse la vuelta y realizar el recorrido en el sentido contrario. En esta prueba se puntua favorablemente el menor tiempo ocupado y la mayor longitud recorrida, mientras que las caídas o bloqueos que requieran la intervención de un juez, producen penalizaciónes en la puntuación.
 
-\item \textbf{Escalera}.
+\subsubsection{Escalera}
 
 La prueba de la escalera supone una combinación de las habilidades mecánicas y de sensorización de los robots. La prueba se desarrolla en un escenario formado por tres escalones de subida y tres escalones de bajada consecutivos (figura \ref{escalera}).
 
@@ -85,7 +79,7 @@ La prueba de la escalera supone una combinación de las habilidades mecánicas y d
 
 En este caso el robot debe sortear escalones con una altura fija e igual a 3cm, pero con amplitud variable. El desarrollo consiste en la superación de tres escalones descendentes, cruzar la cima de las escaleras y descender otros tres escalones hasta volver al suelo. De forma paralela a la prueba de navegación, se puntuan el número de escalones superados y el tiempo utilizado; mientras que las caidas y bloqueos que el robot no sea capaz de manejar por sí mismo contarán negativamente. 
 
-\item \textbf{Lucha (Sumo)}.
+\subsubsection{Lucha (Sumo)}
 
 La prueba de sumo (figura \ref{sumo}) es una de las mas famosas del concurso. A diferencia del resto de pruebas, en el sumo los robots se enfrentan en parejas. Los duelos están constituidos por tres asaltos de dos minutos cada uno. El ring sobre el que se enfrentan los robots tiene forma circular, con un diámetro de 1.5m. Los robots compiten para derribar y/o sacar del ring a su adversario.
 
@@ -96,9 +90,9 @@ La prueba de sumo (figura \ref{sumo}) es una de las mas famosas del concurso. A 
 \label{sumo}
 \end{figure}
 
-\item \textbf{Visión}.
+\subsubsection{Visión}
 
-La prueba de visión se presenta como una novedad en la edición de 2014 del concurso. Por primera vez se implanta en la competición una prueba que obliga a los robots a portar una cámara y realizar procesamiento de imágenes para su superación. El tablero de juego se comparte con el campo de la carrera de obtáculos. En esta prueba, el robot se colocará en el centro del tablero, y a su alrededor se colocarán obstaculos (los mismos que en la carrera de obstaculos) en intervalos de 45º. En la parte superior de los obstáculos se colocará un rectangulo rojo con un código QR en su interior (figura \ref{pruebavision}). El robot deberá leer el código QR, en el que se le indicará una rotación que le permitirá encontrar el siguiente marcador. De esta forma, el robot deberá seguir una secuencia de rotaciones para pasar la prueba.
+La prueba de visión se presenta como una novedad en la edición de 2014 del concurso. Por primera vez se implanta en la competición una prueba que obliga a los robots a portar una cámara y realizar procesamiento de imágenes para su superación. El tablero de juego se comparte con el campo de la carrera de obtáculos. En esta prueba, el robot se colocará en el centro del tablero, y a su alrededor se colocarán obstaculos (los mismos que en la carrera de obstaculos) en intervalos de 45º. En la parte superior de los obstáculos se colocará un rectangulo rojo con un código QR en su interior (figura \ref{pruebavision}). El robot deberá leer el código QR, en el que se le indicará una rotación que le permitirá encontrar el siguiente marcador. De esta forma, el robot deberá seguir una secuencia de rotaciones para superar la prueba.
 
 
 
@@ -109,8 +103,9 @@ La prueba de visión se presenta como una novedad en la edición de 2014 del concu
 \label{pruebavision}
 \end{figure}
 
-\end{itemize}
 
+
+\section{Estado del harte TODO}
 
 \section{Estructura del documento TODO}
 
