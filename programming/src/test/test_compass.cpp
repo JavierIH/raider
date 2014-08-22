@@ -33,9 +33,11 @@ int main() {
     Compass compass(new I2C(I2C_BUS));
 
     while(1){
-        report(INFO,"Compass X: "+to_string(compass.getCompassX()));
-        report(INFO,"Compass Y: "+to_string(compass.getCompassY()));
-        report(INFO,"Compass Z: "+to_string(compass.getCompassZ()));
+        //if()
+        //report(INFO,"Compass X: "+to_string(compass.getCompassX()));
+        //report(INFO,"Compass Y: "+to_string(compass.getCompassY()));
+        int measure=compass.getCompassZ();
+        if(measure!=4294967295)report(INFO,"Compass Z: "+to_string(measure));
     usleep(200000);
     }
 
