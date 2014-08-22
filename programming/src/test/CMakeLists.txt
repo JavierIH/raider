@@ -22,10 +22,16 @@ add_executable(test_auxiliar test_auxiliar.cpp)
 target_link_libraries(test_auxiliar debuga serialib raider bones eye ${OpenCV_LIBS})
 ENDIF ()
 
-OPTION(TEST_IMU "Magnetometer, gyroscope and acelerometer" 1)
+OPTION(TEST_IMU "Gyroscope and acelerometer" 1)
 IF (TEST_IMU)
 add_executable(test_imu test_imu.cpp)
 target_link_libraries(test_imu debuga serialib raider bones i2c imu ${OpenCV_LIBS})
+ENDIF ()
+
+OPTION(TEST_COMPASS "Magnetometer" 1)
+IF (TEST_COMPASS)
+add_executable(test_compass test_compass.cpp)
+target_link_libraries(test_compass debuga serialib raider bones i2c imu compass ${OpenCV_LIBS})
 ENDIF ()
 
 OPTION(TEST_VORONOI "Thinning algorithms" 1)
