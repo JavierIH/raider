@@ -24,7 +24,7 @@ This is a licence-free software, it can be used by anyone who try to build a bet
     \brief      Constructor of the class serialib.
 */
 // Class constructor
-serialib::serialib()
+Serial::Serial()
 {}
 
 
@@ -32,7 +32,7 @@ serialib::serialib()
     \brief      Destructor of the class serialib. It close the connection
 */
 // Class desctructor
-serialib::~serialib()
+Serial::~Serial()
 {
     Close();
 }
@@ -87,7 +87,7 @@ serialib::~serialib()
      \return -5 error while writing port parameters
      \return -6 error while writing timeout parameters
   */
-int serialib::Open(const char *Device,const unsigned int Bauds)
+int Serial::Open(const char *Device,const unsigned int Bauds)
 {
 #if defined (_WIN32) || defined( _WIN64)
 
@@ -183,7 +183,7 @@ int serialib::Open(const char *Device,const unsigned int Bauds)
 /*!
      \brief Close the connection with the current device
 */
-void serialib::Close()
+void Serial::Close()
 {
 #if defined (_WIN32) || defined( _WIN64)
     CloseHandle(hSerial);
@@ -207,7 +207,7 @@ void serialib::Close()
      \return 1 success
      \return -1 error while writting data
   */
-int serialib::WriteChar(const char Byte)
+int Serial::WriteChar(const char Byte)
 {
     if (write(fd,&Byte,1)!=1)                                           // Write the char
         return -1;                                                      // Error while writting
@@ -226,7 +226,7 @@ int serialib::WriteChar(const char Byte)
      \return 1 success
      \return -1 error while writting data
   */
-char serialib::WriteString(const char *String)
+char Serial::WriteString(const char *String)
 {
 #if defined (_WIN32) || defined( _WIN64)
     DWORD dwBytesWritten;                                               // Number of bytes written
@@ -254,7 +254,7 @@ char serialib::WriteString(const char *String)
      \return 1 success
      \return -1 error while writting data
   */
-char serialib::Write(const void *Buffer, const unsigned int NbBytes)
+char Serial::Write(const void *Buffer, const unsigned int NbBytes)
 {
 #if defined (_WIN32) || defined( _WIN64)
     DWORD dwBytesWritten;                                               // Number of byte written
@@ -281,7 +281,7 @@ char serialib::Write(const void *Buffer, const unsigned int NbBytes)
      \return -1 error while setting the Timeout
      \return -2 error while reading the byte
   */
-char serialib::ReadChar(char *pByte,unsigned int TimeOut_ms)
+char Serial::ReadChar(char *pByte,unsigned int TimeOut_ms)
 {
 #if defined (_WIN32) || defined(_WIN64)
 
@@ -320,7 +320,7 @@ char serialib::ReadChar(char *pByte,unsigned int TimeOut_ms)
      \return -2 error while reading the byte
      \return -3 MaxNbBytes is reached
   */
-int serialib::ReadStringNoTimeOut(char *String,char FinalChar,unsigned int MaxNbBytes)
+int Serial::ReadStringNoTimeOut(char *String,char FinalChar,unsigned int MaxNbBytes)
 {
     unsigned int    NbBytes=0;                                          // Number of bytes read
     char            ret;                                                // Returned value from Read
@@ -353,7 +353,7 @@ int serialib::ReadStringNoTimeOut(char *String,char FinalChar,unsigned int MaxNb
      \return -2 error while reading the byte
      \return -3 MaxNbBytes is reached
   */
-int serialib::ReadString(char *String,char FinalChar,unsigned int MaxNbBytes,unsigned int TimeOut_ms)
+int Serial::ReadString(char *String,char FinalChar,unsigned int MaxNbBytes,unsigned int TimeOut_ms)
 {
     if (TimeOut_ms==0)
         return ReadStringNoTimeOut(String,FinalChar,MaxNbBytes);
@@ -401,7 +401,7 @@ int serialib::ReadString(char *String,char FinalChar,unsigned int MaxNbBytes,uns
      \return -1 error while setting the Timeout
      \return -2 error while reading the byte
   */
-int serialib::Read (void *Buffer,unsigned int MaxNbBytes,unsigned int TimeOut_ms)
+int Serial::Read (void *Buffer,unsigned int MaxNbBytes,unsigned int TimeOut_ms)
 {
 #if defined (_WIN32) || defined(_WIN64)
     DWORD dwBytesRead = 0;
@@ -444,7 +444,7 @@ int serialib::Read (void *Buffer,unsigned int MaxNbBytes,unsigned int TimeOut_ms
     \brief Empty receiver buffer (UNIX only)
 */
 
-void serialib::FlushReceiver()
+void Serial::FlushReceiver()
 {
 #ifdef __linux__
     tcflush(fd,TCIFLUSH);
@@ -457,7 +457,7 @@ void serialib::FlushReceiver()
     \brief  Return the number of bytes in the received buffer (UNIX only)
     \return The number of bytes in the received buffer
 */
-int serialib::Peek()
+int Serial::Peek()
 {
     int Nbytes=0;
 #ifdef __linux__

@@ -22,24 +22,22 @@
 
 class I2C {
 private:
-	int address;
 	int bus;
 	int file;
 	char filename[20];
-	bool openConnection();
+    bool openConnection(__u16 address);
 	bool closeConnection();
 
 public:
-	I2C(int bus, __u16 address);
+    I2C(int bus);
 	~I2C();
 
-    bool test();
-    void setAddress(__u16);
+    bool test(__u16 address);
 
-	__s32 read8(__u8 reg);
-	__s32 write8(__u8 reg, __u8 data);
-	__s32 read16(__u8 reg);
-	__s32 write16(__u8 reg, __u16 data);
+    __s32 read8(__u16 address,__u8 reg);
+    __s32 write8(__u16 address,__u8 reg, __u8 data);
+    __s32 read16(__u16 address,__u8 reg);
+    __s32 write16(__u16 address,__u8 reg, __u16 data);
 };
 
 #endif /* I2C_H_ */

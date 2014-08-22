@@ -3,6 +3,8 @@
 
 #include "../i2c/i2c.h"
 
+#define IMU_I2C_ADDRESS 0x69
+
 class IMU {
 private:
 	I2C *i2c;
@@ -17,10 +19,6 @@ public:
     __u32 getGyroscopeX();
     __u32 getGyroscopeY();
     __u32 getGyroscopeZ();
-
-    __u32 getMagnetometerX();
-    __u32 getMagnetometerY();
-    __u32 getMagnetometerZ();
 
     __u32 getTemp();
 };

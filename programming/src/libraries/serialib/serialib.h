@@ -50,14 +50,14 @@ This is a licence-free software, it can be used by anyone who try to build a bet
    */
 
 
-class serialib
+class Serial
 {
 public:
     // Constructor of the class
-    serialib    ();
+    Serial    ();
 
     // Destructor
-    ~serialib   ();
+    ~Serial   ();
 
 
 

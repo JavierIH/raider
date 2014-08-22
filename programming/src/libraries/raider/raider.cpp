@@ -13,7 +13,7 @@ Raider::Raider(){
 
 //SERIAL COMMUNICATION
     report("Setting serial communication...");
-    serial = new serialib();
+    serial = new Serial();
     int serial_flag=serial->Open(SERIAL_PORT, BAUD_RATE); // TODO revisar bool char
     if (serial_flag==1) report(OK, "Serial communication connected!");
     else if (serial_flag==-2)report(ERROR, "Serial communication failed (at opening device)");
@@ -22,16 +22,21 @@ Raider::Raider(){
 
 //I2C BUS CONNECTION
     report("Setting I2C bus...");
-    i2c = new I2C(I2C_BUS, IMU_ADDRESS);
-    if (i2c->test()) report(OK, "I2C bus connected!");
+    i2c = new I2C(I2C_BUS);
+    if (i2c->test(0x00)) report(OK, "I2C bus connected!"); // TODO revisar
     else report(ERROR, "I2C doesn't work!");
 
 //IMU SENSOR
     report("Setting imu sensor...");
     imu = new IMU(i2c);
-    if(4294967295==imu->getMagnetometerX()) report(ERROR, "IMU sensor connection FAILED");
-    else if(65535==imu->getMagnetometerX()) report(WARNING, "Accelerometer may be not working (please check)");
+    if(4294967295==imu->getAccelerometerX()) report(ERROR, "IMU sensor connection FAILED");
+    else if(65535==imu->getAccelerometerX()) report(WARNING, "Accelerometer may be not working (please check)");
     else report(OK, "IMU sensor connected!");
+
+//COMPASS SENSOR
+    report("Setting compass sensor...");
+    compass = new Compass(i2c);
+    report(OK, "Compass sensor connected!");
 
 //INFRARRED SENSORS
     report("Setting infrarred sensors...");
