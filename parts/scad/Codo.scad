@@ -24,12 +24,12 @@ module brazo (){
 			rotate([0,0,-8])translate([28-46,10,-10]) cube([40,40,20]);
 
 			//Eje
-			translate([34+2,13,-4]) cylinder(r=4,h=60,$fn=20);
+			translate([34+2,13,-4]) cylinder(r=4.2,h=60,$fn=20);
 			//Tornillos del eje
-			translate([42+2,13,4]) cylinder(r=1.5,h=70,$fn=20);
-			translate([26+2,13,4]) cylinder(r=1.5,h=70,$fn=20);
-			translate([34+2,21,4]) cylinder(r=1.5,h=70,$fn=20);
-			translate([34+2,5,4]) cylinder(r=1.5,h=70,$fn=20);
+			translate([42+2,13,-10]) cylinder(r=1.1,h=70,$fn=20);
+			translate([26+2,13,4]) cylinder(r=1.1,h=70,$fn=20);
+			translate([34+2,21,4]) cylinder(r=1.1,h=70,$fn=20);
+			translate([34+2,5,4]) cylinder(r=1.1,h=70,$fn=20);
 			
 		}
 		translate([14-8,8,0]) cylinder(r=1.5, h=100, $fn=10);
