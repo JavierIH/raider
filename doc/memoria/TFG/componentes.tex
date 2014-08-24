@@ -286,19 +286,19 @@ La Raspberry Pi es un ordenador completo del tamaño de una tarjeta de crédito, d
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ >{\arraybackslash}m{3.5cm} >{\arraybackslash}m{7.5cm}}
+\begin{tabular}{ >{\arraybackslash}m{4.2cm} >{\arraybackslash}m{5.8cm}}
 \hline
 Especificaciones Rasp \\
 \hline \hline
-CPU & ARM 1176JZF\-S 700 MHz  \\ \hline
-Memoria (SDRAM) & 512 MB (compartidos con la GPU)\\ \hline
-Puertos USB 2.0 & 2 (vía hub USB integrado) \\ \hline
-Almacenamiento integrado & SD / MMC / ranura para SDIO \\ \hline
-Periféricos de bajo nivel & 8 x GPIO, SPI, I2C, UART \\ \hline
-Consumo energético & 700 mA (3.5 W) \\ \hline
-Fuente de alimentación & 5 V vía Micro USB o GPIO header  \\ \hline
-Dimensiones: & 85.60mm $\times$ 53.98mm\\ \hline
-Sistemas operativos soportados: &  GNU/Linux: Debian (Raspbian), Fedora (Pidora), Arch Linux (Arch Linux ARM), Slackware Linux. RISC OS2 \\ \hline
+\medskip CPU \medskip & ARM 1176JZF\-S 700 MHz  \\ \hline
+\medskip Memoria (SDRAM) \medskip & 512 MB (compartidos con la GPU)\\ \hline
+\medskip Puertos USB 2.0 \medskip & 2 (vía hub USB integrado) \\ \hline
+\medskip Almacenamiento integrado \medskip & SD / MMC / ranura para SDIO \\ \hline
+\medskip Periféricos de bajo nivel \medskip & 8 x GPIO, SPI, I2C, UART \\ \hline
+\medskip Consumo energético \medskip & 700 mA (3.5 W) \\ \hline
+\medskip Fuente de alimentación \medskip & 5 V vía Micro USB o GPIO header  \\ \hline
+\medskip Dimensiones: \medskip & 85.60mm $\times$ 53.98mm\\ \hline
+\medskip Sistemas operativos soportados: \medskip & \medskip GNU/Linux: Debian (Raspbian), Fedora (Pidora), Arch Linux (Arch Linux ARM), Slackware Linux. RISC OS2 \medskip \\ \hline
 \end{tabular}
 \caption{Especificaciones Raspberry Pi B}
 \label{raspec}
@@ -323,19 +323,19 @@ Como puede observarse en el cuadro \ref{blaspec}, sus características son ligera
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ >{\arraybackslash}m{3.5cm} >{\arraybackslash}m{7.5cm}}
+\begin{tabular}{ >{\arraybackslash}m{4.2cm} >{\arraybackslash}m{5.8cm}}
 \hline
 Especificaciones BBB \\
 \hline \hline
-CPU &  AM335x 1GHz ARM Cortex-A8  \\ \hline
-Memoria (SDRAM) & 512 MiB \\ \hline
-Puertos USB 2.0 & 1x Standard A y 1x mini B \\ \hline
-Almacenamiento integrado & 4GB 8-bit eMMC / microSD \\ \hline
-Periféricos de bajo nivel & 4xUART, 8x PWM, LCD, GPMC, MMC1, 2x SPI, 2x I2C, A/D Converter, 2x CAN bus \\ \hline
-Consumo energético & 1200 mA (6 W) \\ \hline
-Fuente de alimentación & 5 V vía Micro USB, jack de 5.5mm a 5 V o GPIO header  \\ \hline
-Dimensiones: & 86.40 mm $\times$ 53.30 mm \\ \hline
-Sistemas operativos soportados: &   Fedora, Android, Ubuntu, Debian, openSUSE , Ångström, FreeBSD, NetBSD, OpenBSD, QNX, MINIX 3, RISC OS, y Windows Embedded. \\ \hline
+\medskip CPU \medskip  &  AM335x 1GHz ARM Cortex-A8  \\ \hline
+\medskip Memoria (SDRAM) \medskip  & 512 MiB \\ \hline
+\medskip Puertos USB 2.0 \medskip  & 1x Standard A y 1x mini B \\ \hline
+\medskip Almacenamiento integrado \medskip  & 4GB 8-bit eMMC / microSD \\ \hline
+\medskip Periféricos de bajo nivel \medskip  & \medskip 4xUART, 8x PWM, LCD, GPMC, MMC1, 2x SPI, 2x I2C, A/D Converter, 2x CAN bus \medskip \\ \hline
+\medskip Consumo energético \medskip  & 1200 mA (6 W) \\ \hline
+\medskip Fuente de alimentación \medskip  & \medskip 5 V vía Micro USB, jack de 5.5mm a 5 V o GPIO header \medskip \\ \hline
+\medskip Dimensiones: \medskip & 86.40 mm $\times$ 53.30 mm \\ \hline
+Sistemas operativos soportados: &  \medskip  Fedora, Android, Ubuntu, Debian, openSUSE , Ångström, FreeBSD, NetBSD, OpenBSD, QNX, MINIX 3, RISC OS, y Windows Embedded. \medskip  \\ \hline
 \end{tabular}
 \caption{Especificaciones BeagleBone Black}
 \label{blaspec}
@@ -358,19 +358,21 @@ Una vez se ha seleccionado todos los elementos que fomarán parte del robot, se h
 
 \section{Alimentación}
 
-La batería contenida en el kit es una batería NiMH de 8 elementos AA Sanyo Eneloop que desarrolla 9.6V y 1900mAh. Para el consumo de este robot es una opción aceptable que proporciona cerca de 10 minutos de autonomía. No está mal si se tiene en cuenta que pruebas con el CEABOT tiene una duración máxima limitada a 5 minutos. Sin embargo tiene un inconveniente, su peso y su volumen es muy alto, y al estar situado en la espalda, sube el centro de gravedad del robot de forma considerable. Esto causa inestabilidad en el robot y complica bastante la programación de desplazamientos.
+La batería contenida en el kit es una batería NiMH de 8 elementos AA Sanyo Eneloop que desarrolla 9.6V y 1900mAh. Para el consumo de este robot es una opción aceptable que proporciona cerca de 10 minutos de autonomía. No está mal si se tiene en cuenta que pruebas con el CEABOT tiene una duración máxima limitada a 5 minutos. No obstante, tiene un inconveniente, su peso y su volumen es muy alto. Al estar situada en la espalda, el centro de gravedad del robot sube en altura de forma considerable. Esto causa inestabilidades y complica bastante la programación de desplazamientos.
 
 \subsection{Batería}
 
 Por las razones descritas, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9V a 12V, respecto al resto de elementos que serán alimentados a 5V o 3.3V, nos centraremos principalmente en encontrar una batería adecuada para los servos.
 
-Hoy en dia, las baterías ne NiMH están empezando a caer en desuso a favor de la baterías de litio. Se barajaron dos posibilidades.
+\medskip Hoy en dia, las baterías ne NiMH están empezando a caer en desuso a favor de la baterías de litio. Se barajaron dos posibilidades.
 
 % TODO al final de la sección se debe calcular la autonomía del robot
 
 \subsubsection{Baterías de polímero de litio}
 
-Las baterías de polímero de litio, mas conocidas como baterías LiPo, destacan por desarrollar una tasa de descarga bastante alta y por tener un tamaño y peso reducido. Dado su uso en automodelismo y aeromodelismo, son unas baterías muy comunes que en los últimos años han ido bajando su precio. Actualmente existe una gran variedad de baterías LiPo de diversos tamaños y precio asequible. Cada célula LiPo ofrece 3.7V, por lo que la elección correcta para este robot sería una batería de 3S, o lo que es lo mismo, 11,1V. Sin embargo, las baterías LiPo tienen una desventaja importante, su fragilidad. El proceso de carga y descarga de una batería de este tipo no es un asunto trivial, una sobredescarga de la batería provoca un deterioro inmediato de la misma, calentando sus elementos e incluso pudiendo llegar a incendiarse. Es por ello que se necesita un cargador con capacidad para balancear las células, de forma que las tensiones de cada una de ellas se tengan bajo control durante el proceso.
+Las baterías de polímero de litio, mas conocidas como baterías LiPo, destacan por desarrollar una tasa de descarga bastante alta y por tener un tamaño y peso reducido. Dado su uso en automodelismo y aeromodelismo, son unas baterías muy comunes que en los últimos años han ido bajando su precio. Actualmente existe una gran variedad de baterías LiPo de diversos tamaños y precio asequible. Cada célula LiPo ofrece 3.7V, por lo que la elección correcta para este robot sería una batería de 3S, o lo que es lo mismo, 11,1V.
+
+\medskip Sin embargo, las baterías LiPo tienen una desventaja importante, su fragilidad. El proceso de carga y descarga de una batería de este tipo no es un asunto trivial, una sobredescarga de la batería provoca un deterioro inmediato de la misma, calentando sus elementos e incluso pudiendo llegar a incendiarse. Es por ello que se necesita un cargador con capacidad para balancear las células, de forma que las tensiones de cada una de ellas se tengan bajo control durante el proceso.
 
 \subsubsection{Baterías de litio fosfato de hierro}  
 
@@ -390,15 +392,15 @@ A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación d
 \hline
 Dispositivo & Número & Consumo unitario & Consumo total  \\
 \hline \hline
-Dynamixel AX-12A & x19 & $11.1V\cdot600mA=6660mW$ & $126540mW$ \\ \hline
-Tower Pro MG90s & x1 & $5V\cdot120mA=600mW$ & $600mW$ \\ \hline
-BeagleBone Black & x1 & $5V\cdot1200mA=6000mW$ & $6000mW$ \\ \hline
-OpenCM 9.04 & x1 & $11.1V\cdot90mA\simeq1000mW$ & $1000mW$ \\ \hline
-Sharp IR & x2 & $5V\cdot30mA=150mW$ & $300mW$ \\ \hline
-MPU9150 & x1 & $3.3V\cdot15mA\simeq50mW$ & $50mW$ \\ \hline
-HMC5883L &  x1  &  $3.3V\cdot12mA\simeq40mW$ & $40mW$ \\ \hline
-Microsoft LifeCam & x1  &  $5V\cdot200mA=1000mW$ &  $1000mW$ \\ \hline \hline 
-\medskip Total &  &  & \medskip $135530mW\simeq136W$  \\ \hline
+\medskip Dynamixel AX-12A \medskip & x19  & $11.1V\cdot600mA=6660mW$ & $126540mW$  \\ \hline
+\medskip TowerPro MG90s \medskip & x1 & $5V\cdot120mA=600mW$ & $600mW$ \\ \hline
+\medskip BeagleBone Black \medskip & x1 & $5V\cdot1200mA=6000mW$ & $6000mW$ \\ \hline
+\medskip OpenCM 9.04 \medskip & x1 & $11.1V\cdot90mA\simeq1000mW$ & $1000mW$ \\ \hline 
+\medskip Sharp IR \medskip &  x2 & $5V\cdot30mA=150mW$ & $300mW$ \\ \hline
+\medskip MPU9150 \medskip & x1 & $3.3V\cdot15mA\simeq50mW$ & $50mW$ \\ \hline
+\medskip HMC5883L \medskip &  x1  &  $3.3V\cdot12mA\simeq40mW$ & $40mW$ \\ \hline
+\medskip Microsoft LifeCam \medskip & x1  &  $5V\cdot200mA=1000mW$ &  $1000mW$ \\ \hline \hline 
+Total  &  &  & \medskip  $135530mW\simeq136W$ \medskip  \\ \hline
 \hline
 \end{tabular}
 \caption{Consumo medio}
@@ -436,5 +438,3 @@ Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC s
 \subsubsection{Elección final TODO }
 
 Tal y como se comentaba anteriormente, nuestro sistema tiene un consumo estimado de unos 1.7A en la salida de 5V, por lo que un UBEC de 3A sería suficiente para proporcionar al circuito la corriente necesaria para su funcionamiento. Adicionalmente se han incluido unos condensadores en la entrada y salida del circuito para ... como ser verá en el apartado ( TODO )
-
-\paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.

@@ -1,71 +1,68 @@
-%chapter introduce un nuevo capítulo
+\chapter{Objetivos TODO}
 
-\chapter{Objetivos TODO ESQUEMATIZADO }
+\section{Desarrollar una plataforma robótica mini-humanoide}
 
-%gmmgfngfngfngfngfngfnhgf
-%\begin{itemize}
-%\item \textbf{ejemplo de lista de puntos}.
-
-%Cocoloco loco loco loco tacacacaca
-%\item \textbf{ejemplo de lista de puntos}.\\Cocoloco loco loco loco %tacacacaca
-%\item \textbf{ejemplo2 de lista}.
-%\end{itemize}
-
-\section{Desarrollar una plataforma robótica humanoide}
-
-TODO El primer objetivo de este proyecto es el desarrollo de una plataforma robótica humanoide de propósito general. Para llegar a ello será necesario estudiar los componentes que forman un robot humanoide Sus capacidades deben ser al menos suficientes para desarrolar sobre la plataforma los objetivos del segundo punto.
+TODO El primer objetivo de este proyecto es el desarrollo de una plataforma robótica mini-humanoide de propósito general. Para llegar a ello será necesario estudiar los componentes que forman un robot humanoide Sus capacidades deben ser al menos suficientes para desarrolar sobre la plataforma los objetivos del segundo punto ( TODO qué punto? ).
 
 - Que la plataforma sea lo suficientemente cojonuda para poder hacer esto y mas 
 
 \subsection{Estudiar los componentes que necesita un robot humanoide}
 
-- Se realizará un estudio de elementos necesarios para un robot
-- Se evaluará cuales funcionan mejor y peor
-- Se analizará cuales son dignos de meterse en mi robot
-- Se escogerá una configuración completa 
+Se realizará un estudio de qué elementos son necesarios para formar parte de un robot mini-humanoide. Entre ellos, se evaluará su funcionamiento en base a las necesidades del proyecto y se analizará qué componentes son adecuados para integrarse en el robot. En resumen, se diseñará un sistema completo y funcional de controlador, alimentación, sensores y actuadores.
 
 \subsection{Integrar una cámara USB}
 
-- Se requiere integrar una cámara para hacer algoritmos de visión
-- Se requiere que la cámara entre integrada físicamente en el robot.
-- Que la cámara pueda moverse en el robot.
+Otro objetivo será integrar una cámara con la que se realizarán algoritmos de visión. Para ello se requiere que la cámara quede integrada físicamente en el robot. Adicionalmente, la cámara deberá poder moverse de forma independiente al cuerpo del robot, por lo que se construirá una base móvil que otorgue a la cámara capacidad para rotar e inclinarse.
 
 \subsection{Integrar un controlador}
 
-- Un controlador que permita mover el robot y procesar visión.
-- Que pueda programarse libremente sin casarse con Robotis.
-- Que permita añadir sensores y actuadores libremente.
-- Que se integre fisicamente dentro del robot.
-- Que funcione (capacidades de procesamiento, autonomía... etc)
+Integrar en el robot un controlador que tenga el potencial necesario para controlar la locomoción del robot, comunicarse con los diversos sensores que se monten, y procesar algoritmos de visión. También se buscará que dicho controlador permita programarse en diferentes lenguajes sin tener que depender de un entorno de desarrollo fijo. Por último, el controlador que se escoja debe tener las capacidades de procesamiento suficientes para permitir un funcionamiento fluido y, al mismo tiempo, permitir una autonomía de funcionamiento del robot completo suficiente.
 
+\medskip En el caso de que el controlador requiera conexiones o conectores especiales, se deberán realizar las modificaciones necesarias para que el sistema sea limpio y fiable. Dicho de otro modo, si por ejemplo los servos necesitan conectores especiales que el controlador no posea, se buscará una solución, como por ejemplo, diseñar una placa de expasión.  
+
+\subsection{Agregar sensores y actuadores TODO }
+
+meterle todos los sensores que necesite y que puedan ayudar a la vision. No con el objetivo de sustituirla sino con el de apoyar blablablab
+
+\subsection{Diseñar un sistema de alimentación TODO }
+
+Diseñar un sistema de alimentación adecuado para controlar toooodo lo que lleva el robot
 
 \subsection{Realizar las modificaciones esctructurales que sean pertinentes}
 
-- Diseñar piezas que requiera el robot (para montar sensores, cámara...)
-- Diseñar piezas que no se requieran pero mejoren el comportamiento
-- Diseñarlas para que puedan imprimirse con una impresora 3d.
-- Imprimirlas todas
+Se tendrá como objetivo adecuar la estructura del robot para el montaje de nuevos dispositivos. Además, secundariamente se mejorarán diversos puntos de la estructura para mejorar las capacidades generales de la paltaforma.
+
+\medskip Las piezas deberán diseñarse siguiendo dos reglas. La primera es que puedan imprimirse en una impresora 3D casera. La segunda regla es que soporten los esfuerzos necesarios y no se rompan durante la operación del robot.
 
 \section{Puesta en marcha y programación}
 
-El robot debe ponerse en marcha y funcionar, desde su montaje hasta su participación en CEABOT
+El robot debe diseñarse, montarse, programarse y testarse. Quizás éste sea el objetivo al que se la dará mayor peso en este proyecto, y no es otro que obtener al final una plataforma mini-humanoide fiable y testada para su uso. Este proyecto no debe quedar en un simple estudio teórico, sino que debe llevarse a la práctica y obtener resultados positivos.
 
-\subsection{Desarrollar locomoción}
+\subsection{Programar la locomoción bípeda}
 
-- Controlar movimientos de las articulaciones
-- Programar movimientos complejos
-- Hacer que ande
-Hacer el control de movimientos desde el movimiento de un servo has el movimiento de extremidades y con ello 
+Se deberá diseñar un sistema de locomoción completo del robot. En este punto se unen diversos objetivos, desde controlar las articulaciones por separado hasta la realización de programas de caminata. Se deberá conseguir al menos la realización de los siguientes movimientos:
+
+\begin{itemize}
+\item \textbf{Avance frontal.}
+\item \textbf{Rotación a la izquierda.}
+\item \textbf{Rotación a la derecha.}
+\item \textbf{Paso lateral a la izquierda.}
+\item \textbf{Paso lateral a la derecha.}
+\item \textbf{Reincorporación tras una caída frontal}
+\item \textbf{Reincorporación tras una caída trasera}
+\end{itemize}
+
+Junto a esto, se deberá crear una librería en C++ que permita realizar movimientos de una forma cómoda y sencilla.
+
+\subsection{Programar sensores TODO}
+
+Los sensores que se seleccionen se deberán TODO familiarizarse con protocolos como i2c y adecuar señales, interpretar valores y buscarles utilidad práctica a los datos que se sacan.
 
 \subsection{Desarrollar algoritmos de visión}
 
-- Hacer algoritmos de visión con OpenCV
-- Que funcionen dentro del robot
-- Optimizados para funcionar en condiciones
+Se deberá basar el comportamiento del robot en la información tomada por la cámara. Para procesar esta información se utilizarán las librerías de OpenCV, por lo que será necesario familiarizarse con ellas y estudiar las diversas posibilidades que ofrecen en el campo de la visión por computador. Con ello, se desarrollarán programas adaptados a la plataforma robótica del proyecto. Éstos, deberán optimizarse de forma que funcionen correctamente con las capacidades de procesamiento del controlador.
 
-
-
-\subsection{Desarrollar aplicaciones de competición}
+\subsection{Desarrollar aplicaciones de competición TODO}
 
 - Apoyandose en vision
 - Con los movimientos creados
@@ -73,9 +70,3 @@ Hacer el control de movimientos desde el movimiento de un servo has el movimient
 - Consiguiendo pasar las pruebas
 
 sando de base las dos cosas anteriores el robot tiene que poder funcionar los suficientemente bien como para hacer programillas para las pruebas concretas.
-
-
-
-
-
-\paragraph{Palabras clave:} TODO palabraclave1, palabraclave2, palabraclave3.

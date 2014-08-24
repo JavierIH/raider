@@ -7,89 +7,92 @@
 \BOOKMARK [2][-]{subsection.1.1.2}{Campeonato CEABOT}{section.1.1}% 7
 \BOOKMARK [1][-]{section.1.2}{Estado del harte TODO}{chapter.1}% 8
 \BOOKMARK [1][-]{section.1.3}{Estructura del documento TODO}{chapter.1}% 9
-\BOOKMARK [0][-]{chapter.2}{Objetivos TODO ESQUEMATIZADO }{}% 10
-\BOOKMARK [1][-]{section.2.1}{Desarrollar una plataforma rob\363tica humanoide}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.2}{Objetivos TODO}{}% 10
+\BOOKMARK [1][-]{section.2.1}{Desarrollar una plataforma rob\363tica mini-humanoide}{chapter.2}% 11
 \BOOKMARK [2][-]{subsection.2.1.1}{Estudiar los componentes que necesita un robot humanoide}{section.2.1}% 12
 \BOOKMARK [2][-]{subsection.2.1.2}{Integrar una c\341mara USB}{section.2.1}% 13
 \BOOKMARK [2][-]{subsection.2.1.3}{Integrar un controlador}{section.2.1}% 14
-\BOOKMARK [2][-]{subsection.2.1.4}{Realizar las modificaciones esctructurales que sean pertinentes}{section.2.1}% 15
-\BOOKMARK [1][-]{section.2.2}{Puesta en marcha y programaci\363n}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.2.1}{Desarrollar locomoci\363n}{section.2.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.2}{Desarrollar algoritmos de visi\363n}{section.2.2}% 18
-\BOOKMARK [2][-]{subsection.2.2.3}{Desarrollar aplicaciones de competici\363n}{section.2.2}% 19
-\BOOKMARK [0][-]{chapter.3}{Elecci\363n de componentes}{}% 20
-\BOOKMARK [1][-]{section.3.1}{Plataforma rob\363tica}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.1.1}{Selecci\363n de una plataforma rob\363tica}{section.3.1}% 22
-\BOOKMARK [1][-]{section.3.2}{Modificaciones estructurales}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.2.1}{Cabeza m\363vil TODO}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.2}{Cintura m\363vil TODO}{section.3.2}% 25
-\BOOKMARK [1][-]{section.3.3}{Sensorizaci\363n TODO}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.1}{Sensores de distancia TODO}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.2}{Sensores inerciales TODO}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.3}{C\341mara TODO}{section.3.3}% 29
-\BOOKMARK [1][-]{section.3.4}{Elecci\363n del controlador TODO}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.4.1}{Controlador de locomoci\363n TODO}{section.3.4}% 31
-\BOOKMARK [2][-]{subsection.3.4.2}{Controlador de visi\363n TODO}{section.3.4}% 32
-\BOOKMARK [2][-]{subsection.3.4.3}{Dise\361o del sistema TODO}{section.3.4}% 33
-\BOOKMARK [1][-]{section.3.5}{Alimentaci\363n}{chapter.3}% 34
-\BOOKMARK [2][-]{subsection.3.5.1}{Bater\355a}{section.3.5}% 35
-\BOOKMARK [2][-]{subsection.3.5.2}{Regulador de tensi\363n}{section.3.5}% 36
-\BOOKMARK [0][-]{chapter.4}{Descripci\363n de las herramientas a utilizar}{}% 37
-\BOOKMARK [1][-]{section.4.1}{Herramientas de dise\361o y fabricaci\363n de piezas}{chapter.4}% 38
-\BOOKMARK [2][-]{subsection.4.1.1}{OpenSCAD}{section.4.1}% 39
-\BOOKMARK [2][-]{subsection.4.1.2}{Impresi\363n 3d}{section.4.1}% 40
-\BOOKMARK [1][-]{section.4.2}{Herramientas de dise\361o de circuitos}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.2.1}{KiCad}{section.4.2}% 42
-\BOOKMARK [1][-]{section.4.3}{Herramientas de programaci\363n}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.3.1}{OpenCV}{section.4.3}% 44
-\BOOKMARK [2][-]{subsection.4.3.2}{Qt Creator}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.3}{CMake}{section.4.3}% 46
-\BOOKMARK [2][-]{subsection.4.3.4}{CM9 IDE}{section.4.3}% 47
-\BOOKMARK [2][-]{subsection.4.3.5}{Git}{section.4.3}% 48
-\BOOKMARK [0][-]{chapter.5}{Dise\361o de las partes mec\341nicas TODO}{}% 49
-\BOOKMARK [1][-]{section.5.1}{Cabeza}{chapter.5}% 50
-\BOOKMARK [1][-]{section.5.2}{Cintura}{chapter.5}% 51
-\BOOKMARK [1][-]{section.5.3}{Tronco}{chapter.5}% 52
-\BOOKMARK [1][-]{section.5.4}{Brazos}{chapter.5}% 53
-\BOOKMARK [1][-]{section.5.5}{Piernas}{chapter.5}% 54
-\BOOKMARK [1][-]{section.5.6}{Pies y tobillos}{chapter.5}% 55
-\BOOKMARK [1][-]{section.5.7}{Lista de piezas}{chapter.5}% 56
-\BOOKMARK [0][-]{chapter.6}{Desarrollo TODO MONTAJES}{}% 57
-\BOOKMARK [1][-]{section.6.1}{Adecuaci\363n de sensores}{chapter.6}% 58
-\BOOKMARK [1][-]{section.6.2}{Desarrollo de una placa de expansi\363n}{chapter.6}% 59
-\BOOKMARK [1][-]{section.6.3}{Montaje}{chapter.6}% 60
-\BOOKMARK [2][-]{subsection.6.3.1}{Montaje de la placa de expansi\363n}{section.6.3}% 61
-\BOOKMARK [2][-]{subsection.6.3.2}{Integraci\363n de la c\341mara en la cabeza}{section.6.3}% 62
-\BOOKMARK [0][-]{chapter.7}{Programaci\363n TODO}{}% 63
-\BOOKMARK [1][-]{section.7.1}{Configuraci\363n de la BeagleBone Black TODO}{chapter.7}% 64
-\BOOKMARK [2][-]{subsection.7.1.1}{Sistema operativo TODO}{section.7.1}% 65
-\BOOKMARK [2][-]{subsection.7.1.2}{Instalaci\363n de librer\355as TODO}{section.7.1}% 66
-\BOOKMARK [2][-]{subsection.7.1.3}{Configuraci\363n de la c\341mara y driver TODO}{section.7.1}% 67
-\BOOKMARK [2][-]{subsection.7.1.4}{Programaci\351s de scripts de configuraci\363n TODO}{section.7.1}% 68
-\BOOKMARK [1][-]{section.7.2}{Sistema de locomoci\363n TODO}{chapter.7}% 69
-\BOOKMARK [2][-]{subsection.7.2.1}{Movimiento del servo PWM}{section.7.2}% 70
-\BOOKMARK [2][-]{subsection.7.2.2}{Movimiento de los actuadores Dynamixel}{section.7.2}% 71
-\BOOKMARK [2][-]{subsection.7.2.3}{Movimiento sincronizado de las articulaciones}{section.7.2}% 72
-\BOOKMARK [2][-]{subsection.7.2.4}{Funciones de movimientos combinados TODo }{section.7.2}% 73
-\BOOKMARK [2][-]{subsection.7.2.5}{Creaci\363n de movimientos completos TODO}{section.7.2}% 74
-\BOOKMARK [2][-]{subsection.7.2.6}{Controlador de movimientos TODO}{section.7.2}% 75
-\BOOKMARK [1][-]{section.7.3}{Comunicaci\363n serie}{chapter.7}% 76
-\BOOKMARK [2][-]{subsection.7.3.1}{Comunicaci\363n serie en OpenCM TODO}{section.7.3}% 77
-\BOOKMARK [2][-]{subsection.7.3.2}{Comunicaci\363n serie en BeagleBone TODO}{section.7.3}% 78
-\BOOKMARK [2][-]{subsection.7.3.3}{Comunicaci\363n con m\363dulo Bluetooth TODO}{section.7.3}% 79
-\BOOKMARK [1][-]{section.7.4}{Programaci\363n de sensores TODO}{chapter.7}% 80
-\BOOKMARK [2][-]{subsection.7.4.1}{Infrarrojos TODO}{section.7.4}% 81
-\BOOKMARK [2][-]{subsection.7.4.2}{IMU TODO}{section.7.4}% 82
-\BOOKMARK [2][-]{subsection.7.4.3}{Br\372jula TODO}{section.7.4}% 83
-\BOOKMARK [1][-]{section.7.5}{Algoritmos de visi\363n TODO}{chapter.7}% 84
-\BOOKMARK [2][-]{subsection.7.5.1}{An\341lisis de trayectorias en navegaci\363n TODO}{section.7.5}% 85
-\BOOKMARK [2][-]{subsection.7.5.2}{B\372squeda de lineas TODO}{section.7.5}% 86
-\BOOKMARK [2][-]{subsection.7.5.3}{Lectura de c\363digos QR TODO}{section.7.5}% 87
-\BOOKMARK [0][-]{chapter.8}{Aplicaciones}{}% 88
-\BOOKMARK [1][-]{section.8.1}{CEABOT 2014}{chapter.8}% 89
-\BOOKMARK [1][-]{section.8.2}{Spain Experience}{chapter.8}% 90
-\BOOKMARK [0][-]{chapter.9}{Evaluaci\363n de resultados}{}% 91
-\BOOKMARK [1][-]{section.9.1}{Pruebas de funcionamiento}{chapter.9}% 92
-\BOOKMARK [1][-]{section.9.2}{Conclusi\363n}{chapter.9}% 93
-\BOOKMARK [1][-]{section.9.3}{Situaci\363n y desarrollos futuros}{chapter.9}% 94
-\BOOKMARK [0][-]{section.9.3}{Bibliograf\355a}{}% 95
+\BOOKMARK [2][-]{subsection.2.1.4}{Agregar sensores y actuadores TODO }{section.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.5}{Dise\361ar un sistema de alimentaci\363n TODO }{section.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.6}{Realizar las modificaciones esctructurales que sean pertinentes}{section.2.1}% 17
+\BOOKMARK [1][-]{section.2.2}{Puesta en marcha y programaci\363n}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.1}{Programar la locomoci\363n b\355peda}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.2}{Programar sensores TODO}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.3}{Desarrollar algoritmos de visi\363n}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.4}{Desarrollar aplicaciones de competici\363n TODO}{section.2.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Elecci\363n de componentes}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Plataforma rob\363tica}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{Selecci\363n de una plataforma rob\363tica}{section.3.1}% 25
+\BOOKMARK [1][-]{section.3.2}{Modificaciones estructurales}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.2.1}{Cabeza m\363vil TODO}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.2}{Cintura m\363vil TODO}{section.3.2}% 28
+\BOOKMARK [1][-]{section.3.3}{Sensorizaci\363n TODO}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.1}{Sensores de distancia TODO}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.2}{Sensores inerciales TODO}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.3}{C\341mara TODO}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Elecci\363n del controlador TODO}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.4.1}{Controlador de locomoci\363n TODO}{section.3.4}% 34
+\BOOKMARK [2][-]{subsection.3.4.2}{Controlador de visi\363n TODO}{section.3.4}% 35
+\BOOKMARK [2][-]{subsection.3.4.3}{Dise\361o del sistema TODO}{section.3.4}% 36
+\BOOKMARK [1][-]{section.3.5}{Alimentaci\363n}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.5.1}{Bater\355a}{section.3.5}% 38
+\BOOKMARK [2][-]{subsection.3.5.2}{Regulador de tensi\363n}{section.3.5}% 39
+\BOOKMARK [0][-]{chapter.4}{Descripci\363n de las herramientas a utilizar}{}% 40
+\BOOKMARK [1][-]{section.4.1}{Herramientas de dise\361o y fabricaci\363n de piezas}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.1.1}{OpenSCAD}{section.4.1}% 42
+\BOOKMARK [2][-]{subsection.4.1.2}{Impresi\363n 3d}{section.4.1}% 43
+\BOOKMARK [1][-]{section.4.2}{Herramientas de dise\361o de circuitos}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.2.1}{KiCad}{section.4.2}% 45
+\BOOKMARK [1][-]{section.4.3}{Herramientas de programaci\363n}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.3.1}{OpenCV}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.2}{Qt Creator}{section.4.3}% 48
+\BOOKMARK [2][-]{subsection.4.3.3}{CMake}{section.4.3}% 49
+\BOOKMARK [2][-]{subsection.4.3.4}{CM9 IDE}{section.4.3}% 50
+\BOOKMARK [2][-]{subsection.4.3.5}{Git}{section.4.3}% 51
+\BOOKMARK [0][-]{chapter.5}{Dise\361o de las partes mec\341nicas TODO}{}% 52
+\BOOKMARK [1][-]{section.5.1}{Cabeza}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.2}{Cintura}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.3}{Tronco}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.4}{Brazos}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.5}{Piernas}{chapter.5}% 57
+\BOOKMARK [1][-]{section.5.6}{Pies y tobillos}{chapter.5}% 58
+\BOOKMARK [1][-]{section.5.7}{Lista de piezas}{chapter.5}% 59
+\BOOKMARK [0][-]{chapter.6}{Desarrollo TODO MONTAJES}{}% 60
+\BOOKMARK [1][-]{section.6.1}{Adecuaci\363n de sensores}{chapter.6}% 61
+\BOOKMARK [1][-]{section.6.2}{Desarrollo de una placa de expansi\363n}{chapter.6}% 62
+\BOOKMARK [1][-]{section.6.3}{Montaje}{chapter.6}% 63
+\BOOKMARK [2][-]{subsection.6.3.1}{Montaje de la placa de expansi\363n}{section.6.3}% 64
+\BOOKMARK [2][-]{subsection.6.3.2}{Integraci\363n de la c\341mara en la cabeza}{section.6.3}% 65
+\BOOKMARK [0][-]{chapter.7}{Programaci\363n TODO}{}% 66
+\BOOKMARK [1][-]{section.7.1}{Configuraci\363n de la BeagleBone Black TODO}{chapter.7}% 67
+\BOOKMARK [2][-]{subsection.7.1.1}{Sistema operativo TODO}{section.7.1}% 68
+\BOOKMARK [2][-]{subsection.7.1.2}{Instalaci\363n de librer\355as TODO}{section.7.1}% 69
+\BOOKMARK [2][-]{subsection.7.1.3}{Configuraci\363n de la c\341mara y driver TODO}{section.7.1}% 70
+\BOOKMARK [2][-]{subsection.7.1.4}{Programaci\351s de scripts de configuraci\363n TODO}{section.7.1}% 71
+\BOOKMARK [1][-]{section.7.2}{Sistema de locomoci\363n TODO}{chapter.7}% 72
+\BOOKMARK [2][-]{subsection.7.2.1}{Movimiento del servo PWM}{section.7.2}% 73
+\BOOKMARK [2][-]{subsection.7.2.2}{Movimiento de los actuadores Dynamixel}{section.7.2}% 74
+\BOOKMARK [2][-]{subsection.7.2.3}{Movimiento sincronizado de las articulaciones}{section.7.2}% 75
+\BOOKMARK [2][-]{subsection.7.2.4}{Funciones de movimientos combinados TODo }{section.7.2}% 76
+\BOOKMARK [2][-]{subsection.7.2.5}{Creaci\363n de movimientos completos TODO}{section.7.2}% 77
+\BOOKMARK [2][-]{subsection.7.2.6}{Controlador de movimientos TODO}{section.7.2}% 78
+\BOOKMARK [1][-]{section.7.3}{Comunicaci\363n serie}{chapter.7}% 79
+\BOOKMARK [2][-]{subsection.7.3.1}{Comunicaci\363n serie en OpenCM TODO}{section.7.3}% 80
+\BOOKMARK [2][-]{subsection.7.3.2}{Comunicaci\363n serie en BeagleBone TODO}{section.7.3}% 81
+\BOOKMARK [2][-]{subsection.7.3.3}{Comunicaci\363n con m\363dulo Bluetooth TODO}{section.7.3}% 82
+\BOOKMARK [1][-]{section.7.4}{Programaci\363n de sensores TODO}{chapter.7}% 83
+\BOOKMARK [2][-]{subsection.7.4.1}{Infrarrojos TODO}{section.7.4}% 84
+\BOOKMARK [2][-]{subsection.7.4.2}{IMU TODO}{section.7.4}% 85
+\BOOKMARK [2][-]{subsection.7.4.3}{Br\372jula TODO}{section.7.4}% 86
+\BOOKMARK [1][-]{section.7.5}{Algoritmos de visi\363n TODO}{chapter.7}% 87
+\BOOKMARK [2][-]{subsection.7.5.1}{An\341lisis de trayectorias en navegaci\363n TODO}{section.7.5}% 88
+\BOOKMARK [2][-]{subsection.7.5.2}{B\372squeda de lineas TODO}{section.7.5}% 89
+\BOOKMARK [2][-]{subsection.7.5.3}{Lectura de c\363digos QR TODO}{section.7.5}% 90
+\BOOKMARK [0][-]{chapter.8}{Aplicaciones}{}% 91
+\BOOKMARK [1][-]{section.8.1}{CEABOT 2014}{chapter.8}% 92
+\BOOKMARK [1][-]{section.8.2}{Spain Experience}{chapter.8}% 93
+\BOOKMARK [0][-]{chapter.9}{Evaluaci\363n de resultados}{}% 94
+\BOOKMARK [1][-]{section.9.1}{Pruebas de funcionamiento}{chapter.9}% 95
+\BOOKMARK [1][-]{section.9.2}{Conclusi\363n}{chapter.9}% 96
+\BOOKMARK [1][-]{section.9.3}{Situaci\363n y desarrollos futuros}{chapter.9}% 97
+\BOOKMARK [0][-]{section.9.3}{Bibliograf\355a}{}% 98
