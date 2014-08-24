@@ -5,7 +5,7 @@
 %las referencias a imágenes \ref, 
 %y las referencias a ecuaciones \eqref
 
-Este tema.... Esto es un ejemplo de cita de un artículo \cite{gonzalezeducational}.
+%Este tema.... Esto es un ejemplo de cita de un artículo \cite{gonzalezeducational}.
 
 %\section{Introduccion a la robótica Open-Source TODO Muchas papeletas para ser borrado}
 
@@ -23,7 +23,7 @@ Este tema.... Esto es un ejemplo de cita de un artículo \cite{gonzalezeducationa
 
 La Asociación de Robótica de la Universidad Carlos III de Madrid, AsRob, surgió en el año 2006 con el objetivo de acercar la robótica a los alumnos de la universidad que compartían inquietudes e interés por el campo de la robótica.
 
-A día de hoy, la asociación cuenta con mas de cien ( <- TODO cuantos ) miembros activos repartidos en cinco lineas de investigación independientes, como son:
+\medskip A día de hoy, la asociación cuenta con mas de cien miembros activos repartidos en cinco lineas de investigación independientes, como son:
 \begin{itemize}
 \item \textbf{Vehículos Aéreos no Tripulados (UAVs)}.
 \item \textbf{Robot Devastation}.
@@ -32,11 +32,11 @@ A día de hoy, la asociación cuenta con mas de cien ( <- TODO cuantos ) miembros 
 \item \textbf{Impresoras 3D Open-Source}.
 \end{itemize}
 
-Sin embargo, cabe destacar que aunque se trata de proyectos diferentes, existe una gran sinergia entre ellos. Particularmente, los miembros de la linea de Robots Mini-Humanoides, estamos muy ligados al estudio de las impresoras 3D, investigando diferentes técnicas de impresión, diseño de estructuras y materiales. Ejemplo de ello es el proyecto MYOD ( <- TODO referencia ), en el que se propone la construcción de robots mini-humanoides compuestos integramente con piezas impresas y replicables.
+Sin embargo, cabe destacar que aunque se trata de proyectos diferentes, existe una gran sinergia entre ellos. Particularmente, los miembros de la linea de Robots Mini-Humanoides, está muy ligados al estudio de las impresoras 3D, investigando diferentes técnicas de impresión, diseño de estructuras y materiales. Ejemplo de ello es el proyecto MYOD ( <- TODO referencia ), en el que se propone la construcción de robots mini-humanoides compuestos integramente con piezas impresas y replicables.
 
-\subsection{Linea de investigación de robots Mini-Humanoides TODO}
+\subsection{Linea de investigación de robots Mini-Humanoides}
 
-La sección de la asociación que enmarca este trabajo es la linea de investigación de robots mini-humanoides. Los robots mini-humanoides son robots antropomórficos con una altura máxima de 50cm, tal y como indica la normativa del campeonato CEABOT ( <- TODO referencia al reglamento). De fomar orientativa, tomando como referencia la Humanoid League del campeonato RoboCup, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". Robots participantes de la RoboCup en la división KidSize como son el DARwIn-OP de Robotis o el Nao (figura \ref{naoydarwin}) de Aldebaran no entrarían dentro de la definición mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
+La sección de la asociación que enmarca este trabajo es la linea de investigación de Robots Mini-Humanoides. Los robots mini-humanoides son robots antropomórficos con una altura menor de 50cm, tal y como indica la normativa del campeonato CEABOT ( <- TODO referencia al reglamento ). De fomar orientativa, tomando como referencia la Humanoid League del campeonato RoboCup, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". Robots de la división KidSize como son el DARwIn-OP de Robotis o el Nao (figura \ref{naoydarwin}) de Aldebaran no entrarían dentro de la definición de mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
 
 \begin{figure}[h]
 \centering
@@ -45,11 +45,11 @@ La sección de la asociación que enmarca este trabajo es la linea de investigació
 \label{naoydarwin}
 \end{figure}
 
-TODO	 [EL OBJETIVO ES COMPETIR EN CEABOT]
+El objetivo anual de este grupo de la asociación es la participación en el campeonato nacional para robots mini-humanoides CEABOT.
 
 \subsection{Campeonato CEABOT}
 
-Desde el año 2006, el campeonato nacional CEABOT reúne anualmente a robots mini-humanoides procedentes de universidades españolas y equipos independientes. Durante tres días, los equipos tienen la posibilidad de presentar a sus robots a diferentes pruebas de habilidad para demostrar sus capacidades. En el reglamento de la edición del 2014, existen un total de cuatro pruebas combinadas de diversa temática que ponen a prueba la locomoción y percepción y actuación sobre el entorno de los robots participantes. Las pruebas son puntuadas por separado, sumandose de forma proporcional a su dificultad en la clasificación final del concurso.
+Desde el año 2006, el campeonato nacional CEABOT reúne cada año a robots mini-humanoides procedentes de universidades españolas y de equipos independientes. Durante tres días, los equipos tienen la posibilidad de presentar a sus robots a diferentes pruebas de habilidad en las que pueden demostrar sus capacidades. En el reglamento de la edición del 2014, existen un total de cuatro pruebas combinadas de diversa temática que ponen a prueba la locomoción, percepción y actuación sobre el entorno de los robots participantes. Las pruebas son puntuadas por separado, sumándose de forma proporcional a su dificultad en la clasificación final.
 
 Las pruebas previstas son las siguientes:
 
@@ -92,9 +92,7 @@ La prueba de sumo (figura \ref{sumo}) es una de las mas famosas del concurso. A 
 
 \subsubsection{Visión}
 
-La prueba de visión se presenta como una novedad en la edición de 2014 del concurso. Por primera vez se implanta en la competición una prueba que obliga a los robots a portar una cámara y realizar procesamiento de imágenes para su superación. El tablero de juego se comparte con el campo de la carrera de obtáculos. En esta prueba, el robot se colocará en el centro del tablero, y a su alrededor se colocarán obstaculos (los mismos que en la carrera de obstaculos) en intervalos de 45º. En la parte superior de los obstáculos se colocará un rectangulo rojo con un código QR en su interior (figura \ref{pruebavision}). El robot deberá leer el código QR, en el que se le indicará una rotación que le permitirá encontrar el siguiente marcador. De esta forma, el robot deberá seguir una secuencia de rotaciones para superar la prueba.
-
-
+La prueba de visión se presenta como una novedad en la edición de 2014 del concurso. Por primera vez se implanta en la competición una prueba que obliga a los robots a portar una cámara y realizar procesamiento de imágenes para su superación. El tablero de juego se comparte con el campo de la carrera de obtáculos. En esta prueba, el robot se colocará en el centro del tablero, y a su alrededor se colocarán obstaculos (los mismos que en la carrera de obstáculos) en intervalos de 45º. En la parte superior de los obstáculos se colocará un rectangulo rojo con un código QR en su interior (figura \ref{pruebavision}). El robot deberá leer el código QR, en el que se le indicará una rotación que le permitirá encontrar el siguiente marcador. De esta forma, el robot deberá seguir una secuencia de rotaciones para superar la prueba.
 
 \begin{figure}[h]
 \centering
@@ -102,8 +100,6 @@ La prueba de visión se presenta como una novedad en la edición de 2014 del concu
 \caption{Marcador de la prueba de visión}
 \label{pruebavision}
 \end{figure}
-
-
 
 \section{Estado del harte TODO}
 

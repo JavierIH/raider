@@ -38,25 +38,25 @@ En el mercado existe una gran variedad de robots educativos que cumplen las cara
 
 \subsubsection{Hitec Robonova}
 
-El Robonova (figura \ref{robonova}) es uno de los mini-humanoides mas extendidos a nivel mundial. Fue uno de los primeros robots de este tipo que se fabricó comercialmente y marcó un antes y un despues en su categoría. Es por esto que es muy común encontrar Robonovas en competiciones como Ceabot, ya que durante muchos años fue el robot mini-humanoide mejor equipado y mas vendido. En la Asociación de Robótica de la Universidad Carlos III, se han utilizado Robonovas en competiciones y proyectos desde su fundación.
+El Robonova (figura \ref{robonova}) es uno de los mini-humanoides mas extendidos a nivel mundial. Fue uno de los primeros robots de este tipo que se fabricó comercialmente y marcó un antes y un después en su categoría. Es por esto que es muy común encontrar Robonovas en competiciones como CEABOT, ya que durante muchos años fue el robot mini-humanoide mejor equipado y mas vendido. En la Asociación de Robótica de la Universidad Carlos III, se han utilizado Robonovas en competiciones y proyectos desde su fundación.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.4\textwidth]{figuras/robonova}   
-\caption{Hitec Robonova}
+\includegraphics[width=0.27\textwidth]{figuras/robonova}   
+\caption{Hitec Robonova ©Hitec RCD}
 \label{robonova}
 \end{figure}
 
-El kit de fábrica cuenta con 16 grados de libertad. Sus actuadores son servos digitales HSR 8498HB, que desarrollan un torque de 7.4kg/cm. Cabe destacar de estor servos su función "Motion Feedback", es decir, su capacidad para leer posiciones y comunicarselas al controlador.
+\medskip El kit de fábrica cuenta con 16 grados de libertad. Sus actuadores son servos digitales HSR 8498HB, que desarrollan un torque de 7.4kg/cm. Cabe destacar de estor servos su función "Motion Feedback", es decir, su capacidad para leer posiciones y comunicarselas al controlador.
 La placa de control del Robonova está basada en un microcontrolador ATMega 128 y cuenta con hasta 40 pines GPIO (puertos binarios de entrada y salida), 8 entradas analógicas, 3 salidas PWM, puerto serie y conexión I2C. Gracias a esto, el Robonova es fácilmente ampliable con sensores y actuadores, no necesariamente de la misma marca. En cuanto al software, Hitec da soporte a la programación con RoboBasic, un entorno de desarrollo completo con un lenguaje basado en Basic. 
 
 \subsubsection{Kondo KHR-3HV}
 
 El KHR-3HV (figura \ref{kondo}), del fabricante japonés Kondo, es uno de los mini-humanoides mas avanzados actualmente. Puede presumir de ser el modelo de serie mas utilizado en el campeonato Robo-One, siendo seleccionado por los equipos por su gran agilidad y tamaño compacto.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{figuras/kondo}   
+\includegraphics[width=0.5\textwidth]{figuras/kondo}   
 \caption{Kondo KHR-3HV}
 \label{kondo}
 \end{figure}
@@ -68,9 +68,9 @@ En su configuración standard, el KHR-3HV cuenta con 17 servomotores KRS-2552HV d
 
 El Robovie-X, uno de los robots humanoides de la empresa Vstone, se presenta en tres versiones diferentes: Lite, Standard y PRO. La diferencia entre los tres modelos radica en el número y tipo de servos que montan, manteniendo comunes el resto de partes del robot. El modelo Standard (figura \ref{robovie}) posee 17 grados de libertad, movidos por servos VS-S092J que desarrollan un torque de 9.2kg/cm. El controlador es un VS-C1, el cual tiene 30 canales para controlar servos. Vstone también fabrica diversas placas de expansión para la conexión de sensores en el Robovie-X.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{figuras/robovie.jpg}
+\includegraphics[width=0.4\textwidth]{figuras/robovie.jpg}
 \caption{Vstone Robovie-X}
 \label{robovie}
 \end{figure}
@@ -84,16 +84,15 @@ La empresa koreana Robotis, comercializa un kit robótico conocido como Bioloid. 
 
 El robot Bioloid (figura \ref{bioloid}) incluye 18 servos Dynamixel, modelo AX-12A o AX-18A, dependiendo de la versión del kit. Los actuadores Dynamixel están controlados internamente por un microcontrolador ATMega8. Gracias a él, estos servos permiten realizar funciones avanzadas tales como el control de velocidad, torque, temperatura de ejecución... etc, posibilitando procesar información de bajo nivel directamente dentro del actuador y pudiendo abstraer el control de la controladora del robot a un nivel superior.
 
-En cuanto a su controladora, los kits proporcionan controladoras de Robotis de la serie CM, mas específicamente, la CM-5 en el caso del Bioloid Comprehensive y la CM-510 o CM-530 (según qué versión) en el Bioloid Premium y GP.
-
-
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{figuras/bioloid.JPG}   
+\includegraphics[width=0.35\textwidth]{figuras/bioloid.JPG}   
 \caption{Bioloid Premium}
 \label{bioloid}
 \end{figure}
 
+
+En cuanto a su controladora, los kits proporcionan controladoras de Robotis de la serie CM, mas específicamente, la CM-5 en el caso del Bioloid Comprehensive y la CM-510 o CM-530 (según qué versión) en el Bioloid Premium y GP.
 
 \begin{itemize}
 \item \textbf{Robotis CM-5}.
@@ -110,25 +109,30 @@ Presentado como la evolución de la CM-510, en este caso el microcontrolador de l
 En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas distribuida gratuitamente por Robotis para la programación de sus robots educativos. Destaca por ser un entorno con un lenguaje de programación (R+) muy visual e intuitivo, preparado para su uso por niños o gente sin conocimientos muy avanzados de programación. Sin embargo, esto lo convierte en un lenguaje de programación muy limitado, hasta el punto que no permite utilizar todo el potencial de los actuadores Dynamixel.
 
 
-
 \subsubsection{comparativa y elección final TODO}
 
-Realizando un primer análisis, ninguno de los robots candidatos cumple los requísitos. Todos utilizan IDEs y lenguajes propios para su programación. El Robonova y el Robovie tienen unos servos demasiado débiles, lo que dificultaría mucho añadir mas peso al robot. En lo que a grados de libertad se refiere, solo el Bioloid es capaz de rotar las pierna en un eje perpendicular al suelo, lo que supone una ventaja a la hora de programar la locomoción del robot. Entre el Kondo y el Bioloid, se ha elegido el Bioloid por tres razones: Es mas fácil de modificar, el kit trae mas servos, y es mas barato.
+Realizando un primer análisis, ninguno de los robots candidatos cumple los requísitos. Todos utilizan IDEs y lenguajes propios para su programación. El Robonova y el Robovie tienen unos servos demasiado débiles, lo que dificultaría mucho añadir mas peso al robot. Entre el Kondo y el Bioloid, se ha elegido el Bioloid por tres razones: Es mas fácil de modificar, el kit contiene mas servos, y es más barato. También, previendo las modificaciones futuras, se contempló la idea de comprar únicamente los servos Dynamixel que usa el Bioloid por separado. Sin embargo, resultó mas económico adquirir el kit completo de Bioloid Comprehensive.
 
 
 \section{Modificaciones estructurales}
 
-El Bioloid Comprehensive es un buen punto de partida, sin embargo tiene algunos puntos débiles que conviene revisar. Además, para poder implantar en el robot los dispositivos que requiere este proyecto se necesitará mejorar las capacidades de la plataforma.
+El Bioloid Comprehensive es un buen punto de partida, sin embargo tiene algunos puntos débiles que conviene revisar. Además, para poder implantar en el robot los dispositivos que requiere este proyecto se necesitarán mejorar las capacidades de la plataforma.
+
 
 \subsection{Cabeza móvil TODO}
 
 Un requisito importante del proyecto es permitir que la cámara que vamos a montar pueda moverse con libertad para enfocar a diferentes zonas de su entorno. Dado que en CEABOT la mayoría de los datos  que aporta el entorno están situados en el suelo, necesitamos que la cámara al menos pueda dirigirse hacia el frente y hacia el suelo. Esto lo conseguiremos con la adición de un microservo PWM y una plataforma articulada para la cabeza. Dadas las características de este movimiento, no necesitamos un servo con grandes capacidades, ya que su rango de acción estará muy limitado y su efecto será despreciable en el reparto de pesos del robot.
 
-[FOTO REAL DEL MICROSERVO]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\textwidth]{figuras/microservo.JPG}   
+\caption{Microservo PWM}
+\label{microservo}
+\end{figure}
 
-Se ha elegido un microservo PWM por su bajo tamaño y peso, su bajo precio y su sencillez a la hora de montarlo y programarlo. El principio de funcionamiento de un servo PWM es muy simple. De las tres patillas de su conector, dos son de alimentación y la tercera se encarga de recibir una onda PWM que, variando la amplitud de su pulso, ordena al servo a colocarse en la posición fijada.
+Se ha elegido un microservo PWM por su bajo tamaño y peso, su bajo precio y su sencillez a la hora de montarlo y programarlo. El principio de funcionamiento de un servo PWM es muy simple. De las tres patillas de su conector, dos son de alimentación y la tercera se encarga de recibir una señal PWM que, variando la amplitud de su pulso, ordena al servo a moverse a una posición fijada.
 
-Particularmente, se ha escogido un servo Tower Pro MG90s (figura \ref{microservo}) cuyas especificaciones presentan un torque de 2.4=kg/cm, y una transmisión metálica soportada por rodamientos. Este último dato es muy importande si tenemos en cuenta que el sistema de cabeza móvil se situará en una zona extrema del robot, y que un golpe producido por una caida forzará de forma directa el eje del servo de la articulación. Este servo proporcionará a la cabeza la robustez necesaria para salir indemne de este tipo de accidentes, muy comunes teniendo en cuenta que el robot estará destinado a la realización de pruebas de competición.
+Particularmente, se ha escogido un servo Tower Pro MG90s (figura \ref{microservo}) cuyas especificaciones presentan un torque de 2.4=kg/cm, y una transmisión metálica soportada por rodamientos. Este último dato es muy importande si tenemos en cuenta que el sistema de cabeza móvil se situará en una zona extrema del robot, y que un golpe provocado por una caida forzará de forma directa el eje del servo de la articulación. Este servo proporcionará a la cabeza la robustez necesaria para salir indemne en este tipo de accidentes. Accidentes que por otra aprte son muy comunes teniendo en cuenta que el robot estará destinado a la realización de pruebas de competición.
 
 \subsection{Cintura móvil TODO}
 
@@ -256,15 +260,25 @@ El problema de estas placas es que no existe un distribuidor que las venda en Eu
 
 Recientemente la empresa Robotis ha sacado a la venta una nueva linea de placas de desarrollo, las placas OpenCM (figura \ref{cm900}). Estas placas de desarrollo están basadas en las placas Arduino, copiando sus funcionalidades y añadiendo al sistema la posibilidad de comunicarse con actuadores Dynamixel. Su entorno de programación está basado en Arduino IDE y continene bibliotecas similares a las de Arduino para la comunicación con sensores y actuadores. Su alta compatibilidad con Arduino proporciona al usuario una mayor facilidad a la hora de buscar documentación sobre cómo utilizar la placa.
 
-[FOTO REAL DE CM900]
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/cm900}   
+\caption{Placa CM900}
+\label{cm900}
+\end{figure}
 
-Si bien es cierto, es necesario comentar que la primera edición, la CM900, presentó problemas en su diseño que la conviertieron en una placa muy poco fiable y propensa a romperse prematuramente.  En este proyecto se utilizará la OpenCM9.04, sucesora de la CM900 con similares capacidades y tamaño reducido. Entre sus especificaciones destacan: microcontrolador ARM Cortex-M3, 26 pines de entrada/salida, 10 entradas analogicas de 12 bits y 3 puertos serie (uno de ellos reservado para el bus Dynamixel).
+Si bien es cierto, es necesario comentar que la primera edición, la CM900, presentó problemas en su diseño que la conviertieron en una placa muy poco fiable y propensa a deteriorarse prematuramente. En este proyecto se utilizará la OpenCM9.04, sucesora de la CM900, con similares capacidades y tamaño reducido. Entre sus especificaciones destacan: Un microcontrolador ARM Cortex-M3, 26 pines de entrada/salida, 10 entradas analogicas de 12 bits y 3 puertos serie (uno de ellos reservado para el bus Dynamixel).
 
-[FOTO REAL DE OPENCM]
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/opencm}   
+\caption{Placa OpenCM9.04}
+\label{opencm}
+\end{figure}
 
 \subsection{Controlador de visión TODO}
 
-Como controlador principal y maestro, se utilizará un SBC. Por tamaño y capacidades existen dos alternativas directas: La Raspberry Pi B y la BeagleBone Black.
+Como controlador principal, se utilizará un SBC ( TODO revisar las siglas ) . Por tamaño y capacidades existen dos alternativas directas: La Raspberry Pi B y la BeagleBone Black.
 
 \subsubsection{Raspberry Pi TODO}
 
@@ -298,6 +312,15 @@ En el caso que nos ocupa, sería una perfecta candidata a ocuparse del procesamie
 
 La BeagleBone Black (figura \ref{beaglebone}), de Texas Instruments no es tan popular como la Raspberry Pi, sin embargo posee algunas características muy interesantes.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/beaglebone}   
+\caption{SBC BeagleBone Black}
+\label{beaglebone}
+\end{figure}
+
+Como puede observarse en el cuadro \ref{blaspec}, sus características son ligeramente superiores a las de la Raspberry. Principalmente, el hecho de que tenga tal variedad de pines la hace muy adecuada para usarse como controlador principal de un robot. La BeagleBone Black actualmente no cuenta con una comunidad tan extensa como la Raspberry Pi, pero cada vez se ve mas en proyectos. El problema fundamental de la BeagleBone Black es la falta de bibliotecas en C/C++ que permitan programar sus periféricos de bajo nivel. Esto significa que en el caso de utilizar esta placa, se deberán programar bibliotecas propias para estos propósitos. 
+
 \begin{table}[H]
 \centering
 \begin{tabular}{ >{\arraybackslash}m{3.5cm} >{\arraybackslash}m{7.5cm}}
@@ -318,10 +341,6 @@ Sistemas operativos soportados: &   Fedora, Android, Ubuntu, Debian, openSUSE , 
 \label{blaspec}
 \end{table}
 
-Como puede observarse en el cuadro \ref{blaspec}, sus características son ligeramente superiores a las de la Raspberry. Principalmente, el hecho de que tenga tal variedad de pines la hace muy adecuada para usarse como controlador principal de un robot. La BeagleBone Black actualmente no cuenta con una comunidad tan extensa como la Raspberry Pi, pero cada vez se ve mas en proyectos. El problema fundamental de la BeagleBone Black es la falta de bibliotecas en C/C++ que permitan programar sus periféricos de bajo nivel. Esto significa que en el caso de utilizar esta placa, se deberán programar bibliotecas propias para estos propósitos. 
-
-[FIGURA DE BEAGLEBONE] TODO
-
 Por otro lado, su lógica funciona a 3.3V y es mas compacta que la Raspberry Pi. Por todo lo comentado, y aunque trabajar con ella pueda resultar mas tedioso que con la Raspberry Pi, se ha seleccionado la Beaglebone Black como controlador principal del robot.
 
 \subsection{Diseño del sistema TODO}
@@ -335,6 +354,7 @@ Una vez se ha seleccionado todos los elementos que fomarán parte del robot, se h
 \label{dia1}
 \end{figure}
 
+ TODO Revisar que los componentes sean los buenos ( especialmente TODO la brujula ) 
 
 \section{Alimentación}
 
@@ -403,9 +423,15 @@ No obstante existen dos problemas para realizar este montaje. El primero es que 
 
 \subsubsection{Convertidor UBEC TODO }
 
-Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC se utilizan normalmente con baterías de litio cuando el sistema necesita una tensión de alimentación de 5V o 6V. Es por ello que se utilizan mucho en receptores de emisoras de radiocontrol, y gracias a esto existe una amplia variedad de UBECs asequibles en el mercado. La mayor ventaja de estos circuitos convertidores es su eficiencia superior al 90\%. Gracias a esto nuestro sistema tebndrá unas perdidas menores, no se calentará en exceso y gozará de una autonomía mayor. 
+Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC se utilizan normalmente con baterías de litio cuando el sistema necesita una tensión de alimentación de 5V o 6V. Es por ello que se utilizan mucho en receptores de emisoras de radiocontrol, y gracias a esto existe una amplia variedad de UBECs asequibles en el mercado. La mayor ventaja de estos circuitos convertidores es su eficiencia superior al 90\%. Gracias a esto nuestro sistema tendrá unas perdidas menores, no se calentará en exceso y gozará de una autonomía superior. 
 
-[FOTO DE UBEC]
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/ubec}   
+\caption{Convertidor DC-DC comercial, UBEC}
+\label{ubec}
+\end{figure}
+
 
 \subsubsection{Elección final TODO }
 

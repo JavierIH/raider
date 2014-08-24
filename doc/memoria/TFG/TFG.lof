@@ -10,29 +10,34 @@
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Marcador de la prueba de visi\'on}}{5}{figure.1.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Hitec Robonova}}{11}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Kondo KHR-3HV}}{12}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Vstone Robovie-X}}{13}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Bioloid Premium}}{14}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Salida de un sensor Sharp respecto a su medici\'on.}}{17}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Primer experimento.}}{18}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Segundo experimento.}}{18}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Tercer experimento.}}{19}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Sensor inercial MPU9150}}{20}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Microsoft LifeCam Cinema}}{21}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Placa Arbotix}}{23}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama de conexiones}}{27}{figure.3.12}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hitec Robonova \IeC {\copyright }Hitec RCD}}{10}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Kondo KHR-3HV}}{11}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Vstone Robovie-X}}{12}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Bioloid Premium}}{13}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Microservo PWM}}{15}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Salida de un sensor Sharp respecto a su medici\'on.}}{17}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Primer experimento.}}{18}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Segundo experimento.}}{18}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Tercer experimento.}}{18}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Sensor inercial MPU9150}}{19}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Microsoft LifeCam Cinema}}{20}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Placa Arbotix}}{22}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Placa CM900}}{22}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Placa OpenCM9.04}}{23}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces SBC BeagleBone Black}}{24}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Diagrama de conexiones}}{26}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Convertidor DC-DC comercial, UBEC}}{30}{figure.3.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{34}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{35}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces KiCad}}{36}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Qt Creator}}{37}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces CM9 IDE}}{38}{figure.4.5}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{32}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{33}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces KiCad}}{34}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Qt Creator}}{35}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces CM9 IDE}}{36}{figure.4.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Amplitud de giro de un AX-12A}}{52}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Esquema de puertos serie en una BeagleBone Black}}{57}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{58}{figure.7.3}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Amplitud de giro de un AX-12A}}{50}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Esquema de puertos serie en una BeagleBone Black}}{55}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{56}{figure.7.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
