@@ -33,7 +33,7 @@ int main() {
         float angle= atan2(mx,my) * (180 / 3.14159265);
         float angle2= atan2(mx,mz) * (180 / 3.14159265);
 
-        report(ERROR,"\nCompass angle1: "+to_string(angle));
+        report(ERROR,"Compass angle1: "+to_string(angle));
         report(ERROR,"Compass angle2: "+to_string(angle2));
         usleep(1000000);
     }
