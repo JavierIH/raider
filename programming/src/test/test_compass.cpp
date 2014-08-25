@@ -10,11 +10,14 @@ int main() {
     Raider raider;
     Compass compass(new I2C(I2C_BUS));
     while(1){
-        report(INFO,"Compass X: "+to_string(65536-compass.getCompassX()));
-        report(INFO,"Compass Y: "+to_string(65536-compass.getCompassY()));
-        report(INFO,"Compass Z: "+to_string(65536-compass.getCompassZ()));
+        report(INFO,"Compass X: "+to_string(compass.getCompassX())-65536);
+        report(INFO,"Compass Y: "+to_string(compass.getCompassY())-65536);
+        report(INFO,"Compass Z: "+to_string(compass.getCompassZ())-65536);
 
-        float angle= atan2((double)compass.getCompassY(),(double)compass.getCompassX()) * (180 / 3.14159265) + 180;
+
+    double x=compass.getCompassX();
+    double y=compass.getCompassY();
+        float angle= atan2(x,y) * (180 / 3.14159265);
 
         report(INFO,"\nCompass angle: "+to_string(angle));
         usleep(200000);
