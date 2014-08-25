@@ -37,7 +37,7 @@
 \contentsline {subsubsection}{comparativa y elecci\'on final TODO}{16}{section*.16}
 \contentsline {section}{\numberline {3.2}Modificaciones estructurales}{16}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Cabeza m\'ovil TODO}{17}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Cintura m\'ovil TODO}{18}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Cintura m\'ovil TODO}{17}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Sensorizaci\'on TODO}{18}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Sensores de distancia TODO}{18}{subsection.3.3.1}
 \contentsline {subsubsection}{Sensores de infrarrojos TODO}{18}{section*.17}

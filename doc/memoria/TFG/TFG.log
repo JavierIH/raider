@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.26)  24 AUG 2014 03:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.26)  24 AUG 2014 20:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1802,22 +1802,6 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 125.
  [16]
-
-LaTeX Warning: File `figuras/microservo.JPG' not found on input line 128.
-
-
-! Package pdftex.def Error: File `figuras/microservo.JPG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 ...h=0.35\textwidth]{figuras/microservo.JPG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 137.
 Package babel Info: Redefining spanish shorthand >>
@@ -1830,49 +1814,46 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 137.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 137.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 140.
-LaTeX Info: Redefining \% on input line 140.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 141.
+LaTeX Info: Redefining \. on input line 144.
+LaTeX Info: Redefining \% on input line 144.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 144.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 144.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 144.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 144.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 144.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 144.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 144.
  [17]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 141.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 141.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 141.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 141.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 141.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 141.
-Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 145.
 Package babel Info: Redefining spanish shorthand >>
 (babel)             in language  on input line 145.
@@ -1885,12 +1866,15 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 145.
 
-<figuras/graficair.png, id=743, 523.9575pt x 698.61pt>
+<figuras/graficair.png, id=742, 523.9575pt x 698.61pt>
 File: figuras/graficair.png Graphic file (type png)
 
 <use figuras/graficair.png>
 Package pdftex.def Info: figuras/graficair.png used on input line 155.
 (pdftex.def)             Requested size: 276.00105pt x 368.0123pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Info: Redefining \. on input line 159.
 LaTeX Info: Redefining \% on input line 159.
 Package babel Info: Redefining spanish shorthand <<
@@ -1944,14 +1928,15 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 164.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 164.
- [19 <./figuras/graficair.png>]
-<figuras/expir1.jpg, id=754, 2055.68pt x 1541.76pt>
+
+[19 <./figuras/graficair.png>]
+<figuras/expir1.jpg, id=753, 2055.68pt x 1541.76pt>
 File: figuras/expir1.jpg Graphic file (type jpg)
  <use figuras/expir1.jpg>
 Package pdftex.def Info: figuras/expir1.jpg used on input line 170.
 (pdftex.def)             Requested size: 172.5pt x 129.3658pt.
 
-<figuras/expus1.jpg, id=755, 2055.68pt x 1541.76pt>
+<figuras/expus1.jpg, id=754, 2055.68pt x 1541.76pt>
 File: figuras/expus1.jpg Graphic file (type jpg)
  <use figuras/expus1.jpg>
 Package pdftex.def Info: figuras/expus1.jpg used on input line 170.
@@ -1961,13 +1946,13 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 169--172
  [][] 
  []
 
-<figuras/expir2.jpg, id=756, 2055.68pt x 1541.76pt>
+<figuras/expir2.jpg, id=755, 2055.68pt x 1541.76pt>
 File: figuras/expir2.jpg Graphic file (type jpg)
  <use figuras/expir2.jpg>
 Package pdftex.def Info: figuras/expir2.jpg used on input line 179.
 (pdftex.def)             Requested size: 172.5pt x 129.3658pt.
 
-<figuras/expus2.jpg, id=757, 2055.68pt x 1541.76pt>
+<figuras/expus2.jpg, id=756, 2055.68pt x 1541.76pt>
 File: figuras/expus2.jpg Graphic file (type jpg)
  <use figuras/expus2.jpg>
 Package pdftex.def Info: figuras/expus2.jpg used on input line 179.
@@ -1977,13 +1962,13 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 178--181
  [][] 
  []
 
-<figuras/expir3.jpg, id=758, 2055.68pt x 1541.76pt>
+<figuras/expir3.jpg, id=757, 2055.68pt x 1541.76pt>
 File: figuras/expir3.jpg Graphic file (type jpg)
  <use figuras/expir3.jpg>
 Package pdftex.def Info: figuras/expir3.jpg used on input line 188.
 (pdftex.def)             Requested size: 172.5pt x 129.3658pt.
 
-<figuras/expus3.jpg, id=759, 2055.68pt x 1541.76pt>
+<figuras/expus3.jpg, id=758, 2055.68pt x 1541.76pt>
 File: figuras/expus3.jpg Graphic file (type jpg)
  <use figuras/expus3.jpg>
 Package pdftex.def Info: figuras/expus3.jpg used on input line 188.
@@ -2033,7 +2018,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 197.
 [20 <./figuras/expir1.jpg> <./figuras/expus1.jpg> <./figuras/expir2.jpg> <./fig
 uras/expus2.jpg> <./figuras/expir3.jpg> <./figuras/expus3.jpg>]
-<figuras/imu.jpg, id=766, 301.125pt x 301.125pt>
+<figuras/imu.jpg, id=765, 301.125pt x 301.125pt>
 File: figuras/imu.jpg Graphic file (type jpg)
  <use figuras/imu.jpg>
 Package pdftex.def Info: figuras/imu.jpg used on input line 206.
@@ -2076,7 +2061,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 217.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 217.
- [21 <./figuras/imu.jpg>] <figuras/camara.jpg, id=776, 542.025pt x 311.1625pt>
+ [21 <./figuras/imu.jpg>] <figuras/camara.jpg, id=775, 542.025pt x 311.1625pt>
 File: figuras/camara.jpg Graphic file (type jpg)
 
 <use figuras/camara.jpg>
@@ -2134,7 +2119,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 237.
 
-<figuras/arbotix.jpg, id=783, 301.125pt x 301.125pt>
+<figuras/arbotix.jpg, id=782, 301.125pt x 301.125pt>
 File: figuras/arbotix.jpg Graphic file (type jpg)
  <use figuras/arbotix.jpg>
 Package pdftex.def Info: figuras/arbotix.jpg used on input line 252.
@@ -2167,20 +2152,6 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 256.
 
 [23]
-
-! LaTeX Error: File `figuras/cm900' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.265 ...phics[width=0.6\textwidth]{figuras/cm900}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \. on input line 271.
 LaTeX Info: Redefining \% on input line 271.
 Package babel Info: Redefining spanish shorthand <<
@@ -2207,21 +2178,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 271.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 271.
-[24 <./figuras/arbotix.jpg>]
-
-! LaTeX Error: File `figuras/opencm' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.274 ...hics[width=0.6\textwidth]{figuras/opencm}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ [24 <./figuras/arbotix.jpg>]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 279.
 Package babel Info: Redefining spanish shorthand >>
@@ -2234,6 +2191,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 279.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 279.
+
 
 LaTeX Warning: Reference `raspberry' on page 25 undefined on input line 307.
 
@@ -2264,21 +2222,6 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 308.
 [25]
-
-! LaTeX Error: File `figuras/beaglebone' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.317 ...[width=0.6\textwidth]{figuras/beaglebone}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Underfull \hbox (badness 2245) in paragraph at lines 338--338
 []|\OT1/cmr/m/n/10 Fedora, An-droid, Ubun-tu, De-bian,
  []
@@ -2331,7 +2274,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 346.
 
-<figuras/dia1.jpeg, id=812, 620.3175pt x 745.78625pt>
+<figuras/dia1.jpeg, id=811, 620.3175pt x 745.78625pt>
 File: figuras/dia1.jpeg Graphic file (type jpg)
  <use figuras/dia1.jpeg>
 Package pdftex.def Info: figuras/dia1.jpeg used on input line 352.
@@ -2539,22 +2482,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 429.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 429.
- [31]
-
-! LaTeX Error: File `figuras/ubec' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.432 ...aphics[width=0.6\textwidth]{figuras/ubec}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
+ [31])
 LaTeX Info: Redefining \. on input line 68.
 LaTeX Info: Redefining \% on input line 68.
 Package babel Info: Redefining spanish shorthand <<
@@ -2655,7 +2583,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 
 
-] <figuras/openscad.png, id=856, 1861.95625pt x 1059.96pt>
+] <figuras/openscad.png, id=855, 1861.95625pt x 1059.96pt>
 File: figuras/openscad.png Graphic file (type png)
 
 <use figuras/openscad.png>
@@ -2700,7 +2628,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 36.
  [34 <./figuras/openscad.png>]
-<figuras/impresora.jpg, id=863, 1541.76pt x 2055.68pt>
+<figuras/impresora.jpg, id=862, 1541.76pt x 2055.68pt>
 File: figuras/impresora.jpg Graphic file (type jpg)
 
 <use figuras/impresora.jpg>
@@ -2757,7 +2685,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 55.
  [35 <./figuras/impresora.jpg>]
-<figuras/kicad.png, id=869, 1861.95625pt x 1058.95625pt>
+<figuras/kicad.png, id=868, 1861.95625pt x 1058.95625pt>
 File: figuras/kicad.png Graphic file (type png)
 
 <use figuras/kicad.png>
@@ -2827,7 +2755,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 88.
 
-<figuras/qt.png, id=875, 1861.95625pt x 1058.95625pt>
+<figuras/qt.png, id=874, 1861.95625pt x 1058.95625pt>
 File: figuras/qt.png Graphic file (type png)
  <use figuras/qt.png>
 Package pdftex.def Info: figuras/qt.png used on input line 94.
@@ -2884,7 +2812,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 109.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 109.
- <figuras/cm9.png, id=881, 1861.95625pt x 1058.95625pt>
+ <figuras/cm9.png, id=880, 1861.95625pt x 1058.95625pt>
 File: figuras/cm9.png Graphic file (type png)
 
 <use figuras/cm9.png>
@@ -3120,21 +3048,21 @@ Overfull \hbox (11.82513pt too wide) in paragraph at lines 38--38
  []|\OT1/cmr/m/n/10 Cantidad| 
  []
 
-<figuras/antebrazo.png, id=900, 308.15125pt x 268.00125pt>
+<figuras/antebrazo.png, id=899, 308.15125pt x 268.00125pt>
 File: figuras/antebrazo.png Graphic file (type png)
 
 <use figuras/antebrazo.png>
 Package pdftex.def Info: figuras/antebrazo.png used on input line 40.
 (pdftex.def)             Requested size: 113.81102pt x 98.97897pt.
 
-<figuras/cabeza.png, id=901, 324.21124pt x 286.06876pt>
+<figuras/cabeza.png, id=900, 324.21124pt x 286.06876pt>
 File: figuras/cabeza.png Graphic file (type png)
 
 <use figuras/cabeza.png>
 Package pdftex.def Info: figuras/cabeza.png used on input line 41.
 (pdftex.def)             Requested size: 113.81102pt x 100.42238pt.
 
-<figuras/chasislifecam.png, id=902, 364.36125pt x 305.14pt>
+<figuras/chasislifecam.png, id=901, 364.36125pt x 305.14pt>
 File: figuras/chasislifecam.png Graphic file (type png)
 
 <use figuras/chasislifecam.png>
@@ -3145,19 +3073,19 @@ Overfull \hbox (12.70573pt too wide) in paragraph at lines 42--42
 []|\OT1/cmr/m/n/10 chasislifecam.stl| 
  []
 
-<figuras/cintura.png, id=903, 337.26pt x 276.03125pt>
+<figuras/cintura.png, id=902, 337.26pt x 276.03125pt>
 File: figuras/cintura.png Graphic file (type png)
 
 <use figuras/cintura.png>
 Package pdftex.def Info: figuras/cintura.png used on input line 43.
 (pdftex.def)             Requested size: 113.81102pt x 93.14598pt.
- <figuras/codo.png, id=904, 341.275pt x 306.14375pt>
+ <figuras/codo.png, id=903, 341.275pt x 306.14375pt>
 File: figuras/codo.png Graphic file (type png)
 
 <use figuras/codo.png>
 Package pdftex.def Info: figuras/codo.png used on input line 44.
 (pdftex.def)             Requested size: 113.81102pt x 102.09282pt.
- <figuras/cuello.png, id=905, 326.21875pt x 300.12125pt>
+ <figuras/cuello.png, id=904, 326.21875pt x 300.12125pt>
 File: figuras/cuello.png Graphic file (type png)
 
 <use figuras/cuello.png>
@@ -3179,38 +3107,38 @@ Overfull \hbox (11.82513pt too wide) in paragraph at lines 57--57
  []|\OT1/cmr/m/n/10 Cantidad| 
  []
 
-<figuras/espalda.png, id=906, 424.58624pt x 337.26pt>
+<figuras/espalda.png, id=905, 424.58624pt x 337.26pt>
 File: figuras/espalda.png Graphic file (type png)
 
 <use figuras/espalda.png>
 Package pdftex.def Info: figuras/espalda.png used on input line 59.
 (pdftex.def)             Requested size: 113.81102pt x 90.4027pt.
 
-<figuras/gripper.png, id=907, 271.0125pt x 258.9675pt>
+<figuras/gripper.png, id=906, 271.0125pt x 258.9675pt>
 File: figuras/gripper.png Graphic file (type png)
 
 <use figuras/gripper.png>
 Package pdftex.def Info: figuras/gripper.png used on input line 60.
 (pdftex.def)             Requested size: 113.81102pt x 108.75374pt.
- <figuras/hombro.png, id=908, 300.12125pt x 273.02pt>
+ <figuras/hombro.png, id=907, 300.12125pt x 273.02pt>
 File: figuras/hombro.png Graphic file (type png)
 
 <use figuras/hombro.png>
 Package pdftex.def Info: figuras/hombro.png used on input line 61.
 (pdftex.def)             Requested size: 113.81102pt x 103.53204pt.
- <figuras/pecho.png, id=909, 416.55624pt x 335.2525pt>
+ <figuras/pecho.png, id=908, 416.55624pt x 335.2525pt>
 File: figuras/pecho.png Graphic file (type png)
 
 <use figuras/pecho.png>
 Package pdftex.def Info: figuras/pecho.png used on input line 62.
 (pdftex.def)             Requested size: 113.81102pt x 91.59364pt.
- <figuras/pie.png, id=910, 383.4325pt x 318.18875pt>
+ <figuras/pie.png, id=909, 383.4325pt x 318.18875pt>
 File: figuras/pie.png Graphic file (type png)
 
 <use figuras/pie.png>
 Package pdftex.def Info: figuras/pie.png used on input line 63.
 (pdftex.def)             Requested size: 113.81102pt x 94.44263pt.
- <figuras/pierna1.png, id=911, 393.47pt x 337.26pt>
+ <figuras/pierna1.png, id=910, 393.47pt x 337.26pt>
 File: figuras/pierna1.png Graphic file (type png)
 
 <use figuras/pierna1.png>
@@ -3232,21 +3160,21 @@ Overfull \hbox (11.82513pt too wide) in paragraph at lines 76--76
  []|\OT1/cmr/m/n/10 Cantidad| 
  []
 
-<figuras/pierna2.png, id=912, 304.13625pt x 276.03125pt>
+<figuras/pierna2.png, id=911, 304.13625pt x 276.03125pt>
 File: figuras/pierna2.png Graphic file (type png)
 
 <use figuras/pierna2.png>
 Package pdftex.def Info: figuras/pierna2.png used on input line 78.
 (pdftex.def)             Requested size: 113.81102pt x 103.29243pt.
 
-<figuras/protector.png, id=913, 326.21875pt x 309.155pt>
+<figuras/protector.png, id=912, 326.21875pt x 309.155pt>
 File: figuras/protector.png Graphic file (type png)
 
 <use figuras/protector.png>
 Package pdftex.def Info: figuras/protector.png used on input line 79.
 (pdftex.def)             Requested size: 113.81102pt x 107.85678pt.
 
-<figuras/soportebat.png, id=914, 307.1475pt x 291.0875pt>
+<figuras/soportebat.png, id=913, 307.1475pt x 291.0875pt>
 File: figuras/soportebat.png Graphic file (type png)
 
 <use figuras/soportebat.png>
@@ -3257,7 +3185,7 @@ Overfull \hbox (20.62245pt too wide) in paragraph at lines 80--80
 []|\OT1/cmr/m/n/10 soporteBateria.stl| 
  []
 
-<figuras/tapacabeza.png, id=915, 308.15125pt x 261.97874pt>
+<figuras/tapacabeza.png, id=914, 308.15125pt x 261.97874pt>
 File: figuras/tapacabeza.png Graphic file (type png)
 
 <use figuras/tapacabeza.png>
@@ -3268,7 +3196,7 @@ Overfull \hbox (7.87242pt too wide) in paragraph at lines 81--81
 []|\OT1/cmr/m/n/10 tapaCabeza.stl| 
  []
 
-<figuras/tobillo.png, id=916, 244.915pt x 238.8925pt>
+<figuras/tobillo.png, id=915, 244.915pt x 238.8925pt>
 File: figuras/tobillo.png Graphic file (type png)
 
 <use figuras/tobillo.png>
@@ -3748,7 +3676,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 71.
- [51] <figuras/goalposition.png, id=968, 175.857pt x 132.495pt>
+ [51] <figuras/goalposition.png, id=967, 175.857pt x 132.495pt>
 File: figuras/goalposition.png Graphic file (type png)
 
 <use figuras/goalposition.png>
@@ -3943,7 +3871,7 @@ Overfull \hbox (18.20667pt too wide) in paragraph at lines 183--201
  [][] 
  []
 
-<figuras/serial.png, id=998, 423.38174pt x 304.7385pt>
+<figuras/serial.png, id=997, 423.38174pt x 304.7385pt>
 File: figuras/serial.png Graphic file (type png)
 
 <use figuras/serial.png>
@@ -3982,7 +3910,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 LaTeX Warning: Reference `serialcm' on page 57 undefined on input line 215.
 
-<figuras/serialcm.jpg, id=1005, 363.3575pt x 401.5pt>
+<figuras/serialcm.jpg, id=1004, 363.3575pt x 401.5pt>
 File: figuras/serialcm.jpg Graphic file (type jpg)
 
 <use figuras/serialcm.jpg>
@@ -4518,11 +4446,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
  ) 
 Here is how much of TeX's memory you used:
- 9209 strings out of 494969
- 130723 string characters out of 6179593
+ 9194 strings out of 494969
+ 130630 string characters out of 6179593
  229127 words of memory out of 5000000
- 11873 multiletter control sequences out of 15000+600000
- 14964 words of font info for 57 fonts, out of 8000000 for 9000
+ 11872 multiletter control sequences out of 15000+600000
+ 14796 words of font info for 56 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  31i,15n,34p,1135b,636s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -4537,12 +4465,11 @@ c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on TFG.pdf (81 pages, 10039614 bytes).
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on TFG.pdf (81 pages, 10028213 bytes).
 PDF statistics:
- 1165 PDF objects out of 1200 (max. 8388607)
- 1009 compressed objects within 11 object streams
+ 1161 PDF objects out of 1200 (max. 8388607)
+ 1006 compressed objects within 11 object streams
  269 named destinations out of 1000 (max. 500000)
  1015 words of extra memory for PDF output out of 10000 (max. 10000000)
 
