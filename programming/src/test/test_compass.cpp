@@ -10,9 +10,9 @@ int main() {
     Raider raider;
     Compass compass(new I2C(I2C_BUS));
     while(1){
-        report(INFO,"Compass X: "+to_string(compass.getCompassX())-65536);
-        report(INFO,"Compass Y: "+to_string(compass.getCompassY())-65536);
-        report(INFO,"Compass Z: "+to_string(compass.getCompassZ())-65536);
+        report(INFO,"Compass X: "+to_string(compass.getCompassX()-65536));
+        report(INFO,"Compass Y: "+to_string(compass.getCompassY()-65536));
+        report(INFO,"Compass Z: "+to_string(compass.getCompassZ()-65536));
 
 
     double x=compass.getCompassX();
