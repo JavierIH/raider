@@ -12,9 +12,9 @@ public:
     Compass(I2C *connection);
     ~Compass();
 
-    __u32 getCompassX();
-    __u32 getCompassY();
-    __u32 getCompassZ();
+    int getCompassX();
+    int getCompassY();
+    int getCompassZ();
 
 };
 

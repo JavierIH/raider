@@ -18,14 +18,14 @@ Compass::~Compass() {
     report(OK, "compass disconnected");
 }
 
-__u32 Compass::getCompassX() {
+int Compass::getCompassX() {
     return (i2c->read8(COMPASS_I2C_ADDRESS,0x03) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x04);
 }
 
-__u32 Compass::getCompassY() {
+int Compass::getCompassY() {
     return (i2c->read8(COMPASS_I2C_ADDRESS,0x05) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x06);
 }
 
-__u32 Compass::getCompassZ() {
+int Compass::getCompassZ() {
     return (i2c->read8(COMPASS_I2C_ADDRESS,0x07) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x08);
 }
