@@ -19,13 +19,19 @@ Compass::~Compass() {
 }
 
 int Compass::getCompassX() {
-    return (i2c->read8(COMPASS_I2C_ADDRESS,0x04) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x03);
+    int result=i2c->read8(COMPASS_I2C_ADDRESS,0x04);
+    if(i2c->read8(COMPASS_I2C_ADDRESS,0x03)==0xFF) result*=-1;
+    return result;
 }
 
 int Compass::getCompassY() {
-    return (i2c->read8(COMPASS_I2C_ADDRESS,0x06) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x05);
+    int result=i2c->read8(COMPASS_I2C_ADDRESS,0x06);
+    if(i2c->read8(COMPASS_I2C_ADDRESS,0x05)==0xFF) result*=-1;
+    return result;
 }
 
 int Compass::getCompassZ() {
-    return (i2c->read8(COMPASS_I2C_ADDRESS,0x08) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x07);
+    int result=i2c->read8(COMPASS_I2C_ADDRESS,0x08);
+    if(i2c->read8(COMPASS_I2C_ADDRESS,0x07)==0xFF) result*=-1;
+    return result;
 }
