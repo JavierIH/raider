@@ -14,9 +14,9 @@ int main() {
         float mx=compass.getCompassX();
         float my=compass.getCompassY();
         float mz=compass.getCompassZ();
-        report(INFO,"Compass X: "+to_string(mx-65536));
-        report(INFO,"Compass Y: "+to_string(my-65536));
-        report(INFO,"Compass Z: "+to_string(mz-65536));
+        report(INFO,"Compass X: "+to_string(mx));
+        report(INFO,"Compass Y: "+to_string(my));
+        report(INFO,"Compass Z: "+to_string(mz));
 
 
 
