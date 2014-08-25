@@ -15,6 +15,11 @@ int main() {
         float my=compass.getCompassY();
         float mz=compass.getCompassZ();
 
+        report(OK, "CRUDOS:");
+        report(OK,"Compass X: "+to_string(mx));
+        report(OK,"Compass Y: "+to_string(my));
+        report(OK,"Compass Z: "+to_string(mz));
+
         if(mx>50000)mx-=65535;
         if(my>50000)my-=65535;
         if(mz>50000)mx-=65535;
@@ -28,6 +33,6 @@ int main() {
         float angle= atan2(mx,my) * (180 / 3.14159265);
 
         report(INFO,"\nCompass angle: "+to_string(angle));
-        usleep(200000);
+        usleep(1000000);
     }
 }
