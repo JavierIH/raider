@@ -25,23 +25,31 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(BOARD_LED_PIN, HIGH);
+  //digitalWrite(BOARD_LED_PIN, HIGH);
 
-  if(digitalRead(STOP_BUTTON)){
-    digitalWrite(STATE_LED, HIGH);
-    SerialUSB.println("stop");
-     raider.setTargetPosition(512,0,512,512,212,812,992,32,512,512,512,512,512,512,512,512,512,512,512,512);
-     //movVertical(-120,-120);
-     raider.move(5);
-   }
-  else{
-    digitalWrite(STATE_LED, LOW); 
-    if(Serial3.available()){
-      char command=Serial3.read();
-      SerialUSB.println(command);
-      digitalWrite(BOARD_LED_PIN, LOW);
-      raider.controller(command);
-      Serial3.flush();
-    } 
-  }
+ // if(digitalRead(STOP_BUTTON)){
+    //digitalWrite(STATE_LED, HIGH);
+    //SerialUSB.println("stop");
+    
+
+raider.setTargetPosition(612,0,512,512,412,612,512,512,512,512,512,512,452,572,512,512,512,512,512,512);
+raider.move(2);
+raider.setTargetPosition(412,0,512,512,412,612,512,512,512,512,512,512,452,572,512,512,512,512,512,512);
+raider.move(2);
+
+
+  
+     
+    // delay(5000); 
+   //}
+  //else{
+   // digitalWrite(STATE_LED, LOW); 
+   // if(Serial3.available()){
+   //   char command=Serial3.read();
+//      SerialUSB.println(command);
+//      digitalWrite(BOARD_LED_PIN, LOW);
+//      raider.controller(command);
+//      Serial3.flush();
+//    } 
+//  }
 }
