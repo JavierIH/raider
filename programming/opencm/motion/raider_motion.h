@@ -55,6 +55,15 @@ class Robot{
     void hello();
     void yes();
     void roll();
+    void punchL();
+    void punchR();
+    void crab();
+    void miniPunchL();
+    void miniPunchR();
+    void defense();
+    void lookL();
+    void lookR();
+    
     
     void controller(char);
     
