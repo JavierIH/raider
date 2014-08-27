@@ -33,6 +33,7 @@ int main()
             break;
 
         case 2:
+
             raider.lookL();
             left_distance=raider.getLeftIR();
             right_distance=raider.getRightIR();

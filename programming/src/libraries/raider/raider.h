@@ -51,9 +51,9 @@
 #define MINIPUNCHR          900000
 #define MINIPUNCHL          900000
 #define DEFENSE             600000
-#define LOOKL               450000
-#define LOOKR               450000
-#define LOOK                350000
+#define LOOKL               500000
+#define LOOKR               500000
+#define LOOK                400000
 
 
 
