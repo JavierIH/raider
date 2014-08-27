@@ -52,14 +52,14 @@ Raider::Raider(){
 }
 
 int Raider::getLeftIR(){
-    leftIR=getAnalog(AIN5);
+    for(int i=0; i<8; i++) leftIR=getAnalog(AIN5); //Para vaciar el buffer
     if(leftIR>INFRARED_HIGH)return 2;
     else if(leftIR>INFRARED_LOW)return 1;
     return 0;
 }
 
 int Raider::getRightIR(){
-    rightIR=getAnalog(AIN3);
+    for(int i=0; i<8; i++) rightIR=getAnalog(AIN3); //Para vaciar el buffer
     if(rightIR>INFRARED_HIGH)return 2;
     else if(rightIR>INFRARED_LOW)return 1;
     return 0;

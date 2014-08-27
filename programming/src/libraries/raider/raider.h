@@ -32,7 +32,7 @@
 //General configuration
 #define FALL_DEGREES        60
 #define INFRARED_LOW        500
-#define INFRARED_HIGH       1500
+#define INFRARED_HIGH       1000
 
 //Movements delay time (us)
 #define RUN                 2500000
