@@ -138,7 +138,7 @@ void thinningIteration(cv::Mat& img, int iter){
     img &= ~marker;
 }
 
-void voronoi(cv::Mat& im){ 
+void zhangSuen(cv::Mat& im){ 
     im /= 255;
 
     cv::Mat prev = cv::Mat::zeros(im.size(), CV_8UC1);

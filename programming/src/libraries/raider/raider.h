@@ -31,7 +31,8 @@
 
 //General configuration
 #define FALL_DEGREES        60
-#define INFRARED_MAX        1500
+#define INFRARED_LOW        500
+#define INFRARED_HIGH       1500
 
 //Movements delay time (us)
 #define RUN                 2500000
@@ -44,6 +45,27 @@
 #define HELLO               7000000
 #define GETUP               5450000
 #define ROLL                7750000
+#define PUNCHL              1200000
+#define PUNCHR              1200000
+#define CRAB                4600000
+#define MINIPUNCHR          900000
+#define MINIPUNCHL          900000
+#define DEFENSE             600000
+#define LOOKL               450000
+#define LOOKR               450000
+#define LOOK                350000
+
+
+
+void punchL();
+void punchR();
+void crab();
+void miniPunchL();
+void miniPunchR();
+void defense();
+void lookL();
+void lookR();
+void look(int);
 
 
 
@@ -69,8 +91,8 @@ public:
 
     //FUNCIONES DE ESTADO
     int getFall();
-    bool getLeftIR();
-    bool getRightIR();
+    int getLeftIR();
+    int getRightIR();
 
     //FUNCIONES DE VISION
     cv::Mat getFrame();
@@ -88,6 +110,15 @@ public:
     bool getUp();
     bool roll();
     bool yes();
+    bool punchL();
+    bool punchR();
+    bool crab();
+    bool miniPunchL();
+    bool miniPunchR();
+    bool defense();
+    bool lookL();
+    bool lookR();
+    bool look();
 
     //FUNCIONES AUXILIARES
     bool sendCommand(char);

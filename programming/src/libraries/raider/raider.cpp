@@ -49,26 +49,23 @@ Raider::Raider(){
     camera = new VideoCapture(CAMERA_ID);
     if(!camera->isOpened()) report(ERROR, "Camera failed at opening, wrong device id?");
     else report(OK, "Camera initialized");
-
-
-
 }
 
-bool Raider::getLeftIR(){
+int Raider::getLeftIR(){
     leftIR=getAnalog(AIN5);
-    if(leftIR>INFRARED_MAX) return 1;
-    else return 0;
-
+    if(leftIR>INFRARED_HIGH)return 2;
+    else if(leftIR>INFRARED_LOW)return 1;
+    return 0;
 }
 
-bool Raider::getRightIR(){
+int Raider::getRightIR(){
     rightIR=getAnalog(AIN3);
-    if(rightIR>INFRARED_MAX) return 1;
-    else return 0;
+    if(rightIR>INFRARED_HIGH)return 2;
+    else if(rightIR>INFRARED_LOW)return 1;
+    return 0;
 }
 
 int Raider::getFall(){
-
     int ay=imu->getAccelerometerY()*360/65355;
     if(ay<=90&&ay>FALL_DEGREES){
         return 1;
@@ -82,7 +79,6 @@ int Raider::getFall(){
 }
 
 bool Raider::walk(){
-
     char command= 'W';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -94,7 +90,6 @@ bool Raider::walk(){
 }
 
 bool Raider::run(){
-
     char command= 'S';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -106,7 +101,6 @@ bool Raider::run(){
 }
 
 bool Raider::getUp(){ // TODO revisar comando
-
     char command= 'U';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -118,7 +112,6 @@ bool Raider::getUp(){ // TODO revisar comando
 }
 
 bool Raider::turnL(){
-
     char command= 'A';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -128,8 +121,8 @@ bool Raider::turnL(){
     usleep(TURNL);
     return 1;
 }
-bool Raider::turnR(){
 
+bool Raider::turnR(){
     char command= 'D';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -141,7 +134,6 @@ bool Raider::turnR(){
 }
 
 bool Raider::stepL(){
-
     char command= 'Q';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -151,8 +143,8 @@ bool Raider::stepL(){
     usleep(STEPL);
     return 1;
 }
-bool Raider::stepR(){
 
+bool Raider::stepR(){
     char command= 'E';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -164,7 +156,6 @@ bool Raider::stepR(){
 }
 
 bool Raider::roll(){
-
     char command= 'R';
     int error=serial->WriteChar(command);
     if (error==-1){
@@ -176,14 +167,112 @@ bool Raider::roll(){
 }
 
 bool Raider::yes(){
-
     char command= 'Y';
     int error=serial->WriteChar(command);
     if (error==-1){
-        report(WARNING,"Failed sending command (roll)");
+        report(WARNING,"Failed sending command (yes)");
         return 0;
     }
     usleep(YES);
+    return 1;
+}
+
+bool Raider::punchL(){
+    char command='Z';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (punchL)");
+        return 0;
+    }
+    usleep(PUNCHL);
+    return 1;
+}
+
+bool Raider::punchR(){
+    char command='B';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (punchR)");
+        return 0;
+    }
+    usleep(PUNCHR);
+    return 1;
+}
+
+bool Raider::crab(){
+    char command='C';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (crab)");
+        return 0;
+    }
+    usleep(CRAB);
+    return 1;
+}
+
+bool Raider::miniPunchL(){
+    char command='X';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (miniPunchL)");
+        return 0;
+    }
+    usleep(MINIPUNCHL);
+    return 1;
+}
+
+bool Raider::miniPunchR(){
+    char command='V';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (miniPunchR)");
+        return 0;
+    }
+    usleep(MINIPUNCHR);
+    return 1;
+}
+
+bool Raider::defense(){
+    char command='w';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (defense)");
+        return 0;
+    }
+    usleep(DEFENSE);
+    return 1;
+}
+
+bool Raider::lookL(){
+    char command='a';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (lookL)");
+        return 0;
+    }
+    usleep(LOOKL);
+    return 1;
+}
+
+bool Raider::lookR(){
+    char command='d';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (lookR)");
+        return 0;
+    }
+    usleep(LOOKR);
+    return 1;
+}
+
+bool Raider::look(){
+    char command='L';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (look)");
+        return 0;
+    }
+    usleep(LOOK);
     return 1;
 }
 
@@ -221,7 +310,7 @@ Vec2i Raider::findWay(Mat image){
 
     Mat output=input.clone();
 
-    voronoi(output);
+    zhangSuen(output);
 
     vector<vector<Point> > contours;
     findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
@@ -322,8 +411,6 @@ Vec2i Raider::findLine(Mat image){
        // imshow("Resultado", image);
         Vec2i result(d,alfa);
         return result;
-
-
     }
     else return Vec2i(-1,0); //No hay linea
 }
