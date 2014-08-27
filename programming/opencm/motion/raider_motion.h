@@ -63,6 +63,7 @@ class Robot{
     void defense();
     void lookL();
     void lookR();
+    void look(int);
     
     
     void controller(char);

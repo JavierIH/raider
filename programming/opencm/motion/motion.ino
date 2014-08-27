@@ -13,10 +13,10 @@ Robot raider;
 
   
 void setup() {
- // Serial2.begin(BT_BAUD_RATE); //Bluetooth
+//  Serial2.begin(BT_BAUD_RATE); //Bluetooth
     Serial3.begin(BBB_BAUD_RATE); //Beaglebone
-    SerialUSB.begin();
- 
+//  SerialUSB.begin();
+
     pinMode(BOARD_LED_PIN, OUTPUT);
     pinMode(STOP_BUTTON, INPUT);
     pinMode(STATE_LED, OUTPUT);
@@ -24,32 +24,27 @@ void setup() {
     raider.init();
 }
 
+bool flag=0;
+
 void loop() {
-
-      raider.defense();
-      delay(4000);
-      raider.lookR();
-      raider.miniPunchR();
-      
-      delay(4000);
-      raider.defense();
-      delay(4000);
-      raider.lookL();
-      raider.miniPunchL();
-
-     
-     delay(4000); 
-     
-     
-   //}
-  //else{
-   // digitalWrite(STATE_LED, LOW); 
-   // if(Serial3.available()){
-   //   char command=Serial3.read();
-//      SerialUSB.println(command);
-//      digitalWrite(BOARD_LED_PIN, LOW);
-//      raider.controller(command);
-//      Serial3.flush();
-//    } 
-//  }
+  
+  digitalWrite(BOARD_LED_PIN, HIGH);
+  if(digitalRead(STOP_BUTTON)){
+    digitalWrite(STATE_LED, HIGH);
+    raider.defense();
+    flag=1;
+  }
+  else{
+    if (flag){
+      delay(5000);
+      flag=0;
+    }
+    digitalWrite(STATE_LED, LOW);
+    if(Serial3.available()){
+      char command=Serial3.read();
+      digitalWrite(BOARD_LED_PIN, LOW);
+      raider.controller(command);
+      Serial3.flush();
+    }
+  }
 }

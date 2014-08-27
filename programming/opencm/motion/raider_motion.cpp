@@ -61,8 +61,34 @@ void Robot::controller(char command){
     case 'R':
         roll();
         break;
-    }
-    movHead(450);
+    case 'Z':
+        punchL();
+        break;
+    case 'B':
+        punchR();
+        break;
+    case 'C':
+        crab();
+        break;
+    case 'V':
+        miniPunchR();
+        break;
+    case 'X':
+        miniPunchL();
+        break;
+    case 'w':
+        defense();
+        break;
+    case 'a':
+        lookL();
+        break;
+    case 'd':
+        lookR();
+        break;
+    case 'L':
+        look(450);
+        break;
+      }
 }
 void Robot::init(){
     setTargetPosition(512,450,462,562,212,812,977,47,512,512,512,512,472,552,512,512,512,512,512,512);
@@ -219,6 +245,14 @@ void Robot::movFrontal(int left_amp, int right_amp){
 void Robot::movHead(int pos){
     head.writeMicroseconds(pos+1000+TRIM[1]); //Valor entre 1000 y 2024
 }
+
+void Robot::look(int pos){
+    setTargetPosition(512,0,462,562,212,812,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
+    movVertical(-120,-120);
+    head.writeMicroseconds(pos+1000+TRIM[1]); //Valor entre 1000 y 2024
+    move(0.2);
+}
+
 void Robot::run(int pasos){
     int tilt=10;
     float tiempo=0.07;
@@ -499,40 +533,48 @@ void Robot::stepR()
 void Robot::punchL(){
     setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
-    move(4);
+    movLateral(40,-40);
+    move(0.4);
     setTargetPosition(662,0,512,512,412,512,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
+    movLateral(40,-40);
     move(0.1);
     setTargetPosition(312,0,512,512,312,512,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
+    movLateral(40,-40);
     move(0.4);
     setTargetPosition(312,0,512,512,312,512,977,524,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
+    movLateral(40,-40);
     move(0.05);
 }
 
 void Robot::punchR(){
     setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
-    move(4);
+    movLateral(40,-40);
+    move(0.4);
     setTargetPosition(462,0,512,512,512,612,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
+    movLateral(40,-40);
     move(0.1);
     setTargetPosition(712,0,512,512,512,712,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
+    movLateral(40,-40);
     move(0.4);
     setTargetPosition(712,0,512,512,512,712,500,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
+    movLateral(40,-40);
     move(0.05);
 }
     
 void Robot::miniPunchL(){
     setTargetOffset(0,0,0,100,0,0,0,300,0,0,0,0,0,0,0,0,0,0,0,0); move(0.2); 
-    setTargetOffset(0,0,0,-300,0,0,0,0,0,0,0,0,0,0,-0,+0,0,0,0,0); move(0.05); delay(100);
+    setTargetOffset(0,0,0,-300,0,0,0,0,0,0,0,0,0,0,-0,+0,0,0,0,0); move(0.05); delay(500);
 }
 void Robot::miniPunchR(){
     setTargetOffset(0,0,-100,0,0,0,-300,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.2);
-    setTargetOffset(0,0,300,0,0,0,0,0,0,0,0,0,0,0,-0,+0,0,0,0,0); move(0.05); delay(100);
+    setTargetOffset(0,0,300,0,0,0,0,0,0,0,0,0,0,0,-0,+0,0,0,0,0); move(0.05); delay(500);
 }
 
 void Robot::defense(){
@@ -560,11 +602,11 @@ void Robot::crab(){
     setTargetPosition(512,0,512,512,512,512,812,212,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
     movLateral(40,-40);
-    move(1);
-    setTargetOffset(150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.3); delay(100);
-    setTargetOffset(-300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.3); delay(100);
-    setTargetOffset(300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.3); delay(100);
-    setTargetOffset(-300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.3); delay(100);
-    setTargetOffset(300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.3); delay(100);
-    setTargetOffset(-150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.3); delay(100);
+    move(0.1);
+    setTargetOffset(150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.6); delay(100);
+    setTargetOffset(-300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.6); delay(100);
+    setTargetOffset(300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.6); delay(100);
+    setTargetOffset(-300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.6); delay(100);
+    setTargetOffset(300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.6); delay(100);
+    setTargetOffset(-150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); move(0.6); delay(100);
 }
