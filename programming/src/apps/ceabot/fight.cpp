@@ -44,7 +44,8 @@ int main()
             else if(right_distance==2){
                 raider.miniPunchR();
             }
-            else if(left_distance==1||right_distance==1) state=5;
+            else if(left_distance==1) state=5;
+            else if(right_distance==1) state=4;
             else state=10;
             break;
 
@@ -59,7 +60,8 @@ int main()
             else if(left_distance==2){
                 raider.miniPunchL();
             }
-            else if(left_distance==1||right_distance==1) state=6;
+            else if(right_distance==1) state=6;
+            else if(left_distance==1) state=4;
             else state=10;
             break;
 
