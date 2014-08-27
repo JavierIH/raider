@@ -14,15 +14,15 @@ int main() {
     Raider raider;
 
     while(1){  // NO BORRAR, PARTE DEL PROGRAMA FINAL
-        int state=raider.getFall();
-        if (state==1){
+        int state_vertical=raider.getFall();
+        if (state_vertical==1){
             report(INFO, "FRONT fall  > ");
-            //raider.standUp();
+            raider.getUp();
         }
-        else if (state==2){
+        else if (state_vertical==2){
             report(INFO, "BACK  fall  < ");
-            //raider.roll();
-            //raider.standUp();
+            raider.roll();
+            raider.getUp();
         }
         else{
             report(INFO, "Standing up | ");
