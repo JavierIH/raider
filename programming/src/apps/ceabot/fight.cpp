@@ -14,6 +14,7 @@ int main()
         switch (state) {
         case 1:
             raider.defense();
+            usleep(600000);
             left_distance=raider.getLeftIR();
             right_distance=raider.getRightIR();
             if(left_distance==2 && right_distance==2) state=7;
@@ -35,6 +36,7 @@ int main()
         case 2:
 
             raider.lookL();
+            usleep(600000);
             left_distance=raider.getLeftIR();
             right_distance=raider.getRightIR();
 
@@ -51,6 +53,7 @@ int main()
 
         case 3:
             raider.lookR();
+            usleep(600000);
             left_distance=raider.getLeftIR();
             right_distance=raider.getRightIR();
 
@@ -95,16 +98,7 @@ int main()
             state=10;
             break;
         case 10:
-            state_vertical=raider.getFall();
-            if (state_vertical==1){
-                report(INFO, "FRONT fall  > ");
-                raider.getUp();
-            }
-            else if (state_vertical==2){
-                report(INFO, "BACK  fall  < ");
-                raider.roll();
-                raider.getUp();
-            }
+            raider.getUp();
             state=1;
          break;
 

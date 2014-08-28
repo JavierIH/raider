@@ -18,25 +18,25 @@ int main()
 
     report(INFO,"Cuenta atrás!");
     report(INFO,"10....");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"9...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"8...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"7...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"6...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"5...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"4...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"3...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"2...");
-    usleep(1000000);
+    usleep(2000000);
     report(INFO,"1...");
-    usleep(5000000);
+    usleep(2000000);
 
     report(INFO,"¡Comienza la prueba!");
 
@@ -103,7 +103,6 @@ int main()
             report(STATE, "Estado 2 (Busqueda de linea)");
             raider.getUp();
             raider.look();
-            usleep(300000);
             Vec2i line_result = raider.findLine(image);
             report(OK, "LINEA result "+to_string(line_result[0])+"__"+to_string(line_result[1]));
 
@@ -117,7 +116,8 @@ int main()
                 raider.yes();
                 report(MOVE,"W -> Avanzar recto");
                 raider.run(); // TODO cerciorarse de que cruza
-                raider.getUp();
+                raider.run();
+                raider.run();
                 raider.run();
                 flag_line=true;
                 state=3; // -> turnBack
