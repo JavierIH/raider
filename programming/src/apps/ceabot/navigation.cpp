@@ -43,9 +43,8 @@ int main()
     //Algorithm
     while(1){
         // TODO meter inicializaciones, tiempo de espera, boton...
-        sleep(3);
         raider.look();
-        sleep(3);
+        usleep(300000);
         Mat image = raider.getFrame();
 
         //imshow("image",image);
@@ -103,9 +102,8 @@ int main()
         case 2:{
             report(STATE, "Estado 2 (Busqueda de linea)");
             raider.getUp();
-            sleep(3);
             raider.look();
-            sleep(3);
+            usleep(300000);
             Vec2i line_result = raider.findLine(image);
             report(OK, "LINEA result "+to_string(line_result[0])+"__"+to_string(line_result[1]));
 
@@ -116,6 +114,7 @@ int main()
             }
             else if(abs(line_result[1])<=FL_ANGLE){
                 report(RAIDER,"Voy a cruzar la linea");
+                raider.yes();
                 report(MOVE,"W -> Avanzar recto");
                 raider.run(); // TODO cerciorarse de que cruza
                 raider.getUp();
@@ -136,6 +135,7 @@ int main()
                 }
                 if(line_result[0]<=FL_DISTANCE){
                     report(RAIDER,"Voy a cruzar la linea "+to_string(FL_ANGLE)+"  _  "+to_string(abs(line_result[0])));
+                    raider.yes();
                     report(MOVE,"W -> Avanzar recto");
                     raider.run(); // TODO cerciorarse de que cruza
                     raider.getUp();
