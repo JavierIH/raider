@@ -44,6 +44,7 @@ int main()
     while(1){
         // TODO meter inicializaciones, tiempo de espera, boton...
         raider.look();
+        usleep(1000000);
         Mat image = raider.getFrame();
 
         //imshow("image",image);
@@ -101,7 +102,9 @@ int main()
         case 2:{
             report(STATE, "Estado 2 (Busqueda de linea)");
             raider.getUp();
+            usleep(1000000);
             raider.look();
+            usleep(1000000);
             Vec2i line_result = raider.findLine(image);
             report(OK, "LINEA result "+to_string(line_result[0])+"__"+to_string(line_result[1]));
 
