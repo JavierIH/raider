@@ -35,7 +35,7 @@
 #define INFRARED_HIGH       1000
 
 //Movements delay time (us)
-#define RUN                 2500000
+#define RUN                 3000000
 #define WALK                1200000
 #define TURNR               1450000
 #define TURNL               1450000
