@@ -36,13 +36,14 @@ int main()
     report(INFO,"2...");
     usleep(1000000);
     report(INFO,"1...");
-    usleep(1000000);
+    usleep(5000000);
 
     report(INFO,"¡Comienza la prueba!");
 
     //Algorithm
     while(1){
         // TODO meter inicializaciones, tiempo de espera, boton...
+        raider.look();
         Mat image = raider.getFrame();
 
         //imshow("image",image);
@@ -67,25 +68,30 @@ int main()
             if(abs(way_result[0])>=FW_DISTANCE){
                 if(way_result[0]>0){
                     report(MOVE,"E -> Paso lateral a la derecha");
+                    raider.getUp();
                     raider.stepR();
                 }
                 else if(way_result[0]<0){
                     report(MOVE,"Q -> Paso lateral a la izquierda");
+                    raider.getUp();
                     raider.stepL();
                 }
             }
             else if(abs(way_result[1])>=FW_ANGLE){
                 if(way_result[1]<0){
                     report(MOVE,"D -> Girar a la izquierda");
+                    raider.getUp();
                     raider.turnL();
                 }
                 else if(way_result[1]>0){
                     report(MOVE,"A -> Girar a la derecha");
+                    raider.getUp();
                     raider.turnR();
                 }
             }
             else{
                 report(MOVE,"S -> Avanza rapido recto");
+                raider.getUp();
                 raider.run();
             }
             if(!flag_line) state=2; // -> findLine
@@ -94,6 +100,8 @@ int main()
 
         case 2:{
             report(STATE, "Estado 2 (Busqueda de linea)");
+            raider.getUp();
+            raider.look();
             Vec2i line_result = raider.findLine(image);
             report(OK, "LINEA result "+to_string(line_result[0])+"__"+to_string(line_result[1]));
 
@@ -106,6 +114,7 @@ int main()
                 report(RAIDER,"Voy a cruzar la linea");
                 report(MOVE,"W -> Avanzar recto");
                 raider.run(); // TODO cerciorarse de que cruza
+                raider.getUp();
                 raider.run();
                 flag_line=true;
                 state=3; // -> turnBack
@@ -125,6 +134,7 @@ int main()
                     report(RAIDER,"Voy a cruzar la linea "+to_string(FL_ANGLE)+"  _  "+to_string(abs(line_result[0])));
                     report(MOVE,"W -> Avanzar recto");
                     raider.run(); // TODO cerciorarse de que cruza
+                    raider.getUp();
                     raider.run();
                     flag_line=true;
                     state=3; // -> turnBack
@@ -141,7 +151,8 @@ int main()
         case 3:
             report(STATE, "Estado 3 (Vuelta a casa)");
             report("Inicio secuencia para dar la vuelta");
-            report(MOVE,"A -> Girar a la derecha X4");
+            report(MOVE,"A -> Girar a la derecha X5");
+            raider.getUp();
             raider.turnR();
             raider.turnR();
             raider.turnR();
