@@ -56,20 +56,6 @@
 #define LOOK                400000
 
 
-
-void punchL();
-void punchR();
-void crab();
-void miniPunchL();
-void miniPunchR();
-void defense();
-void lookL();
-void lookR();
-void look(int);
-
-
-
-
 class Raider
 {
 private:

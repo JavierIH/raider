@@ -55,6 +55,7 @@ int main()
             report(STATE, "Estado 0 (Inicio)");
             raider.yes();
             report(MOVE,"S -> Avanti avanti");
+            raider.getUp();
             raider.run();
             state=1;
         }break;
@@ -104,8 +105,8 @@ int main()
             else if(abs(line_result[1])<=FL_ANGLE){
                 report(RAIDER,"Voy a cruzar la linea");
                 report(MOVE,"W -> Avanzar recto");
-                raider.walk(); // TODO cerciorarse de que cruza
-                raider.walk();
+                raider.run(); // TODO cerciorarse de que cruza
+                raider.run();
                 flag_line=true;
                 state=3; // -> turnBack
                 break;
@@ -123,8 +124,8 @@ int main()
                 if(line_result[0]<=FL_DISTANCE){
                     report(RAIDER,"Voy a cruzar la linea "+to_string(FL_ANGLE)+"  _  "+to_string(abs(line_result[0])));
                     report(MOVE,"W -> Avanzar recto");
-                    raider.walk(); // TODO cerciorarse de que cruza
-                    raider.walk();
+                    raider.run(); // TODO cerciorarse de que cruza
+                    raider.run();
                     flag_line=true;
                     state=3; // -> turnBack
                     break;
@@ -141,6 +142,7 @@ int main()
             report(STATE, "Estado 3 (Vuelta a casa)");
             report("Inicio secuencia para dar la vuelta");
             report(MOVE,"A -> Girar a la derecha X4");
+            raider.turnR();
             raider.turnR();
             raider.turnR();
             raider.turnR();

@@ -74,7 +74,7 @@ int Raider::getFall(){
         return 2;
     }
     else{
-        return 0;
+        return 0; //Derecho
     }
 }
 
@@ -101,14 +101,39 @@ bool Raider::run(){
 }
 
 bool Raider::getUp(){ // TODO revisar comando
-    char command= 'U';
-    int error=serial->WriteChar(command);
-    if (error==-1){
-        report(WARNING,"Failed sending command (standUp)");
-        return 0;
+
+    int error;
+    char command;
+    int state_vertical=getFall();
+    if (state_vertical==0) return 1;
+    else if (state_vertical==1){
+        report(INFO, "FRONT fall  > ");
+        command='U';
+        error=serial->WriteChar(command);
+        if (error==-1){
+            report(WARNING,"Failed sending command (standUp)");
+            return 0;
+        }
+        usleep(GETUP);
     }
-    usleep(GETUP);
-    return 1;
+    else if (state_vertical==2){
+        report(INFO, "BACK  fall  < ");
+        command='R';
+        error=serial->WriteChar(command);
+        if (error==-1){
+            report(WARNING,"Failed sending command (roll)");
+            return 0;
+        }
+        usleep(ROLL);
+        command='U';
+        error=serial->WriteChar(command);
+        if (error==-1){
+            report(WARNING,"Failed sending command (getup)");
+            return 0;
+        }
+        usleep(GETUP);
+        return 1;
+    }
 }
 
 bool Raider::turnL(){
