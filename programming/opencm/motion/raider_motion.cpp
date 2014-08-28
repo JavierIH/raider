@@ -52,7 +52,7 @@ void Robot::controller(char command){
     case 'Y':
         yes();
         break;
-    case 'G':
+    case 'U':
         getUp();
         break;
     case 'H':
@@ -249,8 +249,9 @@ void Robot::movHead(int pos){
 void Robot::look(int pos){
     setTargetPosition(512,0,462,562,212,812,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
     movVertical(-120,-120);
-    head.writeMicroseconds(pos+1000+TRIM[1]); //Valor entre 1000 y 2024
     move(0.2);
+    head.writeMicroseconds(pos+1000+TRIM[1]); //Valor entre 1000 y 2024
+    delay(500);
 }
 
 void Robot::run(int pasos){
