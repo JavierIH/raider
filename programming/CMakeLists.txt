@@ -6,11 +6,13 @@
 #
                                       
 
-project(raider)
+project(RAIDER)
 
 cmake_minimum_required(VERSION 2.6)
-find_package( OpenCV REQUIRED )
 
+set(CMAKE_MODULE_PATH ${RAIDER_SOURCE_DIR})
+find_package (OpenCV)
+find_package (ZBar0)
 set(TRUNK_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(RAIDER_BIN_DIR "${TRUNK_DIR}/build/bin")
