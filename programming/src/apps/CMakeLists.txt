@@ -1,4 +1,4 @@
-OPTION(CEABOT "Ceabot programs")
+OPTION(CEABOT "Ceabot programs" 1)
 IF(CEABOT)
 add_subdirectory(ceabot)
 ENDIF()
