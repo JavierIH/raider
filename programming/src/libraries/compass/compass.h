@@ -3,7 +3,7 @@
 
 #include "../i2c/i2c.h"
 
-#define COMPASS_I2C_ADDRESS 0x1E
+#define COMPASS_I2C_ADDRESS 0x60
 
 class Compass {
 private:
