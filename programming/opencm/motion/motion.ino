@@ -35,11 +35,11 @@ void loop() {
     flag=1;
   }
   else{
+    digitalWrite(STATE_LED, LOW);
     if (flag){
       delay(5000);
       flag=0;
     }
-    digitalWrite(STATE_LED, LOW);
     if(Serial3.available()){
       char command=Serial3.read();
       digitalWrite(BOARD_LED_PIN, LOW);
