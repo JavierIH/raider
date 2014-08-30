@@ -18,20 +18,6 @@ Compass::~Compass() {
     report(OK, "compass disconnected");
 }
 
-int Compass::getCompassX() {
-    int result=i2c->read8(COMPASS_I2C_ADDRESS,0x04);
-    if(i2c->read8(COMPASS_I2C_ADDRESS,0x03)==0xFF) result=255-result;
-    return result;
-}
-
-int Compass::getCompassY() {
-    int result=i2c->read8(COMPASS_I2C_ADDRESS,0x06);
-    if(i2c->read8(COMPASS_I2C_ADDRESS,0x05)==0xFF) result=255-result;
-    return result;
-}
-
-int Compass::getCompassZ() {
-    int result=i2c->read8(COMPASS_I2C_ADDRESS,0x08);
-    if(i2c->read8(COMPASS_I2C_ADDRESS,0x07)==0xFF) result=255-result;
-    return result;
+int Compass::getCompass() {
+    return (i2c->read8(COMPASS_I2C_ADDRESS,0x02) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x02);
 }
