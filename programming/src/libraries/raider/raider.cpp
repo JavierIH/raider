@@ -2,6 +2,7 @@
 
 using namespace std;
 using namespace cv;
+using namespace zbar;
 
 Raider::Raider(){
 
@@ -63,6 +64,10 @@ int Raider::getRightIR(){
     if(rightIR>INFRARED_HIGH)return 2;
     else if(rightIR>INFRARED_LOW)return 1;
     return 0;
+}
+
+int Raider::getCompass(){
+    return compass->getCompass();
 }
 
 int Raider::getFall(){
@@ -440,3 +445,60 @@ Vec2i Raider::findLine(Mat image){
     else return Vec2i(-1,0); //No hay linea
 }
 
+string Raider::findQR(Mat frame){
+
+    ImageScanner scanner;
+    scanner.set_config(ZBAR_QRCODE, ZBAR_CFG_ENABLE, 1);
+
+    cvtColor(frame,frame,CV_BGR2GRAY);
+    uchar *pointer = (uchar *)frame.data;
+
+    Image image(frame.cols, frame.rows, "Y800", pointer, frame.cols*frame.rows);
+
+    scanner.scan(image);
+
+    string command;
+    int distance;
+    int distance_min=frame.cols/2;
+    int i=0;
+
+    for(Image::SymbolIterator symbol = image.symbol_begin(); symbol != image.symbol_end(); ++symbol) {
+        distance=abs(symbol->get_location_x(i) - frame.cols/2);
+        report("Marcador: "+to_string(symbol->get_data())+ "     Distance: "+to_string(distance));
+
+        if(distance<distance_min){
+            distance_min=distance;
+            command=symbol->get_data();
+        }
+        i++;
+    }
+    if (!command.empty()) report (INFO,"Marcador: "+command+ "     Distance: "+to_string(distance));
+    return command;
+}
+
+void Raider::setDirection(bool side, int angle){
+    //side 1 derecha
+    //side 0 izquierda
+
+    // TODO no esta terminado
+
+    int difference;
+
+    if(side==1){
+
+        while(compass->getCompass()!=angle){
+            difference=abs(angle-compass->getCompass());
+            if(difference>180) difference-=180;
+            turnR();
+        }
+    }
+
+    if(side==0){
+
+        while(compass->getCompass()!=angle){
+            difference=abs(angle-compass->getCompass());
+            if(difference>180) difference-=180;
+            turnL();
+        }
+    }
+}

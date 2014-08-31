@@ -77,6 +77,7 @@ public:
 
     //FUNCIONES DE ESTADO
     int getFall();
+    int getCompass();
     int getLeftIR();
     int getRightIR();
 
@@ -84,6 +85,7 @@ public:
     cv::Mat getFrame();
     cv::Vec2i findWay(cv::Mat);
     cv::Vec2i findLine(cv::Mat);
+    string findQR(cv::Mat);
     //    findBall();
 
     //MOVIMIENTOS
@@ -105,6 +107,8 @@ public:
     bool lookL();
     bool lookR();
     bool look();
+    void setDirection(int);
+    void setDirection(bool,int);
 
     //FUNCIONES AUXILIARES
     bool sendCommand(char);

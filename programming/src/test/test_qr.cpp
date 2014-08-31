@@ -23,6 +23,10 @@ int main()
 
         Mat frame=getFrame();
 
+        ImageScanner scanner;
+        scanner.set_config(ZBAR_QRCODE, ZBAR_CFG_ENABLE, 1);
+
+
         cvtColor(frame,frame,CV_BGR2GRAY);
         uchar *pointer = (uchar *)frame.data;
 
@@ -31,13 +35,24 @@ int main()
         scanner.scan(image);
 
         string command;
+        int distance;
+        int distance_min=frame.cols/2;
+        int i=0;
 
         for(Image::SymbolIterator symbol = image.symbol_begin(); symbol != image.symbol_end(); ++symbol) {
-            command=symbol->get_data();
-            report(INFO,"Marcador: "+command);
+            distance=abs(symbol->get_location_x(i) - frame.cols/2);
+            report(INFO,"Marcador: "+symbol->get_data()+ "     Distance: "+to_string(distance));
+
+            if(distance<distance_min){
+                distance_min=distance;
+                command=symbol->get_data();
+            }
+            i++;
         }
 
-        if(command.empty()) report(ERROR, "No detectado");
+        if(command.empty()){
+            report(ERROR, "No detectado");
+        }
         else if (command == "Turn45R"){
             report(OK,"Girar 45 grados a la derecha");
         }
