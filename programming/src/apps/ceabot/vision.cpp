@@ -26,8 +26,9 @@ int main()
         else if (command == "Turn45R"){
             raider.yes();
             report(OK,"Girar 45 grados a la derecha");
-            compass_target+=450;
+            compass_target+=450;   // TODO revisar todos los signos
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(1,compass_target);
         }
         else if (command == "Turn45L"){
@@ -35,6 +36,7 @@ int main()
             report(OK,"Girar 45 grados a la izquierda");
             compass_target-=450;
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(0,compass_target);
         }
         else if (command == "Turn90R"){
@@ -42,6 +44,7 @@ int main()
             report(OK,"Girar 90 grados a la derecha");
             compass_target+=900;
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(1,compass_target);
         }
         else if (command == "Turn90L"){
@@ -49,6 +52,7 @@ int main()
             report(OK,"Girar 90 grados a la izquierda");
             compass_target-=900;
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(0,compass_target);
         }
         else if (command == "Turn135R"){
@@ -56,6 +60,7 @@ int main()
             report(OK,"Girar 135 grados a la derecha");
             compass_target+=1350;
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(1,compass_target);
         }
         else if (command == "Turn135L"){
@@ -63,6 +68,7 @@ int main()
             report(OK,"Girar 135 grados a la izquierda");
             compass_target-=1350;
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(0,compass_target);
         }
         else if (command == "Turn180R"){
@@ -70,6 +76,7 @@ int main()
             report(OK,"Girar 180 grados a la derecha");
             compass_target+=1800;
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(1,compass_target);
         }
         else if (command == "Turn180L"){
@@ -77,6 +84,7 @@ int main()
             report(OK,"Girar 180 grados a la izquierda");
             compass_target-=1800;
             if(compass_target>3600) compass_target-=3600;
+            if(compass_target<3600) compass_target+=3600;
             raider.setDirection(0,compass_target);
         }
     }

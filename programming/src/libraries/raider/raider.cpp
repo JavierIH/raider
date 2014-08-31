@@ -476,29 +476,28 @@ string Raider::findQR(Mat frame){
     return command;
 }
 
-void Raider::setDirection(bool side, int angle){
+void Raider::setDirection(bool side, int target_angle){
     //side 1 derecha
     //side 0 izquierda
 
     // TODO no esta terminado
 
-    int difference;
+    int min_range=target_angle-COMPASS_TOLERANCE;
+    if (min_range<0) min_range+=3600;
+
+    int max_range=target_angle+COMPASS_TOLERANCE;
+    if (max_range>3600) max_range-=3600;
 
     if(side==1){
-
-        while(compass->getCompass()!=angle){
-            difference=abs(angle-compass->getCompass());
-            if(difference>180) difference-=180;
+        for(int angle=compass->getCompass(); !(angle>min_range&&angle<max_range); angle=compass->getCompass()){
             turnR();
         }
     }
 
     if(side==0){
-
-        while(compass->getCompass()!=angle){
-            difference=abs(angle-compass->getCompass());
-            if(difference>180) difference-=180;
+        for(int angle=compass->getCompass(); !(angle>min_range&&angle<max_range); angle=compass->getCompass()){
             turnL();
         }
     }
+
 }

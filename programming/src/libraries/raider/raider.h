@@ -33,6 +33,7 @@
 #define FALL_DEGREES        60
 #define INFRARED_LOW        500
 #define INFRARED_HIGH       1000
+#define COMPASS_TOLERANCE   100
 
 //Movements delay time (us)
 #define RUN                 3000000
