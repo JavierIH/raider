@@ -5,7 +5,7 @@ target_link_libraries(navigation raider)
 ENDIF ()
 
 OPTION(VISION "Opencv test" 1)
-IF (TEST_OPENCV)
+IF (VISION)
 add_executable(vision vision.cpp)
 target_link_libraries(vision raider)
 ENDIF ()

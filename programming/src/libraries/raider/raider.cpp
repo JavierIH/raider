@@ -491,13 +491,14 @@ void Raider::setDirection(bool side, int target_angle){
     if(side==1){
         for(int angle=compass->getCompass(); !(angle>min_range&&angle<max_range); angle=compass->getCompass()){
             turnR();
+            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
         }
     }
 
     if(side==0){
         for(int angle=compass->getCompass(); !(angle>min_range&&angle<max_range); angle=compass->getCompass()){
             turnL();
+            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
         }
     }
-
 }
