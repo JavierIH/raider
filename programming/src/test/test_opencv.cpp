@@ -115,24 +115,18 @@ Vec2i funcion_findLine(Mat image){
     else return Vec2i(-1,0); //No hay linea
 }
 
+int main(){
+    openCamera(1);
 
+    while(1){
+        char c=waitKey(0);
+        if (c=='\n'||c=='a') return 0;
 
-int main()
-{
+        Mat image=getFrame();
 
+        Rect rect(0,image.rows/2,image.cols,image.rows/2);
 
-        Mat image=imread("fotolinea2.jpg");
-        int size_factor=1;
-        cv::Size size(160*size_factor,120*size_factor);
-        resize(image,image,size);
-
-        imshow("Frame",image);
-
-
-        Vec2i result=funcion_findLine(image);
-        if(result[0]==-1)report(WARNING,"No line "+to_string(result));
-        else report(INFO, "Line at "+to_string(result));
-
-        waitKey();
-
+        imshow("camsdfdgara",image);
+        imshow("camara",image(rect));
+    }
 }

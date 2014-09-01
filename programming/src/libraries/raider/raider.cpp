@@ -397,8 +397,11 @@ Vec2i Raider::findWay(Mat image){
 }
 
 
-Vec2i Raider::findLine(Mat image){
+Vec2i Raider::findLine(Mat frame){
 
+    Rect rect(0,frame.rows/2,frame.cols,frame.rows/2); //Recortar a la mitad
+
+    Mat image = frame(rect);
     Mat1b input=detectGreen(image);
 
     Canny(input, input, 50, 200, 5);
@@ -438,7 +441,7 @@ Vec2i Raider::findLine(Mat image){
         report("La mas larga mide: "+to_string(max_length));
         report(INFO,"Linea a un angulo de: "+to_string(alfa));
         report(INFO,"A una distancia de: "+to_string(d));
-       // imshow("Resultado", image);
+        // imshow("Resultado", image);
         Vec2i result(d,alfa);
         return result;
     }
@@ -480,10 +483,6 @@ void Raider::setDirection(bool side, int target_angle){
     //side 1 derecha
     //side 0 izquierda
 
-    // TODO no esta terminado
-    int flag_min=0;
-    int flag_max=0;
-
     int min_range=target_angle-COMPASS_TOLERANCE;
     if (min_range<0) min_range+=3600;
 
@@ -498,7 +497,6 @@ void Raider::setDirection(bool side, int target_angle){
                 report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
             }
         }
-
         else{
             for(int angle=compass->getCompass(); !((angle>min_range||angle<max_range));angle=compass->getCompass()){
                 turnR();
@@ -507,10 +505,21 @@ void Raider::setDirection(bool side, int target_angle){
             }
         }
     }
-
     if(side==0){
-
+        if(max_range>min_range){
+            for(int angle=compass->getCompass(); !((angle>min_range&&angle<max_range));angle=compass->getCompass()){
+                turnL();
+                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            }
+        }
+        else{
+            for(int angle=compass->getCompass(); !((angle>min_range||angle<max_range));angle=compass->getCompass()){
+                turnL();
+                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            }
+        }
     }
-
 }
 
