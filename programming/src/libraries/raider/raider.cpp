@@ -481,26 +481,36 @@ void Raider::setDirection(bool side, int target_angle){
     //side 0 izquierda
 
     // TODO no esta terminado
+    int flag_min=0;
+    int flag_max=0;
 
     int min_range=target_angle-COMPASS_TOLERANCE;
     if (min_range<0) min_range+=3600;
 
     int max_range=target_angle+COMPASS_TOLERANCE;
-    if (max_range>3600) max_range-=3600;
+    if (max_range>3600)max_range-=3600;
 
     if(side==1){
-        for(int angle=compass->getCompass(); !((angle>min_range)*(min_range<target_angle)); angle=compass->getCompass()){
-            turnR();
-            report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
-            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+        if(max_range>min_range){
+            for(int angle=compass->getCompass(); !((angle>min_range&&angle<max_range));angle=compass->getCompass()){
+                turnR();
+                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            }
+        }
+
+        else{
+            for(int angle=compass->getCompass(); !((angle>min_range||angle<max_range));angle=compass->getCompass()){
+                turnR();
+                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            }
         }
     }
 
     if(side==0){
-        for(int angle=compass->getCompass(); !((angle<max_range)*(max_range>target_angle)); angle=compass->getCompass()){
-            turnL();
-            report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
-            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
-        }
+
     }
+
 }
+
