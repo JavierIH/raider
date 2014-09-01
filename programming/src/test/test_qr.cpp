@@ -18,8 +18,8 @@ int main()
 
     while (1)
     {
-        char c=waitKey(0);
-        if (c=='\n'||c=='a') return 0;
+        //char c=waitKey(0);
+        //if (c=='\n'||c=='a') return 0;
 
         Mat frame=getFrame();
 
@@ -77,9 +77,8 @@ int main()
         else if (command == "Turn180L"){
             report(OK,"Girar 180 grados a la izquierda");
         }
-
-        imshow("MyVideo", frame); //show the frame in "MyVideo" window
     }
+    for(int i=0; i<100000; i++);
     return 0;
 }
 

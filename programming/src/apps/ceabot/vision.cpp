@@ -20,12 +20,12 @@ int main()
         string command=raider.findQR(input);
 
         if(command.empty()){
-            report(ERROR, "No detectado");
+            report(INFO, "No detectado");
             // TODO
         }
         else if (command == "Turn45R"){
             raider.yes();
-            report(OK,"Girar 45 grados a la derecha");
+            report(RAIDER,"Código de 45 grados a la derecha");
             compass_target+=450;   // TODO revisar todos los signos
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
@@ -33,7 +33,7 @@ int main()
         }
         else if (command == "Turn45L"){
             raider.yes();
-            report(OK,"Girar 45 grados a la izquierda");
+            report(OK,"Código de 45 grados a la izquierda");
             compass_target-=450;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
@@ -41,7 +41,7 @@ int main()
         }
         else if (command == "Turn90R"){
             raider.yes();
-            report(OK,"Girar 90 grados a la derecha");
+            report(RAIDER,"Código de 90 grados a la derecha");
             compass_target+=900;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
@@ -49,7 +49,7 @@ int main()
         }
         else if (command == "Turn90L"){
             raider.yes();
-            report(OK,"Girar 90 grados a la izquierda");
+            report(RAIDER,"Código de 90 grados a la izquierda");
             compass_target-=900;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
@@ -57,7 +57,7 @@ int main()
         }
         else if (command == "Turn135R"){
             raider.yes();
-            report(OK,"Girar 135 grados a la derecha");
+            report(RAIDER,"Código de 135 grados a la derecha");
             compass_target+=1350;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
@@ -65,7 +65,7 @@ int main()
         }
         else if (command == "Turn135L"){
             raider.yes();
-            report(OK,"Girar 135 grados a la izquierda");
+            report(RAIDER,"Código de 135 grados a la izquierda");
             compass_target-=1350;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
@@ -73,7 +73,7 @@ int main()
         }
         else if (command == "Turn180R"){
             raider.yes();
-            report(OK,"Girar 180 grados a la derecha");
+            report(RAIDER,"Código de 180 grados a la derecha");
             compass_target+=1800;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
@@ -81,7 +81,7 @@ int main()
         }
         else if (command == "Turn180L"){
             raider.yes();
-            report(OK,"Girar 180 grados a la izquierda");
+            report(RAIDER,"Código de 180 grados a la izquierda");
             compass_target-=1800;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<3600) compass_target+=3600;
