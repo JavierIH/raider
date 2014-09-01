@@ -8,7 +8,6 @@ using namespace std;
 
 int main()
 {
-    openCamera(0);
-    cv::imshow("hola",getFrame());
-    cv::waitKey();
+    Raider raider;
+    raider.waitStart();
 }

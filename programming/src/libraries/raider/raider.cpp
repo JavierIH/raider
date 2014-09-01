@@ -306,6 +306,17 @@ bool Raider::look(){
     return 1;
 }
 
+bool Raider::lookUp(){
+    char command='l';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (look)");
+        return 0;
+    }
+    usleep(LOOKUP);
+    return 1;
+}
+
 bool Raider::sendCommand(char command){
 
     int error=serial->WriteChar(command);
@@ -522,4 +533,47 @@ void Raider::setDirection(bool side, int target_angle){
         }
     }
 }
+
+void Raider::setDirection(int target_angle){
+    //side 1 derecha
+    //side 0 izquierda
+    bool side;
+
+    int ref_angle=getCompass();
+
+    int right_distance=target_angle-ref_angle;
+    if (right_distance<0) right_distance+=3600;
+
+    int left_distance=ref_angle-target_angle;
+    if (left_distance<0) left_distance+=3600;
+
+    if (right_distance<left_distance) side=1;
+    else side=0;
+
+    setDirection(side,target_angle); // TODO comprobar si es posible
+}
+
+void Raider::waitStart(){
+
+    bool wait=1;
+
+    while(wait){
+        Mat frame=getFrame();
+        ImageScanner scanner;
+        scanner.set_config(ZBAR_QRCODE, ZBAR_CFG_ENABLE, 1);
+
+        cvtColor(frame,frame,CV_BGR2GRAY);
+        uchar *pointer = (uchar *)frame.data;
+
+        Image image(frame.cols, frame.rows, "Y800", pointer, frame.cols*frame.rows);
+        scanner.scan(image);
+
+        for(Image::SymbolIterator symbol = image.symbol_begin(); symbol != image.symbol_end(); ++symbol) {
+            if(symbol->get_data()== "GoRaider") wait=0;
+        }
+    }
+    report(RAIDER,"ROGER ROGER!");
+    yes();
+}
+
 

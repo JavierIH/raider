@@ -15,18 +15,13 @@ int main()
     Raider raider;
     int state=0;
     int flag_line=0;
+    int contador=0;
+
+    raider.waitStart();
+    const int reference_angle=raider.getCompass();
+    int target_direction=reference_angle;
 
     report(INFO,"Cuenta atrás!");
-    report(INFO,"10....");
-    usleep(2000000);
-    report(INFO,"9...");
-    usleep(2000000);
-    report(INFO,"8...");
-    usleep(2000000);
-    report(INFO,"7...");
-    usleep(2000000);
-    report(INFO,"6...");
-    usleep(2000000);
     report(INFO,"5...");
     usleep(2000000);
     report(INFO,"4...");
@@ -71,11 +66,13 @@ int main()
                     report(MOVE,"E -> Paso lateral a la derecha");
                     raider.getUp();
                     raider.stepR();
+                    contador=0;
                 }
                 else if(way_result[0]<0){
                     report(MOVE,"Q -> Paso lateral a la izquierda");
                     raider.getUp();
                     raider.stepL();
+                    contador=0;
                 }
             }
             else if(abs(way_result[1])>=FW_ANGLE){
@@ -83,17 +80,21 @@ int main()
                     report(MOVE,"D -> Girar a la izquierda");
                     raider.getUp();
                     raider.turnL();
+                    contador=0;
                 }
                 else if(way_result[1]>0){
                     report(MOVE,"A -> Girar a la derecha");
                     raider.getUp();
                     raider.turnR();
+                    contador=0;
                 }
             }
             else{
                 report(MOVE,"S -> Avanza rapido recto");
                 raider.getUp();
                 raider.run();
+                contador++;
+                if(contador==3) raider.setDirection(target_direction);
             }
             if(!flag_line) state=2; // -> findLine
             else state=1; // -> findWay
@@ -111,56 +112,25 @@ int main()
                 state=1; // -> findWay
                 break;
             }
-            else if(abs(line_result[1])<=FL_ANGLE){
-                report(RAIDER,"Voy a cruzar la linea");
-                raider.yes();
-                report(MOVE,"W -> Avanzar recto");
-                raider.run(); // TODO cerciorarse de que cruza
-                raider.run();
-                raider.run();
-                raider.run();
-                flag_line=true;
-                state=3; // -> turnBack
-                break;
-            }
             else{
-                report("Me preparo para cruzar la linea");
-                if(line_result[1]<0){
-                    report(MOVE,"D -> Girar a la izquierda");
-                    raider.turnL();
-                }
-                else if(line_result[1]>0){
-                    report(MOVE,"A -> Girar a la derecha");
-                    raider.turnR();
-                }
-                if(line_result[0]<=FL_DISTANCE){
-                    report(RAIDER,"Voy a cruzar la linea "+to_string(FL_ANGLE)+"  _  "+to_string(abs(line_result[0])));
-                    raider.yes();
-                    report(MOVE,"W -> Avanzar recto");
-                    raider.run(); // TODO cerciorarse de que cruza
-                    raider.getUp();
-                    raider.run();
-                    flag_line=true;
-                    state=3; // -> turnBack
-                    break;
-                }
-                else{
-                    report(RAIDER,"No he cruzado, vuelvo a intentarlo");
-                    state=2; // -> findLine
-                    break;
-                }
+                report(RAIDER,"Voy a cruzar la linea");
+                raider.setDirection(target_direction);
+                raider.run();
+                raider.run();
+                raider.run();
+                raider.run();
+                state=3;
             }
         }break;
 
         case 3:
             report(STATE, "Estado 3 (Vuelta a casa)");
             report("Inicio secuencia para dar la vuelta");
-            report(MOVE,"A -> Girar a la derecha X5");
+            report(MOVE,"A -> Girar a la derecha");
             raider.getUp();
-            raider.turnR();
-            raider.turnR();
-            raider.turnR();
-            raider.turnR();
+            target_direction=reference_angle+1800;
+            if(target_direction>3600) target_direction-=3600;
+            raider.setDirection(target_direction);
             raider.turnR(); // TODO meter brujula
 
             state=1;

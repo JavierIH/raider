@@ -20,7 +20,7 @@
 //I2C sensors settings
 #define I2C_BUS             1
 #define IMU_ADDRESS         0x69
-#define COMPASS_ADDRESS     0x1E
+#define COMPASS_ADDRESS     0x60
 
 //Camera settings
 #define CAMERA_ID           -1
@@ -31,7 +31,7 @@
 
 //General configuration
 #define FALL_DEGREES        60
-#define INFRARED_LOW        500
+#define INFRARED_LOW        300
 #define INFRARED_HIGH       1000
 #define COMPASS_TOLERANCE   120
 
@@ -54,6 +54,7 @@
 #define DEFENSE             600000
 #define LOOKL               500000
 #define LOOKR               500000
+#define LOOKUP              400000
 #define LOOK                400000
 
 
@@ -76,11 +77,14 @@ private:
 public:
     Raider();
 
-    //FUNCIONES DE ESTADO
+    //FUNCIONES DE SENSORES
     int getFall();
     int getCompass();
     int getLeftIR();
     int getRightIR();
+
+    //FUNCIONES DE ESTADO
+    void waitStart();
 
     //FUNCIONES DE VISION
     cv::Mat getFrame();
@@ -108,6 +112,7 @@ public:
     bool lookL();
     bool lookR();
     bool look();
+    bool lookUp();
     void setDirection(int);
     void setDirection(bool,int);
 
