@@ -13,6 +13,8 @@ int main()
     int compass_target=compass_reference;
 
 
+    report(OK, "Referencia inicial: "+to_string(compass_reference));
+
     while(1){
 
         Mat input=raider.getFrame();
