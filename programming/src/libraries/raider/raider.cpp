@@ -70,6 +70,10 @@ int Raider::getCompass(){
     return compass->getCompass();
 }
 
+void Raider::setCompassTolerance(int data){
+    compass_tolerance=data;
+}
+
 int Raider::getFall(){
     int ay=imu->getAccelerometerY()*360/65355;
     if(ay<=90&&ay>FALL_DEGREES){
@@ -494,10 +498,10 @@ void Raider::setDirection(bool side, int target_angle){
     //side 1 derecha
     //side 0 izquierda
 
-    int min_range=target_angle-COMPASS_TOLERANCE;
+    int min_range=target_angle-compass_tolerance;
     if (min_range<0) min_range+=3600;
 
-    int max_range=target_angle+COMPASS_TOLERANCE;
+    int max_range=target_angle+compass_tolerance;
     if (max_range>3600)max_range-=3600;
 
     if(side==1){

@@ -11,6 +11,7 @@ int main()
 
     raider.waitStart();
 
+
     int compass_reference=raider.getCompass();
     int compass_target=compass_reference;
 

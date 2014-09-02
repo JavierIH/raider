@@ -16,6 +16,8 @@ int main()
     int state=0;
     int flag_line=0;
     int contador=0;
+    raider.setCompassTolerance(500);
+
 
     raider.waitStart();
     const int reference_angle=raider.getCompass();
@@ -23,15 +25,15 @@ int main()
 
     report(INFO,"Cuenta atrás!");
     report(INFO,"5...");
-    usleep(2000000);
+    usleep(1000000);
     report(INFO,"4...");
-    usleep(2000000);
+    usleep(1000000);
     report(INFO,"3...");
-    usleep(2000000);
+    usleep(1000000);
     report(INFO,"2...");
-    usleep(2000000);
+    usleep(1000000);
     report(INFO,"1...");
-    usleep(2000000);
+    usleep(1000000);
 
     report(INFO,"¡Comienza la prueba!");
 
@@ -132,7 +134,7 @@ int main()
             if(target_direction>3600) target_direction-=3600;
             raider.setDirection(target_direction);
             raider.turnR(); // TODO meter brujula
-
+            flag_line=1;
             state=1;
             break;
         default:

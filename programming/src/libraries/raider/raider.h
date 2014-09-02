@@ -33,7 +33,6 @@
 #define FALL_DEGREES        60
 #define INFRARED_LOW        300
 #define INFRARED_HIGH       1000
-#define COMPASS_TOLERANCE   180
 
 //Movements delay time (us)
 #define RUN                 3000000
@@ -73,6 +72,9 @@ private:
     int leftIR;
     //int compass;
 
+    //PARAMETROS DE SENSORES
+    int compass_tolerance=180;
+
 
 public:
     Raider();
@@ -85,6 +87,8 @@ public:
 
     //FUNCIONES DE ESTADO
     void waitStart();
+    void setCompassTolerance(int);
+
 
     //FUNCIONES DE VISION
     cv::Mat getFrame();
