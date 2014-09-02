@@ -94,7 +94,13 @@ void Robot::controller(char command){
     case 'L':
         look(450);
         break;
-      }
+    case 'l':
+        lookUp();
+        break;
+    case 'f':
+        endLookUp();
+        break;
+  }
 }
 void Robot::init(){
     setTargetPosition(512,450,462,562,212,812,977,47,512,512,512,512,472,552,512,512,512,512,512,512);
@@ -259,6 +265,18 @@ void Robot::look(int pos){
     head.writeMicroseconds(pos+1000+TRIM[1]); //Valor entre 1000 y 2024
     delay(500);
 }
+
+void Robot::lookUp(){
+    setTargetPosition(512,0,462,562,212,812,977,47,512,512,512,512,582,442,412,612,612,412,512,512);
+    move(1);
+}
+
+void Robot::endLookUp(){
+    setTargetPosition(512,0,462,562,212,812,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
+    movVertical(-120,-120);
+    move(1);
+}
+
 
 void Robot::run(int pasos){
     int tilt=10;

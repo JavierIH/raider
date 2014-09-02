@@ -66,6 +66,8 @@ class Robot{
     void lookL();
     void lookR();
     void look(int);
+    void lookUp();
+    void endLookUp();
     
     
     void controller(char);
