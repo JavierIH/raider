@@ -53,8 +53,10 @@
 #define DEFENSE             600000
 #define LOOKL               500000
 #define LOOKR               500000
-#define LOOKUP              400000
 #define LOOK                400000
+#define LOOKUP              1700000
+#define ENDLOOKUP           1700000
+
 
 
 class Raider
@@ -117,6 +119,7 @@ public:
     bool lookR();
     bool look();
     bool lookUp();
+    bool endLookUp();
     bool setDirection(int);
     bool setDirection(bool,int);
 

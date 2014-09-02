@@ -25,6 +25,8 @@ int main()
         raider.lookUp();
         usleep(300000);
         string command=raider.findQR(input);
+        raider.endLookUp();
+
 
         if(command.empty()){
             report(INFO, "No detectado");

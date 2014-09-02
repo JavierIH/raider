@@ -322,6 +322,18 @@ bool Raider::lookUp(){
     return 1;
 }
 
+bool Raider::endLookUp(){
+    char command='f';
+    int error=serial->WriteChar(command);
+    if (error==-1){
+        report(WARNING,"Failed sending command (look)");
+        return 0;
+    }
+    usleep(ENDLOOKUP);
+    return 1;
+}
+
+
 bool Raider::sendCommand(char command){
 
     int error=serial->WriteChar(command);
