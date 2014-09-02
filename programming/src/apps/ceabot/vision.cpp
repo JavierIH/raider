@@ -22,6 +22,8 @@ int main()
 
         Mat input=raider.getFrame();
 
+        raider.lookUp();
+        usleep(300000);
         string command=raider.findQR(input);
 
         if(command.empty()){
