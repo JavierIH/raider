@@ -513,8 +513,9 @@ bool Raider::setDirection(bool side, int target_angle){
             cont++;
             report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
             report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            angle=getCompass();
             if((angle>min_range)&&(angle<max_range)) return 1;
-            return 0;
+            else return 0;
         }
 
         else{
@@ -522,7 +523,8 @@ bool Raider::setDirection(bool side, int target_angle){
             cont++;
             report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
             report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
-            if((angle>min_range)||(angle<max_range))return 1;
+            angle=getCompass();
+            if((angle>min_range)||(angle<max_range)) return 1;
             else return 0;
         }
     }
@@ -533,8 +535,9 @@ bool Raider::setDirection(bool side, int target_angle){
             cont++;
             report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
             report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            angle=getCompass();
             if((angle>min_range)&&(angle<max_range)) return 1;
-            return 0;
+            else return 0;
         }
 
         else{
@@ -542,7 +545,8 @@ bool Raider::setDirection(bool side, int target_angle){
             cont++;
             report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
             report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
-            if((angle>min_range)||(angle<max_range))return 1;
+            angle=getCompass();
+            if((angle>min_range)||(angle<max_range)) return 1;
             else return 0;
         }
     }
