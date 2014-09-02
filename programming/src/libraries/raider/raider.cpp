@@ -505,19 +505,25 @@ void Raider::setDirection(bool side, int target_angle){
     int max_range=target_angle+compass_tolerance;
     if (max_range>3600)max_range-=3600;
 
+    int cont=0;
+
     if(side==1){
         if(max_range>min_range){
             for(int angle=compass->getCompass(); !((angle>min_range&&angle<max_range));angle=compass->getCompass()){
                 turnR();
+                cont++;
                 report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
                 report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+                if(cont>10) break;
             }
         }
         else{
             for(int angle=compass->getCompass(); !((angle>min_range||angle<max_range));angle=compass->getCompass()){
                 turnR();
+                cont++;
                 report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
                 report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+                if(cont>10) break;
             }
         }
     }
@@ -525,15 +531,19 @@ void Raider::setDirection(bool side, int target_angle){
         if(max_range>min_range){
             for(int angle=compass->getCompass(); !((angle>min_range&&angle<max_range));angle=compass->getCompass()){
                 turnL();
+                cont++;
                 report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
                 report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+                if(cont>10) break;
             }
         }
         else{
             for(int angle=compass->getCompass(); !((angle>min_range||angle<max_range));angle=compass->getCompass()){
                 turnL();
+                cont++;
                 report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
                 report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+                if(cont>10) break;
             }
         }
     }
