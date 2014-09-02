@@ -15,7 +15,7 @@ Robot raider;
 void setup() {
 //  Serial2.begin(BT_BAUD_RATE); //Bluetooth
     Serial3.begin(BBB_BAUD_RATE); //Beaglebone
-//  SerialUSB.begin();
+//    SerialUSB.begin();
 
     pinMode(BOARD_LED_PIN, OUTPUT);
     pinMode(STOP_BUTTON, INPUT);
@@ -27,7 +27,7 @@ void setup() {
 bool flag=0;
 
 void loop() {
-  
+
   digitalWrite(BOARD_LED_PIN, HIGH);
   if(digitalRead(STOP_BUTTON)){
     digitalWrite(STATE_LED, HIGH);
@@ -47,4 +47,5 @@ void loop() {
       Serial3.flush();
     }
   }
+  
 }
