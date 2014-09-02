@@ -16,5 +16,20 @@ Compass::~Compass() {
 }
 
 int Compass::getCompass() {
-    return (i2c->read8(COMPASS_I2C_ADDRESS,0x02) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x03);
+    //return (i2c->read8(COMPASS_I2C_ADDRESS,0x02) << 8) | i2c->read8(COMPASS_I2C_ADDRESS,0x03);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+    i2c->read8(COMPASS_I2C_ADDRESS,0x01);
+
+    return (i2c->read8(COMPASS_I2C_ADDRESS,0x01)*3600)/255;
 }
