@@ -495,7 +495,7 @@ string Raider::findQR(Mat frame){
     return command;
 }
 
-void Raider::setDirection(bool side, int target_angle){
+bool Raider::setDirection(bool side, int target_angle){
     //side 1 derecha
     //side 0 izquierda
 
@@ -506,50 +506,51 @@ void Raider::setDirection(bool side, int target_angle){
     if (max_range>3600)max_range-=3600;
 
     int cont=0;
-
+    int angle=getCompass();
     if(side==1){
         if(max_range>min_range){
-            for(int angle=compass->getCompass(); !((angle>min_range&&angle<max_range));angle=compass->getCompass()){
-                turnR();
-                cont++;
-                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
-                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
-                if(cont>10) break;
-            }
+            turnR();
+            cont++;
+            report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            if((angle>min_range)&&(angle<max_range)) return 1;
+            return 0;
         }
+
         else{
-            for(int angle=compass->getCompass(); !((angle>min_range||angle<max_range));angle=compass->getCompass()){
-                turnR();
-                cont++;
-                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
-                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
-                if(cont>10) break;
-            }
+            turnR();
+            cont++;
+            report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            if((angle>min_range)||(angle<max_range))return 1;
+            else return 0;
         }
     }
+
     if(side==0){
         if(max_range>min_range){
-            for(int angle=compass->getCompass(); !((angle>min_range&&angle<max_range));angle=compass->getCompass()){
-                turnL();
-                cont++;
-                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
-                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
-                if(cont>10) break;
-            }
+            turnL();
+            cont++;
+            report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            if((angle>min_range)&&(angle<max_range)) return 1;
+            return 0;
         }
+
         else{
-            for(int angle=compass->getCompass(); !((angle>min_range||angle<max_range));angle=compass->getCompass()){
-                turnL();
-                cont++;
-                report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
-                report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
-                if(cont>10) break;
-            }
+            turnL();
+            cont++;
+            report("minimo: "+to_string(min_range)+"    Maximo: "+to_string(max_range));
+            report("Angulo actual: "+to_string(angle)+"    Angulo objetivo: "+to_string(target_angle));
+            if((angle>min_range)||(angle<max_range))return 1;
+            else return 0;
         }
     }
 }
 
-void Raider::setDirection(int target_angle){
+
+
+bool Raider::setDirection(int target_angle){
     //side 1 derecha
     //side 0 izquierda
     bool side;
@@ -565,7 +566,8 @@ void Raider::setDirection(int target_angle){
     if (right_distance<left_distance) side=1;
     else side=0;
 
-    setDirection(side,target_angle); // TODO comprobar si es posible
+    bool flag=setDirection(side,target_angle); // TODO comprobar si es posible
+    return flag;
 }
 
 void Raider::waitStart(){

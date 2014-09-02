@@ -117,8 +117,8 @@ public:
     bool lookR();
     bool look();
     bool lookUp();
-    void setDirection(int);
-    void setDirection(bool,int);
+    bool setDirection(int);
+    bool setDirection(bool,int);
 
     //FUNCIONES AUXILIARES
     bool sendCommand(char);
