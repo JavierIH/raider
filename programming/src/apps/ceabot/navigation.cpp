@@ -2,7 +2,7 @@
 #include <iostream>
 
 #define FW_ANGLE 20
-#define FW_DISTANCE 20
+#define FW_DISTANCE 16
 #define FL_ANGLE 15
 #define FL_DISTANCE 30
 
