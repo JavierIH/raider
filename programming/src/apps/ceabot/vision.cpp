@@ -11,6 +11,7 @@ int main()
 
     raider.waitStart();
 
+    raider.setCompassTolerance(200);
 
     int compass_reference=raider.getCompass();
     int compass_target=compass_reference;
@@ -33,7 +34,7 @@ int main()
             compass_target+=450;   // TODO revisar todos los signos
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(1,compass_target));
+            while(!raider.setDirection(1,compass_target));
         }
         else if (command == "Turn45L"){
             raider.yes();
@@ -41,7 +42,7 @@ int main()
             compass_target-=450;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(0,compass_target));
+            while(!raider.setDirection(0,compass_target));
         }
         else if (command == "Turn90R"){
             raider.yes();
@@ -49,7 +50,7 @@ int main()
             compass_target+=900;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(1,compass_target));
+            while(!raider.setDirection(1,compass_target));
         }
         else if (command == "Turn90L"){
             raider.yes();
@@ -57,7 +58,7 @@ int main()
             compass_target-=900;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(0,compass_target));
+            while(!raider.setDirection(0,compass_target));
         }
         else if (command == "Turn135R"){
             raider.yes();
@@ -65,7 +66,7 @@ int main()
             compass_target+=1350;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(1,compass_target));
+            while(!raider.setDirection(1,compass_target));
         }
         else if (command == "Turn135L"){
             raider.yes();
@@ -73,7 +74,7 @@ int main()
             compass_target-=1350;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(0,compass_target));
+            while(!raider.setDirection(0,compass_target));
         }
         else if (command == "Turn180R"){
             raider.yes();
@@ -81,7 +82,7 @@ int main()
             compass_target+=1800;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(1,compass_target));
+            while(!raider.setDirection(1,compass_target));
         }
         else if (command == "Turn180L"){
             raider.yes();
@@ -89,7 +90,7 @@ int main()
             compass_target-=1800;
             if(compass_target>3600) compass_target-=3600;
             if(compass_target<0) compass_target+=3600;
-            while(raider.setDirection(0,compass_target));
+            while(!raider.setDirection(0,compass_target));
         }
     }
 }

@@ -115,6 +115,10 @@ int main()
             report("Inicio secuencia para dar la vuelta");
             report(MOVE,"A -> Girar a la derecha");
             raider.getUp();
+            raider.turnL();
+            raider.turnL();
+            raider.turnL();
+            raider.turnL();
             target_direction=reference_angle+1800;
             if(target_direction>3600) target_direction-=3600;
             while(!raider.setDirection(target_direction));
