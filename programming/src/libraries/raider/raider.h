@@ -73,7 +73,7 @@ private:
     //int compass;
 
     //PARAMETROS DE SENSORES
-    int compass_tolerance=180;
+    int compass_tolerance;
 
 
 public:

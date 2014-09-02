@@ -37,6 +37,7 @@ Raider::Raider(){
 //COMPASS SENSOR
     report("Setting compass sensor...");
     compass = new Compass(i2c);
+    setCompassTolerance(180);
     report(OK, "Compass sensor connected!");
 
 //INFRARRED SENSORS
