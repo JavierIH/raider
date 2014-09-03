@@ -427,7 +427,7 @@ Vec2i Raider::findWay(Mat image){
 
 Vec2i Raider::findLine(Mat frame){
 
-    Rect rect(0,frame.rows/2,frame.cols,frame.rows/2); //Recortar a la mitad
+    Rect rect(0,frame.rows/3,frame.cols,(frame.rows*2)/3); //Recortar a la mitad
 
     Mat image = frame(rect);
     Mat1b input=detectGreen(image);

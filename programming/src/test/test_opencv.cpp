@@ -116,17 +116,25 @@ Vec2i funcion_findLine(Mat image){
 }
 
 int main(){
-    openCamera(1);
+    Raider raider;
 
     while(1){
         char c=waitKey(0);
         if (c=='\n'||c=='a') return 0;
 
-        Mat image=getFrame();
+        Mat image=raider.getFrame();
+        cv::Size size(160,120);
+        resize(image,image,size);
+       /* cv::Size size(160,120);
+        resize(image,image,size);
 
-        Rect rect(0,image.rows/2,image.cols,image.rows/2);
+        image=detectGreen(image);
 
-        imshow("camsdfdgara",image);
-        imshow("camara",image(rect));
+        image=dilation(image,20);
+        image=dilation(image,-10);
+
+        imshow("camsdfdgara",image);*/
+
+        raider.findLine(image);
     }
 }
