@@ -26,11 +26,17 @@ int main()
         usleep(300000);
         string command=raider.findQR(input);
         raider.endLookUp();
-
+        int cont=0;
 
         if(command.empty()){
             report(INFO, "No detectado");
-            // TODO
+            command=raider.findQR(input);
+            cont++;
+            if(cont>5){
+                cont=0;
+                raider.turnL();
+                raider.setDirection(compass_target);
+            }
         }
         else if (command == "Turn45R"){
             raider.yes();
