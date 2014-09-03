@@ -18,6 +18,8 @@ int main()
 
     report("Referencia inicial: "+to_string(compass_reference));
 
+    int cont=0;
+
     while(1){
 
         Mat input=raider.getFrame();
@@ -26,7 +28,6 @@ int main()
         usleep(300000);
         string command=raider.findQR(input);
         raider.endLookUp();
-        int cont=0;
 
         if(command.empty()){
             report(INFO, "No detectado");
