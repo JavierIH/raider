@@ -279,7 +279,7 @@ void Robot::endLookUp(){
 
 
 void Robot::run(int pasos){
-    int tilt=10;
+    int tilt=11;
     float tiempo=0.07;
     int altura_paso=20;
     int avance=15;
