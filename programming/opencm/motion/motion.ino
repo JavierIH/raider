@@ -26,7 +26,7 @@ void setup() {
 
 bool flag=0;
 
-void loop() {
+void loop() {  
 
   digitalWrite(BOARD_LED_PIN, HIGH);
   if(digitalRead(STOP_BUTTON)){
@@ -47,5 +47,4 @@ void loop() {
       Serial3.flush();
     }
   }
-  
 }
