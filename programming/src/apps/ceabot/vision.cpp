@@ -11,7 +11,7 @@ int main()
 
     raider.waitStart();
 
-    raider.setCompassTolerance(180);
+    raider.setCompassTolerance(140);
 
     int compass_reference=raider.getCompass();
     int compass_target=compass_reference;
