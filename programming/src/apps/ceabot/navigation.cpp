@@ -13,7 +13,7 @@ int main()
     int state=0;
     int flag_line=0;
     int contador=0;
-    raider.setCompassTolerance(500);
+    raider.setCompassTolerance(300);
     raider.waitStart();
     const int reference_angle=raider.getCompass();
     int target_direction=reference_angle;
