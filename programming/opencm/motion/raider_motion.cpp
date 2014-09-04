@@ -29,7 +29,7 @@ Robot::Robot(){
 void Robot::controller(char command){
     switch (command){
     case 'W':
-        walk(3);
+        walk(2);
         break;
     case 'A':
         turnL();
@@ -50,7 +50,8 @@ void Robot::controller(char command){
         miniTurnR();
         break;
     case 'S':
-        run(3);
+        //run(3);
+        walk(2);
         break;
     case 'K':
         kick();
@@ -329,8 +330,9 @@ void Robot::walk(int pasos){
     int altura_paso=15; //10
     int avance=10; //10
     setTargetPosition(512,0,462,562,212,812,977,47,512,512,512,512,452,572,512,512,512,512,512,512);
-    movVertical(-120,-120);
-    move(tiempo);
+    movVertical(-150,-150);
+    move(0.01);
+    delay(200);
     //PASO INICIAL IZQUIERDO
     movVertical(-altura_paso,0); //Subir pie
     movFrontal(avance/2,-avance/2);
@@ -630,39 +632,41 @@ void Robot::stepR()
 }
 
 void Robot::punchL(){
-    setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
+    int tilt=10;
+    setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
     movVertical(-120,-120);
     movLateral(40,-40);
     move(0.4);
-    setTargetPosition(662,0,512,512,412,512,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
-    movVertical(-120,-120);
+    setTargetPosition(662,0,512,512,412,512,977,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
+    movVertical(-145,-145);
     movLateral(40,-40);
     move(0.1);
-    setTargetPosition(312,0,512,512,312,512,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
-    movVertical(-120,-120);
+    setTargetPosition(312,0,512,512,312,512,977,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
+    movVertical(-145,-145);
     movLateral(40,-40);
     move(0.4);
-    setTargetPosition(312,0,512,512,312,512,977,524,512,512,512,512,477,547,512,512,512,512,512,512);
-    movVertical(-120,-120);
+    setTargetPosition(312,0,512,512,312,512,977,524,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
+    movVertical(-145,-145);
     movLateral(40,-40);
     move(0.05);
 }
 
 void Robot::punchR(){
-    setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
+    int tilt=10;
+    setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
     movVertical(-120,-120);
     movLateral(40,-40);
     move(0.4);
-    setTargetPosition(462,0,512,512,512,612,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
-    movVertical(-120,-120);
+    setTargetPosition(462,0,512,512,512,612,977,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
+    movVertical(-145,-145);
     movLateral(40,-40);
     move(0.1);
-    setTargetPosition(712,0,512,512,512,712,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
-    movVertical(-120,-120);
+    setTargetPosition(712,0,512,512,512,712,977,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
+    movVertical(-145,-145);
     movLateral(40,-40);
     move(0.4);
-    setTargetPosition(712,0,512,512,512,712,500,47,512,512,512,512,477,547,512,512,512,512,512,512);
-    movVertical(-120,-120);
+    setTargetPosition(712,0,512,512,512,712,500,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
+    movVertical(-145,-145);
     movLateral(40,-40);
     move(0.05);
 }
@@ -677,7 +681,8 @@ void Robot::miniPunchR(){
 }
 
 void Robot::defense(){
-    setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512,512,512,512);
+    int tilt=10;
+    setTargetPosition(512,0,512,512,312,712,977,47,512,512,512,512,477,547,512,512,512+tilt,512-tilt,512,512);
     movVertical(-120,-120);
     movLateral(40,-40);
     move(0.4);
