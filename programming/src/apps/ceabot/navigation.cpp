@@ -1,7 +1,7 @@
 #include "../../libraries/raider/raider.h"
 #include <iostream>
 #define FW_ANGLE 20
-#define FW_DISTANCE 16
+#define FW_DISTANCE 15
 #define FL_ANGLE 15
 #define FL_DISTANCE 30
 using namespace std;

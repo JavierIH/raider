@@ -8,7 +8,7 @@ int main()
     int left_distance;
     int right_distance;
     int state=1;
-    int state_vertical;
+    int golpe=0;
 
     while(true){
         switch (state) {
@@ -84,7 +84,15 @@ int main()
             break;
 
         case 7:
-            raider.crab();
+           //raider.crab();
+            if(golpe==0){
+                raider.punchL();
+                golpe=1;
+            }
+            else{
+                raider.punchR();
+                golpe=0;
+            }
             state=10;
             break;
 
@@ -100,14 +108,13 @@ int main()
         case 10:
             raider.getUp();
             state=1;
-         break;
+            break;
 
         default:
             state=1;
             break;
 
         }
-
     }
 }
 
