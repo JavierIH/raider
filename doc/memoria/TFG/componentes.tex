@@ -109,9 +109,9 @@ Presentado como la evolución de la CM-510, en este caso el microcontrolador de l
 En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas distribuida gratuitamente por Robotis para la programación de sus robots educativos. Destaca por ser un entorno con un lenguaje de programación (R+) muy visual e intuitivo, preparado para su uso por niños o gente sin conocimientos muy avanzados de programación. Sin embargo, esto lo convierte en un lenguaje de programación muy limitado, hasta el punto que no permite utilizar todo el potencial de los actuadores Dynamixel.
 
 
-\subsubsection{comparativa y elección final TODO}
+\subsubsection{comparativa y elección final}
 
-Realizando un primer análisis, ninguno de los robots candidatos cumple los requísitos. Todos utilizan IDEs y lenguajes propios para su programación. El Robonova y el Robovie tienen unos servos demasiado débiles, lo que dificultaría mucho añadir mas peso al robot. Entre el Kondo y el Bioloid, se ha elegido el Bioloid por tres razones: Es mas fácil de modificar, el kit contiene mas servos, y es más barato. También, previendo las modificaciones futuras, se contempló la idea de comprar únicamente los servos Dynamixel que usa el Bioloid por separado. Sin embargo, resultó mas económico adquirir el kit completo de Bioloid Comprehensive.
+Realizando un primer análisis, ninguno de los robots candidatos cumple los requísitos. Todos ellos obligan a utilizar entornos de desarrollo y lenguajes propios para su programación. El Robonova y el Robovie tienen unos servos demasiado débiles, lo que dificultaría mucho añadir mas peso al robot. Entre el Kondo y el Bioloid, se ha elegido el Bioloid por tres razones: Es mas fácil de modificar, el kit contiene mas servos  y es más barato. También, previendo las modificaciones futuras, se contempló la idea de comprar únicamente los servos Dynamixel que usa el Bioloid por separado. Sin embargo, resultó mas económico adquirir el kit completo de Bioloid Comprehensive.
 
 
 \section{Modificaciones estructurales}
@@ -119,7 +119,7 @@ Realizando un primer análisis, ninguno de los robots candidatos cumple los requí
 El Bioloid Comprehensive es un buen punto de partida, sin embargo tiene algunos puntos débiles que conviene revisar. Además, para poder implantar en el robot los dispositivos que requiere este proyecto se necesitarán mejorar las capacidades de la plataforma.
 
 
-\subsection{Cabeza móvil TODO}
+\subsection{Cabeza móvil TODO IMAGEN}
 
 Un requisito importante del proyecto es permitir que la cámara que vamos a montar pueda moverse con libertad para enfocar a diferentes zonas de su entorno. Dado que en CEABOT la mayoría de los datos  que aporta el entorno están situados en el suelo, necesitamos que la cámara al menos pueda dirigirse hacia el frente y hacia el suelo. Esto lo conseguiremos con la adición de un microservo PWM y una plataforma articulada para la cabeza. Dadas las características de este movimiento, no necesitamos un servo con grandes capacidades, ya que su rango de acción estará muy limitado y su efecto será despreciable en el reparto de pesos del robot.
 
@@ -134,71 +134,72 @@ Se ha elegido un microservo PWM por su bajo tamaño y peso, su bajo precio y su s
 
 Particularmente, se ha escogido un servo Tower Pro MG90s (figura \ref{microservo}) cuyas especificaciones presentan un torque de 2.4=kg/cm, y una transmisión metálica soportada por rodamientos. Este último dato es muy importande si tenemos en cuenta que el sistema de cabeza móvil se situará en una zona extrema del robot, y que un golpe provocado por una caida forzará de forma directa el eje del servo de la articulación. Este servo proporcionará a la cabeza la robustez necesaria para salir indemne en este tipo de accidentes. Accidentes que por otra parte son muy comunes teniendo en cuenta que el robot estará destinado a la realización de pruebas de competición.
 
-\subsection{Cintura móvil TODO}
+\subsection{Cintura móvil TODO IMAGEN}
 
-Otra de las modificaciones básicas a realizar sobre la paltaforma robótica, ha sido la inclusión de un servo adicional Dynamixel AX-12A para articular la cintura. A parte de la mejora de capacidades que se produce en los movimientos del robot, servirá para girar la dirección de la cámara radialmente. Podría decirse que entre el servo de la cabeza y el de la cintura, se ha creado un sistema distribuido de pan-tilt ( TODO explicar qué significa ) que permitirá mover la cámara en todas las direcciones manteniendo fija la base del robot, es decir, sus piernas.
+Otra de las modificaciones básicas a realizar sobre la paltaforma robótica, ha sido la inclusión de un servo adicional Dynamixel AX-12A para articular la cintura. A parte de la mejora de capacidades que se produce en los movimientos del robot, servirá para girar la dirección de la cámara radialmente. Podría decirse que entre el servo de la cabeza y el de la cintura, se ha creado un sistema distribuido de pan-tilt que permitirá mover la cámara en todas las direcciones manteniendo fija la base del robot, es decir, sus piernas.
 
 \section{Sensorización TODO}
 
 El funcionamiento del robot y su control va a estar basado principalmente en la cámara y los algoritmos de visión que se programarán. No obstante, la cámara consume muchos recursos del procesador y existen alguna tareas sencillas que es mas fácil programar con sensores mas simples. A continuación se muestra un estudio de sensores que pueden ser útiles en el proyecto.
 
-\subsection{Sensores de distancia TODO}
+\subsection{Sensores de distancia}
 
-Existen diferentes tipo de sensores de distancia. El propósito de estos sensores no es otro que la medición de longitudes físicas utilizando diferentes principios físicos. Se ha planteado el uso de sensores infrarrojos y de sensores de ultrasonidos.
+Existen diferentes tipo de sensores de distancia. El propósito de estos sensores no es otro que la medición de longitudes utilizando diferentes principios físicos. Se ha planteado el uso de sensores infrarrojos y/o de sensores de ultrasonidos.
 
-\subsubsection{Sensores de infrarrojos TODO}
+\subsubsection{Sensores de infrarrojos}
 
-Los sensores de infrarrojos basan su funcionamiento en la reflexión de luz infrarroja sobre superficies. El sensor está formado por dos LEDs infrarrojos, uno emisor y otro receptor. El emisor emite de forma continua una luz infrarroja dirigida hacia un punto fijo. Si en ese punto fijo se encuentra un objeto físico, la luz se reflejará y será captada por el diodo receptor. La salida de estos sensores se mide mediante la diferencia de potencial que se produce en el diodo receptor. Se ha estudiado la inclusión en el proyecto de sensores infrarrojos Sharp, especialmente de su modelo GP2Y0A21YK, que tiene un rango de operación de entre 4 y 150cm. En la gráfica de la figura \ref{graficair} se presenta la variación de tensión de salida respecto a distancia para un Sharp GP2Y0A21YK.
+Los sensores de infrarrojos basan su funcionamiento en la reflexión de luz infrarroja sobre superficies. El sensor está formado por dos LEDs infrarrojos, uno emisor y otro receptor. El emisor emite de forma continua una luz infrarroja dirigida hacia un punto fijo. Si en ese punto fijo se encuentra un objeto físico, la luz se reflejará y será captada por el diodo receptor. La salida de estos sensores se mide mediante la diferencia de potencial que se produce en el diodo receptor. Se ha estudiado la inclusión en el proyecto de sensores infrarrojos Sharp, especialmente de su modelo GP2Y0A21YK, que tiene un rango de operación de entre 4 y 150cm.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{figuras/graficair}   
-\caption{Salida de un sensor Sharp respecto a su medición.}
-\label{graficair}
-\end{figure}
+\subsubsection{Sensores de ultrasonidos}
 
-\subsubsection{Sensores de ultrasonidos TODO}
+Los sensores de ultrasonidos detectan distancias basandose en el tiempo en el que un sonido de alta frecuencia recorre el espacio. Normalmente, los sensores de ultrasonidos tienen dos focos, uno emisor y otro receptor. Una de las diferencias de este tipo de sensores con los sensores infrarrojos es que mientras los sensores infrarrojos toman medidas de un punto, el rango de operación de los sensores de ultrasonidos se abre en un como de 60º de amplitud desde su emisor. Se ha analizado el sensor de ultrasonidos HC-SR04 como posible candidato para formar parte del robot por su fácil accesibilidad. Otro punto importante es que en estos sensores la salida es proporcional a la distancia medida, es decir, se adecúa a una recta. Es por esto por lo que podremos realizar medidas reales directamente midiendo la salida del sensor.
 
-Los sensores de ultrasonidos detectan distancias basandose en el tiempo en el que un ultrasonido recorre el espacio. Normalmente, los sensores de ultrasonidos tienen dos focos, uno emisor y otro receptor. Una de las diferencias de este tipo de sensores con los sensores infrarrojos es que mientras los sensores infrarrojos toman medidas de un punto, el rango de operación de los sensores de ultrasonidos se abre en un como de 60º de amplitus desde su emisor. Se ha analizado el sensor de ultrasonidos HC-SR04 como posible candidato para formar parte del robot por su fácil accesibilidad. Otro punto importante es que en estos sensores la salida es proporcional a la distancia medida, es decir, se adecúa a una recta. Es por esto por lo que podremos realizar medidas reales directamente midiendo la salida del sensor.
+\subsubsection{Experimentos de medida}
 
-\subsubsection{Experimentos de medida TODO}
+Para poner en práctica y obeservar las diferencias teóricas que existen entre el funcionamiento de ambos sensores, se ha realizado un pequeño experimento en el que se han realizado medidas de longitud entre el sensor y un obstáculo. Para ello, se han analizado tres configuraciones posibles. En cada imágen, se ha marcado en azul el rango de acción del sensor. La linea roja representa la distancia que medirá el sensor en cada situación.
 
+\medskip En el primer experimento (figura \ref{experimento1}) se ha colocado un obstáculo como los que se utilizan en la prueba de navegación de CEABOT en posición frontal y recta. Puede observarse que en esta situación ambos sensores medirían de forma similar la distancia entre el sensor y el obstáculo.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
-\includegraphics[width=0.5\textwidth]{figuras/expir1} & \includegraphics[width=0.5\textwidth]{figuras/expus1}  \\
+\includegraphics[width=0.45\textwidth]{figuras/expir1} & \includegraphics[width=0.45\textwidth]{figuras/expus1}  \\
 \end{tabular}
 \caption{Primer experimento.}
 \label{experimento1}
 \end{figure} 
 
+En el segundo experimento (figura \ref{experimento2}) se ha desplazado el objeto ligeramente hacia la derecha. Puede observarse cómo el rango de acción del sensor infrarrojo, al tener una forma lineal, no detecta el obstáculo. Mientras tanto, el sensor de ultrasonidos es capaz de detectarlo, ya que en esa posición sigue estando dentro de su rango de acción. 
+
 \begin{figure}[H]
 \centering
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
-\includegraphics[width=0.5\textwidth]{figuras/expir2} & \includegraphics[width=0.5\textwidth]{figuras/expus2}  \\
+\includegraphics[width=0.45\textwidth]{figuras/expir2} & \includegraphics[width=0.45\textwidth]{figuras/expus2}  \\
 \end{tabular}
 \caption{Segundo experimento.}
 \label{experimento2}
 \end{figure} 
 
-\begin{figure}[H]
+Por último, el tercer experimento (figura \ref{experimento3}) muestra el comportamiento de ambos sensores al enfrentarse a una superficie oblicua. Tal y como puede observarse en la imagen, el sensor infrarrojo realiza una medida puntual a la zona del obstáculo que se interpone en su rango de acción. Por otra parte, el sensor de ultrasonidos nos devuelve la distancia del punto del objeto que, encontrándose dentro de su rango, constituye la distancia mínia entre ambos.
+
+\begin{figure}[h]
 \centering
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
-\includegraphics[width=0.5\textwidth]{figuras/expir3} & \includegraphics[width=0.5\textwidth]{figuras/expus3}  \\
+\includegraphics[width=0.45\textwidth]{figuras/expir3} & \includegraphics[width=0.45\textwidth]{figuras/expus3}  \\
 \end{tabular}
 \caption{Tercer experimento.}
 \label{experimento3}
 \end{figure} 
 
+De este experimento pueden sacarse varias conclusiones. La primera de ellas es que no existe un sensor mejor que el otro, cada uno destaca en una funcionalidad. Un sensor infrarrojo nos dará una mejor precisión a la hora de realizar medidas de distancia en un punto concreto, sin embargo, su rango de acción es limitado y será importante controlar donde está apuntando exactamente en cada momento. El sensor de ultrasonidos por su parte, detectará un obstáculo con mayor probabilidad, pero siempre existirá un incertidumbre respecto al posicionamiento exacto del obstáculo que estamos midiendo. De esta forma, un sensor infrarrojo será útil cuando necesitemos precisión en la posición del objeto y por este motivo, será el seleccionado para montarse en el robot. De todos modos, no se descarta la idea de montar también sensores de ultrasonidos en un futuro.
+
 \subsection{Sensores inerciales TODO}
 
 El control del equilibrio del robot es muy importante en configuraciones bípedas, ya que estos robots son conocidos por su facilidad para tropezar y caer al suelo. Con el objetivo de analizar la posición del robot respecto al suelo se ha requerido la inclusión de diferentes sensores inerciales.
 
-\subsubsection{Brújula TODO}
-\subsubsection{Giroscopio TODO}
-\subsubsection{Acelerómetro TODO}
+\subsubsection{Acelerómetro y giroscopio}
 
+En el mercado existen varios modelos económicos. En este proyecto se ha utilizado un sensor MPU9150 (figura \ref{imu}), que es un sensor inercial compuesto de acelerómetro de 3 ejes, giroscopio de 3 ejes y brújula de 3 ejes. Este sensor combina dos sensores, un MPU6050 (incluye el acelerometro y el giroscopio) y un AK8975 (incluye la brújula). Sin embargo, en la práctica se observó que la brújula incluida en el sensor era muy propensa a sufrir interferencias, por lo que se decidió montar una brújula adicional que no tuviese estos problemas.
 
 % TODO cambiar por foto real
 \begin{figure}[H]
@@ -208,8 +209,11 @@ El control del equilibrio del robot es muy importante en configuraciones bípedas
 \label{imu}
 \end{figure}
 
-En el mercado existen varios modelos económicos. En este proyecto se ha utilizado un sensor MPU9150 (figura \ref{imu}), que es un sensor inercial compuesto de acelerómetro de 3 ejes, giroscopio de 3 ejes y brújula de 3 ejes. Este sensor combina dos sensores, un MPU6050 (incluye el acelerometro y el giroscopio) y un AK8975 (incluye la brújula).
+\subsubsection{Brújula TODO IMAGEN}
 
+La inclusión de una brújula es indispensable cuando de requiere conocer la dirección en la que se desplaza un robot. En este proyecto se montará un brújula para evaluar si el desplazamiento del robot se produce de forma recta y efectuar los redireccionamientos necesarios. Existen diferentes modelos de brújulas digitales en el mercado. Todas ellas, basan su funcionamiento en la detección y medición de campos magnéticos. Para lograr conocer la orientación del robot, la brújula deberá apoyarse en su posición respecto a la del campo magnético terrestre. El gran problema de estos dispositivos es su facilidad para modificar sus medidas cuando existe un campo magnético fuerte en su entorno. Esta interferencias pueden ser causadas por aparatos electrónicos, estructuras metálicas o incluso por los propios componentes del robot.
+
+\medskip Para este proyecto se ha utilizado una brújula CMPS03. El motivo de haber seleccionado este modelo frente a otros mas comúnes como por ejemplo la HMC5883L, se debe a que ya ha sido utilizada en anteriores proyectos robóticos en la asociación con muy buenos resultados. Esto se debe en parte a que la placa del sensor incluye un PIC que se encarga de calibrar y comunicar los datos medidos, de forma que no será necesario que el controlador del robot realice estos cálculos y podrá utilizar directamente la medida extraída.
 
 \subsection{Cámara TODO}
 
@@ -240,8 +244,7 @@ El controlador de locomoción debe encargarse de mover los 20 servos del robot y 
 
 \subsubsection{Arduino TODO}
 
-Las placas Arduino se han hecho famosas por su fácil programación y puesta en marcha. Dada su popularidad, existe una gran comunidad de usuarios que generan documentación de forma constante. Con una placa Arduino disponemos una amplia colección de bibliotecas para interactuar con sensores y actuadores.
-Sin embargo, estas placas por si solas no soportan la comunicación con los servos Dynamixel. Por esta razón, se ha desestimado su uso en el proyecto.  
+Las placas Arduino se han hecho famosas por su fácil programación y puesta en marcha. Dada su popularidad, existe una gran comunidad de usuarios que generan documentación de forma constante. Con una placa Arduino disponemos de una amplia colección de bibliotecas para interactuar con sensores y actuadores. Sin embargo, estas placas por si solas no soportan la comunicación con los servos Dynamixel. Por esta razón, se ha desestimado su uso en el proyecto.  
 
 \subsubsection{Arbotix}
 
@@ -262,7 +265,7 @@ Recientemente la empresa Robotis ha sacado a la venta una nueva linea de placas 
 
 \begin{figure}[h]
 \centering
-%\includegraphics[width=0.6\textwidth]{figuras/cm900}   
+\includegraphics[width=0.6\textwidth]{figuras/todo}   
 \caption{Placa CM900}
 \label{cm900}
 \end{figure}
@@ -271,7 +274,7 @@ Si bien es cierto, es necesario comentar que la primera edición, la CM900, prese
 
 \begin{figure}[h]
 \centering
-%\includegraphics[width=0.6\textwidth]{figuras/opencm}   
+\includegraphics[width=0.6\textwidth]{figuras/todo}   
 \caption{Placa OpenCM9.04}
 \label{opencm}
 \end{figure}
@@ -314,7 +317,7 @@ La BeagleBone Black (figura \ref{beaglebone}), de Texas Instruments no es tan po
 
 \begin{figure}[h]
 \centering
-%\includegraphics[width=0.6\textwidth]{figuras/beaglebone}   
+\includegraphics[width=0.6\textwidth]{figuras/todo}   
 \caption{SBC BeagleBone Black}
 \label{beaglebone}
 \end{figure}
@@ -384,7 +387,13 @@ Por su tamaño y prestaciones se ha elegido una batería LiPo Rhino de 3S y 1750mA
 
 A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación del consumo medio de todos sus elementos.
 
-% TODO foto de la batería
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/todo}   
+\caption{Batería LiPo}
+\label{lipo}
+\end{figure}
+
 
 \begin{table}[H]
 \centering
@@ -429,7 +438,7 @@ Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC s
 
 \begin{figure}[h]
 \centering
-%\includegraphics[width=0.6\textwidth]{figuras/ubec}   
+\includegraphics[width=0.4\textwidth]{figuras/todo}   
 \caption{Convertidor DC-DC comercial, UBEC}
 \label{ubec}
 \end{figure}
@@ -437,4 +446,4 @@ Un UBEC (figura \ref{ubec}) es un convertidor DC-DC de tipo reductor. Los UBEC s
 
 \subsubsection{Elección final TODO }
 
-Tal y como se comentaba anteriormente, nuestro sistema tiene un consumo estimado de unos 1.7A en la salida de 5V, por lo que un UBEC de 3A sería suficiente para proporcionar al circuito la corriente necesaria para su funcionamiento. Adicionalmente se han incluido unos condensadores en la entrada y salida del circuito para ... como ser verá en el apartado ( TODO )
+Tal y como se comentaba anteriormente, nuestro sistema tiene un consumo estimado de unos 1.7A en la salida de 5V, por lo que un UBEC de 3A sería suficiente para proporcionar al circuito la corriente necesaria para su funcionamiento. Adicionalmente se han incluido unos condensadores en la entrada y salida del circuito para ... como ser verá en el apartado ( TODO capitulo 7 )

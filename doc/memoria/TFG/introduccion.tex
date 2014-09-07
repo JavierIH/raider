@@ -17,10 +17,6 @@
 
 % El campo de la robótica humanoide tiene como objetivo el desarrollo de robots antropomórficos. El motivo principal es favorecer el hecho de que los robots se desenvuelvan en entornos diseñados por y para seres humanos. Otros robots, como los robots móviles movidos por ruedas, suelen necesitar entornos modificados convenientemente para poder suplir las necesidades que se requieren. Por el contrario, un robot humanoide posee la ventaja de poder interaccionar con un entorno ya existente, así como la posibilidad de utilizar herramientas humanas. Por supuesto, el acceso de un alumno a un robot de este tipo parece algo impensable. Es por ello que en la asociación de robótica existe un linea de investigación de mini-humanoides. A priori, puede parecer que este tipo de robots están muy alejados de los humanoides de los laboratorios mas famosos, sin embargo, suponen un punto de partida viable para el comienzo de su estudio. Los miembros del grupo de mini-humanoides, tienen la oportunidad de trabajar libremente con robots reales, experimentando con su construcción, programación y modificación.
 
-
-
-\section{ASROB y CEABOT}
-
 La Asociación de Robótica de la Universidad Carlos III de Madrid, AsRob, surgió en el año 2006 con el objetivo de acercar la robótica a los alumnos de la universidad que compartían inquietudes e interés por el campo de la robótica.
 
 \medskip A día de hoy, la asociación cuenta con mas de cien miembros activos repartidos en cinco lineas de investigación independientes, como son:
@@ -34,7 +30,7 @@ La Asociación de Robótica de la Universidad Carlos III de Madrid, AsRob, surgió 
 
 Sin embargo, cabe destacar que aunque se trata de proyectos diferentes, existe una gran sinergia entre ellos. Particularmente, los miembros de la linea de Robots Mini-Humanoides, está muy ligados al estudio de las impresoras 3D, investigando diferentes técnicas de impresión, diseño de estructuras y materiales. Ejemplo de ello es el proyecto MYOD ( <- TODO referencia ), en el que se propone la construcción de robots mini-humanoides compuestos integramente con piezas impresas y replicables.
 
-\subsection{Linea de investigación de robots Mini-Humanoides}
+\section{Linea de investigación de robots Mini-Humanoides}
 
 La sección de la asociación que enmarca este trabajo es la linea de investigación de Robots Mini-Humanoides. Los robots mini-humanoides son robots antropomórficos con una altura menor de 50cm, tal y como indica la normativa del campeonato CEABOT ( <- TODO referencia al reglamento ). De fomar orientativa, tomando como referencia la Humanoid League del campeonato RoboCup, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". Robots de la división KidSize como son el DARwIn-OP de Robotis o el Nao (figura \ref{naoydarwin}) de Aldebaran no entrarían dentro de la definición de mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
 
@@ -49,13 +45,30 @@ El objetivo anual de este grupo de la asociación es la participación en el campe
 
 %cortar a partir de aquí (otro capítulo)
 
-\subsection{Campeonato CEABOT}
+\section{Marco de trabajo}
 
-Desde el año 2006, el campeonato nacional CEABOT reúne cada año a robots mini-humanoides procedentes de universidades españolas y de equipos independientes. Durante tres días, los equipos tienen la posibilidad de presentar a sus robots a diferentes pruebas de habilidad en las que pueden demostrar sus capacidades. En el reglamento de la edición del 2014, existen un total de cuatro pruebas combinadas de diversa temática que ponen a prueba la locomoción, percepción y actuación sobre el entorno de los robots participantes. Las pruebas son puntuadas por separado, sumándose de forma proporcional a su dificultad en la clasificación final.
+Desde el año 2006, la Asociación de Robótica ha trabajado con robots humanoides destinados a la competición e investigación. Durante su actividad, se han utilizado diferentes plataformas robóticas y modificaciones que permitían a los robots del grupo ampliar sus capacidades y su competitividad. A lo largo del tiempo, pueden diferenciarse tres etapas caracterizadas por la plataforma robótica que fué empleada.
 
-Las pruebas previstas son las siguientes:
+\medskip Entre 2006 y 2010, la plataforma empleada sobre la que se centraron los estudios y desarrollos fue el Robonova de Hitec (figura \ref{sylar}). En esta primera etapa se realizaron mejoras en el robot para alojar sensores adicionales, como brújulas y sensores infrarrojos. El funcionamiento del sistema pudo testarse en competiciones como el CEABOT y el RobotChallenge con excelentes resultados. En posteriores modificaciones, se sustituyó la placa de control del Robonova por una placa Arduino, que permitiría una mayor libertad a la hora de programar tanto la locomoción del robot como su sensorización.
 
-\subsubsection{Carrera de obstáculos}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.45\textwidth]{figuras/todo.jpg}   
+\caption{Robot Sylar de la Asociación de Robótica}
+\label{sylar}
+\end{figure}
+
+En 2010, la asociación adquirió un kit de Bioloid. Esta plataforma, más moderna que el Robonova, permitiría realizar un mejor control de los movimientos del robot. Dentro de la universidad, se han realizado multiples proyectos basados en este robot. En competición, los Bioloids de la Asociación de Robótica llegaron a conseguir el segundo puesto en la edición de 2012 del campeonato Ceabot. Sin embargo, las capacidades de esta plataforma, en lo que a sensorización y programación se refiere, no son demasiado altas y con sus componentes de serie existe una gran limitación.
+
+\medskip Por esta razón, desde el año 2013, se ha estudiado el modo de modificar estos robots con el objetivo de obtener una plataforma que permita explotar todo el potencial de sus actuadores y al mismo tiempo, facilitar la inclusión de nuevos componentes. Con este objetivo, se ligó fuertemente el estudio de la fabricación de piezas mediante técnicas de impresión 3d con su aplicación en robots Mini-Humanoides. Con piezas mecánicas nuevas y electrónicas libres, se prevee que las capacidades del robot aumenten exponencialmente. Esto convierte a los robots de la asociación en una base muy adecuada para la investigación.   
+
+\section{Campeonato CEABOT}
+
+El campeonato nacional CEABOT reúne cada año a robots mini-humanoides procedentes de universidades españolas y de equipos independientes. Durante tres días, los equipos tienen la posibilidad de presentar a sus robots a diferentes pruebas de habilidad en las que pueden demostrar sus capacidades. En el reglamento de la edición del 2014, existen un total de cuatro pruebas combinadas de diversa temática que ponen a prueba la locomoción, percepción y actuación sobre el entorno de los robots participantes. Las pruebas son puntuadas por separado, sumándose de forma proporcional a su dificultad en la clasificación final.
+
+A continuación se muestran las pruebas previstas para la edición de 2014.
+
+\subsection{Carrera de obstáculos}
 
 El la carrera de obstáculos los robots deben realizar de forma autónoma un recorrido de ida y vuelta sobre una pista de características fijas. El campo (figura \ref{carrera}) consiste en una superficie plana de color verde en cuya zona intermedia se colocan de forma arbitraria diferentes obstáculos inmóviles de color blanco. Estos obstáculos tienen forma paralelepípeda y unas dimensiones fijas de 20x20x50cm
 
@@ -68,7 +81,7 @@ El la carrera de obstáculos los robots deben realizar de forma autónoma un recor
 
 El robot participante debe cruzar el campo de extremo a extremo, y una vez haya accedido a la zona de llegada debe darse la vuelta y realizar el recorrido en el sentido contrario. En esta prueba se puntua favorablemente el menor tiempo ocupado y la mayor longitud recorrida, mientras que las caídas o bloqueos que requieran la intervención de un juez, producen penalizaciónes en la puntuación.
 
-\subsubsection{Escalera}
+\subsection{Escalera}
 
 La prueba de la escalera supone una combinación de las habilidades mecánicas y de sensorización de los robots. La prueba se desarrolla en un escenario formado por tres escalones de subida y tres escalones de bajada consecutivos (figura \ref{escalera}).
 
@@ -81,7 +94,7 @@ La prueba de la escalera supone una combinación de las habilidades mecánicas y d
 
 En este caso el robot debe sortear escalones con una altura fija e igual a 3cm, pero con amplitud variable. El desarrollo consiste en la superación de tres escalones descendentes, cruzar la cima de las escaleras y descender otros tres escalones hasta volver al suelo. De forma paralela a la prueba de navegación, se puntuan el número de escalones superados y el tiempo utilizado; mientras que las caidas y bloqueos que el robot no sea capaz de manejar por sí mismo contarán negativamente. 
 
-\subsubsection{Lucha (Sumo)}
+\subsection{Sumo}
 
 La prueba de sumo (figura \ref{sumo}) es una de las mas famosas del concurso. A diferencia del resto de pruebas, en el sumo los robots se enfrentan en parejas. Los duelos están constituidos por tres asaltos de dos minutos cada uno. El ring sobre el que se enfrentan los robots tiene forma circular, con un diámetro de 1.5m. Los robots compiten para derribar y/o sacar del ring a su adversario.
 
@@ -92,18 +105,16 @@ La prueba de sumo (figura \ref{sumo}) es una de las mas famosas del concurso. A 
 \label{sumo}
 \end{figure}
 
-\subsubsection{Visión}
+\subsection{Visión}
 
 La prueba de visión se presenta como una novedad en la edición de 2014 del concurso. Por primera vez se implanta en la competición una prueba que obliga a los robots a portar una cámara y realizar procesamiento de imágenes para su superación. El tablero de juego se comparte con el campo de la carrera de obtáculos. En esta prueba, el robot se colocará en el centro del tablero, y a su alrededor se colocarán obstaculos (los mismos que en la carrera de obstáculos) en intervalos de 45º. En la parte superior de los obstáculos se colocará un rectangulo rojo con un código QR en su interior (figura \ref{pruebavision}). El robot deberá leer el código QR, en el que se le indicará una rotación que le permitirá encontrar el siguiente marcador. De esta forma, el robot deberá seguir una secuencia de rotaciones para superar la prueba.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.45\textwidth]{figuras/pruebavision}   
 \caption{Marcador de la prueba de visión}
 \label{pruebavision}
 \end{figure}
-
-\section{Estado del harte TODO}
 
 \section{Estructura del documento TODO}
 
