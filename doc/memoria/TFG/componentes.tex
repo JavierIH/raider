@@ -5,7 +5,7 @@ Como punto de partida, se han seleccionado una serie de componentes adecuados pa
 
 \section{Plataforma robótica}
 
-El primer paso para la realización de este proyecto fue el estudio y selección de las plataformas robóticas que pueden conseguirse actualmente. Dado que el objetivo es encontrar un robot humanoide sobre el que se pueda implantar un sistema de visión, es necesario analizar diversos aspectos; algunos mecánicos como el numero y fuerza de los actuadores, y otros electrónicos como la capacidad de procesamiento y velocidad del controlador. Sin embargo, dado que este proyecto es autofinanciado en su mayor medida, el factor económico también es un limitante destacable. Buscamos una plataforma que cumpliese los siguientes requisitos:
+El primer paso para la realización de este proyecto fue el estudio y selección de las plataformas robóticas que se encuentran en el mercado actualmente. Dado que el objetivo es encontrar un robot humanoide sobre el que se pueda implantar un sistema de visión, es necesario analizar diversos aspectos; algunos mecánicos como el numero y fuerza de los actuadores, y otros electrónicos como la capacidad de procesamiento y velocidad del controlador. Sin embargo, dado que este proyecto es autofinanciado en su mayor medida, el factor económico también es un limitante destacable. Buscamos una plataforma que cumpla los siguientes requisitos:
 
 \begin{itemize}
 \item \textbf{Programable en C/C++} 
@@ -202,9 +202,9 @@ El control del equilibrio del robot es muy importante en configuraciones bípedas
 En el mercado existen varios modelos económicos. En este proyecto se ha utilizado un sensor MPU9150 (figura \ref{imu}), que es un sensor inercial compuesto de acelerómetro de 3 ejes, giroscopio de 3 ejes y brújula de 3 ejes. Este sensor combina dos sensores, un MPU6050 (incluye el acelerometro y el giroscopio) y un AK8975 (incluye la brújula). Sin embargo, en la práctica se observó que la brújula incluida en el sensor era muy propensa a sufrir interferencias, por lo que se decidió montar una brújula adicional que no tuviese estos problemas.
 
 % TODO cambiar por foto real
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figuras/imu}   
+\includegraphics[width=0.6\textwidth]{figuras/imu}   
 \caption{Sensor inercial MPU9150}
 \label{imu}
 \end{figure}
@@ -213,7 +213,15 @@ En el mercado existen varios modelos económicos. En este proyecto se ha utilizad
 
 La inclusión de una brújula es indispensable cuando de requiere conocer la dirección en la que se desplaza un robot. En este proyecto se montará un brújula para evaluar si el desplazamiento del robot se produce de forma recta y efectuar los redireccionamientos necesarios. Existen diferentes modelos de brújulas digitales en el mercado. Todas ellas, basan su funcionamiento en la detección y medición de campos magnéticos. Para lograr conocer la orientación del robot, la brújula deberá apoyarse en su posición respecto a la del campo magnético terrestre. El gran problema de estos dispositivos es su facilidad para modificar sus medidas cuando existe un campo magnético fuerte en su entorno. Esta interferencias pueden ser causadas por aparatos electrónicos, estructuras metálicas o incluso por los propios componentes del robot.
 
-\medskip Para este proyecto se ha utilizado una brújula CMPS03. El motivo de haber seleccionado este modelo frente a otros mas comúnes como por ejemplo la HMC5883L, se debe a que ya ha sido utilizada en anteriores proyectos robóticos en la asociación con muy buenos resultados. Esto se debe en parte a que la placa del sensor incluye un PIC que se encarga de calibrar y comunicar los datos medidos, de forma que no será necesario que el controlador del robot realice estos cálculos y podrá utilizar directamente la medida extraída.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/todo}   
+\caption{Brújula magnética CMPS03}
+\label{imu}
+\end{figure}
+
+
+\medskip Para este proyecto se ha utilizado una brújula CMPS03 (figura \ref{brujula}). El motivo de haber seleccionado este modelo frente a otros mas comúnes, como por ejemplo la HMC5883L, se debe a que ya ha sido utilizada en anteriores proyectos robóticos en la asociación con muy buenos resultados. Esto se debe en parte a que la placa del sensor incluye un PIC que se encarga de calibrar y comunicar los datos medidos, de forma que no será necesario que el controlador del robot realice estos cálculos y podrá utilizar directamente la medida extraída.
 
 \subsection{Cámara TODO}
 

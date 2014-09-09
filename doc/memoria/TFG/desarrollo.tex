@@ -1,10 +1,73 @@
 \chapter{Desarrollo TODO MONTAJES}
 
+En este capítulo se mostrarán los procedimientos que se han seguido para montar algunos componentes. Hasta este punto hemos definido una colección de sensores, actuadores y piezas; el siguiente paso será integrar y conectarlos todos en el robot.
+
 \section{Adecuación de sensores}
-\section{Desarrollo de una placa de expansión}
+
+Los sensores utilizados, tal y como se detalló en la selección de componentes, serán: un acelerómetro y giroscopio MPU9150, una brújula CMPS03 y dos infrarrojos Sharp. A continuación se muestra cómo han sido conectados al controlador principal, la BeagleBone Black. 
+
+\subsection{Infrarrojos Sharp}
+
+Los sensores infrarrojos modelo GP2Y0A21YK0F de la marca Sharp, permiten variar la tensión de alimentación entre -0.3 y 7V, pero experimentalmente se ha observado que la mayor precisión se alcanza a 5V. A esta tensión, podemos observar en el datasheet del sensor una gráfica (figura \ref{graficair}) en la que se muestra el valor de la salida del sensor respecto a la distancia medida.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figuras/graficair}   
+\caption{Gráfica de tensión entre salida para un sensor infrarrojo}
+\label{graficair}
+\end{figure} 
+
+De esta gráfica pueden sacarse dos conclusiones. La primera, ya conocida, es que la variación de la salida del sensor y su medida no son proporcionales, por lo que si fuese necesaria extraer medidas en unidades reales habría que calcular una adecuación compleja. Sin embargo, esto no será necesaria ya que la programación del sensor se basará en umbrales fijos que serán marcados de forma empírica. La segunda conclusión es que el sensor ofrecerá una tensión de salida máxima de 3.3V. 
+
+Dado que la BeagleBone Black dispone de hasta siete entradas analógicas (figura \ref{bbbanal}), conectaremos las salidas de los dos sensores en dos de estos pines. Sin embargo, leyendo el manual de la BeagleBone Black ( TODO manual ) observamos que cada entrada analógica soporta un máximo de 1.8V. Si alimentando el sensor a 5V lo conectásemos directamente, un pico de 3.3V podría deteriorar la placa. Por ello, se ha decidido aplicar una simple adecuación de la salida añadiendo un divisor resistivo. De esta forma, nos cercioraremos de que los 3.3V máximos que podrían salir del sensor se conviertan en 1.8V.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figuras/bbbanal}   
+\caption{Esquema de entradas analógica de una BeagleBone Black}
+\label{bbbanal}
+\end{figure}
+
+En el esquema de la figura \ref{divir} podemos observar las conexiones que se han realizado entre la placa y el sensor. El sensor es alimentado a 5V a partir del convertidor DC-DC y puesto a tierra común con el controlador. La salida del sensor se aplicará sobre el divisor resistivo, siendo la salida del divisor resistivo la entrada a la BeagleBone Black. Se ha colocado una resistencia de $33k\Omega$ en $Ra$ y una resistencia de $66k\Omega$ en $Rb$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{figuras/divir}   
+\caption{Circuito de adecuación de un sensor infrarrojo}
+\label{divir}
+\end{figure}
+
+\subsection{Brújula y sensor inercial}
+
+Tanto la b?ujula CMPS03 como el sensor inercia MPU9150 han sido conectados por I2C, ambos en el mismo bus. La BeagleBone Black cuenta con dos buses I2C independientes (\ref{bbbi2c}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figuras/bbbi2c}   
+\caption{Esquema de puertos I2C de una BeagleBone Black}
+\label{bbbi2c}
+\end{figure}
+
+De este modo el sistema ha quedado diseñado tal y como se muestra en la figura \ref{coni2c}. Cabe destacar que los dos sensores se han alimentado a 3.3V, ya que el MPU9150 los requiere y el CMPS03, aunque se recomienda conectarlo a 5V, funciona perfectamente a 3.3V. Esta tensión se ha conseguido desde el pin P9-3 del controlador.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/esquemai2c}   
+\caption{Circuito del bus I2C}
+\label{coni2c}
+\end{figure} 
+
+\section{Desarrollo de una placa de expansión TODO }
+
+Para montar el esquema que se diseñó anteriormente en la figura \ref{dia1} será necesario cablear un gran número de conexiones entre dispositivos. Para ello, se ha optado por diseñar y fabricar una placa de expansión que permita conectar todos los dispositivos de una forma limpia y ordenada. Esta placa servirá para comunicar y alimentar las dos placas controladoras, sensores, actuadores y alimentación de todos ellos.
+
+( TODO referencia a un anexo, foto o algo de los planos )
+
 
 
 \section{Montaje}
+
+Una vez preparados todo los componentes se ha procedido a su montaje. En los siguientes dos apartados se muestra cómo se ha montado la placa de expasión y cómo se ha integrado la webcam en la cabeza del robot.
 
 \subsection{Montaje de la placa de expansión}
 
@@ -14,24 +77,4 @@
 
 //fotos del montaje y esas cosas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.
 

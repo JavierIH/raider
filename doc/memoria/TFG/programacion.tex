@@ -1,15 +1,157 @@
 %chapter introduce un nuevo capítulo
 \chapter{Programación TODO}
 
+En este capítulo se presenta el desarrollo de todo el software que ha sido requerido preparar para la puesta en marcha del robot.
+
 \section{Configuración de la BeagleBone Black TODO}
 
-\subsection{Sistema operativo TODO}
+De fabrica... TODO
+
+\subsection{Sistema operativo}
+
+El controlador principal, la BeagleBone Black, trae de fábrica una instalación de una distribución Ångström basada en Linux. El sistema operativo incluye: entorno gráfico, escritorio, OpenCV 2.2 y otros programas como navegadores o reproductores de archivos multimedia. Esto se debe a que la BeagleBone Black no es una placa que de fábrica esté pensada para su uso en robots, sino que constituye un ordenador completo que puede adquirir la función de centro multimedia, equipo de ofimática o incluso servidor de una red.
+
+\medskip La distribución Ångström no es una de las más populares entre los sistemas operativos basados en Linux, no cuenta con una comunidad de usuarios tan amplia como Debian o Fedora. Por ello, las actualizaciones no suelen ser muy frecuentes y, en muchos casos, el sistema presenta errores de funcionamiento a la hora de realizar tareas básicas, como la instalación de nuevo software.
+
+\medskip Por esta razones se ha decidido instalar un nuevo sistema operativo. Se pretende conseguir una distribución de Linux que solo tenga lo mínimo necesario que requiere el robot para su funcionamiento. Con este objetivo, se instala en la BeagleBone Black una distribución Debian.
 
 \subsection{Instalación de librerías TODO}
 
-\subsection{Configuración de la cámara y driver TODO}
+Para la realización del proyecto, se ha requerido instalar Git, CMake, Video4Linux2 y las librerías de OpenCV 2.4.8 y ZBar 0.1.
 
-\subsection{Programaciés de scripts de configuración TODO}
+\medskip Antes de comenzar con la instalación de software, es recomendable realizar una actualización del sistema ejecutando los siguientes comandos:
+
+\begin{verbatim}
+sudo apt-get update
+sudo apt-get upgrade
+\end{verbatim}
+
+\bigskip  Lo primero que instalaremos será Git, ya que lo necesitaremos para instalar algunas librarías posteriormente. Git se instala ejecutando el siguiente comando: 
+\begin{verbatim}
+sudo apt-get install git-core
+\end{verbatim}
+
+\bigskip Para instalar CMake lo haremos de la siguiente forma:
+
+\begin{verbatim}
+sudo apt-get install cmake
+sudo apt-get install cmake-curses-gui
+\end{verbatim}
+
+\bigskip Para el control y configuración de la webcam se necesitará el driver Video4Linux. Se instalará como se muestra a continuación:
+
+\begin{verbatim}
+sudo apt-get install v4l-utils
+\end{verbatim}
+
+
+\bigskip  Una vez hecho esto, se pasará a instalar las librerías que se utilizarán en el código del robot. La forma mas sencilla de instalar Zbar será hacerlo desde los repositorios de Debian. De este modo, ejecutaremos los siguientes comandos:
+\begin{verbatim}
+sudo apt-get install libzbar0
+sudo apt-get install libzbar-dev
+\end{verbatim}
+
+\bigskip  Por último, instalaremos OpenCV. Se comenzará por descargar todas las librarías que requiere OpenCV. Se instalarán una a una de la siguiente forma:
+\begin{verbatim}
+sudo apt-get install build-essential 
+sudo apt-get install libgtk2.0-dev 
+sudo apt-get install pkg-config 
+sudo apt-get install python-dev 
+sudo apt-get install python-numpy 
+sudo apt-get install libavcodec-dev 
+sudo apt-get install libavformat-dev 
+sudo apt-get install libswscale-dev
+\end{verbatim}
+
+Hecho esto, se procederá a descargar la última versión estable del código, que en este momento es la 2.4.9.
+
+\begin{verbatim}
+wget http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.9/opencv-2.4.9.zip
+\end{verbatim}
+
+\bigskip Y posteriormente se instalará de este modo:
+
+\begin{verbatim}
+unzip opencv-2.4.9.zip
+cd opencv-2.4.9
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+make
+sudo make install
+\end{verbatim}
+
+\subsection{Configuración de la cámara}
+
+A continuación se configurará la webcam en la beaglebone. Para esto se conectará por USB la Microsoft Lifecam a la BeagleBone Black tal y como puede observarse en la figura \ref{robotbbbcam}. A partir de aquí, se iniciará sesión en la BeagleBone Black y se procederá a configurar la cámara.
+
+\medskip Lo primero que se hará será comprobar que la cámara se ha reconocido correctamente. Para ello ejecutaremos el comando:
+
+\begin{verbatim}
+lsusb
+\end{verbatim}
+
+\bigskip Y deberá proporcionarnos una salida parecida a la que puede observarse en la figura \ref{lsusbbbb}. La salida indica que la webcam está conectada en el bus 001
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/lsusbbbb}   
+\caption{Salida del comando lsusb}
+\label{lsusbbbb}
+\end{figure}
+
+\medskip Para cerciorarno de que la cámara se ha reconocido correctamente podemos buscarla en el directorio /dev. En la siguiente imagen (figura \ref{lsdev}) se observa el archivo /dev/video0, que está vinculado a la webcam.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/lsdev}   
+\caption{Comprobación de conexión para la webcam}
+\label{lsdev}
+\end{figure}
+
+A continuación nos ayudaremos de las utilidades de Video4Linux (una interfaz para la programación de aplicaciones con captura de imágenes para Linux) para la webcam. OpenCV se apoya en Video4Linux, por tanto, lo primero que se hará será comprobar que la cámara es compatible con Video4Linux. Para ello, se ejecutará el siguiente comando:
+
+\begin{verbatim}
+v4l2-ctl --list-devices
+\end{verbatim}
+
+\bigskip Tras ejecutarlo se deberá observar una salida similar a la de la figura \ref{v4llist}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/v4llist}   
+\caption{Comprobación de compatibilidad para la webcam}
+\label{v4llist}
+\end{figure}
+
+Ésto nos confirma que la cámara funciona correctamente. Para proseguir con la configuración vamos a ejecutar el comando siguiente:
+
+\begin{verbatim}
+v4l2-ctl --all
+\end{verbatim}
+
+\bigskip  En la figura \ref{v4lall} podemos observar la salida del comando. En ella se pueden observar diferentes parámetros como el formato de video, la resolución o los fotogramas por segundo.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/v4lall}   
+\caption{Parámetros leídos de la cámara}
+\label{v4lall}
+\end{figure}
+
+\medskip Por último, se bajará la resolución de la cámara a un valor que nos permita tratar las imágenes con mayor rapidez cuando se programen algoritmos de visión con OpenCV desde la BeagleBone Black. Se ha elegido una resolución de 320x240, mas adelante se ajustará este valor empíricamente en función del rendimiento del robot. Para ello ejecutamos este comando de configuración:
+
+\begin{verbatim}
+v4l2-ctl --set-fmt-video=width=320,heigth=240
+\end{verbatim}
+
+\bigskip  Tras estos pasos la cámara ya está preparada y lista para usarse.
+
+%vdeo capture aplication progamin interface for linux
+
+\subsection{Programación de scripts de configuración TODO}
+
+
 
 \section{Sistema de locomoción TODO}
 
@@ -31,7 +173,7 @@ Con esta función configuramos un pin de la OpenCM para que actúe como emisora de
 
 \subsubsection{Servo::writeMicroseconds(uint16 pulseWidth)}
 
-Para mover el servo se utiliza la función writeMicroseconds, cuyo parámetro define la amplitud  del pulso de la onda PWM . Si bien es cierto, existe otra función paralela llamada write(int angle) que directamente utiliza como parámetro la posición en grados, se ha utilizado writeMicroseconds por su mayor precisión. Acepta valores de entre 1000 y 2000 microsegundos, pero para mantener un formato constante con el resto de articulaciones, se ha realizado una conversión matemática a un rango de 0 a 1023.
+Para mover el servo se utiliza la función writeMicroseconds, cuyo parámetro define la amplitud  del pulso de la onda PWM. Si bien es cierto, existe otra función paralela llamada write(int angle) que directamente utiliza como parámetro la posición en grados, se ha utilizado writeMicroseconds por su mayor precisión. Acepta valores de entre 1000 y 2000 microsegundos, pero para mantener un formato constante con el resto de articulaciones, se ha realizado una conversión matemática a un rango de 0 a 1023.
 
 \subsection{Movimiento de los actuadores Dynamixel}
 
@@ -276,6 +418,4 @@ Con todo el tostonazo de I2C
 
 
 
-
-\paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.
 
