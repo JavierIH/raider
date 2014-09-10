@@ -53,16 +53,16 @@ difference(){
 //SOPORTES
 
 
-translate([7,18.5,0])cube([2,30,43]);
-mirror([10,0,0])translate([7,18.5,0])cube([2,30,43]);
+%translate([7,18.5,0])cube([2,30,43]);
+%mirror([10,0,0])translate([7,18.5,0])cube([2,30,43]);
 
-translate([7,54,0])cube([2,30,37]);
-mirror([10,0,0])translate([7,54,0])cube([2,30,37]);
+%translate([7,54,0])cube([2,30,37]);
+%mirror([10,0,0])translate([7,54,0])cube([2,30,37]);
 
-translate([7,87,0])cube([1.5,14,35]);
-mirror([10,0,0])translate([7,87,0])cube([1.5,14,35]);
+%translate([7,87,0])cube([1.5,14,35]);
+%mirror([10,0,0])translate([7,87,0])cube([1.5,14,35]);
 
-translate([25.5,98,0])rotate([0,0,90])cube([1.5,51,35]);
+%translate([25.5,98,0])rotate([0,0,90])cube([1.5,51,35]);
 
 
 

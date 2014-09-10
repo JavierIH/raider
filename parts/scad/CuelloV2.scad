@@ -49,7 +49,7 @@ translate([0,0,-2])cube([1,34,2]);
 	translate([21,17,13/2])rotate([-90,0,0])cylinder(r=1,h=20,$fn=10);
 	translate([41,-1,13/2])rotate([-90,0,0])cylinder(r=1.5,h=40,$fn=10);
 	translate([41,2.5,13/2])rotate([-90,0,0])cylinder(r=5.5/2,h=40,$fn=10);
-	translate([-3,2,1])rotate([0,0,0])cube([18,29,40]);
+	translate([-3,2.5,1])rotate([0,0,0])cube([18,29,40]);
 	translate([-21,2-5,3])rotate([0,45,0])cube([14,29+10,40]);
 translate([6,17-8,-2])agujereado(2,1,90);
 translate([33,-16+4,-5])cylinder(r=1.8,h=10);
