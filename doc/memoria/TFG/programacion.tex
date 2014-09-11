@@ -3,19 +3,17 @@
 
 En este capítulo se presenta el desarrollo de todo el software que ha sido requerido preparar para la puesta en marcha del robot.
 
-\section{Configuración de la BeagleBone Black TODO}
-
-De fabrica... TODO
-
-\subsection{Sistema operativo}
+\section{Configuración de la BeagleBone Black}
 
 El controlador principal, la BeagleBone Black, trae de fábrica una instalación de una distribución Ångström basada en Linux. El sistema operativo incluye: entorno gráfico, escritorio, OpenCV 2.2 y otros programas como navegadores o reproductores de archivos multimedia. Esto se debe a que la BeagleBone Black no es una placa que de fábrica esté pensada para su uso en robots, sino que constituye un ordenador completo que puede adquirir la función de centro multimedia, equipo de ofimática o incluso servidor de una red.
 
-\medskip La distribución Ångström no es una de las más populares entre los sistemas operativos basados en Linux, no cuenta con una comunidad de usuarios tan amplia como Debian o Fedora. Por ello, las actualizaciones no suelen ser muy frecuentes y, en muchos casos, el sistema presenta errores de funcionamiento a la hora de realizar tareas básicas, como la instalación de nuevo software.
+\subsection{Sistema operativo}
+
+La distribución Ångström no es una de las más populares entre los sistemas operativos basados en Linux, no cuenta con una comunidad de usuarios tan amplia como Debian o Fedora. Por ello, las actualizaciones no suelen ser muy frecuentes y, en muchos casos, el sistema presenta errores de funcionamiento a la hora de realizar tareas básicas, como la instalación de nuevo software.
 
 \medskip Por esta razones se ha decidido instalar un nuevo sistema operativo. Se pretende conseguir una distribución de Linux que solo tenga lo mínimo necesario que requiere el robot para su funcionamiento. Con este objetivo, se instala en la BeagleBone Black una distribución Debian.
 
-\subsection{Instalación de librerías TODO}
+\subsection{Instalación de librerías}
 
 Para la realización del proyecto, se ha requerido instalar Git, CMake, Video4Linux2 y las librerías de OpenCV 2.4.8 y ZBar 0.1.
 
@@ -149,8 +147,46 @@ v4l2-ctl --set-fmt-video=width=320,heigth=240
 
 %vdeo capture aplication progamin interface for linux
 
-\subsection{Programación de scripts de configuración TODO}
+\subsection{Configuración de pines}
 
+Para finalizar esta sección, se muestra el desarrollo de un script para configurar los pines del controlador.
+
+\medskip La Beaglebone Black posee 92 pines configurables de entrada y salida. Entre ellos, 7 pueden funcionar como entradas analógicas y 5 parejas de pines están preparadas como puertos serie (figura \ref{bbbserial}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figuras/bbbserial}   
+\caption{Puertos serie en una BeagleBone Black}
+\label{bbbserial}
+\end{figure}
+
+Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay es un archivo que indica al sistema operativo cómo debe configurarse un pin. La BeagleBone Black se configura mediante Device Tree Overlays, un mecanismo de descripción del hardware que forma parte de un sistema. Para configurar las entradas analógicas necesarias para los sensores infrarrojos, y el puerto serie que comunicará la placa con el controlador de locomoción; se utilizarán los archivos \textit{.dtbo} que pueden encontrarse en \textit{/lib/firmware} (figura \ref{libfirmware})
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/libfirmware}   
+\caption{Algunas capas de Device Tree Overlays}
+\label{libfirmware}
+\end{figure}
+
+\medskip En concreto se utilizarán dos capas, la que activará el puerto serie número 2: \textit{ttyO2\_armhf.com} y esta otra que nos permitirá activar las entradas analógicas: \textit{cape-bone-iio}. Se habilitarán de la siguiente manera (figura \ref{overlays}):
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/overlays}   
+\caption{Habilitación de capas}
+\label{overlays}
+\end{figure}
+
+\medskip Puede realizarse una comprobación simple de que los pines se han configurado correctamente realizando una lectura analógica. Para ello, se leerá el archivo \textit{/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN4}. En la figura \ref{catain4} se ha realizado una lectura del pin 4, el valor de 570 indica que se está realizando una lectura de $570mV$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/catain}   
+\caption{Lectura analógica del pin 4}
+\label{catain4}
+\end{figure}
 
 
 \section{Sistema de locomoción TODO}
@@ -294,7 +330,7 @@ Para ello, la función calcula la amplitud del movimiento y asigna una velocidad 
 
 \subsection{Funciones de movimientos combinados TODo } 
 
-Llegado este punto hemos abordado como mover un servo y como mover los 20 servos de forma coordinada. En este apartado se presentan algunas funciones intermedias entre lo comentado y movimientos de alto nivel como puede ser el desplazamiento bípedo.
+Llegado este punto se ha abordado como mover un servo y como mover los 20 servos de forma coordinada. En este apartado se presentan algunas funciones intermedias entre lo comentado y movimientos de alto nivel, como puede ser el desplazamiento bípedo.
 
 \medskip
 Para facilitar la programación de movimientos mas complejos se han programado una seríe de utilidades que permiten mover los servos en pequeños grupos que desempeñan una funcion común. Estas funciones modifican los valores del array de posiciones finales, targetPosition[20], lo que quiere decir que para efectuar el movimiento será necesario realizar una llamada a la funcion move(float). Por tanto, es posible la utilización de varias funciones en un mismo movimiento, dando la posibilidad de sumar sus modificaciones y superponer su utilidades. 
@@ -306,19 +342,15 @@ movHead es una función que permite mover el servo PWM de la cabeza del robot. Si
 
 % Dibujos y otras movidas
 \subsubsection{void movVertical(int,int) TODO}
+Meter fotos del robot con una pierna levantada
 \subsubsection{void movLateral(int,int) TODO}
 \subsubsection{void movFrontal(int,int) TODO}
 
 \subsection{Creación de movimientos completos TODO}
 
-Encontrándonos en este punto, la programación de desplazamientos, giros y otros movimientos complejos, se ha realizado mediante la combinación de las funciones anteriormente descritas (TODO aquí hay que pensar si meter ilustraciones o como)
+Encontrándonos en este punto, la programación de desplazamientos, giros y otros movimientos complejos, se ha realizado mediante la combinación de las funciones anteriormente descritas. A cada movimiento se le asignará un valor hexadecimal en forma de caracter, de forma que los caracteres comunicados a la OpenCM sirvan como identificador de el movimiento que el controlador de visión está ordenando.
 
-\subsection{Controlador de movimientos TODO}
-
-
-\section{Comunicación serie}
-
-En la sección anterior hemos completado la programación de movimientos sobre la placa OpenCM, sin embargo, el control principal del robot se realiza desde la BeagleBone. En este apartado se comunicará la BeagleBone con la OpenCM de forma que adopten una configuración de maestro y esclavo. La estrategia consistirá en el envío de comandos sencillos desde la BeagleBone a la OpenCM. Cada comando servirá de identificador para un movimiento completo. Se ha seguido el criterio que típicamente es usado en los videojuegos de PC (figura ), utilizando las teclas W, A, S, y D para los desplazamientos del robot e identificando el resto de movimientos por su letra inicial. A continuación, en el cuadro \ref{movimientos} se presenta una tabla con los movimientos programados y su comando asignado.
+\medskip Se ha creado la función void controller(char), dentro de la clase Robot, con el objetivo de indexar todos los movimientos que realizará Raider. En el cuadro \ref{movimientos} se presenta una tabla con los movimientos programados y su comando asignado.
 
 \begin{table}[H]
 \centering
@@ -337,6 +369,19 @@ Comando & Función & Descripción \\
 \centering G & getUp() & Levantamiento desde una caída frontal  \\ \hline
 \centering R & roll() & Rodar, se utiliza cuando el robot cae de espaldas  \\ \hline
 \centering H & hello() & Saludo  \\ \hline
+\centering q & miniTurnL() & Giro leve hacia la izquierda  \\ \hline
+\centering e & miniTurnR() & Giro leve hacia la derecha  \\ \hline
+\centering Z & punchL() & Puñetazo con el brazo izquierdo  \\ \hline
+\centering B & punchR() & Puñetazo con el brazo derecho  \\ \hline
+\centering C & crab() & Ataque de sumo con dos brazos  \\ \hline
+\centering V & miniPunchR() & Puñetazo leve derecho  \\ \hline
+\centering X & miniPunchL() & Puñetazo leve izquierdo  \\ \hline
+\centering w & defense() & Posición defensiva  \\ \hline
+\centering a & lookL() & Mirar hacia la izquierda  \\ \hline
+\centering d & lookR() & Mirar hacia la derecha  \\ \hline
+\centering L & look() & Mirar de frente  \\ \hline
+\centering l & lookUp() & Mirar hacia arriba  \\ \hline
+\centering f & endLookUp() & Volver a la posición de reposo tras lookUp()  \\ \hline
 
 
 \end{tabular}
@@ -344,17 +389,14 @@ Comando & Función & Descripción \\
 \label{movimientos}
 \end{table}
 
+\section{Comunicación serie TODO}
 
-En primer lugar, se debe realizar una conexión entre las dos placas. Se ha elegido una comunicación tipo serie por su fácil puesta en marcha y fiabilidad. La BeagleBone posee hasta 5 puertos serie. En la figura \ref{serial} puede observarse la configuración de pines para cada uno de los puertos.
+En la sección anterior hemos completado la programación de movimientos sobre la placa OpenCM, sin embargo, el control principal del robot se realiza desde la BeagleBone. En este apartado se comunicará la BeagleBone con la OpenCM de forma que adopten una configuración de maestro y esclavo. La estrategia consistirá en el envío de comandos hexadecimales desde la BeagleBone a la OpenCM. Cada comando servirá de identificador para un movimiento completo. Los comandos serán los descritos en el cuadro \ref{movimientos}.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1\textwidth]{figuras/serial}   
-\caption{Esquema de puertos serie en una BeagleBone Black}
-\label{serial}
-\end{figure}
 
-Por otro lado, la OpenCM posee 3 puertos serie, de los cuales uno de ellos está reservado para el control del bus Dynamixel. En el esquema de la figura \ref{serialcm} se presenta la configuración de puertos serie de la OpenCM.
+\subsection{Comunicación serie en OpenCM  TODO}
+
+La OpenCM posee 3 puertos serie, de los cuales uno de ellos está reservado para el control del bus Dynamixel. En el esquema de la figura \ref{serialcm} se presenta la configuración de puertos serie de la OpenCM.
 
 \begin{figure}[H]
 \centering
@@ -363,35 +405,51 @@ Por otro lado, la OpenCM posee 3 puertos serie, de los cuales uno de ellos está 
 \label{Serialcm}
 \end{figure}
 
-Adicionalmente, se ha incluido la posibilidad de utilizar un control auxiliar por Bluetooth desde un dispositivo externo. Para ello se ha conectado un modulo Bluetooth directamente a la OpenCM. La función de esta otra vía de control no es otra que la realización de pruebas experiemtnales controladas, ya que nos permite modificar el comportamiento del robot en los momentos en los que sea necesario. Por supuesto, de cara a su funcionamiento autónomo, el módulo Bluetooth se inutilizará. Sin embargo, será necesario dejar preparada su conexión y programación.
-
-\subsection{Comunicación serie en OpenCM  TODO}
-
 Para la programación de la comunicación serie en la placa OpenCM se ha utilizado la biblioteca HardwareSerial.h, contenida en CM9 IDE. La documentación de la biblioteca está disponible en (  TODO), sin embargo, a continuación se listan las funciones que se han utilizado junto a una breve explicación de su funcionamiento.
  ( TODO )
 % todo 
-\subsubsection{void HardwareSerial::begin(unsigned int baud) TODO}
-\subsubsection{unsigned int HardwareSerial::available() TODO}
-\subsubsection{unsigned char HardwareSerial::read() TODO}
-\subsubsection{void HardwareSerial::flush() TODO}
+\subsubsection{void HardwareSerial::begin(unsigned int baud)}
+
+Esta función habilita los pines como puerto serie. Como parámetro se le pasará la velocidad en baudios, que deberá coincidir con la del controlador maestro. En este caso, se ha configurado el puerto 3 con una velocidad de 9600 baudios
+
+\subsubsection{unsigned int HardwareSerial::available()}
+
+El objetivo de esta función es consultar si existe algún mensaje en el buffer de lectura. En caso afirmativo, podremos proceder a leer el mensaje.
+
+\subsubsection{unsigned char HardwareSerial::read()}
+
+La lectura de mensajes nos devolverá un valor hexadecimal. En nuestro caso, será el emitido por la BeagleBone Black y corresponderá a la ejecución de un movimiento.
+
+\subsubsection{void HardwareSerial::flush()}
+
+Con esta función vaciaremos el buffer de entrada. Se ejecutará cada vez que leamos un comando.
  
-\subsection{Comunicación serie en BeagleBone TODO}
+\subsection{Comunicación serie en BeagleBone}
+
+Para poner en amrcha la comunicación serie en la BeagleBone se ha utilizado como base la librería open-source Serialib ( TODO referencia gorda). Esta librería nos permite administrar un puerto serie, y está preparada para funcionar tanto en Windows como en Linux. 
+
+\medskip Se han realizado algunas modificaciones leves para ajustar su funcionamiento al requerido. Los métodos que se han utilizado ( TODO pueden encontrarse en el repo ) se detallan a continuación.
+
+\subsubsection{open TODO nombre }
+
+Esta función abrirá el puerto serie. En el primer parámetro se le pasará la cadena "/dev/ttyO2", es decir, la dirección de nuestro puerto serie. Como segundo parámetro se le pasará la velocidad del puerto, que coincidiendo con la de la OpenCM será de 9600 baudios.
+
+\subsubsection{writechar TODO nombre }
+
+Para mandar los comandos utilizaremos esta función. Ya que el objeto de la clase conserva las carácterísticas del puerto serie, solo será necesario pasarle el valor hexadecimal que queramos transmitir al controlador de locomoción.
 
 \subsection{Comunicación con módulo Bluetooth TODO}
 
+Adicionalmente, se ha incluido la posibilidad de utilizar un control auxiliar por Bluetooth desde un dispositivo externo. Para ello se ha conectado un modulo Bluetooth (figura \ref{bluetooth}) TODO directamente a la OpenCM. La función de esta otra vía de control no es otra que la realización de pruebas experimentales controladas, ya que nos permite modificar el comportamiento del robot en los momentos en los que sea necesario. Por supuesto, de cara a su funcionamiento autónomo, el módulo Bluetooth se inutilizará. Sin embargo, será necesario dejar preparada su conexión y programación. ( TODO foto de mexico )
+
+Se ha utilizado un módulo Bluetooth hc05 conectado al puerto 3 del controlador de locomoción. Con esto, podremos mandar mensajes desde un teléfono móvil, un ordenador portátil o cualquier otro dispositivo que soporte conexión Bluetooth. Para utilizar el control del robot por Bluetooth se sustituirá el puerto de lectura de la OpenCM reservado al controlador de visión (el puerto 2) por el puerto 3.
+
 \section{Programación de sensores TODO} 
 \subsection{Infrarrojos TODO}
-
-Lecturas analogicas
- 
+Lecturas analogicas 
 \subsection{IMU TODO}
-
 Con todo el tostonazo de I2C
-
 \subsection{Brújula TODO} 
-
-
-
 \section{Algoritmos de visión TODO} 
 \subsection{Análisis de trayectorias en navegación TODO} 
 \subsection{Búsqueda de lineas TODO}

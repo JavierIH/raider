@@ -48,8 +48,12 @@
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Comprobaci\'on de conexi\'on para la webcam}}{64}{figure.8.2}
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Comprobaci\'on de compatibilidad para la webcam}}{64}{figure.8.3}
 \contentsline {figure}{\numberline {8.4}{\ignorespaces Par\'ametros le\IeC {\'\i }dos de la c\'amara}}{65}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Amplitud de giro de un AX-12A}}{68}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Esquema de puertos serie en una BeagleBone Black}}{73}{figure.8.6}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{74}{figure.8.7}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Puertos serie en una BeagleBone Black}}{66}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Algunas capas de Device Tree Overlays}}{66}{figure.8.6}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Habilitaci\'on de capas}}{67}{figure.8.7}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Lectura anal\'ogica del pin 4}}{67}{figure.8.8}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Amplitud de giro de un AX-12A}}{70}{figure.8.9}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{75}{figure.8.10}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
