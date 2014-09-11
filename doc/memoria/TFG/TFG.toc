@@ -137,12 +137,12 @@
 \contentsline {subsection}{\numberline {8.3.3}Comunicaci\'on con m\'odulo Bluetooth TODO}{76}{subsection.8.3.3}
 \contentsline {section}{\numberline {8.4}Programaci\'on de sensores TODO}{77}{section.8.4}
 \contentsline {subsection}{\numberline {8.4.1}Infrarrojos TODO}{77}{subsection.8.4.1}
-\contentsline {subsection}{\numberline {8.4.2}IMU TODO}{77}{subsection.8.4.2}
-\contentsline {subsection}{\numberline {8.4.3}Br\'ujula TODO}{77}{subsection.8.4.3}
-\contentsline {section}{\numberline {8.5}Algoritmos de visi\'on TODO}{77}{section.8.5}
-\contentsline {subsection}{\numberline {8.5.1}An\'alisis de trayectorias en navegaci\'on TODO}{77}{subsection.8.5.1}
-\contentsline {subsection}{\numberline {8.5.2}B\'usqueda de lineas TODO}{77}{subsection.8.5.2}
-\contentsline {subsection}{\numberline {8.5.3}Lectura de c\'odigos QR TODO}{77}{subsection.8.5.3}
+\contentsline {subsection}{\numberline {8.4.2}IMU TODO}{78}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.3}Br\'ujula TODO}{78}{subsection.8.4.3}
+\contentsline {section}{\numberline {8.5}Algoritmos de visi\'on TODO}{78}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}An\'alisis de trayectorias en navegaci\'on TODO}{78}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}B\'usqueda de lineas TODO}{78}{subsection.8.5.2}
+\contentsline {subsection}{\numberline {8.5.3}Lectura de c\'odigos QR TODO}{78}{subsection.8.5.3}
 \contentsline {chapter}{\numberline {9}Aplicaciones}{79}{chapter.9}
 \contentsline {section}{\numberline {9.1}CEABOT 2014}{79}{section.9.1}
 \contentsline {section}{\numberline {9.2}Spain Experience}{79}{section.9.2}

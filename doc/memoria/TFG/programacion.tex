@@ -445,11 +445,47 @@ Adicionalmente, se ha incluido la posibilidad de utilizar un control auxiliar po
 Se ha utilizado un módulo Bluetooth hc05 conectado al puerto 3 del controlador de locomoción. Con esto, podremos mandar mensajes desde un teléfono móvil, un ordenador portátil o cualquier otro dispositivo que soporte conexión Bluetooth. Para utilizar el control del robot por Bluetooth se sustituirá el puerto de lectura de la OpenCM reservado al controlador de visión (el puerto 2) por el puerto 3.
 
 \section{Programación de sensores TODO} 
+
+En esta sección se detallará la programación que se ha aplicado a los diferentes sensores que se han montado en Raider.
+
 \subsection{Infrarrojos TODO}
-Lecturas analogicas 
+
+Para controlar los sensores infrarrojos se ha desarrollado un algoritmo ( TODO en la librería X ). Dado el carácter de este sensor, se ha realizado una programación para detectar objetos en función de dos parámetros de distancia crítica. Como puede observarse en la figura \ref{esquemarango} con estos dos parámetros (representados por la barras verticales) se han definido tres zonas.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/esquemarango}   
+\caption{Rangos de detección para un sensor Sharp}
+\label{esquemarango}
+\end{figure}
+
+El rango de datos que podemos extraer de la entrada analógica va de 0 a 1800mV. Teniendo esto en cuenta, se han definido experimentalmente (figura \ref{raiderrangos}) \textit{INFRARED\_LOW} en 300mV, e \textit{INFRARED\_HIGH} en 1000mV. 
+
+\medskip [ TODO TODO TODO foto del robot pegado a la pizarra ]
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/todo}   %raiderrangos
+\caption{Definición experimental de los rangos de medida}
+\label{asdf}
+\end{figure}
+
+\medskip Se han desarrollado dos funciones paralelas para medir los sensores infrarrojos izquierdo y derecho de Raider: \textit{getLeftIR()} y \textit{getRightIR()}. Estas funciones devolverán un valor identificativo de la zona en la que se encuentra el obstáculo.
+
 \subsection{IMU TODO}
-Con todo el tostonazo de I2C
+
+La programación del sensor inercial pasa por dos fases: La extracción de datos del sensor y el procesamiento de los mismos para obtener información útil.
+
+\medskip El MPU9150 utiliza el protocolo I2C para comunicarse con el controlador. Ofrece medidas de giroscopio, acelerómetro y magnetómetro. En este proyecto se ha utilizado solamente acelerómetro para detectar caídas, pero se han programado funciones para la lectura de todos los parámetros. Para utilizar el bus I2C de la BeagleBone Black se ha desarrollado una librería ( TODO referencia o algo ) que funciona como interfaz de la librería nativa \textit{i2c-dev}.
+
+Con esta librería se puede leer y escribir en la tabla de registros de un sensor de forma sencilla. Los métodos de esta función son los siguientes:
+
+
+
 \subsection{Brújula TODO} 
+
+Calibración
+
 \section{Algoritmos de visión TODO} 
 \subsection{Análisis de trayectorias en navegación TODO} 
 \subsection{Búsqueda de lineas TODO}
