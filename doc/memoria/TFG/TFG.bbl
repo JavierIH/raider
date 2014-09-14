@@ -1,8 +1,54 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{gonzalezeducational}
-M.~Gonz{\'a}lez-Fierro, A.~Jard{\'o}n, S.~Mart{\'i}nez de~la Casa, M.F.
-  Stoelen, J.G. V{\'i}ctores, and C.~Balaguer.
-\newblock Educational initiatives related with the ceabot contest.
+\bibitem{webasrob}
+Asociación de {R}obótica ({UC3M}), septiembre 2014 [online]
+  \url{http://asrob.uc3m.es}.
+
+\bibitem{webmyod}
+Proyecto myod: Make your own droid, septiembre 2014 [online]
+  \url{http://asrob.uc3m.es/index.php/MYOD}.
+
+\bibitem{webroboticslab}
+Robotics lab, septiembre 2014 [online] \url{http://roboticslab.uc3m.es}.
+
+\bibitem{normativaceabot}
+Normativa del campeonato ceabot, septiembre 2014 [online]
+  \url{http://www.ceautomatica.es/sites/default/files/upload/10/CEABOT/docs/normativa_CEABOT_2014.pdf}.
+
+\bibitem{webroboone}
+Robo-{O}ne website, septiembre 2014 [online] \url{http://www.robo-one.com}.
+
+\bibitem{calkins2011overview}
+David Calkins.
+\newblock An overview of robogames [competitions].
+\newblock {\em Robotics \& Automation Magazine, IEEE}, 18(1):14--15, 2011.
+
+\bibitem{gouaillier2009mechatronic}
+David Gouaillier, Vincent Hugel, Pierre Blazevic, Chris Kilner, J{\'e}r{\^o}me
+  Monceaux, Pascal Lafourcade, Brice Marnier, Julien Serre, and Bruno
+  Maisonnier.
+\newblock Mechatronic design of nao humanoid.
+\newblock In {\em Robotics and Automation, 2009. ICRA'09. IEEE International
+  Conference on}, pages 769--774. IEEE, 2009.
+
+\bibitem{darwin}
+Inyong Ha, Yusuke Tamura, Hajime Asama, Jeakweon Han, and Dennis~W Hong.
+\newblock Development of open humanoid platform darwin-op.
+\newblock In {\em SICE Annual Conference (SICE), 2011 Proceedings of}, pages
+  2178--2181. IEEE, 2011.
+
+\bibitem{jardon2014review}
+Alberto Jard{\'o}n, F{\'e}lix Rodr{\'\i}guez, Juan~G Victores, Santiago
+  Mart{\'\i}nez, and Carlos Balaguer.
+\newblock A review of eight years of ceabot contest: A national wide mini
+  humanoids competition.
+\newblock In {\em ROBOT2013: First Iberian Robotics Conference}, pages 41--52.
+  Springer, 2014.
+
+\bibitem{csahin2005swarm}
+Erol {\c{S}}ahin.
+\newblock Swarm robotics: From sources of inspiration to domains of
+  application.
+\newblock In {\em Swarm robotics}, pages 10--20. Springer, 2005.
 
 \end{thebibliography}

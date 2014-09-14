@@ -8,7 +8,7 @@ El primer objetivo de este proyecto es el desarrollo de una plataforma robótica 
 
 Se realizará un estudio de qué elementos son necesarios para formar parte de un robot mini-humanoide. Entre ellos, se evaluará su funcionamiento en base a las necesidades del proyecto y se analizará qué componentes son adecuados para integrarse en el robot. En resumen, se diseñará un sistema completo y funcional de controlador, alimentación, sensores y actuadores.
 
-\subsection{Integrar una cámara USB}
+\subsection{Integrar una cámara}
 
 Otro objetivo será integrar una cámara con la que se realizarán algoritmos de visión. Para ello se requiere que la cámara quede integrada físicamente en el robot. Adicionalmente, la cámara deberá poder moverse de forma independiente al cuerpo del robot, por lo que se construirá una base móvil que otorgue a la cámara capacidad para rotar e inclinarse.
 
@@ -16,7 +16,7 @@ Otro objetivo será integrar una cámara con la que se realizarán algoritmos de vi
 
 Integrar en el robot un controlador que tenga el potencial necesario para controlar la locomoción del robot, comunicarse con los diversos sensores que se monten, y procesar algoritmos de visión. También se buscará que dicho controlador permita programarse en diferentes lenguajes sin tener que depender de un entorno de desarrollo fijo. Por último, el controlador que se escoja debe tener las capacidades de procesamiento suficientes para permitir un funcionamiento fluido y, al mismo tiempo, permitir una autonomía de funcionamiento del robot razonable.
 
-\medskip En el caso de que el controlador requiera conexiones o conectores especiales, se deberán realizar las modificaciones necesarias para que el sistema sea limpio y fiable. Dicho de otro modo, si por ejemplo los servos necesitan conectores especiales que el controlador no posea, se buscará una solución, como por ejemplo, diseñar una placa de expasión.  
+\medskip En el caso de que el controlador requiera conexiones o conectores especiales, se deberán realizar las modificaciones necesarias para que el sistema sea robusto y fiable.
 
 \subsection{Agregar sensores y actuadores}
 
@@ -30,31 +30,19 @@ Dado que se prevee la inclusión de numerosos componente nuevos, se deberá redise
 
 \medskip También se procurará que las baterías sean fácilemnte intercambiables, sin necesidad de montar y desmontar partes mecánicas. Este objetivo se propone a partir de la necesidad de hacer cambios veloces de baterías en las comepticiones de mini-humanoides.
  
-\subsection{Realizar las modificaciones esctructurales que sean pertinentes}
+\subsection{Realizar modificaciones esctructurales}
 
 Se tendrá como objetivo adecuar la estructura del robot para el montaje de nuevos dispositivos. Además, secundariamente se mejorarán diversos puntos de la estructura para mejorar las capacidades generales de la plataforma.
 
-\medskip Las piezas deberán diseñarse siguiendo dos reglas. La primera es que puedan imprimirse en una impresora 3D casera. La segunda regla es que soporten los esfuerzos necesarios y no se rompan durante la operación del robot.
+\medskip Las piezas deberán diseñarse siguiendo dos reglas. La primera es que puedan imprimirse en una impresora 3D de bajo coste. La segunda regla es que soporten los esfuerzos necesarios y no se rompan durante la operación del robot.
 
 \section{Puesta en marcha y programación}
 
-El robot debe diseñarse, montarse, programarse y testarse. Quizás éste sea el objetivo al que se la dará mayor peso en este proyecto, y no es otro que obtener al final una plataforma mini-humanoide fiable y testada para su uso. Este proyecto no debe quedar en un simple estudio teórico, sino que debe llevarse a la práctica y obtener resultados positivos.
+El robot debe diseñarse, montarse, programarse y testarse. Una vez se termine la construcci TODO mecagoenlaostia
 
 \subsection{Programar la locomoción bípeda}
 
-Se deberá diseñar un sistema de locomoción completo del robot. En este punto se unen diversos objetivos, desde controlar las articulaciones por separado hasta la realización de programas de caminata. Se deberá conseguir al menos la realización de los siguientes movimientos:
-
-\begin{itemize}
-\item \textbf{Avance frontal.}
-\item \textbf{Rotación a la izquierda.}
-\item \textbf{Rotación a la derecha.}
-\item \textbf{Paso lateral a la izquierda.}
-\item \textbf{Paso lateral a la derecha.}
-\item \textbf{Reincorporación tras una caída frontal}
-\item \textbf{Reincorporación tras una caída trasera}
-\end{itemize}
-
-Junto a esto, se deberá crear una librería en C++ que permita realizar movimientos de una forma cómoda y sencilla.
+Se deberá diseñar un sistema de locomoción completo del robot. En este punto se unen diversos objetivos, desde controlar las articulaciones por separado hasta la realización de programas de caminata. Se deberá conseguir al menos la realización de los siguientes movimientos: avance, rotación, desplazamiento lateral y reincorporación tras una caída. Junto a esto, se deberá crear una librería en que permita realizar movimientos de una forma cómoda y sencilla.
 
 \subsection{Programar sensores}
 
@@ -62,10 +50,10 @@ Los sensores que se seleccionen deberán adecuarse para poder operar adecuadament
 
 \subsection{Desarrollar algoritmos de visión}
 
-El comportamiento del robot se basará en la información tomada por la cámara. Para procesar esta información se utilizarán las librerías de OpenCV, por lo que será necesario familiarizarse con ellas y estudiar las diversas posibilidades que ofrecen en el campo de la visión por computador. Con ello, se desarrollarán programas adaptados a la plataforma robótica del proyecto. Éstos, deberán optimizarse de forma que funcionen correctamente con las capacidades de procesamiento del controlador.
+El comportamiento del robot se basará en la información tomada por la cámara. Para procesar esta información se utilizarán las librerías de visión, por lo que será necesario familiarizarse con ellas y estudiar las diversas posibilidades que ofrece el campo de la visión por computador. Con ello, se desarrollarán programas adaptados a la plataforma robótica del proyecto. Éstos, deberán optimizarse de forma que funcionen correctamente con las capacidades de procesamiento del controlador.
 
 \subsection{Desarrollar aplicaciones de competición}
 
 Se prevee la presentación del robot a competiciones. Esto significa que como parte del proyecto se desarrollarán aplicaciones de competición de carácter diverso. Para la realización de los programas, se tendrá en cuenta principalmente el reglamento concreto de cada prueba, con sus objetivos y limitaciones.
 
-\medskip Estas aplicaciones se apoyarán en todo lo desarrollado anteriormente, y constituirán la mejor prueba experimental del funcionamiento del robot.
+\medskip Estas aplicaciones se apoyarán en todo lo desarrollado anteriormente, y constituirán la mejor prueba experimental del funcionamiento del robot. ( TODO cambiar )
