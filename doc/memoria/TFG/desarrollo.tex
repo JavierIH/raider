@@ -19,7 +19,7 @@ Los sensores infrarrojos modelo GP2Y0A21YK0F de la marca Sharp, permiten variar 
 
 De esta gráfica pueden sacarse dos conclusiones. La primera, ya conocida, es que la variación de la salida del sensor y su medida no son proporcionales, por lo que si fuese necesaria extraer medidas en unidades reales habría que calcular una adecuación compleja. Sin embargo, esto no será necesaria ya que la programación del sensor se basará en umbrales fijos que serán marcados de forma empírica. La segunda conclusión es que el sensor ofrecerá una tensión de salida máxima de 3.3V. 
 
-Dado que la BeagleBone Black dispone de hasta siete entradas analógicas (figura \ref{bbbanal}), conectaremos las salidas de los dos sensores en dos de estos pines. Sin embargo, leyendo el manual de la BeagleBone Black ( TODO manual ) observamos que cada entrada analógica soporta un máximo de 1.8V. Si alimentando el sensor a 5V lo conectásemos directamente, un pico de 3.3V podría deteriorar la placa. Por ello, se ha decidido aplicar una simple adecuación de la salida añadiendo un divisor resistivo. De esta forma, nos cercioraremos de que los 3.3V máximos que podrían salir del sensor se conviertan en 1.8V.
+Dado que la BeagleBone Black dispone de hasta siete entradas analógicas (figura \ref{bbbanal}), conectaremos las salidas de los dos sensores en dos de estos pines. Sin embargo, consultando el manual de la BeagleBone Black \cite{coley2013beagleboard} observamos que cada entrada analógica soporta un máximo de 1.8V. Si alimentando el sensor a 5V lo conectásemos directamente, un pico de 3.3V podría deteriorar la placa. Por ello, se ha decidido aplicar una simple adecuación de la salida añadiendo un divisor resistivo. De esta forma, nos cercioraremos de que los 3.3V máximos que podrían salir del sensor se conviertan en 1.8V.
 
 \begin{figure}[H]
 \centering
@@ -71,10 +71,98 @@ Una vez preparados todo los componentes se ha procedido a su montaje. En los sig
 
 \subsection{Montaje de la placa de expansión}
 
-//Aquí meter hasta los separadores
+La placa de expansión ha sido fabricada mediante fresado. Tras enviar los planos a su producción se ha obtenido la placa que puede observarse en la figura \ref{montajeplaca1}.
+
+[PLaca virgen TODO]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Placa de expasión salida de fabricación}
+\label{montajeplaca1}
+\end{figure}
+
+Tras esto se ha procedido a soldar todos los componentes que necesita. El listado de los componentes puede consultarse en el anexo TODO. En la imágen de la figura \ref{montajeplaca2} puede observarse cómo queda la placa una vez soldada.
+
+[PLACA soldada TODO]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Placa de expasión con componentes soldados}
+\label{montajeplaca2}
+\end{figure}
+
+A continuación, se le ha realizado un lacado de seguridad con laca aislante. Esto nos ayudará a evitar posibles accidentes por contacto con conectores y partes metálicas del robot. Finalmente, en la figura \ref{montajeplaca3} puede observarse el resultado final del sistema, montado en el robot y conectado a sus componentes.
+
+[TODO foto del robot de espaldas y sin conector]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Placa de expansión monstada en RAIDER}
+\label{montajeplaca3}
+\end{figure}
+
 
 \subsection{Integración de la cámara en la cabeza}
 
-//fotos del montaje y esas cosas
+Para integrar la webcam en la cabeza de RAIDER se ha procedido a desmontar la cámara Microsoft LifeCam con el objetivo de eliminar su carcasa. El resultado de extraer la cámara puede observarse en la figura \ref{montajecam1}.
 
+[FOTO de la camara desmontada]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Cámara Microsoft LifeCam desmontada}
+\label{montajecam1}
+\end{figure}
+
+\medskip Ahora, se pasará a montarla en las piezas imprimibles que se diseñaron para tal efecto. Las piezas aparecen en la figura \ref{montajecam2} junto a la cámara.
+
+[FOTO de las piezas]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Soportes de la cabeza para la cámara}
+\label{montajecam2}
+\end{figure}
+
+Una vez montado y acortado el cable, procedemos a montar el servo que moverá la cabeza. Como se muestra en la figura \ref{montajecam3}, este se aloja en el cuello.
+
+[FOTO del cuello pelado]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Cuello y soporte para la cabeza}
+\label{montajecam3}
+\end{figure}
+
+Finalmente, en la figura \ref{montajecam4} se muestra el resultado del montaje completo
+
+[FOTO del conjunto entero]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Cuello y soporte para la cabeza}
+\label{montajecam4}
+\end{figure}
+
+\subsection{Integración de los sensores infrarrojos en los brazos}
+
+Tal y como se comentó en el apartado TODO, se han integrado dos sensores en los brazos de RAIDER. El motivo de montarlos en los brazos es que se esta manera gozarán de mayor libertad a la hora de apuntara obstáculos. Así mismo, se ha buscado que el sensor estuviese en una posición segura, protegido ante caídas. En la figura \ref{montajeir1} se pueden observar los dos sensores infrarrojos junto a las piezas que se han diseñado para alojarlos.
+
+[FOTO de sharps y piezas]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Sensores infrarrojos y soportes}
+\label{montajeir1}
+\end{figure}
+
+Tras montar las piezas, se ha obtenido el resultado mostrado en la figura \ref{montajeir2}
+
+[FOTO del conjunto]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figuras/todo}   
+\caption{Brazos con sensores montados}
+\label{montajeir2}
+\end{figure}
 

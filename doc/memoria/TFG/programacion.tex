@@ -1,7 +1,7 @@
 %chapter introduce un nuevo capítulo
 \chapter{Programación TODO}
 
-En este capítulo se presenta el desarrollo de todo el software que ha sido requerido preparar para la puesta en marcha del robot.
+En este capítulo se presenta el desarrollo de todo el software que ha sido requerido preparar para la puesta en marcha del robot. El objetivo final del apartado es la programación de la librería \textit{raider.h}, que centraliza todas las funcionalidades de RAIDER.
 
 \section{Configuración de la BeagleBone Black}
 
@@ -188,6 +188,7 @@ Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay
 \label{catain4}
 \end{figure}
 
+Para realizar estas medidas desde el programa principal escrito en C++, se ha programado la librería \textit{bone.h}, que simplifica el uso de estos pines.
 
 \section{Sistema de locomoción TODO}
 
@@ -426,13 +427,13 @@ Con esta función vaciaremos el buffer de entrada. Se ejecutará cada vez que leam
  
 \subsection{Comunicación serie en BeagleBone}
 
-Para poner en amrcha la comunicación serie en la BeagleBone se ha utilizado como base la librería open-source Serialib ( TODO referencia gorda). Esta librería nos permite administrar un puerto serie, y está preparada para funcionar tanto en Windows como en Linux. 
+Para poner en amrcha la comunicación serie en la BeagleBone se ha utilizado como base la librería open-source Serialib \cite{webserialib}. Esta librería nos permite administrar un puerto serie, y está preparada para funcionar tanto en Windows como en Linux. 
 
-\medskip Se han realizado algunas modificaciones leves para ajustar su funcionamiento al requerido. Los métodos que se han utilizado ( TODO pueden encontrarse en el repo ) se detallan a continuación.
+\medskip Se han realizado algunas modificaciones leves para ajustar su funcionamiento al requerido. Los métodos que se han utilizado se detallan a continuación.
 
 \subsubsection{open TODO nombre }
 
-Esta función abrirá el puerto serie. En el primer parámetro se le pasará la cadena "/dev/ttyO2", es decir, la dirección de nuestro puerto serie. Como segundo parámetro se le pasará la velocidad del puerto, que coincidiendo con la de la OpenCM será de 9600 baudios.
+Esta función abrirá el puerto serie. En el primer parámetro se le pasará la cadena ``/dev/ttyO2", es decir, la dirección de nuestro puerto serie. Como segundo parámetro se le pasará la velocidad del puerto, que coincidiendo con la de la OpenCM será de 9600 baudios.
 
 \subsubsection{writechar TODO nombre }
 
@@ -446,11 +447,11 @@ Se ha utilizado un módulo Bluetooth hc05 conectado al puerto 3 del controlador d
 
 \section{Programación de sensores TODO} 
 
-En esta sección se detallará la programación que se ha aplicado a los diferentes sensores que se han montado en Raider.
+En esta sección se detallará la programación que se ha aplicado a los diferentes sensores que se han montado en RAIDER.
 
 \subsection{Infrarrojos TODO}
 
-Para controlar los sensores infrarrojos se ha desarrollado un algoritmo ( TODO en la librería X ). Dado el carácter de este sensor, se ha realizado una programación para detectar objetos en función de dos parámetros de distancia crítica. Como puede observarse en la figura \ref{esquemarango} con estos dos parámetros (representados por la barras verticales) se han definido tres zonas.
+Para controlar los sensores infrarrojos se ha desarrollado un algoritmo de detección, implementado en la librería \textit{raider.h}. Dado el carácter de este sensor, se ha realizado una programación para detectar objetos en función de dos parámetros de distancia crítica. Como puede observarse en la figura \ref{esquemarango} con estos dos parámetros (representados por barras verticales) se han definido tres zonas.
 
 \begin{figure}[h]
 \centering
@@ -476,15 +477,35 @@ El rango de datos que podemos extraer de la entrada analógica va de 0 a 1800mV. 
 
 La programación del sensor inercial pasa por dos fases: La extracción de datos del sensor y el procesamiento de los mismos para obtener información útil.
 
-\medskip El MPU9150 utiliza el protocolo I2C para comunicarse con el controlador. Ofrece medidas de giroscopio, acelerómetro y magnetómetro. En este proyecto se ha utilizado solamente acelerómetro para detectar caídas, pero se han programado funciones para la lectura de todos los parámetros. Para utilizar el bus I2C de la BeagleBone Black se ha desarrollado una librería ( TODO referencia o algo ) que funciona como interfaz de la librería nativa \textit{i2c-dev}.
+\medskip El MPU9150 utiliza el protocolo I2C para comunicarse con el controlador. Ofrece medidas de giroscopio, acelerómetro y magnetómetro. En este proyecto se ha utilizado solamente el acelerómetro para detectar caídas. No obstante, se han programado funciones para la lectura de todos los parámetros con el objetivo de utilizarlos en futuros desarrollos. Para utilizar el bus I2C de la BeagleBone Black se ha desarrollado la librería \textit{i2c.h}, que funciona como interfaz de la librería nativa \textit{i2c-dev}. Para programar este sensor habrá que apoyarse en el mapa de registros \cite{registermapimu}.
 
-Con esta librería se puede leer y escribir en la tabla de registros de un sensor de forma sencilla. Los métodos de esta función son los siguientes:
+\medskip El primer paso para utilizar este sensor es desactivar el modo de hibernación. Esto se consigue poniendo a 0 el registro 6B. Una vez hecho esto ya pueden leerse de forma normal los datos del giroscopio y del acelerómetro. En la librería \textit{imu.h} pueden consultarse los registros que se están leyendo.
 
+\medskip Para la detección de caídas, se ha utilizado el eje Y del acelerómetro. Se sabe que en una posición vertical, el acelerómetro estará realizando una lectura de 1g provocada por la atracción gravitatoria terrestre. Al girar el robot en este eje, el valor medido irá disminuyendo. Cuando el robot se encuentro tumbado de forma perfectamente horizontal, el valor medido en el eje Y será de 0g. Dado que el incremento es proporcional se ha realizado una conversión sencilla en la que 1g corresponde con 0º de inclinación y 0g con 90º. Esta medida debe tomarse con el robot en reposo ya que de lo contrario el movimiento del robot influirá en su aceleración y podrá ser causa de falsos positivos. Se ha programado el sensor de forma que detecte caidas hacia delante cuando el robot se encuentre en una medición entre 90º y 60º, y caídas hacia atrás cuando mida entre 270º y 300º de inclinación. Este rango está parametrizado con la constante \textit{FALL\_DEGREES} que se encuentra en \textit{raider.h}
+
+[ TODO image de caidas ]
 
 
 \subsection{Brújula TODO} 
 
-Calibración
+Para la programación de la brújula se ha realizado una biblioteca, \textit{compass.h} que controla de forma sencilla la extracción de datos. Atendiendo a su manual \cite{manualcmps03}, la CMPS03 ofrece tres formas de leer su medida:
+
+\begin{itemize}
+\item \textbf{Mediante PWM} 
+
+El pin 4 del sensor permite realizar una lectura con 8 bits de precisión del valor medido por la brújula.
+
+\item \textbf{Mediante I2C con 1 Byte}
+
+Conectada por I2C, podemos realizar una lectura del registro 01 para obtener la medida de la brújula en un rango de 8 bits. 
+
+\item \textbf{Mediante I2C con 2 Bytes}
+
+Conectada por I2c, los registros 02 y 03 nos ofrecen una lectura de la medida de la brújula en un rango de 0 a 3600. De esta manera, la medida extraída tiene una precisión de $0.1º$ y no necesita ninguna adecuación.
+\end{itemize}
+
+Se eligió conectarla por I2C por su simplicidad en su cableado. Así mismo, se ha usado el método de lectura de dos registros por su mayor precisión.
+
 
 \section{Algoritmos de visión TODO} 
 \subsection{Análisis de trayectorias en navegación TODO} 

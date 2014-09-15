@@ -61,7 +61,7 @@ Particularmente, se ha escogido un servo Tower Pro MG90s (figura \ref{microservo
 
 \subsection{Cintura móvil TODO IMAGEN}
 
-Otra de las modificaciones básicas a realizar sobre la paltaforma robótica, ha sido la inclusión de un servo adicional Dynamixel AX-12A para articular la cintura. A parte de la mejora de capacidades que se produce en los movimientos del robot, servirá para girar la dirección de la cámara radialmente. Podría decirse que entre el servo de la cabeza y el de la cintura, se ha creado un sistema distribuido de pan-tilt que permitirá mover la cámara en todas las direcciones manteniendo fija la base del robot, es decir, sus piernas.
+Otra de las modificaciones básicas a realizar sobre la plataforma robótica, ha sido la inclusión de un servo adicional Dynamixel AX-12A para articular la cintura. A parte de la mejora de capacidades que se produce en los movimientos del robot, servirá para girar la dirección de la cámara radialmente. Podría decirse que entre el servo de la cabeza y el de la cintura, se ha creado un sistema distribuido de pan-tilt que permitirá mover la cámara en todas las direcciones manteniendo fija la base del robot, es decir, sus piernas.
 
 \section{Sensorización TODO}
 
@@ -279,7 +279,7 @@ Sistemas operativos soportados: &  \medskip  Fedora, Android, Ubuntu, Debian, op
 
 Por otro lado, su lógica funciona a 3.3V y es mas compacta que la Raspberry Pi. Por todo lo comentado, y aunque trabajar con ella pueda resultar mas tedioso que con la Raspberry Pi, se ha seleccionado la Beaglebone Black como controlador principal del robot.
 
-\subsection{Diseño del sistema TODO}
+\subsection{Diseño del sistema}
 
 Una vez se ha seleccionado todos los elementos que fomarán parte del robot, se ha diseñado el conexionado que llevarán. Tal y como se ha ido viendo a lo largo de este apartado, por un lado tendremos la OpenCM que se encargará de controlar el servo PWM y los servos Dynamixel. La BeagleBone en cambio, se encargará de recibir los datos de todos los sensores y de la cámara. Las dos placas se conectarán en serie. El diagrama de la figura \ref{dia1} representa las conexiones de todos los dispositivos, a excepción de la parte de alimentación, que se verá en la próxima sección.
 
@@ -290,8 +290,6 @@ Una vez se ha seleccionado todos los elementos que fomarán parte del robot, se h
 \label{dia1}
 \end{figure}
 
- TODO Revisar que los componentes sean los buenos ( especialmente TODO la brujula ) 
-
 \section{Alimentación}
 
 La batería contenida en el kit es una batería NiMH de 8 elementos AA Sanyo Eneloop que desarrolla 9.6V y 1900mAh. Para el consumo de este robot es una opción aceptable que proporciona cerca de 10 minutos de autonomía. No está mal si se tiene en cuenta que pruebas con el CEABOT tiene una duración máxima limitada a 5 minutos. No obstante, tiene un inconveniente, su peso y su volumen es muy alto. Al estar situada en la espalda, el centro de gravedad del robot sube en altura de forma considerable. Esto causa inestabilidades y complica bastante la programación de desplazamientos.
@@ -301,8 +299,6 @@ La batería contenida en el kit es una batería NiMH de 8 elementos AA Sanyo Enelo
 Por las razones descritas, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9V a 12V, respecto al resto de elementos que serán alimentados a 5V o 3.3V, nos centraremos principalmente en encontrar una batería adecuada para los servos.
 
 \medskip Hoy en dia, las baterías ne NiMH están empezando a caer en desuso a favor de la baterías de litio. Se barajaron dos posibilidades.
-
-% TODO al final de la sección se debe calcular la autonomía del robot
 
 \subsubsection{Baterías de polímero de litio}
 
@@ -316,9 +312,9 @@ Las batería de litio fosfato de hierro, es decir, LiFe, son conocidas por su gra
 
 \subsubsection{Elección y diseño del sistema}  
 
-Por su tamaño y prestaciones se ha elegido una batería LiPo Rhino de 3S y 1750mAh. Esta batería tiene unas dimensiones perfectas para montarse en la cintura del robot y su peso es 50 ( TODO pesarla, que ahora no la tengo a mano ) gramos menor al de la batería original (215 gramos). 
+Por su tamaño y prestaciones se ha elegido una batería LiPo Rhino de 3S y 1750mAh. Esta batería tiene unas dimensiones perfectas para montarse en la cintura del robot y su peso (109 gramos) es mucho menor al de la batería original (215 gramos). 
 
-A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación del consumo medio de todos sus elementos.
+A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación del consumo medio de todos los elementos seleccionados.
 
 \begin{figure}[H]
 \centering
@@ -326,7 +322,6 @@ A continuación se presenta una tabla (cuadro \ref{consumo}) con una estimación d
 \caption{Batería LiPo}
 \label{lipo}
 \end{figure}
-
 
 \begin{table}[H]
 \centering

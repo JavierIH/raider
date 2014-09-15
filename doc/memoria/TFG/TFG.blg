@@ -19,52 +19,54 @@ A level-1 auxiliary file: presupuesto.aux
 A level-1 auxiliary file: conclusion.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
-Warning--I didn't find a database entry for "normativarobocup"
-Warning--I didn't find a database entry for "webcmucam"
 Warning--to sort, need author or key in webasrob
 Warning--to sort, need author or key in webroboticslab
 Warning--to sort, need author or key in webmyod
 Warning--to sort, need author or key in normativaceabot
 Warning--to sort, need author or key in webroboone
-You've used 10 entries,
+Warning--to sort, need author or key in webcmucam
+Warning--to sort, need author or key in webserialib
+Warning--to sort, need author or key in registermapimu
+Warning--to sort, need author or key in manualcmps03
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            563 strings with 5726 characters,
-and the built_in function-call counts, 3265 in all, are:
-= -- 321
-> -- 123
-< -- 4
-+ -- 54
-- -- 42
-* -- 211
-:= -- 459
-add.period$ -- 24
-call.type$ -- 10
-change.case$ -- 51
+            608 strings with 7256 characters,
+and the built_in function-call counts, 6653 in all, are:
+= -- 656
+> -- 258
+< -- 11
++ -- 111
+- -- 88
+* -- 424
+:= -- 932
+add.period$ -- 48
+call.type$ -- 20
+change.case$ -- 104
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 137
-empty$ -- 302
-format.name$ -- 42
-if$ -- 740
+cite$ -- 29
+duplicate$ -- 281
+empty$ -- 597
+format.name$ -- 88
+if$ -- 1511
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 5
-newline$ -- 43
-num.names$ -- 10
-pop$ -- 91
+int.to.str$ -- 20
+missing$ -- 10
+newline$ -- 84
+num.names$ -- 22
+pop$ -- 181
 preamble$ -- 1
-purify$ -- 41
+purify$ -- 84
 quote$ -- 0
-skip$ -- 115
+skip$ -- 248
 stack$ -- 0
-substring$ -- 191
-swap$ -- 47
-text.length$ -- 4
+substring$ -- 384
+swap$ -- 107
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 40
-warning$ -- 5
-while$ -- 24
-width$ -- 12
-write$ -- 91
-(There were 7 warnings)
+type$ -- 80
+warning$ -- 9
+while$ -- 49
+width$ -- 22
+write$ -- 183
+(There were 9 warnings)
