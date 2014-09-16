@@ -6,48 +6,77 @@ A level-1 auxiliary file: licencia.aux
 A level-1 auxiliary file: evaluacion.aux
 A level-1 auxiliary file: agradecimientos.aux
 A level-1 auxiliary file: resumen.aux
-I found no \citation commands---while reading file TFG.aux
-I found no \bibdata command---while reading file TFG.aux
-I found no \bibstyle command---while reading file TFG.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            88 strings with 547 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+A level-1 auxiliary file: introduccion.aux
+A level-1 auxiliary file: marco.aux
+A level-1 auxiliary file: arte.aux
+A level-1 auxiliary file: componentes.aux
+A level-1 auxiliary file: herramientas.aux
+A level-1 auxiliary file: mecanico.aux
+A level-1 auxiliary file: desarrollo.aux
+A level-1 auxiliary file: programacion.aux
+A level-1 auxiliary file: aplicaciones.aux
+A level-1 auxiliary file: presupuesto.aux
+A level-1 auxiliary file: conclusion.aux
+A level-1 auxiliary file: anexopiezas.aux
+A level-1 auxiliary file: anexofotolito.aux
+A level-1 auxiliary file: anexoesquematico.aux
+A level-1 auxiliary file: anexoplanos.aux
+The style file: plain.bst
+Database file #1: bibliografia.bib
+Warning--to sort, need author or key in webasrob
+Warning--to sort, need author or key in webroboticslab
+Warning--to sort, need author or key in webmyod
+Warning--to sort, need author or key in normativaceabot
+Warning--to sort, need author or key in webrobotchallenge
+Warning--to sort, need author or key in webarduino
+Warning--to sort, need author or key in webbioloid
+Warning--to sort, need author or key in webkondo
+Warning--to sort, need author or key in webrobovie
+Warning--to sort, need author or key in webroboone
+Warning--to sort, need author or key in webcmucam
+Warning--to sort, need author or key in webserialib
+Warning--to sort, need author or key in registermapimu
+Warning--to sort, need author or key in manualcmps03
+Warning--to sort, need author or key in webcinvestav
+You've used 26 entries,
+            2118 wiz_defined-function locations,
+            630 strings with 7814 characters,
+and the built_in function-call counts, 7577 in all, are:
+= -- 734
+> -- 264
+< -- 11
++ -- 117
+- -- 88
+* -- 472
+:= -- 1022
+add.period$ -- 54
+call.type$ -- 26
+change.case$ -- 122
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 41
+duplicate$ -- 323
+empty$ -- 735
+format.name$ -- 88
+if$ -- 1739
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 26
+missing$ -- 10
+newline$ -- 102
+num.names$ -- 22
+pop$ -- 235
+preamble$ -- 1
+purify$ -- 96
 quote$ -- 0
-skip$ -- 0
+skip$ -- 296
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 414
+swap$ -- 113
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+type$ -- 104
+warning$ -- 15
+while$ -- 49
+width$ -- 28
+write$ -- 219
+(There were 15 warnings)

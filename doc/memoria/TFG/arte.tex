@@ -18,18 +18,19 @@ En el mercado existe una gran variedad de robots educativos que cumplen las cara
 \medskip El kit de fábrica cuenta con 16 grados de libertad. Sus actuadores son servos digitales HSR 8498HB, que desarrollan un torque de 7.4kg/cm. Cabe destacar de estor servos su función "Motion Feedback", es decir, su capacidad para leer posiciones y comunicarselas al controlador.
 La placa de control del Robonova está basada en un microcontrolador ATMega 128 y cuenta con hasta 40 pines GPIO (puertos binarios de entrada y salida), 8 entradas analógicas, 3 salidas PWM, puerto serie y conexión I2C. Gracias a esto, el Robonova es fácilmente ampliable con sensores y actuadores, no necesariamente de la misma marca. En cuanto al software, Hitec da soporte a la programación con RoboBasic, un entorno de desarrollo completo con un lenguaje basado en Basic. 
 
-\medskip El KHR-3HV, mostrado en la figura \ref{kondo}, del fabricante japonés Kondo, es uno de los mini-humanoides mas avanzados actualmente. Puede presumir de ser el modelo de serie mas utilizado en el campeonato Robo-One, siendo seleccionado por los equipos por su gran agilidad y tamaño compacto.
+\medskip El KHR-3HV \cite{webkondo}, mostrado en la figura \ref{kondo}, del fabricante japonés Kondo, es uno de los mini-humanoides mas avanzados actualmente. Puede presumir de ser el modelo de serie mas utilizado en el campeonato Robo-One, siendo seleccionado por los equipos por su gran agilidad y tamaño compacto.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/kondo}   
 \caption{Kondo KHR-3HV}
 \label{kondo}
 \end{figure}
+\FloatBarrier
 
 En su configuración standard, el KHR-3HV cuenta con 17 servomotores KRS-2552HV de 14kg/cm de torque. Dichos actuadores, además, incluyen un pequeño microcontrolador, lo que les permite conectarse en daisy chain. El robot incluye una controladora RCB-4, expandible con 10 entradas analogicas y 10 GPIOs, y con capacidad para controlar hasta 35 servos. El software de programación ofrecido por Kondo es el Heart to Heart V4, que puede ser descargado gratuitamente desde su web oficial. Es importante recalcar que gracias a su inmensa comunidad de usuarios, existen varios proyectos de código abierto con librerías que permiten programar el KHR-3HV en lenguajes mas convencionales, como C y Python.
 
-\medskip El Robovie-X, uno de los robots humanoides de la empresa Vstone, se presenta en tres versiones diferentes: Lite, Standard y PRO. La diferencia entre los tres modelos radica en el número y tipo de servos que montan, manteniendo comunes el resto de partes del robot. El modelo de la figura \ref{robovie} es el modelo Standard. Posee 17 grados de libertad movidos por servos VS-S092J que desarrollan un torque de 9.2kg/cm. El controlador es un VS-C1, el cual tiene 30 canales para controlar servos. Vstone también fabrica diversas placas de expansión para la conexión de sensores en el Robovie-X.
+\medskip El Robovie-X \cite{webrobovie}, uno de los robots humanoides de la empresa Vstone, se presenta en tres versiones diferentes: Lite, Standard y PRO. La diferencia entre los tres modelos radica en el número y tipo de servos que montan, manteniendo comunes el resto de partes del robot. El modelo de la figura \ref{robovie} es el modelo Standard. Posee 17 grados de libertad movidos por servos VS-S092J que desarrollan un torque de 9.2kg/cm. El controlador es un VS-C1, el cual tiene 30 canales para controlar servos. Vstone también fabrica diversas placas de expansión para la conexión de sensores en el Robovie-X.
 
 \begin{figure}[H]
 \centering
@@ -37,6 +38,7 @@ En su configuración standard, el KHR-3HV cuenta con 17 servomotores KRS-2552HV d
 \caption{Vstone Robovie-X}
 \label{robovie}
 \end{figure}
+\FloatBarrier
 
 Junto al robot se suministra el programa RobovieMaker2, necesario para programarlo. El método de programación está orientado a la construcción de diagramas de flujo desde los que se controlan tanto los movimientos como la lectura de sensores externos.
 
@@ -50,6 +52,7 @@ Junto al robot se suministra el programa RobovieMaker2, necesario para programar
 \caption{Bioloid Premium}
 \label{bioloid}
 \end{figure}
+\FloatBarrier
 
 En cuanto a su controladora, los kits proporcionan controladoras de Robotis de la serie CM, mas específicamente, la CM-5 en el caso del Bioloid Comprehensive y la CM-510 o CM-530 (según qué versión) en el Bioloid Premium y GP.
 
@@ -65,7 +68,7 @@ Basada en un microcontrolador  ATMega2561. Además de los sensores de la propia m
 Presentado como la evolución de la CM-510, en este caso el microcontrolador de la placa es un ARM Cortex STM32F103RE, de 32 bits. El resto de características son similares a las de la CM-510, tiene cinco puertos de expasión para sensores analógicos y un puerto para conectar un receptor ZigBee o Bluetooth.
 \end{itemize}
 
-En cuanto a la programación, Roboplus ( TODO foto ) es una suite de programas distribuida gratuitamente por Robotis para la programación de sus robots educativos. Destaca por ser un entorno con un lenguaje de programación (R+) muy visual e intuitivo, preparado para su uso por niños o gente sin conocimientos muy avanzados de programación. Sin embargo, esto lo convierte en un lenguaje de programación muy limitado, hasta el punto que no permite utilizar todo el potencial de los actuadores Dynamixel.
+En cuanto a la programación, Roboplus es una suite de programas distribuida gratuitamente por Robotis para la programación de sus robots educativos. Destaca por ser un entorno con un lenguaje de programación (R+) muy visual e intuitivo, preparado para su uso por niños o gente sin conocimientos muy avanzados de programación. Sin embargo, esto lo convierte en un lenguaje de programación muy limitado, hasta el punto que no permite utilizar todo el potencial de los actuadores Dynamixel.
  
 
 \section{Competiciones}
@@ -74,34 +77,39 @@ Los robots mini-humanoides a menudo son utilizados en competiciones. A lo largo 
 
 \medskip Dadas sus multiples disciplinas, los RoboGames son considerados la competición robótica mas grande del mundo. RoboGames \citep{calkins2011overview} es un encuentro anual para ingenieros y aficionados a la robótica en sus diferentes vertientes. En lo que a mini-humanoides se refiere, existen diversas modalidades como Kung-Fu, escaleras, carreras o sumo. Una de las particularidades de esta competición es que compiten conjuntamente robots autónomos y robots teleoperados. Quizás sea por esta razón que en este campeonato prima la realización de un control de locomoción muy avanzado respecto a una sensorización más sencilla. La programación de estos robots se centra en la realización de movimientos muy calculados y precisos. Así mismo, los robots participantes de estas pruebas suelen contar con mas articulaciones de las que suele tener un robot mini-humanoide comercial, superando en ocasiones los 30 grados de libertad. RoboGames es uno de los mayores escaparates en los que observar los mejores algoritmos de locomoción para robots mini-humanoides. El robot de la figura \ref{giger}, de Andrew Alter, ha sido uno de los participantes mas asiduos en los últimos años.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/giger}   
 \caption{Giger, de Andrew Alter}
 \label{giger}
 \end{figure}
+\FloatBarrier
+
 
 
 %Robots estructuralmente molones, fuertes, estables, radiocontrolados. Compiten cara a cara muchos equipos
 
 En Japón, el Robo-One \citep{webroboone} es el mayor campeonato de robots mini-humanoides. Esta competición tiene unas normas mas restrictivas y se centra en una única categoría, el combate cuerpo a cuerpo. Los robots que se presentan a esta competición son mayoritariamente radiocontrolados y diseñados especialmente para al competición. Estos robots suelen estar construídos con materiales de alta resistencia y bajo peso, como la fibra de carbono y el aluminio mecanizado. Además, los servos que montan estos robots suelen ser muy potentes, en ocasiones llegando a desarrollar un torque superior los $30kg/cm$. Sin embargo, una diferencia importante con los robots de los RoboGames es el número de grados de libertad del robot, siendo muy inferior en este caso. Una configuración típica en la competición no supera los 18 servos. Esto se debe a su fuerte especialización para pelear con otros robots. En este caso, prima la robustez mecánica y la fuerza frente a la versatilidad. Si bien es cierto, comúnmente estos robots montan sensores inerciales que les ayudan a mantener el equilibrio. En la figura \ref{roboone} se muestra un combate típico por dos de los robots mas laureados en la competición: Garoo y Hammerhead.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/roboone}   
 \caption{Combate en Robo-One}
 \label{roboone}
 \end{figure}
+\FloatBarrier
 
 Sin embargo, las competiciones de robots mini-humanoides no solo se centran en pruebas individuales. En el campeonato RoboCup, los robots participan en equipos en la realización de partidos de futbol. En este caso, los robots son exclusivamente autónomos y basan su comportamiento en algoritmos de enjambre \cite{csahin2005swarm}. Por tanto, en esta competición se le da una mayor importancia a la programación de los robots frente a su estructura mecánica. De hecho, comunmente se parte de plataformas comerciales para desarrollar los robots. En cuanto a sensorización, los robots participantes montan cámaras que les permiten extraer datos del entorno mediante técnicas de visión por computador. De este modo, los robots interactúan entre ellos y los elementos del campo de forma coordinada.
 En la imagen de la figura \ref{robocup} se muestran robots de diferentes equipos disputando un partido.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{figuras/robocup}   
 \caption{Partido de futbol en RoboCup}
 \label{robocup}
 \end{figure}
+\FloatBarrier
+
 
 Por otra parte, la competición CEABOT \cite{jardon2014review} mezcla diferentes conceptos. Al ser una competición multidisciplinar y completamente autónoma, los robots necesitan una mayor versatilidad \cite{gonzalez2010educational}. Por esta razón, un robot participante en CEABOT, y que debe realizar cuatro pruebas dentro del campeonato, no puede especializarse en una de ellas si eso supone una interferencia en su rendimiento en el resto.
 
@@ -117,12 +125,13 @@ Los sistemas de visión históricamente han necesitado de una gran capacidad de pr
 
 \medskip Una de estas opciones es el montaje de un módulo de placa y controlador integrado como la CMUcam \citep{webcmucam}. En la figura \ref{cmucam} puede observarse el módulo Pixy CMUcam5, que corresponde a la quinta iteración del diseño de la CMUcam. Este módulo se diseñó con la idea de proveer con capacidades de visión a pequeños sistema embebidos. Sólo con un microcontrolador y uno de estos módulos, pueden programarse algoritmos sencillos como el tracking de objetos.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figuras/cmucam}   
 \caption{Modulo Pixy CMUcam5 ©CMUcam.org}
 \label{cmucam}
 \end{figure}
+\FloatBarrier
 
 Otra sistema similar es el módulo HaViMo. Este sistema incluye de forma integrada una cámara y un microcontrolaodor. Entre sus capacidades destacan su reducido tamaño y peso, su bajo consumo y una compatibilidad directa con cualquier dispositivo con comunicación serie. Este sistema ofrece la posibilidad de diferenciar regiones de una imagen basandose en su color. Puede analizar el tamaño, posición y centro de gravedad de cada región, siendo muy interesante a la hora de diferenciar objetos. Sin embargo la funcionalidad de estos sistemas es limitada, ya que no ofrecen la posibilidad de programarse con librerías de visión como OpenCV, que permiten el desarrollo de algoritmos avanzados.
 

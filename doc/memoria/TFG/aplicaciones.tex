@@ -38,14 +38,13 @@ El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brú
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1\textwidth]{figuras/goraider}   
-\caption{Código QR de inicio: "GoRaider"}
+\includegraphics[width=0.5\textwidth]{figuras/goraider}   
+\caption{Código QR de inicio (Texto: GoRaider)}
 \label{goraider}
 \end{figure}
 \FloatBarrier
 
-
-\medskip Una vez ha comenzado, guardará la medida que toma la brújula en la posición inicial. Ésta medida constituirá la primera referencia de la posición del robot. Tras ello, buscará el primer marcador, que por normativa se encontrará en frente de él. La búsqueda de códigos QR transcurre de la siguiente manera. El robot realizará un análisis visual, si éste falla, cambiará la altura de enfoque de la cámara y volverá a intentarlo. Como medida de seguridad, se ha programado que tras 5 lecturas fallidas el robot rote e intente recolocarse en la referencia. 
+\medskip Una vez ha comenzado, guardará la medida que toma la brújula en la posición inicial. Ésta medida constituirá la primera referencia de la posición del robot. Tras ello, buscará el primer marcador, que por normativa se encontrará en frente de él. La búsqueda de códigos QR transcurre de la siguiente manera. El robot realizará un análisis visual, si éste falla, cambiará la altura de enfoque de la cámara y volverá a intentarlo. Como medida de seguridad, se ha programado que en el caso de que se produzcan 5 lecturas fallidas, el robot rote e intente recolocarse en su posición. 
 
 \medskip Tras realizar una lectura positiva de un marcador, se definirá una posición objetivo, basandose en la referencia del robot en ese momento y sumandole el incremento que indique el marcador. El robot comenzará a rotar y cuando alcance la posición objetivo tomará esa posición final como la nueva referencia. Tras esto, el algoritmo volverá a intentar detectar un código QR y se cerrará el bucle.
 

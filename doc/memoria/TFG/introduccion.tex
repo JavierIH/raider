@@ -2,7 +2,7 @@
 
 La Asociación de Robótica de la Universidad Carlos III de Madrid, AsRob \cite{webasrob}, surgió en el año 2006 con el objetivo de acercar la robótica a los alumnos de la universidad que compartían inquietudes e interés por el campo de la robótica. Desde sus inicios, las actividades de la asociación han contado con el apoyo del Departamento de Ingeniería de Sistemas y Automática, y del Robotics Labs \cite{webroboticslab}.
 
-\medskip A día de hoy, la asociación cuenta con mas de cien miembros activos repartidos en cinco líneas de investigación independientes, como son: Vehículos Aéreos no Tripulados (UAVs), Robot Devastation, Robots Personales de Competición, Impresoras 3D Open-Source y Robots Mini-Humanoides. El grupo de mini-humanoides trabaja con pequeño robots atropomórficos destinados a la investigación y competición. En la actualidad, el proyecto MYOD \cite{webmyod} propone la construcción de robots mini-humanoides compuestos integramente con piezas impresas y replicables. Sin embargo, cabe destacar que aunque se trata de proyectos diferentes, existen grandes sinergias entre ellos. Particularmente, los miembros de la línea de Robots Mini-Humanoides, está muy ligados al estudio de las impresoras 3D, investigando diferentes técnicas de impresión, diseño de estructuras y materiales.
+\medskip A día de hoy, la asociación cuenta con mas de cien miembros activos repartidos en cinco líneas de investigación independientes, como son: Vehículos Aéreos no Tripulados (UAVs), Robot Devastation, Robots Personales de Competición, Impresoras 3D Open-Source y Robots Mini-Humanoides. Sin embargo, cabe destacar que aunque se trata de proyectos diferentes, existen grandes sinergias entre ellos. Particularmente, los miembros de la línea de Robots Mini-Humanoides, está muy ligados al estudio de las impresoras 3D, investigando diferentes técnicas de impresión, diseño de estructuras y materiales. Prueba de ello es el proyecto MYOD \cite{webmyod}, el cual propone la construcción de robots mini-humanoides compuestos íntegramente con piezas impresas y replicables. 
 
 \section{Línea de investigación de robots Mini-Humanoides}
 
@@ -21,7 +21,7 @@ A continuación se muestran los objetivos que se persiguirán durante el desarroll
 
 \subsection{Desarrollar una plataforma robótica}
 
-El primer objetivo de este proyecto es el desarrollo de una plataforma robótica mini-humanoide de propósito general. Para llegar a ello será necesario estudiar los componentes que forman un robot humanoide. Sus capacidades deben ser al menos suficientes para desarrolar sobre la plataforma los objetivos que se listan a continuación. Además, se pretende que la plataforma sea lo suficientemente robusta y fácil de usar como para poder servir de base para proyectos futuros.
+El primer objetivo de este proyecto es el desarrollo de una plataforma robótica mini-humanoide de propósito general. Para llegar a ello será necesario estudiar los componentes que forman un robot humanoide. Sus capacidades deben ser al menos suficientes para desarrollar sobre la plataforma los objetivos que se listan a continuación. Además, se pretende que la plataforma sea lo suficientemente robusta y fácil de usar como para poder servir de base para proyectos futuros.
 
 \subsubsection{Estudiar los componentes que necesita un robot humanoide}
 
@@ -47,7 +47,7 @@ Otro objetivo será incluir sensores y actuadores para aumentar las capacidades t
 
 Dado que se prevee la inclusión de numerosos componente nuevos, se deberá rediseñar el sistema de alimentación de manera que cumpla dos condiciones. Por una parte, debe ser capaz de alimentar con diferentes tensiones a todos los miembros del sistema, adaptándose a los requerimientos eléctricos de cada uno. Por otra parte, debe ofrecer una autonomía total al robot razonable y suficiente para realizar pruebas de competición.
 
-\medskip También se procurará que las baterías sean fácilemnte intercambiables, sin necesidad de montar y desmontar partes mecánicas. Este objetivo se propone a partir de la necesidad de hacer cambios veloces de baterías en las competiciones de mini-humanoides.
+\medskip También se procurará que las baterías sean fácilmente intercambiables, sin necesidad de montar y desmontar partes mecánicas. Este objetivo se propone a partir de la necesidad de hacer cambios veloces de baterías en las competiciones de mini-humanoides.
  
 \subsubsection{Mejorar la estructura mecánica}
 
@@ -61,15 +61,15 @@ El robot debe diseñarse, montarse, programarse y testarse. Una vez se termine la
 
 \subsubsection{Programar la locomoción bípeda}
 
-Se deberá diseñar un sistema de locomoción completo del robot. En este punto se unen diversos objetivos, desde controlar las articulaciones por separado hasta la realización de programas de caminata. Se deberá conseguir al menos la realización de los siguientes movimientos: avance, rotación, desplazamiento lateral y reincorporación tras una caída. Junto a esto, se deberá crear una librería en que permita realizar movimientos de una forma cómoda y sencilla.
+Se deberá diseñar un sistema de locomoción completo del robot. En este punto se unen diversos objetivos, desde controlar las articulaciones por separado hasta la realización de programas de caminata. Se deberá conseguir al menos la realización de los siguientes movimientos: Avance, rotación, desplazamiento lateral y reincorporación tras una caída. Junto a esto, se deberá crear una librería que permita realizar movimientos de una forma cómoda y sencilla.
 
 \subsubsection{Programar sensores}
 
-Los sensores que se seleccionen deberán adecuarse para poder operar adecuadamente con la placa de control que se utilice. No solo deberán adecuarse electrónicamente hablando, sino que también deberán interpretarse su datos de forma correcta para extraer información útil durante el funcionamiento del robot. 
+Los sensores que se seleccionen deberán adecuarse para poder operar con la placa de control que se utilice. No solo deberán adecuarse electrónicamente hablando, sino que también deberán interpretarse su datos de forma correcta para extraer información útil durante el funcionamiento del robot. 
 
 \subsubsection{Desarrollar algoritmos de visión}
 
-El comportamiento del robot se basará en la información tomada por la cámara. Para procesar esta información se utilizarán las librerías de visión, por lo que será necesario familiarizarse con ellas y estudiar las diversas posibilidades que ofrece el campo de la visión por computador. Con ello, se desarrollarán programas adaptados a la plataforma robótica del proyecto. Éstos, deberán optimizarse de forma que funcionen correctamente con las capacidades de procesamiento del controlador.
+El comportamiento del robot se basará en la información tomada por la cámara. Para procesar esta información se utilizarán librerías de visión avanzada, por lo que será necesario familiarizarse con ellas y estudiar las diversas posibilidades que ofrece el campo de la visión por computador. Con ello, se desarrollarán programas adaptados a la plataforma robótica del proyecto. Éstos, deberán optimizarse de forma que funcionen correctamente con las capacidades de procesamiento del controlador.
 
 \subsubsection{Desarrollar aplicaciones de competición}
 

@@ -5,80 +5,80 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Robots Nao y DARwIn-OP}}{2}{figure.1.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Robot Sylar de la Asociaci\'on de Rob\'otica}}{7}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Prueba de la carrera de obst\'aculos}}{8}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Prueba de la escalera}}{9}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Prueba de sumo}}{9}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Marcador de la prueba de visi\'on}}{10}{figure.2.5}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Robot Sylar de la Asociaci\'on de Rob\'otica}}{8}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Prueba de la carrera de obst\'aculos}}{9}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Prueba de la escalera}}{10}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Prueba de sumo}}{10}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Marcador de la prueba de visi\'on}}{11}{figure.2.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Hitec Robonova \IeC {\copyright }Hitec RCD}}{11}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Kondo KHR-3HV}}{12}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Vstone Robovie-X}}{13}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Bioloid Premium}}{13}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Giger, de Andrew Alter}}{15}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Combate en Robo-One}}{15}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Partido de futbol en RoboCup}}{16}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Modulo Pixy CMUcam5 \IeC {\copyright }CMUcam.org}}{17}{figure.3.8}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hitec Robonova \IeC {\copyright }Hitec RCD}}{14}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Kondo KHR-3HV}}{14}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Vstone Robovie-X}}{15}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Bioloid Premium}}{16}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Giger, de Andrew Alter}}{18}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Combate en Robo-One}}{19}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Partido de futbol en RoboCup}}{20}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Modulo Pixy CMUcam5 \IeC {\copyright }CMUcam.org}}{22}{figure.3.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Microservo PWM}}{21}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Primer experimento.}}{23}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Segundo experimento.}}{23}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Tercer experimento.}}{23}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Sensor inercial MPU9150}}{24}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Br\'ujula magn\'etica CMPS03}}{24}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Microsoft LifeCam Cinema}}{25}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Placa Arbotix}}{26}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Placa CM900}}{27}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Placa OpenCM9.04}}{27}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces SBC BeagleBone Black}}{29}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Diagrama de conexiones}}{30}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Bater\IeC {\'\i }a LiPo}}{31}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Convertidor DC-DC comercial, UBEC}}{34}{figure.4.14}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Microservo PWM}}{27}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Primer experimento.}}{29}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Segundo experimento.}}{29}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Tercer experimento.}}{30}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sensor inercial MPU9150}}{31}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Br\'ujula magn\'etica CMPS03}}{32}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Microsoft LifeCam Cinema}}{33}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Placa Arbotix}}{35}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Placa CM900}}{36}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Placa OpenCM9.04}}{37}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces SBC BeagleBone Black}}{39}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Diagrama de conexiones}}{41}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Bater\IeC {\'\i }a LiPo}}{43}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Convertidor DC-DC comercial, UBEC}}{46}{figure.4.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{36}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{36}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces KiCad}}{37}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Qt Creator}}{38}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces CM9 IDE}}{39}{figure.5.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{48}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{49}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces KiCad}}{50}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Qt Creator}}{51}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces CM9 IDE}}{52}{figure.5.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Piezas necesarias para montar la cabeza}}{41}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Piezas necesarias para montar la cintura}}{42}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Piezas necesarias para montar el tronco}}{42}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Piezas necesarias para montar un brazo}}{42}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Piezas necesarias para montar una pierna}}{43}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Piezas necesarias para montar un pie}}{43}{figure.6.6}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Piezas necesarias para montar la cabeza}}{56}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Piezas necesarias para montar la cintura}}{56}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Piezas necesarias para montar el tronco}}{57}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Piezas necesarias para montar un brazo}}{58}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Piezas necesarias para montar una pierna}}{58}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Piezas necesarias para montar un pie}}{59}{figure.6.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Gr\'afica de tensi\'on entre salida para un sensor infrarrojo}}{45}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Esquema de entradas anal\'ogica de una BeagleBone Black}}{46}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Circuito de adecuaci\'on de un sensor infrarrojo}}{46}{figure.7.3}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Esquema de puertos I2C de una BeagleBone Black}}{46}{figure.7.4}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Circuito del bus I2C}}{46}{figure.7.5}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Placa de expasi\'on salida de fabricaci\'on}}{47}{figure.7.6}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Placa de expasi\'on con componentes soldados}}{47}{figure.7.7}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Placa de expansi\'on monstada en RAIDER}}{48}{figure.7.8}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces C\'amara Microsoft LifeCam desmontada}}{48}{figure.7.9}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Soportes de la cabeza para la c\'amara}}{48}{figure.7.10}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Cuello y soporte para la cabeza}}{48}{figure.7.11}
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Cuello y soporte para la cabeza}}{48}{figure.7.12}
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Sensores infrarrojos y soportes}}{49}{figure.7.13}
-\contentsline {figure}{\numberline {7.14}{\ignorespaces Brazos con sensores montados}}{49}{figure.7.14}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Gr\'afica de tensi\'on entre salida para un sensor infrarrojo}}{62}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Esquema de entradas anal\'ogica de una BeagleBone Black}}{63}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Circuito de adecuaci\'on de un sensor infrarrojo}}{64}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Esquema de puertos I2C de una BeagleBone Black}}{64}{figure.7.4}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Circuito del bus I2C}}{65}{figure.7.5}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Placa de expasi\'on salida de fabricaci\'on}}{66}{figure.7.6}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Placa de expasi\'on con componentes soldados}}{66}{figure.7.7}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Placa de expansi\'on monstada en RAIDER}}{66}{figure.7.8}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces C\'amara Microsoft LifeCam desmontada}}{67}{figure.7.9}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Soportes de la cabeza para la c\'amara}}{67}{figure.7.10}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Cuello y soporte para la cabeza}}{68}{figure.7.11}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Cuello y soporte para la cabeza}}{68}{figure.7.12}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Sensores infrarrojos y soportes}}{69}{figure.7.13}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Brazos con sensores montados}}{69}{figure.7.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Salida del comando lsusb}}{53}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Comprobaci\'on de conexi\'on para la webcam}}{54}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Comprobaci\'on de compatibilidad para la webcam}}{54}{figure.8.3}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Par\'ametros le\IeC {\'\i }dos de la c\'amara}}{54}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Puertos serie en una BeagleBone Black}}{55}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Algunas capas de Device Tree Overlays}}{55}{figure.8.6}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Habilitaci\'on de capas}}{55}{figure.8.7}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Lectura anal\'ogica del pin 4}}{55}{figure.8.8}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Amplitud de giro de un AX-12A}}{58}{figure.8.9}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{63}{figure.8.10}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Rangos de detecci\'on para un sensor Sharp}}{65}{figure.8.11}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Definici\'on experimental de los rangos de medida}}{65}{figure.8.12}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Salida del comando lsusb}}{73}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Comprobaci\'on de conexi\'on para la webcam}}{74}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Comprobaci\'on de compatibilidad para la webcam}}{74}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Par\'ametros le\IeC {\'\i }dos de la c\'amara}}{75}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Puertos serie en una BeagleBone Black}}{76}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Algunas capas de Device Tree Overlays}}{76}{figure.8.6}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Habilitaci\'on de capas}}{77}{figure.8.7}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Lectura anal\'ogica del pin 4}}{77}{figure.8.8}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Amplitud de giro de un AX-12A}}{80}{figure.8.9}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{85}{figure.8.10}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Rangos de detecci\'on para un sensor Sharp}}{87}{figure.8.11}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Definici\'on experimental de los rangos de medida}}{88}{figure.8.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Partido de futbol rob\'otico en M\'exico}}{69}{figure.9.1}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Flujograma de la prueba de visi\'on}}{70}{figure.9.2}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces C\'odigo QR de incio: "GoRaider"}}{70}{figure.9.3}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Partido de futbol rob\'otico en M\'exico}}{92}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Flujograma de la prueba de visi\'on}}{93}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces C\'odigo QR de inicio (Texto: GoRaider)}}{94}{figure.9.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
