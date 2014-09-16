@@ -17,6 +17,7 @@ A level-1 auxiliary file: programacion.aux
 A level-1 auxiliary file: aplicaciones.aux
 A level-1 auxiliary file: presupuesto.aux
 A level-1 auxiliary file: conclusion.aux
+A level-1 auxiliary file: anexopiezas.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
 Warning--to sort, need author or key in webasrob
@@ -30,7 +31,7 @@ Warning--to sort, need author or key in registermapimu
 Warning--to sort, need author or key in manualcmps03
 You've used 20 entries,
             2118 wiz_defined-function locations,
-            608 strings with 7256 characters,
+            609 strings with 7271 characters,
 and the built_in function-call counts, 6653 in all, are:
 = -- 656
 > -- 258

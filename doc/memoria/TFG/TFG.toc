@@ -78,12 +78,11 @@
 \contentsline {subsection}{\numberline {5.3.5}Git}{53}{subsection.5.3.5}
 \contentsline {chapter}{\numberline {6}Dise\~no de las partes mec\'anicas TODO}{55}{chapter.6}
 \contentsline {section}{\numberline {6.1}Cabeza}{55}{section.6.1}
-\contentsline {section}{\numberline {6.2}Cintura}{55}{section.6.2}
-\contentsline {section}{\numberline {6.3}Tronco}{56}{section.6.3}
-\contentsline {section}{\numberline {6.4}Brazos}{56}{section.6.4}
-\contentsline {section}{\numberline {6.5}Piernas}{56}{section.6.5}
-\contentsline {section}{\numberline {6.6}Pies y tobillos}{56}{section.6.6}
-\contentsline {section}{\numberline {6.7}Lista de piezas}{56}{section.6.7}
+\contentsline {section}{\numberline {6.2}Cintura}{56}{section.6.2}
+\contentsline {section}{\numberline {6.3}Tronco}{57}{section.6.3}
+\contentsline {section}{\numberline {6.4}Brazos}{57}{section.6.4}
+\contentsline {section}{\numberline {6.5}Piernas}{58}{section.6.5}
+\contentsline {section}{\numberline {6.6}Pies y tobillos}{59}{section.6.6}
 \contentsline {chapter}{\numberline {7}Desarrollo TODO MONTAJES}{61}{chapter.7}
 \contentsline {section}{\numberline {7.1}Adecuaci\'on de sensores}{61}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Infrarrojos Sharp}{61}{subsection.7.1.1}
@@ -144,4 +143,8 @@
 \contentsline {section}{\numberline {11.1}Pruebas de funcionamiento}{95}{section.11.1}
 \contentsline {section}{\numberline {11.2}Conclusi\'on}{95}{section.11.2}
 \contentsline {section}{\numberline {11.3}Situaci\'on y desarrollos futuros}{95}{section.11.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{97}{section.11.3}
+\contentsline {chapter}{Anexo: Listado de piezas}{97}{appendix*.55}
+\contentsline {chapter}{Anexo: Fotolitos de la placa de expansi\'on}{101}{appendix*.56}
+\contentsline {chapter}{Anexo: Esquem\'atico de la placa de expansi\'on}{105}{appendix*.57}
+\contentsline {chapter}{Anexo: Planos}{107}{appendix*.58}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{109}{appendix*.58}

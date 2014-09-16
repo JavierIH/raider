@@ -53,46 +53,49 @@
 \BOOKMARK [1][-]{section.6.4}{Brazos}{chapter.6}% 53
 \BOOKMARK [1][-]{section.6.5}{Piernas}{chapter.6}% 54
 \BOOKMARK [1][-]{section.6.6}{Pies y tobillos}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.7}{Lista de piezas}{chapter.6}% 56
-\BOOKMARK [0][-]{chapter.7}{Desarrollo TODO MONTAJES}{}% 57
-\BOOKMARK [1][-]{section.7.1}{Adecuaci\363n de sensores}{chapter.7}% 58
-\BOOKMARK [2][-]{subsection.7.1.1}{Infrarrojos Sharp}{section.7.1}% 59
-\BOOKMARK [2][-]{subsection.7.1.2}{Br\372jula y sensor inercial}{section.7.1}% 60
-\BOOKMARK [1][-]{section.7.2}{Desarrollo de una placa de expansi\363n TODO }{chapter.7}% 61
-\BOOKMARK [1][-]{section.7.3}{Montaje}{chapter.7}% 62
-\BOOKMARK [2][-]{subsection.7.3.1}{Montaje de la placa de expansi\363n}{section.7.3}% 63
-\BOOKMARK [2][-]{subsection.7.3.2}{Integraci\363n de la c\341mara en la cabeza}{section.7.3}% 64
-\BOOKMARK [2][-]{subsection.7.3.3}{Integraci\363n de los sensores infrarrojos en los brazos}{section.7.3}% 65
-\BOOKMARK [0][-]{chapter.8}{Programaci\363n TODO}{}% 66
-\BOOKMARK [1][-]{section.8.1}{Configuraci\363n de la BeagleBone Black}{chapter.8}% 67
-\BOOKMARK [2][-]{subsection.8.1.1}{Sistema operativo}{section.8.1}% 68
-\BOOKMARK [2][-]{subsection.8.1.2}{Instalaci\363n de librer\355as}{section.8.1}% 69
-\BOOKMARK [2][-]{subsection.8.1.3}{Configuraci\363n de la c\341mara}{section.8.1}% 70
-\BOOKMARK [2][-]{subsection.8.1.4}{Configuraci\363n de pines}{section.8.1}% 71
-\BOOKMARK [1][-]{section.8.2}{Sistema de locomoci\363n TODO}{chapter.8}% 72
-\BOOKMARK [2][-]{subsection.8.2.1}{Movimiento del servo PWM}{section.8.2}% 73
-\BOOKMARK [2][-]{subsection.8.2.2}{Movimiento de los actuadores Dynamixel}{section.8.2}% 74
-\BOOKMARK [2][-]{subsection.8.2.3}{Movimiento sincronizado de las articulaciones}{section.8.2}% 75
-\BOOKMARK [2][-]{subsection.8.2.4}{Funciones de movimientos combinados TODo }{section.8.2}% 76
-\BOOKMARK [2][-]{subsection.8.2.5}{Creaci\363n de movimientos completos TODO}{section.8.2}% 77
-\BOOKMARK [1][-]{section.8.3}{Comunicaci\363n serie TODO}{chapter.8}% 78
-\BOOKMARK [2][-]{subsection.8.3.1}{Comunicaci\363n serie en OpenCM TODO}{section.8.3}% 79
-\BOOKMARK [2][-]{subsection.8.3.2}{Comunicaci\363n serie en BeagleBone}{section.8.3}% 80
-\BOOKMARK [2][-]{subsection.8.3.3}{Comunicaci\363n con m\363dulo Bluetooth TODO}{section.8.3}% 81
-\BOOKMARK [1][-]{section.8.4}{Programaci\363n de sensores TODO}{chapter.8}% 82
-\BOOKMARK [2][-]{subsection.8.4.1}{Infrarrojos TODO}{section.8.4}% 83
-\BOOKMARK [2][-]{subsection.8.4.2}{IMU TODO}{section.8.4}% 84
-\BOOKMARK [2][-]{subsection.8.4.3}{Br\372jula TODO}{section.8.4}% 85
-\BOOKMARK [1][-]{section.8.5}{Algoritmos de visi\363n TODO}{chapter.8}% 86
-\BOOKMARK [2][-]{subsection.8.5.1}{An\341lisis de trayectorias en navegaci\363n TODO}{section.8.5}% 87
-\BOOKMARK [2][-]{subsection.8.5.2}{B\372squeda de lineas TODO}{section.8.5}% 88
-\BOOKMARK [2][-]{subsection.8.5.3}{Lectura de c\363digos QR TODO}{section.8.5}% 89
-\BOOKMARK [0][-]{chapter.9}{Aplicaciones}{}% 90
-\BOOKMARK [1][-]{section.9.1}{CEABOT 2014}{chapter.9}% 91
-\BOOKMARK [1][-]{section.9.2}{Spain Experience}{chapter.9}% 92
-\BOOKMARK [0][-]{chapter.10}{Presupuesto}{}% 93
-\BOOKMARK [0][-]{chapter.11}{Evaluaci\363n de resultados}{}% 94
-\BOOKMARK [1][-]{section.11.1}{Pruebas de funcionamiento}{chapter.11}% 95
-\BOOKMARK [1][-]{section.11.2}{Conclusi\363n}{chapter.11}% 96
-\BOOKMARK [1][-]{section.11.3}{Situaci\363n y desarrollos futuros}{chapter.11}% 97
-\BOOKMARK [0][-]{section.11.3}{Bibliograf\355a}{}% 98
+\BOOKMARK [0][-]{chapter.7}{Desarrollo TODO MONTAJES}{}% 56
+\BOOKMARK [1][-]{section.7.1}{Adecuaci\363n de sensores}{chapter.7}% 57
+\BOOKMARK [2][-]{subsection.7.1.1}{Infrarrojos Sharp}{section.7.1}% 58
+\BOOKMARK [2][-]{subsection.7.1.2}{Br\372jula y sensor inercial}{section.7.1}% 59
+\BOOKMARK [1][-]{section.7.2}{Desarrollo de una placa de expansi\363n TODO }{chapter.7}% 60
+\BOOKMARK [1][-]{section.7.3}{Montaje}{chapter.7}% 61
+\BOOKMARK [2][-]{subsection.7.3.1}{Montaje de la placa de expansi\363n}{section.7.3}% 62
+\BOOKMARK [2][-]{subsection.7.3.2}{Integraci\363n de la c\341mara en la cabeza}{section.7.3}% 63
+\BOOKMARK [2][-]{subsection.7.3.3}{Integraci\363n de los sensores infrarrojos en los brazos}{section.7.3}% 64
+\BOOKMARK [0][-]{chapter.8}{Programaci\363n TODO}{}% 65
+\BOOKMARK [1][-]{section.8.1}{Configuraci\363n de la BeagleBone Black}{chapter.8}% 66
+\BOOKMARK [2][-]{subsection.8.1.1}{Sistema operativo}{section.8.1}% 67
+\BOOKMARK [2][-]{subsection.8.1.2}{Instalaci\363n de librer\355as}{section.8.1}% 68
+\BOOKMARK [2][-]{subsection.8.1.3}{Configuraci\363n de la c\341mara}{section.8.1}% 69
+\BOOKMARK [2][-]{subsection.8.1.4}{Configuraci\363n de pines}{section.8.1}% 70
+\BOOKMARK [1][-]{section.8.2}{Sistema de locomoci\363n TODO}{chapter.8}% 71
+\BOOKMARK [2][-]{subsection.8.2.1}{Movimiento del servo PWM}{section.8.2}% 72
+\BOOKMARK [2][-]{subsection.8.2.2}{Movimiento de los actuadores Dynamixel}{section.8.2}% 73
+\BOOKMARK [2][-]{subsection.8.2.3}{Movimiento sincronizado de las articulaciones}{section.8.2}% 74
+\BOOKMARK [2][-]{subsection.8.2.4}{Funciones de movimientos combinados TODo }{section.8.2}% 75
+\BOOKMARK [2][-]{subsection.8.2.5}{Creaci\363n de movimientos completos TODO}{section.8.2}% 76
+\BOOKMARK [1][-]{section.8.3}{Comunicaci\363n serie TODO}{chapter.8}% 77
+\BOOKMARK [2][-]{subsection.8.3.1}{Comunicaci\363n serie en OpenCM TODO}{section.8.3}% 78
+\BOOKMARK [2][-]{subsection.8.3.2}{Comunicaci\363n serie en BeagleBone}{section.8.3}% 79
+\BOOKMARK [2][-]{subsection.8.3.3}{Comunicaci\363n con m\363dulo Bluetooth TODO}{section.8.3}% 80
+\BOOKMARK [1][-]{section.8.4}{Programaci\363n de sensores TODO}{chapter.8}% 81
+\BOOKMARK [2][-]{subsection.8.4.1}{Infrarrojos TODO}{section.8.4}% 82
+\BOOKMARK [2][-]{subsection.8.4.2}{IMU TODO}{section.8.4}% 83
+\BOOKMARK [2][-]{subsection.8.4.3}{Br\372jula TODO}{section.8.4}% 84
+\BOOKMARK [1][-]{section.8.5}{Algoritmos de visi\363n TODO}{chapter.8}% 85
+\BOOKMARK [2][-]{subsection.8.5.1}{An\341lisis de trayectorias en navegaci\363n TODO}{section.8.5}% 86
+\BOOKMARK [2][-]{subsection.8.5.2}{B\372squeda de lineas TODO}{section.8.5}% 87
+\BOOKMARK [2][-]{subsection.8.5.3}{Lectura de c\363digos QR TODO}{section.8.5}% 88
+\BOOKMARK [0][-]{chapter.9}{Aplicaciones}{}% 89
+\BOOKMARK [1][-]{section.9.1}{CEABOT 2014}{chapter.9}% 90
+\BOOKMARK [1][-]{section.9.2}{Spain Experience}{chapter.9}% 91
+\BOOKMARK [0][-]{chapter.10}{Presupuesto}{}% 92
+\BOOKMARK [0][-]{chapter.11}{Evaluaci\363n de resultados}{}% 93
+\BOOKMARK [1][-]{section.11.1}{Pruebas de funcionamiento}{chapter.11}% 94
+\BOOKMARK [1][-]{section.11.2}{Conclusi\363n}{chapter.11}% 95
+\BOOKMARK [1][-]{section.11.3}{Situaci\363n y desarrollos futuros}{chapter.11}% 96
+\BOOKMARK [0][-]{appendix*.55}{Anexo: Listado de piezas}{}% 97
+\BOOKMARK [0][-]{appendix*.56}{Anexo: Fotolitos de la placa de expansi\363n}{}% 98
+\BOOKMARK [0][-]{appendix*.57}{Anexo: Esquem\341tico de la placa de expansi\363n}{}% 99
+\BOOKMARK [0][-]{appendix*.58}{Anexo: Planos}{}% 100
+\BOOKMARK [0][-]{appendix*.58}{Bibliograf\355a}{}% 101
