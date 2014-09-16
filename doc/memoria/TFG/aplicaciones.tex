@@ -1,25 +1,59 @@
 %chapter introduce un nuevo capítulo
 \chapter{Aplicaciones}
 
-
-\section{CEABOT 2014}
+Llegamos a este capítulo, el estado del proyecto es el siguiente. Se ha desarrollado un robot completo tanto a nivel de hardware como a nivel de software. Así mismo, también se han creado herramientas para que el robot pueda interactuar con el entorno de forma controlada. Con los recursos que se han generado se preparará el robot para participar en dos eventos: La exhibición de futbol robótico Spain Experience, y la competición CEABOT 2014
 
 \section{Spain Experience}
 
+Spain Experience es un evento organizado por la Liga de Futbol Profesional en el que se unen actividades de sectores tecnológicos, empresariales y agroalimentarios. Con motivo de su celebración en México, el Centro de Investigación y de Estudios Avanzados (Cinvestav) \cite{webcinvestav} invitó a miembros del Robotics Lab y de AsRob a participar en un partido de futbol robótico inspirado en la competición RoboCup. El campo, visible en la figura \ref{fotomexico} es propio de robots de mayor tamaño, lo que podría suponer una desventaja..
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/fotomexico}   
+\caption{Partido de futbol robótico en México}
+\label{fotomexico}
+\end{figure}
+\FloatBarrier
+
+\medskip Para preparar a RAIDER para la exhibición, se optará por montar el módulo Bluetooth que se comentó en el apartado ( TODO ) y teleoperarlo desde un smartphone. De este modo, el robot estaría funcionando durante mas de dos horas realizando cambios de batería, aproximadamente cada 10 minutos. Esta exhibición supone un gran paso en el desarrollo del robot, ya que es una forma excelente de someter a estress sus componentes y de operar en un escenario externo al laboratorio.
+
+\section{CEABOT 2014}
+
+Tal y como se ha ido diciendo a lo largo del proyecto, el robot se presenta a la edición de 2014 del CEABOT. Se propuso la participación de RAIDER en tres pruebas: Navegación, visión y sumo. Estos programas pueden encontrarse en el repositorio, en la carpeta \textit{programming/src/apps/ceabot}. A continuación se detallan los algoritmos que se han diseñado para cada una de las pruebas.
+
+\subsection{Algoritmo para la prueba de visión}
+
+El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brújula. Con la cámara y la funcion \textit{findQR()} de \textit{raider.h} se realizará la detección de los marcadores. Por otro lado, la brújula se encargará de controlar el giro del robot para adecuarlo a las exigencias del marcador. A continuación, en la figura \ref{flujovision} se mostrará el diagrama de estados que se ha programado.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/flujovision}   
+\caption{Flujograma de la prueba de visión}
+\label{flujovision}
+\end{figure}
+\FloatBarrier
+
+
+\medskip El primer lugar el robot parte de un estado de inicio, en el que mantiene una posición de reposo. Seguirá en esta posición hasta que se le de una señal de inicio. La señal de inicio se ha programado en la función \textit{waitStart()} de \textit{raider.h}. Una vez se ejecuta el robot se mantendrá realizando lecturas de códigos QR. Si se pone el marcador de la figura \ref{goraider} en frente del robot (impreso en una tarjeta de papel, por ejemplo) el robot comenzará la prueba.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/goraider}   
+\caption{Código QR de inicio: "GoRaider"}
+\label{goraider}
+\end{figure}
+\FloatBarrier
+
+
+\medskip Una vez ha comenzado, guardará la medida que toma la brújula en la posición inicial. Ésta medida constituirá la primera referencia de la posición del robot. Tras ello, buscará el primer marcador, que por normativa se encontrará en frente de él. La búsqueda de códigos QR transcurre de la siguiente manera. El robot realizará un análisis visual, si éste falla, cambiará la altura de enfoque de la cámara y volverá a intentarlo. Como medida de seguridad, se ha programado que tras 5 lecturas fallidas el robot rote e intente recolocarse en la referencia. 
+
+\medskip Tras realizar una lectura positiva de un marcador, se definirá una posición objetivo, basandose en la referencia del robot en ese momento y sumandole el incremento que indique el marcador. El robot comenzará a rotar y cuando alcance la posición objetivo tomará esa posición final como la nueva referencia. Tras esto, el algoritmo volverá a intentar detectar un código QR y se cerrará el bucle.
+
+\medskip Cabe destacar un detalle: Las posiciones objetivo se definirán con la referencia de la posición del robot y el incremento que marque el código QR. Salvo en la primera detección (en la que la referencia se toma de una medida de la brújula), las referencias se definirán como la posición objetivo de la búsqueda anterior y en ningún caso como una medida de la b?ujula al terminar los movimientos. De esta forma cada punto objetivo no estará sujeto a errores acumulativos, ya que su distancia respecto a la referencia inicial será siempre un múltiplo de $45º$. 
+
+\subsection{Algoritmo para la prueba de navegación}
+\subsection{Algoritmo para la prueba de sumo}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-\paragraph{Palabras clave:} palabraclave1, palabraclave2, palabraclave3.
 
