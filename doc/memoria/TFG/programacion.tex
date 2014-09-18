@@ -504,33 +504,195 @@ Conectada por I2C, podemos realizar una lectura del registro 01 para obtener la 
 Conectada por I2c, los registros 02 y 03 nos ofrecen una lectura de la medida de la brújula en un rango de 0 a 3600. De esta manera, la medida extraída tiene una precisión de $0.1º$ y no necesita ninguna adecuación.
 \end{itemize}
 
-Se eligió conectarla por I2C por su simplicidad en su cableado. Así mismo, se ha usado el método de lectura de dos registros por su mayor precisión.
+Se eligió conectarla por I2C por la simplicidad en su cableado. Así mismo, se ha usado el método de lectura de dos registros por su mayor precisión.
 
 
 \section{Algoritmos de visión TODO} 
+
+Llegados a este punto, ya pueden programarse algoritmos de visión en el robot. A continuación se mostrarán tres algoritmos inspirados en la competición CEABOT.
+
 \subsection{Análisis de trayectorias en navegación TODO} 
-\subsection{Búsqueda de lineas TODO}
-\subsection{Lectura de códigos QR TODO} 
+
+El primer algoritmo que se ha programado es la búsqueda de trayectorias para la prueba de navegación. Este código puede consultarse en el método \textit{findWay()} de \textit{raider.h}.
+
+\medskip El primer paso será tomar una foto del campo como la que aparece en la figura \ref{findway1}. Como se puede observar existe bastante suciedad en el suelo, hay marcas entre las tablas y algunos de los obstáculos provocan sombras.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/findway1}   %raiderrangos
+\caption{findway}
+\label{findway1}
+\end{figure}
+\FloatBarrier
+
+\medskip Tomando esta imagen como punto de partida, lo primero que se ha hecho es analizar cual es la superficie navegable. El código de este procedimiento se encuentra en la funcion \textit{detectGreen()} de \textit{eye.h}. En el sistema RGB cada pixel de una imagen describe su color en base a tres componentes: rojo, verde y azul. El objetivo será separar la imagen de tres canales en tres imagenes de un solo canal. En la imágen de la figura \ref{findway2} se muestran las tres imágenes fruto de la descomposición de la imagen original (De izquierda a derecha: Canal rojo, canal verde y canal azul).
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.33\textwidth} >{\arraybackslash}m{0.33\textwidth}  >{\arraybackslash}m{0.33\textwidth}}
+\includegraphics[width=0.3\textwidth]{figuras/findway2r} & 
+\includegraphics[width=0.3\textwidth]{figuras/findway2g} & 
+\includegraphics[width=0.3\textwidth]{figuras/findway2b}\\
+\end{tabular}\caption{Descomposición de la imagen en sus tres canales RGB}
+\label{findway2}
+\end{figure}
+\FloatBarrier
+
+\medskip La primera conclusión que puede sacarse al ver estas tres imágenes es que en el canal verde apenas existe contraste entre el color verde del suelo y el color blanco de los obstáculos. Esto tiene sentido ya que atendiendo a la teoría, un color verde puro (en RGB (0,255,0)) y un color blanco puro (en RGB (255,255,255)) contienen la misma cantidad de verde (255). En las otras dos imágenes, sí que se observa un mayor contraste. Si el color verde fuese puro, su componente azul y su componente roja serían nulas. Sin embargo, como se trabaja en un entorno real, los canales azul y rojo no muestran un color totalmente negro en el suelo.
+
+\medskip El campo del campeonato CEABOT por normativa es de color verde, sin embargo no se especifica si la superficie será mate o brillante, si la iluminación estará bien enfocada... etc. Por ello, aunque a priori en el campo de pruebas de la Asociación de Robótica parezca que el canal que mejor diferencia el suelo y los obstáculos sea el canal rojo, en otros campos podremos encontrarnos que funciona mejor el canal azul.
+
+\medskip Para solucionar esto, se ha realizado una mezcla de canales que aúne las características que nos conviene conservar de la muestra. La operación que se realiza es la siguiente. Por una parte, tomando como base la imágen del canal verde, le restaremos la imágen del canal rojo. Esto eliminará la componente de rojo residual que tiene la imagen del canal verde. Paralelamente, realizaremos la misma operación tomando como base la imágen del canal verde y restándole la imagen del canal azul para eliminar el azul residual. Las dos imágenes producto de ambas restas se muestran en la figura \ref{findway3} 
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.45\textwidth]{figuras/findway3r} & 
+\includegraphics[width=0.45\textwidth]{figuras/findway3b}\\
+\end{tabular}\caption{Resta de canales verde y rojo, y de canales verde y azul}
+\label{findway3}
+\end{figure}
+\FloatBarrier
+
+\medskip Con esto, se han obtenido dos imágenes que conservan el color verde y carecen del resto. Para terminar, ambas imágenes se suman y el resultado obtenido, mostrado en la figura \ref{findway4}, supone la máxima detección de superficie navegable de la imagen original.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/findway4}   
+\caption{Detección de superficie navegable}
+\label{findway4}
+\end{figure}
+\FloatBarrier
+
+\medskip Ahora, la imagen podrá umbralizarse con bastante seguridad, ya que existe bastante diferencia entre la zona blanca y la negra. En la imagen \ref{findway5} se muestra cómo queda la imagen \ref{findway4} tras aplicarle un desenfoque para suavizar la textura y una umbralización. Esta imagen supone la salida de la función \textit{detectGreen()}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/findway5}   
+\caption{Umbralización de obstáculos y superficie navegable}
+\label{findway5}
+\end{figure}
+\FloatBarrier
+
+\medskip Llegado este punto, ya se ha obtenido la información de qué elementos de la imagen constituyen obstáculos (zonas negras) y qué elemento constituye el suelo (zona blanca). A priori, se sabe que el robot podrá desplazarse con seguridad por la zona blanca, no obstante, será necesario indicar un camino que el robot pueda seguir. Para definir una trayectoria que recorra la superficie blanca, se ha optado por esqueletizar el contorno blanco. Existen muchos algoritmos de esqueletización, como el Hall \cite{hall1989fast}, el Guo-Hall \citep{guo1989parallel} o el Zhang-Suen \citep{zhang1984fast}. Se ha utilizado el algoritmo de Zhang-Suen porque es mas rápido que el resto y generalmente ofrece mejores resultados. Si aplicamos el algoritmo diretamente sobre la imagen \ref{findway5}, obtendremos la imagen mostrada en la figura \ref{findway6}. Junto a la imagen esqueletizada, se muestra un esquema de la proyección de la trayectoria sobre el campo.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.45\textwidth]{figuras/findway6} & 
+\includegraphics[width=0.45\textwidth]{figuras/findway6m}\\
+\end{tabular}\caption{Esqueletización del controno abierto y esquema del entorno}
+\label{findway6}
+\end{figure}
+\FloatBarrier
+
+\medskip La esqueletización funciona bastante bien, pero hay un problema. Dado que el contorno a esqueletizar toca los bordes de la imagen, su contorno no está totalmente definido. Para evitar esto se ha relizado una pequeña tranformación a la imágen antes de aplicarle el algoritmo. Esta transformación consiste en dibujar los bordes laterales de la imagen, de forma que corten el contorno y cierren su perímetro exterior. Una vez hecho esto, el resultado mejora notablemente, tal y como puede observarse en la figura \ref{findway7}
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.45\textwidth]{figuras/findway7} & 
+\includegraphics[width=0.45\textwidth]{figuras/findway7m}\\
+\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno}
+\label{findway7}
+\end{figure}
+\FloatBarrier
+
+Para evaluar la acción que deberá tomar el robot, en cada muestra se toma un segmento cuyo punto de inicio coincide con el punto de inicio de la trayectoria, y cuyo punto final estará contenido en la trayectoria, a una distancia parametrizable. Este segmento puede observarse en la figura \ref{findway8}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/findway8}   
+\caption{Segmento de referencia para la extracción de datos (en azul)}
+\label{findway8}
+\end{figure}
+\FloatBarrier
+
+\medskip A partir de este segmento se han extraído dos datos. El primer dato, es la distancia horizontal que hay entre el robot y el inicio del segmento. El segundo dato es la orientación del segmento.
+
+\medskip En la imagen de la figura \ref{findway9} se observa una situación en la que existen dos posibles caminos.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.45\textwidth]{figuras/findway9o} & 
+\includegraphics[width=0.45\textwidth]{figuras/findway9} \\
+\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno}
+\label{findway9}
+\end{figure}
+\FloatBarrier
+
+\medskip Cuando esto ocurre se hace una comprobación de cual de ellos es el que permite llegar mas lejos. En caso de que ambos caminos sean igual de largos, se escogerá el que esté mas cerca del robot. Ocurrirá de igual modo cuando el camino muestre una ramificación, se tomará la que permita llegar mas lejos. Esta situación puede observarse en la figura \ref{findway10}.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.45\textwidth]{figuras/findway10o} & 
+\includegraphics[width=0.45\textwidth]{figuras/findway10} \\
+\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno}
+\label{findway10}
+\end{figure}
+\FloatBarrier
+
+\subsection{Detección de lineas}
+
+Otra de los algoritmos que se han desarrollado es la detección de lineas. En el campo de pruebas existen dos lineas blancas. Estas lineas marcan zonas del campo relevantes durante el desarrollo de la prueba, por tanto será necesario contar con un programa que detecte las lineas y su posición respecto al robot. El código puede consultarse en el método \textit{findLine} de \textit{raider.h}
+
+Para comenzar, se tomará una imagen y se pasará por la función \textit{detectGreen}, detallada en el apartado anterior. A parte, para ahorrar recursos y aligerar el procesamiento, se recortará la imagen en altura. En la figura \ref{findline1} se muestra la imagen original junto a la que se tomará como punto de partida.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.45\textwidth]{figuras/findline1} & 
+\includegraphics[width=0.45\textwidth]{figuras/findline2} \\
+\end{tabular}
+\caption{Imágen original e imágen tras aplicar la función \textit{detectGreen}}
+\label{findline1}
+\end{figure}
+\FloatBarrier
+
+\medskip Primero pasaremos a realizar una busqueda de contornos \cite{canny1986computational}, aplicando la función \textit{Canny()} de OpenCV. La imagen se transforma en la figura \ref{findline3}. Como puede verse en la imágen, se han marcado los filos de los contornos de la línea y del obstáculo.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/findline3} \\
+\caption{Detección de contornos}
+\label{findline3}
+\end{figure}
+\FloatBarrier
+
+\medskip Para que el algoritmo funcione correctamente, interesará que detecte la línea y el resto de cuerpos del campo no produzcan falsos positivos. Por tanto, el próximo objetivo es eliminar las rectas producidas por cuerpos ajenos a la linea blanca. Una forma sencilla de lograr esto es el método de la dilatación y la erosión. Primero se dilatarán los contornos blancos de la imágen $n$ veces hasta que los dos filos de la linea blanca se unan, es decir, los dos contornos se convertirán en un contorno mas grueso. Tras ello, la imagen se erosionará $n+1$ veces. Esta erosión eliminará por completo las lineas producidas por cuerpos externos, pero mantendrá el contorno de la linea por ser mas grueso. Tras ello, el resultado es el que puede visualizarse en la figura \ref{findline4}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/findline4} \\
+\caption{Dilatación y erosión de contornos}
+\label{findline4}
+\end{figure}
+\FloatBarrier
+
+\medskip Ahora, una simple detección de líneas basada en la transformada de Hough \ref{duda1972use}, será suficiente para definir la linea blanca. Para ello se ha utilizado la función de OpenCV, \textit{HoughLines}, ajustando empíricamente sus parámetros para definir una linea de una longitud adecuada y evitar falsos positivos de los restos de cuerpos externos que puedan quedar en la imágen. Tras realizar una búsqueda y proyectarla en la imágen original, se ha obtenido el resultado de la figura \ref{findline5}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/findline5} \\
+\caption{Resultado final de \textit{findLine}}
+\label{findline5}
+\end{figure}
+\FloatBarrier
+
+\subsection{Lectura de códigos QR} 
  
+Para terminar, se ha realizado un algoritmo de detección de códigos QR basado en la librería ZBar \cite{brown2012zbar}. El algoritmo se utilizará tanto para la la prueba de visión del CEABOT como para dar instrucciones de propótito general al robot. Una de estas instrucciones podrá ser el inicio de una prueba, la selección de qué prueba debe realizar o cualquier otra que sea necesaria. El código programado se encuentra en la función \textit{findQR} de \textit{raider.h}
 
+\medskip La librería ZBar está preparada para detectar diferentes tipos de códigos. En este caso, se ha limitado a que analice códigos QR en una imágen. A parte del código, podemos analizar su posición y su tamaño. En la figura \ref{findqr1} puede observar la detección de un marcador de la prueba de visión.	
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/findqr} \\
+\caption{Análisis de códigos QR en una imagen}
+\label{findqr1}
+\end{figure}
+\FloatBarrier
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\medskip Adicionalmente, se ha programado de que en el hipotético caso de que detecte dos códigos en una imágen, sólo analice el código que se encuentre más cerca del centro de la imágen. Gracias a esto, el sistema será mas robusto de cara a la prueba de visión del CEABOT.

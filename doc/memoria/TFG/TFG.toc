@@ -131,22 +131,22 @@
 \contentsline {subsection}{\numberline {8.4.2}IMU TODO}{88}{subsection.8.4.2}
 \contentsline {subsection}{\numberline {8.4.3}Br\'ujula TODO}{89}{subsection.8.4.3}
 \contentsline {section}{\numberline {8.5}Algoritmos de visi\'on TODO}{89}{section.8.5}
-\contentsline {subsection}{\numberline {8.5.1}An\'alisis de trayectorias en navegaci\'on TODO}{89}{subsection.8.5.1}
-\contentsline {subsection}{\numberline {8.5.2}B\'usqueda de lineas TODO}{89}{subsection.8.5.2}
-\contentsline {subsection}{\numberline {8.5.3}Lectura de c\'odigos QR TODO}{89}{subsection.8.5.3}
-\contentsline {chapter}{\numberline {9}Aplicaciones}{91}{chapter.9}
-\contentsline {section}{\numberline {9.1}Spain Experience}{91}{section.9.1}
-\contentsline {section}{\numberline {9.2}CEABOT 2014}{92}{section.9.2}
-\contentsline {subsection}{\numberline {9.2.1}Algoritmo para la prueba de visi\'on}{92}{subsection.9.2.1}
-\contentsline {subsection}{\numberline {9.2.2}Algoritmo para la prueba de navegaci\'on}{95}{subsection.9.2.2}
-\contentsline {subsection}{\numberline {9.2.3}Algoritmo para la prueba de sumo}{95}{subsection.9.2.3}
-\contentsline {chapter}{\numberline {10}Presupuesto}{97}{chapter.10}
-\contentsline {chapter}{\numberline {11}Evaluaci\'on de resultados}{99}{chapter.11}
-\contentsline {section}{\numberline {11.1}Pruebas de funcionamiento}{99}{section.11.1}
-\contentsline {section}{\numberline {11.2}Conclusi\'on}{99}{section.11.2}
-\contentsline {section}{\numberline {11.3}Situaci\'on y desarrollos futuros}{99}{section.11.3}
-\contentsline {chapter}{Anexo: Listado de piezas}{101}{appendix*.54}
-\contentsline {chapter}{Anexo: Fotolitos de la placa de expansi\'on}{105}{appendix*.55}
-\contentsline {chapter}{Anexo: Esquem\'atico de la placa de expansi\'on}{109}{appendix*.56}
-\contentsline {chapter}{Anexo: Planos}{111}{appendix*.57}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{113}{appendix*.57}
+\contentsline {subsection}{\numberline {8.5.1}An\'alisis de trayectorias en navegaci\'on TODO}{90}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}Detecci\'on de lineas}{95}{subsection.8.5.2}
+\contentsline {subsection}{\numberline {8.5.3}Lectura de c\'odigos QR}{97}{subsection.8.5.3}
+\contentsline {chapter}{\numberline {9}Aplicaciones}{99}{chapter.9}
+\contentsline {section}{\numberline {9.1}Spain Experience}{99}{section.9.1}
+\contentsline {section}{\numberline {9.2}CEABOT 2014}{100}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Algoritmo para la prueba de visi\'on}{100}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}Algoritmo para la prueba de navegaci\'on}{103}{subsection.9.2.2}
+\contentsline {subsection}{\numberline {9.2.3}Algoritmo para la prueba de sumo}{105}{subsection.9.2.3}
+\contentsline {chapter}{\numberline {10}Presupuesto}{109}{chapter.10}
+\contentsline {chapter}{\numberline {11}Evaluaci\'on de resultados}{111}{chapter.11}
+\contentsline {section}{\numberline {11.1}Pruebas }{111}{section.11.1}
+\contentsline {section}{\numberline {11.2}Conclusi\'on}{112}{section.11.2}
+\contentsline {section}{\numberline {11.3}Desarrollos futuros}{112}{section.11.3}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{115}{section.11.3}
+\contentsline {chapter}{Anexo: Listado de piezas}{119}{appendix*.55}
+\contentsline {chapter}{Anexo: Fotolitos de la placa de expansi\'on}{123}{appendix*.56}
+\contentsline {chapter}{Anexo: Esquem\'atico de la placa de expansi\'on}{127}{appendix*.57}
+\contentsline {chapter}{Anexo: Planos}{129}{appendix*.58}

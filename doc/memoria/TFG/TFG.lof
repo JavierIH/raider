@@ -75,10 +75,28 @@
 \contentsline {figure}{\numberline {8.10}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{85}{figure.8.10}
 \contentsline {figure}{\numberline {8.11}{\ignorespaces Rangos de detecci\'on para un sensor Sharp}}{87}{figure.8.11}
 \contentsline {figure}{\numberline {8.12}{\ignorespaces Definici\'on experimental de los rangos de medida}}{88}{figure.8.12}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces findway}}{90}{figure.8.13}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Descomposici\'on de la imagen en sus tres canales RGB}}{90}{figure.8.14}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Resta de canales verde y rojo, y de canales verde y azul}}{91}{figure.8.15}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Detecci\'on de superficie navegable}}{92}{figure.8.16}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Umbralizaci\'on de obst\'aculos y superficie navegable}}{92}{figure.8.17}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Esqueletizaci\'on del controno abierto y esquema del entorno}}{93}{figure.8.18}
+\contentsline {figure}{\numberline {8.19}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{93}{figure.8.19}
+\contentsline {figure}{\numberline {8.20}{\ignorespaces Segmento de referencia para la extracci\'on de datos (en azul)}}{94}{figure.8.20}
+\contentsline {figure}{\numberline {8.21}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{94}{figure.8.21}
+\contentsline {figure}{\numberline {8.22}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{95}{figure.8.22}
+\contentsline {figure}{\numberline {8.23}{\ignorespaces Im\'agen original e im\'agen tras aplicar la funci\'on \textit {detectGreen}}}{95}{figure.8.23}
+\contentsline {figure}{\numberline {8.24}{\ignorespaces Detecci\'on de contornos}}{96}{figure.8.24}
+\contentsline {figure}{\numberline {8.25}{\ignorespaces Dilataci\'on y erosi\'on de contornos}}{96}{figure.8.25}
+\contentsline {figure}{\numberline {8.26}{\ignorespaces Resultado final de \textit {findLine}}}{97}{figure.8.26}
+\contentsline {figure}{\numberline {8.27}{\ignorespaces An\'alisis de c\'odigos QR en una imagen}}{97}{figure.8.27}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Partido de futbol rob\'otico en M\'exico}}{92}{figure.9.1}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Flujograma de la prueba de visi\'on}}{93}{figure.9.2}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces C\'odigo QR de inicio (Texto: GoRaider)}}{94}{figure.9.3}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Partido de futbol rob\'otico en M\'exico}}{100}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Diagrama de estados simplificado de la prueba de visi\'on}}{101}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces C\'odigo QR de inicio (Texto: GoRaider)}}{102}{figure.9.3}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Diagrama de estados simplificado de la prueba de navegaci\'on}}{104}{figure.9.4}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Diagrama de estados simplificado de la prueba de sumo}}{106}{figure.9.5}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Interruptor de emergencia}}{107}{figure.9.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

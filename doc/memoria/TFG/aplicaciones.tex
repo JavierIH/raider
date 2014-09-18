@@ -28,7 +28,7 @@ El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brú
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/flujovision}   
-\caption{Flujograma de la prueba de visión}
+\caption{Diagrama de estados simplificado de la prueba de visión}
 \label{flujovision}
 \end{figure}
 \FloatBarrier
@@ -51,8 +51,56 @@ El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brú
 \medskip Cabe destacar un detalle: Las posiciones objetivo se definirán con la referencia de la posición del robot y el incremento que marque el código QR. Salvo en la primera detección (en la que la referencia se toma de una medida de la brújula), las referencias se definirán como la posición objetivo de la búsqueda anterior y en ningún caso como una medida de la b?ujula al terminar los movimientos. De esta forma cada punto objetivo no estará sujeto a errores acumulativos, ya que su distancia respecto a la referencia inicial será siempre un múltiplo de $45º$. 
 
 \subsection{Algoritmo para la prueba de navegación}
+
+El algoritmo de la prueba de navegación quizás sea el mas complejo de los tres programados. En la figura \ref{flujonavegacion} se ha realizado un diagrama de estados a alto nivel del comportamiento del robot durante la prueba.
+
+\medskip De forma similar a la prueba de visión, el robot partirá de una posición de reposo, y se mantedrá en esa posición hasta que le indiquemos que comience la prueba con el código QR de la figura \ref{goraider}. Una vez que se da la orden, el robot toma una referencia magnética de la dirección en la que deberá recorrer el campo. Tras ello, comenzará a caminar.
+
+\medskip Se ha implementado un control de caídas continuo durante toda la prueba. Para ello se ha utilizado la función \textit{getFall}, detallada anteriormente en el apartado TODO . Después de realizar cada movimiento, RAIDER evalúa si su posición es vertical respecto al suelo. En caso de que se detecte una caída, el robot se levantará de forma autónoma y continuará con su programación. 
+
+\medskip Antes de dar cada paso, RAIDER analiza la trayectoria que debe seguir con la función \textit{findWay}. Esta función, como se vió en el apartado TODO , devolverá datos de la distancia que existe entre el robot y el punto de inicio de la trayectoria, y sobre el ángulo que forma el primer tramo de la trayectoria. Si el robot está lejos del punto de inicio, deberá acercarse con pasos laterales. Si el ángulo que forma el tramo es demasiado amplio, el robot rotará sobre sí mismo para orientarse. La definición de "lejano" y "amplio", y su evaluación respecto al robot, se realizan con dos parámetros parametrizables dentro de \textit{raider.h}. Por otro lado, cuando la linea es recta el robot podrá avanzar sin problemas. Existe una condición más, si el robot avanza de forma recta tres veces seguidas, se ejecutará una rutina para controlar si el robot está orientado correctamente y está siguiendo la dirección adecuada. Cuando esto ocurre, se compara la dirección medida por la brújula en ese instante con la referencia magnética que se tomó al principio de la prueba. En caso de que esta dirección sea diferente, el robot rotará sobre sí mismo para recuperar la orientación.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/flujonavegacion}   
+\caption{Diagrama de estados simplificado de la prueba de navegación}
+\label{flujonavegacion}
+\end{figure}
+\FloatBarrier
+
+\medskip Tras ejecutar el desplazamiento, RAIDER intenta buscar la linea blanca mediante la función \textit{findLine}. Si no hay ninguna detección volverá a buscar una trayectoria para seguir avanzando, sin embargo, si encuentra la linea blanca, se realizará una rutina especial. Primeramente cabe explicar qué significa esto: Que encuentre la linea blanca significa que ha llegado al ecuador de la prueba y que deberá cruzarla para posteriormente realizar el camino de vuelta. Por tanto, si el resultado de buscar la linea es positivo, la función \textit{findLine} nos devolverá dos valores. Por una parte tendremos el valor de la distancia del robot al centro de la recta, que nos dará una idea aproximada de cuantos pasos necesitará realizar para cruzarla. Por otra parte, tenedremos el valor de el angulo que forma el robot respecto a la linea. Nos interesa que RAIDER se sitúe perpendicularmente a la linea, por tanto, si este ángulo está lejos de esa posición será necesario que el robot se oriente de forma adecuada. Para definir si el robot está en un angulo lo suficientemente cerca de la perpendicularidad de la linea o debe rotarse un poco, se ha definido un valor parametrizable en la función \textit{raider.h}.
+
+\medskip Ya colocado correctamente junto a la linea, RAIDER caminará hacia el otro lado. Al llegar al otro lado se habrá superado la primera mitad de la prueba. Antes de emprender la vuelta, se deberá variar la referencia magnética que se tomó con la bújula al principio de la prueba. A esta referencia se le sumarán $180º$, de forma que ahora el robot tratará de avanzar en esa dirección. Cuando se detecta la linea se activa un flag que indicará al robot que no debe volver a buscar lineas, sino que hasta el final de la prueba solo debe avanzar. De esta forma, RAIDER completará la segunda parte del recorrido.
+
 \subsection{Algoritmo para la prueba de sumo}
 
+En la prueba de sumo no se ha utilizado la cámara del robot, ya que no se ha considerado necesario. Esta prueba se basará en los sensores infrarrojos de los brazos de RAIDER. Esto se debe a que en esta prueba prima la programación de movimientos efectivos por encima de la sensorización. La programación de la prueba de sumo se ha basado en el diagrama de estados de la figura \ref{flujosumo}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{figuras/flujosumo}   
+\caption{Diagrama de estados simplificado de la prueba de sumo}
+\label{flujosumo}
+\end{figure}
+\FloatBarrier
+
+\medskip Como en el resto de programas, el robot permanece en reposo hasta que se le da una señal de inicio. LA diference es que en este caso no se utilizará la función \textit{waitStart}, sino que se activará directamente desde el interruptor de seguridad. Este interruptor, como se aprecia en la figura \ref{interruptor}, se encuentra en una zona accesible en la espalda del robot y se utiliza para cortar virtualmente la comunicación entre el controlador principal y el controlador de locomoción de este modo. Cuando el interruptor está encendido, RAIDER permanece inmovil en una posición neutra. También, gracias a este interruptor se pueden realizar paradas de emergencia durante las pruebas.
+
+TODO
+
+\begin{figure}[h]
+\centering
+%\includegraphics[width=1\textwidth]{figuras/interruptor}   
+\caption{Interruptor de emergencia}
+\label{interruptor}
+\end{figure}
+\FloatBarrier
+
+\medskip Cuando el interruptor se apaga, RAIDER realiza una pausa reglamentaria de 5 segundos. Tras ello comienza la prueba. Primero realizará una medición con los dos sensores infrarrojos apuntando hacia delante. Si alguno de estos dos sensores detecta un objeto en la zona crítica (representada en la figura \ref{esquemarango}) RAIDER lanzará un puñetazo con el brazo izquierdo o el brazo derecho, en función de qué medición es mayor. Si encuentra un objeto en la zona de detección lejana intentará acercarse. En este caso existirán dos posibilidades: Que ambos sensores hagan una detección lejana o que solo lo haga uno de ellos. Si ambos sensores miden la detección lejana, el robot avanzará hacia delante. Por otra parte, si solo realiza la detección uno de ellos, RAIDER rotará hacia el lado del sensor que haya tomado la medida. De este modo, se orientará hacia su objetivo.
+
+\medskip También cabe la posibilidad de que ninguno de los dos sensores detecte nada. En este caso, RAIDER girará sobre su cintura para mirar hacia un lado. Cada vez que se llame a esta función RAIDER mirará a un lado diferente al de la última mirada, de esta forma se moverá a izquierda y a derecha intermitentemente. En el caso de que despues de uno de estos giros detecte un objeto en la posición crítica, RAIDER lanzara un ataque ligero con el brazo mas cercano al objetivo. Estos golpes son mas débiles que los que se realizan en la posición de defensa porque en este momento el robot se encuentra en una posición inestable y podría caerse.
+
+\medskip Paralelamente, existe un control de verticalidad. Con la función \textit{getFall} se analiza si el robot sigue de pie despues de cada movimiento. En el caso de que se haya caída, realizará la rutina de reincorporarse. Esto es muy importante en la prueba de sumo, ya que puede suponer una perdida de puntos que el robot caiga al atacar a su oponente y no se levante.
 
 
 

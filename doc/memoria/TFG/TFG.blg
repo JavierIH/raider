@@ -38,45 +38,46 @@ Warning--to sort, need author or key in webserialib
 Warning--to sort, need author or key in registermapimu
 Warning--to sort, need author or key in manualcmps03
 Warning--to sort, need author or key in webcinvestav
-You've used 26 entries,
+Warning--there's a number but no volume in canny1986computational
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            630 strings with 7814 characters,
-and the built_in function-call counts, 7577 in all, are:
-= -- 734
-> -- 264
+            653 strings with 8301 characters,
+and the built_in function-call counts, 8843 in all, are:
+= -- 868
+> -- 304
 < -- 11
-+ -- 117
-- -- 88
-* -- 472
-:= -- 1022
-add.period$ -- 54
-call.type$ -- 26
-change.case$ -- 122
++ -- 135
+- -- 100
+* -- 569
+:= -- 1230
+add.period$ -- 66
+call.type$ -- 30
+change.case$ -- 140
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 323
-empty$ -- 735
-format.name$ -- 88
-if$ -- 1739
+cite$ -- 46
+duplicate$ -- 367
+empty$ -- 843
+format.name$ -- 100
+if$ -- 1997
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 10
-newline$ -- 102
-num.names$ -- 22
-pop$ -- 235
+int.to.str$ -- 30
+missing$ -- 14
+newline$ -- 122
+num.names$ -- 30
+pop$ -- 246
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 110
 quote$ -- 0
-skip$ -- 296
+skip$ -- 324
 stack$ -- 0
-substring$ -- 414
-swap$ -- 113
+substring$ -- 536
+swap$ -- 117
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 104
-warning$ -- 15
-while$ -- 49
-width$ -- 28
-write$ -- 219
-(There were 15 warnings)
+type$ -- 120
+warning$ -- 16
+while$ -- 65
+width$ -- 32
+write$ -- 263
+(There were 16 warnings)

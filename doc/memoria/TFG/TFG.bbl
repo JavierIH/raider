@@ -61,6 +61,12 @@ David Calkins.
 \newblock An overview of robogames [competitions].
 \newblock {\em Robotics \& Automation Magazine, IEEE}, 18(1):14--15, 2011.
 
+\bibitem{canny1986computational}
+John Canny.
+\newblock A computational approach to edge detection.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, (6):679--698, 1986.
+
 \bibitem{coley2013beagleboard}
 Gerald Coley.
 \newblock Beagleboard system reference manual.
@@ -80,11 +86,22 @@ David Gouaillier, Vincent Hugel, Pierre Blazevic, Chris Kilner, J{\'e}r{\^o}me
 \newblock In {\em Robotics and Automation, 2009. ICRA'09. IEEE International
   Conference on}, pages 769--774. IEEE, 2009.
 
+\bibitem{guo1989parallel}
+Zicheng Guo and Richard~W Hall.
+\newblock Parallel thinning with two-subiteration algorithms.
+\newblock {\em Communications of the ACM}, 32(3):359--373, 1989.
+
 \bibitem{darwin}
 Inyong Ha, Yusuke Tamura, Hajime Asama, Jeakweon Han, and Dennis~W Hong.
 \newblock Development of open humanoid platform darwin-op.
 \newblock In {\em SICE Annual Conference (SICE), 2011 Proceedings of}, pages
   2178--2181. IEEE, 2011.
+
+\bibitem{hall1989fast}
+Richard~W. Hall.
+\newblock Fast parallel thinning algorithms: parallel speed and connectivity
+  preservation.
+\newblock {\em Communications of the ACM}, 32(1):124--131, 1989.
 
 \bibitem{hirai1998development}
 Kazuo Hirai, Masato Hirose, Yuji Haikawa, and Toru Takenaka.
@@ -124,5 +141,10 @@ Erol {\c{S}}ahin.
 \newblock Swarm robotics: From sources of inspiration to domains of
   application.
 \newblock In {\em Swarm robotics}, pages 10--20. Springer, 2005.
+
+\bibitem{zhang1984fast}
+TY~Zhang and Ching~Y. Suen.
+\newblock A fast parallel algorithm for thinning digital patterns.
+\newblock {\em Communications of the ACM}, 27(3):236--239, 1984.
 
 \end{thebibliography}
