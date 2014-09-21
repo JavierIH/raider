@@ -17,11 +17,11 @@ A level-1 auxiliary file: programacion.aux
 A level-1 auxiliary file: aplicaciones.aux
 A level-1 auxiliary file: presupuesto.aux
 A level-1 auxiliary file: conclusion.aux
+The style file: plain.bst
 A level-1 auxiliary file: anexopiezas.aux
 A level-1 auxiliary file: anexofotolito.aux
 A level-1 auxiliary file: anexoesquematico.aux
 A level-1 auxiliary file: anexoplanos.aux
-The style file: plain.bst
 Database file #1: bibliografia.bib
 Warning--to sort, need author or key in webasrob
 Warning--to sort, need author or key in webroboticslab
@@ -39,45 +39,47 @@ Warning--to sort, need author or key in registermapimu
 Warning--to sort, need author or key in manualcmps03
 Warning--to sort, need author or key in webcinvestav
 Warning--there's a number but no volume in canny1986computational
-You've used 30 entries,
+Warning--empty journal in robotis2010manual
+Warning--empty journal in troxler2014frictions
+You've used 46 entries,
             2118 wiz_defined-function locations,
-            653 strings with 8301 characters,
-and the built_in function-call counts, 8843 in all, are:
-= -- 868
-> -- 304
+            720 strings with 10080 characters,
+and the built_in function-call counts, 12782 in all, are:
+= -- 1219
+> -- 506
 < -- 11
-+ -- 135
-- -- 100
-* -- 569
-:= -- 1230
-add.period$ -- 66
-call.type$ -- 30
-change.case$ -- 140
++ -- 215
+- -- 164
+* -- 773
+:= -- 1921
+add.period$ -- 110
+call.type$ -- 46
+change.case$ -- 213
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 367
-empty$ -- 843
-format.name$ -- 100
-if$ -- 1997
+cite$ -- 64
+duplicate$ -- 530
+empty$ -- 1179
+format.name$ -- 164
+if$ -- 2811
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 14
-newline$ -- 122
-num.names$ -- 30
-pop$ -- 246
+int.to.str$ -- 46
+missing$ -- 33
+newline$ -- 198
+num.names$ -- 62
+pop$ -- 373
 preamble$ -- 1
-purify$ -- 110
+purify$ -- 174
 quote$ -- 0
-skip$ -- 324
+skip$ -- 443
 stack$ -- 0
-substring$ -- 536
-swap$ -- 117
+substring$ -- 635
+swap$ -- 131
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
-warning$ -- 16
-while$ -- 65
-width$ -- 32
-write$ -- 263
-(There were 16 warnings)
+type$ -- 170
+warning$ -- 18
+while$ -- 99
+width$ -- 48
+write$ -- 414
+(There were 18 warnings)

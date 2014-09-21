@@ -354,8 +354,9 @@ Mat Raider::getFrame(){
 Vec2i Raider::findWay(Mat image){
 
     Mat1b input=detectGreen(image);
-
+    standardShow(input,"tras detect green");
     //imshow("Frame", image );
+    Mat map=input.clone();
 
     threshold(input, input, 50 , 255, THRESH_BINARY);
 
@@ -370,6 +371,7 @@ Vec2i Raider::findWay(Mat image){
 
     zhangSuen(output);
 
+    standardShow(output,"zhangsuen");
     vector<vector<Point> > contours;
     findContours(output.clone(), contours,CV_RETR_LIST,CV_CHAIN_APPROX_NONE);
 
@@ -416,10 +418,10 @@ Vec2i Raider::findWay(Mat image){
     else alfa=atan(x/y)*180/3.1415927;
     report("Way angle: "+to_string(alfa));
 
-    //drawLine(output,bot_max,mid_max); //debug
-    //drawLine(output,Point(output.cols/2-param_dist,output.rows),
-    //                Point(output.cols/2+param_dist,output.rows)); //debug
-    //showMap(input,output); //debug
+    drawLine(output,bot_max,mid_max); //debug
+    //drawLine(output,Point(output.cols/2-20,output.rows),
+    //                Point(output.cols/2+20,output.rows)); //debug
+    showMap(map,output); //debug
 
     return Vec2i(d,alfa);
 }
@@ -431,11 +433,17 @@ Vec2i Raider::findLine(Mat frame){
 
     Mat image = frame(rect);
     Mat1b input=detectGreen(image);
+    imshow("prim", input);
+
 
     Canny(input, input, 50, 200, 5);
 
+    imshow("canny", input);
+
     input=dilation(input,8);
     input=dilation(input,-9);
+
+    imshow("postcanny", input);
 
     //imshow("original",input);// debug
 
@@ -469,7 +477,7 @@ Vec2i Raider::findLine(Mat frame){
         report("La mas larga mide: "+to_string(max_length));
         report(INFO,"Linea a un angulo de: "+to_string(alfa));
         report(INFO,"A una distancia de: "+to_string(d));
-        // imshow("Resultado", image);
+        imshow("Resultado", image);
         Vec2i result(d,alfa);
         return result;
     }

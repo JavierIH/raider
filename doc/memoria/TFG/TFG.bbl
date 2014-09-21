@@ -56,6 +56,35 @@ Vstone {R}obovie-{X}, septiembre 2014 [online]
 Serialib, simple serial library v1.2, septiembre 2014 [online]
   \url{serialib.free.fr}.
 
+\bibitem{barrientos2007cinematica}
+Antonio Barrientos, Luis~Felipe Pe{\~n}{\'\i}n, Carlos Balaguer, and Rafael
+  Aracil.
+\newblock {\em Cinem{\'a}tica inversa}.
+\newblock McGraw-Hill, Interamericana de Espa{\~n}a, 2007.
+
+\bibitem{barrientos2007guiado}
+Antonio Barrientos, Luis~Felipe Pe{\~n}{\'\i}n, Carlos Balaguer, and Rafael
+  Aracil.
+\newblock {\em Programación por guiado}.
+\newblock McGraw-Hill, Interamericana de Espa{\~n}a, 2007.
+
+\bibitem{bradski2008learning}
+Gary Bradski and Adrian Kaehler.
+\newblock {\em Learning OpenCV: Computer vision with the OpenCV library}.
+\newblock " O'Reilly Media, Inc.", 2008.
+
+\bibitem{brown2012zbar}
+Jeff Brown.
+\newblock Zbar bar code reader, 2012.
+
+\bibitem{bueno2013facial}
+Jorge~Garc{\'\i}a Bueno, Miguel Gonz{\'a}lez-Fierro, Luis Moreno, and Carlos
+  Balaguer.
+\newblock Facial emotion recognition and adaptative postural reaction by a
+  humanoid based on neural evolution.
+\newblock {\em International Journal of Advanced Computer Science}, 3(10),
+  2013.
+
 \bibitem{calkins2011overview}
 David Calkins.
 \newblock An overview of robogames [competitions].
@@ -71,6 +100,30 @@ John Canny.
 Gerald Coley.
 \newblock Beagleboard system reference manual.
 \newblock {\em BeagleBoard.org, December}, page 121, 2013.
+
+\bibitem{cooperationgp2y0a02yk}
+Sharp Cooperation.
+\newblock Gp2y0a02yk data sheet, 2007.
+
+\bibitem{creator2009cross}
+Qt~Creator.
+\newblock Cross-platform qt ide, 2009.
+
+\bibitem{de2001vision}
+Arturo De~la Escalera and Jos{\'e}~Mar{\'\i}a Armingol.
+\newblock Visi{\'o}n por computador.
+\newblock {\em Fundamentos y m{\'e}todos}, 2001.
+
+\bibitem{hough}
+Richard~O Duda and Peter~E Hart.
+\newblock Use of the hough transformation to detect lines and curves in
+  pictures.
+\newblock {\em Communications of the ACM}, 15(1):11--15, 1972.
+
+\bibitem{evans2012practical}
+Brian Evans.
+\newblock {\em Practical 3D Printers}.
+\newblock Springer, 2012.
 
 \bibitem{gonzalez2010educational}
 Miguel Gonz{\'a}lez-Fierro, Alberto Jard{\'o}n, Martin~F Santiago Mart{\'\i}nez
@@ -136,11 +189,42 @@ Vanadium Labs.
 \newblock Software pypose, septiembre 2014 [online]
   \url{http://www.vanadiumlabs.com/pypose.html}.
 
+\bibitem{loeliger2012version}
+Jon Loeliger and Matthew McCullough.
+\newblock {\em Version Control with Git: Powerful tools and techniques for
+  collaborative software development}.
+\newblock " O'Reilly Media, Inc.", 2012.
+
+\bibitem{martin2010mastering}
+Ken Martin and Bill Hoffman.
+\newblock {\em Mastering CMake}.
+\newblock Kitware, 2010.
+
+\bibitem{pareja2010diseno}
+M~Pareja~Aparicio.
+\newblock Dise{\~n}o y desarrollo de circuitos impresos con kicad, 2010.
+
+\bibitem{robotis2010manual}
+ROBOTIS.
+\newblock {OpenCM e-Manual}.
+\newblock 2010 \url{http://support.robotis.com/en/software/robotis_opencm.htm}.
+
+\bibitem{russell2012openscad}
+J.~Russell and R.~Cohn.
+\newblock {\em Openscad}.
+\newblock Book on Demand, 2012.
+
 \bibitem{csahin2005swarm}
 Erol {\c{S}}ahin.
 \newblock Swarm robotics: From sources of inspiration to domains of
   application.
 \newblock In {\em Swarm robotics}, pages 10--20. Springer, 2005.
+
+\bibitem{troxler2014frictions}
+Peter Troxler and Dannie Jost.
+\newblock Frictions collaborative creation of knowledge vs. practices in trade
+  and commerce: The example of open hardware.
+\newblock 2014.
 
 \bibitem{zhang1984fast}
 TY~Zhang and Ching~Y. Suen.

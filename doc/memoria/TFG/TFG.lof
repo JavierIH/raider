@@ -19,27 +19,31 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Combate en Robo-One}}{19}{figure.3.6}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Partido de futbol en RoboCup}}{20}{figure.3.7}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Modulo Pixy CMUcam5 \IeC {\copyright }CMUcam.org}}{22}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Robot portero con m\'odulo HaViMo}}{23}{figure.3.9}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Microservo PWM}}{27}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Primer experimento.}}{29}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Segundo experimento.}}{29}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Tercer experimento.}}{30}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Sensor inercial MPU9150}}{31}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Br\'ujula magn\'etica CMPS03}}{32}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Microsoft LifeCam Cinema}}{33}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Placa Arbotix}}{35}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Placa CM900}}{36}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Placa OpenCM9.04}}{37}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces SBC BeagleBone Black}}{39}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Diagrama de conexiones}}{41}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Bater\IeC {\'\i }a LiPo}}{43}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Convertidor DC-DC comercial, UBEC}}{46}{figure.4.14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sensor infrarrojo}}{28}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Sensor de ultrasonidos}}{29}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Primer experimento.}}{30}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Segundo experimento.}}{30}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Tercer experimento.}}{30}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sensor inercial MPU9150}}{32}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Br\'ujula magn\'etica CMPS03}}{32}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Microsoft LifeCam Cinema}}{33}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Placa Arbotix}}{35}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Placa CM900}}{36}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Placa OpenCM9.04}}{36}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces SBC Raspberry B \IeC {\copyright }Raspberry PI Foundation.}}{38}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces SBC BeagleBone Black}}{38}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Diagrama de conexiones}}{40}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Bater\IeC {\'\i }a LiPo}}{42}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Convertidor DC-DC comercial, UBEC \IeC {\copyright }HeliDirect.com}}{45}{figure.4.17}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Pantalla del editor de OpenSCAD}}{48}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Impresora 3D Prusa i2 Air}}{49}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces KiCad}}{50}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Qt Creator}}{51}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces CM9 IDE}}{52}{figure.5.5}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Qt Creator}}{52}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces CM9 IDE}}{53}{figure.5.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Piezas necesarias para montar la cabeza}}{56}{figure.6.1}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Piezas necesarias para montar la cintura}}{56}{figure.6.2}
@@ -55,41 +59,42 @@
 \contentsline {figure}{\numberline {7.5}{\ignorespaces Circuito del bus I2C}}{65}{figure.7.5}
 \contentsline {figure}{\numberline {7.6}{\ignorespaces Placa de expasi\'on salida de fabricaci\'on}}{66}{figure.7.6}
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Placa de expasi\'on con componentes soldados}}{66}{figure.7.7}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Placa de expansi\'on monstada en RAIDER}}{66}{figure.7.8}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Placa de expansi\'on monstada en RAIDER}}{67}{figure.7.8}
 \contentsline {figure}{\numberline {7.9}{\ignorespaces C\'amara Microsoft LifeCam desmontada}}{67}{figure.7.9}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Soportes de la cabeza para la c\'amara}}{67}{figure.7.10}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Integraci\'on de la c\'amara en la cabeza}}{68}{figure.7.10}
 \contentsline {figure}{\numberline {7.11}{\ignorespaces Cuello y soporte para la cabeza}}{68}{figure.7.11}
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Cuello y soporte para la cabeza}}{68}{figure.7.12}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Resultado tras la integraci\'on de la cabeza en el robot}}{68}{figure.7.12}
 \contentsline {figure}{\numberline {7.13}{\ignorespaces Sensores infrarrojos y soportes}}{69}{figure.7.13}
 \contentsline {figure}{\numberline {7.14}{\ignorespaces Brazos con sensores montados}}{69}{figure.7.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Salida del comando lsusb}}{73}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Comprobaci\'on de conexi\'on para la webcam}}{74}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Comprobaci\'on de compatibilidad para la webcam}}{74}{figure.8.3}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Par\'ametros le\IeC {\'\i }dos de la c\'amara}}{75}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Puertos serie en una BeagleBone Black}}{76}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Algunas capas de Device Tree Overlays}}{76}{figure.8.6}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Habilitaci\'on de capas}}{77}{figure.8.7}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Lectura anal\'ogica del pin 4}}{77}{figure.8.8}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Amplitud de giro de un AX-12A}}{80}{figure.8.9}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{85}{figure.8.10}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Rangos de detecci\'on para un sensor Sharp}}{87}{figure.8.11}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Definici\'on experimental de los rangos de medida}}{88}{figure.8.12}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces findway}}{90}{figure.8.13}
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Descomposici\'on de la imagen en sus tres canales RGB}}{90}{figure.8.14}
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Resta de canales verde y rojo, y de canales verde y azul}}{91}{figure.8.15}
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Detecci\'on de superficie navegable}}{92}{figure.8.16}
-\contentsline {figure}{\numberline {8.17}{\ignorespaces Umbralizaci\'on de obst\'aculos y superficie navegable}}{92}{figure.8.17}
-\contentsline {figure}{\numberline {8.18}{\ignorespaces Esqueletizaci\'on del controno abierto y esquema del entorno}}{93}{figure.8.18}
-\contentsline {figure}{\numberline {8.19}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{93}{figure.8.19}
-\contentsline {figure}{\numberline {8.20}{\ignorespaces Segmento de referencia para la extracci\'on de datos (en azul)}}{94}{figure.8.20}
-\contentsline {figure}{\numberline {8.21}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{94}{figure.8.21}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Conexi\'on de la c\'amara a la BeagleBone Black}}{73}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Salida del comando lsusb}}{74}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Comprobaci\'on de conexi\'on para la webcam}}{74}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Comprobaci\'on de compatibilidad para la webcam}}{74}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Par\'ametros le\IeC {\'\i }dos de la c\'amara}}{75}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Puertos serie en una BeagleBone Black}}{76}{figure.8.6}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Algunas capas de Device Tree Overlays}}{76}{figure.8.7}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Habilitaci\'on de capas}}{77}{figure.8.8}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Lectura anal\'ogica del pin 4}}{77}{figure.8.9}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Amplitud de giro de un AX-12A}}{80}{figure.8.10}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Esquema de puertos serie en una OpenCM 9.04}}{85}{figure.8.11}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Teleoperaci\'on de RAIDER con m\'odulo Bluetooth}}{87}{figure.8.12}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Rangos de detecci\'on para un sensor Sharp}}{88}{figure.8.13}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces findway}}{90}{figure.8.14}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Descomposici\'on de la imagen en sus tres canales RGB}}{91}{figure.8.15}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Resta de canales verde y rojo, y de canales verde y azul}}{92}{figure.8.16}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Detecci\'on de superficie navegable}}{92}{figure.8.17}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Umbralizaci\'on de obst\'aculos y superficie navegable}}{93}{figure.8.18}
+\contentsline {figure}{\numberline {8.19}{\ignorespaces Esqueletizaci\'on del controno abierto y esquema del entorno}}{93}{figure.8.19}
+\contentsline {figure}{\numberline {8.20}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{94}{figure.8.20}
+\contentsline {figure}{\numberline {8.21}{\ignorespaces Segmento de referencia para la extracci\'on de datos (en azul)}}{94}{figure.8.21}
 \contentsline {figure}{\numberline {8.22}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{95}{figure.8.22}
-\contentsline {figure}{\numberline {8.23}{\ignorespaces Im\'agen original e im\'agen tras aplicar la funci\'on \textit {detectGreen}}}{95}{figure.8.23}
-\contentsline {figure}{\numberline {8.24}{\ignorespaces Detecci\'on de contornos}}{96}{figure.8.24}
-\contentsline {figure}{\numberline {8.25}{\ignorespaces Dilataci\'on y erosi\'on de contornos}}{96}{figure.8.25}
-\contentsline {figure}{\numberline {8.26}{\ignorespaces Resultado final de \textit {findLine}}}{97}{figure.8.26}
-\contentsline {figure}{\numberline {8.27}{\ignorespaces An\'alisis de c\'odigos QR en una imagen}}{97}{figure.8.27}
+\contentsline {figure}{\numberline {8.23}{\ignorespaces Esqueletizaci\'on del contorno cerrado y esquema del entorno}}{95}{figure.8.23}
+\contentsline {figure}{\numberline {8.24}{\ignorespaces Im\'agen original e im\'agen tras aplicar la funci\'on \textit {detectGreen}}}{96}{figure.8.24}
+\contentsline {figure}{\numberline {8.25}{\ignorespaces Detecci\'on de contornos}}{96}{figure.8.25}
+\contentsline {figure}{\numberline {8.26}{\ignorespaces Dilataci\'on y erosi\'on de contornos}}{97}{figure.8.26}
+\contentsline {figure}{\numberline {8.27}{\ignorespaces Resultado final de \textit {findLine}}}{97}{figure.8.27}
+\contentsline {figure}{\numberline {8.28}{\ignorespaces An\'alisis de c\'odigos QR en una imagen}}{98}{figure.8.28}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {9.1}{\ignorespaces Partido de futbol rob\'otico en M\'exico}}{100}{figure.9.1}
 \contentsline {figure}{\numberline {9.2}{\ignorespaces Diagrama de estados simplificado de la prueba de visi\'on}}{101}{figure.9.2}

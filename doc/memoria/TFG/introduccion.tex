@@ -6,7 +6,7 @@ La Asociación de Robótica de la Universidad Carlos III de Madrid, AsRob \cite{we
 
 \section{Línea de investigación de robots Mini-Humanoides}
 
-La sección de la asociación que enmarca este trabajo es la línea de investigación de Robots Mini-Humanoides. Los robots mini-humanoides son robots antropomórficos con una altura menor de 50cm, tal y como indica la normativa del campeonato CEABOT \cite{normativaceabot}. De foma orientativa, tomando como referencia la Humanoid League del campeonato RoboCup \cite{kitano1997robocup}, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". En la figura \ref{naoydarwin} aparecen dos robots de la división KidSize, como son el DARwIn-OP de Robotis \cite{darwin} o el Nao de Aldebaran \cite{gouaillier2009mechatronic}. Estos robots no entrarían dentro de la definición de mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
+La sección de la asociación que enmarca este trabajo es la línea de investigación de Robots Mini-Humanoides. Los robots mini-\linebreak humanoides son robots antropomórficos con una altura menor de 50cm, tal y como indica la normativa del campeonato CEABOT \cite{normativaceabot}. De foma orientativa, tomando como referencia la Humanoid League del campeonato RoboCup \cite{kitano1997robocup}, el tamaño de los robots mini-humanoides es ligeramente inferior al de los participantes de la división "KidSize". En la figura \ref{naoydarwin} aparecen dos robots de la división KidSize, como son el DARwIn-OP de Robotis \cite{darwin} o el Nao de Aldebaran \cite{gouaillier2009mechatronic}. Estos robots no entrarían dentro de la definición de mini-humanoide, ya que sobrepasan las dimensiones máximas estipuladas.
 
 \begin{figure}[h]
 \centering
@@ -29,7 +29,7 @@ Se realizará un estudio de qué elementos son necesarios para formar parte de un 
 
 \subsubsection{Integrar una cámara}
 
-Otro objetivo será integrar una cámara con la que se realizarán algoritmos de visión. Para ello se requiere que la cámara quede integrada físicamente en el robot. Adicionalmente, la cámara deberá poder moverse de forma independiente al cuerpo del robot, por lo que se construirá una base móvil que otorgue a la cámara capacidad para rotar e inclinarse.
+Otro objetivo será integrar una cámara con la que se realizarán algoritmos de visión\cite{de2001vision}. Para ello se requiere que la cámara quede integrada físicamente en el robot. Adicionalmente, la cámara deberá poder moverse de forma independiente al cuerpo del robot, por lo que se construirá una base móvil que otorgue a la cámara capacidad para rotar e inclinarse.
 
 \subsubsection{Integrar un controlador}
 
@@ -39,7 +39,7 @@ Integrar en el robot un controlador que tenga el potencial necesario para contro
 
 \subsubsection{Agregar sensores y actuadores}
 
-Otro objetivo será incluir sensores y actuadores para aumentar las capacidades tanto de sensorización como de locomoción del robot. Aunque el componente principal para tomar datos del entorno será la cámara, puede ser interesante incluir algunos sensores que apoyen y complementen la información recogida por la parte de visión. De este modo, obtendremos un sistema versátil que podrá suplir las carencias del procesamiento de imágenes cuando su capacidad no sea suficiente, ya sea por un entorno complejo o con carácterísticas inadecuadas para la visión (escenarios con poca luz, humo... etc). 
+Otro objetivo será incluir sensores y actuadores para aumentar las capacidades tanto de sensorización como de locomoción del robot. Aunque el componente principal para tomar datos del entorno será la cámara, puede ser interesante incluir algunos sensores que apoyen y complementen la información recogida por la parte de visión. De este modo, obtendremos un sistema versátil que podrá suplir las carencias del procesamiento de imágenes cuando su capacidad no sea suficiente, ya sea por un entorno complejo o con carácterísticas inadecuadas para la visión (escenarios con poca luz, humo, etc). 
 
 \medskip Así mismo, también se incluirán actuadores adicionales que amplien las posibilidades del robot, ya sea para soportar el movimiento de nuevos componentes (como la cámara) o simplemente para aumentar las capacidades de locomoción.
 
@@ -77,11 +77,20 @@ Se prevee la presentación del robot a competiciones. Esto significa que como par
 
 \medskip Estas aplicaciones se apoyarán en todo lo desarrollado anteriormente, y constituirán una prueba experimental representativa del funcionamiento del robot y del grado de consecución de todos los objetivos comentados.
 
-\section{Estructura del documento TODO}
+\section{Estructura del documento}
 
 A continuación y para facilitar la lectura del documento, se detalla el contenido de cada capítulo.
 
 \begin{itemize}
-\item En el capítulo 1 se realiza una introducción.
-\item En el capítulo 2 blablablabla
+\item En el capítulo 1 se realiza una introducción a la Asociación de Robótica y la línea de investigación de robots Mini-Humanoides. Posteriormente se explican los objetivos que se perseguirán a lo largo del documento.
+\item En el capítulo 2 se describe el marco de trabajo sobre el que se ha desarrollado el proyecto y se explica qué es la competición CEABOT.
+\item En el capítulo 3 se estudia el estado de arte de cuatro secciones relacionadas con la robótica mini-humanoide: Plataformas comerciales, competiciones, locomoción y visión articial.
+\item En el capítulo 4 se realiza un estudio y selección de los componentes que necesitará la plataforma robótica en desarrollo para cumplir los objetivos marcados.
+\item En el capítulo 5 se decriben las herramientas necesarias para la construcción y montaje de todos los componentes, así como su puesa en marcha y progrmación.
+\item En el capítulo 6 se listan todas las modificaciones mecánicas que se han realizado sobre la plataforma robótica.
+\item En el capítulo 7 se explican los pasos que se han seguido para configurar, poner a punto y conectar los dispositivos electrónicos que se han seleccionado anteriormente.
+\item En el capítulo 8 se desarrolla la programación de robot a diferentes niveles, como la programación de algoritmos de movilidad, técnicas de medición con sensores integrados, y la programación de algoritmos avanzados basados en técnicas de visión por computador y las librerías de OpenCV. 
+\item En el capítulo 9 se muestran aplicaciones que se han realizado sobre RAIDER para su asistencia a exhibiciones robóticas y a la competición CEABOT en su edición de 2014.
+\item En el capítulo 10 se a realizado un desglose del presupuesto total del proyecto.
+\item En el capítulo 11 finaliza el proyecto analizando los resultados obtenidos y proponiendo nuevos desarrollos a implementar sobre RAIDER.
 \end{itemize}

@@ -1,5 +1,5 @@
 %chapter introduce un nuevo capítulo
-\chapter{Programación TODO}
+\chapter{Programación}\label{chapterprogramacion}
 
 En este capítulo se presenta el desarrollo de todo el software que ha sido requerido preparar para la puesta en marcha del robot. El objetivo final del apartado es la programación de la librería \textit{raider.h}, que centraliza todas las funcionalidades de RAIDER.
 
@@ -83,6 +83,14 @@ sudo make install
 
 A continuación se configurará la webcam en la beaglebone. Para esto se conectará por USB la Microsoft Lifecam a la BeagleBone Black tal y como puede observarse en la figura \ref{robotbbbcam}. A partir de aquí, se iniciará sesión en la BeagleBone Black y se procederá a configurar la cámara.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figuras/robotbbbcam}   
+\caption{Conexión de la cámara a la BeagleBone Black}
+\label{robotbbbcam}
+\end{figure}
+\FloatBarrier
+
 \medskip Lo primero que se hará será comprobar que la cámara se ha reconocido correctamente. Para ello ejecutaremos el comando:
 
 \begin{verbatim}
@@ -97,8 +105,9 @@ lsusb
 \caption{Salida del comando lsusb}
 \label{lsusbbbb}
 \end{figure}
+\FloatBarrier
 
-\medskip Para cerciorarno de que la cámara se ha reconocido correctamente podemos buscarla en el directorio /dev. En la siguiente imagen (figura \ref{lsdev}) se observa el archivo /dev/video0, que está vinculado a la webcam.
+\medskip Para cerciorarno de que la cámara se ha reconocido correctamente podemos buscarla en el directorio /dev. En la imagen \ref{lsdev} se observa el archivo /dev/video0, que está vinculado a la webcam.
 
 \begin{figure}[h]
 \centering
@@ -106,6 +115,7 @@ lsusb
 \caption{Comprobación de conexión para la webcam}
 \label{lsdev}
 \end{figure}
+\FloatBarrier
 
 A continuación nos ayudaremos de las utilidades de Video4Linux (una interfaz para la programación de aplicaciones con captura de imágenes para Linux) para la webcam. OpenCV se apoya en Video4Linux, por tanto, lo primero que se hará será comprobar que la cámara es compatible con Video4Linux. Para ello, se ejecutará el siguiente comando:
 
@@ -121,6 +131,7 @@ v4l2-ctl --list-devices
 \caption{Comprobación de compatibilidad para la webcam}
 \label{v4llist}
 \end{figure}
+\FloatBarrier
 
 Ésto nos confirma que la cámara funciona correctamente. Para proseguir con la configuración vamos a ejecutar el comando siguiente:
 
@@ -136,6 +147,7 @@ v4l2-ctl --all
 \caption{Parámetros leídos de la cámara}
 \label{v4lall}
 \end{figure}
+\FloatBarrier
 
 \medskip Por último, se bajará la resolución de la cámara a un valor que nos permita tratar las imágenes con mayor rapidez cuando se programen algoritmos de visión con OpenCV desde la BeagleBone Black. Se ha elegido una resolución de 320x240, mas adelante se ajustará este valor empíricamente en función del rendimiento del robot. Para ello ejecutamos este comando de configuración:
 
@@ -151,16 +163,17 @@ v4l2-ctl --set-fmt-video=width=320,heigth=240
 
 Para finalizar esta sección, se muestra el desarrollo de un script para configurar los pines del controlador.
 
-\medskip La Beaglebone Black posee 92 pines configurables de entrada y salida. Entre ellos, 7 pueden funcionar como entradas analógicas y 5 parejas de pines están preparadas como puertos serie (figura \ref{bbbserial}).
+\medskip La Beaglebone Black posee 92 pines configurables de entrada y salida. Entre ellos, 7 pueden funcionar como entradas analógicas y 5 parejas de pines están preparadas como puertos serie, tal y como indica la figura \ref{bbbserial}.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/bbbserial}   
 \caption{Puertos serie en una BeagleBone Black}
 \label{bbbserial}
 \end{figure}
+\FloatBarrier
 
-Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay es un archivo que indica al sistema operativo cómo debe configurarse un pin. La BeagleBone Black se configura mediante Device Tree Overlays, un mecanismo de descripción del hardware que forma parte de un sistema. Para configurar las entradas analógicas necesarias para los sensores infrarrojos, y el puerto serie que comunicará la placa con el controlador de locomoción; se utilizarán los archivos \textit{.dtbo} que pueden encontrarse en \textit{/lib/firmware} (figura \ref{libfirmware})
+Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay es un archivo que indica al sistema operativo cómo debe configurarse un pin. La BeagleBone Black se configura mediante Device Tree Overlays, un mecanismo de descripción del hardware que forma parte de un sistema. Para configurar las entradas analógicas necesarias para los sensores infrarrojos, y el puerto serie que comunicará la placa con el controlador de locomoción; se utilizarán los archivos \textit{.dtbo} que pueden encontrarse en \textit{/lib/firmware} y aparecen en la figura \ref{libfirmware}.
 
 
 \begin{figure}[h]
@@ -169,8 +182,9 @@ Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay
 \caption{Algunas capas de Device Tree Overlays}
 \label{libfirmware}
 \end{figure}
+\FloatBarrier
 
-\medskip En concreto se utilizarán dos capas, la que activará el puerto serie número 2: \textit{ttyO2\_armhf.com} y esta otra que nos permitirá activar las entradas analógicas: \textit{cape-bone-iio}. Se habilitarán de la siguiente manera (figura \ref{overlays}):
+\medskip En concreto se utilizarán dos capas, la que activará el puerto serie número 2: \textit{ttyO2\_armhf.com} y esta otra que nos permitirá activar las entradas analógicas: \textit{cape-bone-iio}. Se habilitarán como se muestra en la figura \ref{overlays}.
 
 \begin{figure}[h]
 \centering
@@ -178,6 +192,7 @@ Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay
 \caption{Habilitación de capas}
 \label{overlays}
 \end{figure}
+\FloatBarrier
 
 \medskip Puede realizarse una comprobación simple de que los pines se han configurado correctamente realizando una lectura analógica. Para ello, se leerá el archivo \textit{/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN4}. En la figura \ref{catain4} se ha realizado una lectura del pin 4, el valor de 570 indica que se está realizando una lectura de $570mV$.
 
@@ -197,8 +212,7 @@ Antes de comenzar con esta sección, es importante señalar algunos detalles impor
 Para conseguir que Raider pueda moverse con soltura se han seguido varios pasos, cada cual de un nivel superior al anterior.
 
 \subsection{Movimiento del servo PWM}
-% aqui no explicar el principio de funcionamiento, solo la parte de programacion
-% o sea, de Servo.write para arriba
+
 
 El control del servo PWM de Raider, situado en su cabeza, se realiza con la biblioteca Servo.h orginalmente desarrolladas para Arduino y que posteriormente ha sido portada para su utilización en OpenCM. Dado el cometido de este servo, no será necesario realizar un control de su velocidad, por lo que un simple control de su posición será suficiente.
 
@@ -221,7 +235,7 @@ Cada servo tiene una ID, o dicho de otra forma, un número de identidad propio e 
 Por esta razón, en un mismo bus no deben existir servos con la misma ID, ya que provocarán colisiones entre los paquetes e impedirán el correcto funcionamiento del sistema. Sin embargo, estas ID son fácilmente reprogramables y pueden modificarse realizando una escritura sobre el registro 3 (0X03).
 
 \medskip 
-El protocolo de comunicación utilizado es una comunicación serie asíncrona de 8 bits, con 1 bit de Stop y sin paridad. La conexión, de tipo Half Duplex, no permite la transmision y recepción de paquetes de forma simultanea. Esto la convierte en una conexión bastante típica en los sistema que utilizan un solo bus de comunicación. Como en el mismo bus existe mas de un dispositivo, todos deben permanecer en modo de escucha salvo el que esté transmitiendo en ese instante. El controlador principal, la placa OpenCM 9.04, asigna la dirección del bus en modo escucha, y solo cambia la dirección del bus a modo de envio mientras manda un paquete. (TODO revisar) Los Dynamixel AX-12A poseen una tabla de registros (tabla TODO ) sobre la cual podemos modificar varios parámetros referente a su estado y su funcionamiento. La tabla de registros puede consultarse en TODO .
+El protocolo de comunicación utilizado es una comunicación serie asíncrona de 8 bits, con 1 bit de Stop y sin paridad. La conexión, de tipo Half Duplex, no permite la transmision y recepción de paquetes de forma simultanea. Esto la convierte en una conexión bastante típica en los sistema que utilizan un solo bus de comunicación. Como en el mismo bus existe mas de un dispositivo, todos deben permanecer en modo de escucha salvo el que esté transmitiendo en ese instante. El controlador principal, la placa OpenCM 9.04, asigna la dirección del bus en modo escucha, y solo cambia la dirección del bus a modo de envio mientras manda un paquete. Los Dynamixel AX-12A poseen una tabla de registros sobre la cual podemos modificar varios parámetros referente a su estado y su funcionamiento. La tabla de registros puede consultarse en el manual\cite{robotis2010dynamixel}.
 
 \medskip 
 Para realizar una rotación simple en un servomotor, sería suficiente con escribir en el registro 32 (Goal Position) un valor comprendido entre 0 y 1023, y el servo se situará inmediatamente en esa posición. Sin embargo, existen otros parámetros interesantes en el mapa de registros que conviene controlar, como la posición instantanea, la velocidad de giro, el consumo eléctrico o incluso la temperatura del dispositivo.
@@ -282,7 +296,7 @@ En el apartado anterior se ha mostrado cómo se realiza el movimiento de un servo
 Este es quizás uno de los apartados mas críticos a la hora de diseñar las funciones que moverán el robot. Se pretende programar una biblioteca que permita mover 20 servos simultaneamente, con velocidades diferentes condicionadas por un tiempo de ejecución común. De esta forma, los servos cuya posición objetivo sea lejana a su posición actual se moverán con una velocidad mayor que la de los servos cuya posición objetivo sea cercana a su posición actual.
 
 \medskip
-Las funciones pueden encontrarse en la biblioteca raider TODO motion.h
+Las funciones pueden encontrarse en la biblioteca \textit{motion.h}.
 
 \subsubsection{class Robot} 
 
@@ -347,7 +361,7 @@ Meter fotos del robot con una pierna levantada
 \subsubsection{void movLateral(int,int) TODO}
 \subsubsection{void movFrontal(int,int) TODO}
 
-\subsection{Creación de movimientos completos TODO}
+\subsection{Creación de movimientos completos}
 
 Encontrándonos en este punto, la programación de desplazamientos, giros y otros movimientos complejos, se ha realizado mediante la combinación de las funciones anteriormente descritas. A cada movimiento se le asignará un valor hexadecimal en forma de caracter, de forma que los caracteres comunicados a la OpenCM sirvan como identificador de el movimiento que el controlador de visión está ordenando.
 
@@ -390,25 +404,25 @@ Comando & Función & Descripción \\
 \label{movimientos}
 \end{table}
 
-\section{Comunicación serie TODO}
+\section{Comunicación serie}
 
 En la sección anterior hemos completado la programación de movimientos sobre la placa OpenCM, sin embargo, el control principal del robot se realiza desde la BeagleBone. En este apartado se comunicará la BeagleBone con la OpenCM de forma que adopten una configuración de maestro y esclavo. La estrategia consistirá en el envío de comandos hexadecimales desde la BeagleBone a la OpenCM. Cada comando servirá de identificador para un movimiento completo. Los comandos serán los descritos en el cuadro \ref{movimientos}.
 
 
-\subsection{Comunicación serie en OpenCM  TODO}
+\subsection{Comunicación serie en OpenCM}
 
 La OpenCM posee 3 puertos serie, de los cuales uno de ellos está reservado para el control del bus Dynamixel. En el esquema de la figura \ref{serialcm} se presenta la configuración de puertos serie de la OpenCM.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{figuras/serialcm}   
 \caption{Esquema de puertos serie en una OpenCM 9.04}
-\label{Serialcm}
+\label{serialcm}
 \end{figure}
+\FloatBarrier
 
-Para la programación de la comunicación serie en la placa OpenCM se ha utilizado la biblioteca HardwareSerial.h, contenida en CM9 IDE. La documentación de la biblioteca está disponible en (  TODO), sin embargo, a continuación se listan las funciones que se han utilizado junto a una breve explicación de su funcionamiento.
- ( TODO )
-% todo 
+Para la programación de la comunicación serie en la placa OpenCM se ha utilizado la biblioteca HardwareSerial.h, contenida en CM9 IDE. A continuación se listan las funciones que se han utilizado junto a una breve explicación de su funcionamiento.
+
 \subsubsection{void HardwareSerial::begin(unsigned int baud)}
 
 Esta función habilita los pines como puerto serie. Como parámetro se le pasará la velocidad en baudios, que deberá coincidir con la del controlador maestro. En este caso, se ha configurado el puerto 3 con una velocidad de 9600 baudios
@@ -439,17 +453,25 @@ Esta función abrirá el puerto serie. En el primer parámetro se le pasará la cade
 
 Para mandar los comandos utilizaremos esta función. Ya que el objeto de la clase conserva las carácterísticas del puerto serie, solo será necesario pasarle el valor hexadecimal que queramos transmitir al controlador de locomoción.
 
-\subsection{Comunicación con módulo Bluetooth TODO}
+\subsection{Comunicación con módulo Bluetooth}
 
-Adicionalmente, se ha incluido la posibilidad de utilizar un control auxiliar por Bluetooth desde un dispositivo externo. Para ello se ha conectado un modulo Bluetooth (figura \ref{bluetooth}) TODO directamente a la OpenCM. La función de esta otra vía de control no es otra que la realización de pruebas experimentales controladas, ya que nos permite modificar el comportamiento del robot en los momentos en los que sea necesario. Por supuesto, de cara a su funcionamiento autónomo, el módulo Bluetooth se inutilizará. Sin embargo, será necesario dejar preparada su conexión y programación. ( TODO foto de mexico )
+Adicionalmente, se ha incluido la posibilidad de utilizar un control auxiliar por Bluetooth desde un dispositivo externo. Para ello se ha conectado un modulo Bluetooth directamente a la OpenCM. La función de esta otra vía de control no es otra que la realización de pruebas experimentales controladas, ya que nos permite modificar el comportamiento del robot en los momentos en los que sea necesario. Por supuesto, de cara a su funcionamiento autónomo, el módulo Bluetooth se inutilizará. Sin embargo, será necesario dejar preparada su conexión y programación.
 
-Se ha utilizado un módulo Bluetooth hc05 conectado al puerto 3 del controlador de locomoción. Con esto, podremos mandar mensajes desde un teléfono móvil, un ordenador portátil o cualquier otro dispositivo que soporte conexión Bluetooth. Para utilizar el control del robot por Bluetooth se sustituirá el puerto de lectura de la OpenCM reservado al controlador de visión (el puerto 2) por el puerto 3.
+Se ha utilizado un módulo Bluetooth hc05 conectado al puerto 3 del controlador de locomoción. Con esto, podremos mandar mensajes desde un teléfono móvil, un ordenador portátil o cualquier otro dispositivo que soporte conexión Bluetooth. Para utilizar el control del robot por Bluetooth se sustituirá el puerto de lectura de la OpenCM reservado al controlador de visión (el puerto 2) por el puerto 3. En la imágen \ref{raiderblue} puede apreciarse cómo se controla a RAIDER desde un teléfono móvil.
 
-\section{Programación de sensores TODO} 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figuras/raiderblue}   
+\caption{Teleoperación de RAIDER con módulo Bluetooth}
+\label{raiderblue}
+\end{figure}
+\FloatBarrier
+
+\section{Programación de sensores} 
 
 En esta sección se detallará la programación que se ha aplicado a los diferentes sensores que se han montado en RAIDER.
 
-\subsection{Infrarrojos TODO}
+\subsection{Infrarrojos}
 
 Para controlar los sensores infrarrojos se ha desarrollado un algoritmo de detección, implementado en la librería \textit{raider.h}. Dado el carácter de este sensor, se ha realizado una programación para detectar objetos en función de dos parámetros de distancia crítica. Como puede observarse en la figura \ref{esquemarango} con estos dos parámetros (representados por barras verticales) se han definido tres zonas.
 
@@ -459,19 +481,9 @@ Para controlar los sensores infrarrojos se ha desarrollado un algoritmo de detec
 \caption{Rangos de detección para un sensor Sharp}
 \label{esquemarango}
 \end{figure}
+\FloatBarrier
 
-El rango de datos que podemos extraer de la entrada analógica va de 0 a 1800mV. Teniendo esto en cuenta, se han definido experimentalmente (figura \ref{raiderrangos}) \textit{INFRARED\_LOW} en 300mV, e \textit{INFRARED\_HIGH} en 1000mV. 
-
-\medskip [ TODO TODO TODO foto del robot pegado a la pizarra ]
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{figuras/todo}   %raiderrangos
-\caption{Definición experimental de los rangos de medida}
-\label{asdf}
-\end{figure}
-
-\medskip Se han desarrollado dos funciones paralelas para medir los sensores infrarrojos izquierdo y derecho de Raider: \textit{getLeftIR()} y \textit{getRightIR()}. Estas funciones devolverán un valor identificativo de la zona en la que se encuentra el obstáculo.
+El rango de datos que podemos extraer de la entrada analógica va de 0 a 1800mV. Teniendo esto en cuenta, se han definido experimentalmente \textit{INFRARED\_LOW} en 300mV, e \textit{INFRARED\_HIGH} en 1000mV. Estos valores corresponden aproximadamente a 12cm y 40cm respectivamente. Se han desarrollado dos funciones paralelas para medir los sensores infrarrojos izquierdo y derecho de Raider: \textit{getLeftIR()} y \textit{getRightIR()}. Estas funciones devolverán un valor identificativo de la zona en la que se encuentra el obstáculo.
 
 \subsection{IMU TODO}
 
@@ -481,14 +493,14 @@ La programación del sensor inercial pasa por dos fases: La extracción de datos d
 
 \medskip El primer paso para utilizar este sensor es desactivar el modo de hibernación. Esto se consigue poniendo a 0 el registro 6B. Una vez hecho esto ya pueden leerse de forma normal los datos del giroscopio y del acelerómetro. En la librería \textit{imu.h} pueden consultarse los registros que se están leyendo.
 
-\medskip Para la detección de caídas, se ha utilizado el eje Y del acelerómetro. Se sabe que en una posición vertical, el acelerómetro estará realizando una lectura de 1g provocada por la atracción gravitatoria terrestre. Al girar el robot en este eje, el valor medido irá disminuyendo. Cuando el robot se encuentro tumbado de forma perfectamente horizontal, el valor medido en el eje Y será de 0g. Dado que el incremento es proporcional se ha realizado una conversión sencilla en la que 1g corresponde con 0º de inclinación y 0g con 90º. Esta medida debe tomarse con el robot en reposo ya que de lo contrario el movimiento del robot influirá en su aceleración y podrá ser causa de falsos positivos. Se ha programado el sensor de forma que detecte caidas hacia delante cuando el robot se encuentre en una medición entre 90º y 60º, y caídas hacia atrás cuando mida entre 270º y 300º de inclinación. Este rango está parametrizado con la constante \textit{FALL\_DEGREES} que se encuentra en \textit{raider.h}
+\medskip Para la detección de caídas, se ha utilizado el eje Y del acelerómetro. El código programado se encuentra en el método \textit{getFall} de la librería \textit{raider.h}. Se sabe que en una posición vertical, el acelerómetro estará realizando una lectura de 1g provocada por la atracción gravitatoria terrestre. Al girar el robot en este eje, el valor medido irá disminuyendo. Cuando el robot se encuentro tumbado de forma perfectamente horizontal, el valor medido en el eje Y será de 0g. Dado que el incremento es proporcional se ha realizado una conversión sencilla en la que 1g corresponde con 0º de inclinación y 0g con 90º. Esta medida debe tomarse con el robot en reposo ya que de lo contrario el movimiento del robot influirá en su aceleración y podrá ser causa de falsos positivos. Se ha programado el sensor de forma que detecte caidas hacia delante cuando el robot se encuentre en una medición entre 90º y 60º, y caídas hacia atrás cuando mida entre 270º y 300º de inclinación. Este rango está parametrizado con la constante \textit{FALL\_DEGREES} que se encuentra en \textit{raider.h}
 
 [ TODO image de caidas ]
 
 
-\subsection{Brújula TODO} 
+\subsection{Brújula} 
 
-Para la programación de la brújula se ha realizado una biblioteca, \textit{compass.h} que controla de forma sencilla la extracción de datos. Atendiendo a su manual \cite{manualcmps03}, la CMPS03 ofrece tres formas de leer su medida:
+Para la programación de la brújula se ha programado una biblioteca, \textit{compass.h} que controla de forma sencilla la extracción de datos. Atendiendo a su manual \cite{manualcmps03}, la CMPS03 ofrece tres formas de leer su medida:
 
 \begin{itemize}
 \item \textbf{Mediante PWM} 
@@ -504,14 +516,14 @@ Conectada por I2C, podemos realizar una lectura del registro 01 para obtener la 
 Conectada por I2c, los registros 02 y 03 nos ofrecen una lectura de la medida de la brújula en un rango de 0 a 3600. De esta manera, la medida extraída tiene una precisión de $0.1º$ y no necesita ninguna adecuación.
 \end{itemize}
 
-Se eligió conectarla por I2C por la simplicidad en su cableado. Así mismo, se ha usado el método de lectura de dos registros por su mayor precisión.
+Se eligió conectarla por I2C por la simplicidad en su cableado. Así mismo, se ha usado el método de lectura de dos registros por su mayor precisión. Con esto, será posible tomar una medida de la orientación del robot con solo realizar una consulta al sensor.
 
 
-\section{Algoritmos de visión TODO} 
+\section{Algoritmos de visión} 
 
 Llegados a este punto, ya pueden programarse algoritmos de visión en el robot. A continuación se mostrarán tres algoritmos inspirados en la competición CEABOT.
 
-\subsection{Análisis de trayectorias en navegación TODO} 
+\subsection{Análisis de trayectorias en navegación} 
 
 El primer algoritmo que se ha programado es la búsqueda de trayectorias para la prueba de navegación. Este código puede consultarse en el método \textit{findWay()} de \textit{raider.h}.
 
@@ -661,7 +673,7 @@ Para comenzar, se tomará una imagen y se pasará por la función \textit{detectGre
 \end{figure}
 \FloatBarrier
 
-\medskip Para que el algoritmo funcione correctamente, interesará que detecte la línea y el resto de cuerpos del campo no produzcan falsos positivos. Por tanto, el próximo objetivo es eliminar las rectas producidas por cuerpos ajenos a la linea blanca. Una forma sencilla de lograr esto es el método de la dilatación y la erosión. Primero se dilatarán los contornos blancos de la imágen $n$ veces hasta que los dos filos de la linea blanca se unan, es decir, los dos contornos se convertirán en un contorno mas grueso. Tras ello, la imagen se erosionará $n+1$ veces. Esta erosión eliminará por completo las lineas producidas por cuerpos externos, pero mantendrá el contorno de la linea por ser mas grueso. Tras ello, el resultado es el que puede visualizarse en la figura \ref{findline4}
+\medskip Para que el algoritmo funcione correctamente, interesará que detecte la línea y el resto de cuerpos del campo no produzcan falsos positivos. Por tanto, el próximo objetivo es eliminar las rectas producidas por cuerpos stenos a la linea blanca. Una forma sencilla de lograr esto es el método de la dilatación y la erosión. Primero se dilatarán los contornos blancos de la imágen $n$ veces hasta que los dos filos de la linea blanca se unan, es decir, los dos contornos se convertirán en un contorno mas grueso. Tras ello, la imagen se erosionará $n+1$ veces. Esta erosión eliminará por completo las lineas producidas por cuerpos externos, pero mantendrá el contorno de la linea por ser mas grueso. Tras ello, el resultado es el que puede visualizarse en la figura \ref{findline4}
 
 \begin{figure}[h]
 \centering
@@ -671,7 +683,7 @@ Para comenzar, se tomará una imagen y se pasará por la función \textit{detectGre
 \end{figure}
 \FloatBarrier
 
-\medskip Ahora, una simple detección de líneas basada en la transformada de Hough \ref{duda1972use}, será suficiente para definir la linea blanca. Para ello se ha utilizado la función de OpenCV, \textit{HoughLines}, ajustando empíricamente sus parámetros para definir una linea de una longitud adecuada y evitar falsos positivos de los restos de cuerpos externos que puedan quedar en la imágen. Tras realizar una búsqueda y proyectarla en la imágen original, se ha obtenido el resultado de la figura \ref{findline5}
+\medskip Ahora, una simple detección de líneas basada en la transformada de Hough \cite{hough}, será suficiente para definir la linea blanca. Para ello se ha utilizado la función de OpenCV, \textit{HoughLines}, ajustando empíricamente sus parámetros para definir una linea de una longitud adecuada y evitar falsos positivos de los restos de cuerpos externos que puedan quedar en la imágen. Tras realizar una búsqueda y proyectarla en la imágen original, se ha obtenido el resultado de la figura \ref{findline5}
 
 \begin{figure}[h]
 \centering

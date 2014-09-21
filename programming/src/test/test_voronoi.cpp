@@ -15,20 +15,19 @@ Raider raider;
 
 int main()
 {
-    openCamera(0);
-
     int contador=0;
-    while(contador<20){
+    while(1){
         char c=waitKey(50);
         if (c=='\n'||c=='a') return 0;
 
-        Mat image=getFrame();
+        Mat image=raider.getFrame();
+        imshow("original", image);
         int size_factor=1;
         cv::Size size(160*size_factor,120*size_factor);
         resize(image,image,size);
-
+        standardShow(image,"movida");
         Vec2i way_result=raider.findWay(image);
-               //raider.findWay(image);//,10*size_factor,20);
+        raider.findWay(image);//,10*size_factor,20);
 
         if(abs(way_result[0])>10*size_factor){ // PARAMETRO DISTANCIA
             if(way_result[0]>0) report(OK,"E -> Paso lateral a la derecha");

@@ -33,5 +33,12 @@ void report(std::string msg){
     if(DEBUG_LEVEL<=1)std::cout<<msg<<endl;
 }
 
+void standardShow(cv::Mat image, string nombre){
+
+    cv::Size size(640,480);
+    resize(image,image,size);
+    cv::imshow(nombre,image);
+}
+
 
 

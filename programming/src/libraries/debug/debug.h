@@ -5,6 +5,9 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #define DEBUG_LEVEL 0
 
@@ -22,6 +25,7 @@ using namespace std;
 
 void report(int, string);
 void report(string);
+void standardShow(cv::Mat,string);
 
 template <class T> std::string to_string( const T &t )
 {

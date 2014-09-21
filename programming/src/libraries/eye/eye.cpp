@@ -44,6 +44,8 @@ cv::Mat1b detectGreen(Mat image){
 
     Mat result=((green-red)+(green-blue));
 
+
+
     blue.release();
     green.release();
     red.release();
@@ -52,6 +54,7 @@ cv::Mat1b detectGreen(Mat image){
 
     Mat1b out;
     threshold(result, out, 30 /*50*/, 255, THRESH_BINARY);
+    standardShow(out,"umbral");
 
     return out;
 }
@@ -172,7 +175,7 @@ void drawLine( Mat &img, Point start, Point end )
   line( img,
         start,
         end,
-        Scalar( 120, 0, 0 ),
+        Scalar( 255, 0, 0 ),
         thickness,
         lineType );
 }
@@ -188,7 +191,7 @@ void showMap(Mat input, Mat output){
     Mat ground(input.rows,input.cols, type, Scalar(0,255,0)); //debug
     Mat result=obstacles.clone()+ground.clone();
     result.setTo(red,output);
-    imshow("Mapa",result);
+    standardShow(result,"Mapa");
 }
 
 

@@ -119,10 +119,12 @@ int main(){
     Raider raider;
 
     while(1){
-        char c=waitKey(0);
+        char c=waitKey(50);
         if (c=='\n'||c=='a') return 0;
 
+
         Mat image=raider.getFrame();
+        imshow("ok",image);
         cv::Size size(160,120);
         resize(image,image,size);
        /* cv::Size size(160,120);

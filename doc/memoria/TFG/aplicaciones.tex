@@ -1,5 +1,5 @@
 %chapter introduce un nuevo capítulo
-\chapter{Aplicaciones}
+\chapter{Aplicaciones}\label{chapteraplicaciones}
 
 Llegamos a este capítulo, el estado del proyecto es el siguiente. Se ha desarrollado un robot completo tanto a nivel de hardware como a nivel de software. Así mismo, también se han creado herramientas para que el robot pueda interactuar con el entorno de forma controlada. Con los recursos que se han generado se preparará el robot para participar en dos eventos: La exhibición de futbol robótico Spain Experience, y la competición CEABOT 2014
 
@@ -15,7 +15,7 @@ Spain Experience es un evento organizado por la Liga de Futbol Profesional en el
 \end{figure}
 \FloatBarrier
 
-\medskip Para preparar a RAIDER para la exhibición, se optará por montar el módulo Bluetooth que se comentó en el apartado ( TODO ) y teleoperarlo desde un smartphone. De este modo, el robot estaría funcionando durante mas de dos horas realizando cambios de batería, aproximadamente cada 10 minutos. Esta exhibición supone un gran paso en el desarrollo del robot, ya que es una forma excelente de someter a estress sus componentes y de operar en un escenario externo al laboratorio.
+\medskip Para preparar a RAIDER para la exhibición, se optará por montar el módulo Bluetooth que se comentó en capítulos anteriores del proyecto y teleoperarlo desde un smartphone. De este modo, el robot estaría funcionando durante mas de dos horas realizando cambios de batería, aproximadamente cada 10 minutos. Esta exhibición supone un gran paso en el desarrollo del robot, ya que es una forma excelente de someter a estress sus componentes y de operar en un escenario externo al laboratorio.
 
 \section{CEABOT 2014}
 
@@ -48,7 +48,7 @@ El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brú
 
 \medskip Tras realizar una lectura positiva de un marcador, se definirá una posición objetivo, basandose en la referencia del robot en ese momento y sumandole el incremento que indique el marcador. El robot comenzará a rotar y cuando alcance la posición objetivo tomará esa posición final como la nueva referencia. Tras esto, el algoritmo volverá a intentar detectar un código QR y se cerrará el bucle.
 
-\medskip Cabe destacar un detalle: Las posiciones objetivo se definirán con la referencia de la posición del robot y el incremento que marque el código QR. Salvo en la primera detección (en la que la referencia se toma de una medida de la brújula), las referencias se definirán como la posición objetivo de la búsqueda anterior y en ningún caso como una medida de la b?ujula al terminar los movimientos. De esta forma cada punto objetivo no estará sujeto a errores acumulativos, ya que su distancia respecto a la referencia inicial será siempre un múltiplo de $45º$. 
+\medskip Cabe destacar un detalle: Las posiciones objetivo se definirán con la referencia de la posición del robot y el incremento que marque el código QR. Salvo en la primera detección (en la que la referencia se toma de una medida de la brújula), las referencias se definirán como la posición objetivo de la búsqueda anterior y en ningún caso como una medida de la brujula al terminar los movimientos. De esta forma cada punto objetivo no estará sujeto a errores acumulativos, ya que su distancia respecto a la referencia inicial será siempre un múltiplo de $45º$. 
 
 \subsection{Algoritmo para la prueba de navegación}
 
@@ -56,9 +56,9 @@ El algoritmo de la prueba de navegación quizás sea el mas complejo de los tres p
 
 \medskip De forma similar a la prueba de visión, el robot partirá de una posición de reposo, y se mantedrá en esa posición hasta que le indiquemos que comience la prueba con el código QR de la figura \ref{goraider}. Una vez que se da la orden, el robot toma una referencia magnética de la dirección en la que deberá recorrer el campo. Tras ello, comenzará a caminar.
 
-\medskip Se ha implementado un control de caídas continuo durante toda la prueba. Para ello se ha utilizado la función \textit{getFall}, detallada anteriormente en el apartado TODO . Después de realizar cada movimiento, RAIDER evalúa si su posición es vertical respecto al suelo. En caso de que se detecte una caída, el robot se levantará de forma autónoma y continuará con su programación. 
+\medskip Se ha implementado un control de caídas continuo durante toda la prueba. Para ello se ha utilizado la función \textit{getFall}, detallada anteriormente en el capítulo anterior. Después de realizar cada movimiento, RAIDER evalúa si su posición es vertical respecto al suelo. En caso de que se detecte una caída, el robot se levantará de forma autónoma y continuará con su programación. 
 
-\medskip Antes de dar cada paso, RAIDER analiza la trayectoria que debe seguir con la función \textit{findWay}. Esta función, como se vió en el apartado TODO , devolverá datos de la distancia que existe entre el robot y el punto de inicio de la trayectoria, y sobre el ángulo que forma el primer tramo de la trayectoria. Si el robot está lejos del punto de inicio, deberá acercarse con pasos laterales. Si el ángulo que forma el tramo es demasiado amplio, el robot rotará sobre sí mismo para orientarse. La definición de "lejano" y "amplio", y su evaluación respecto al robot, se realizan con dos parámetros parametrizables dentro de \textit{raider.h}. Por otro lado, cuando la linea es recta el robot podrá avanzar sin problemas. Existe una condición más, si el robot avanza de forma recta tres veces seguidas, se ejecutará una rutina para controlar si el robot está orientado correctamente y está siguiendo la dirección adecuada. Cuando esto ocurre, se compara la dirección medida por la brújula en ese instante con la referencia magnética que se tomó al principio de la prueba. En caso de que esta dirección sea diferente, el robot rotará sobre sí mismo para recuperar la orientación.
+\medskip Antes de dar cada paso, RAIDER analiza la trayectoria que debe seguir con la función \textit{findWay}. Esta función, como se vió en el apartado de programación, devolverá datos de la distancia que existe entre el robot y el punto de inicio de la trayectoria, y sobre el ángulo que forma el primer tramo de la trayectoria. Si el robot está lejos del punto de inicio, deberá acercarse con pasos laterales. Si el ángulo que forma el tramo es demasiado amplio, el robot rotará sobre sí mismo para orientarse. La definición de qué es ''lejano'', qué es ''amplio'', y su evaluación respecto al robot, se realizan con dos parámetros parametrizables dentro de \textit{raider.h}. Por otro lado, cuando la linea es recta el robot podrá avanzar sin problemas. Existe una condición más, si el robot avanza de forma recta tres veces seguidas, se ejecutará una rutina para controlar si el robot está orientado correctamente y está siguiendo la dirección adecuada. Cuando esto ocurre, se compara la dirección medida por la brújula en ese instante con la referencia magnética que se tomó al principio de la prueba. En caso de que esta dirección sea diferente, el robot rotará sobre sí mismo para recuperar la orientación.
 
 \begin{figure}[h]
 \centering
