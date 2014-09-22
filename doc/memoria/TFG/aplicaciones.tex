@@ -23,7 +23,7 @@ Tal y como se ha ido diciendo a lo largo del proyecto, el robot se presenta a la
 
 \subsection{Algoritmo para la prueba de visión}
 
-El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brújula. Con la cámara y la funcion \textit{findQR()} de \textit{raider.h} se realizará la detección de los marcadores. Por otro lado, la brújula se encargará de controlar el giro del robot para adecuarlo a las exigencias del marcador. A continuación, en la figura \ref{flujovision} se mostrará el diagrama de estados que se ha programado.
+El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brújula. Con la cámara y la funcion \textit{findQR} de \textit{raider.h} se realizará la detección de los marcadores. Por otro lado, la brújula se encargará de controlar el giro del robot para adecuarlo a las exigencias del marcador. A continuación, en la figura \ref{flujovision} se mostrará el diagrama de estados que se ha programado.
 
 \begin{figure}[h]
 \centering
@@ -34,7 +34,7 @@ El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brú
 \FloatBarrier
 
 
-\medskip El primer lugar el robot parte de un estado de inicio, en el que mantiene una posición de reposo. Seguirá en esta posición hasta que se le de una señal de inicio. La señal de inicio se ha programado en la función \textit{waitStart()} de \textit{raider.h}. Una vez se ejecuta el robot se mantendrá realizando lecturas de códigos QR. Si se pone el marcador de la figura \ref{goraider} en frente del robot (impreso en una tarjeta de papel, por ejemplo) el robot comenzará la prueba.
+\medskip El primer lugar el robot parte de un estado de inicio, en el que mantiene una posición de reposo. Seguirá en esta posición hasta que se le de una señal de inicio. La señal de inicio se ha programado en la función \textit{waitStart} de \textit{raider.h}. Una vez se ejecuta el robot se mantendrá realizando lecturas de códigos QR. Si se pone el marcador de la figura \ref{goraider} en frente del robot (impreso en una tarjeta de papel, por ejemplo) el robot comenzará la prueba.
 
 \begin{figure}[h]
 \centering
@@ -86,11 +86,10 @@ En la prueba de sumo no se ha utilizado la cámara del robot, ya que no se ha con
 
 \medskip Como en el resto de programas, el robot permanece en reposo hasta que se le da una señal de inicio. LA diference es que en este caso no se utilizará la función \textit{waitStart}, sino que se activará directamente desde el interruptor de seguridad. Este interruptor, como se aprecia en la figura \ref{interruptor}, se encuentra en una zona accesible en la espalda del robot y se utiliza para cortar virtualmente la comunicación entre el controlador principal y el controlador de locomoción de este modo. Cuando el interruptor está encendido, RAIDER permanece inmovil en una posición neutra. También, gracias a este interruptor se pueden realizar paradas de emergencia durante las pruebas.
 
-TODO
 
 \begin{figure}[h]
 \centering
-%\includegraphics[width=1\textwidth]{figuras/interruptor}   
+\includegraphics[width=0.5\textwidth]{figuras/interruptor}   
 \caption{Interruptor de emergencia}
 \label{interruptor}
 \end{figure}

@@ -1,135 +1,31 @@
 \begin{thebibliography}{10}
 
-\bibitem{webarduino}
-Arduino {O}fficial {W}ebsite, septiembre 2014 [online]
-  \url{http://arduino.cc/}.
-
 \bibitem{webasrob}
 Asociación de {R}obótica ({UC3M}), septiembre 2014 [online]
   \url{http://asrob.uc3m.es}.
+
+\bibitem{webroboticslab}
+Robotics lab, septiembre 2014 [online] \url{http://roboticslab.uc3m.es}.
 
 \bibitem{webmyod}
 Proyecto myod: Make your own droid, septiembre 2014 [online]
   \url{http://asrob.uc3m.es/index.php/MYOD}.
 
-\bibitem{webkondo}
-Kondo robots website, septiembre 2014 [online] \url{http://kondo-robot.com}.
-
-\bibitem{webroboticslab}
-Robotics lab, septiembre 2014 [online] \url{http://roboticslab.uc3m.es}.
-
 \bibitem{normativaceabot}
 Normativa del campeonato ceabot, septiembre 2014 [online]
   \url{http://www.ceautomatica.es/sites/default/files/upload/10/CEABOT/docs/normativa_CEABOT_2014.pdf}.
 
-\bibitem{webcinvestav}
-{ Centro de Investigación y de Estudios Avanzados del Instituto Politécnico
-  Nacional, Cinvestav}, septiembre 2014 [online] \url{http://www.cinvestav.mx}.
+\bibitem{kitano1997robocup}
+Hiroaki Kitano, Minoru Asada, Yasuo Kuniyoshi, Itsuki Noda, and Eiichi Osawa.
+\newblock Robocup: The robot world cup initiative.
+\newblock In {\em Proceedings of the first international conference on
+  Autonomous agents}, pages 340--347. ACM, 1997.
 
-\bibitem{webcmucam}
-Cmucam website, septiembre 2014 [online] \url{http://www.cmucam.org}.
-
-\bibitem{registermapimu}
-Register {M}ap for {MPU9150}, septiembre 2014 [online]
-  \url{http://www.invensense.com/mems/gyro/documents/RM-MPU-9150A-00v4_2.pdf}.
-
-\bibitem{webroboone}
-Robo-{O}ne website, septiembre 2014 [online] \url{http://www.robo-one.com}.
-
-\bibitem{manualcmps03}
-Cmps03 - compass module documentation, septiembre 2014 [online]
-  \url{http://www.robot-electronics.co.uk/htm/cmps3tech.htm}.
-
-\bibitem{webrobotchallenge}
-Robotchallenge website, septiembre 2014 [online]
-  \url{http://www.robotchallenge.org}.
-
-\bibitem{webbioloid}
-Robotis bioloid website, septiembre 2014 [online]
-  \url{http://www.robotis.com/xe/bioloid_en}.
-
-\bibitem{webrobovie}
-Vstone {R}obovie-{X}, septiembre 2014 [online]
-  \url{http://www.vstone.co.jp/english/products/robovie_x/}.
-
-\bibitem{webserialib}
-Serialib, simple serial library v1.2, septiembre 2014 [online]
-  \url{serialib.free.fr}.
-
-\bibitem{barrientos2007cinematica}
-Antonio Barrientos, Luis~Felipe Pe{\~n}{\'\i}n, Carlos Balaguer, and Rafael
-  Aracil.
-\newblock {\em Cinem{\'a}tica inversa}.
-\newblock McGraw-Hill, Interamericana de Espa{\~n}a, 2007.
-
-\bibitem{barrientos2007guiado}
-Antonio Barrientos, Luis~Felipe Pe{\~n}{\'\i}n, Carlos Balaguer, and Rafael
-  Aracil.
-\newblock {\em Programación por guiado}.
-\newblock McGraw-Hill, Interamericana de Espa{\~n}a, 2007.
-
-\bibitem{bradski2008learning}
-Gary Bradski and Adrian Kaehler.
-\newblock {\em Learning OpenCV: Computer vision with the OpenCV library}.
-\newblock " O'Reilly Media, Inc.", 2008.
-
-\bibitem{brown2012zbar}
-Jeff Brown.
-\newblock Zbar bar code reader, 2012.
-
-\bibitem{bueno2013facial}
-Jorge~Garc{\'\i}a Bueno, Miguel Gonz{\'a}lez-Fierro, Luis Moreno, and Carlos
-  Balaguer.
-\newblock Facial emotion recognition and adaptative postural reaction by a
-  humanoid based on neural evolution.
-\newblock {\em International Journal of Advanced Computer Science}, 3(10),
-  2013.
-
-\bibitem{calkins2011overview}
-David Calkins.
-\newblock An overview of robogames [competitions].
-\newblock {\em Robotics \& Automation Magazine, IEEE}, 18(1):14--15, 2011.
-
-\bibitem{canny1986computational}
-John Canny.
-\newblock A computational approach to edge detection.
-\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
-  on}, (6):679--698, 1986.
-
-\bibitem{coley2013beagleboard}
-Gerald Coley.
-\newblock Beagleboard system reference manual.
-\newblock {\em BeagleBoard.org, December}, page 121, 2013.
-
-\bibitem{cooperationgp2y0a02yk}
-Sharp Cooperation.
-\newblock Gp2y0a02yk data sheet, 2007.
-
-\bibitem{creator2009cross}
-Qt~Creator.
-\newblock Cross-platform qt ide, 2009.
-
-\bibitem{de2001vision}
-Arturo De~la Escalera and Jos{\'e}~Mar{\'\i}a Armingol.
-\newblock Visi{\'o}n por computador.
-\newblock {\em Fundamentos y m{\'e}todos}, 2001.
-
-\bibitem{hough}
-Richard~O Duda and Peter~E Hart.
-\newblock Use of the hough transformation to detect lines and curves in
-  pictures.
-\newblock {\em Communications of the ACM}, 15(1):11--15, 1972.
-
-\bibitem{evans2012practical}
-Brian Evans.
-\newblock {\em Practical 3D Printers}.
-\newblock Springer, 2012.
-
-\bibitem{gonzalez2010educational}
-Miguel Gonz{\'a}lez-Fierro, Alberto Jard{\'o}n, Martin~F Santiago Mart{\'\i}nez
-  de~la Casa, Juan~G Stoelen, and Carlos Balaguer.
-\newblock Educational initiatives related with the ceabot contest.
-\newblock {\em Proceedings of SIMPAR}, pages 15--16, 2010.
+\bibitem{darwin}
+Inyong Ha, Yusuke Tamura, Hajime Asama, Jeakweon Han, and Dennis~W Hong.
+\newblock Development of open humanoid platform darwin-op.
+\newblock In {\em SICE Annual Conference (SICE), 2011 Proceedings of}, pages
+  2178--2181. IEEE, 2011.
 
 \bibitem{gouaillier2009mechatronic}
 David Gouaillier, Vincent Hugel, Pierre Blazevic, Chris Kilner, J{\'e}r{\^o}me
@@ -139,28 +35,43 @@ David Gouaillier, Vincent Hugel, Pierre Blazevic, Chris Kilner, J{\'e}r{\^o}me
 \newblock In {\em Robotics and Automation, 2009. ICRA'09. IEEE International
   Conference on}, pages 769--774. IEEE, 2009.
 
-\bibitem{guo1989parallel}
-Zicheng Guo and Richard~W Hall.
-\newblock Parallel thinning with two-subiteration algorithms.
-\newblock {\em Communications of the ACM}, 32(3):359--373, 1989.
+\bibitem{de2001vision}
+Arturo De~la Escalera and Jos{\'e}~Mar{\'\i}a Armingol.
+\newblock Visi{\'o}n por computador.
+\newblock {\em Fundamentos y m{\'e}todos}, 2001.
 
-\bibitem{darwin}
-Inyong Ha, Yusuke Tamura, Hajime Asama, Jeakweon Han, and Dennis~W Hong.
-\newblock Development of open humanoid platform darwin-op.
-\newblock In {\em SICE Annual Conference (SICE), 2011 Proceedings of}, pages
-  2178--2181. IEEE, 2011.
+\bibitem{webrobotchallenge}
+Robotchallenge website, septiembre 2014 [online]
+  \url{http://www.robotchallenge.org}.
 
-\bibitem{hall1989fast}
-Richard~W. Hall.
-\newblock Fast parallel thinning algorithms: parallel speed and connectivity
-  preservation.
-\newblock {\em Communications of the ACM}, 32(1):124--131, 1989.
+\bibitem{webarduino}
+Arduino {O}fficial {W}ebsite, septiembre 2014 [online]
+  \url{http://arduino.cc/}.
 
-\bibitem{hirai1998development}
-Kazuo Hirai, Masato Hirose, Yuji Haikawa, and Toru Takenaka.
-\newblock The development of honda humanoid robot.
-\newblock In {\em Robotics and Automation, 1998. Proceedings. 1998 IEEE
-  International Conference on}, volume~2, pages 1321--1326. IEEE, 1998.
+\bibitem{webbioloid}
+Robotis bioloid website, septiembre 2014 [online]
+  \url{http://www.robotis.com/xe/bioloid_en}.
+
+\bibitem{webkondo}
+Kondo robots website, septiembre 2014 [online] \url{http://kondo-robot.com}.
+
+\bibitem{webrobovie}
+Vstone {R}obovie-{X}, septiembre 2014 [online]
+  \url{http://www.vstone.co.jp/english/products/robovie_x/}.
+
+\bibitem{calkins2011overview}
+David Calkins.
+\newblock An overview of robogames [competitions].
+\newblock {\em Robotics \& Automation Magazine, IEEE}, 18(1):14--15, 2011.
+
+\bibitem{webroboone}
+Robo-{O}ne website, septiembre 2014 [online] \url{http://www.robo-one.com}.
+
+\bibitem{csahin2005swarm}
+Erol {\c{S}}ahin.
+\newblock Swarm robotics: From sources of inspiration to domains of
+  application.
+\newblock In {\em Swarm robotics}, pages 10--20. Springer, 2005.
 
 \bibitem{jardon2014review}
 Alberto Jard{\'o}n, F{\'e}lix Rodr{\'\i}guez, Juan~G Victores, Santiago
@@ -170,6 +81,12 @@ Alberto Jard{\'o}n, F{\'e}lix Rodr{\'\i}guez, Juan~G Victores, Santiago
 \newblock In {\em ROBOT2013: First Iberian Robotics Conference}, pages 41--52.
   Springer, 2014.
 
+\bibitem{gonzalez2010educational}
+Miguel Gonz{\'a}lez-Fierro, Alberto Jard{\'o}n, Martin~F Santiago Mart{\'\i}nez
+  de~la Casa, Juan~G Stoelen, and Carlos Balaguer.
+\newblock Educational initiatives related with the ceabot contest.
+\newblock {\em Proceedings of SIMPAR}, pages 15--16, 2010.
+
 \bibitem{kajita2003biped}
 Shuuji Kajita, Fumio Kanehiro, Kenji Kaneko, Kiyoshi Fujiwara, Kensuke Harada,
   Kazuhito Yokoi, and Hirohisa Hirukawa.
@@ -178,47 +95,53 @@ Shuuji Kajita, Fumio Kanehiro, Kenji Kaneko, Kiyoshi Fujiwara, Kensuke Harada,
 \newblock In {\em Robotics and Automation, 2003. Proceedings. ICRA'03. IEEE
   International Conference on}, volume~2, pages 1620--1626. IEEE, 2003.
 
-\bibitem{kitano1997robocup}
-Hiroaki Kitano, Minoru Asada, Yasuo Kuniyoshi, Itsuki Noda, and Eiichi Osawa.
-\newblock Robocup: The robot world cup initiative.
-\newblock In {\em Proceedings of the first international conference on
-  Autonomous agents}, pages 340--347. ACM, 1997.
+\bibitem{barrientos2007cinematica}
+Antonio Barrientos, Luis~Felipe Pe{\~n}{\'\i}n, Carlos Balaguer, and Rafael
+  Aracil.
+\newblock {\em Cinem{\'a}tica inversa}.
+\newblock McGraw-Hill, Interamericana de Espa{\~n}a, 2007.
+
+\bibitem{hirai1998development}
+Kazuo Hirai, Masato Hirose, Yuji Haikawa, and Toru Takenaka.
+\newblock The development of honda humanoid robot.
+\newblock In {\em Robotics and Automation, 1998. Proceedings. 1998 IEEE
+  International Conference on}, volume~2, pages 1321--1326. IEEE, 1998.
+
+\bibitem{barrientos2007guiado}
+Antonio Barrientos, Luis~Felipe Pe{\~n}{\'\i}n, Carlos Balaguer, and Rafael
+  Aracil.
+\newblock {\em Programación por guiado}.
+\newblock McGraw-Hill, Interamericana de Espa{\~n}a, 2007.
 
 \bibitem{webpypose}
 Vanadium Labs.
 \newblock Software pypose, septiembre 2014 [online]
   \url{http://www.vanadiumlabs.com/pypose.html}.
 
-\bibitem{loeliger2012version}
-Jon Loeliger and Matthew McCullough.
-\newblock {\em Version Control with Git: Powerful tools and techniques for
-  collaborative software development}.
-\newblock " O'Reilly Media, Inc.", 2012.
+\bibitem{webcmucam}
+Cmucam website, septiembre 2014 [online] \url{http://www.cmucam.org}.
 
-\bibitem{martin2010mastering}
-Ken Martin and Bill Hoffman.
-\newblock {\em Mastering CMake}.
-\newblock Kitware, 2010.
-
-\bibitem{pareja2010diseno}
-M~Pareja~Aparicio.
-\newblock Dise{\~n}o y desarrollo de circuitos impresos con kicad, 2010.
-
-\bibitem{robotis2010manual}
-ROBOTIS.
-\newblock {OpenCM e-Manual}.
-\newblock 2010 \url{http://support.robotis.com/en/software/robotis_opencm.htm}.
+\bibitem{bueno2013facial}
+Jorge~Garc{\'\i}a Bueno, Miguel Gonz{\'a}lez-Fierro, Luis Moreno, and Carlos
+  Balaguer.
+\newblock Facial emotion recognition and adaptative postural reaction by a
+  humanoid based on neural evolution.
+\newblock {\em International Journal of Advanced Computer Science}, 3(10),
+  2013.
 
 \bibitem{russell2012openscad}
 J.~Russell and R.~Cohn.
 \newblock {\em Openscad}.
 \newblock Book on Demand, 2012.
 
-\bibitem{csahin2005swarm}
-Erol {\c{S}}ahin.
-\newblock Swarm robotics: From sources of inspiration to domains of
-  application.
-\newblock In {\em Swarm robotics}, pages 10--20. Springer, 2005.
+\bibitem{evans2012practical}
+Brian Evans.
+\newblock {\em Practical 3D Printers}.
+\newblock Springer, 2012.
+
+\bibitem{pareja2010diseno}
+M~Pareja~Aparicio.
+\newblock Dise{\~n}o y desarrollo de circuitos impresos con kicad, 2010.
 
 \bibitem{troxler2014frictions}
 Peter Troxler and Dannie Jost.
@@ -226,9 +149,92 @@ Peter Troxler and Dannie Jost.
   and commerce: The example of open hardware.
 \newblock 2014.
 
+\bibitem{bradski2008learning}
+Gary Bradski and Adrian Kaehler.
+\newblock {\em Learning OpenCV: Computer vision with the OpenCV library}.
+\newblock " O'Reilly Media, Inc.", 2008.
+
+\bibitem{creator2009cross}
+Qt~Creator.
+\newblock Cross-platform qt ide, 2009.
+
+\bibitem{martin2010mastering}
+Ken Martin and Bill Hoffman.
+\newblock {\em Mastering CMake}.
+\newblock Kitware, 2010.
+
+\bibitem{robotis2010manual}
+ROBOTIS.
+\newblock {OpenCM e-Manual}.
+\newblock 2010 \url{http://support.robotis.com/en/software/robotis_opencm.htm}.
+
+\bibitem{loeliger2012version}
+Jon Loeliger and Matthew McCullough.
+\newblock {\em Version Control with Git: Powerful tools and techniques for
+  collaborative software development}.
+\newblock " O'Reilly Media, Inc.", 2012.
+
+\bibitem{cooperationgp2y0a02yk}
+Sharp Cooperation.
+\newblock Gp2y0a02yk data sheet, 2007.
+
+\bibitem{coley2013beagleboard}
+Gerald Coley.
+\newblock Beagleboard system reference manual.
+\newblock {\em BeagleBoard.org, December}, page 121, 2013.
+
+\bibitem{robotis2010dynamixel}
+ROBOTIS.
+\newblock {Dynamixel AX-12A e-Manual}.
+\newblock 2010
+  \url{http://support.robotis.com/en/product/dynamixel/ax_series/dxl_ax_actuator.htm}.
+
+\bibitem{webserialib}
+Serialib, simple serial library v1.2, septiembre 2014 [online]
+  \url{serialib.free.fr}.
+
+\bibitem{registermapimu}
+Register {M}ap for {MPU9150}, septiembre 2014 [online]
+  \url{http://www.invensense.com/mems/gyro/documents/RM-MPU-9150A-00v4_2.pdf}.
+
+\bibitem{manualcmps03}
+Cmps03 - compass module documentation, septiembre 2014 [online]
+  \url{http://www.robot-electronics.co.uk/htm/cmps3tech.htm}.
+
+\bibitem{hall1989fast}
+Richard~W. Hall.
+\newblock Fast parallel thinning algorithms: parallel speed and connectivity
+  preservation.
+\newblock {\em Communications of the ACM}, 32(1):124--131, 1989.
+
+\bibitem{guo1989parallel}
+Zicheng Guo and Richard~W Hall.
+\newblock Parallel thinning with two-subiteration algorithms.
+\newblock {\em Communications of the ACM}, 32(3):359--373, 1989.
+
 \bibitem{zhang1984fast}
 TY~Zhang and Ching~Y. Suen.
 \newblock A fast parallel algorithm for thinning digital patterns.
 \newblock {\em Communications of the ACM}, 27(3):236--239, 1984.
+
+\bibitem{canny1986computational}
+John Canny.
+\newblock A computational approach to edge detection.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, (6):679--698, 1986.
+
+\bibitem{hough}
+Richard~O Duda and Peter~E Hart.
+\newblock Use of the hough transformation to detect lines and curves in
+  pictures.
+\newblock {\em Communications of the ACM}, 15(1):11--15, 1972.
+
+\bibitem{brown2012zbar}
+Jeff Brown.
+\newblock Zbar bar code reader, 2012.
+
+\bibitem{webcinvestav}
+{ Centro de Investigación y de Estudios Avanzados del Instituto Politécnico
+  Nacional, Cinvestav}, septiembre 2014 [online] \url{http://www.cinvestav.mx}.
 
 \end{thebibliography}

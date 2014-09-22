@@ -50,15 +50,15 @@
 \contentsline {subsection}{\numberline {4.4.1}Controlador de locomoci\'on}{34}{subsection.4.4.1}
 \contentsline {subsubsection}{Arduino}{34}{section*.25}
 \contentsline {subsubsection}{Arbotix}{34}{section*.26}
-\contentsline {subsubsection}{Serie OpenCM TODO}{35}{section*.27}
+\contentsline {subsubsection}{Serie OpenCM}{35}{section*.27}
 \contentsline {subsection}{\numberline {4.4.2}Controlador de visi\'on}{36}{subsection.4.4.2}
 \contentsline {subsubsection}{Raspberry Pi}{37}{section*.28}
 \contentsline {subsubsection}{BeagleBone Black}{38}{section*.29}
 \contentsline {subsection}{\numberline {4.4.3}Arquitectura hardware}{39}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Alimentaci\'on}{41}{section.4.5}
+\contentsline {section}{\numberline {4.5}Alimentaci\'on}{40}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Bater\IeC {\'\i }a}{41}{subsection.4.5.1}
 \contentsline {subsubsection}{Bater\IeC {\'\i }as de pol\IeC {\'\i }mero de litio}{41}{section*.30}
-\contentsline {subsubsection}{Bater\IeC {\'\i }as de litio fosfato de hierro}{42}{section*.31}
+\contentsline {subsubsection}{Bater\IeC {\'\i }as de litio fosfato de hierro}{41}{section*.31}
 \contentsline {subsubsection}{Elecci\'on y dise\~no del sistema}{42}{section*.32}
 \contentsline {subsection}{\numberline {4.5.2}Regulador de tensi\'on}{43}{subsection.4.5.2}
 \contentsline {subsubsection}{Regulador lineal}{44}{section*.33}
@@ -91,7 +91,7 @@
 \contentsline {section}{\numberline {7.3}Montaje}{65}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Montaje de la placa de expansi\'on}{65}{subsection.7.3.1}
 \contentsline {subsection}{\numberline {7.3.2}Integraci\'on de la c\'amara en la cabeza}{67}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Integraci\'on de los sensores infrarrojos en los brazos}{69}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.3}Integraci\'on de los sensores infrarrojos en los brazos}{68}{subsection.7.3.3}
 \contentsline {chapter}{\numberline {8}Programaci\'on}{71}{chapter.8}
 \contentsline {section}{\numberline {8.1}Configuraci\'on de la BeagleBone Black}{71}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Sistema operativo}{71}{subsection.8.1.1}
@@ -100,35 +100,35 @@
 \contentsline {subsection}{\numberline {8.1.4}Configuraci\'on de pines}{75}{subsection.8.1.4}
 \contentsline {section}{\numberline {8.2}Sistema de locomoci\'on TODO}{77}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1}Movimiento del servo PWM}{77}{subsection.8.2.1}
-\contentsline {subsubsection}{Servo::attach(uint8 pin)}{78}{section*.36}
-\contentsline {subsubsection}{Servo::writeMicroseconds(uint16 pulseWidth)}{78}{section*.37}
+\contentsline {subsubsection}{attach}{78}{section*.36}
+\contentsline {subsubsection}{writeMicroseconds}{78}{section*.37}
 \contentsline {subsection}{\numberline {8.2.2}Movimiento de los actuadores Dynamixel}{78}{subsection.8.2.2}
 \contentsline {subsection}{\numberline {8.2.3}Movimiento sincronizado de las articulaciones}{80}{subsection.8.2.3}
-\contentsline {subsubsection}{class Robot}{81}{section*.38}
-\contentsline {subsubsection}{Robot::Robot()}{82}{section*.39}
-\contentsline {subsubsection}{void Robot::setTargetPosition(int,int,... int)}{82}{section*.40}
-\contentsline {subsubsection}{void Robot::setTargetOffset(int,int,... int)}{82}{section*.41}
-\contentsline {subsubsection}{void Robot::updateCurrentPosition()}{82}{section*.42}
-\contentsline {subsubsection}{void Robot::move(float)}{82}{section*.43}
+\contentsline {subsubsection}{Clase Robot}{81}{section*.38}
+\contentsline {subsubsection}{Constructor de Robot}{82}{section*.39}
+\contentsline {subsubsection}{Funci\'on setTargetPosition}{82}{section*.40}
+\contentsline {subsubsection}{Funci\'on setTargetOffset}{82}{section*.41}
+\contentsline {subsubsection}{Funci\'on updateCurrentPosition}{82}{section*.42}
+\contentsline {subsubsection}{Funci\'on move}{82}{section*.43}
 \contentsline {subsection}{\numberline {8.2.4}Funciones de movimientos combinados TODo }{83}{subsection.8.2.4}
-\contentsline {subsubsection}{void movHead(int)}{83}{section*.44}
-\contentsline {subsubsection}{void movVertical(int,int) TODO}{83}{section*.45}
-\contentsline {subsubsection}{void movLateral(int,int) TODO}{83}{section*.46}
-\contentsline {subsubsection}{void movFrontal(int,int) TODO}{83}{section*.47}
+\contentsline {subsubsection}{Funci\'on movHead}{83}{section*.44}
+\contentsline {subsubsection}{Funci\'on movVertical TODO}{83}{section*.45}
+\contentsline {subsubsection}{Funci\'on movLateral TODO}{83}{section*.46}
+\contentsline {subsubsection}{Funci\'on movFrontal TODO}{83}{section*.47}
 \contentsline {subsection}{\numberline {8.2.5}Creaci\'on de movimientos completos}{83}{subsection.8.2.5}
 \contentsline {section}{\numberline {8.3}Comunicaci\'on serie}{84}{section.8.3}
 \contentsline {subsection}{\numberline {8.3.1}Comunicaci\'on serie en OpenCM}{84}{subsection.8.3.1}
-\contentsline {subsubsection}{void HardwareSerial::begin(unsigned int baud)}{85}{section*.48}
-\contentsline {subsubsection}{unsigned int HardwareSerial::available()}{85}{section*.49}
-\contentsline {subsubsection}{unsigned char HardwareSerial::read()}{85}{section*.50}
-\contentsline {subsubsection}{void HardwareSerial::flush()}{86}{section*.51}
+\contentsline {subsubsection}{Funci\'on begin}{85}{section*.48}
+\contentsline {subsubsection}{Funci\'on available}{85}{section*.49}
+\contentsline {subsubsection}{Funci\'on read}{85}{section*.50}
+\contentsline {subsubsection}{Funci\'on flush}{86}{section*.51}
 \contentsline {subsection}{\numberline {8.3.2}Comunicaci\'on serie en BeagleBone}{86}{subsection.8.3.2}
-\contentsline {subsubsection}{open TODO nombre }{86}{section*.52}
-\contentsline {subsubsection}{writechar TODO nombre }{86}{section*.53}
+\contentsline {subsubsection}{Funci\'on Open}{86}{section*.52}
+\contentsline {subsubsection}{Funci\'on WriteChar}{86}{section*.53}
 \contentsline {subsection}{\numberline {8.3.3}Comunicaci\'on con m\'odulo Bluetooth}{86}{subsection.8.3.3}
 \contentsline {section}{\numberline {8.4}Programaci\'on de sensores}{87}{section.8.4}
 \contentsline {subsection}{\numberline {8.4.1}Infrarrojos}{87}{subsection.8.4.1}
-\contentsline {subsection}{\numberline {8.4.2}IMU TODO}{88}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.2}IMU}{88}{subsection.8.4.2}
 \contentsline {subsection}{\numberline {8.4.3}Br\'ujula}{89}{subsection.8.4.3}
 \contentsline {section}{\numberline {8.5}Algoritmos de visi\'on}{90}{section.8.5}
 \contentsline {subsection}{\numberline {8.5.1}An\'alisis de trayectorias en navegaci\'on}{90}{subsection.8.5.1}
