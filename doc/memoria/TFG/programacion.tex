@@ -355,10 +355,58 @@ movHead es una función que permite mover el servo PWM de la cabeza del robot. Si
 
 
 % Dibujos y otras movidas
-\subsubsection{Función movVertical TODO}
-Meter fotos del robot con una pierna levantada
-\subsubsection{Función movLateral TODO}
-\subsubsection{Función movFrontal TODO}
+\subsubsection{Función movVertical}
+
+Esta función actúa sobre tres servos con ejes de rotación paralelos en cada pierna: Tobillo, rodilla y rotula superior. Esta función necesita dos parámetros, uno  para la pierna izquierda y otro para la derecha. Actuando sobre cada pierna, podremos desplazar el pie en el eje vertical. En la figura \ref{movvertical}, puede observarse de izquierda a derecha como varía la altura de la pierna izquierda al realizar la función \textit{movVertical(200,0)}.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth}
+>{\centering\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.4\textwidth]{figuras/mov} &
+\includegraphics[width=0.4\textwidth]{figuras/movvertical} \\
+\end{tabular}  
+\caption{Función \textit{movVertical} aplicando 200 sobre la pierna izquierda}
+\label{movvertical}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{Función movFrontal}
+
+Esta función actúa sobre dos servos con ejes de rotación paralelos en cada pierna: Tobillo y rotula superior. Al igual que \textit{movVertical}, esta función necesita dos parámetros, uno  para la pierna izquierda y otro para la derecha. Actuando sobre cada pierna, podremos desplazar el pie hacia delante y hacia atrás. En la figura \ref{movfrontal}, puede observarse de izquierda a derecha como varía posición de la pierna izquierda al realizar la función \textit{movFrontal(100,0)}.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth}
+>{\centering\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.4\textwidth]{figuras/mov} &
+\includegraphics[width=0.4\textwidth]{figuras/movfrontal} \\
+\end{tabular}  
+\caption{Función \textit{movFrontal} aplicando 100 sobre la pierna izquierda}
+\label{movfrontal}
+\end{figure}
+\FloatBarrier
+
+Puede observarse que como efecto paralelo, la planta del pie se eleva ligeramente. Para contrarrestar este movimiento puede utilizarse la función \textit{movVertical}.
+
+\subsubsection{Función movLateral}
+
+Esta función actúa sobre dos servos con ejes de rotación paralelos en cada pierna: Tobillo y rotula superior. Sin embargo, esta vez usará los ejes perpendiculares a los utilizados en las dos funciones anteriores. Esta función necesita dos parámetros, uno  para la pierna izquierda y otro para la derecha. Actuando sobre cada pierna, podremos desplazar el pie hacia los lados. En la figura \ref{movLateral}, puede observarse de izquierda a derecha como varía posición de la pierna izquierda al realizar la función \textit{movLateral(100,0)}.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth}
+>{\centering\arraybackslash}m{0.5\textwidth}}
+\includegraphics[width=0.4\textwidth]{figuras/mov} &
+\includegraphics[width=0.4\textwidth]{figuras/movlateral} \\
+\end{tabular}  
+\caption{Función \textit{movLateral} aplicando 100 sobre la pierna izquierda}
+\label{movfrontal}
+\end{figure}
+\FloatBarrier
+
+Al igual ue en la función anterior Puede observarse que la planta del pie se eleva ligeramente. De nuevo, puede utilizarse la función \textit{movVertical} para mantener las dos plantas de los pies a la misma altura.
+
 
 \subsection{Creación de movimientos completos}
 
