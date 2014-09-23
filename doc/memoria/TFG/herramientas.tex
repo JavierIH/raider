@@ -21,7 +21,7 @@ OpenCad también permite el diseño de modelos planos, siendo compatible con forma
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/openscad}   
-\caption{Pantalla del editor de OpenSCAD}
+\caption{Pantalla del editor de OpenSCAD.}
 \label{openscad}
 \end{figure}
 \FloatBarrier
@@ -31,13 +31,13 @@ OpenCad también permite el diseño de modelos planos, siendo compatible con forma
 
 Para la fabricación de las piezas que integran el robot, se ha utilizado la impresora 3D \cite{evans2012practical} replicable open-source modelo Prusa i2 Air de construcción casera de al figura \ref{impresora}. La configuración habitual de esta impresora ha sido mejorada con un extrusor Budaschnozzle 1.3 y una electrónica Sanguinololu 1.3b.
 
-Esta impresora, dado su funcionamiento, pertenece a la familia del modelado por deposición fundida. La materia prima que utilizan este tipo de impresoras es un rollo de filamento de plástico termofusible de entre 1.5 y 3mm de diámetro. En este caso, se utilizará ABS de 3mm. El filamento de plástico es dirigido a un extrusor que empuja el material a través de un conducto caliente conocido como hotend. Al llegar a este punto, el filamento se funde y se hace pasar por un agujero de salida de tamaño muy inferior al de entrada, produciendo hilos de material fundido. Durante la impresión, el extrusor deposita plástico fundido a lo largo de diferentes trayectorias con el objetivo de formar capas horizontales sólidas. Mediante la apilación de estas capas se consigue dotar de altura al modelo y crear la pieza requerida.
+Esta impresora, dado su funcionamiento, pertenece a la familia del modelado por deposición fundida. La materia prima que utilizan este tipo de impresoras es un rollo de filamento de plástico termofusible de entre 1.5 y 3mm de diámetro. En este caso, se utilizará ABS de 3mm. Se ha utilizadoa plástico ABS en favor de otro materiales como el PLA porque tiene una elasticidad ligeramente superior y resiste mejor los impactos. El filamento de plástico es dirigido a un extrusor que empuja el material a través de un conducto caliente conocido como hotend. Al llegar a este punto, el filamento se funde y se hace pasar por un agujero de salida de tamaño muy inferior al de entrada, produciendo hilos de material fundido. Durante la impresión, el extrusor deposita plástico fundido a lo largo de diferentes trayectorias con el objetivo de formar capas horizontales sólidas. Mediante la apilación de estas capas se consigue dotar de altura al modelo y crear la pieza requerida.
 A través del programa Repetier-Host, que se ocupa de gestionar el funcionamiento de la impresora desde el ordenador, y partiendo de los archivos STL que han sido generados anteriormente desde OpenSCAD, la impresora nos permite desarrollar prototipos y piezas finales para el proyecto.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{figuras/impresora}   
-\caption{Impresora 3D Prusa i2 Air}
+\caption{Impresora 3D Prusa i2 Air.}
 \label{impresora}
 \end{figure}
 \FloatBarrier
@@ -49,7 +49,7 @@ Dado que se va a necesitar expandir las conexiones físicas del controlador, se r
 
 \subsection{KiCad}
 
-KiCad \cite{pareja2010diseno} es una de las herramientas libres más avanzadas para el diseño electrónico asistido (EDA) que pueden encontrarse a dia de hoy. Cuenta con un grupo de más de 150 desarrolladores y una extensa comunidad de usuarios entre quienes se pueden destacar laboratorios como el CERN\cite{troxler2014frictions}.
+KiCad \cite{pareja2010diseno} es una de las herramientas libres más avanzadas para el diseño electrónico asistido (EDA) que pueden encontrarse a día de hoy. Cuenta con un grupo de más de 150 desarrolladores y una extensa comunidad de usuarios entre quienes se pueden destacar laboratorios como el CERN\cite{troxler2014frictions}.
 
 KiCad permite crear diseños electrónicos pasando por todas las fases del proceso, desde la idea a los ficheros de fabricación y la simulación 3D de la placa. El entorno, mostrado en la figura \ref{kicad}, cuenta con cuatro aplicaciones independientes:
 
@@ -63,7 +63,7 @@ KiCad permite crear diseños electrónicos pasando por todas las fases del proceso
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/kicad}   
-\caption{KiCad}
+\caption{KiCad.}
 \label{kicad}
 \end{figure}
 \FloatBarrier
@@ -80,7 +80,7 @@ Este proyecto conlleva una programación a diferentes niveles, desde el control d
 
 \subsection{OpenCV}
 
-OpenCV\citep{bradski2008learning} es una biblioteca libre de visión artificial. Fue creada en 1999 por Intel y liberada un año mas tarde en la conferencia anual  IEEE Conference on Computer Vision and Pattern Recognition. Existen infinidad de aplicaciones, como la programación de detección de movimiento para cámaras de seguridad o la detección visual de características importantes en diferentes etapas del proceso de fabricación de un producto. La gran popularidad de OpenCV se debe a que su publicación se da bajo licencia BSD, que permite que sea usada libremente para propósitos comerciales y de investigación.
+OpenCV\citep{bradski2008learning} es una biblioteca libre de visión artificial. Fue creada en 1999 por Intel y liberada un año más tarde en la conferencia anual  IEEE Conference on Computer Vision and Pattern Recognition. Existen infinidad de aplicaciones, como la programación de detección de movimiento para cámaras de seguridad o la detección visual de características importantes en diferentes etapas del proceso de fabricación de un producto. La gran popularidad de OpenCV se debe a que su publicación se da bajo licencia BSD, que permite que sea usada libremente para propósitos comerciales y de investigación.
 
 OpenCV también es multiplataforma y existen versiones para GNU/Linux, Windows y Mac OS X. Entre sus funcionalidad, se abarcan campos de la visión por computador como el reconocimiento de objetos, calibración de cámaras, visión 3D y visión robótica.
 Además, OpenCV está programado de forma muy optimizada en C y C++, lo que le otorga una alata eficiencia y aptitud para aplicaciones en tiempo real.
@@ -93,7 +93,7 @@ Qt Creator\cite{creator2009cross} es un entorno de desarrollo multiplataforma y 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/qt}   
-\caption{Qt Creator}
+\caption{Qt Creator.}
 \label{qt}
 \end{figure}
 \FloatBarrier
@@ -114,13 +114,13 @@ CM9 IDE\citep{robotis2010manual} es un entorno de programación basado en Arduino
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/cm9}   
-\caption{CM9 IDE}
+\caption{CM9 IDE.}
 \label{cm9}
 \end{figure}
 \FloatBarrier
 
 \subsection{Git}
 
-Git\cite{loeliger2012version} es un software de control de versiones diseñado para controlar el código de un proyecto en sus distintas iteraciones. Se diseñó pensando en la eficiencia y seguridad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de vódigo fuente e involucran a varios desarrolladores. Este proyecto se ha desarrollado enteramente en un repositorio online de Github. TODO
+Git\cite{loeliger2012version} es un software de control de versiones diseñado para controlar el código de un proyecto en sus distintas iteraciones. Se diseñó pensando en la eficiencia y seguridad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de vódigo fuente e involucran a varios desarrolladores. Este proyecto se ha desarrollado enteramente en un repositorio online.
 
-Con todas las herramientas comentadas en este apartado, se tienen los recursos suficientes para comenzar la construcción del robot.
+\medskip Con todas las herramientas comentadas en este apartado, se tienen los recursos suficientes para comenzar la construcción del robot.

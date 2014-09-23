@@ -10,57 +10,63 @@ Los sensores utilizados, tal y como se detalló en la selección de componentes, s
 
 Los sensores infrarrojos modelo GP2Y0A21YK0F de la marca Sharp, permiten variar la tensión de alimentación entre -0.3 y 7V, pero experimentalmente se ha observado que la mayor precisión se alcanza a 5V. A esta tensión, podemos observar en la hoja de características\cite{cooperationgp2y0a02yk} del sensor la gráfica \ref{graficair}, en la que se muestra el valor de la salida del sensor respecto a la distancia medida.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/graficair}   
-\caption{Gráfica de tensión entre salida para un sensor infrarrojo}
+\caption{Gráfica de tensión entre salida para un sensor infrarrojo.}
 \label{graficair}
 \end{figure} 
+\FloatBarrier
 
 De esta gráfica pueden sacarse dos conclusiones. La primera, ya conocida, es que la variación de la salida del sensor y su medida no son proporcionales, por lo que si fuese necesaria extraer medidas en unidades reales habría que calcular una adecuación compleja. Sin embargo, esto no será necesaria ya que la programación del sensor se basará en umbrales fijos que serán marcados de forma empírica. La segunda conclusión es que el sensor ofrecerá una tensión de salida máxima de 3.3V. 
 
 La BeagleBone Black dispone de hasta siete entradas analógicas como puede observarse en la figura \ref{bbbanal}. Conectaremos las salidas de los dos sensores en dos de estos pines. Sin embargo, consultando el manual de la BeagleBone Black \cite{coley2013beagleboard} observamos que cada entrada analógica soporta un máximo de 1.8V. Si alimentando el sensor a 5V lo conectásemos directamente, un pico de 3.3V podría deteriorar la placa. Por ello, se ha decidido aplicar una simple adecuación de la salida añadiendo un divisor resistivo. De esta forma, nos cercioraremos de que los 3.3V máximos que podrían salir del sensor se conviertan en 1.8V.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/bbbanal}   
-\caption{Esquema de entradas analógica de una BeagleBone Black}
+\caption{Esquema de entradas analógica de una BeagleBone Black.}
 \label{bbbanal}
 \end{figure}
+\FloatBarrier
 
-En el esquema de la figura \ref{divir} podemos observar las conexiones que se han realizado entre la placa y el sensor. El sensor es alimentado a 5V a partir del convertidor DC-DC y puesto a tierra común con el controlador. La salida del sensor se aplicará sobre el divisor resistivo, siendo la salida del divisor resistivo la entrada a la BeagleBone Black. Se ha colocado una resistencia de $33k\Omega$ en $Ra$ y una resistencia de $66k\Omega$ en $Rb$.
+En el esquema de la figura \ref{divir} podemos observar las conexiones que se han realizado entre la placa y el sensor. El sensor es alimentado a 5V a partir del convertidor DC-DC y puesto a tierra común con el controlador. La salida del sensor se aplicará sobre el divisor resistivo, siendo la salida del divisor resistivo la entrada a la BeagleBone Black. Se ha colocado una resistencia de $10k\Omega$ en $Ra$ y una resistencia de $12k\Omega$ en $Rb$.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.65\textwidth]{figuras/divir}   
-\caption{Circuito de adecuación de un sensor infrarrojo}
+\caption{Circuito de adecuación de un sensor infrarrojo.}
 \label{divir}
 \end{figure}
+\FloatBarrier
+
 
 \subsection{Brújula y sensor inercial}
 
 Tanto la brújula CMPS03 como el sensor inercia MPU9150 han sido conectados por I2C, ambos en el mismo bus. La BeagleBone Black cuenta con dos buses I2C independientes, tal y como se observa en la figura \ref{bbbi2c}.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/bbbi2c}   
-\caption{Esquema de puertos I2C de una BeagleBone Black}
+\caption{Esquema de puertos I2C de una BeagleBone Black.}
 \label{bbbi2c}
 \end{figure}
+\FloatBarrier
 
 De este modo el sistema ha quedado diseñado tal y como se muestra en la figura \ref{coni2c}. Cabe destacar que los dos sensores se han alimentado a 3.3V, ya que el MPU9150 los requiere y el CMPS03, aunque se recomienda conectarlo a 5V, funciona perfectamente a 3.3V. Esta tensión se ha conseguido desde el pin P9-3 del controlador.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.85\textwidth]{figuras/esquemai2c}   
-\caption{Circuito del bus I2C}
+\caption{Circuito del bus I2C.}
 \label{coni2c}
 \end{figure} 
+\FloatBarrier
+
 
 \section{Desarrollo de una placa de expansión}
 
-Para montar el esquema que se diseñó anteriormente en la figura \ref{dia1} será necesario cablear un gran número de conexiones entre dispositivos. Para ello, se ha optado por diseñar y fabricar una placa de expansión que permita conectar todos los dispositivos de una forma limpia y ordenada. Esta placa servirá para comunicar y alimentar las dos placas controladoras, sensores, actuadores y alimentación de todos ellos. El esquema electrónico puede consultarse en el anexo \ref{anexoesquematico}. A parte, el en anexo \ref{anexofotolitos} se ha incluído una copia de los fotolitos de la placa.
-
+Para montar el esquema que se diseñó anteriormente en la figura \ref{dia1} será necesario cablear un gran número de conexiones entre dispositivos. Para ello, se ha optado por diseñar y fabricar una placa de expansión que permita conectar todos los dispositivos de una forma limpia y ordenada. Esta placa servirá para comunicar y alimentar las dos placas controladoras, sensores, actuadores y alimentación de todos ellos. Los anexos 2 y 3 contienen respectivamente el listado de componentes usados y los fotolitos necesarios para fabricar la placa. Por otra parte, el esquema electrónico puede consultarse en el anexo 4. Además, todas las fuentes de diseño y fabricación pueden consultarse en el repositorio del proyecto \cite{repositorio}.
 
 \section{Montaje}
 
@@ -73,17 +79,17 @@ La placa de expansión ha sido fabricada mediante fresado. Tras enviar los planos
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/montajeplaca1}   
-\caption{Placa de expasión salida de fabricación}
+\caption{Placa de expasión salida de fabricación.}
 \label{montajeplaca1}
 \end{figure}
 \FloatBarrier
 
-Tras esto se ha procedido a soldar todos los componentes que necesita. El listado de los componentes puede consultarse en el anexo TODO. En la imágen de la figura \ref{montajeplaca2} puede observarse cómo queda la placa una vez soldada. Además, se le ha realizado un lacado de seguridad con laca aislante. Esto nos ayudará a evitar posibles accidentes por contacto con conectores y partes metálicas del robot. Finalmente
+Tras esto se ha procedido a soldar todos los componentes que necesita. En la imágen de la figura \ref{montajeplaca2} puede observarse cómo queda la placa una vez soldada. Además, se le ha realizado un lacado de seguridad con laca aislante. Esto nos ayudará a evitar posibles accidentes por contacto con conectores y partes metálicas del robot.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/montajeplaca2}   
-\caption{Placa de expasión con componentes soldados}
+\caption{Placa de expasión con componentes soldados.}
 \label{montajeplaca2}
 \end{figure}
 \FloatBarrier
@@ -93,7 +99,7 @@ Tras esto se ha procedido a soldar todos los componentes que necesita. El listad
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/montajeplaca3}   
-\caption{Placa de expansión monstada en RAIDER}
+\caption{Placa de expansión monstada en RAIDER.}
 \label{montajeplaca3}
 \end{figure}
 \FloatBarrier
@@ -106,7 +112,7 @@ Para integrar la webcam en la cabeza de RAIDER se ha procedido a desmontar la cá
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/montajecam1}   
-\caption{Cámara Microsoft LifeCam desmontada}
+\caption{Cámara Microsoft LifeCam desmontada.}
 \label{montajecam1}
 \end{figure}
 \FloatBarrier
@@ -122,7 +128,7 @@ Para integrar la webcam en la cabeza de RAIDER se ha procedido a desmontar la cá
 \includegraphics[width=0.33\textwidth]{figuras/montajecam3} &
 \includegraphics[width=0.33\textwidth]{figuras/montajecam4} \\
 \end{tabular}
-\caption{Integración de la cámara en la cabeza}
+\caption{Integración de la cámara en la cabeza.}
 \label{montajecam2}
 \end{figure}
 \FloatBarrier
@@ -132,7 +138,7 @@ Una vez montado y acortado el cable, procedemos a montar el servo que moverá la 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.47\textwidth]{figuras/montajecam5}   
-\caption{Cuello y soporte para la cabeza}
+\caption{Cuello y soporte para la cabeza.}
 \label{montajecam5}
 \end{figure}
 \FloatBarrier
@@ -146,7 +152,7 @@ Finalmente, en la figura \ref{montajecam6} se muestra el resultado del montaje c
 \includegraphics[width=0.50\textwidth]{figuras/montajecam7} &
 \includegraphics[width=0.50\textwidth]{figuras/montajecam8} \\
 \end{tabular}
-\caption{Resultado tras la integración de la cabeza en el robot}
+\caption{Resultado tras la integración de la cabeza en el robot.}
 \label{montajecam6}
 \end{figure}
 \FloatBarrier
@@ -158,7 +164,7 @@ Tal y como se comentó anteriormente, se han integrado dos sensores en los brazos
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/montajeir1}   
-\caption{Sensores infrarrojos y soportes}
+\caption{Sensores infrarrojos y soportes.}
 \label{montajeir1}
 \end{figure}
 \FloatBarrier
@@ -172,8 +178,10 @@ Tras montar las piezas, se ha obtenido el resultado mostrado en la figura \ref{m
 \includegraphics[width=0.50\textwidth]{figuras/montajeir2} &
 \includegraphics[width=0.50\textwidth]{figuras/montajeir3} \\
 \end{tabular}  
-\caption{Brazos con sensores montados}
+\caption{Brazos con sensores montados.}
 \label{montajeir2}
 \end{figure}
 \FloatBarrier
+
+Tras estos pasos y después de montar el resto de piezas mecánicas fabricadas, el robot ya estará preparado para comenzar a desarrollar todo el software necesario.
 

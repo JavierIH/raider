@@ -8,23 +8,23 @@ Como punto de partida, se han seleccionado una serie de componentes adecuados pa
 El primer paso para la realización de este proyecto fue el estudio y selección de las plataformas robóticas que se encuentran en el mercado actualmente. Dado que el objetivo es encontrar un robot humanoide sobre el que se pueda implantar un sistema de visión, es necesario analizar diversos aspectos; algunos mecánicos como el numero y fuerza de los actuadores, y otros electrónicos como la capacidad de procesamiento y velocidad del controlador. Sin embargo, dado que este proyecto es autofinanciado en su mayor medida, el factor económico también es un limitante destacable. Buscamos una plataforma que cumpla los siguientes requisitos:
 
 \begin{itemize}
-\item{Programable en C/C++} 
+\item{Programable en C/C++.} 
 
 Se requiere que sea programable en C/C++ y que además no dependa de una IDE concreta.
 
-\item{Posibilidad de conectarle una cámara}
+\item{Posibilidad de conectarle una cámara.}
 
 Se necesita que permita conectarle una cámara y realizar programas con OpenCV.
 
-\item{Expandible con sensores y actuadores}
+\item{Expandible con sensores y actuadores.}
 
 El sistema debe permitir la adición de nuevos sensores y actuadores, sin verse limitado por hardware o software.
 
-\medskip \item{Servos de al menos 12kg/cm}
+\medskip \item{Servos de al menos 12kg/cm.}
 
 Ya que se van a incluir nuevas partes, es absolutamente necesario que los servos puedan soportar carga adicional colocada en el robot.
 
-\item{Chasis reconfigurable}
+\item{Chasis reconfigurable.}
 
 Aunque no es tan importante como el resto, es posible que el robot requiera modificaciones, por lo que una base reconfigurable y versátil será apreciada.
 
@@ -36,7 +36,7 @@ En el siguiente apartado se presenta un estudio las principales opciones.
 
 \bigskip \subsubsection{Comparativa y elección final}
 
-Realizando un primer análisis, ninguno de los robots candidatos cumple los requísitos. Todos ellos obligan a utilizar entornos de desarrollo y lenguajes propios para su programación. El Robonova y el Robovie tienen unos servos demasiado débiles, lo que dificultaría mucho añadir mas peso al robot. Entre el Kondo y el Bioloid, se ha elegido el Bioloid por tres razones: Es mas fácil de modificar, el kit contiene mas servos  y es más barato. También, previendo las modificaciones futuras, se contempló la idea de comprar únicamente los servos Dynamixel que usa el Bioloid por separado. Sin embargo, resultó mas económico adquirir el kit completo de Bioloid Comprehensive.
+Realizando un primer análisis, ninguno de los robots candidatos cumple los requísitos. Todos ellos obligan a utilizar entornos de desarrollo y lenguajes propios para su programación. El Robonova y el Robovie tienen unos servos demasiado débiles, lo que dificultaría mucho añadir más peso al robot. Entre el Kondo y el Bioloid, se ha elegido el Bioloid por tres razones: Es más fácil de modificar, el kit contiene más servos  y es más barato. También, previendo las modificaciones futuras, se contempló la idea de comprar únicamente los servos Dynamixel que usa el Bioloid por separado. Sin embargo, resultó más económico adquirir el kit completo de Bioloid Comprehensive.
 
 
 \section{Modificaciones estructurales}
@@ -51,7 +51,7 @@ Un requisito importante del proyecto es permitir que la cámara que vamos a monta
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/microservo}   
-\caption{Microservo PWM}
+\caption{Microservo PWM.}
 \label{microservo}
 \end{figure}
 \FloatBarrier
@@ -67,7 +67,7 @@ Otra de las modificaciones básicas a realizar sobre la plataforma robótica, ha s
 
 \section{Sensorización}
 
-El funcionamiento del robot y su control va a estar basado principalmente en la cámara y los algoritmos de visión que se programarán. No obstante, la cámara consume muchos recursos del procesador y existen alguna tareas sencillas que es mas fácil programar con sensores mas simples. A continuación se muestra un estudio de sensores que pueden ser útiles en el proyecto.
+El funcionamiento del robot y su control va a estar basado principalmente en la cámara y los algoritmos de visión que se programarán. No obstante, la cámara consume muchos recursos del procesador y existen alguna tareas sencillas que es más fácil programar con sensores más simples. A continuación se muestra un estudio de sensores que pueden ser útiles en el proyecto.
 
 \subsection{Sensores de distancia}
 
@@ -80,7 +80,7 @@ Los sensores infrarrojos, como el que aparece en al figura \ref{sensorir} basan 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/sharp}   
-\caption{Sensor infrarrojo}
+\caption{Sensor infrarrojo.}
 \label{sensorir}
 \end{figure}
 \FloatBarrier
@@ -148,7 +148,7 @@ En el mercado existen varios modelos económicos. En este proyecto se ha utilizad
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/imu}   
-\caption{Sensor inercial MPU9150}
+\caption{Sensor inercial MPU9150.}
 \label{imu}
 \end{figure}
 
@@ -159,21 +159,21 @@ La inclusión de una brújula es indispensable cuando de requiere conocer la direc
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/compass}   
-\caption{Brújula magnética CMPS03}
+\caption{Brújula magnética CMPS03.}
 \label{compass}
 \end{figure}
 \FloatBarrier
 
-\medskip Para este proyecto se ha utilizado una brújula CMPS03 como la de la figura \ref{compass}. El motivo de haber seleccionado este modelo frente a otros mas comúnes, como por ejemplo la HMC5883L, se debe a que ya ha sido utilizada en anteriores proyectos robóticos en la asociación con muy buenos resultados. Esto se debe en parte a que la placa del sensor incluye un PIC que se encarga de calibrar y comunicar los datos medidos, de forma que no será necesario que el controlador del robot realice estos cálculos y podrá utilizar directamente la medida extraída.
+\medskip Para este proyecto se ha utilizado una brújula CMPS03 como la de la figura \ref{compass}. El motivo de haber seleccionado este modelo frente a otros más comúnes, como por ejemplo la HMC5883L, se debe a que ya ha sido utilizada en anteriores proyectos robóticos en la asociación con muy buenos resultados. Esto se debe en parte a que la placa del sensor incluye un PIC que se encarga de calibrar y comunicar los datos medidos, de forma que no será necesario que el controlador del robot realice estos cálculos y podrá utilizar directamente la medida extraída.
 
 \subsection{Cámara}
 
-La elección de la cámara ha sido condicionada principalmente por su compatibilidad con el driver de Linux v4l2. Existe una amplia variedad de cámaras válidas en el mercado. Dado el carácter de este proyecto, se ha optado por utilizar una webcam, ya que son mas accesibles que las cámaras avanzadas de investigación y los algoritmos de visión que serán programados no requieren imágenes de alta calidad.
+La elección de la cámara ha sido condicionada principalmente por su compatibilidad con el driver de Linux v4l2. Existe una amplia variedad de cámaras válidas en el mercado. Dado el carácter de este proyecto, se ha optado por utilizar una webcam, ya que son más accesibles que las cámaras avanzadas de investigación y los algoritmos de visión que serán programados no requieren imágenes de alta calidad.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/camara}   
-\caption{Microsoft LifeCam Cinema}
+\caption{Microsoft LifeCam Cinema.}
 \label{camara}
 \end{figure}
 \FloatBarrier
@@ -185,9 +185,9 @@ La elección de la cámara ha sido condicionada principalmente por su compatibilid
 
 \section{Elección del controlador}
 
-Llegamos a un punto crítico del proyecto, y es la elección de un controlador para nuestro sistema. La controlador CM-5 contenida en el kit original de Bioloid Comprehensive se encuentra muy lejos de poder soportar el conjunto de nuevos dispositivos que se usarán en el proyecto. Necesitaremos reemplazarla por un sistema mas complejo que nos permita conectar y programar los sensores seleccionados, programar algoritmos de visión y comunicarse con los servos Dynamixel.
+Llegamos a un punto crítico del proyecto, y es la elección de un controlador para nuestro sistema. La controlador CM-5 contenida en el kit original de Bioloid Comprehensive se encuentra muy lejos de poder soportar el conjunto de nuevos dispositivos que se usarán en el proyecto. Necesitaremos reemplazarla por un sistema más complejo que nos permita conectar y programar los sensores seleccionados, programar algoritmos de visión y comunicarse con los servos Dynamixel.
 
-\medskip Para solucionar esto se decide colocar un SBC (Single Board Computer, ordenador de placa única), que dadas sus capacidades de procesamiento se utilizará como controlador principal. Así mismo, será el encargado de realizar el procesamiento de imágenes. Junto al SBC, se conectará un controlador mas sencillo basado en un microcontrolador para controlar los Dynamixel AX-12A por separado. 
+\medskip Para solucionar esto se decide colocar un SBC (Single Board Computer, ordenador de placa única), que dadas sus capacidades de procesamiento se utilizará como controlador principal. Así mismo, será el encargado de realizar el procesamiento de imágenes. Junto al SBC, se conectará un controlador más sencillo basado en un microcontrolador para controlar los Dynamixel AX-12A por separado. 
 
 \medskip De esta forma, el controlador del robot estará formado por dos elementos, el SBC que se encargará del procesamiento de imágenenes y sensores, y un microcontrolador se encargará de la locomoción del robot.
 
@@ -206,13 +206,13 @@ La placa Arbotix, mostrada en la figura \ref{arbotix} está basada, al igual que 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/arbotix}   
-\caption{Placa Arbotix}
+\caption{Placa Arbotix.}
 \label{arbotix}
 \end{figure}
 \FloatBarrier
 
 
-El problema de estas placas es que no existe un distribuidor que las venda en Europa. Eso no solo significa que sean difíciles de conseguir, sino tambien que no tienen demasiados usuarios, y por tanto la documentación es escasa y heterogenea.
+El problema de estas placas es que no existe un distribuidor que las venda en Europa. Eso no solo significa que sean difíciles de conseguir, sino también que no tienen demasiados usuarios, y por tanto la documentación es escasa y heterogenea.
 
 \subsubsection{Serie OpenCM}
 
@@ -221,7 +221,7 @@ Recientemente la empresa Robotis ha sacado a la venta una nueva linea de placas 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/cm900}   
-\caption{Placa CM900}
+\caption{Placa CM900.}
 \label{cm900}
 \end{figure}
 \FloatBarrier
@@ -231,7 +231,7 @@ Si bien es cierto, es necesario comentar que la primera edición, la CM900, prese
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{figuras/opencm}   
-\caption{Placa OpenCM9.04}
+\caption{Placa OpenCM9.04.}
 \label{opencm}
 \end{figure}
 \FloatBarrier
@@ -260,7 +260,7 @@ Especificaciones Raspberry PI modelo B \\
 \medskip Dimensiones: \medskip & 85.60mm $\times$ 53.98mm\\ \hline
 \medskip Sistemas operativos soportados: \medskip & \medskip GNU/Linux: Debian (Raspbian), Fedora (Pidora), Arch Linux (Arch Linux ARM), Slackware Linux. RISC OS2 \medskip \\ \hline
 \end{tabular}
-\caption{Especificaciones Raspberry Pi B}
+\caption{Especificaciones Raspberry Pi B.}
 \label{raspec}
 \end{table}
 \FloatBarrier
@@ -271,7 +271,7 @@ En el caso que nos ocupa, sería una perfecta candidata a ocuparse del procesamie
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/raspberry}   
-\caption{SBC Raspberry B ©Raspberry PI Foundation.}
+\caption{SBC Raspberry B.}
 \label{raspberry}
 \end{figure}
 \FloatBarrier
@@ -283,13 +283,13 @@ La BeagleBone Black de Texas Instruments, fotografiada en la figura \ref{beagleb
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/bbbboard}   
-\caption{SBC BeagleBone Black}
+\caption{SBC BeagleBone Black.}
 \label{beaglebone}
 \end{figure}
 \FloatBarrier
 
 
-\medskip Como puede observarse en el cuadro \ref{blaspec}, sus características son ligeramente superiores a las de la Raspberry. Principalmente, el hecho de que tenga tal variedad de pines la hace muy adecuada para usarse como controlador principal de un robot. La BeagleBone Black actualmente no cuenta con una comunidad tan extensa como la Raspberry Pi, pero cada vez se ve mas en proyectos. El problema fundamental de la BeagleBone Black es la falta de bibliotecas en C/C++ que permitan programar sus periféricos de bajo nivel. Esto significa que en el caso de utilizar esta placa, se deberán programar bibliotecas propias para estos propósitos. 
+\medskip Como puede observarse en el cuadro \ref{blaspec}, sus características son ligeramente superiores a las de la Raspberry. Principalmente, el hecho de que tenga tal variedad de pines la hace muy adecuada para usarse como controlador principal de un robot. La BeagleBone Black actualmente no cuenta con una comunidad tan extensa como la Raspberry Pi, pero cada vez se ve más en proyectos. El problema fundamental de la BeagleBone Black es la falta de bibliotecas en C/C++ que permitan programar sus periféricos de bajo nivel. Esto significa que en el caso de utilizar esta placa, se deberán programar bibliotecas propias para estos propósitos. 
 
 \begin{table}[h]
 \centering
@@ -307,13 +307,13 @@ Especificaciones BBB \\
 \medskip Dimensiones: \medskip & 86.40 mm $\times$ 53.30 mm \\ \hline
 Sistemas operativos soportados: &  \medskip  Fedora, Android, Ubuntu, Debian, openSUSE , Ångström, FreeBSD, NetBSD, OpenBSD, QNX, MINIX 3, RISC OS, y Windows Embedded. \medskip  \\ \hline
 \end{tabular}
-\caption{Especificaciones BeagleBone Black}
+\caption{Especificaciones BeagleBone Black.}
 \label{blaspec}
 \end{table}
 \FloatBarrier
 
 
-Por otro lado, su lógica funciona a 3.3V y es mas compacta que la Raspberry Pi. Por todo lo comentado, y aunque trabajar con ella pueda resultar mas tedioso que con la Raspberry Pi, se ha seleccionado la Beaglebone Black como controlador principal del robot.
+Por otro lado, su lógica funciona a 3.3V y es más compacta que la Raspberry Pi. Por todo lo comentado, y aunque trabajar con ella pueda resultar más tedioso que con la Raspberry Pi, se ha seleccionado la Beaglebone Black como controlador principal del robot.
 
 \subsection{Arquitectura hardware}
 
@@ -322,7 +322,7 @@ Una vez se ha seleccionado todos los elementos que fomarán parte del robot, se h
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/dia1}   
-\caption{Diagrama de conexiones}
+\caption{Diagrama de conexiones.}
 \label{dia1}
 \end{figure}
 \FloatBarrier
@@ -336,11 +336,11 @@ La batería contenida en el kit es una batería NiMH de 8 elementos AA Sanyo Enelo
 
 Por las razones descritas, se ha decidido buscar una alternativa. Los requísitos para seleccionar una batería los marcan tres factores: La tensión de funcionamiento de los servos, la de las placas de control y la de los sensores. Pero dado que los servos tienen una tensión de operación en un rango de 9V a 12V, respecto al resto de elementos que serán alimentados a 5V o 3.3V, nos centraremos principalmente en encontrar una batería adecuada para los servos.
 
-\medskip Hoy en dia, las baterías NiMH están empezando a caer en desuso a favor de las baterías de litio. Se barajaron dos posibilidades.
+\medskip Hoy en día, las baterías NiMH están empezando a caer en desuso a favor de las baterías de litio. Se barajaron dos posibilidades.
 
 \subsubsection{Baterías de polímero de litio}
 
-Las baterías de polímero de litio, mas conocidas como baterías LiPo, destacan por desarrollar una tasa de descarga bastante alta y por tener un tamaño y peso reducido. Dado su uso en automodelismo y aeromodelismo, son unas baterías muy comunes que en los últimos años han ido bajando su precio. Actualmente existe una gran variedad de baterías LiPo de diversos tamaños y precio asequible. Cada célula LiPo ofrece 3.7V, por lo que la elección correcta para este robot sería una batería de 3S, o lo que es lo mismo, 11,1V.
+Las baterías de polímero de litio, más conocidas como baterías LiPo, destacan por desarrollar una tasa de descarga bastante alta y por tener un tamaño y peso reducido. Dado su uso en automodelismo y aeromodelismo, son unas baterías muy comunes que en los últimos años han ido bajando su precio. Actualmente existe una gran variedad de baterías LiPo de diversos tamaños y precio asequible. Cada célula LiPo ofrece 3.7V, por lo que la elección correcta para este robot sería una batería de 3S, o lo que es lo mismo, 11,1V.
 
 \medskip Sin embargo, las baterías LiPo tienen una desventaja importante, su fragilidad. El proceso de carga y descarga de una batería de este tipo no es un asunto trivial, una sobredescarga de la batería provoca un deterioro inmediato de la misma, calentando sus elementos e incluso pudiendo llegar a incendiarse. Es por ello que se necesita un cargador con capacidad para balancear las células, de forma que las tensiones de cada una de ellas se tengan bajo control durante el proceso.
 
@@ -357,7 +357,7 @@ Por su tamaño y prestaciones se ha elegido la batería LiPo Rhino de 3S y 1750mAh
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/lipo}   
-\caption{Batería LiPo}
+\caption{Batería LiPo.}
 \label{lipo}
 \end{figure}
 \FloatBarrier
@@ -379,7 +379,7 @@ Dispositivo & Número & Consumo unitario & Consumo total  \\
 Total  &  &  & \medskip  $135530mW\simeq136W$ \medskip  \\ \hline
 \hline
 \end{tabular}
-\caption{Consumo medio}
+\caption{Consumo medio.}
 \label{consumo}
 \end{table}
 \FloatBarrier
@@ -398,7 +398,7 @@ Hasta aquí parece que es suficiente con la elección de la nueva batería, sin emb
 
 La primera idea fue utilizar un pequeño circuito con un regulador lineal LM7805. El LM7805 es un componente muy común en los circuitos electrónicos, ya que ofrecen una salida de 5V a partir de tensiones de entrada de hasta 35V. En principio no parecería muy descabellado conectar los servos AX-12A  y la placa OpenCM directamente a la batería, y conectar en resto de componentes a través del regulador.
 
-\medskip No obstante existen dos problemas para realizar este montaje. El primero es que la eficiencia de este componente es muy pobre, cercana al 60\% según su hoja de características. Esto provocaría una disminución drástica en el tiempo de operación del robot y una disipación de energia tan alta que sería necesario incluir un disipador. Pero el segundo problema es mas importante, el componente está diseñado para aportar una corriente máxima al circuito de 1 amperio. Teniendo en cuenta los datos del cuadro \ref{consumo}, solo la BeagleBone Black ya requiere una corriente de 1.2A, y junto al resto de componentes, asciende hasta 1.7A . Un consumo superior al marcado por el fabricante puede producir fallos de funcionamiento en el componente. En este caso particular, podría producirse un calentamiento excesivo, que a su vez puede llegar a provocar cortocircuitos internos entre la patilla de entrada y la de salida. Las consecuencias de un fallo así serían nefastas, ya que deteriorarían los dispositivos conectados a él.
+\medskip No obstante existen dos problemas para realizar este montaje. El primero es que la eficiencia de este componente es muy pobre, cercana al 60\% según su hoja de características. Esto provocaría una disminución drástica en el tiempo de operación del robot y una disipación de energia tan alta que sería necesario incluir un disipador. Pero el segundo problema es más importante, el componente está diseñado para aportar una corriente máxima al circuito de 1 amperio. Teniendo en cuenta los datos del cuadro \ref{consumo}, solo la BeagleBone Black ya requiere una corriente de 1.2A, y junto al resto de componentes, asciende hasta 1.7A . Un consumo superior al marcado por el fabricante puede producir fallos de funcionamiento en el componente. En este caso particular, podría producirse un calentamiento excesivo, que a su vez puede llegar a provocar cortocircuitos internos entre la patilla de entrada y la de salida. Las consecuencias de un fallo así serían nefastas, ya que deteriorarían los dispositivos conectados a él.
 
 \subsubsection{Convertidor UBEC}
 
@@ -407,7 +407,7 @@ Un UBEC es un convertidor DC-DC de tipo reductor. El dispositivo se muestra en l
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/ubec}   
-\caption{Convertidor DC-DC comercial, UBEC ©HeliDirect.com}
+\caption{Convertidor DC-DC comercial.}
 \label{ubec}
 \end{figure}
 \FloatBarrier

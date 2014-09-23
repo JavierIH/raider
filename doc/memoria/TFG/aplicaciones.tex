@@ -5,7 +5,7 @@ Llegamos a este capítulo, el estado del proyecto es el siguiente. Se ha desarrol
 
 \section{Spain Experience}
 
-Spain Experience es un evento organizado por la Liga de Futbol Profesional en el que se unen actividades de sectores tecnológicos, empresariales y agroalimentarios. Con motivo de su celebración en México, el Centro de Investigación y de Estudios Avanzados (Cinvestav) \cite{webcinvestav} invitó a miembros del Robotics Lab y de AsRob a participar en un partido de futbol robótico inspirado en la competición RoboCup. El campo, visible en la figura \ref{fotomexico} es propio de robots de mayor tamaño, lo que podría suponer una desventaja..
+Spain Experience es un evento organizado por la Liga de Futbol Profesional en el que se unen actividades de sectores tecnológicos, empresariales y agroalimentarios. Con motivo de su celebración en México, el Centro de Investigación y de Estudios Avanzados (Cinvestav) \cite{webcinvestav} invitó a miembros del Robotics Lab y de AsRob a participar en un partido de futbol robótico inspirado en la competición RoboCup. El campo, visible en la figura \ref{fotomexico} es propio de robots de mayor tamaño, lo que podría suponer una desventaja.
 
 \begin{figure}[h]
 \centering
@@ -23,7 +23,7 @@ Tal y como se ha ido diciendo a lo largo del proyecto, el robot se presenta a la
 
 \subsection{Algoritmo para la prueba de visión}
 
-El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brújula. Con la cámara y la funcion \textit{findQR} de \textit{raider.h} se realizará la detección de los marcadores. Por otro lado, la brújula se encargará de controlar el giro del robot para adecuarlo a las exigencias del marcador. A continuación, en la figura \ref{flujovision} se mostrará el diagrama de estados que se ha programado.
+El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brújula. Con la cámara y la función \textit{findQR} de \textit{raider.h} se realizará la detección de los marcadores. Por otro lado, la brújula se encargará de controlar el giro del robot para adecuarlo a las exigencias del marcador. A continuación, en la figura \ref{flujovision} se mostrará el diagrama de estados que se ha programado.
 
 \begin{figure}[h]
 \centering
@@ -39,7 +39,7 @@ El algoritmo de la prueba de visión se basará en dos pilares: La cámara y la brú
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/goraider}   
-\caption{Código QR de inicio (Texto: GoRaider)}
+\caption{Código QR de inicio (GoRaider).}
 \label{goraider}
 \end{figure}
 \FloatBarrier
@@ -97,9 +97,9 @@ En la prueba de sumo no se ha utilizado la cámara del robot, ya que no se ha con
 
 \medskip Cuando el interruptor se apaga, RAIDER realiza una pausa reglamentaria de 5 segundos. Tras ello comienza la prueba. Primero realizará una medición con los dos sensores infrarrojos apuntando hacia delante. Si alguno de estos dos sensores detecta un objeto en la zona crítica (representada en la figura \ref{esquemarango}) RAIDER lanzará un puñetazo con el brazo izquierdo o el brazo derecho, en función de qué medición es mayor. Si encuentra un objeto en la zona de detección lejana intentará acercarse. En este caso existirán dos posibilidades: Que ambos sensores hagan una detección lejana o que solo lo haga uno de ellos. Si ambos sensores miden la detección lejana, el robot avanzará hacia delante. Por otra parte, si solo realiza la detección uno de ellos, RAIDER rotará hacia el lado del sensor que haya tomado la medida. De este modo, se orientará hacia su objetivo.
 
-\medskip También cabe la posibilidad de que ninguno de los dos sensores detecte nada. En este caso, RAIDER girará sobre su cintura para mirar hacia un lado. Cada vez que se llame a esta función RAIDER mirará a un lado diferente al de la última mirada, de esta forma se moverá a izquierda y a derecha intermitentemente. En el caso de que despues de uno de estos giros detecte un objeto en la posición crítica, RAIDER lanzara un ataque ligero con el brazo mas cercano al objetivo. Estos golpes son mas débiles que los que se realizan en la posición de defensa porque en este momento el robot se encuentra en una posición inestable y podría caerse.
+\medskip También cabe la posibilidad de que ninguno de los dos sensores detecte nada. En este caso, RAIDER girará sobre su cintura para mirar hacia un lado. Cada vez que se llame a esta función RAIDER mirará a un lado diferente al de la última mirada, de esta forma se moverá a izquierda y a derecha intermitentemente. En el caso de que después de uno de estos giros detecte un objeto en la posición crítica, RAIDER lanzara un ataque ligero con el brazo mas cercano al objetivo. Estos golpes son mas débiles que los que se realizan en la posición de defensa porque en este momento el robot se encuentra en una posición inestable y podría caerse.
 
-\medskip Paralelamente, existe un control de verticalidad. Con la función \textit{getFall} se analiza si el robot sigue de pie despues de cada movimiento. En el caso de que se haya caída, realizará la rutina de reincorporarse. Esto es muy importante en la prueba de sumo, ya que puede suponer una perdida de puntos que el robot caiga al atacar a su oponente y no se levante.
+\medskip Paralelamente, existe un control de verticalidad. Con la función \textit{getFall} se analiza si el robot sigue de pie después de cada movimiento. En el caso de que se haya caída, realizará la rutina de reincorporarse. Esto es muy importante en la prueba de sumo, ya que puede suponer una perdida de puntos que el robot caiga al atacar a su oponente y no se levante.
 
-
+\medskip Las aplicaciones que se han descrito en este proyecto se implementaron en el robot y se testaron en el campo de pruebas de la Asociación de Robótica. El resultado de la puesta en marcha constituyó que el robot se calificase como apto para competir en CEABOT.
 

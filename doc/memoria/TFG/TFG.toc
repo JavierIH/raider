@@ -89,38 +89,38 @@
 \contentsline {subsection}{\numberline {7.1.2}Br\'ujula y sensor inercial}{64}{subsection.7.1.2}
 \contentsline {section}{\numberline {7.2}Desarrollo de una placa de expansi\'on}{65}{section.7.2}
 \contentsline {section}{\numberline {7.3}Montaje}{65}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Montaje de la placa de expansi\'on}{65}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.1}Montaje de la placa de expansi\'on}{66}{subsection.7.3.1}
 \contentsline {subsection}{\numberline {7.3.2}Integraci\'on de la c\'amara en la cabeza}{67}{subsection.7.3.2}
 \contentsline {subsection}{\numberline {7.3.3}Integraci\'on de los sensores infrarrojos en los brazos}{68}{subsection.7.3.3}
 \contentsline {chapter}{\numberline {8}Programaci\'on}{71}{chapter.8}
 \contentsline {section}{\numberline {8.1}Configuraci\'on de la BeagleBone Black}{71}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Sistema operativo}{71}{subsection.8.1.1}
 \contentsline {subsection}{\numberline {8.1.2}Instalaci\'on de librer\IeC {\'\i }as}{72}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Configuraci\'on de la c\'amara}{73}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.3}Configuraci\'on de la c\'amara}{72}{subsection.8.1.3}
 \contentsline {subsection}{\numberline {8.1.4}Configuraci\'on de pines}{75}{subsection.8.1.4}
-\contentsline {section}{\numberline {8.2}Sistema de locomoci\'on TODO}{77}{section.8.2}
+\contentsline {section}{\numberline {8.2}Sistema de locomoci\'on}{77}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1}Movimiento del servo PWM}{77}{subsection.8.2.1}
-\contentsline {subsubsection}{attach}{78}{section*.36}
-\contentsline {subsubsection}{writeMicroseconds}{78}{section*.37}
+\contentsline {subsubsection}{Funci\'on attach}{77}{section*.36}
+\contentsline {subsubsection}{Funci\'on writeMicroseconds}{77}{section*.37}
 \contentsline {subsection}{\numberline {8.2.2}Movimiento de los actuadores Dynamixel}{78}{subsection.8.2.2}
 \contentsline {subsection}{\numberline {8.2.3}Movimiento sincronizado de las articulaciones}{80}{subsection.8.2.3}
-\contentsline {subsubsection}{Clase Robot}{81}{section*.38}
-\contentsline {subsubsection}{Constructor de Robot}{82}{section*.39}
-\contentsline {subsubsection}{Funci\'on setTargetPosition}{82}{section*.40}
-\contentsline {subsubsection}{Funci\'on setTargetOffset}{82}{section*.41}
-\contentsline {subsubsection}{Funci\'on updateCurrentPosition}{82}{section*.42}
+\contentsline {subsubsection}{Clase Robot}{80}{section*.38}
+\contentsline {subsubsection}{Constructor de Robot}{81}{section*.39}
+\contentsline {subsubsection}{Funci\'on setTargetPosition}{81}{section*.40}
+\contentsline {subsubsection}{Funci\'on setTargetOffset}{81}{section*.41}
+\contentsline {subsubsection}{Funci\'on updateCurrentPosition}{81}{section*.42}
 \contentsline {subsubsection}{Funci\'on move}{82}{section*.43}
-\contentsline {subsection}{\numberline {8.2.4}Funciones de movimientos combinados TODo }{83}{subsection.8.2.4}
-\contentsline {subsubsection}{Funci\'on movHead}{83}{section*.44}
-\contentsline {subsubsection}{Funci\'on movVertical}{83}{section*.45}
-\contentsline {subsubsection}{Funci\'on movFrontal}{84}{section*.46}
-\contentsline {subsubsection}{Funci\'on movLateral}{85}{section*.47}
+\contentsline {subsection}{\numberline {8.2.4}Funciones de movimientos combinados}{82}{subsection.8.2.4}
+\contentsline {subsubsection}{Funci\'on movHead}{82}{section*.44}
+\contentsline {subsubsection}{Funci\'on movVertical}{82}{section*.45}
+\contentsline {subsubsection}{Funci\'on movFrontal}{83}{section*.46}
+\contentsline {subsubsection}{Funci\'on movLateral}{84}{section*.47}
 \contentsline {subsection}{\numberline {8.2.5}Creaci\'on de movimientos completos}{85}{subsection.8.2.5}
 \contentsline {section}{\numberline {8.3}Comunicaci\'on serie}{86}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Comunicaci\'on serie en OpenCM}{87}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.1}Comunicaci\'on serie en OpenCM}{86}{subsection.8.3.1}
 \contentsline {subsubsection}{Funci\'on begin}{87}{section*.48}
 \contentsline {subsubsection}{Funci\'on available}{87}{section*.49}
-\contentsline {subsubsection}{Funci\'on read}{88}{section*.50}
+\contentsline {subsubsection}{Funci\'on read}{87}{section*.50}
 \contentsline {subsubsection}{Funci\'on flush}{88}{section*.51}
 \contentsline {subsection}{\numberline {8.3.2}Comunicaci\'on serie en BeagleBone}{88}{subsection.8.3.2}
 \contentsline {subsubsection}{Funci\'on Open}{88}{section*.52}
@@ -141,12 +141,14 @@
 \contentsline {subsection}{\numberline {9.2.2}Algoritmo para la prueba de navegaci\'on}{105}{subsection.9.2.2}
 \contentsline {subsection}{\numberline {9.2.3}Algoritmo para la prueba de sumo}{107}{subsection.9.2.3}
 \contentsline {chapter}{\numberline {10}Presupuesto}{111}{chapter.10}
-\contentsline {chapter}{\numberline {11}Evaluaci\'on de resultados}{115}{chapter.11}
-\contentsline {section}{\numberline {11.1}Pruebas }{115}{section.11.1}
-\contentsline {section}{\numberline {11.2}Conclusi\'on}{116}{section.11.2}
+\contentsline {chapter}{\numberline {11}Evaluaci\'on de resultados}{113}{chapter.11}
+\contentsline {section}{\numberline {11.1}Pruebas }{113}{section.11.1}
+\contentsline {section}{\numberline {11.2}Conclusi\'on personal}{115}{section.11.2}
 \contentsline {section}{\numberline {11.3}Desarrollos futuros}{116}{section.11.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{119}{section.11.3}
-\contentsline {chapter}{Anexo: Listado de piezas}{123}{appendix*.55}
-\contentsline {chapter}{Anexo: Fotolitos de la placa de expansi\'on}{127}{appendix*.56}
-\contentsline {chapter}{Anexo: Esquem\'atico de la placa de expansi\'on}{131}{appendix*.57}
-\contentsline {chapter}{Anexo: Planos}{133}{appendix*.58}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{117}{section.11.3}
+\contentsline {chapter}{Anexo 1: Listado de piezas}{121}{appendix*.55}
+\contentsline {chapter}{Anexo 2: Listado de componentes para la placa de expansi\'on}{125}{appendix*.56}
+\contentsline {chapter}{Anexo 3: Fotolitos de la placa de expansi\'on}{127}{appendix*.57}
+\contentsline {chapter}{Anexo 4: Esquem\'atico de la placa de expansi\'on}{131}{appendix*.58}
+\contentsline {chapter}{Anexo 5: Planos}{133}{appendix*.59}
+\contentsline {chapter}{Anexo 6: Presupuesto del proyecto}{153}{appendix*.60}

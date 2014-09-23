@@ -68,11 +68,11 @@
 \BOOKMARK [2][-]{subsection.8.1.2}{Instalaci\363n de librer\355as}{section.8.1}% 68
 \BOOKMARK [2][-]{subsection.8.1.3}{Configuraci\363n de la c\341mara}{section.8.1}% 69
 \BOOKMARK [2][-]{subsection.8.1.4}{Configuraci\363n de pines}{section.8.1}% 70
-\BOOKMARK [1][-]{section.8.2}{Sistema de locomoci\363n TODO}{chapter.8}% 71
+\BOOKMARK [1][-]{section.8.2}{Sistema de locomoci\363n}{chapter.8}% 71
 \BOOKMARK [2][-]{subsection.8.2.1}{Movimiento del servo PWM}{section.8.2}% 72
 \BOOKMARK [2][-]{subsection.8.2.2}{Movimiento de los actuadores Dynamixel}{section.8.2}% 73
 \BOOKMARK [2][-]{subsection.8.2.3}{Movimiento sincronizado de las articulaciones}{section.8.2}% 74
-\BOOKMARK [2][-]{subsection.8.2.4}{Funciones de movimientos combinados TODo }{section.8.2}% 75
+\BOOKMARK [2][-]{subsection.8.2.4}{Funciones de movimientos combinados}{section.8.2}% 75
 \BOOKMARK [2][-]{subsection.8.2.5}{Creaci\363n de movimientos completos}{section.8.2}% 76
 \BOOKMARK [1][-]{section.8.3}{Comunicaci\363n serie}{chapter.8}% 77
 \BOOKMARK [2][-]{subsection.8.3.1}{Comunicaci\363n serie en OpenCM}{section.8.3}% 78
@@ -95,10 +95,12 @@
 \BOOKMARK [0][-]{chapter.10}{Presupuesto}{}% 95
 \BOOKMARK [0][-]{chapter.11}{Evaluaci\363n de resultados}{}% 96
 \BOOKMARK [1][-]{section.11.1}{Pruebas }{chapter.11}% 97
-\BOOKMARK [1][-]{section.11.2}{Conclusi\363n}{chapter.11}% 98
+\BOOKMARK [1][-]{section.11.2}{Conclusi\363n personal}{chapter.11}% 98
 \BOOKMARK [1][-]{section.11.3}{Desarrollos futuros}{chapter.11}% 99
 \BOOKMARK [0][-]{section.11.3}{Bibliograf\355a}{}% 100
-\BOOKMARK [0][-]{appendix*.55}{Anexo: Listado de piezas}{}% 101
-\BOOKMARK [0][-]{appendix*.56}{Anexo: Fotolitos de la placa de expansi\363n}{}% 102
-\BOOKMARK [0][-]{appendix*.57}{Anexo: Esquem\341tico de la placa de expansi\363n}{}% 103
-\BOOKMARK [0][-]{appendix*.58}{Anexo: Planos}{}% 104
+\BOOKMARK [0][-]{appendix*.55}{Anexo 1: Listado de piezas}{}% 101
+\BOOKMARK [0][-]{appendix*.56}{Anexo 2: Listado de componentes para la placa de expansi\363n}{}% 102
+\BOOKMARK [0][-]{appendix*.57}{Anexo 3: Fotolitos de la placa de expansi\363n}{}% 103
+\BOOKMARK [0][-]{appendix*.58}{Anexo 4: Esquem\341tico de la placa de expansi\363n}{}% 104
+\BOOKMARK [0][-]{appendix*.59}{Anexo 5: Planos}{}% 105
+\BOOKMARK [0][-]{appendix*.60}{Anexo 6: Presupuesto del proyecto}{}% 106

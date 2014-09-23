@@ -1,6 +1,6 @@
 \chapter{Programación}\label{chapterprogramacion}
 
-En este capítulo se presenta el desarrollo de todo el software que ha sido requerido preparar para la puesta en marcha del robot. El objetivo final del apartado es la programación de la librería \textit{raider.h}, que centraliza todas las funcionalidades de RAIDER.
+En este capítulo se presenta el desarrollo de todo el software que ha sido requerido preparar para la puesta en marcha del robot. El objetivo final del apartado es la programación de la librería \textit{raider.h}, que centraliza todas las funcionalidades de RAIDER. Todo el software desarrollado en el (así como también las fuentes del hardware) puede consultarse en el repositorio del proyecto \cite{repositorio}.
 
 \section{Configuración de la BeagleBone Black}
 
@@ -16,67 +16,18 @@ La distribución Ångström no es una de las más populares entre los sistemas opera
 
 Para la realización del proyecto, se ha requerido instalar Git, CMake, Video4Linux2 y las librerías de OpenCV 2.4.8 y ZBar 0.1.
 
-\medskip Antes de comenzar con la instalación de software, es recomendable realizar una actualización del sistema ejecutando los siguientes comandos:
+\medskip Antes de comenzar con la instalación de software, es recomendable realizar una actualización del sistema. Tras ello lo primero que instalaremos será Git, ya que se necesitará para instalar algunas librarías posteriormente. Git se instala directamente desde los repositorios de Debian con el nombre de \textit{git-core}.
 
-\begin{verbatim}
-sudo apt-get update
-sudo apt-get upgrade
-\end{verbatim}
+\medskip Tras ello, se instalará CMake mediante la instalación de dos paquetes: \textit{cmake} y \textit{cmake-curses-gui}.
 
-\bigskip  Lo primero que instalaremos será Git, ya que lo necesitaremos para instalar algunas librarías posteriormente. Git se instala ejecutando el siguiente comando: 
-\begin{verbatim}
-sudo apt-get install git-core
-\end{verbatim}
+\medskip Para el control y configuración de la webcam se necesitará el driver Video4Linux. Se instala con el paquete \textit{v4l-utils}.
 
-\bigskip Para instalar CMake lo haremos de la siguiente forma:
+\bigskip  Una vez hecho esto, se pasará a instalar las librerías que se utilizarán en el código del robot. La forma mas sencilla de instalar Zbar será hacerlo desde los repositorios de Debian. Deben instalarse dos paquetes: \textit{libzbar0} y \textit{libzbar-dev}.
 
-\begin{verbatim}
-sudo apt-get install cmake
-sudo apt-get install cmake-curses-gui
-\end{verbatim}
+\medskip  Por último, instalaremos OpenCV. Se comenzará por descargar todas las librerías que requiere OpenCV. Se instalarán una a una de las siguientes: \textit{build-essential},
+\textit{libgtk2.0-dev}, \textit{pkg-config},\textit{ python-dev}, \textit{python-numpy}, \textit{libavcodec-dev}, \textit{libavformat-dev} y \textit{libswscale-dev}.
 
-\bigskip Para el control y configuración de la webcam se necesitará el driver Video4Linux. Se instalará como se muestra a continuación:
-
-\begin{verbatim}
-sudo apt-get install v4l-utils
-\end{verbatim}
-
-
-\bigskip  Una vez hecho esto, se pasará a instalar las librerías que se utilizarán en el código del robot. La forma mas sencilla de instalar Zbar será hacerlo desde los repositorios de Debian. De este modo, ejecutaremos los siguientes comandos:
-\begin{verbatim}
-sudo apt-get install libzbar0
-sudo apt-get install libzbar-dev
-\end{verbatim}
-
-\bigskip  Por último, instalaremos OpenCV. Se comenzará por descargar todas las librarías que requiere OpenCV. Se instalarán una a una de la siguiente forma:
-\begin{verbatim}
-sudo apt-get install build-essential 
-sudo apt-get install libgtk2.0-dev 
-sudo apt-get install pkg-config 
-sudo apt-get install python-dev 
-sudo apt-get install python-numpy 
-sudo apt-get install libavcodec-dev 
-sudo apt-get install libavformat-dev 
-sudo apt-get install libswscale-dev
-\end{verbatim}
-
-Hecho esto, se procederá a descargar la última versión estable del código, que en este momento es la 2.4.9.
-
-\begin{verbatim}
-wget http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.9/opencv-2.4.9.zip
-\end{verbatim}
-
-\bigskip Y posteriormente se instalará de este modo:
-
-\begin{verbatim}
-unzip opencv-2.4.9.zip
-cd opencv-2.4.9
-mkdir build
-cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
-make
-sudo make install
-\end{verbatim}
+\medskip Hecho esto, se procederá a descargar la última versión estable del código, que en estos momentos es la 2.4.9. A la hora de instalar OpenCV puede elegirse entre realizar una instalación total o parcial. Ya que la BeagleBone Black tiene espacio suficiente, se realizará una instalación completa.
 
 \subsection{Configuración de la cámara}
 
@@ -85,7 +36,7 @@ A continuación se configurará la webcam en la beaglebone. Para esto se conectará
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/robotbbbcam}   
-\caption{Conexión de la cámara a la BeagleBone Black}
+\caption{Conexión de la cámara a la BeagleBone Black.}
 \label{robotbbbcam}
 \end{figure}
 \FloatBarrier
@@ -101,7 +52,7 @@ lsusb
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/lsusbbbb}   
-\caption{Salida del comando lsusb}
+\caption{Salida del comando lsusb.}
 \label{lsusbbbb}
 \end{figure}
 \FloatBarrier
@@ -111,7 +62,7 @@ lsusb
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/lsdev}   
-\caption{Comprobación de conexión para la webcam}
+\caption{Comprobación de conexión para la webcam.}
 \label{lsdev}
 \end{figure}
 \FloatBarrier
@@ -127,7 +78,7 @@ v4l2-ctl --list-devices
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/v4llist}   
-\caption{Comprobación de compatibilidad para la webcam}
+\caption{Comprobación de compatibilidad para la webcam.}
 \label{v4llist}
 \end{figure}
 \FloatBarrier
@@ -143,7 +94,7 @@ v4l2-ctl --all
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/v4lall}   
-\caption{Parámetros leídos de la cámara}
+\caption{Parámetros leídos de la cámara.}
 \label{v4lall}
 \end{figure}
 \FloatBarrier
@@ -167,7 +118,7 @@ Para finalizar esta sección, se muestra el desarrollo de un script para configur
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/bbbserial}   
-\caption{Puertos serie en una BeagleBone Black}
+\caption{Puertos serie en una BeagleBone Black.}
 \label{bbbserial}
 \end{figure}
 \FloatBarrier
@@ -178,7 +129,7 @@ Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/libfirmware}   
-\caption{Algunas capas de Device Tree Overlays}
+\caption{Algunas capas de Device Tree Overlays.}
 \label{libfirmware}
 \end{figure}
 \FloatBarrier
@@ -188,7 +139,7 @@ Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/overlays}   
-\caption{Habilitación de capas}
+\caption{Habilitación de capas.}
 \label{overlays}
 \end{figure}
 \FloatBarrier
@@ -198,32 +149,32 @@ Para configurar los pines de la placa se utilizarán overlays (capas). Un overlay
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/catain}   
-\caption{Lectura analógica del pin 4}
+\caption{Lectura analógica del pin 4.}
 \label{catain4}
 \end{figure}
 
 Para realizar estas medidas desde el programa principal escrito en C++, se ha programado la librería \textit{bone.h}, que simplifica el uso de estos pines.
 
-\section{Sistema de locomoción TODO}
+\section{Sistema de locomoción}
 
 Antes de comenzar con esta sección, es importante señalar algunos detalles importantes. Si bien es cierto, el control del robot girará en torno a un algoritmo de visión, su funcionamiento de apoyará en un control de locomoción robusto que permita al robot realizar desplazamientos seguros sobre el terreno. Por tanto, dado que se trata de un robot bípedo, la programación de movimientos no es un tema trivial como lo podría ser en un robot con ruedas.
 
-Para conseguir que Raider pueda moverse con soltura se han seguido varios pasos, cada cual de un nivel superior al anterior.
+Para conseguir que RAIDER pueda moverse con soltura se han seguido varios pasos, cada cual de un nivel superior al anterior.
 
 \subsection{Movimiento del servo PWM}
 
 
-El control del servo PWM de Raider, situado en su cabeza, se realiza con la biblioteca Servo.h orginalmente desarrolladas para Arduino y que posteriormente ha sido portada para su utilización en OpenCM. Dado el cometido de este servo, no será necesario realizar un control de su velocidad, por lo que un simple control de su posición será suficiente.
+El control del servo PWM de RAIDER, situado en su cabeza, se realiza con la biblioteca Servo.h orginalmente desarrolladas para Arduino y que posteriormente ha sido portada para su utilización en OpenCM. Dado el cometido de este servo, no será necesario realizar un control de su velocidad, por lo que un simple control de su posición será suficiente.
 
 La biblioteca Servo.h nos permite controlar el movimiento de un servo a partir de un valor de posición, y se encarga de producir la señal PWM correspondiente. Aunque los métodos utilizados pueden encontrarse en la documentación de Arduino, a continuación introduzco una breve explicación de los que han sido utilizados en este proyecto:
 
-\subsubsection{attach}
+\subsubsection{Función attach}
 
 Con esta función configuramos un pin de la OpenCM para que actúe como emisora de señales PWM. A partir de esta inicialización ya puede moverse el servo.
 
-\subsubsection{writeMicroseconds}
+\subsubsection{Función writeMicroseconds}
 
-Para mover el servo se utiliza la función writeMicroseconds, cuyo parámetro define la amplitud  del pulso de la onda PWM. Si bien es cierto, existe otra función paralela llamada \textit{write} que directamente utiliza como parámetro la posición en grados, se ha utilizado writeMicroseconds por su mayor precisión. Acepta valores de entre 1000 y 2000 microsegundos, pero para mantener un formato constante con el resto de articulaciones, se ha realizado una conversión matemática a un rango de 0 a 1023.
+Para mover el servo se utiliza la función \textit{writeMicroseconds}, cuyo parámetro define la amplitud  del pulso de la onda PWM. Si bien es cierto, existe otra función paralela llamada \textit{write} que directamente utiliza como parámetro la posición en grados, se ha utilizado \textit{writeMicroseconds} por su mayor precisión. Acepta valores de entre 1000 y 2000 microsegundos, pero para mantener un formato constante con el resto de articulaciones, se ha realizado una conversión matemática a un rango de 0 a 1023.
 
 \subsection{Movimiento de los actuadores Dynamixel}
 
@@ -240,7 +191,7 @@ El protocolo de comunicación utilizado es una comunicación serie asíncrona de 8 
 Para realizar una rotación simple en un servomotor, sería suficiente con escribir en el registro 32 (Goal Position) un valor comprendido entre 0 y 1023, y el servo se situará inmediatamente en esa posición. Sin embargo, existen otros parámetros interesantes en el mapa de registros que conviene controlar, como la posición instantanea, la velocidad de giro, el consumo eléctrico o incluso la temperatura del dispositivo.
 
 \medskip 
-Para mover los 19 AX-12A de Raider se utilizan los parámetros de posición objetivo (Goal Position) y velocidad de giro (Moving Speed) de forma combinada. Dado que está programación se ha realizado desde la OpenCM 9.04 se ha utilizado la biblioteca Dynamixel.h, que funciona como una macro para leer y escribir en los registros de forma sencilla y eficiente. Dentro de la biblioteca utilizaremos la función writeWord con la siguiente sintaxis:
+Para mover los 19 AX-12A de RAIDER se utilizan los parámetros de posición objetivo (Goal Position) y velocidad de giro (Moving Speed) de forma combinada. Dado que está programación se ha realizado desde la OpenCM 9.04 se ha utilizado la biblioteca Dynamixel.h, que funciona como una macro para leer y escribir en los registros de forma sencilla y eficiente. Dentro de la biblioteca utilizaremos la función \textit{writeWord} con la siguiente sintaxis:
 
 % TODO arreglar codigos
 
@@ -257,7 +208,7 @@ A modo de ejemplo, para asignar una velocidad de $3.5rad/s$ al servo con la ID 5
 \[ 3.5 \cdot \frac{rad}{s} \cdot \frac{60 s}{2 \pi rad} \cdot rpm \cdot \frac{1024}{114 rpm}= 300.216 \simeq 300 \]
 
 \medskip
-Dentro del código, utilizaremos la función writeWord para asignar este valor en el registro 32 (Moving Speed):
+Dentro del código, utilizaremos la función \textit{writeWord} para asignar este valor en el registro 32 (Moving Speed):
 
 % TODO arreglar codigos
 \begin{verbatim}
@@ -269,7 +220,7 @@ Seguidamente, asignaríamos al servo una posición final siguiendo el criterio de 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.55\textwidth]{figuras/goalposition}   
-\caption{Amplitud de giro de un AX-12A}
+\caption{Amplitud de giro de un AX-12A.}
 \label{goalposition}
 \end{figure}
 
@@ -285,7 +236,7 @@ En nuestro programa escribiríamos en el registro 30 (Goal Position) de la siguie
 Dxl.writeWord(5,30,410);
 \end{verbatim} 
 
-Como resumen, con estos pasos hemos conseguido mover el servo con la ID 5 (Que corresponde al codo del brazo izquierdo de Raider), a una posición de $120º$ con una velocidad de $3.5 rad/s$
+Como resumen, con estos pasos hemos conseguido mover el servo con la ID 5 (que corresponde al codo del brazo izquierdo de RAIDER), a una posición de $120º$ con una velocidad de $3.5 rad/s$
 
 \subsection{Movimiento sincronizado de las articulaciones}
 
@@ -299,20 +250,20 @@ Las funciones pueden encontrarse en la biblioteca \textit{motion.h}.
 
 \subsubsection{Clase Robot} 
 
-La clase Robot abarca todas las funciones relativas al movimiento de Raider (aunque por el momento en esta sección solo se presenta algunas de ellas), y abstrae su controlador principal, la BeagleBone Black de la parte de locomoción. Dentro de la clase, encontramos tres variables miembros importantes:
+La clase Robot abarca todas las funciones relativas al movimiento de RAIDER, y abstrae su controlador principal, la BeagleBone Black de la parte de locomoción. Dentro de la clase, encontramos tres variables miembros importantes:
 
 \begin{itemize}
-\item \textbf{int currentPosition[20]}.
+\item \textbf{currentPosition[20]}.
 
-currentPosition es un array de 20 posiciones destinado a almacenar los valores de las posición actual de las 20 articulaciones del robot con valores comprendidos entre 0 y 1023. El primer valor es el servo AX-12A, el segundo es el servo PWM de la cabeza y a partir de ese punto están el resto de AX-12A ordenados según su ID, del número 1 al 18.
+\textit{currentPosition} es un array de 20 posiciones destinado a almacenar los valores de las posición actual de las 20 articulaciones del robot con valores comprendidos entre 0 y 1023. El primer valor es el servo AX-12A, el segundo es el servo PWM de la cabeza y a partir de ese punto están el resto de AX-12A ordenados según su ID, del número 1 al 18.
 
-\item \textbf{int targetPostion[20]}.
+\item \textbf{targetPostion[20]}.
 
-targetPosition sigue la misma estructura de currentPosition, con la diferencia de que en este caso los valores guardados en el array corresponderán con la posición objetivo o posición final de las articulaciones.
+\textit{targetPosition} sigue la misma estructura de \textit{currentPosition}, con la diferencia de que en este caso los valores guardados en el array corresponderán con la posición objetivo o posición final de las articulaciones.
 
-\item \textbf{int TRIM[20]}.
+\item \textbf{TRIM[20]}.
 
-Por último, TRIM es un array de trims. Un trims es una variable de ajuste para calibrar la posición de los servos. Tanto los servos Dynamixel como los servos PWM suelen tener un pequeño error en su posición cero. Los trimmers constituyen un offset aplicado individualmente a cada servo en absolutamente todos los movimientos que se realizarán durante el programa. Las holguras y otros factores pueden provocar el desajuste de esto valores, por lo que es necesario volver a calibrarlo cada cierto tiempo. Una mala calibración de los trims puede radicar en problemas de asimetrías en movimientos, y por tanto, resultados inesperados.
+Por último, \textit{TRIM} es un array de trims. Un trims es una variable de ajuste para calibrar la posición de los servos. Tanto los servos Dynamixel como los servos PWM suelen tener un pequeño error en su posición cero. Los trimmers constituyen un offset aplicado individualmente a cada servo en absolutamente todos los movimientos que se realizarán durante el programa. Las holguras y otros factores pueden provocar el desajuste de esto valores, por lo que es necesario volver a calibrarlo cada cierto tiempo. Una mala calibración de los trims puede radicar en problemas de asimetrías en movimientos, y por tanto, resultados inesperados.
 
 \end{itemize}
 
@@ -324,11 +275,11 @@ El constructor de la clase Robot tiene como función la apertura del bus de contr
 
 \subsubsection{Función setTargetPosition}
 
-setTargetPosition accede directamente al miembro privado targetPosition[20] para asignarle nuevos valores.
+\textit{setTargetPosition} accede directamente al miembro privado \textit{targetPosition[20]} para asignarle nuevos valores.
 
 \subsubsection{Función setTargetOffset}
 
-setTargetOffset varía los valores del miembro privado targetPosition[20] para sumarles un valor. La función permite variar una posición con un giro determinado sin necesidad de conocer la posición actual de la articulación.
+\textit{setTargetOffset} varía los valores del miembro privado \textit{targetPosition[20]} para sumarles un valor. La función permite variar una posición con un giro determinado sin necesidad de conocer la posición actual de la articulación.
 
 
 \subsubsection{Función updateCurrentPosition}
@@ -337,24 +288,22 @@ Esta función tiene un funcionamiento sencillo, se ocupa de volcar los datos de l
 
 \subsubsection{Función move} 
 
-La función move es la mas importante de todas, ya que es la función que se encarga de mover las articulaciones. A esta función se le pasa un valor de tiempo expresado en segundos, y tal y como se comentó al principio de este apartado, será el tiempo en el que los servos pasarán de la posición actual (currentPosition[20]) a la posición final (targetPosition[20]).
+La función \textit{move} es la mas importante de todas, ya que es la función que se encarga de mover las articulaciones. A esta función se le pasa un valor de tiempo expresado en segundos, y tal y como se comentó al principio de este apartado, será el tiempo en el que los servos pasarán de la posición actual (\textit{currentPosition[20]}) a la posición final (\textit{targetPosition[20]}).
 
 \medskip
 Para ello, la función calcula la amplitud del movimiento y asigna una velocidad independiente para ese servo. Gracias a esto, todos los servos empiezan y terminan de moverse al mismo tiempo y permiten un control mas sencillo de las inercias entre movimientos consecutivos.
 
-\subsection{Funciones de movimientos combinados TODo } 
+\subsection{Funciones de movimientos combinados} 
 
 Llegado este punto se ha abordado como mover un servo y como mover los 20 servos de forma coordinada. En este apartado se presentan algunas funciones intermedias entre lo comentado y movimientos de alto nivel, como puede ser el desplazamiento bípedo.
 
 \medskip
-Para facilitar la programación de movimientos mas complejos se han programado una seríe de utilidades que permiten mover los servos en pequeños grupos que desempeñan una funcion común. Estas funciones modifican los valores del array de posiciones finales, targetPosition[20], lo que quiere decir que para efectuar el movimiento será necesario realizar una llamada a la funcion move(float). Por tanto, es posible la utilización de varias funciones en un mismo movimiento, dando la posibilidad de sumar sus modificaciones y superponer su utilidades. 
+Para facilitar la programación de movimientos mas complejos se han programado una seríe de utilidades que permiten mover los servos en pequeños grupos que desempeñan una función común. Estas funciones modifican los valores del array de posiciones finales, \textit{targetPosition[20]}, lo que quiere decir que para efectuar el movimiento será necesario realizar una llamada a la función \textit{move}. Por tanto, es posible la utilización de varias funciones en un mismo movimiento, dando la posibilidad de sumar sus modificaciones y superponer su utilidades. 
 
 \subsubsection{Función movHead}
 
-movHead es una función que permite mover el servo PWM de la cabeza del robot. Sirve para mover la cámara independientemente de la posición instantanea del robot.
+\textit{movHead} es una función que permite mover el servo PWM de la cabeza del robot. Sirve para mover la cámara independientemente de la posición instantanea del robot.
 
-
-% Dibujos y otras movidas
 \subsubsection{Función movVertical}
 
 Esta función actúa sobre tres servos con ejes de rotación paralelos en cada pierna: Tobillo, rodilla y rotula superior. Esta función necesita dos parámetros, uno  para la pierna izquierda y otro para la derecha. Actuando sobre cada pierna, podremos desplazar el pie en el eje vertical. En la figura \ref{movvertical}, puede observarse de izquierda a derecha como varía la altura de la pierna izquierda al realizar la función \textit{movVertical(200,0)}.
@@ -366,7 +315,7 @@ Esta función actúa sobre tres servos con ejes de rotación paralelos en cada pier
 \includegraphics[width=0.4\textwidth]{figuras/mov} &
 \includegraphics[width=0.4\textwidth]{figuras/movvertical} \\
 \end{tabular}  
-\caption{Función \textit{movVertical} aplicando 200 sobre la pierna izquierda}
+\caption{Función \textit{movVertical} aplicando 200 sobre la pierna izquierda.}
 \label{movvertical}
 \end{figure}
 \FloatBarrier
@@ -382,7 +331,7 @@ Esta función actúa sobre dos servos con ejes de rotación paralelos en cada piern
 \includegraphics[width=0.4\textwidth]{figuras/mov} &
 \includegraphics[width=0.4\textwidth]{figuras/movfrontal} \\
 \end{tabular}  
-\caption{Función \textit{movFrontal} aplicando 100 sobre la pierna izquierda}
+\caption{Función \textit{movFrontal} aplicando 100 sobre la pierna izquierda.}
 \label{movfrontal}
 \end{figure}
 \FloatBarrier
@@ -391,7 +340,7 @@ Puede observarse que como efecto paralelo, la planta del pie se eleva ligerament
 
 \subsubsection{Función movLateral}
 
-Esta función actúa sobre dos servos con ejes de rotación paralelos en cada pierna: Tobillo y rotula superior. Sin embargo, esta vez usará los ejes perpendiculares a los utilizados en las dos funciones anteriores. Esta función necesita dos parámetros, uno  para la pierna izquierda y otro para la derecha. Actuando sobre cada pierna, podremos desplazar el pie hacia los lados. En la figura \ref{movLateral}, puede observarse de izquierda a derecha como varía posición de la pierna izquierda al realizar la función \textit{movLateral(100,0)}.
+Esta función actúa sobre dos servos con ejes de rotación paralelos en cada pierna: Tobillo y rotula superior. Sin embargo, esta vez usará los ejes perpendiculares a los utilizados en las dos funciones anteriores. Esta función necesita dos parámetros, uno  para la pierna izquierda y otro para la derecha. Actuando sobre cada pierna, podremos desplazar el pie hacia los lados. En la figura \ref{movlateral}, puede observarse de izquierda a derecha como varía posición de la pierna izquierda al realizar la función \textit{movLateral(100,0)}.
 
 \begin{figure}[h]
 \centering
@@ -400,19 +349,19 @@ Esta función actúa sobre dos servos con ejes de rotación paralelos en cada piern
 \includegraphics[width=0.4\textwidth]{figuras/mov} &
 \includegraphics[width=0.4\textwidth]{figuras/movlateral} \\
 \end{tabular}  
-\caption{Función \textit{movLateral} aplicando 100 sobre la pierna izquierda}
-\label{movfrontal}
+\caption{Función \textit{movLateral} aplicando 100 sobre la pierna izquierda.}
+\label{movlateral}
 \end{figure}
 \FloatBarrier
 
-Al igual ue en la función anterior Puede observarse que la planta del pie se eleva ligeramente. De nuevo, puede utilizarse la función \textit{movVertical} para mantener las dos plantas de los pies a la misma altura.
+Al igual que en la función anterior Puede observarse que la planta del pie se eleva ligeramente. De nuevo, puede utilizarse la función \textit{movVertical} para mantener las dos plantas de los pies a la misma altura.
 
 
 \subsection{Creación de movimientos completos}
 
 Encontrándonos en este punto, la programación de desplazamientos, giros y otros movimientos complejos, se ha realizado mediante la combinación de las funciones anteriormente descritas. A cada movimiento se le asignará un valor hexadecimal en forma de caracter, de forma que los caracteres comunicados a la OpenCM sirvan como identificador de el movimiento que el controlador de visión está ordenando.
 
-\medskip Se ha creado la función void controller(char), dentro de la clase Robot, con el objetivo de indexar todos los movimientos que realizará Raider. En el cuadro \ref{movimientos} se presenta una tabla con los movimientos programados y su comando asignado.
+\medskip Se ha creado la función \textit{controller}, dentro de la clase \textit{Robot}, con el objetivo de indexar todos los movimientos que realizará RAIDER. En el cuadro \ref{movimientos} se presenta una tabla con los movimientos programados y su comando asignado.
 
 \begin{table}[H]
 \centering
@@ -463,7 +412,7 @@ La OpenCM posee 3 puertos serie, de los cuales uno de ellos está reservado para 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{figuras/serialcm}   
-\caption{Esquema de puertos serie en una OpenCM 9.04}
+\caption{Esquema de puertos serie en una OpenCM 9.04.}
 \label{serialcm}
 \end{figure}
 \FloatBarrier
@@ -509,7 +458,7 @@ Se ha utilizado un módulo Bluetooth hc05 conectado al puerto 3 del controlador d
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.75\textwidth]{figuras/raiderblue}   
-\caption{Teleoperación de RAIDER con módulo Bluetooth}
+\caption{Teleoperación de RAIDER con módulo Bluetooth.}
 \label{raiderblue}
 \end{figure}
 \FloatBarrier
@@ -525,12 +474,12 @@ Para controlar los sensores infrarrojos se ha desarrollado un algoritmo de detec
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/esquemarango}   
-\caption{Rangos de detección para un sensor Sharp}
+\caption{Rangos de detección para un sensor Sharp.}
 \label{esquemarango}
 \end{figure}
 \FloatBarrier
 
-El rango de datos que podemos extraer de la entrada analógica va de 0 a 1800mV. Teniendo esto en cuenta, se han definido experimentalmente \textit{INFRARED\_LOW} en 300mV, e \textit{INFRARED\_HIGH} en 1000mV. Estos valores corresponden aproximadamente a 12cm y 40cm respectivamente. Se han desarrollado dos funciones paralelas para medir los sensores infrarrojos izquierdo y derecho de Raider: \textit{getLeftIR} y \textit{getRightIR}. Estas funciones devolverán un valor identificativo de la zona en la que se encuentra el obstáculo.
+El rango de datos que podemos extraer de la entrada analógica va de 0 a 1800mV. Teniendo esto en cuenta, se han definido experimentalmente \textit{INFRARED\_LOW} en 300mV, e \textit{INFRARED\_HIGH} en 1000mV. Estos valores corresponden aproximadamente a 12cm y 40cm respectivamente. Se han desarrollado dos funciones paralelas para medir los sensores infrarrojos izquierdo y derecho de RAIDER: \textit{getLeftIR} y \textit{getRightIR}. Estas funciones devolverán un valor identificativo de la zona en la que se encuentra el obstáculo.
 
 \subsection{IMU}
 
@@ -545,7 +494,7 @@ La programación del sensor inercial pasa por dos fases: La extracción de datos d
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figuras/raiderimu}   
-\caption{Sistema de referencia angular}
+\caption{Sistema de referencia angular.}
 \label{raiderimu}
 \end{figure}
 \FloatBarrier
@@ -584,12 +533,12 @@ El primer algoritmo que se ha programado es la búsqueda de trayectorias para la 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/findway1}   %raiderrangos
-\caption{findway}
+\caption{Imagen base para aplicar \textit{findway}.}
 \label{findway1}
 \end{figure}
 \FloatBarrier
 
-\medskip Tomando esta imagen como punto de partida, lo primero que se ha hecho es analizar cual es la superficie navegable. El código de este procedimiento se encuentra en la funcion \textit{detectGreen} de \textit{eye.h}. En el sistema RGB cada pixel de una imagen describe su color en base a tres componentes: rojo, verde y azul. El objetivo será separar la imagen de tres canales en tres imagenes de un solo canal. En la imágen de la figura \ref{findway2} se muestran las tres imágenes fruto de la descomposición de la imagen original (De izquierda a derecha: Canal rojo, canal verde y canal azul).
+\medskip Tomando esta imagen como punto de partida, lo primero que se ha hecho es analizar cual es la superficie navegable. El código de este procedimiento se encuentra en la función \textit{detectGreen} de \textit{eye.h}. En el sistema RGB cada pixel de una imagen describe su color en base a tres componentes: rojo, verde y azul. El objetivo será separar la imagen de tres canales en tres imagenes de un solo canal. En la imágen de la figura \ref{findway2} se muestran las tres imágenes fruto de la descomposición de la imagen original (de izquierda a derecha: Canal rojo, canal verde y canal azul).
 
 \begin{figure}[h]
 \centering
@@ -597,14 +546,14 @@ El primer algoritmo que se ha programado es la búsqueda de trayectorias para la 
 \includegraphics[width=0.3\textwidth]{figuras/findway2r} & 
 \includegraphics[width=0.3\textwidth]{figuras/findway2g} & 
 \includegraphics[width=0.3\textwidth]{figuras/findway2b}\\
-\end{tabular}\caption{Descomposición de la imagen en sus tres canales RGB}
+\end{tabular}\caption{Descomposición de la imagen en sus tres canales RGB.}
 \label{findway2}
 \end{figure}
 \FloatBarrier
 
 \medskip La primera conclusión que puede sacarse al ver estas tres imágenes es que en el canal verde apenas existe contraste entre el color verde del suelo y el color blanco de los obstáculos. Esto tiene sentido ya que atendiendo a la teoría, un color verde puro (en RGB (0,255,0)) y un color blanco puro (en RGB (255,255,255)) contienen la misma cantidad de verde (255). En las otras dos imágenes, sí que se observa un mayor contraste. Si el color verde fuese puro, su componente azul y su componente roja serían nulas. Sin embargo, como se trabaja en un entorno real, los canales azul y rojo no muestran un color totalmente negro en el suelo.
 
-\medskip El campo del campeonato CEABOT por normativa es de color verde, sin embargo no se especifica si la superficie será mate o brillante, si la iluminación estará bien enfocada... etc. Por ello, aunque a priori en el campo de pruebas de la Asociación de Robótica parezca que el canal que mejor diferencia el suelo y los obstáculos sea el canal rojo, en otros campos podremos encontrarnos que funciona mejor el canal azul.
+\medskip El campo del campeonato CEABOT por normativa es de color verde, sin embargo no se especifica si la superficie será mate o brillante, si la iluminación estará bien enfocada, etc. Por ello, aunque a priori en el campo de pruebas de la Asociación de Robótica parezca que el canal que mejor diferencia el suelo y los obstáculos sea el canal rojo, en otros campos podremos encontrarnos que funciona mejor el canal azul.
 
 \medskip Para solucionar esto, se ha realizado una mezcla de canales que aúne las características que nos conviene conservar de la muestra. La operación que se realiza es la siguiente. Por una parte, tomando como base la imágen del canal verde, le restaremos la imágen del canal rojo. Esto eliminará la componente de rojo residual que tiene la imagen del canal verde. Paralelamente, realizaremos la misma operación tomando como base la imágen del canal verde y restándole la imagen del canal azul para eliminar el azul residual. Las dos imágenes producto de ambas restas se muestran en la figura \ref{findway3} 
 
@@ -613,7 +562,7 @@ El primer algoritmo que se ha programado es la búsqueda de trayectorias para la 
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.45\textwidth]{figuras/findway3r} & 
 \includegraphics[width=0.45\textwidth]{figuras/findway3b}\\
-\end{tabular}\caption{Resta de canales verde y rojo, y de canales verde y azul}
+\end{tabular}\caption{Resta de canales verde y rojo, y de canales verde y azul.}
 \label{findway3}
 \end{figure}
 \FloatBarrier
@@ -623,7 +572,7 @@ El primer algoritmo que se ha programado es la búsqueda de trayectorias para la 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/findway4}   
-\caption{Detección de superficie navegable}
+\caption{Detección de superficie navegable.}
 \label{findway4}
 \end{figure}
 \FloatBarrier
@@ -633,7 +582,7 @@ El primer algoritmo que se ha programado es la búsqueda de trayectorias para la 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/findway5}   
-\caption{Umbralización de obstáculos y superficie navegable}
+\caption{Umbralización de obstáculos y superficie navegable.}
 \label{findway5}
 \end{figure}
 \FloatBarrier
@@ -645,7 +594,7 @@ El primer algoritmo que se ha programado es la búsqueda de trayectorias para la 
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.45\textwidth]{figuras/findway6} & 
 \includegraphics[width=0.45\textwidth]{figuras/findway6m}\\
-\end{tabular}\caption{Esqueletización del controno abierto y esquema del entorno}
+\end{tabular}\caption{Esqueletización del controno abierto y esquema del entorno.}
 \label{findway6}
 \end{figure}
 \FloatBarrier
@@ -657,7 +606,7 @@ El primer algoritmo que se ha programado es la búsqueda de trayectorias para la 
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.45\textwidth]{figuras/findway7} & 
 \includegraphics[width=0.45\textwidth]{figuras/findway7m}\\
-\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno}
+\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno.}
 \label{findway7}
 \end{figure}
 \FloatBarrier
@@ -667,7 +616,7 @@ Para evaluar la acción que deberá tomar el robot, en cada muestra se toma un seg
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/findway8}   
-\caption{Segmento de referencia para la extracción de datos (en azul)}
+\caption{Segmento de referencia para la extracción de datos.}
 \label{findway8}
 \end{figure}
 \FloatBarrier
@@ -681,7 +630,7 @@ Para evaluar la acción que deberá tomar el robot, en cada muestra se toma un seg
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.45\textwidth]{figuras/findway9o} & 
 \includegraphics[width=0.45\textwidth]{figuras/findway9} \\
-\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno}
+\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno.}
 \label{findway9}
 \end{figure}
 \FloatBarrier
@@ -693,7 +642,7 @@ Para evaluar la acción que deberá tomar el robot, en cada muestra se toma un seg
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.45\textwidth]{figuras/findway10o} & 
 \includegraphics[width=0.45\textwidth]{figuras/findway10} \\
-\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno}
+\end{tabular}\caption{Esqueletización del contorno cerrado y esquema del entorno.}
 \label{findway10}
 \end{figure}
 \FloatBarrier
@@ -710,7 +659,7 @@ Para comenzar, se tomará una imagen y se pasará por la función \textit{detectGre
 \includegraphics[width=0.45\textwidth]{figuras/findline1} & 
 \includegraphics[width=0.45\textwidth]{figuras/findline2} \\
 \end{tabular}
-\caption{Imágen original e imágen tras aplicar la función \textit{detectGreen}}
+\caption{Imágen original e imágen tras aplicar la función \textit{detectGreen}.}
 \label{findline1}
 \end{figure}
 \FloatBarrier
@@ -720,7 +669,7 @@ Para comenzar, se tomará una imagen y se pasará por la función \textit{detectGre
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/findline3} \\
-\caption{Detección de contornos}
+\caption{Detección de contornos.}
 \label{findline3}
 \end{figure}
 \FloatBarrier
@@ -730,7 +679,7 @@ Para comenzar, se tomará una imagen y se pasará por la función \textit{detectGre
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/findline4} \\
-\caption{Dilatación y erosión de contornos}
+\caption{Dilatación y erosión de contornos.}
 \label{findline4}
 \end{figure}
 \FloatBarrier
@@ -740,7 +689,7 @@ Para comenzar, se tomará una imagen y se pasará por la función \textit{detectGre
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figuras/findline5} \\
-\caption{Resultado final de \textit{findLine}}
+\caption{Resultado final de \textit{findLine}.}
 \label{findline5}
 \end{figure}
 \FloatBarrier
@@ -754,7 +703,7 @@ Para terminar, se ha realizado un algoritmo de detección de códigos QR basado en
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{figuras/findqr} \\
-\caption{Análisis de códigos QR en una imagen}
+\caption{Análisis de códigos QR en una imagen.}
 \label{findqr1}
 \end{figure}
 \FloatBarrier

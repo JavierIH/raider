@@ -1,10 +1,10 @@
 \chapter{Diseño de las partes mecánicas}\label{chaptermecanico}
 
-La mayor parte de las piezas que monta Raider han sido rediseñadas para mejorar su función y/o permitir el alojamiento de nuevos dispositivos. Además, al haber sido diseñadas con OpenSCAD, ha sido posible parametrizarlas para facilitar modificaciones futuras. Acciones como agregar a una pieza un soporte para un sensor determinado son ahora mucho mas rápidas.
+La mayor parte de las piezas que monta RAIDERr han sido rediseñadas para mejorar su función y/o permitir el alojamiento de nuevos dispositivos. Además, al haber sido diseñadas con OpenSCAD, ha sido posible parametrizarlas para facilitar modificaciones futuras. Acciones como agregar a una pieza un soporte para un sensor determinado son ahora mucho más rápidas. La lista de piezas puede consultarse en el anexo 1, mientras que los planos se entregan en el anexo 5. Además, todas las fuentes de diseño pueden consultarse en el repositorio del proyecto \cite{repositorio}.
 
 \section{Cabeza}
 
-Uno de los principales objetivos del proyecto, el tomar datos del entorno con una cámara, requiere  el diseño y montaje se un soporte móvil en el que poder albergar la webcam. Se ha decidido colocar la webcam en la cabeza del robot por ser la zona mas alta del robot y por tener espacio para su libre movimiento. La cabeza estará formada por cuatro piezas: Bancada del servo, chásis, tapa con ranura para el cable y soporte de la cámara. En la imagen de la figura \ref{piezascabeza} se muestran las piezas.
+Uno de los principales objetivos del proyecto, el tomar datos del entorno con una cámara, requiere  el diseño y montaje se un soporte móvil en el que poder albergar la webcam. Se ha decidido colocar la webcam en la cabeza del robot por ser la zona más alta del robot y por tener espacio para su libre movimiento. La cabeza estará formada por cuatro piezas: Bancada del servo, chásis, tapa con ranura para el cable y soporte de la cámara. En la imagen de la figura \ref{piezascabeza} se muestran las piezas.
 
 \begin{figure}[h]
 \centering
@@ -12,21 +12,21 @@ Uno de los principales objetivos del proyecto, el tomar datos del entorno con un
 \includegraphics[width=0.4\textwidth]{figuras/cabeza} & \includegraphics[width=0.4\textwidth]{figuras/tapacabeza}  \\
 \includegraphics[width=0.4\textwidth]{figuras/chasislifecam} & \includegraphics[width=0.4\textwidth]{figuras/cuello}  \\
 \end{tabular}
-\caption{Piezas necesarias para montar la cabeza}
+\caption{Piezas necesarias para montar la cabeza.}
 \label{piezascabeza}
 \end{figure} 
 \FloatBarrier
 
 \section{Cintura}
 
-Como se comentó en el apartado \ref{subsubcintura}, ha sido necesario incluir un servo adicional en la cintura que permita realizar movimientos horizontales del tronco del robot respecto a la piernas. Como puede verse en la figura \ref{piezascintura}, consta de dos piezas que aprisionan el servomotor y otra mas que se utilizará como soporte de la batería.
+Como se comentó en el apartado \ref{subsubcintura}, ha sido necesario incluir un servo adicional en la cintura que permita realizar movimientos horizontales del tronco del robot respecto a la piernas. Como puede verse en la figura \ref{piezascintura}, consta de dos piezas que aprisionan el servomotor y otra más que se utilizará como soporte de la batería.
 
 \begin{figure}[h]
 \centering
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.4\textwidth]{figuras/cintura} & \includegraphics[width=0.4\textwidth]{figuras/soportebat}  \\
 \end{tabular}
-\caption{Piezas necesarias para montar la cintura}
+\caption{Piezas necesarias para montar la cintura.}
 \label{piezascintura}
 \end{figure} 
 \FloatBarrier 
@@ -41,7 +41,7 @@ Para diseñar el tronco exiten varias premisas. Necesitamos un cuerpo que permita
 \includegraphics[width=0.4\textwidth]{figuras/pecho} & \includegraphics[width=0.4\textwidth]{figuras/espalda}  \\
 \end{tabular}
 \includegraphics[width=0.4\textwidth]{figuras/protector} \\
-\caption{Piezas necesarias para montar el tronco}
+\caption{Piezas necesarias para montar el tronco.}
 \label{piezastronco}
 \end{figure} 
 \FloatBarrier
@@ -56,7 +56,7 @@ En este apartado se han diseñado diferentes tramos tramos del brazo. Con ello se
 \includegraphics[width=0.4\textwidth]{figuras/hombro} & \includegraphics[width=0.4\textwidth]{figuras/codo}  \\
 \includegraphics[width=0.4\textwidth]{figuras/antebrazo} & \includegraphics[width=0.4\textwidth]{figuras/gripper}  \\
 \end{tabular}
-\caption{Piezas necesarias para montar un brazo}
+\caption{Piezas necesarias para montar un brazo.}
 \label{piezasbrazo}
 \end{figure} 
 \FloatBarrier
@@ -70,7 +70,7 @@ En cuanto a las piernas, mostradas en la figura \ref{piezaspierna}, se han modif
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.4\textwidth]{figuras/pierna1} & \includegraphics[width=0.4\textwidth]{figuras/pierna2}  \\
 \end{tabular}
-\caption{Piezas necesarias para montar una pierna}
+\caption{Piezas necesarias para montar una pierna.}
 \label{piezaspierna}
 \end{figure} 
 \FloatBarrier
@@ -84,9 +84,9 @@ El diseño de los pies se ha planteado de forma que cumpla las especificaciones d
 \begin{tabular}{ >{\centering\arraybackslash}m{0.5\textwidth} >{\arraybackslash}m{0.5\textwidth}}
 \includegraphics[width=0.4\textwidth]{figuras/pie} & \includegraphics[width=0.4\textwidth]{figuras/tobillo}  \\
 \end{tabular}
-\caption{Piezas necesarias para montar un pie}
+\caption{Piezas necesarias para montar un pie.}
 \label{piezaspie}
 \end{figure}
 \FloatBarrier
 
-Todas estas piezas serán impresas. En el próximo capítulo, se comentarán algunos aspectos constructivos del sistema, y consideraciones en el montaje de las mas importantes.
+Todas estas piezas serán impresas. En el próximo capítulo, se comentarán algunos aspectos constructivos del sistema, y consideraciones en el montaje de las más importantes.

@@ -19,53 +19,55 @@ A level-1 auxiliary file: presupuesto.aux
 A level-1 auxiliary file: conclusion.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: anexopiezas.aux
+A level-1 auxiliary file: anexocomponentes.aux
 A level-1 auxiliary file: anexofotolito.aux
 A level-1 auxiliary file: anexoesquematico.aux
 A level-1 auxiliary file: anexoplanos.aux
+A level-1 auxiliary file: anexopresupuesto.aux
 Database file #1: bibliografia.bib
 Warning--empty journal in troxler2014frictions
 Warning--empty journal in robotis2010manual
 Warning--empty journal in robotis2010dynamixel
 Warning--there's a number but no volume in canny1986computational
-You've used 47 entries,
+You've used 48 entries,
             1791 wiz_defined-function locations,
-            671 strings with 9735 characters,
-and the built_in function-call counts, 8796 in all, are:
-= -- 757
-> -- 315
+            676 strings with 9857 characters,
+and the built_in function-call counts, 8891 in all, are:
+= -- 763
+> -- 316
 < -- 11
-+ -- 130
++ -- 131
 - -- 83
-* -- 446
-:= -- 1206
-add.period$ -- 113
-call.type$ -- 47
-change.case$ -- 40
+* -- 449
+:= -- 1213
+add.period$ -- 114
+call.type$ -- 48
+change.case$ -- 41
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 446
-empty$ -- 1020
+cite$ -- 52
+duplicate$ -- 451
+empty$ -- 1038
 format.name$ -- 83
-if$ -- 2091
+if$ -- 2116
 int.to.chr$ -- 0
-int.to.str$ -- 47
+int.to.str$ -- 48
 missing$ -- 34
-newline$ -- 203
+newline$ -- 206
 num.names$ -- 32
-pop$ -- 275
+pop$ -- 283
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 278
+skip$ -- 283
 stack$ -- 0
 substring$ -- 400
-swap$ -- 131
+swap$ -- 132
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
 while$ -- 69
-width$ -- 49
-write$ -- 423
+width$ -- 50
+write$ -- 429
 (There were 4 warnings)

@@ -35,11 +35,6 @@ David Gouaillier, Vincent Hugel, Pierre Blazevic, Chris Kilner, J{\'e}r{\^o}me
 \newblock In {\em Robotics and Automation, 2009. ICRA'09. IEEE International
   Conference on}, pages 769--774. IEEE, 2009.
 
-\bibitem{de2001vision}
-Arturo De~la Escalera and Jos{\'e}~Mar{\'\i}a Armingol.
-\newblock Visi{\'o}n por computador.
-\newblock {\em Fundamentos y m{\'e}todos}, 2001.
-
 \bibitem{webrobotchallenge}
 Robotchallenge website, septiembre 2014 [online]
   \url{http://www.robotchallenge.org}.
@@ -118,6 +113,11 @@ Vanadium Labs.
 \newblock Software pypose, septiembre 2014 [online]
   \url{http://www.vanadiumlabs.com/pypose.html}.
 
+\bibitem{de2001vision}
+Arturo De~la Escalera and Jos{\'e}~Mar{\'\i}a Armingol.
+\newblock Visi{\'o}n por computador.
+\newblock {\em Fundamentos y m{\'e}todos}, 2001.
+
 \bibitem{webcmucam}
 Cmucam website, septiembre 2014 [online] \url{http://www.cmucam.org}.
 
@@ -182,6 +182,10 @@ Sharp Cooperation.
 Gerald Coley.
 \newblock Beagleboard system reference manual.
 \newblock {\em BeagleBoard.org, December}, page 121, 2013.
+
+\bibitem{repositorio}
+Repositorio del proyecto raider, septiembre 2014 [online]
+  \url{https://github.com/JavierIH/Raider}.
 
 \bibitem{robotis2010dynamixel}
 ROBOTIS.
