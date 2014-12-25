@@ -40,6 +40,12 @@ add_executable(test_voronoi test_voronoi.cpp)
 target_link_libraries(test_voronoi debuga serialib raider bones eye ${OpenCV_LIBS})
 ENDIF ()
 
+OPTION(TEST_FUZZY "Fuzzy logic with Fuzzylite" 1)
+IF (TEST_FUZZY)
+add_executable(test_fuzzy test_fuzzy.cpp)
+target_link_libraries(test_fuzzy fuzzylite debuga serialib raider bones eye ${OpenCV_LIBS})
+ENDIF ()
+
 OPTION(TEST_QR "It reads QR codes" 1)
 IF (TEST_QR)
 add_executable(test_qr test_qr.cpp)

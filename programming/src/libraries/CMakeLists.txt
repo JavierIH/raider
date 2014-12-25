@@ -1,3 +1,6 @@
+include_directories(/usr/local/lib)
+include_directories(/usr/local/include)
+
 add_subdirectory(debug)
 add_subdirectory(serialib)
 add_subdirectory(bones)
