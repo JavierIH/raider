@@ -42,8 +42,8 @@ Raider::Raider(){
 
 //INFRARRED SENSORS
     report("Setting infrarred sensors...");
-    if(getAnalog(0)<=0) report(ERROR, "Error in infrarred sensors (pin 0)");
-    else if(getAnalog(1)<=0) report(ERROR, "Error in infrarred sensors (pin 1)");
+    if(getAIN(0)<=0) report(ERROR, "Error in infrarred sensors (pin 0)");
+    else if(getAIN(1)<=0) report(ERROR, "Error in infrarred sensors (pin 1)");
     else report(OK,"Infrarred sensors are working fine!");
 
 //CAMERA
@@ -54,14 +54,14 @@ Raider::Raider(){
 }
 
 int Raider::getLeftIR(){
-    for(int i=0; i<8; i++) leftIR=getAnalog(AIN5); //Para vaciar el buffer
+    for(int i=0; i<8; i++) leftIR=getAIN(AIN5); //Para vaciar el buffer
     if(leftIR>INFRARED_HIGH)return 2;
     else if(leftIR>INFRARED_LOW)return 1;
     return 0;
 }
 
 int Raider::getRightIR(){
-    for(int i=0; i<8; i++) rightIR=getAnalog(AIN3); //Para vaciar el buffer
+    for(int i=0; i<8; i++) rightIR=getAIN(AIN3); //Para vaciar el buffer
     if(rightIR>INFRARED_HIGH)return 2;
     else if(rightIR>INFRARED_LOW)return 1;
     return 0;

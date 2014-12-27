@@ -101,7 +101,7 @@ int main(){
     outputVariable2->setEnabled(true);
     outputVariable2->setName("Cycle");
     outputVariable2->setRange(0.000, 20.000);
-    outputVariable2->fuzzyOutput()->setAccumulation(new Maximum); //aggregation?
+    outputVariable2->fuzzyOutput()->setAccumulation(new Maximum); //aggregation
     //outputVariable2->setDefuzzifier(new MeanOfMaximum(500));
     outputVariable2->setDefuzzifier(new Centroid);
     //outputVariable2->setDefaultValue(fl::nan);
@@ -114,12 +114,12 @@ int main(){
     RuleBlock* ruleBlock = new RuleBlock;
     ruleBlock->setEnabled(true);
     ruleBlock->setName("");
-    ruleBlock->setConjunction(new Minimum);
+    ruleBlock->setConjunction(new Minimum); //correcto
     ruleBlock->setDisjunction(new Maximum);
     ruleBlock->setActivation(new Minimum);
     ruleBlock->addRule(fl::Rule::parse("if Load is small and Dirt is not high then Detergent is less", engine));
     ruleBlock->addRule(fl::Rule::parse("if Load is small and Dirt is high then  Detergent is normal", engine));
-    ruleBlock->addRule(fl::Rule::parse("if Load is normal and Dirt is low then Detergent is less", engine));
+    //ruleBlock->addRule(fl::Rule::parse("if Load is normal and Dirt is low then Detergent is less", engine));
     ruleBlock->addRule(fl::Rule::parse("if Load is normal and Dirt is high then Detergent is more", engine));
     ruleBlock->addRule(fl::Rule::parse("if Detergent is normal or Detergent is less then Cycle is short", engine));
     ruleBlock->addRule(fl::Rule::parse("if Detergent is more then Cycle is long", engine));

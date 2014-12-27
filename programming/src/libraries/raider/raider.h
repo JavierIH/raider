@@ -6,6 +6,8 @@
 #include <string>
 #include <stdlib.h>
 
+#include <fl/Headers.h>
+
 #include "../bones/bones.h"
 #include "../eye/eye.h"
 #include "../debug/debug.h"

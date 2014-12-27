@@ -8,14 +8,12 @@
 #include "../debug/debug.h"
 
 
-int getAnalog(int);
 
-/*
-    TODO : Hacer estas funciones
+int getPin(){}
+int setPin(){}
+int setPWM(){}
+int getAIN(int);
 
-    getPin();
-    setPin();
-    setPWM();
-*/
+
 
 #endif // BONES_H

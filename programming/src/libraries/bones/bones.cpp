@@ -2,9 +2,12 @@
 
 //using namespace std;
 
-int getAnalog(int pin){
+int getAIN(int pin){
 
-    if(pin<0||pin>7) return -1;
+    if(pin<0||pin>7){
+        report(ERROR,"Bad analogic pin choice");
+        return -1;
+    }
 
     string path="/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN";
     path+=(char)pin+'0';
