@@ -47,6 +47,20 @@ int Pin::getAIN(){
         report(ERROR,"Pin "+to_string(ID)+" is not set on mode ANALOG, is set on mode "+to_string(mode));
         return -1;
     }
+
+    string path="/sys/bus/platform/drivers/bone-iio-helper/helper.15/AIN";
+    path+=(char)(ID-200)+'0';
+
+    ifstream AIN (path.c_str());
+    if(!AIN) return -1;
+
+    int value;
+    char a1 [5];
+    AIN.read(a1,5);
+    value = atoi(a1);
+    AIN.close();
+
+    return value;
 }
 
 int Pin::setPWM(int pulse){

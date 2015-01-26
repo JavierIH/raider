@@ -41,18 +41,16 @@ int configurePin(int pin, bool mode){
 int setPin(int pin, bool state){
 
     FILE *file = NULL;
-    char value[4], gpioID[4], gpioState[4], gpioValue[64];
+    char value[4], gpioID[4], gpioValue[64];
     sprintf(gpioID, "%d", pin);
-    sprintf(gpioState, "%d", state);
     sprintf(gpioValue, "/sys/class/gpio/gpio%d/value", pin);
 
-    // Set output to high
     if ((file = fopen(gpioValue, "rb+")) == NULL){
       report(ERROR,"Unable to open value handle\n");
-      return 1;
+      return -1;
     }
     
-    strcpy(value, gpioState); // Set value high
+    sprintf(value, "%d", state);
     fwrite(&value, sizeof(char), 1, file);
     fclose(file);
 }
@@ -60,23 +58,21 @@ int setPin(int pin, bool state){
 int getPin(int pin){
     
     FILE *file = NULL;
-    char value[4], gpioID[4], gpioState[4], gpioValue[64];
+    char value[4], gpioID[4], gpioValue[64];
     sprintf(gpioID, "%d", pin);
-    //sprintf(gpioState, "%d", state);
     sprintf(gpioValue, "/sys/class/gpio/gpio%d/value", pin);
 
     if ((file = fopen(gpioValue, "rb")) == NULL){
       report(ERROR,"Unable to open value handle\n");
-      return 1;
+      return -1;
     }
     
-
-    fwrite(&value, sizeof(char), 1, file);
-    fclose(file);
-    
-    return 0;
+    fread(&value, sizeof(char), 1, file);
+    fclose(file);    
+    return atoi(value);
 }
-int destroyPin();
+
+int destroyPin(); //unexport
 
 int main() {
 
@@ -120,8 +116,8 @@ int main() {
 
     // Set output to low
     if ((myOutputHandle = fopen(GPIOValue, "rb+")) == NULL){
-      printf("Unable to open value handle\n");
-      return 1;
+        printf("Unable to open value handle\n");
+        return 1;
     }
     strcpy(setValue, "0"); // Set value low
     fwrite(&setValue, sizeof(char), 1, myOutputHandle);
@@ -132,8 +128,8 @@ int main() {
 
   // Unexport the pin
   if ((myOutputHandle = fopen("/sys/class/gpio/unexport", "ab")) == NULL) {
-    printf("Unable to unexport GPIO pin\n");
-    return 1;
+      printf("Unable to unexport GPIO pin\n");
+      return 1;
   }
   strcpy(setValue, GPIOString);
   fwrite(&setValue, sizeof(char), 2, myOutputHandle);

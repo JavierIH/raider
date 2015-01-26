@@ -6,20 +6,20 @@ int main(){
     using namespace fl;
     Engine* engine = new Engine("navigation");
 
-    InputVariable* posicion = new InputVariable;
-    posicion->setName("distance");
-    posicion->setRange(0.000, 1.000);
-    posicion->addTerm(new Triangle("IZQUIERDA", 0.000, 0.500));
-    posicion->addTerm(new Triangle("CENTRO", 0.250, 0.750));
-    posicion->addTerm(new Triangle("DERECHA", 0.500, 1.000));
-    engine->addInputVariable(posicion);
+    InputVariable* position = new InputVariable;
+    position->setName("distance");
+    position->setRange(0.000, 1.000);
+    position->addTerm(new Triangle("izquierda", 0.000, 0.500));
+    position->addTerm(new Triangle("centro", 0.250, 0.750));
+    position->addTerm(new Triangle("derecha", 0.500, 1.000));
+    engine->addInputVariable(position);
 
     InputVariable* alfa = new InputVariable;
     alfa->setName("alfa");
     alfa->setRange(0.000, 1.000);
-    alfa->addTerm(new Triangle("NEGATIVO", 0.000, 0.500));
-    alfa->addTerm(new Triangle("CERO", 0.250, 0.750));
-    alfa->addTerm(new Triangle("POSITIVO", 0.500, 1.000));
+    alfa->addTerm(new Triangle("negativo", 0.000, 0.500));
+    alfa->addTerm(new Triangle("cero", 0.250, 0.750));
+    alfa->addTerm(new Triangle("positivo", 0.500, 1.000));
     engine->addInputVariable(alfa);
 
     OutputVariable* correccion = new OutputVariable;
@@ -34,10 +34,10 @@ int main(){
     engine->addOutputVariable(correccion);
 
     RuleBlock* ruleblock = new RuleBlock;
-    ruleblock->addRule(Rule::parse("if alfa is NEGATIVO then correccion is II", engine));
+    ruleblock->addRule(Rule::parse("if alfa is negativo then correccion is II", engine));
     engine->addRuleBlock(ruleblock);
 
-    engine->configure("", "", "Minimum", "Maximum", "Centroid");
+    engine->configure("", "", "Minimum", "Maximum", "centroid");
 
     std::string status;
     if (not engine->isReady(&status))
@@ -65,84 +65,114 @@ int main(){
     using namespace fl;
 
     Engine* engine = new Engine;
-    engine->setName("Laundry");
+    engine->setName("fuzzy");
 
-    InputVariable* inputVariable1 = new InputVariable;
-    inputVariable1->setEnabled(true);
-    inputVariable1->setName("Load");
-    inputVariable1->setRange(0.000, 6.000);
-    inputVariable1->addTerm(Discrete::create("small", 8, 0.000, 1.000, 1.000, 1.000, 2.000, 0.800, 5.000, 0.000));
-    inputVariable1->addTerm(Discrete::create("normal", 6, 3.000, 0.000, 4.000, 1.000, 6.000, 0.000));
-    engine->addInputVariable(inputVariable1);
+    InputVariable* position = new InputVariable;
+    position->setEnabled(true);
+    position->setName("position");
+    position->setRange(0.000, 10.000);
+    position->addTerm(new Triangle("left", 0.000, 5));
+    position->addTerm(new Triangle("center", 2.5, 7.5));
+    position->addTerm(new Triangle("right", 5, 10));
+    engine->addInputVariable(position);
 
-    InputVariable* inputVariable2 = new InputVariable;
-    inputVariable2->setEnabled(true);
-    inputVariable2->setName("Dirt");
-    inputVariable2->setRange(0.000, 6.000);
-    inputVariable2->addTerm(Discrete::create("low", 6, 0.000, 1.000, 2.000, 0.800, 5.000, 0.000));
-    inputVariable2->addTerm(Discrete::create("high", 8, 1.000, 0.000, 2.000, 0.200, 4.000, 0.800, 6.000, 1.000));
-    engine->addInputVariable(inputVariable2);
+    InputVariable* alfa = new InputVariable;
+    alfa->setEnabled(true);
+    alfa->setName("alfa");
+    position->setRange(0.000, 10.000);
+    alfa->addTerm(new Triangle("negative", 0.000, 5));
+    alfa->addTerm(new Triangle("neutral", 2.5, 7.5));
+    alfa->addTerm(new Triangle("positive", 5, 10));
+    engine->addInputVariable(alfa);
 
-    OutputVariable* outputVariable1 = new OutputVariable;
-    outputVariable1->setEnabled(true);
-    outputVariable1->setName("Detergent");
-    outputVariable1->setRange(0.000, 80.000);
-    outputVariable1->fuzzyOutput()->setAccumulation(new Maximum);
-    outputVariable1->setDefuzzifier(new Centroid);
-    outputVariable1->setDefaultValue(fl::nan);
-    outputVariable1->setLockPreviousOutputValue(false);
-    outputVariable1->setLockOutputValueInRange(false);
-    outputVariable1->addTerm(Discrete::create("less", 6, 10.000, 0.000, 40.000, 1.000, 50.000, 0.000));
-    outputVariable1->addTerm(new Triangle("normal", 0.250, 0.750));
-    outputVariable1->addTerm(Discrete::create("more", 4, 50.000, 0.000, 80.000, 1.000));
-    engine->addOutputVariable(outputVariable1);
+    InputVariable* ir_right = new InputVariable;
+    ir_right->setEnabled(true);
+    ir_right->setName("ir_right");
+    position->setRange(0.000, 10.000);
+    ir_right->addTerm(new Triangle("close", 0.000, 5));
+    ir_right->addTerm(new Triangle("medium", 2.5, 7.5));
+    ir_right->addTerm(new Triangle("far", 5, 10));
+    engine->addInputVariable(ir_right);
 
-    OutputVariable* outputVariable2 = new OutputVariable;
-    outputVariable2->setEnabled(true);
-    outputVariable2->setName("Cycle");
-    outputVariable2->setRange(0.000, 20.000);
-    outputVariable2->fuzzyOutput()->setAccumulation(new Maximum); //aggregation
-    //outputVariable2->setDefuzzifier(new MeanOfMaximum(500));
-    outputVariable2->setDefuzzifier(new Centroid);
-    //outputVariable2->setDefaultValue(fl::nan);
-    //outputVariable2->setLockPreviousOutputValue(false);
-    //outputVariable2->setLockOutputValueInRange(false);
-    outputVariable2->addTerm(Discrete::create("short", 6, 0.000, 1.000, 10.000, 1.000, 20.000, 0.000));
-    outputVariable2->addTerm(Discrete::create("long", 4, 10.000, 0.000, 20.000, 1.000));
-    engine->addOutputVariable(outputVariable2);
+    InputVariable* ir_left = new InputVariable;
+    ir_left->setEnabled(true);
+    ir_left->setName("ir_left");
+    position->setRange(0.000, 10.000);
+    ir_left->addTerm(new Triangle("close", 0.000, 5));
+    ir_left->addTerm(new Triangle("medium", 2.5, 7.5));
+    ir_left->addTerm(new Triangle("far", 5, 10));
+    engine->addInputVariable(ir_left);
+
+    OutputVariable* advance = new OutputVariable;
+    advance->setEnabled(true);
+    advance->setName("advance");
+    advance->setRange(0.000, 10.000);
+    advance->fuzzyOutput()->setAccumulation(new Maximum);
+    advance->setDefuzzifier(new Centroid);
+    advance->setDefaultValue(fl::nan);
+    advance->addTerm(new Triangle("null", 0.000, 5));
+    advance->addTerm(new Triangle("short", 2.5, 7.5));
+    advance->addTerm(new Triangle("long", 5, 10));
+    engine->addOutputVariable(advance);
+
+    OutputVariable* yaw = new OutputVariable;
+    yaw->setEnabled(true);
+    yaw->setName("yaw");
+    yaw->setRange(0.000, 10.000);
+    yaw->fuzzyOutput()->setAccumulation(new Maximum); //aggregation
+    yaw->setDefuzzifier(new Centroid);
+    yaw->addTerm(new Triangle("left", 0.000, 5));
+    yaw->addTerm(new Triangle("center", 2.5, 7.5));
+    yaw->addTerm(new Triangle("right", 5, 10));
+    engine->addOutputVariable(yaw);
 
     RuleBlock* ruleBlock = new RuleBlock;
     ruleBlock->setEnabled(true);
-    ruleBlock->setName("");
+    ruleBlock->setName("navigation");
     ruleBlock->setConjunction(new Minimum); //correcto
     ruleBlock->setDisjunction(new Maximum);
     ruleBlock->setActivation(new Minimum);
-    ruleBlock->addRule(fl::Rule::parse("if Load is small and Dirt is not high then Detergent is less", engine));
-    ruleBlock->addRule(fl::Rule::parse("if Load is small and Dirt is high then  Detergent is normal", engine));
-    //ruleBlock->addRule(fl::Rule::parse("if Load is normal and Dirt is low then Detergent is less", engine));
-    ruleBlock->addRule(fl::Rule::parse("if Load is normal and Dirt is high then Detergent is more", engine));
-    ruleBlock->addRule(fl::Rule::parse("if Detergent is normal or Detergent is less then Cycle is short", engine));
-    ruleBlock->addRule(fl::Rule::parse("if Detergent is more then Cycle is long", engine));
+
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is negative then advance is null and yaw is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is neutral then advance is short and yaw is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is positive then advance is long and yaw is center", engine));
+
+    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is negative then advance is short and yaw is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is neutral then advance is long and yaw is center", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is positive then advance is short and yaw is right", engine));
+
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and yaw is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and yaw is center", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is neutral then advance is short and yaw is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is positive then advance is null and yaw is right", engine));
+
+    ruleBlock->addRule(fl::Rule::parse("if ir_left is close then advance is null", engine));
+    ruleBlock->addRule(fl::Rule::parse("if ir_right is close then advance is null", engine));
+
     ruleBlock->activate();
     engine->addRuleBlock(ruleBlock);
 
 
-    for (int i = 0; i < 50; ++i){
-        scalar input1 = inputVariable1->getMinimum() + i * (inputVariable1->range() / 50);
-        inputVariable1->setInputValue(2.456);
 
-        scalar input2 = inputVariable2->getMaximum() - i * (inputVariable2->range() / 50);
-        inputVariable2->setInputValue(input2);
+
+    for (float i = 0; i < 10; i+=0.01){
+        //scalar input1 = position->getMinimum() + i * (position->range() / 50);
+        position->setInputValue(5);
+
+        //scalar input2 = alfa->getMaximum() - i * (alfa->range() / 50);
+        alfa->setInputValue(5);
+        ir_left->setInputValue(0.1);
+        ir_right->setInputValue(0.1);
 
         engine->process();
 
         report("\n\n\n\n\n\n\n\n");
-        report(INFO,"Input 1: "+to_string(inputVariable1->getInputValue()));
-        report(INFO,"Input 2: "+to_string(inputVariable2->getInputValue()));
-        report(OK,"Output 1: "+to_string(outputVariable1->getOutputValue()));
-        report(OK,"Output 2: "+to_string(outputVariable2->getOutputValue()));
+        report(INFO,"Input 1: "+to_string(position->getInputValue()));
+        report(INFO,"Input 2: "+to_string(alfa->getInputValue()));
+        report(OK,"avance: "+to_string(advance->getOutputValue()));
+        report(OK,"giro: "+to_string(yaw->getOutputValue()));
 
-        usleep(1000000/2);
+        usleep(100000/2);
 
     }
 
