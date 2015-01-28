@@ -115,16 +115,16 @@ int main(){
     advance->addTerm(new Triangle("long", 5, 10));
     engine->addOutputVariable(advance);
 
-    OutputVariable* yaw = new OutputVariable;
-    yaw->setEnabled(true);
-    yaw->setName("yaw");
-    yaw->setRange(0.000, 10.000);
-    yaw->fuzzyOutput()->setAccumulation(new Maximum); //aggregation
-    yaw->setDefuzzifier(new Centroid);
-    yaw->addTerm(new Triangle("left", 0.000, 5));
-    yaw->addTerm(new Triangle("center", 2.5, 7.5));
-    yaw->addTerm(new Triangle("right", 5, 10));
-    engine->addOutputVariable(yaw);
+    OutputVariable* rotation = new OutputVariable;
+    rotation->setEnabled(true);
+    rotation->setName("rotation");
+    rotation->setRange(0.000, 10.000);
+    rotation->fuzzyOutput()->setAccumulation(new Maximum); //aggregation
+    rotation->setDefuzzifier(new Centroid);
+    rotation->addTerm(new Triangle("left", 0.000, 5));
+    rotation->addTerm(new Triangle("center", 2.5, 7.5));
+    rotation->addTerm(new Triangle("right", 5, 10));
+    engine->addOutputVariable(rotation);
 
     RuleBlock* ruleBlock = new RuleBlock;
     ruleBlock->setEnabled(true);
@@ -133,21 +133,24 @@ int main(){
     ruleBlock->setDisjunction(new Maximum);
     ruleBlock->setActivation(new Minimum);
 
-    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is negative then advance is null and yaw is left", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is neutral then advance is short and yaw is left", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is positive then advance is long and yaw is center", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is negative then advance is null and rotation is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is neutral then advance is short and rotation is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is positive then advance is long and rotation is center", engine));
 
-    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is negative then advance is short and yaw is left", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is neutral then advance is long and yaw is center", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is positive then advance is short and yaw is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is negative then advance is short and rotation is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is neutral then advance is long and rotation is center", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is positive then advance is short and rotation is right", engine));
 
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and yaw is right", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and yaw is center", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is neutral then advance is short and yaw is right", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is positive then advance is null and yaw is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and rotation is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and rotation is center", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is neutral then advance is short and rotation is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is positive then advance is null and rotation is right", engine));
 
     ruleBlock->addRule(fl::Rule::parse("if ir_left is close then advance is null", engine));
+    ruleBlock->addRule(fl::Rule::parse("if ir_left is medium then advance is short", engine));
+
     ruleBlock->addRule(fl::Rule::parse("if ir_right is close then advance is null", engine));
+    ruleBlock->addRule(fl::Rule::parse("if ir_right is medium then advance is short", engine));
 
     ruleBlock->activate();
     engine->addRuleBlock(ruleBlock);
@@ -170,7 +173,7 @@ int main(){
         report(INFO,"Input 1: "+to_string(position->getInputValue()));
         report(INFO,"Input 2: "+to_string(alfa->getInputValue()));
         report(OK,"avance: "+to_string(advance->getOutputValue()));
-        report(OK,"giro: "+to_string(yaw->getOutputValue()));
+        report(OK,"giro: "+to_string(rotation->getOutputValue()));
 
         usleep(100000/2);
 
