@@ -70,60 +70,63 @@ int main(){
     InputVariable* position = new InputVariable;
     position->setEnabled(true);
     position->setName("position");
-    position->setRange(0.000, 10.000);
-    position->addTerm(new Triangle("left", 0.000, 5));
-    position->addTerm(new Triangle("center", 2.5, 7.5));
-    position->addTerm(new Triangle("right", 5, 10));
+    position->setRange(-20.000, 20.000);
+    position->addTerm(new Ramp("left",-2.000,-12.000));
+    position->addTerm(new Triangle("center", -6.000, 0.000, 6.000));
+    position->addTerm(new Ramp("right", 2.000, 12.000));
     engine->addInputVariable(position);
 
     InputVariable* alfa = new InputVariable;
     alfa->setEnabled(true);
     alfa->setName("alfa");
-    position->setRange(0.000, 10.000);
-    alfa->addTerm(new Triangle("negative", 0.000, 5));
-    alfa->addTerm(new Triangle("neutral", 2.5, 7.5));
-    alfa->addTerm(new Triangle("positive", 5, 10));
+    alfa->setRange(-90.000, 90.000);
+    alfa->addTerm(new ZShape("negative", -54.000, -9.000));
+    alfa->addTerm(new Gaussian("neutral", 0.000, 13.500));
+    alfa->addTerm(new SShape("positive", 9.000, 54.000));
     engine->addInputVariable(alfa);
 
     InputVariable* ir_right = new InputVariable;
     ir_right->setEnabled(true);
     ir_right->setName("ir_right");
-    position->setRange(0.000, 10.000);
-    ir_right->addTerm(new Triangle("close", 0.000, 5));
-    ir_right->addTerm(new Triangle("medium", 2.5, 7.5));
-    ir_right->addTerm(new Triangle("far", 5, 10));
+    ir_right->setRange(0.000, 1800.000);
+    ir_right->addTerm(new Gaussian("close", 1647.000, 77.400));
+    ir_right->addTerm(new Gaussian("medium", 1350.000, 153.000));
+    ir_right->addTerm(new Gaussian("far", 747.000, 300.600));
     engine->addInputVariable(ir_right);
 
     InputVariable* ir_left = new InputVariable;
     ir_left->setEnabled(true);
     ir_left->setName("ir_left");
-    position->setRange(0.000, 10.000);
-    ir_left->addTerm(new Triangle("close", 0.000, 5));
-    ir_left->addTerm(new Triangle("medium", 2.5, 7.5));
-    ir_left->addTerm(new Triangle("far", 5, 10));
+    ir_left->setRange(0.000, 1800.000);
+    ir_left->addTerm(new Gaussian("close", 1647.000, 77.400));
+    ir_left->addTerm(new Gaussian("medium", 1350.000, 153.000));
+    ir_left->addTerm(new Gaussian("far", 747.000, 300.600));
     engine->addInputVariable(ir_left);
 
     OutputVariable* advance = new OutputVariable;
     advance->setEnabled(true);
     advance->setName("advance");
-    advance->setRange(0.000, 10.000);
+    advance->setRange(0.000, 700.000);
     advance->fuzzyOutput()->setAccumulation(new Maximum);
     advance->setDefuzzifier(new Centroid);
     advance->setDefaultValue(fl::nan);
-    advance->addTerm(new Triangle("null", 0.000, 5));
-    advance->addTerm(new Triangle("short", 2.5, 7.5));
-    advance->addTerm(new Triangle("long", 5, 10));
+    advance->addTerm(new Ramp("null", 100.000, 120.000));
+    advance->addTerm(new Triangle("short", 100.000, 300.000, 500.000));
+    advance->addTerm(new Ramp("long", 300.000, 500.000));
     engine->addOutputVariable(advance);
 
     OutputVariable* rotation = new OutputVariable;
     rotation->setEnabled(true);
     rotation->setName("rotation");
-    rotation->setRange(0.000, 10.000);
+    rotation->setRange(-90.000, 90.000);
     rotation->fuzzyOutput()->setAccumulation(new Maximum); //aggregation
     rotation->setDefuzzifier(new Centroid);
-    rotation->addTerm(new Triangle("left", 0.000, 5));
-    rotation->addTerm(new Triangle("center", 2.5, 7.5));
-    rotation->addTerm(new Triangle("right", 5, 10));
+    //rotation->addTerm(new Ramp("left", 0.000, -32.000));
+    //rotation->addTerm(new Triangle("center", -18.000, 0.000, 18.000));
+    //rotation->addTerm(new Ramp("right", 0.000, 32.000));
+    rotation->addTerm(new Ramp("left", 0.000, -40.000));
+    rotation->addTerm(new Triangle("center", -25.000, 0.000, 25.000));
+    rotation->addTerm(new Ramp("right", 0.000, 40.000));
     engine->addOutputVariable(rotation);
 
     RuleBlock* ruleBlock = new RuleBlock;
@@ -133,18 +136,17 @@ int main(){
     ruleBlock->setDisjunction(new Maximum);
     ruleBlock->setActivation(new Minimum);
 
-    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is negative then advance is null and rotation is left", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is neutral then advance is short and rotation is left", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is positive then advance is long and rotation is center", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is negative then advance is null and rotation is center", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is neutral then advance is short and rotation is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is left and alfa is positive then advance is long and rotation is right", engine));
 
     ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is negative then advance is short and rotation is left", engine));
     ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is neutral then advance is long and rotation is center", engine));
     ruleBlock->addRule(fl::Rule::parse("if position is center and alfa is positive then advance is short and rotation is right", engine));
 
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and rotation is right", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and rotation is center", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is neutral then advance is short and rotation is right", engine));
-    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is positive then advance is null and rotation is right", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is negative then advance is long and rotation is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is neutral then advance is short and rotation is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if position is right and alfa is positive then advance is null and rotation is center", engine));
 
     ruleBlock->addRule(fl::Rule::parse("if ir_left is close then advance is null", engine));
     ruleBlock->addRule(fl::Rule::parse("if ir_left is medium then advance is short", engine));
@@ -152,32 +154,43 @@ int main(){
     ruleBlock->addRule(fl::Rule::parse("if ir_right is close then advance is null", engine));
     ruleBlock->addRule(fl::Rule::parse("if ir_right is medium then advance is short", engine));
 
+    ruleBlock->addRule(fl::Rule::parse("if ir_right is close and ir_left is far then rotation is left", engine));
+    ruleBlock->addRule(fl::Rule::parse("if ir_right is far and ir_left is close then rotation is right", engine));
+
+
     ruleBlock->activate();
     engine->addRuleBlock(ruleBlock);
 
 
 
 
-    for (float i = 0; i < 10; i+=0.01){
+   // for (float i = 0; i < 10; i+=0.01){
         //scalar input1 = position->getMinimum() + i * (position->range() / 50);
-        position->setInputValue(5);
 
         //scalar input2 = alfa->getMaximum() - i * (alfa->range() / 50);
-        alfa->setInputValue(5);
-        ir_left->setInputValue(0.1);
-        ir_right->setInputValue(0.1);
+
+        position->setInputValue(5);
+        alfa->setInputValue(40);
+        ir_left->setInputValue(300);
+        ir_right->setInputValue(300);
 
         engine->process();
 
+        int advance_out=advance->getOutputValue();
+        int rotation_out=rotation->getOutputValue();
+
+
         report("\n\n\n\n\n\n\n\n");
-        report(INFO,"Input 1: "+to_string(position->getInputValue()));
-        report(INFO,"Input 2: "+to_string(alfa->getInputValue()));
-        report(OK,"avance: "+to_string(advance->getOutputValue()));
-        report(OK,"giro: "+to_string(rotation->getOutputValue()));
+        report(INFO,"position: "+to_string(position->getInputValue()));
+        report(INFO,"alfa: "+to_string(alfa->getInputValue()));
+        report(INFO,"IR left: "+to_string(ir_left->getInputValue()));
+        report(INFO,"IR right: "+to_string(ir_right->getInputValue()));
+        report(OK,"avance: "+to_string(advance_out));
+        report(OK,"giro: "+to_string(rotation_out));
 
-        usleep(100000/2);
+    //    usleep(100000/2);
 
-    }
+    //}
 
 }
 
