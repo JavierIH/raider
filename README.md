@@ -10,3 +10,10 @@ El proyecto se ha distribuido en cuatro secciones:
 
 La documentación del proyecto puede encontrarse en el repositorio raider-doc
 
+NOTA: Actualmente la programación en OpenCM no compila con versiones posteriores a v1.0.1 de OpenCM IDE. Sin embargo dado que las versiones actuales tienen bastantes bugs, no tengo pensado reescribir el código (de momento). 
+
+Archivo FindZBar0.cmake: http://code.google.com/p/low-cost-vision-2012/
+
+Clase serialib original: http://serialib.free.fr
+
+Bibliotecas de control borroso Fuzzylite: http://www.fuzzylite.com/
