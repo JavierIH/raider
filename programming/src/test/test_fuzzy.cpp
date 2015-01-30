@@ -109,7 +109,7 @@ int main(){
     position->setInputValue(0);
     alfa->setInputValue(0);
     ir_left->setInputValue(300);
-    ir_right->setInputValue(300);
+    ir_right->setInputValue(1200);
 
     engine->process();
 
