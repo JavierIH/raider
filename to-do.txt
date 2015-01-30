@@ -1,4 +1,3 @@
-[] Limpiar repo para abrirlo definitivamente
-[] Agregar sistema TTS
+[] Echar un vistazo a sistemas TTS
 [] Abstraer el controlador de movimientos del controlador principal (¿YARP?)
 [] Continuar esta lista
