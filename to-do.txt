@@ -1,3 +1,17 @@
-[] Echar un vistazo a sistemas TTS
-[] Abstraer el controlador de movimientos del controlador principal (¿YARP?)
-[] Continuar esta lista
+[] Imprimir nuevos pies.
+[] Rediseñar y reimprimir el soporte frontal del tobillo.
+[] Fabricar links con varilla roscada m3.
+[] Comprar amortiguadores.
+[] Rediseñar rodillas para acoplar los amortiguadores.
+[] Hacer un recuento de tornillos y tuercas m2.
+[] Validar el montaje paralelo de los servos de las piernas.
+[] Validar la cinematica completa de las piernas.
+[] Reconfigurar el espacio del pecho para alojar los nuevos componentes.
+[] Buscar alojamiento para la batería.
+[] Comprar usb/sonido y conectarlo a ODROID.
+[] Conseguir un convertidor a 5V y 5A.
+[] Amplificador de audio y altavoz de 30mm (odroid-usb_card-amp-speaker).
+[] Diseñar brazos nuevos con nuevo DOF.
+[] Rediseñar cabeza para subsanar errores de ensamblaje.
+[] Extremidades de los brazos ¿Pinzas o lanzadores?
+[] Abstraer el controlador de movimientos del controlador principal (¿YARP? ¿ROS?).
