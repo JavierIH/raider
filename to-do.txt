@@ -1,7 +1,7 @@
-[] Imprimir nuevos pies.
+[x] Imprimir nuevos pies.
 [] Rediseñar y reimprimir el soporte frontal del tobillo.
 [] Fabricar links con varilla roscada m3.
-[] Comprar amortiguadores.
+[x] Comprar amortiguadores.
 [] Rediseñar rodillas para acoplar los amortiguadores.
 [] Hacer un recuento de tornillos y tuercas m2.
 [] Validar el montaje paralelo de los servos de las piernas.
