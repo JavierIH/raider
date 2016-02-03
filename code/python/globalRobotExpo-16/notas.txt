@@ -1,0 +1,3 @@
+Habilitar driver de gamepad:
+$ sudo xboxdrv --silent &
+
